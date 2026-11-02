@@ -38,7 +38,7 @@ python3 build.py
 Định dạng dữ liệu mỗi bài (từ vựng `Hán|pinyin|nghĩa`, câu dịch `tiếng Việt|Hán|pinyin`…) có chú thích ở đầu `src/data1.js`.
 
 ## Giọng đọc
-Mặc định web phát **file âm thanh thu sẵn** trong `audio/` (giọng Meijia và Eddy của macOS, tiếng Quan thoại Đài Loan), nên Chrome, Safari và điện thoại đều nghe được, không phụ thuộc giọng đọc của trình duyệt. Nếu thiếu file cho một câu nào đó, web tự dùng Web Speech API của trình duyệt. Ô chọn giọng ở đầu trang cho phép đổi sang giọng của trình duyệt.
+Mặc định web phát **file âm thanh thu sẵn** trong `audio/` (một giọng duy nhất: **Meijia**, giọng Quan thoại Đài Loan của macOS), nên Chrome, Safari và điện thoại đều nghe được, không phụ thuộc giọng đọc của trình duyệt. Nếu thiếu file cho một câu nào đó, web tự dùng Web Speech API của trình duyệt.
 
 Sau khi sửa nội dung (`src/`), chạy trên Mac để thu thêm các câu mới:
 ```bash

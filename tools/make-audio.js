@@ -10,7 +10,7 @@
 const fs=require("fs"),path=require("path"),os=require("os"),cp=require("child_process"),vm=require("vm");
 const root=path.join(__dirname,"..");
 const outDir=path.join(root,"audio");
-const VOICES={m:"Meijia",e:"Eddy (Chinese (Taiwan))"};   // m: giọng chính, e: người nói thứ hai trong hội thoại
+const VOICES={m:"Meijia"};   // chỉ dùng một giọng: Meijia (zh-TW)
 const RATE=150;                                         // từ/phút, chậm hơn mặc định cho người học
 
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
@@ -28,12 +28,14 @@ vm.runInContext(script+`
   GRAMMAR.forEach(g=>g.ex.forEach(e=>add("m",e[0])));
   TRANS.forEach(t=>{add("m",t[1]);if(tLenOf(t)==="para")t[1].split(/(?<=[。！？])/).filter(Boolean).forEach(s=>add("m",s))});
   ORDER.forEach(o=>add("m",o[1].join("")));
-  Object.values(DIALOGS).forEach(D=>{const L=rows(D.l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];L.forEach(x=>add(names.indexOf(x[0])%2?"e":"m",x[1]))});
+  Object.values(DIALOGS).forEach(D=>{const L=rows(D.l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];L.forEach(x=>add("m",x[1]))});
   add("m","你好，歡迎你來臺灣！");
   return [...m.values()];
 })();`,ctx);
 const items=ctx.__items;
 fs.mkdirSync(outDir,{recursive:true});
+const keep=new Set(items.map(it=>it.id+".m4a"));
+for(const f of fs.readdirSync(outDir))if(f.endsWith(".m4a")&&!keep.has(f)){fs.unlinkSync(path.join(outDir,f));console.log("Xóa file không còn dùng:",f)}   // dọn file thừa
 const all=process.argv.includes("--all");
 const todo=items.filter(it=>all||!fs.existsSync(path.join(outDir,it.id+".m4a")));
 console.log(`Tổng ${items.length} câu, cần tạo ${todo.length}.`);

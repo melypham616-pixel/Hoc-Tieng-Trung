@@ -158,29 +158,17 @@ const $=s=>document.querySelector(s);
 const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
 const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let voices=[];
-const VKEY="tocfl1voice";
-const getV=()=>{try{return localStorage.getItem(VKEY)||""}catch(e){return ""}};
-function loadVoices(){
-  // giữ mọi giọng tiếng Trung (Đài Loan, đại lục, Hồng Kông…) mà máy có
-  voices=speechSynthesis.getVoices().filter(v=>/^zh|cmn|yue/i.test(v.lang)||/chinese|mandarin|cantonese|國語|普通话|粵/i.test(v.name));
-  const sel=$("#voiceSel");if(!sel)return;
-  const cur=getV();
-  sel.innerHTML=`<option value="">🎧 Giọng thu sẵn (khuyên dùng)</option>`+voices.map(v=>`<option value="${esc(v.name)}">${esc(v.name)} · ${v.lang}</option>`).join("");
-  sel.value=voices.some(v=>v.name===cur)?cur:"";
-}
-function pick(){
-  const cur=getV();
-  return voices.find(v=>v.name===cur)||voices.find(v=>v.name==="Meijia")||voices.find(v=>/zh[-_]TW/i.test(v.lang))||voices.find(v=>/zh[-_]CN/i.test(v.lang))||voices[0];
-}
-if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();}else{$("#voiceSel").innerHTML=`<option value="">🎧 Giọng thu sẵn (khuyên dùng)</option>`}
+function loadVoices(){voices=speechSynthesis.getVoices().filter(v=>/^zh|cmn|yue/i.test(v.lang))}
+// giọng duy nhất là Meijia; chỉ khi trình duyệt không có Meijia mới dùng giọng zh-TW khác làm dự phòng
+function pick(){return voices.find(v=>v.name==="Meijia")||voices.find(v=>/zh[-_]TW/i.test(v.lang))||voices[0]}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();}
 let sTok=0,keepU=null;
 function toast(m){
   let d=$("#toast");
   if(!d){d=document.createElement("div");d.id="toast";d.style.cssText="position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:10px;z-index:9;max-width:90%;font-size:14px";document.body.appendChild(d)}
   d.textContent=m;d.style.display="block";clearTimeout(d._t);d._t=setTimeout(()=>d.style.display="none",6000);
 }
-// danh sách giọng thử lần lượt: giọng đã chọn → giọng Đài Loan khác → giọng Trung còn lại
-function voiceList(){const p=pick();return [p,...voices.filter(v=>v!==p&&/zh[-_]TW/i.test(v.lang)),...voices.filter(v=>v!==p&&!/zh[-_]TW/i.test(v.lang))].filter(Boolean)}
+function voiceList(){return [pick()].filter(Boolean)}
 function say(t,o){
   if(!("speechSynthesis" in window)){toast("Trình duyệt này không có giọng đọc tích hợp.");return}
   const list=voiceList(),k=o.k||0,v=list[k],u=new SpeechSynthesisUtterance(t);
@@ -203,8 +191,8 @@ function say(t,o){
 /* ---- Giọng thu sẵn (audio/*.m4a): chạy được trên mọi trình duyệt, kể cả Chrome không có giọng đọc ---- */
 const cyrb53=(str,seed=0)=>{let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}
   h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)};
-const clipUrl=(t,tag)=>"audio/"+cyrb53((tag||"m")+"|"+t).toString(36)+".m4a";   // tag: m = Meijia, e = Eddy (người nói thứ hai)
-const useClips=()=>getV()==="";
+const clipUrl=(t,tag)=>"audio/"+cyrb53((tag||"m")+"|"+t).toString(36)+".m4a";   // giọng duy nhất: Meijia
+const useClips=()=>true;   // chỉ dùng một giọng: Meijia (file thu sẵn)
 let curA=null;
 function playClip(t,o){        // o:{tag,rate,onend,onfail}
   const a=new Audio(clipUrl(t,o.tag));curA=a;
@@ -370,7 +358,7 @@ function speakSeq(items){      // đọc lần lượt từng câu; item: {t, ta
 function playDialog(n){
   toast("🔊 Đang đọc…");
   const L=rows(DIALOGS[n].l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];
-  speakSeq(L.map(x=>({t:x[1],tag:names.indexOf(x[0])%2?"e":"m",pitch:names.indexOf(x[0])===0?1.15:0.8})));
+  speakSeq(L.map(x=>({t:x[1],tag:"m",pitch:1})));
 }
 function playPara(zh){
   toast("🔊 Đang đọc…");speakSeq(zh.split(/(?<=[。！？])/).filter(Boolean).map(t=>({t,pitch:1})))}
@@ -385,7 +373,7 @@ function readView(){
     if(D){
       const lines=rows(D.l).map(r=>r.split("|")),names=[...new Set(lines.map(x=>x[0]))];
       html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><h3 style="margin:0">💬 ${D.t}</h3><button class="b p" onclick="playDialog(${n})">▶ Nghe cả đoạn</button></div>`+
-      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh" style="font-size:22px">${x[1]}</span>${spkBtn(x[1],names.indexOf(x[0])%2?"e":"m")}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
+      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh" style="font-size:22px">${x[1]}</span>${spkBtn(x[1],"m")}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
       `<div style="margin-top:12px"><b>Đúng (O) hay sai (X)?</b>${rows(D.q).map((r,i)=>{
         const [s,a]=r.split("|"),k=n+"-"+i,done=rAns[k];
         return `<div class="qq">${s}<div class="row" style="margin-top:4px">${["O","X"].map(v=>`<button class="b ${done&&v===a?"ok":done&&v===done?"bad":""}" onclick="rAnswer('${k}','${v}','${a}')">${v}</button>`).join("")}${done?`<span class="stat">${done===a?"✅ Đúng":"❌ Đáp án: "+a}</span>`:""}</div></div>`}).join("")}</div></div>`;
@@ -498,7 +486,6 @@ function chkTrans(){
 function selfMark(ok){mark(ok);tIdx++;transView()}
 
 $("#voiceTest").onclick=()=>speak("你好，歡迎你來臺灣！");
-$("#voiceSel").onchange=e=>{try{localStorage.setItem(VKEY,e.target.value)}catch(x){}speak("你好，歡迎你來臺灣！")};
 setTimeout(()=>{   // sau khi danh sách giọng đã tải: báo nếu máy/khung này không có giọng tiếng Trung
   if(!("speechSynthesis" in window)||!voices.length){
     const w=document.createElement("div");w.className="card";w.style.cssText="border-color:var(--bad);background:var(--badbg)";
