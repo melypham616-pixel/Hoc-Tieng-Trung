@@ -1,0 +1,1916 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Học Tiếng Trung 當代中文課程 1</title>
+<style>
+:root{
+  --bg:#f6f1e8;--card:#fffdf9;--ink:#2a2622;--mut:#7c7267;--line:#eadfce;
+  --pri:#b8372b;--pri-d:#8f2a22;--pri2:#fbe9e4;
+  --acc:#1f7a74;--acc2:#e1f1ee;--gold:#c9972b;
+  --ok:#2e8b57;--okbg:#e4f5ea;--bad:#c0392b;--badbg:#fdeae6;
+  --shadow:0 1px 2px rgba(60,40,20,.05),0 10px 28px -14px rgba(60,40,20,.28);
+  --hero-bg:linear-gradient(135deg,#8f2a22 0%,#b8372b 55%,#d1593b 100%);
+  --hanzi:"Songti TC","Noto Serif TC","PingFang TC","Hiragino Sans CNS",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171513;--card:#242120;--ink:#f2ede5;--mut:#a59c90;--line:#37322d;
+  --pri:#f0705f;--pri-d:#c9483a;--pri2:#3a2824;
+  --acc:#5cc6bc;--acc2:#1c3633;--gold:#e0b04a;
+  --ok:#5cc88a;--okbg:#1e3427;--bad:#f0705f;--badbg:#3a2623;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.6);color-scheme:dark;--hero-bg:linear-gradient(135deg,#5a1f1a 0%,#82302a 60%,#9c4330 100%)}}
+:root[data-theme="dark"]{--bg:#171513;--card:#242120;--ink:#f2ede5;--mut:#a59c90;--line:#37322d;
+  --pri:#f0705f;--pri-d:#c9483a;--pri2:#3a2824;
+  --acc:#5cc6bc;--acc2:#1c3633;--gold:#e0b04a;
+  --ok:#5cc88a;--okbg:#1e3427;--bad:#f0705f;--badbg:#3a2623;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px -14px rgba(0,0,0,.6);color-scheme:dark;--hero-bg:linear-gradient(135deg,#5a1f1a 0%,#82302a 60%,#9c4330 100%)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI","PingFang TC",sans-serif;-webkit-font-smoothing:antialiased}
+
+/* ---------- Hero ---------- */
+.hero{background:
+  radial-gradient(circle at 12% 20%,rgba(255,255,255,.10) 0 2px,transparent 3px) 0 0/26px 26px,
+  var(--hero-bg);
+  color:#fff;padding:22px 16px 20px}
+.hero-in{max-width:920px;margin:auto}
+.brand{display:flex;align-items:center;gap:14px}
+.seal{flex:none;width:56px;height:56px;border-radius:14px;background:#fff;color:var(--pri-d);display:grid;place-items:center;font:700 32px/1 var(--hanzi);box-shadow:0 6px 16px -6px rgba(0,0,0,.4);transform:rotate(-4deg)}
+.brand h1{margin:0;font:700 clamp(22px,4.6vw,32px)/1.15 var(--hanzi);letter-spacing:.5px}
+.brand p{margin:2px 0 0;opacity:.88;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 14px}
+.stat-card{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:10px 12px;backdrop-filter:blur(4px)}
+.stat-card b{display:block;font-size:clamp(20px,4vw,26px);line-height:1.1}
+.stat-card span{font-size:12.5px;opacity:.9}
+.bar{height:6px;border-radius:99px;background:rgba(255,255,255,.25);margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:#ffd98a;border-radius:99px;transition:width .4s}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-size:13px}
+.ctrl .sp{display:flex;align-items:center;gap:8px}
+.ctrl select,.ctrl button{font:inherit;font-size:13px;border:0;border-radius:99px;padding:6px 12px;background:rgba(255,255,255,.95);color:#2a2622;cursor:pointer}
+.ctrl select{max-width:190px}
+.ctrl input[type=range]{width:90px;accent-color:#ffd98a}
+
+/* ---------- Thanh chọn bài ---------- */
+.lessonbar{max-width:920px;margin:14px auto 0;padding:0 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.lessonbar::-webkit-scrollbar{display:none}
+.lchip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:6px 12px;cursor:pointer;font-size:14px;box-shadow:var(--shadow);white-space:nowrap}
+.lchip small{display:block;font:500 11px/1.2 var(--hanzi);color:var(--mut);max-width:120px;overflow:hidden;text-overflow:ellipsis}
+.lchip.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.lchip.on small{color:rgba(255,255,255,.85)}
+
+/* ---------- Điều hướng ---------- */
+nav{position:sticky;top:0;z-index:20;display:flex;gap:6px;max-width:920px;margin:12px auto 0;padding:8px 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px)}
+nav button{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 6px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:14px;cursor:pointer;font-family:inherit;font-weight:600;font-size:15px;line-height:1.2;box-shadow:var(--shadow);transition:transform .12s,background .15s}
+nav button:hover{transform:translateY(-1px)}
+nav button.on{background:linear-gradient(180deg,var(--pri),var(--pri-d));border-color:var(--pri-d);color:#fff}
+nav .ic{font-size:18px}
+@media (max-width:720px){
+  nav{position:fixed;top:auto;bottom:0;left:0;right:0;margin:0;max-width:none;padding:6px max(8px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));border-top:1px solid var(--line);background:var(--card);backdrop-filter:none;gap:2px}
+  nav button{flex-direction:column;gap:1px;padding:6px 2px;font-size:11px;border:0;box-shadow:none;border-radius:10px;background:transparent}
+  nav button.on{background:var(--pri2);color:var(--pri)}
+  nav .ic{font-size:21px}
+  body{padding-bottom:78px}
+  .stats{gap:8px}
+}
+
+/* ---------- Nội dung ---------- */
+main{max-width:920px;margin:auto;padding:14px 16px 28px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:0 16px 24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+h3{margin:0 0 8px;font-size:18px}
+.zh{font:600 28px/1.35 var(--hanzi)}
+.py{color:var(--pri);font-size:16px}
+.vi{color:var(--mut)}
+.stat{color:var(--mut);font-size:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.lh{font-weight:700;margin:22px 0 10px;color:var(--ink);font-size:18px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.lh::before{content:"";width:6px;height:20px;border-radius:3px;background:linear-gradient(var(--pri),var(--gold));align-self:center}
+.lh .vi{font-weight:500;font-size:15px}
+
+/* nút */
+.b{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 16px;border-radius:99px;cursor:pointer;font-family:inherit;font-weight:600;font-size:15px;line-height:1.2;transition:transform .1s,border-color .15s,box-shadow .15s}
+.b:hover{border-color:var(--pri);transform:translateY(-1px)}
+.b:active{transform:none}
+.b.p{background:linear-gradient(180deg,var(--pri),var(--pri-d));color:#fff;border-color:var(--pri-d);box-shadow:0 6px 14px -8px var(--pri-d)}
+.b.spk{width:36px;height:36px;padding:0;border-radius:50%;background:var(--acc2);border-color:transparent;font-size:15px}
+.b.ok{background:var(--okbg);border-color:var(--ok)}
+.b.bad{background:var(--badbg);border-color:var(--bad)}
+
+/* chip */
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.chip{padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);cursor:pointer;font-size:14px;color:var(--ink);transition:background .15s}
+.chip:hover{border-color:var(--acc)}
+.chip.on{background:var(--acc2);border-color:var(--acc);color:var(--acc);font-weight:700}
+
+input[type=text],input[type=search],textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font:inherit;font-size:17px;outline:none;transition:border-color .15s,box-shadow .15s}
+input[type=text]:focus,input[type=search]:focus,textarea:focus{border-color:var(--acc);box-shadow:0 0 0 4px var(--acc2)}
+
+/* từ vựng */
+.vl{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line)}
+.vl:last-child{border:0}
+.vl .zh{font-size:26px}
+
+/* thẻ nhớ */
+.flash{text-align:center;padding:36px 16px;cursor:pointer;min-height:240px;display:flex;flex-direction:column;justify-content:center;gap:8px;
+  background:linear-gradient(160deg,var(--card),var(--pri2));border:2px solid var(--pri);border-radius:26px;box-shadow:0 18px 40px -22px var(--pri-d)}
+.flash .zh{font-size:clamp(52px,14vw,84px)}
+
+/* bài tập */
+.opt{display:block;width:100%;text-align:left;margin:8px 0;border-radius:14px;padding:13px 16px}
+.opt.ok{background:var(--okbg);border-color:var(--ok)}
+.opt.bad{background:var(--badbg);border-color:var(--bad)}
+.fb{padding:12px 14px;border-radius:14px;margin-top:12px}
+.fb.ok{background:var(--okbg)}.fb.bad{background:var(--badbg)}
+.tok{display:inline-block;padding:8px 14px;margin:4px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;font:600 21px var(--hanzi);color:var(--ink);box-shadow:var(--shadow)}
+.ans{min-height:56px;border:2px dashed var(--line);border-radius:14px;padding:6px;margin:10px 0}
+
+/* ngữ pháp & ví dụ */
+.ex{padding:10px 14px;border-left:4px solid var(--pri);margin:10px 0;background:var(--pri2);border-radius:0 14px 14px 0}
+.ex .zh{font-size:21px}
+
+/* hội thoại */
+.bub{max-width:90%;padding:10px 14px;border-radius:18px;margin:10px 0;border:1px solid var(--line)}
+.bub.l{background:var(--pri2);margin-right:auto;border-bottom-left-radius:4px}
+.bub.r{background:var(--acc2);margin-left:auto;border-color:transparent;border-bottom-right-radius:4px}
+.who{font-size:12px;font-weight:700;letter-spacing:.3px;margin-bottom:2px}
+.bub.l .who{color:var(--pri)}.bub.r .who{color:var(--acc)}
+.bub.r .py{color:var(--acc)}
+.qq{padding:10px 0;border-top:1px dashed var(--line)}
+
+/* pinyin phía trên chữ Hán (ruby) + bảng chú giải */
+ruby{ruby-position:over}
+rt{font:500 .5em/1 system-ui,sans-serif;color:var(--pri);letter-spacing:0}
+.lh,.gh,.formula{line-height:2.1}
+.formula{font-weight:600;color:var(--ink);font-size:18px;background:var(--pri2);border-radius:12px;padding:6px 12px;margin:4px 0 8px;display:block}
+.gloss{display:flex;flex-wrap:wrap;gap:6px 8px;margin:4px 0 6px;font-size:14px}
+.gloss span{background:var(--acc2);color:var(--ink);padding:3px 11px;border-radius:99px}
+.gloss i{color:var(--pri);font-style:normal}
+.gloss .zh{font-size:17px}
+/* ---------- phụ ---------- */
+@media (max-width:480px){.zh{font-size:25px}.card{padding:14px;border-radius:16px}.bub{max-width:96%}.ctrl select{max-width:150px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-in">
+  <div class="brand"><div class="seal">學</div>
+    <div><h1>當代中文課程 1</h1><p>Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch</p></div></div>
+  <div class="stats">
+    <div class="stat-card"><b id="stK">0</b><span>từ đã thuộc</span><div class="bar"><i id="stKbar" style="width:0"></i></div></div>
+    <div class="stat-card"><b id="stS">–</b><span>trả lời đúng</span><div class="bar"><i id="stSbar" style="width:0"></i></div></div>
+    <div class="stat-card"><b id="stV">0</b><span>từ · 15 bài</span></div>
+  </div>
+  <div class="ctrl">
+    <div class="sp"><span>Phạm vi</span><select id="les"></select></div>
+    <div class="sp"><span>Tốc độ</span><input type="range" id="rate" min="0.4" max="1.2" step="0.1" value="0.8"></div>
+    <div class="sp"><span>Giọng</span><select id="voiceSel" title="Chọn giọng đọc"></select><button id="voiceTest">🔊 Thử</button></div>
+  </div>
+</div></header>
+<div class="lessonbar" id="lbar"></div>
+<nav id="nav"></nav>
+<main id="app"></main>
+<footer>加油！Mỗi ngày một chút, chữ Hán sẽ quen dần. 💪</footer>
+<script>
+/* ============ DỮ LIỆU 15 BÀI — 當代中文課程 1 ============
+ v: từ vựng  "Hán|pinyin|nghĩa"
+ g: ngữ pháp [tiêu đề, công thức, giải thích, ví dụ "Hán|pinyin|nghĩa"]
+ s: câu dịch / đoạn văn "tiếng Việt|Hán|pinyin"
+ o: sắp xếp câu "tiếng Việt|từ từ từ"
+*/
+const LESSONS=[
+{n:1,zh:"歡迎你來臺灣！",vi:"Chào mừng bạn đến Đài Loan",
+v:`歡迎|huānyíng|chào mừng
+來|lái|đến
+臺灣|Táiwān|Đài Loan
+你|nǐ|bạn
+你好|nǐ hǎo|xin chào
+您|nín|ngài (kính trọng)
+您好|nín hǎo|chào ngài
+我|wǒ|tôi
+他|tā|anh ấy
+她|tā|cô ấy
+你們|nǐmen|các bạn
+我們|wǒmen|chúng tôi
+他們|tāmen|họ
+朋友|péngyou|bạn bè
+同學|tóngxué|bạn học
+請|qǐng|xin mời, làm ơn
+請進|qǐng jìn|mời vào
+請問|qǐngwèn|xin hỏi
+謝謝|xièxie|cảm ơn
+不客氣|bú kèqi|không có gì
+客氣|kèqi|khách sáo
+再見|zàijiàn|tạm biệt
+是|shì|là
+不|bù|không
+不是|bú shì|không phải
+嗎|ma|(trợ từ nghi vấn)
+呢|ne|còn… thì sao?
+也|yě|cũng
+很|hěn|rất
+姓|xìng|họ
+叫|jiào|tên là, gọi
+什麼|shénme|cái gì
+先生|xiānsheng|ông, ngài
+小姐|xiǎojiě|cô
+哪|nǎ|nào
+國|guó|nước
+人|rén|người
+哪國人|nǎ guó rén|người nước nào
+美國|Měiguó|Mỹ
+日本|Rìběn|Nhật Bản
+越南|Yuènán|Việt Nam
+中國|Zhōngguó|Trung Quốc
+這|zhè|đây, này
+喝|hē|uống
+茶|chá|trà
+烏龍茶|wūlóngchá|trà ô long
+咖啡|kāfēi|cà phê
+好喝|hǎohē|ngon (đồ uống)
+喜歡|xǐhuān|thích
+要|yào|muốn, cần
+接|jiē|đón`,
+g:[
+["是 (shì) và 不是 — “A là B”","A + 是 + B   |   A + 不是 + B","Nối hai danh từ. Phủ định dùng 不; 不 đọc thành bú trước âm thanh 4 (不是 = bú shì).",`我是美國人。|Wǒ shì Měiguó rén.|Tôi là người Mỹ.
+他不是日本人。|Tā bú shì Rìběn rén.|Anh ấy không phải người Nhật.
+這是王先生。|Zhè shì Wáng xiānsheng.|Đây là ông Vương.`],
+["Câu hỏi 嗎 và 呢","Câu trần thuật + 嗎？   |   A，B呢？","嗎 biến câu thành câu hỏi có/không. 呢 dùng để hỏi lại: “còn… thì sao?”.",`你是臺灣人嗎？|Nǐ shì Táiwān rén ma?|Bạn là người Đài Loan à?
+我喝茶，你呢？|Wǒ hē chá, nǐ ne?|Tôi uống trà, còn bạn?
+我們喜歡喝咖啡，你們呢？|Wǒmen xǐhuān hē kāfēi, nǐmen ne?|Chúng tôi thích uống cà phê, còn các bạn?`],
+["Câu hỏi chính-phản (A-not-A)","V + 不 + V？   |   是不是 / 喝不喝 / 要不要","Lặp động từ với 不 ở giữa để hỏi có/không, thay cho 嗎. Trả lời bằng động từ hoặc 不 + động từ.",`你是不是臺灣人？|Nǐ shì bu shì Táiwān rén?|Bạn có phải người Đài Loan không?
+你喝不喝茶？|Nǐ hē bu hē chá?|Bạn có uống trà không?
+你要不要喝咖啡？|Nǐ yào bu yào hē kāfēi?|Bạn có muốn uống cà phê không?`],
+["Từ để hỏi: 什麼, 哪國人","Vị trí từ để hỏi = vị trí của câu trả lời","Không đảo từ để hỏi lên đầu câu và không dùng thêm 嗎.",`他姓什麼？|Tā xìng shénme?|Anh ấy họ gì?
+你是哪國人？|Nǐ shì nǎ guó rén?|Bạn là người nước nào?
+這是什麼？|Zhè shì shénme?|Đây là cái gì?`],
+["很 + tính từ / 喜歡","S + 很 + Adj   |   S + 很 + 喜歡 + …","Tính từ làm vị ngữ thường cần 很 phía trước (nghĩa “rất” khá nhẹ).",`烏龍茶很好喝。|Wūlóngchá hěn hǎohē.|Trà ô long rất ngon.
+我很喜歡喝咖啡。|Wǒ hěn xǐhuān hē kāfēi.|Tôi rất thích uống cà phê.
+我們很喜歡臺灣。|Wǒmen hěn xǐhuān Táiwān.|Chúng tôi rất thích Đài Loan.`]
+],
+s:`Chào mừng bạn đến Đài Loan!|歡迎你來臺灣！|Huānyíng nǐ lái Táiwān!
+Cảm ơn bạn đến đón chúng tôi.|謝謝你來接我們。|Xièxie nǐ lái jiē wǒmen.
+Không có gì.|不客氣。|Bú kèqi.
+Xin mời uống trà.|請喝茶。|Qǐng hē chá.
+Bạn có uống trà không?|你要不要喝茶？|Nǐ yào bu yào hē chá?
+Không, cảm ơn.|不要，謝謝。|Bú yào, xièxie.
+Xin hỏi, bạn có phải người Nhật không?|請問你是不是日本人？|Qǐngwèn nǐ shì bu shì Rìběn rén?
+Tôi không phải, còn bạn?|我不是，你呢？|Wǒ bú shì, nǐ ne?
+Anh ấy họ gì?|他姓什麼？|Tā xìng shénme?
+Anh ấy họ Lý.|他姓李。|Tā xìng Lǐ.
+Cô ấy họ Vương, tên là Mỹ Nguyệt.|她姓王，叫美月。|Tā xìng Wáng, jiào Měiyuè.
+Đây là ông Trần.|這是陳先生。|Zhè shì Chén xiānsheng.
+Ông Trần là người Mỹ à?|陳先生是美國人嗎？|Chén xiānsheng shì Měiguó rén ma?
+Trà ô long rất ngon.|烏龍茶很好喝。|Wūlóngchá hěn hǎohē.
+Tôi rất thích uống cà phê.|我很喜歡喝咖啡。|Wǒ hěn xǐhuān hē kāfēi.
+Chúng tôi thích uống cà phê, còn các bạn?|我們喜歡喝咖啡，你們呢？|Wǒmen xǐhuān hē kāfēi, nǐmen ne?
+Tôi họ Lâm, tên là Tiểu Mỹ. Tôi là người Nhật. Tôi rất thích uống trà. Anh ấy họ Trần, tên là Đại Minh. Anh ấy là người Đài Loan, anh ấy thích uống cà phê. Chúng tôi đều thích Đài Loan.|我姓林，叫小美。我是日本人。我很喜歡喝茶。他姓陳，叫大明。他是臺灣人，他喜歡喝咖啡。我們都喜歡臺灣。|Wǒ xìng Lín, jiào Xiǎo Měi. Wǒ shì Rìběn rén. Wǒ hěn xǐhuān hē chá. Tā xìng Chén, jiào Dà Míng. Tā shì Táiwān rén, tā xǐhuān hē kāfēi. Wǒmen dōu xǐhuān Táiwān.`,
+o:`Tôi là người Mỹ.|我 是 美國 人
+Trà ô long rất ngon.|烏龍茶 很 好喝
+Bạn có uống trà không?|你 要 不 要 喝 茶`},
+
+{n:2,zh:"我的家人",vi:"Gia đình tôi",
+v:`家人|jiārén|người nhà
+家|jiā|nhà, gia đình
+爸爸|bàba|bố
+媽媽|māma|mẹ
+哥哥|gēge|anh trai
+姐姐|jiějie|chị gái
+弟弟|dìdi|em trai
+妹妹|mèimei|em gái
+兄弟姐妹|xiōngdì jiěmèi|anh chị em
+伯母|bómǔ|bác gái (mẹ của bạn)
+老師|lǎoshī|giáo viên
+有|yǒu|có
+沒有|méiyǒu|không có
+幾|jǐ|mấy
+個|ge|cái, người (lượng từ)
+張|zhāng|tấm, tờ (lượng từ)
+兩|liǎng|hai (trước lượng từ)
+一|yī|một
+二|èr|hai
+三|sān|ba
+四|sì|bốn
+五|wǔ|năm
+六|liù|sáu
+七|qī|bảy
+八|bā|tám
+九|jiǔ|chín
+十|shí|mười
+很多|hěn duō|rất nhiều
+都|dōu|đều
+的|de|của
+誰|shéi|ai
+看書|kàn shū|đọc sách
+書|shū|sách
+漂亮|piàoliang|xinh đẹp
+好看|hǎokàn|đẹp, dễ nhìn
+照片|zhàopiàn|ảnh
+照相|zhào xiàng|chụp ảnh
+房子|fángzi|ngôi nhà
+進|jìn|vào`,
+g:[
+["有 (yǒu) và 沒有 — có / không có","A + 有 + B   |   A + 沒有 + B","Phủ định của 有 là 沒有, KHÔNG dùng 不有.",`我有兩個哥哥。|Wǒ yǒu liǎng ge gēge.|Tôi có hai anh trai.
+我家沒有茶。|Wǒ jiā méiyǒu chá.|Nhà tôi không có trà.
+你有沒有兄弟姐妹？|Nǐ yǒu méi yǒu xiōngdì jiěmèi?|Bạn có anh chị em không?`],
+["Lượng từ 個, 張 và số 兩","Số + lượng từ + danh từ   (2 → 兩 trước lượng từ)","Đếm người/vật bắt buộc có lượng từ. 個 dùng cho người và nhiều vật; 張 dùng cho vật dẹt như ảnh, giấy.",`兩個姐姐|liǎng ge jiějie|hai chị gái
+三張照片|sān zhāng zhàopiàn|ba tấm ảnh
+六個人|liù ge rén|sáu người`],
+["的 (de) — sở hữu","N1 + 的 + N2","的 nối người sở hữu với vật. Khi quan hệ thân thiết (gia đình) thường bỏ 的: 我媽媽.",`這是我的房子。|Zhè shì wǒ de fángzi.|Đây là nhà của tôi.
+王老師的家很漂亮。|Wáng lǎoshī de jiā hěn piàoliang.|Nhà của thầy Vương rất đẹp.
+這是你家人的照片嗎？|Zhè shì nǐ jiārén de zhàopiàn ma?|Đây là ảnh người nhà bạn à?`],
+["都 (dōu) — đều","S + 都 + V   (都 đứng sau chủ ngữ, trước động từ)","Dùng khi chủ ngữ số nhiều. 都不 = đều không.",`我們都是老師。|Wǒmen dōu shì lǎoshī.|Chúng tôi đều là giáo viên.
+他們都喜歡看書。|Tāmen dōu xǐhuān kàn shū.|Họ đều thích đọc sách.
+我家人都不喜歡照相。|Wǒ jiārén dōu bù xǐhuān zhào xiàng.|Người nhà tôi đều không thích chụp ảnh.`],
+["幾 (jǐ) — hỏi số lượng nhỏ","幾 + lượng từ + danh từ？","Dùng khi đoán số lượng không lớn (dưới 10).",`你家有幾個人？|Nǐ jiā yǒu jǐ ge rén?|Nhà bạn có mấy người?
+你有幾張照片？|Nǐ yǒu jǐ zhāng zhàopiàn?|Bạn có mấy tấm ảnh?
+你有幾個姐姐？|Nǐ yǒu jǐ ge jiějie?|Bạn có mấy chị gái?`]
+],
+s:`Nhà bạn có mấy người?|你家有幾個人？|Nǐ jiā yǒu jǐ ge rén?
+Nhà tôi có sáu người.|我家有六個人。|Wǒ jiā yǒu liù ge rén.
+Bạn có anh chị em không?|你有沒有兄弟姐妹？|Nǐ yǒu méi yǒu xiōngdì jiěmèi?
+Tôi không có anh chị em.|我沒有兄弟姐妹。|Wǒ méiyǒu xiōngdì jiěmèi.
+Anh ấy có hai người anh trai.|他有兩個哥哥。|Tā yǒu liǎng ge gēge.
+Đây là ảnh người nhà bạn à?|這是你家人的照片嗎？|Zhè shì nǐ jiārén de zhàopiàn ma?
+Đúng vậy, họ đều rất xinh đẹp.|是的，他們都很漂亮。|Shì de, tāmen dōu hěn piàoliang.
+Ngôi nhà này rất đẹp.|這個房子很漂亮。|Zhège fángzi hěn piàoliang.
+Đây có phải sách của bạn không?|這是不是你的書？|Zhè shì bu shì nǐ de shū?
+Nhà tôi không có trà.|我家沒有茶。|Wǒ jiā méiyǒu chá.
+Người nhà bạn đều không thích đọc sách.|你家人都不喜歡看書。|Nǐ jiārén dōu bù xǐhuān kàn shū.
+Bố mẹ tôi đều thích uống trà.|我爸爸媽媽都喜歡喝茶。|Wǒ bàba māma dōu xǐhuān hē chá.
+Em gái tôi thích chụp ảnh.|我妹妹喜歡照相。|Wǒ mèimei xǐhuān zhào xiàng.
+Chào bác gái, mời vào!|伯母您好，請進！|Bómǔ nín hǎo, qǐng jìn!
+Chị gái tôi là giáo viên.|我姐姐是老師。|Wǒ jiějie shì lǎoshī.
+Chào các bạn, tôi họ Trần. Nhà tôi có năm người: bố, mẹ, anh trai, em gái và tôi. Bố mẹ tôi đều thích uống trà và đọc sách. Em gái tôi thích chụp ảnh, nhà tôi có rất nhiều ảnh đẹp.|你們好，我姓陳。我家有五個人，爸爸、媽媽、哥哥、妹妹和我。我爸爸媽媽都喜歡喝茶、看書。我妹妹喜歡照相，我家有很多很漂亮的照片。|Nǐmen hǎo, wǒ xìng Chén. Wǒ jiā yǒu wǔ ge rén, bàba, māma, gēge, mèimei hé wǒ. Wǒ bàba māma dōu xǐhuān hē chá, kàn shū. Wǒ mèimei xǐhuān zhào xiàng, wǒ jiā yǒu hěn duō hěn piàoliang de zhàopiàn.`,
+o:`Nhà tôi có sáu người.|我 家 有 六 個 人
+Anh ấy có hai người anh trai.|他 有 兩 個 哥哥
+Ngôi nhà của bạn rất đẹp.|你 的 房子 很 漂亮`},
+
+{n:3,zh:"週末做什麼？",vi:"Cuối tuần làm gì?",
+v:`週末|zhōumò|cuối tuần
+做|zuò|làm
+常|cháng|thường
+常常|chángcháng|thường xuyên
+運動|yùndòng|vận động, thể thao
+打|dǎ|đánh, chơi (bóng)
+籃球|lánqiú|bóng rổ
+棒球|bàngqiú|bóng chày
+網球|wǎngqiú|quần vợt
+足球|zúqiú|bóng đá
+踢|tī|đá
+游泳|yóuyǒng|bơi
+電影|diànyǐng|phim
+看電影|kàn diànyǐng|xem phim
+聽|tīng|nghe
+音樂|yīnyuè|âm nhạc
+學|xué|học
+中文|Zhōngwén|tiếng Trung
+菜|cài|món ăn
+臺灣菜|Táiwān cài|món Đài Loan
+越南菜|Yuènán cài|món Việt Nam
+日本菜|Rìběn cài|món Nhật
+吃|chī|ăn
+想|xiǎng|muốn, nghĩ
+去|qù|đi
+今天|jīntiān|hôm nay
+明天|míngtiān|ngày mai
+晚上|wǎnshang|buổi tối
+好啊|hǎo a|được thôi
+好玩|hǎowán|vui
+覺得|juéde|cảm thấy
+怎麼樣|zěnmeyàng|thế nào
+吧|ba|nhé, đi
+還是|háishi|hay là
+一起|yìqǐ|cùng nhau
+和|hé|và`,
+g:[
+["想 / 要 + động từ — muốn làm gì","S + 想 + V   |   S + 要 + V","想 = muốn, định (nhẹ nhàng); 要 = muốn, cần (mạnh hơn). Phủ định: 不想, 不要.",`週末我想去游泳。|Zhōumò wǒ xiǎng qù yóuyǒng.|Cuối tuần tôi muốn đi bơi.
+他想學中文。|Tā xiǎng xué Zhōngwén.|Anh ấy muốn học tiếng Trung.
+我們想吃越南菜。|Wǒmen xiǎng chī Yuènán cài.|Chúng tôi muốn ăn món Việt.`],
+["Động từ đi với môn thể thao: 打, 踢, 游","打 + bóng (tay/vợt)   |   踢 + bóng (chân)","Bóng rổ/bóng chày/quần vợt dùng 打; bóng đá dùng 踢; 游泳 tự nó là động từ.",`我常打籃球。|Wǒ cháng dǎ lánqiú.|Tôi thường chơi bóng rổ.
+他常去打網球。|Tā cháng qù dǎ wǎngqiú.|Anh ấy thường đi đánh quần vợt.
+她很喜歡踢足球。|Tā hěn xǐhuān tī zúqiú.|Cô ấy rất thích đá bóng.`],
+["吧 (ba) — đề nghị, gợi ý","Câu + 吧！","Đặt cuối câu để rủ rê hoặc đề nghị: “… nhé / … đi”.",`我們吃臺灣菜吧！|Wǒmen chī Táiwān cài ba!|Chúng ta ăn món Đài Loan nhé!
+我們看臺灣電影吧！|Wǒmen kàn Táiwān diànyǐng ba!|Chúng ta xem phim Đài Loan đi!
+好，我們走吧。|Hǎo, wǒmen zǒu ba.|Được, chúng ta đi thôi.`],
+["還是 (háishi) — hay là (câu hỏi lựa chọn)","A 還是 B？","Dùng trong câu hỏi, đưa ra hai lựa chọn. Câu trần thuật dùng 或者.",`今天晚上你想看書還是看電影？|Jīntiān wǎnshang nǐ xiǎng kàn shū háishi kàn diànyǐng?|Tối nay bạn muốn đọc sách hay xem phim?
+你想今天還是明天去？|Nǐ xiǎng jīntiān háishi míngtiān qù?|Bạn muốn đi hôm nay hay ngày mai?
+你喝茶還是喝咖啡？|Nǐ hē chá háishi hē kāfēi?|Bạn uống trà hay cà phê?`],
+["覺得 và 怎麼樣","S + 覺得 + câu   |   … ，怎麼樣？","覺得 = cảm thấy, nghĩ rằng. 怎麼樣 dùng để hỏi ý kiến hoặc đánh giá.",`你覺得打棒球好玩嗎？|Nǐ juéde dǎ bàngqiú hǎowán ma?|Bạn thấy chơi bóng chày vui không?
+我覺得很好玩。|Wǒ juéde hěn hǎowán.|Tôi thấy rất vui.
+我們明天去打籃球，怎麼樣？|Wǒmen míngtiān qù dǎ lánqiú, zěnmeyàng?|Ngày mai chúng ta đi chơi bóng rổ, được không?`],
+["也 và 都 với tân ngữ ghép","S + 也 + V   |   N1、N2，S + 都 + V","也 = cũng; 都 = đều. Khi liệt kê hai thứ rồi tóm lại dùng 都.",`我常聽音樂，也常運動。|Wǒ cháng tīng yīnyuè, yě cháng yùndòng.|Tôi thường nghe nhạc, cũng thường vận động.
+越南菜、日本菜，我都想吃。|Yuènán cài, Rìběn cài, wǒ dōu xiǎng chī.|Món Việt, món Nhật tôi đều muốn ăn.
+他們都想學中文。|Tāmen dōu xiǎng xué Zhōngwén.|Họ đều muốn học tiếng Trung.`]
+],
+s:`Cuối tuần bạn thường làm gì?|週末你常做什麼？|Zhōumò nǐ cháng zuò shénme?
+Cuối tuần tôi muốn đi bơi.|週末我想去游泳。|Zhōumò wǒ xiǎng qù yóuyǒng.
+Anh ấy thường đi đánh quần vợt.|他常去打網球。|Tā cháng qù dǎ wǎngqiú.
+Bạn thích làm gì?|你喜歡做什麼？|Nǐ xǐhuān zuò shénme?
+Tôi thích đọc sách.|我喜歡看書。|Wǒ xǐhuān kàn shū.
+Bạn thấy chơi bóng chày vui không?|你覺得打棒球好玩嗎？|Nǐ juéde dǎ bàngqiú hǎowán ma?
+Tôi thấy rất vui.|我覺得很好玩。|Wǒ juéde hěn hǎowán.
+Chúng ta ăn món Đài Loan nhé!|我們吃臺灣菜吧！|Wǒmen chī Táiwān cài ba!
+Tối nay bạn muốn đọc sách hay xem phim?|今天晚上你想看書還是看電影？|Jīntiān wǎnshang nǐ xiǎng kàn shū háishi kàn diànyǐng?
+Món Việt, món Nhật tôi đều muốn ăn.|越南菜、日本菜，我都想吃。|Yuènán cài, Rìběn cài, wǒ dōu xiǎng chī.
+Ngày mai chúng ta đi chơi bóng rổ, được không?|我們明天去打籃球，怎麼樣？|Wǒmen míngtiān qù dǎ lánqiú, zěnmeyàng?
+Được thôi, tôi cũng muốn đi.|好啊，我也想去。|Hǎo a, wǒ yě xiǎng qù.
+Bố tôi thích thể thao và chụp ảnh.|我爸爸喜歡運動和照相。|Wǒ bàba xǐhuān yùndòng hé zhào xiàng.
+Tôi thường nghe nhạc, cũng thường vận động.|我常聽音樂，也常運動。|Wǒ cháng tīng yīnyuè, yě cháng yùndòng.
+Họ đều muốn học tiếng Trung.|他們都想學中文。|Tāmen dōu xiǎng xué Zhōngwén.
+Nhà tôi có bốn người. Bố thích thể thao, cuối tuần thường đi đánh quần vợt. Mẹ thích nghe nhạc. Em gái thích xem phim, cũng thích bơi. Còn tôi? Tôi thích đá bóng, cuối tuần thường cùng bạn đi đá.|我家有四個人。爸爸喜歡運動，週末常去打網球。媽媽喜歡聽音樂。妹妹喜歡看電影，也喜歡游泳。我呢？我喜歡踢足球，週末常和朋友一起去踢。|Wǒ jiā yǒu sì ge rén. Bàba xǐhuān yùndòng, zhōumò cháng qù dǎ wǎngqiú. Māma xǐhuān tīng yīnyuè. Mèimei xǐhuān kàn diànyǐng, yě xǐhuān yóuyǒng. Wǒ ne? Wǒ xǐhuān tī zúqiú, zhōumò cháng hé péngyou yìqǐ qù tī.`,
+o:`Cuối tuần tôi muốn đi bơi.|週末 我 想 去 游泳
+Chúng ta ăn món Đài Loan nhé.|我們 吃 臺灣菜 吧
+Tối nay bạn muốn đọc sách hay xem phim?|今天 晚上 你 想 看書 還是 看 電影`},
+
+{n:4,zh:"請問，一共多少錢？",vi:"Xin hỏi, tổng cộng bao nhiêu tiền?",
+v:`一共|yígòng|tổng cộng
+多少|duōshǎo|bao nhiêu
+錢|qián|tiền
+塊|kuài|tệ (đồng)
+元|yuán|nguyên
+百|bǎi|trăm
+千|qiān|nghìn
+萬|wàn|vạn (mười nghìn)
+杯|bēi|ly, cốc
+支|zhī|chiếc (điện thoại, bút)
+包子|bāozi|bánh bao
+手機|shǒujī|điện thoại di động
+新|xīn|mới
+舊|jiù|cũ
+貴|guì|đắt
+便宜|piányí|rẻ
+太|tài|quá
+了|le|(trợ từ ngữ khí)
+大|dà|to, lớn
+小|xiǎo|nhỏ
+熱|rè|nóng
+冰|bīng|đá, lạnh
+能|néng|có thể
+幫|bāng|giúp
+微波|wēibō|lò vi sóng
+內用|nèiyòng|dùng tại chỗ
+外帶|wàidài|mang đi
+上網|shàng wǎng|lên mạng
+賣|mài|bán
+買|mǎi|mua
+種|zhǒng|loại
+這種|zhè zhǒng|loại này
+老闆|lǎobǎn|ông chủ
+早上|zǎoshang|buổi sáng
+說|shuō|nói`,
+g:[
+["Lượng từ 杯, 個, 支","Số + lượng từ + danh từ","杯 cho đồ uống đựng trong ly; 個 cho bánh bao, quả bóng…; 支 cho điện thoại, bút.",`一杯咖啡|yì bēi kāfēi|một ly cà phê
+三個包子|sān ge bāozi|ba cái bánh bao
+一支手機|yì zhī shǒujī|một chiếc điện thoại`],
+["Hỏi giá: 多少錢 / 一共多少錢","… 多少錢？   |   一共 + số + 塊","Giá nói bằng 塊 (khẩu ngữ) hoặc 元 (văn viết). 100 = 一百, 1.000 = 一千, 10.000 = 一萬.",`一杯咖啡多少錢？|Yì bēi kāfēi duōshǎo qián?|Một ly cà phê bao nhiêu tiền?
+一共三百五十塊。|Yígòng sānbǎi wǔshí kuài.|Tổng cộng 350 tệ.
+這支手機一萬多塊。|Zhè zhī shǒujī yí wàn duō kuài.|Chiếc điện thoại này hơn một vạn tệ.`],
+["太…了 (quá…)","太 + Adj + 了","Diễn tả mức độ quá cao (thường là chê): đắt quá, cũ quá. Cũng dùng khen: 太好了!",`太貴了！|Tài guì le!|Đắt quá!
+這支手機太舊了。|Zhè zhī shǒujī tài jiù le.|Chiếc điện thoại này cũ quá.
+太好了！|Tài hǎo le!|Tuyệt quá!`],
+["能 / 能不能 — có thể","S + 能 + V   |   S + 能不能 + V？","能 nói về khả năng, chức năng hoặc được phép làm gì.",`這支手機能上網。|Zhè zhī shǒujī néng shàng wǎng.|Chiếc điện thoại này lên mạng được.
+這種手機能不能照相？|Zhè zhǒng shǒujī néng bu néng zhào xiàng?|Loại điện thoại này chụp ảnh được không?
+請問，能不能幫我微波？|Qǐngwèn, néng bu néng bāng wǒ wēibō?|Xin hỏi, có thể hâm giúp tôi không?`],
+["請幫我… / 內用還是外帶","請 + 幫我 + V   |   內用還是外帶？","請幫我 = làm ơn giúp tôi. Khi mua đồ ăn thường hỏi: dùng tại chỗ hay mang đi.",`請幫我微波。|Qǐng bāng wǒ wēibō.|Làm ơn hâm giúp tôi.
+你要內用還是外帶？|Nǐ yào nèiyòng háishi wàidài?|Bạn dùng tại chỗ hay mang đi?
+我要外帶。|Wǒ yào wàidài.|Tôi muốn mang đi.`]
+],
+s:`Xin hỏi, tổng cộng bao nhiêu tiền?|請問，一共多少錢？|Qǐngwèn, yígòng duōshǎo qián?
+Một ly cà phê và ba cái bánh bao tổng cộng bao nhiêu?|一杯咖啡、三個包子，一共多少錢？|Yì bēi kāfēi, sān ge bāozi, yígòng duōshǎo qián?
+Một cái bánh bao hai mươi tệ.|一個包子二十塊。|Yí ge bāozi èrshí kuài.
+Tôi muốn hai ly cà phê nóng.|我要兩杯熱咖啡。|Wǒ yào liǎng bēi rè kāfēi.
+Bạn dùng tại chỗ hay mang đi?|你要內用還是外帶？|Nǐ yào nèiyòng háishi wàidài?
+Mang đi.|外帶。|Wàidài.
+Làm ơn hâm nóng giúp tôi.|請幫我微波。|Qǐng bāng wǒ wēibō.
+Chiếc điện thoại này lên mạng được không?|這支手機能不能上網？|Zhè zhī shǒujī néng bu néng shàng wǎng?
+Chiếc điện thoại này cũ quá rồi.|這支手機太舊了。|Zhè zhī shǒujī tài jiù le.
+Tôi muốn mua một chiếc điện thoại mới.|我想買一支新手機。|Wǒ xiǎng mǎi yì zhī xīn shǒujī.
+Chiếc điện thoại này hơn một vạn tệ, đắt quá!|這支手機一萬多塊，太貴了！|Zhè zhī shǒujī yí wàn duō kuài, tài guì le!
+Loại điện thoại này vừa chụp ảnh được vừa lên mạng được.|這種手機能照相也能上網。|Zhè zhǒng shǒujī néng zhào xiàng yě néng shàng wǎng.
+Bạn thích điện thoại mới hay cũ?|你喜歡新手機還是舊手機？|Nǐ xǐhuān xīn shǒujī háishi jiù shǒujī?
+Tôi muốn mua một quả bóng rổ, một quả bao nhiêu tiền?|我想買一個籃球，一個多少錢？|Wǒ xiǎng mǎi yí ge lánqiú, yí ge duōshǎo qián?
+Đắt quá, rẻ một chút được không?|太貴了，可以便宜一點嗎？|Tài guì le, kěyǐ piányí yìdiǎn ma?
+Sáng mai tôi muốn mua năm cái bánh bao, hai ly cà phê nóng và một ly trà ô long lớn. Ông chủ nói tổng cộng một trăm sáu mươi tệ. Tôi muốn mang đi.|明天早上我想買五個包子、兩杯熱咖啡和一杯大的烏龍茶。老闆說一共一百六十塊。我要外帶。|Míngtiān zǎoshang wǒ xiǎng mǎi wǔ ge bāozi, liǎng bēi rè kāfēi hé yì bēi dà de wūlóngchá. Lǎobǎn shuō yígòng yìbǎi liùshí kuài. Wǒ yào wàidài.`,
+o:`Tổng cộng bao nhiêu tiền?|一共 多少 錢
+Chiếc điện thoại này cũ quá rồi.|這 支 手機 太 舊 了
+Tôi muốn hai ly cà phê.|我 要 兩 杯 咖啡`},
+
+{n:5,zh:"牛肉麵真好吃",vi:"Mì bò thật ngon",
+v:`牛肉麵|niúròu miàn|mì bò
+麵|miàn|mì
+牛肉|niúròu|thịt bò
+湯|tāng|canh, nước dùng
+碗|wǎn|bát
+好吃|hǎochī|ngon (đồ ăn)
+有名|yǒumíng|nổi tiếng
+辣|là|cay
+有一點|yǒu yìdiǎn|hơi
+一點|yìdiǎn|một chút
+不錯|búcuò|không tệ, khá tốt
+臭豆腐|chòudòufu|đậu phụ thối
+小吃|xiǎochī|món ăn vặt
+餐廳|cāntīng|nhà hàng
+會|huì|biết, có thể
+做飯|zuò fàn|nấu cơm
+自己|zìjǐ|tự mình
+聽說|tīngshuō|nghe nói
+甜點|tiándiǎn|đồ tráng miệng
+晚飯|wǎnfàn|bữa tối
+一定|yídìng|nhất định
+點|diǎn|gọi (món)
+找|zhǎo|tìm
+到|dào|đến
+真|zhēn|thật
+可是|kěshì|nhưng
+教|jiāo|dạy
+得|de|(trợ từ bổ ngữ trạng thái)
+這麼|zhème|như thế này`,
+g:[
+["會 (huì) — biết (làm được nhờ học)","S + 會 + V   |   S + 不會 + V","會 dùng cho kỹ năng học được: biết nấu ăn, biết nói tiếng Trung, biết đánh bóng.",`你會做飯嗎？|Nǐ huì zuò fàn ma?|Bạn biết nấu cơm không?
+我會打網球，可是不會打籃球。|Wǒ huì dǎ wǎngqiú, kěshì bú huì dǎ lánqiú.|Tôi biết đánh quần vợt nhưng không biết chơi bóng rổ.
+他會做甜點。|Tā huì zuò tiándiǎn.|Anh ấy biết làm đồ tráng miệng.`],
+["V 得 + adj — đánh giá hành động","S + V + 得 + 怎麼樣 / 很好 / 不好","Nếu có tân ngữ, lặp động từ: 做飯做得好 / 足球踢得不錯.",`他足球踢得不錯。|Tā zúqiú tī de búcuò.|Anh ấy đá bóng khá giỏi.
+你媽媽做飯做得怎麼樣？|Nǐ māma zuò fàn zuò de zěnmeyàng?|Mẹ bạn nấu ăn thế nào?
+我做得不好。|Wǒ zuò de bù hǎo.|Tôi làm không tốt.`],
+["有一點 + adj — hơi…","S + 有一點 + Adj","Thường dùng với nghĩa không hoàn toàn tích cực: hơi cay, hơi đắt, hơi xa.",`牛肉麵有一點辣。|Niúròu miàn yǒu yìdiǎn là.|Mì bò hơi cay.
+這家餐廳的菜有一點貴。|Zhè jiā cāntīng de cài yǒu yìdiǎn guì.|Món ở nhà hàng này hơi đắt.
+臭豆腐很好吃，可是有一點辣。|Chòudòufu hěn hǎochī, kěshì yǒu yìdiǎn là.|Đậu phụ thối rất ngon nhưng hơi cay.`],
+["到 + nơi chốn + 來 / 去","S + 到 + nơi + 來 / 去","來 khi người nói ở nơi đó (hoặc hướng về người nói); 去 khi đi nơi khác.",`歡迎你到我家來。|Huānyíng nǐ dào wǒ jiā lái.|Chào mừng bạn đến nhà tôi.
+他到我家來。|Tā dào wǒ jiā lái.|Anh ấy đến nhà tôi.
+我到那家餐廳去。|Wǒ dào nà jiā cāntīng qù.|Tôi đến nhà hàng kia.`],
+["聽說 / 真 / 這麼","聽說 + câu   |   真 + Adj   |   這麼 + Adj","聽說 = nghe nói; 真 = thật là (nhấn mạnh cảm thán); 這麼 = như thế này.",`聽說那家餐廳很有名。|Tīngshuō nà jiā cāntīng hěn yǒumíng.|Nghe nói nhà hàng đó rất nổi tiếng.
+牛肉麵真好吃！|Niúròu miàn zhēn hǎochī!|Mì bò ngon thật!
+這麼好喝，我也想喝。|Zhème hǎohē, wǒ yě xiǎng hē.|Ngon thế này, tôi cũng muốn uống.`]
+],
+s:`Mì bò thật ngon!|牛肉麵真好吃！|Niúròu miàn zhēn hǎochī!
+Bạn muốn gọi bát lớn hay bát nhỏ?|你要點大碗還是小碗？|Nǐ yào diǎn dà wǎn háishi xiǎo wǎn?
+Tôi muốn một bát nhỏ.|我要一小碗。|Wǒ yào yì xiǎo wǎn.
+Tôi thấy mì bò rất ngon.|我覺得牛肉麵很好吃。|Wǒ juéde niúròu miàn hěn hǎochī.
+Nghe nói quán đó rất nổi tiếng.|聽說那家店很有名。|Tīngshuō nà jiā diàn hěn yǒumíng.
+Món ăn của nhà hàng đó hơi cay.|那家餐廳的菜有一點辣。|Nà jiā cāntīng de cài yǒu yìdiǎn là.
+Bạn biết nấu cơm không?|你會做飯嗎？|Nǐ huì zuò fàn ma?
+Biết, nhưng tôi nấu không ngon.|會，可是我做得不好。|Huì, kěshì wǒ zuò de bù hǎo.
+Mẹ bạn nấu ăn thế nào?|你媽媽做飯做得怎麼樣？|Nǐ māma zuò fàn zuò de zěnmeyàng?
+Nghe nói bạn đá bóng khá giỏi, dạy tôi được không?|聽說你足球踢得不錯，可以教我嗎？|Tīngshuō nǐ zúqiú tī de búcuò, kěyǐ jiāo wǒ ma?
+Chào mừng bạn đến nhà tôi.|歡迎你到我家來。|Huānyíng nǐ dào wǒ jiā lái.
+Tôi thích tự nấu mì bò.|我喜歡自己做牛肉麵。|Wǒ xǐhuān zìjǐ zuò niúròu miàn.
+Nước dùng ngon, mì cũng ngon.|湯好喝，麵也好吃。|Tāng hǎohē, miàn yě hǎochī.
+Rất nhiều người đều nói Đài Loan có nhiều món ăn vặt nổi tiếng.|很多人都說臺灣有不少有名的小吃。|Hěn duō rén dōu shuō Táiwān yǒu bù shǎo yǒumíng de xiǎochī.
+Tối nay tôi muốn mời bạn đến nhà ăn tối. Tôi biết nấu cơm nhưng nấu không ngon lắm. Nghe nói quán mì bò bên cạnh trường rất nổi tiếng, mì ngon, nước dùng cũng ngon, chỉ hơi cay một chút. Ngày mai chúng ta cùng đi ăn nhé!|今天晚上我想請你到我家吃晚飯。我會做飯，可是做得不太好。聽說學校旁邊那家牛肉麵很有名，麵好吃，湯也好喝，只是有一點辣。明天我們一起去吃吧！|Jīntiān wǎnshang wǒ xiǎng qǐng nǐ dào wǒ jiā chī wǎnfàn. Wǒ huì zuò fàn, kěshì zuò de bú tài hǎo. Tīngshuō xuéxiào pángbiān nà jiā niúròu miàn hěn yǒumíng, miàn hǎochī, tāng yě hǎohē, zhǐshì yǒu yìdiǎn là. Míngtiān wǒmen yìqǐ qù chī ba!`,
+o:`Mì bò thật ngon.|牛肉麵 真 好吃
+Bạn biết nấu cơm không?|你 會 做飯 嗎
+Nghe nói quán đó rất nổi tiếng.|聽說 那 家 店 很 有名`},
+
+{n:6,zh:"他們學校在山上",vi:"Trường của họ ở trên núi",
+v:`學校|xuéxiào|trường học
+山|shān|núi
+山上|shānshàng|trên núi
+海|hǎi|biển
+在|zài|ở
+前面|qiánmiàn|phía trước
+後面|hòumiàn|phía sau
+旁邊|pángbiān|bên cạnh
+外面|wàimiàn|bên ngoài
+裡面|lǐmiàn|bên trong
+上面|shàngmiàn|bên trên
+下面|xiàmiàn|bên dưới
+樓下|lóuxià|tầng dưới
+一樓|yī lóu|tầng một
+圖書館|túshūguǎn|thư viện
+宿舍|sùshè|ký túc xá
+商店|shāngdiàn|cửa hàng
+咖啡店|kāfēidiàn|quán cà phê
+游泳池|yóuyǒngchí|hồ bơi
+大樓|dàlóu|tòa nhà
+教室|jiàoshì|lớp học
+遠|yuǎn|xa
+近|jìn|gần
+附近|fùjìn|gần đây
+風景|fēngjǐng|phong cảnh
+住|zhù|ở, sống
+看看|kànkan|xem thử
+哪裡|nǎlǐ|ở đâu
+這裡|zhèlǐ|ở đây
+那裡|nàlǐ|ở đó`,
+g:[
+["在 (zài) — ở: A + 在 + nơi chốn","Người/vật + 在 + nơi chốn   |   不在","Cho biết vị trí của một người hay vật đã xác định.",`圖書館在教室後面。|Túshūguǎn zài jiàoshì hòumiàn.|Thư viện ở phía sau lớp học.
+他不在宿舍裡。|Tā bú zài sùshè lǐ.|Anh ấy không ở trong ký túc xá.
+你在哪裡？|Nǐ zài nǎlǐ?|Bạn đang ở đâu?`],
+["有 — có: nơi chốn + 有 + N","Nơi chốn + 有 + N (chưa xác định)","Dùng để nói ở nơi đó CÓ gì (vật/người chưa xác định).",`教室外面有兩個學生。|Jiàoshì wàimiàn yǒu liǎng ge xuésheng.|Bên ngoài lớp học có hai học sinh.
+學校後面有很多商店。|Xuéxiào hòumiàn yǒu hěn duō shāngdiàn.|Phía sau trường có nhiều cửa hàng.
+我家附近有海。|Wǒ jiā fùjìn yǒu hǎi.|Gần nhà tôi có biển.`],
+["是 — là: nơi chốn + 是 + N","Nơi chốn + 是 + N (xác định, đầy đủ)","Khác 有: 是 cho biết nơi đó CHÍNH LÀ cái gì, thường chỉ có một.",`圖書館旁邊是學生宿舍。|Túshūguǎn pángbiān shì xuésheng sùshè.|Bên cạnh thư viện là ký túc xá.
+游泳池旁邊是咖啡店。|Yóuyǒngchí pángbiān shì kāfēidiàn.|Bên cạnh hồ bơi là quán cà phê.
+前面的那個人是我朋友。|Qiánmiàn de nàge rén shì wǒ péngyou.|Người phía trước kia là bạn tôi.`],
+["Từ chỉ phương vị","N + 前面 / 後面 / 旁邊 / 上面 / 下面 / 裡面 / 外面","Đứng sau danh từ để chỉ vị trí tương đối. Có thể thêm 的: 學校的後面.",`咖啡店在圖書館的一樓。|Kāfēidiàn zài túshūguǎn de yī lóu.|Quán cà phê ở tầng một thư viện.
+山上的風景很漂亮。|Shānshàng de fēngjǐng hěn piàoliang.|Phong cảnh trên núi rất đẹp.
+她家前面有海。|Tā jiā qiánmiàn yǒu hǎi.|Phía trước nhà cô ấy có biển.`],
+["遠 / 近 và 有一點遠","S + 遠不遠？   |   S + 有一點遠","Hỏi và trả lời về khoảng cách: 遠 = xa, 近 = gần.",`你們學校遠不遠？|Nǐmen xuéxiào yuǎn bu yuǎn?|Trường các bạn có xa không?
+有一點遠。|Yǒu yìdiǎn yuǎn.|Hơi xa một chút.
+圖書館不太遠。|Túshūguǎn bú tài yuǎn.|Thư viện không xa lắm.`]
+],
+s:`Trường của họ ở trên núi.|他們學校在山上。|Tāmen xuéxiào zài shānshàng.
+Phong cảnh trên núi rất đẹp.|山上的風景很漂亮。|Shānshàng de fēngjǐng hěn piàoliang.
+Thư viện ở phía sau lớp học.|圖書館在教室後面。|Túshūguǎn zài jiàoshì hòumiàn.
+Bên cạnh thư viện là ký túc xá.|圖書館旁邊是學生宿舍。|Túshūguǎn pángbiān shì xuésheng sùshè.
+Bên cạnh ký túc xá có hai cửa hàng nhỏ.|宿舍旁邊有兩家小商店。|Sùshè pángbiān yǒu liǎng jiā xiǎo shāngdiàn.
+Bên cạnh hồ bơi là quán cà phê.|游泳池旁邊是咖啡店。|Yóuyǒngchí pángbiān shì kāfēidiàn.
+Quán cà phê ở tầng một của thư viện.|咖啡店在圖書館的一樓。|Kāfēidiàn zài túshūguǎn de yī lóu.
+Bên ngoài lớp học có hai học sinh.|教室外面有兩個學生。|Jiàoshì wàimiàn yǒu liǎng ge xuésheng.
+Gần nhà tôi có biển.|我家附近有海。|Wǒ jiā fùjìn yǒu hǎi.
+Trường của các bạn có xa không?|你們學校遠不遠？|Nǐmen xuéxiào yuǎn bu yuǎn?
+Hơi xa một chút.|有一點遠。|Yǒu yìdiǎn yuǎn.
+Người phía trước kia có phải bạn của bạn không?|前面的那個人是不是你朋友？|Qiánmiàn de nàge rén shì bu shì nǐ péngyou?
+Gần nhà bạn có nhà hàng nào khá không?|你家附近有沒有不錯的餐廳？|Nǐ jiā fùjìn yǒu méi yǒu búcuò de cāntīng?
+Tôi đến trường của họ tìm bạn.|我去他們學校找朋友。|Wǒ qù tāmen xuéxiào zhǎo péngyou.
+Trường của tôi ở trên núi, phong cảnh rất đẹp. Trong trường có ba tòa nhà. Tòa này là lớp học, phía sau lớp học là thư viện. Bên cạnh thư viện có một quán cà phê, phía trước quán có nhà hàng. Tôi thường ăn cơm và đọc sách ở đó.|我的學校在山上，風景很漂亮。學校裡有三棟大樓。這棟大樓是教室，教室後面是圖書館。圖書館旁邊有一家咖啡店，咖啡店前面有餐廳。我常常在那裡吃飯、看書。|Wǒ de xuéxiào zài shānshàng, fēngjǐng hěn piàoliang. Xuéxiào lǐ yǒu sān dòng dàlóu. Zhè dòng dàlóu shì jiàoshì, jiàoshì hòumiàn shì túshūguǎn. Túshūguǎn pángbiān yǒu yì jiā kāfēidiàn, kāfēidiàn qiánmiàn yǒu cāntīng. Wǒ chángcháng zài nàlǐ chī fàn, kàn shū.`,
+o:`Trường của họ ở trên núi.|他們 學校 在 山上
+Thư viện ở phía sau lớp học.|圖書館 在 教室 後面
+Bên ngoài lớp học có hai học sinh.|教室 外面 有 兩 個 學生`},
+
+{n:7,zh:"早上九點去KTV",vi:"9 giờ sáng đi KTV",
+v:`點|diǎn|giờ
+分|fēn|phút
+半|bàn|rưỡi
+刻|kè|15 phút
+現在|xiànzài|bây giờ
+幾點|jǐ diǎn|mấy giờ
+什麼時候|shénme shíhou|khi nào
+時候|shíhou|lúc, khi
+中午|zhōngwǔ|buổi trưa
+下午|xiàwǔ|buổi chiều
+昨天|zuótiān|hôm qua
+後天|hòutiān|ngày kia
+每天|měitiān|mỗi ngày
+每|měi|mỗi
+從|cóng|từ
+有空|yǒu kòng|rảnh
+有事|yǒu shì|có việc
+忙|máng|bận
+最近|zuìjìn|gần đây
+見面|jiàn miàn|gặp mặt
+上課|shàng kè|vào học
+下課|xià kè|tan học
+開始|kāishǐ|bắt đầu
+結束|jiéshù|kết thúc
+比賽|bǐsài|trận đấu
+剛|gāng|vừa mới
+唱歌|chàng gē|hát
+書法|shūfǎ|thư pháp
+寫|xiě|viết
+為什麼|wèishénme|tại sao
+因為|yīnwèi|bởi vì
+沒問題|méi wèntí|không vấn đề
+下次|xiàcì|lần sau
+等一下|děng yíxià|đợi một chút
+KTV|KTV|KTV (karaoke)`,
+g:[
+["Nói giờ: 點, 分, 半, 刻","Số + 點 (+ số + 分)   |   … 點半","2 giờ nói 兩點. “Rưỡi” = 半. Hỏi: 現在幾點？",`現在三點半。|Xiànzài sān diǎn bàn.|Bây giờ là ba giờ rưỡi.
+比賽四點五十結束。|Bǐsài sì diǎn wǔshí jiéshù.|Trận đấu 4 giờ 50 kết thúc.
+我們的中文課八點十分開始。|Wǒmen de Zhōngwén kè bā diǎn shí fēn kāishǐ.|Lớp tiếng Trung của chúng tôi 8 giờ 10 bắt đầu.`],
+["Thời gian đứng TRƯỚC động từ","S + (thời gian) + (nơi chốn) + V","Từ chỉ thời gian đứng sau chủ ngữ (hoặc đầu câu), luôn trước động từ.",`我早上九點去KTV。|Wǒ zǎoshang jiǔ diǎn qù KTV.|Chín giờ sáng tôi đi KTV.
+你什麼時候有空？|Nǐ shénme shíhou yǒu kòng?|Khi nào bạn rảnh?
+我們明天下午三點在咖啡店見面。|Wǒmen míngtiān xiàwǔ sān diǎn zài kāfēidiàn jiàn miàn.|Chiều mai 3 giờ chúng ta gặp ở quán cà phê.`],
+["從…到… — từ… đến…","從 + thời điểm/nơi + 到 + thời điểm/nơi","Dùng cho khoảng thời gian hoặc khoảng cách.",`比賽從四點到六點。|Bǐsài cóng sì diǎn dào liù diǎn.|Trận đấu từ 4 giờ đến 6 giờ.
+他後天從早上到晚上都沒空。|Tā hòutiān cóng zǎoshang dào wǎnshang dōu méi kòng.|Ngày kia anh ấy từ sáng đến tối đều không rảnh.
+從我家到學校|Cóng wǒ jiā dào xuéxiào|từ nhà tôi đến trường`],
+["每 … 都 — mỗi… đều…","每 + (lượng từ) + N + 都 + V","每天 = mỗi ngày; 每個人 = mỗi người. Luôn đi với 都.",`你每天都要上網嗎？|Nǐ měitiān dōu yào shàng wǎng ma?|Mỗi ngày bạn đều phải lên mạng à?
+每個人都想去。|Měi ge rén dōu xiǎng qù.|Mỗi người đều muốn đi.
+我每天晚上都去運動。|Wǒ měitiān wǎnshang dōu qù yùndòng.|Tối nào tôi cũng đi vận động.`],
+["為什麼 — tại sao; 因為 — bởi vì","為什麼 + câu？   |   因為 + lý do","Từ để hỏi vẫn đặt ở vị trí trong câu; trả lời bằng 因為.",`你哥哥為什麼現在吃晚飯？|Nǐ gēge wèishénme xiànzài chī wǎnfàn?|Tại sao anh trai bạn bây giờ mới ăn tối?
+因為他今天晚上太忙了。|Yīnwèi tā jīntiān wǎnshang tài máng le.|Vì tối nay anh ấy quá bận.
+你為什麼不來？|Nǐ wèishénme bù lái?|Tại sao bạn không đến?`]
+],
+s:`Bây giờ là mấy giờ?|現在幾點？|Xiànzài jǐ diǎn?
+Bây giờ là ba giờ rưỡi.|現在三點半。|Xiànzài sān diǎn bàn.
+Sáng chín giờ chúng ta đi KTV nhé?|我們早上九點去KTV，好嗎？|Wǒmen zǎoshang jiǔ diǎn qù KTV, hǎo ma?
+Khi nào bạn rảnh?|你什麼時候有空？|Nǐ shénme shíhou yǒu kòng?
+Ngày kia từ sáng đến tối tôi đều không rảnh.|後天從早上到晚上我都沒空。|Hòutiān cóng zǎoshang dào wǎnshang wǒ dōu méi kòng.
+Trận đấu mấy giờ kết thúc?|比賽幾點結束？|Bǐsài jǐ diǎn jiéshù?
+Bốn giờ năm mươi.|四點五十。|Sì diǎn wǔshí.
+Lớp tiếng Trung của chúng tôi mỗi ngày tám giờ mười phút bắt đầu.|我們的中文課每天八點十分開始。|Wǒmen de Zhōngwén kè měitiān bā diǎn shí fēn kāishǐ.
+Hôm qua tôi và bạn vừa mới bắt đầu học thư pháp.|昨天我和朋友剛開始學書法。|Zuótiān wǒ hé péngyou gāng kāishǐ xué shūfǎ.
+Tại sao anh trai bạn bây giờ mới ăn tối?|你哥哥為什麼現在吃晚飯？|Nǐ gēge wèishénme xiànzài chī wǎnfàn?
+Vì tối nay anh ấy quá bận.|因為他今天晚上太忙了。|Yīnwèi tā jīntiān wǎnshang tài máng le.
+Bây giờ bạn có việc không?|你現在有事嗎？|Nǐ xiànzài yǒu shì ma?
+Tối nay tôi có việc, lần sau nhé.|我晚上有事，下次吧。|Wǒ wǎnshang yǒu shì, xiàcì ba.
+Không vấn đề!|沒問題！|Méi wèntí!
+Chiều mai ba giờ chúng ta gặp nhau ở quán cà phê.|我們明天下午三點在咖啡店見面。|Wǒmen míngtiān xiàwǔ sān diǎn zài kāfēidiàn jiàn miàn.
+Gần đây tôi rất bận. Mỗi ngày tám giờ sáng tôi vào học, mười hai giờ tan học. Buổi chiều tôi đọc sách đến bốn giờ, sau đó đi bơi. Buổi tối tôi nghe nhạc. Thứ Bảy tôi rảnh, bạn có muốn cùng đi KTV hát không?|最近我很忙。每天早上八點上課，十二點下課。下午我看書到四點，然後去游泳。晚上我聽音樂。星期六我有空，你要不要一起去KTV唱歌？|Zuìjìn wǒ hěn máng. Měitiān zǎoshang bā diǎn shàng kè, shí'èr diǎn xià kè. Xiàwǔ wǒ kàn shū dào sì diǎn, ránhòu qù yóuyǒng. Wǎnshang wǒ tīng yīnyuè. Xīngqíliù wǒ yǒu kòng, nǐ yào bu yào yìqǐ qù KTV chàng gē?`,
+o:`Bây giờ là ba giờ rưỡi.|現在 三 點 半
+Khi nào bạn rảnh?|你 什麼 時候 有 空
+Tối nay tôi có việc.|我 晚上 有 事`},
+
+{n:8,zh:"坐火車去臺南",vi:"Đi tàu hỏa đến Đài Nam",
+v:`坐|zuò|ngồi, đi (phương tiện)
+騎|qí|cưỡi, đi (xe máy/xe đạp)
+載|zài|chở
+火車|huǒchē|tàu hỏa
+高鐵|gāotiě|tàu cao tốc
+公車|gōngchē|xe buýt
+捷運|jiéyùn|tàu điện ngầm (MRT)
+機車|jīchē|xe máy
+計程車|jìchéngchē|taxi
+車票|chēpiào|vé tàu xe
+票|piào|vé
+車站|chēzhàn|nhà ga, trạm
+臺南|Táinán|Đài Nam
+故宮|Gùgōng|Cố Cung
+博物院|bówùyuàn|viện bảo tàng
+便利商店|biànlì shāngdiàn|cửa hàng tiện lợi
+慢|màn|chậm
+快|kuài|nhanh
+舒服|shūfu|thoải mái
+比|bǐ|so với
+比較|bǐjiào|tương đối, hơn
+又|yòu|vừa… vừa…
+差不多|chàbuduō|gần như, xấp xỉ
+知道|zhīdào|biết
+但是|dànshì|nhưng
+跟|gēn|cùng, với
+古代|gǔdài|cổ đại
+東西|dōngxi|đồ vật
+網路|wǎnglù|mạng
+怎麼|zěnme|như thế nào`,
+g:[
+["坐 / 騎 + phương tiện + 去; 怎麼去","S + 坐 / 騎 + phương tiện + 去 + nơi   |   怎麼 + 去？","坐 dùng cho phương tiện ngồi (tàu, xe buýt, taxi); 騎 dùng cho xe hai bánh. 怎麼 hỏi cách thức.",`我坐高鐵去臺南。|Wǒ zuò gāotiě qù Táinán.|Tôi đi tàu cao tốc đến Đài Nam.
+他騎機車去學校。|Tā qí jīchē qù xuéxiào.|Anh ấy đi xe máy đến trường.
+你怎麼去故宮？|Nǐ zěnme qù Gùgōng?|Bạn đi Cố Cung bằng cách nào?`],
+["比 (bǐ) — so sánh hơn","A + 比 + B + Adj","So sánh hai đối tượng. KHÔNG dùng 很 trước tính từ trong câu 比.",`高鐵比火車快。|Gāotiě bǐ huǒchē kuài.|Tàu cao tốc nhanh hơn tàu hỏa.
+我的手機比你的貴。|Wǒ de shǒujī bǐ nǐ de guì.|Điện thoại của tôi đắt hơn của bạn.
+這個電影比那個好看。|Zhège diànyǐng bǐ nàge hǎokàn.|Phim này hay hơn phim kia.`],
+["比較 và 又…又…","S + 比較 + Adj   |   S + 又 + Adj1 + 又 + Adj2","比較 = tương đối, hơn (không nêu đối tượng so sánh). 又…又… = vừa… vừa…",`坐高鐵比較快。|Zuò gāotiě bǐjiào kuài.|Đi tàu cao tốc nhanh hơn.
+這家店又好吃又便宜。|Zhè jiā diàn yòu hǎochī yòu piányí.|Quán này vừa ngon vừa rẻ.
+坐計程車又快又舒服。|Zuò jìchéngchē yòu kuài yòu shūfu.|Đi taxi vừa nhanh vừa thoải mái.`],
+["跟 (gēn) — cùng với","S + 跟 + người + (一起) + V","Chỉ người cùng làm hành động. Phủ định đặt 不 trước 跟.",`我想跟朋友去看電影。|Wǒ xiǎng gēn péngyou qù kàn diànyǐng.|Tôi muốn cùng bạn đi xem phim.
+他不跟我去，他跟同學去。|Tā bù gēn wǒ qù, tā gēn tóngxué qù.|Anh ấy không đi với tôi, anh ấy đi với bạn học.
+我常跟家人去吃飯。|Wǒ cháng gēn jiārén qù chī fàn.|Tôi thường cùng gia đình đi ăn.`],
+["可是 / 但是 — nhưng","Câu 1，可是 / 但是 + câu 2","Nối hai vế đối lập. 但是 trang trọng hơn một chút.",`坐高鐵比較快，但是太貴了。|Zuò gāotiě bǐjiào kuài, dànshì tài guì le.|Đi tàu cao tốc nhanh hơn, nhưng đắt quá.
+我想去，可是沒有空。|Wǒ xiǎng qù, kěshì méiyǒu kòng.|Tôi muốn đi nhưng không rảnh.
+我知道，可是我不想去。|Wǒ zhīdào, kěshì wǒ bù xiǎng qù.|Tôi biết, nhưng tôi không muốn đi.`]
+],
+s:`Tôi muốn đi tàu hỏa đến Đài Nam.|我想坐火車去臺南。|Wǒ xiǎng zuò huǒchē qù Táinán.
+Ngày mai tôi đến nhà bạn bằng cách nào?|明天我怎麼去你家？|Míngtiān wǒ zěnme qù nǐ jiā?
+Tôi đi xe máy chở bạn.|我騎機車載你。|Wǒ qí jīchē zài nǐ.
+Tàu cao tốc nhanh hơn tàu hỏa.|高鐵比火車快。|Gāotiě bǐ huǒchē kuài.
+Đi tàu hỏa hơi chậm.|坐火車有一點慢。|Zuò huǒchē yǒu yìdiǎn màn.
+Đi taxi vừa nhanh vừa thoải mái.|坐計程車又快又舒服。|Zuò jìchéngchē yòu kuài yòu shūfu.
+Vé tàu cao tốc có đắt không?|高鐵車票貴嗎？|Gāotiě chēpiào guì ma?
+Bạn biết mua vé tàu cao tốc ở đâu không?|你知道在哪裡買高鐵票嗎？|Nǐ zhīdào zài nǎlǐ mǎi gāotiě piào ma?
+Ở cửa hàng tiện lợi hoặc ga tàu cao tốc.|便利商店或是高鐵站。|Biànlì shāngdiàn huòshi gāotiězhàn.
+Bạn có thể mua vé trên mạng.|你可以在網路上買票。|Nǐ kěyǐ zài wǎnglù shàng mǎi piào.
+Đi tàu cao tốc nhanh hơn, nhưng đắt quá.|坐高鐵比較快，但是太貴了。|Zuò gāotiě bǐjiào kuài, dànshì tài guì le.
+Điện thoại của bạn có đắt hơn của tôi không?|你的手機比我的貴嗎？|Nǐ de shǒujī bǐ wǒ de guì ma?
+Cố Cung không có tàu điện ngầm, phải đi xe buýt.|故宮沒有捷運，要坐公車。|Gùgōng méiyǒu jiéyùn, yào zuò gōngchē.
+Tôi muốn cùng bạn đi xem phim.|我想跟朋友去看電影。|Wǒ xiǎng gēn péngyou qù kàn diànyǐng.
+Cuối tuần này tôi muốn cùng bạn đi Đài Nam chơi. Đi tàu cao tốc nhanh hơn nhưng vé rất đắt. Đi tàu hỏa hơi chậm nhưng rẻ hơn, còn có thể ngắm phong cảnh. Chúng tôi quyết định đi tàu hỏa.|這個週末我想跟朋友去臺南玩。坐高鐵比較快，但是車票很貴。坐火車有一點慢，可是比較便宜，也可以看風景。我們決定坐火車去。|Zhège zhōumò wǒ xiǎng gēn péngyou qù Táinán wán. Zuò gāotiě bǐjiào kuài, dànshì chēpiào hěn guì. Zuò huǒchē yǒu yìdiǎn màn, kěshì bǐjiào piányí, yě kěyǐ kàn fēngjǐng. Wǒmen juédìng zuò huǒchē qù.`,
+o:`Tôi muốn đi tàu hỏa đến Đài Nam.|我 想 坐 火車 去 臺南
+Tàu cao tốc nhanh hơn tàu hỏa.|高鐵 比 火車 快
+Tôi đi xe máy chở bạn.|我 騎 機車 載 你`}
+];
+/* Bài 9–15 (bài 11–15 soạn theo tên bài vì chưa có nội dung sách) */
+LESSONS.push(
+{n:9,zh:"放假去哪裡玩？",vi:"Nghỉ lễ đi đâu chơi?",
+v:`放假|fàng jià|nghỉ (lễ, hè)
+假|jià|kỳ nghỉ
+玩|wán|chơi
+旅行|lǚxíng|du lịch
+打算|dǎsuàn|dự định
+決定|juédìng|quyết định
+回國|huí guó|về nước
+夜市|yèshì|chợ đêm
+貓空|Māokōng|Miêu Không (Maokong)
+花蓮|Huālián|Hoa Liên
+功課|gōngkè|bài tập
+電視|diànshì|tivi
+建議|jiànyì|đề nghị, gợi ý
+特別|tèbié|đặc biệt
+茶館|cháguǎn|quán trà
+要是|yàoshi|nếu như
+就|jiù|thì
+有時候|yǒu shíhou|có lúc
+多久|duōjiǔ|bao lâu
+鐘頭|zhōngtóu|tiếng đồng hồ
+天|tiān|ngày
+的時候|de shíhou|khi, lúc
+應該|yīnggāi|nên
+非常|fēicháng|vô cùng
+帶|dài|dẫn, mang
+逛|guàng|dạo
+下個|xià ge|… tới
+上個|shàng ge|… trước
+星期|xīngqí|tuần, thứ
+月|yuè|tháng
+號|hào|ngày
+大概|dàgài|đại khái
+還|hái|còn, vẫn`,
+g:[
+["打算 (dǎsuàn) — dự định","S + 打算 + V","Nói về kế hoạch đã có trong đầu.",`我打算去花蓮旅行。|Wǒ dǎsuàn qù Huālián lǚxíng.|Tôi dự định đi Hoa Liên du lịch.
+你打算什麼時候回國？|Nǐ dǎsuàn shénme shíhou huí guó?|Bạn định khi nào về nước?
+我們還不知道去哪裡玩。|Wǒmen hái bù zhīdào qù nǎlǐ wán.|Chúng tôi vẫn chưa biết đi đâu chơi.`],
+["要是…就… — nếu… thì…","要是 + điều kiện，(S) 就 + kết quả","就 đứng trước động từ ở vế sau.",`要是有空，我就去。|Yàoshi yǒu kòng, wǒ jiù qù.|Nếu rảnh thì tôi sẽ đi.
+要是我不回國，我就去學書法。|Yàoshi wǒ bù huí guó, wǒ jiù qù xué shūfǎ.|Nếu tôi không về nước, tôi sẽ đi học thư pháp.
+要是你不忙，你想去哪裡？|Yàoshi nǐ bù máng, nǐ xiǎng qù nǎlǐ?|Nếu bạn không bận, bạn muốn đi đâu?`],
+["Khoảng thời gian và 多久","S + V + khoảng thời gian (+ 的 + O)   |   多久？","Khoảng thời gian đặt SAU động từ: 兩天, 一個星期, 半個鐘頭, 三個月.",`你想學中文學多久？|Nǐ xiǎng xué Zhōngwén xué duōjiǔ?|Bạn muốn học tiếng Trung bao lâu?
+我們放三天的假。|Wǒmen fàng sān tiān de jià.|Chúng tôi nghỉ ba ngày.
+我去美國一個星期。|Wǒ qù Měiguó yí ge xīngqí.|Tôi đi Mỹ một tuần.`],
+["…的時候 — khi…","S + V + 的時候，…","Đặt sau mệnh đề/cụm động từ để nói “khi/ lúc…”.",`有空的時候，你要不要跟我去打網球？|Yǒu kòng de shíhou, nǐ yào bu yào gēn wǒ qù dǎ wǎngqiú?|Lúc rảnh, bạn có muốn đi đánh quần vợt với tôi không?
+放假的時候，你做什麼？|Fàng jià de shíhou, nǐ zuò shénme?|Lúc nghỉ lễ, bạn làm gì?
+我在家的時候常看書。|Wǒ zài jiā de shíhou cháng kàn shū.|Lúc ở nhà tôi thường đọc sách.`],
+["有時候…有時候…","有時候 + V1，有時候 + V2","Diễn đạt “có lúc… có lúc…”.",`我有時候在家看書，有時候出去玩。|Wǒ yǒu shíhou zài jiā kàn shū, yǒu shíhou chūqù wán.|Có lúc tôi ở nhà đọc sách, có lúc ra ngoài chơi.
+週末我有時候打網球，有時候游泳。|Zhōumò wǒ yǒu shíhou dǎ wǎngqiú, yǒu shíhou yóuyǒng.|Cuối tuần có lúc tôi đánh quần vợt, có lúc bơi.
+他有時候回家吃飯。|Tā yǒu shíhou huí jiā chī fàn.|Có lúc anh ấy về nhà ăn cơm.`],
+["上個 / 下個 + tuần/tháng","上個 / 下個 + 星期 / 月","上個 = trước; 下個 = sau/tới; (這個 = này).",`下個月我放三天的假。|Xià ge yuè wǒ fàng sān tiān de jià.|Tháng sau tôi nghỉ ba ngày.
+我下個星期三去日本。|Wǒ xià ge xīngqísān qù Rìběn.|Thứ Tư tuần sau tôi đi Nhật.
+上個星期我有書法課。|Shàng ge xīngqí wǒ yǒu shūfǎ kè.|Tuần trước tôi có lớp thư pháp.`]
+],
+s:`Nghỉ lễ bạn định đi đâu chơi?|放假你打算去哪裡玩？|Fàng jià nǐ dǎsuàn qù nǎlǐ wán?
+Chúng tôi chưa biết đi đâu chơi.|我們還不知道去哪裡玩。|Wǒmen hái bù zhīdào qù nǎlǐ wán.
+Bạn có gợi ý gì không?|你有什麼建議？|Nǐ yǒu shénme jiànyì?
+Miêu Không không tệ, có nhiều quán trà đặc biệt.|貓空不錯，有很多特別的茶館。|Māokōng búcuò, yǒu hěn duō tèbié de cháguǎn.
+Bạn định khi nào về nước?|你打算什麼時候回國？|Nǐ dǎsuàn shénme shíhou huí guó?
+Đại khái tháng hai.|大概二月吧。|Dàgài èr yuè ba.
+Nếu rảnh thì tôi sẽ đi.|要是有空，我就去。|Yàoshi yǒu kòng, wǒ jiù qù.
+Lúc nghỉ lễ bạn làm gì?|放假的時候你做什麼？|Fàng jià de shíhou nǐ zuò shénme?
+Có lúc tôi ở nhà đọc sách, có lúc ra ngoài chơi.|我有時候在家看書，有時候出去玩。|Wǒ yǒu shíhou zài jiā kàn shū, yǒu shíhou chūqù wán.
+Tuần sau chúng tôi nghỉ hai ngày.|下個星期我們放兩天的假。|Xià ge xīngqí wǒmen fàng liǎng tiān de jià.
+Bạn muốn học tiếng Trung bao lâu?|你想學中文學多久？|Nǐ xiǎng xué Zhōngwén xué duōjiǔ?
+Từ đây đến Miêu Không mất khoảng một tiếng.|從這裡到貓空大概要一個鐘頭。|Cóng zhèlǐ dào Māokōng dàgài yào yí ge zhōngtóu.
+Nghe nói phong cảnh Hoa Liên vô cùng đẹp.|聽說花蓮的風景非常漂亮。|Tīngshuō Huālián de fēngjǐng fēicháng piàoliang.
+Thứ Tư tuần sau tôi đi Nhật.|我下個星期三去日本。|Wǒ xià ge xīngqísān qù Rìběn.
+Tôi muốn dẫn bạn đi dạo chợ đêm.|我想帶你去逛夜市。|Wǒ xiǎng dài nǐ qù guàng yèshì.
+Tháng sau chúng tôi nghỉ ba ngày. Tôi dự định cùng gia đình đi Hoa Liên du lịch. Nghe nói phong cảnh ở đó vô cùng đẹp. Nếu bạn rảnh, chúng ta cùng đi nhé!|下個月我們放三天的假。我打算跟家人去花蓮旅行。聽說那裡的風景非常漂亮。要是你有空，我們一起去吧！|Xià ge yuè wǒmen fàng sān tiān de jià. Wǒ dǎsuàn gēn jiārén qù Huālián lǚxíng. Tīngshuō nàlǐ de fēngjǐng fēicháng piàoliang. Yàoshi nǐ yǒu kòng, wǒmen yìqǐ qù ba!
+Tôi vừa đến Đài Loan, rất muốn ăn đồ ăn Đài Loan. Nghe nói chợ đêm gần trường rất nổi tiếng, món ăn vặt đều rất ngon. Cuối tuần này tôi tự đi dạo một mình. Nếu bạn đến Đài Loan thăm tôi, tôi sẽ dẫn bạn đi ăn.|我剛到臺灣，很想吃臺灣的東西。聽說學校附近的夜市很有名，小吃都很好吃。這個週末我自己一個人去逛。要是你來臺灣看我，我就帶你去吃小吃。|Wǒ gāng dào Táiwān, hěn xiǎng chī Táiwān de dōngxi. Tīngshuō xuéxiào fùjìn de yèshì hěn yǒumíng, xiǎochī dōu hěn hǎochī. Zhège zhōumò wǒ zìjǐ yí ge rén qù guàng. Yàoshi nǐ lái Táiwān kàn wǒ, wǒ jiù dài nǐ qù chī xiǎochī.`,
+o:`Nếu rảnh thì tôi sẽ đi.|要是 有 空 我 就 去
+Bạn định khi nào về nước?|你 打算 什麼 時候 回國
+Tuần sau chúng tôi nghỉ hai ngày.|下個 星期 我們 放 兩 天 的 假`},
+
+{n:10,zh:"臺灣的水果很好吃",vi:"Trái cây Đài Loan rất ngon",
+v:`水果|shuǐguǒ|trái cây
+西瓜|xīguā|dưa hấu
+芒果|mángguǒ|xoài
+香蕉|xiāngjiāo|chuối
+蘋果|píngguǒ|táo
+葡萄|pútáo|nho
+甜|tián|ngọt
+香|xiāng|thơm
+以前|yǐqián|trước đây
+高|gāo|cao
+矮|ǎi|thấp
+男|nán|nam
+女|nǚ|nữ
+穿|chuān|mặc
+衣服|yīfu|quần áo
+紅色|hóngsè|màu đỏ
+藍色|lánsè|màu xanh dương
+黃色|huángsè|màu vàng
+笑|xiào|cười
+開心|kāixīn|vui
+拍|pāi|chụp
+旅館|lǚguǎn|nhà nghỉ
+所以|suǒyǐ|cho nên
+給|gěi|cho
+往|wǎng|hướng về
+少|shǎo|ít
+一下|yíxià|một chút
+太太|tàitai|vợ, bà`,
+g:[
+["了 (le) — thay đổi / trạng thái mới","S + V / Adj + 了","了 ở cuối câu báo hiệu có sự thay đổi so với trước đây (以前…，現在…了).",`他以前很喜歡上網，可是現在不喜歡了。|Tā yǐqián hěn xǐhuān shàng wǎng, kěshì xiànzài bù xǐhuān le.|Trước đây anh ấy rất thích lên mạng, bây giờ không thích nữa.
+他現在比我高了。|Tā xiànzài bǐ wǒ gāo le.|Bây giờ anh ấy cao hơn tôi rồi.
+他現在會說中文了。|Tā xiànzài huì shuō Zhōngwén le.|Bây giờ anh ấy biết nói tiếng Trung rồi.`],
+["S 的 N — mệnh đề bổ nghĩa cho danh từ","[S + V] + 的 + N","Cả cụm “S + V” đứng trước 的 để bổ nghĩa cho danh từ phía sau.",`他買的西瓜很甜。|Tā mǎi de xīguā hěn tián.|Dưa hấu anh ấy mua rất ngọt.
+穿紅色衣服的人是我弟弟。|Chuān hóngsè yīfu de rén shì wǒ dìdi.|Người mặc áo đỏ là em trai tôi.
+我做的菜你覺得怎麼樣？|Wǒ zuò de cài nǐ juéde zěnmeyàng?|Món tôi nấu bạn thấy thế nào?`],
+["因為…所以…","因為 + nguyên nhân，所以 + kết quả","Tiếng Trung dùng cả hai từ cùng lúc (khác tiếng Việt thường chỉ dùng một).",`因為他很喜歡臺灣的水果，所以常去買。|Yīnwèi tā hěn xǐhuān Táiwān de shuǐguǒ, suǒyǐ cháng qù mǎi.|Vì anh ấy rất thích trái cây Đài Loan nên thường đi mua.
+因為同學給我很多水果，所以我很開心。|Yīnwèi tóngxué gěi wǒ hěn duō shuǐguǒ, suǒyǐ wǒ hěn kāixīn.|Vì bạn học cho tôi nhiều trái cây nên tôi rất vui.
+你為什麼笑得這麼開心？|Nǐ wèishénme xiào de zhème kāixīn?|Tại sao bạn cười vui thế?`],
+["比 + adj (mở rộng)","A + 比 + B + Adj (+ 一點 / 多了)","Có thể thêm 一點 (hơn một chút) hoặc 多了 (hơn nhiều).",`臺灣的水果比日本的便宜。|Táiwān de shuǐguǒ bǐ Rìběn de piányí.|Trái cây Đài Loan rẻ hơn trái cây Nhật.
+我比他矮一點。|Wǒ bǐ tā ǎi yìdiǎn.|Tôi thấp hơn anh ấy một chút.
+他比我高。|Tā bǐ wǒ gāo.|Anh ấy cao hơn tôi.`],
+["給 (gěi) — cho","S + 給 + người + vật","Dùng khi cho/tặng ai cái gì; cũng đi với 請: 請給我….",`同學給我很多水果。|Tóngxué gěi wǒ hěn duō shuǐguǒ.|Bạn học cho tôi rất nhiều trái cây.
+老闆給我一杯茶。|Lǎobǎn gěi wǒ yì bēi chá.|Ông chủ đưa tôi một ly trà.
+請給我一個西瓜。|Qǐng gěi wǒ yí ge xīguā.|Làm ơn cho tôi một quả dưa hấu.`]
+],
+s:`Trái cây Đài Loan rất ngon.|臺灣的水果很好吃。|Táiwān de shuǐguǒ hěn hǎochī.
+Quả dưa hấu này vừa thơm vừa ngọt.|這個西瓜又香又甜。|Zhège xīguā yòu xiāng yòu tián.
+Tôi thích ăn xoài.|我喜歡吃芒果。|Wǒ xǐhuān chī mángguǒ.
+Bạn học cho tôi rất nhiều trái cây.|同學給我很多水果。|Tóngxué gěi wǒ hěn duō shuǐguǒ.
+Người mặc áo màu đỏ kia là em trai tôi.|穿紅色衣服的人是我弟弟。|Chuān hóngsè yīfu de rén shì wǒ dìdi.
+Dưa hấu anh ấy mua rất ngọt.|他買的西瓜很甜。|Tā mǎi de xīguā hěn tián.
+Trước đây anh ấy không cao lắm, nhưng bây giờ cao hơn tôi rồi.|他以前不太高，可是現在比我高了。|Tā yǐqián bú tài gāo, kěshì xiànzài bǐ wǒ gāo le.
+Tại sao bạn cười vui như vậy?|你為什麼笑得這麼開心？|Nǐ wèishénme xiào de zhème kāixīn?
+Vì bạn học cho tôi nhiều trái cây.|因為同學給我很多水果。|Yīnwèi tóngxué gěi wǒ hěn duō shuǐguǒ.
+Trước đây anh ấy rất thích lên mạng, bây giờ không thích nữa.|他以前很喜歡上網，可是現在不喜歡了。|Tā yǐqián hěn xǐhuān shàng wǎng, kěshì xiànzài bù xǐhuān le.
+Tôi chụp ảnh cho các bạn nhé?|我幫你們拍照片，好嗎？|Wǒ bāng nǐmen pāi zhàopiàn, hǎo ma?
+Trái cây Đài Loan rẻ hơn trái cây Nhật.|臺灣的水果比日本的便宜。|Táiwān de shuǐguǒ bǐ Rìběn de piányí.
+Nhà nghỉ anh ấy ở tháng trước không tệ.|他上個月住的旅館不錯。|Tā shàng ge yuè zhù de lǚguǎn búcuò.
+Đợi một chút, tôi đi mua trái cây.|等一下，我去買水果。|Děng yíxià, wǒ qù mǎi shuǐguǒ.
+Tôi có một người bạn tên là Điền Trung. Vì anh ấy rất thích trái cây Đài Loan nên cuối tuần nào cũng đi mua. Dưa hấu và xoài anh ấy mua đều vừa thơm vừa ngọt. Trước đây anh ấy không biết nói tiếng Trung, nhưng bây giờ biết nói rồi.|我有一個朋友叫田中。因為他很喜歡臺灣的水果，所以每個週末都去買。他買的西瓜和芒果都又香又甜。他以前不會說中文，可是現在會說了。|Wǒ yǒu yí ge péngyou jiào Tiánzhōng. Yīnwèi tā hěn xǐhuān Táiwān de shuǐguǒ, suǒyǐ měi ge zhōumò dōu qù mǎi. Tā mǎi de xīguā hé mángguǒ dōu yòu xiāng yòu tián. Tā yǐqián bú huì shuō Zhōngwén, kěshì xiànzài huì shuō le.`,
+o:`Trái cây Đài Loan rất ngon.|臺灣 的 水果 很 好吃
+Dưa hấu anh ấy mua rất ngọt.|他 買 的 西瓜 很 甜
+Bây giờ anh ấy cao hơn tôi rồi.|他 現在 比 我 高 了`},
+
+{n:11,zh:"我要租房子",vi:"Tôi muốn thuê nhà",
+v:`租|zū|thuê
+房間|fángjiān|phòng
+房租|fángzū|tiền thuê nhà
+房東|fángdōng|chủ nhà
+套房|tàofáng|phòng khép kín
+廚房|chúfáng|nhà bếp
+浴室|yùshì|phòng tắm
+客廳|kètīng|phòng khách
+冷氣|lěngqì|máy lạnh
+床|chuáng|giường
+桌子|zhuōzi|bàn
+椅子|yǐzi|ghế
+看房子|kàn fángzi|xem nhà
+搬家|bān jiā|chuyển nhà
+室友|shìyǒu|bạn cùng phòng
+方便|fāngbiàn|thuận tiện
+捷運站|jiéyùnzhàn|ga tàu điện ngầm
+離|lí|cách
+可以|kěyǐ|có thể, được phép
+一個月|yí ge yuè|một tháng
+每個月|měi ge yuè|mỗi tháng
+先|xiān|trước
+再|zài|rồi, sau đó
+然後|ránhòu|sau đó
+乾淨|gānjìng|sạch sẽ
+安靜|ānjìng|yên tĩnh
+吵|chǎo|ồn ào`,
+g:[
+["離 (lí) — cách","A + 離 + B + (很) 近 / 遠","離 chỉ khoảng cách giữa hai nơi (khác với 從…到… chỉ lộ trình).",`這個房子離捷運站很近。|Zhège fángzi lí jiéyùnzhàn hěn jìn.|Căn nhà này cách ga tàu điện ngầm rất gần.
+我家離學校很遠。|Wǒ jiā lí xuéxiào hěn yuǎn.|Nhà tôi cách trường rất xa.
+學校離這裡有一點遠。|Xuéxiào lí zhèlǐ yǒu yìdiǎn yuǎn.|Trường cách đây hơi xa.`],
+["可以 — được phép","S + 可以 + V   |   可以 + V + 嗎？","可以 hỏi và cho phép; 不可以 = không được phép.",`我可以看看房間嗎？|Wǒ kěyǐ kànkan fángjiān ma?|Tôi xem phòng được không?
+房東說我可以在廚房做飯。|Fángdōng shuō wǒ kěyǐ zài chúfáng zuò fàn.|Chủ nhà nói tôi có thể nấu ăn trong bếp.
+你可以便宜一點嗎？|Nǐ kěyǐ piányí yìdiǎn ma?|Bạn bớt giá một chút được không?`],
+["先…再… — trước… rồi…","S + 先 + V1，再 + V2","Diễn tả thứ tự hai hành động (khác với 然後 chỉ nối tiếp).",`你先看房子，再決定。|Nǐ xiān kàn fángzi, zài juédìng.|Bạn xem nhà trước rồi hãy quyết định.
+我先吃飯，再去學校。|Wǒ xiān chī fàn, zài qù xuéxiào.|Tôi ăn cơm trước rồi mới đến trường.
+先問房東，然後再租。|Xiān wèn fángdōng, ránhòu zài zū.|Hỏi chủ nhà trước, sau đó mới thuê.`],
+["Tiền thuê: 一個月 / 每個月 + số tiền","房租 + 一個月 / 每個月 + số + 塊","Khoảng thời gian đặt trước số tiền khi nói giá theo kỳ.",`房租一個月八千塊。|Fángzū yí ge yuè bā qiān kuài.|Tiền thuê nhà một tháng tám nghìn tệ.
+這個房間每個月多少錢？|Zhège fángjiān měi ge yuè duōshǎo qián?|Phòng này mỗi tháng bao nhiêu tiền?
+一個月有一點貴。|Yí ge yuè yǒu yìdiǎn guì.|Một tháng hơi đắt.`],
+["有沒有 / 能不能 hỏi về tiện nghi","房間裡有沒有 + N？","Dùng khi xem nhà để hỏi phòng có gì.",`房間裡有沒有冷氣？|Fángjiān lǐ yǒu méi yǒu lěngqì?|Trong phòng có máy lạnh không?
+房間裡有床、桌子和椅子。|Fángjiān lǐ yǒu chuáng, zhuōzi hé yǐzi.|Trong phòng có giường, bàn và ghế.
+附近有沒有商店？|Fùjìn yǒu méi yǒu shāngdiàn?|Gần đây có cửa hàng không?`]
+],
+s:`Tôi muốn thuê nhà.|我要租房子。|Wǒ yào zū fángzi.
+Tiền thuê nhà một tháng bao nhiêu?|房租一個月多少錢？|Fángzū yí ge yuè duōshǎo qián?
+Một tháng tám nghìn tệ.|一個月八千塊。|Yí ge yuè bā qiān kuài.
+Căn phòng này có máy lạnh không?|這個房間有沒有冷氣？|Zhège fángjiān yǒu méi yǒu lěngqì?
+Tôi xem phòng được không?|我可以看看房間嗎？|Wǒ kěyǐ kànkan fángjiān ma?
+Căn nhà này cách ga tàu điện ngầm rất gần.|這個房子離捷運站很近。|Zhège fángzi lí jiéyùnzhàn hěn jìn.
+Nhà tôi cách trường rất xa.|我家離學校很遠。|Wǒ jiā lí xuéxiào hěn yuǎn.
+Căn phòng này vừa sạch vừa yên tĩnh.|這個房間又乾淨又安靜。|Zhège fángjiān yòu gānjìng yòu ānjìng.
+Phòng bên cạnh hơi ồn.|旁邊的房間有一點吵。|Pángbiān de fángjiān yǒu yìdiǎn chǎo.
+Bạn xem nhà trước rồi hãy quyết định.|你先看房子，再決定。|Nǐ xiān kàn fángzi, zài juédìng.
+Trong phòng có giường, bàn và ghế.|房間裡有床、桌子和椅子。|Fángjiān lǐ yǒu chuáng, zhuōzi hé yǐzi.
+Bạn cùng phòng của tôi là người Nhật.|我的室友是日本人。|Wǒ de shìyǒu shì Rìběn rén.
+Chủ nhà nói tôi có thể nấu cơm trong bếp.|房東說我可以在廚房做飯。|Fángdōng shuō wǒ kěyǐ zài chúfáng zuò fàn.
+Ngày mai tôi chuyển nhà, bạn giúp tôi được không?|明天我搬家，你可以幫我嗎？|Míngtiān wǒ bān jiā, nǐ kěyǐ bāng wǒ ma?
+Tôi muốn thuê nhà gần trường. Tôi đã xem ba căn. Căn thứ nhất rất rẻ nhưng cách trường hơi xa. Căn thứ hai cách trường rất gần, phòng cũng sạch, nhưng một tháng hơi đắt. Tôi muốn hỏi chủ nhà có thể rẻ hơn một chút không, sau đó mới quyết định.|我想在學校附近租房子。我看了三個房子。第一個很便宜，可是離學校有一點遠。第二個離學校很近，房間也很乾淨，可是一個月有一點貴。我想問房東可不可以便宜一點，然後再決定。|Wǒ xiǎng zài xuéxiào fùjìn zū fángzi. Wǒ kàn le sān ge fángzi. Dì yī ge hěn piányí, kěshì lí xuéxiào yǒu yìdiǎn yuǎn. Dì èr ge lí xuéxiào hěn jìn, fángjiān yě hěn gānjìng, kěshì yí ge yuè yǒu yìdiǎn guì. Wǒ xiǎng wèn fángdōng kě bu kěyǐ piányí yìdiǎn, ránhòu zài juédìng.`,
+o:`Tôi muốn thuê nhà.|我 要 租 房子
+Nhà tôi cách trường rất xa.|我 家 離 學校 很 遠
+Bạn xem nhà trước rồi hãy quyết định.|你 先 看 房子 再 決定`},
+
+{n:12,zh:"你在臺灣學多久的中文？",vi:"Bạn học tiếng Trung ở Đài Loan bao lâu rồi?",
+v:`年|nián|năm
+個月|ge yuè|tháng (thời lượng)
+小時|xiǎoshí|giờ (thời lượng)
+分鐘|fēnzhōng|phút
+已經|yǐjīng|đã
+才|cái|mới, chỉ mới
+從…開始|cóng… kāishǐ|bắt đầu từ…
+畢業|bì yè|tốt nghiệp
+以後|yǐhòu|sau này
+認識|rènshi|quen biết
+懂|dǒng|hiểu
+聽得懂|tīng de dǒng|nghe hiểu
+看得懂|kàn de dǒng|đọc hiểu
+說得很好|shuō de hěn hǎo|nói rất giỏi
+練習|liànxí|luyện tập
+複習|fùxí|ôn tập
+作文|zuòwén|bài văn
+考試|kǎoshì|thi
+課|kè|tiết, bài học
+中文課|Zhōngwén kè|lớp tiếng Trung
+難|nán|khó
+容易|róngyì|dễ
+漢字|Hànzì|chữ Hán
+發音|fāyīn|phát âm
+進步|jìnbù|tiến bộ
+努力|nǔlì|nỗ lực
+去年|qùnián|năm ngoái
+意思|yìsi|ý nghĩa
+有意思|yǒu yìsi|thú vị
+話|huà|lời nói`,
+g:[
+["V 了 + khoảng thời gian (+ 的 + O)","S + V + 了 + khoảng thời gian + (的) + O","了 sau động từ báo hiệu hoàn thành; thời lượng đứng sau 了.",`我學了一年的中文。|Wǒ xué le yì nián de Zhōngwén.|Tôi đã học tiếng Trung một năm.
+他在臺灣住了兩個月。|Tā zài Táiwān zhù le liǎng ge yuè.|Anh ấy đã ở Đài Loan hai tháng.
+你學了多久中文？|Nǐ xué le duōjiǔ Zhōngwén?|Bạn học tiếng Trung được bao lâu rồi?`],
+["已經…了 — đã… rồi","S + 已經 + V / số + 了","Nhấn mạnh hành động/trạng thái đã đạt tới.",`我已經學了三個月了。|Wǒ yǐjīng xué le sān ge yuè le.|Tôi đã học ba tháng rồi.
+他已經畢業了。|Tā yǐjīng bì yè le.|Anh ấy đã tốt nghiệp rồi.
+現在已經十點了。|Xiànzài yǐjīng shí diǎn le.|Bây giờ đã mười giờ rồi.`],
+["才 và 就","才 = mới (muộn/ít hơn mong đợi)   |   就 = đã (sớm/nhanh)","才 và 就 đặt trước động từ và cho biết người nói thấy sớm hay muộn.",`我才學了兩個星期。|Wǒ cái xué le liǎng ge xīngqí.|Tôi mới học hai tuần.
+我們八點上課，他九點才來。|Wǒmen bā diǎn shàng kè, tā jiǔ diǎn cái lái.|Chúng tôi 8 giờ vào học, 9 giờ anh ấy mới đến.
+他一年就會說中文了。|Tā yì nián jiù huì shuō Zhōngwén le.|Chỉ một năm anh ấy đã biết nói tiếng Trung.`],
+["V 得 / 不 + 懂 — bổ ngữ khả năng","V + 得懂 / 不懂","得懂 = làm được và hiểu; 不懂 dùng 不 thay 得: 看不懂 = đọc không hiểu.",`我聽得懂老師說的話。|Wǒ tīng de dǒng lǎoshī shuō de huà.|Tôi nghe hiểu lời thầy nói.
+我看不懂這個字。|Wǒ kàn bu dǒng zhège zì.|Tôi đọc không hiểu chữ này.
+他中文說得很好。|Tā Zhōngwén shuō de hěn hǎo.|Anh ấy nói tiếng Trung rất giỏi.`],
+["從…開始 — bắt đầu từ…","從 + thời điểm + 開始 + V","Nói thời điểm bắt đầu của một việc.",`我從去年九月開始學中文。|Wǒ cóng qùnián jiǔ yuè kāishǐ xué Zhōngwén.|Tôi bắt đầu học tiếng Trung từ tháng chín năm ngoái.
+從今天開始我每天練習。|Cóng jīntiān kāishǐ wǒ měitiān liànxí.|Từ hôm nay tôi luyện tập mỗi ngày.
+我們從八點開始上課。|Wǒmen cóng bā diǎn kāishǐ shàng kè.|Chúng tôi bắt đầu học từ 8 giờ.`]
+],
+s:`Bạn học tiếng Trung ở Đài Loan bao lâu rồi?|你在臺灣學了多久的中文？|Nǐ zài Táiwān xué le duōjiǔ de Zhōngwén?
+Tôi đã học một năm.|我學了一年。|Wǒ xué le yì nián.
+Tôi mới học hai tuần.|我才學了兩個星期。|Wǒ cái xué le liǎng ge xīngqí.
+Anh ấy đã ở Đài Loan hai tháng rồi.|他在臺灣已經住了兩個月了。|Tā zài Táiwān yǐjīng zhù le liǎng ge yuè le.
+Tôi bắt đầu học tiếng Trung từ tháng chín năm ngoái.|我從去年九月開始學中文。|Wǒ cóng qùnián jiǔ yuè kāishǐ xué Zhōngwén.
+Bạn nghe hiểu thầy giáo nói không?|你聽得懂老師說的話嗎？|Nǐ tīng de dǒng lǎoshī shuō de huà ma?
+Tôi nghe hiểu, nhưng đọc không hiểu chữ này.|我聽得懂，可是看不懂這個字。|Wǒ tīng de dǒng, kěshì kàn bu dǒng zhège zì.
+Anh ấy nói tiếng Trung rất giỏi.|他中文說得很好。|Tā Zhōngwén shuō de hěn hǎo.
+Chữ Hán hơi khó nhưng rất thú vị.|漢字有一點難，可是很有意思。|Hànzì yǒu yìdiǎn nán, kěshì hěn yǒu yìsi.
+Mỗi ngày tôi luyện tập hai tiếng.|我每天練習兩個小時。|Wǒ měitiān liànxí liǎng ge xiǎoshí.
+Sau khi tốt nghiệp bạn muốn làm gì?|畢業以後你想做什麼？|Bì yè yǐhòu nǐ xiǎng zuò shénme?
+Ngày mai tôi có bài thi, hôm nay phải ôn tập.|明天我有考試，今天要複習。|Míngtiān wǒ yǒu kǎoshì, jīntiān yào fùxí.
+Chúng tôi tám giờ vào học, chín giờ anh ấy mới đến.|我們八點上課，他九點才來。|Wǒmen bā diǎn shàng kè, tā jiǔ diǎn cái lái.
+Tiếng Trung của tôi tiến bộ rồi.|我的中文進步了。|Wǒ de Zhōngwén jìnbù le.
+Tôi đã học tiếng Trung ở Đài Loan được một năm rồi. Tôi bắt đầu học từ tháng chín năm ngoái. Mỗi sáng tôi có lớp, buổi chiều luyện tập hai tiếng. Bây giờ tôi nghe hiểu lời thầy giáo nói, cũng biết viết một ít chữ Hán. Tôi còn muốn học thêm một năm nữa.|我在臺灣學了一年的中文了。我從去年九月開始學。每天早上上課，下午練習兩個小時。現在我聽得懂老師說的話，也會寫一些漢字。我還想再學一年。|Wǒ zài Táiwān xué le yì nián de Zhōngwén le. Wǒ cóng qùnián jiǔ yuè kāishǐ xué. Měitiān zǎoshang shàng kè, xiàwǔ liànxí liǎng ge xiǎoshí. Xiànzài wǒ tīng de dǒng lǎoshī shuō de huà, yě huì xiě yìxiē Hànzì. Wǒ hái xiǎng zài xué yì nián.`,
+o:`Tôi đã học một năm.|我 學 了 一 年
+Anh ấy nói tiếng Trung rất giỏi.|他 中文 說 得 很 好
+Tôi nghe hiểu lời thầy giáo nói.|我 聽 得 懂 老師 說 的 話`},
+
+{n:13,zh:"生日快樂",vi:"Chúc mừng sinh nhật",
+v:`生日|shēngrì|sinh nhật
+快樂|kuàilè|vui vẻ
+生日快樂|shēngrì kuàilè|chúc mừng sinh nhật
+禮物|lǐwù|quà
+蛋糕|dàngāo|bánh kem
+派對|pàiduì|buổi tiệc
+邀請|yāoqǐng|mời
+送|sòng|tặng
+收到|shōudào|nhận được
+過生日|guò shēngrì|tổ chức sinh nhật
+歲|suì|tuổi
+幾歲|jǐ suì|mấy tuổi
+多大|duō dà|bao nhiêu tuổi
+今年|jīnnián|năm nay
+明年|míngnián|năm sau
+祝|zhù|chúc
+恭喜|gōngxǐ|chúc mừng
+準備|zhǔnbèi|chuẩn bị
+慶祝|qìngzhù|ăn mừng
+蠟燭|làzhú|nến
+許願|xǔ yuàn|ước nguyện
+願望|yuànwàng|điều ước
+驚喜|jīngxǐ|bất ngờ
+花|huā|hoa
+卡片|kǎpiàn|thiệp
+天天|tiāntiān|mỗi ngày`,
+g:[
+["Ngày tháng: 年, 月, 號","…年…月…號   |   生日是幾月幾號？","Thứ tự từ lớn đến nhỏ: năm → tháng → ngày. Số dùng 一二三…, không dùng 兩 cho ngày/tháng.",`今天幾月幾號？|Jīntiān jǐ yuè jǐ hào?|Hôm nay là ngày mấy tháng mấy?
+我的生日是五月二十號。|Wǒ de shēngrì shì wǔ yuè èrshí hào.|Sinh nhật tôi là ngày 20 tháng 5.
+他的生日是十二月三號。|Tā de shēngrì shì shí'èr yuè sān hào.|Sinh nhật anh ấy là ngày 3 tháng 12.`],
+["Hỏi tuổi: 幾歲 / 多大","你今年幾歲？   |   S + 今年 + số + 歲","幾歲 thường hỏi trẻ em; 多大 hỏi người cùng trang lứa. Người lớn tuổi hơn hỏi lịch sự hơn.",`你今年幾歲？|Nǐ jīnnián jǐ suì?|Năm nay bạn mấy tuổi?
+我今年二十五歲。|Wǒ jīnnián èrshíwǔ suì.|Năm nay tôi hai mươi lăm tuổi.
+你今年多大？|Nǐ jīnnián duō dà?|Năm nay bạn bao nhiêu tuổi?`],
+["送 / 給 — tặng, cho","S + 送 + người + vật   |   給 + người + 的 + vật","送 = tặng (quà); 給 = đưa cho.",`我送你一個禮物。|Wǒ sòng nǐ yí ge lǐwù.|Tôi tặng bạn một món quà.
+朋友送我一個蛋糕。|Péngyou sòng wǒ yí ge dàngāo.|Bạn tặng tôi một chiếc bánh kem.
+這是給你的生日禮物。|Zhè shì gěi nǐ de shēngrì lǐwù.|Đây là quà sinh nhật tặng bạn.`],
+["祝 / 恭喜 — chúc / chúc mừng","祝 + bạn + điều chúc   |   恭喜 + bạn","祝 dùng cho điều chưa xảy ra (sinh nhật, sức khỏe); 恭喜 dùng khi chuyện tốt đã xảy ra.",`祝你生日快樂！|Zhù nǐ shēngrì kuàilè!|Chúc bạn sinh nhật vui vẻ!
+恭喜你！|Gōngxǐ nǐ!|Chúc mừng bạn!
+祝你天天開心。|Zhù nǐ tiāntiān kāixīn.|Chúc bạn mỗi ngày đều vui.`],
+["請 / 邀請 + người + V — mời","S + 請 / 邀請 + người + V","請 còn nghĩa “mời (ăn…)”, thường là người mời trả tiền.",`我請朋友來我家。|Wǒ qǐng péngyou lái wǒ jiā.|Tôi mời bạn đến nhà.
+他邀請我去他家吃蛋糕。|Tā yāoqǐng wǒ qù tā jiā chī dàngāo.|Anh ấy mời tôi đến nhà ăn bánh kem.
+我想請你吃飯。|Wǒ xiǎng qǐng nǐ chī fàn.|Tôi muốn mời bạn ăn cơm.`]
+],
+s:`Chúc mừng sinh nhật!|生日快樂！|Shēngrì kuàilè!
+Hôm nay là ngày mấy tháng mấy?|今天幾月幾號？|Jīntiān jǐ yuè jǐ hào?
+Sinh nhật của bạn là ngày nào?|你的生日是幾月幾號？|Nǐ de shēngrì shì jǐ yuè jǐ hào?
+Sinh nhật tôi là ngày 20 tháng 5.|我的生日是五月二十號。|Wǒ de shēngrì shì wǔ yuè èrshí hào.
+Năm nay bạn bao nhiêu tuổi?|你今年幾歲？|Nǐ jīnnián jǐ suì?
+Năm nay tôi hai mươi lăm tuổi.|我今年二十五歲。|Wǒ jīnnián èrshíwǔ suì.
+Tôi tặng bạn một món quà.|我送你一個禮物。|Wǒ sòng nǐ yí ge lǐwù.
+Đây là quà sinh nhật tặng bạn.|這是給你的生日禮物。|Zhè shì gěi nǐ de shēngrì lǐwù.
+Cảm ơn, tôi rất thích!|謝謝，我很喜歡！|Xièxie, wǒ hěn xǐhuān!
+Chúc bạn sinh nhật vui vẻ, mỗi ngày đều vui!|祝你生日快樂，天天開心！|Zhù nǐ shēngrì kuàilè, tiāntiān kāixīn!
+Tối mai tôi mời bạn bè đến nhà ăn bánh kem.|明天晚上我請朋友來我家吃蛋糕。|Míngtiān wǎnshang wǒ qǐng péngyou lái wǒ jiā chī dàngāo.
+Bạn muốn tổ chức sinh nhật ở đâu?|你想在哪裡過生日？|Nǐ xiǎng zài nǎlǐ guò shēngrì?
+Chúng tôi cùng chuẩn bị bất ngờ cho anh ấy.|我們一起準備驚喜給他。|Wǒmen yìqǐ zhǔnbèi jīngxǐ gěi tā.
+Anh trai tôi lớn hơn tôi ba tuổi.|我哥哥比我大三歲。|Wǒ gēge bǐ wǒ dà sān suì.
+Chúc mừng bạn! Bạn đã nhận được quà chưa?|恭喜你！你收到禮物了嗎？|Gōngxǐ nǐ! Nǐ shōudào lǐwù le ma?
+Ngày mai là sinh nhật của bạn tôi. Tôi muốn mua một chiếc bánh kem và một món quà. Tôi mời bạn học đến nhà ăn bánh kem. Chúng tôi cùng hát, anh ấy nhất định sẽ rất bất ngờ.|明天是我朋友的生日。我想買一個蛋糕和一個禮物。我請同學來我家吃蛋糕。我們一起唱歌，他一定很驚喜。|Míngtiān shì wǒ péngyou de shēngrì. Wǒ xiǎng mǎi yí ge dàngāo hé yí ge lǐwù. Wǒ qǐng tóngxué lái wǒ jiā chī dàngāo. Wǒmen yìqǐ chàng gē, tā yídìng hěn jīngxǐ.`,
+o:`Chúc mừng sinh nhật!|生日 快樂
+Sinh nhật bạn là ngày mấy tháng mấy?|你 的 生日 是 幾 月 幾 號
+Tôi tặng bạn một món quà.|我 送 你 一 個 禮物`},
+
+{n:14,zh:"天氣這麼冷！",vi:"Trời lạnh thế này!",
+v:`天氣|tiānqì|thời tiết
+冷|lěng|lạnh
+涼|liáng|mát
+暖和|nuǎnhuo|ấm áp
+下雨|xià yǔ|mưa
+雨|yǔ|mưa
+雨傘|yǔsǎn|ô, dù
+外套|wàitào|áo khoác
+毛衣|máoyī|áo len
+春天|chūntiān|mùa xuân
+夏天|xiàtiān|mùa hè
+秋天|qiūtiān|mùa thu
+冬天|dōngtiān|mùa đông
+度|dù|độ
+那麼|nàme|như thế kia
+更|gèng|càng, hơn nữa
+可能|kěnéng|có thể (khả năng)
+太陽|tàiyáng|mặt trời
+陰天|yīntiān|trời âm u
+晴天|qíngtiān|trời nắng
+天氣預報|tiānqì yùbào|dự báo thời tiết
+濕|shī|ẩm ướt
+爬山|pá shān|leo núi
+只有|zhǐyǒu|chỉ có`,
+g:[
+["這麼 / 那麼 — như thế này / như thế kia","這麼 / 那麼 + Adj   |   沒有 + A + 那麼 + Adj","這麼 chỉ mức độ ở gần (đang nói); 那麼 ở xa hoặc so sánh phủ định.",`天氣這麼冷！|Tiānqì zhème lěng!|Trời lạnh thế này!
+今天沒有昨天那麼熱。|Jīntiān méiyǒu zuótiān nàme rè.|Hôm nay không nóng bằng hôm qua.
+你為什麼笑得這麼開心？|Nǐ wèishénme xiào de zhème kāixīn?|Sao bạn cười vui thế?`],
+["會 (huì) — sẽ (dự đoán)","S + 會 + V / Adj","Ngoài nghĩa “biết”, 會 còn dùng dự đoán khả năng xảy ra trong tương lai. 可能會 = có thể sẽ.",`明天會下雨。|Míngtiān huì xià yǔ.|Ngày mai trời sẽ mưa.
+今天是陰天，可能會下雨。|Jīntiān shì yīntiān, kěnéng huì xià yǔ.|Hôm nay trời âm u, có thể sẽ mưa.
+下個星期會很冷。|Xià ge xīngqí huì hěn lěng.|Tuần sau sẽ rất lạnh.`],
+["比 và 更 — so sánh","A + 比 + B + Adj   |   A + 更 + Adj","更 = càng, hơn nữa (đã so sánh từ trước).",`今天比昨天冷。|Jīntiān bǐ zuótiān lěng.|Hôm nay lạnh hơn hôm qua.
+冬天山上更冷。|Dōngtiān shānshàng gèng lěng.|Mùa đông trên núi còn lạnh hơn.
+臺灣的夏天比日本熱。|Táiwān de xiàtiān bǐ Rìběn rè.|Mùa hè Đài Loan nóng hơn Nhật Bản.`],
+["又…又… — vừa… vừa…","S + 又 + Adj1 + 又 + Adj2","Hai đặc điểm cùng tồn tại; có thể là hai tính từ cùng nghĩa tích cực hoặc tiêu cực.",`臺灣的夏天又熱又濕。|Táiwān de xiàtiān yòu rè yòu shī.|Mùa hè Đài Loan vừa nóng vừa ẩm.
+秋天又涼又舒服。|Qiūtiān yòu liáng yòu shūfu.|Mùa thu vừa mát vừa dễ chịu.
+今天又冷又下雨。|Jīntiān yòu lěng yòu xià yǔ.|Hôm nay vừa lạnh vừa mưa.`],
+["要是…就… với thời tiết","要是 + thời tiết，(S) 就 + V","Dùng để lên kế hoạch dự phòng theo thời tiết.",`要是下雨，我們就不去了。|Yàoshi xià yǔ, wǒmen jiù bú qù le.|Nếu mưa thì chúng ta không đi nữa.
+要是很冷，你就穿外套。|Yàoshi hěn lěng, nǐ jiù chuān wàitào.|Nếu lạnh thì bạn mặc áo khoác.
+要是明天天氣好，我們就去爬山。|Yàoshi míngtiān tiānqì hǎo, wǒmen jiù qù pá shān.|Nếu mai thời tiết đẹp, chúng ta sẽ đi leo núi.`]
+],
+s:`Trời lạnh thế này!|天氣這麼冷！|Tiānqì zhème lěng!
+Hôm nay lạnh hơn hôm qua.|今天比昨天冷。|Jīntiān bǐ zuótiān lěng.
+Hôm nay không nóng bằng hôm qua.|今天沒有昨天那麼熱。|Jīntiān méiyǒu zuótiān nàme rè.
+Ngày mai trời sẽ mưa.|明天會下雨。|Míngtiān huì xià yǔ.
+Bạn nhớ mang theo ô nhé.|你要帶雨傘。|Nǐ yào dài yǔsǎn.
+Nếu trời lạnh, bạn hãy mặc áo khoác.|要是很冷，你就穿外套。|Yàoshi hěn lěng, nǐ jiù chuān wàitào.
+Dự báo thời tiết nói ngày mai trời nắng.|天氣預報說明天是晴天。|Tiānqì yùbào shuō míngtiān shì qíngtiān.
+Mùa hè Đài Loan vừa nóng vừa ẩm.|臺灣的夏天又熱又濕。|Táiwān de xiàtiān yòu rè yòu shī.
+Mùa thu vừa mát vừa dễ chịu.|秋天又涼又舒服。|Qiūtiān yòu liáng yòu shūfu.
+Mùa đông trên núi còn lạnh hơn.|冬天山上更冷。|Dōngtiān shānshàng gèng lěng.
+Hôm nay mười lăm độ.|今天十五度。|Jīntiān shíwǔ dù.
+Bạn thích mùa xuân, mùa hè, mùa thu hay mùa đông nhất?|你最喜歡春天、夏天、秋天還是冬天？|Nǐ zuì xǐhuān chūntiān, xiàtiān, qiūtiān háishi dōngtiān?
+Nếu trời mưa, chúng ta không đi nữa.|要是下雨，我們就不去了。|Yàoshi xià yǔ, wǒmen jiù bú qù le.
+Hôm nay trời âm u, có thể sẽ mưa.|今天是陰天，可能會下雨。|Jīntiān shì yīntiān, kěnéng huì xià yǔ.
+Gần đây trời lạnh thế này! Hôm qua mười tám độ, hôm nay chỉ có mười hai độ. Dự báo thời tiết nói ngày mai còn lạnh hơn, có thể sẽ mưa. Tôi phải mặc áo khoác và mang ô. Nếu trời mưa, tôi sẽ ở nhà đọc sách.|最近天氣這麼冷！昨天十八度，今天只有十二度。天氣預報說明天更冷，可能會下雨。我要穿外套，也要帶雨傘。要是下雨，我就在家看書。|Zuìjìn tiānqì zhème lěng! Zuótiān shíbā dù, jīntiān zhǐyǒu shí'èr dù. Tiānqì yùbào shuō míngtiān gèng lěng, kěnéng huì xià yǔ. Wǒ yào chuān wàitào, yě yào dài yǔsǎn. Yàoshi xià yǔ, wǒ jiù zài jiā kàn shū.`,
+o:`Trời lạnh thế này!|天氣 這麼 冷
+Ngày mai trời sẽ mưa.|明天 會 下雨
+Hôm nay lạnh hơn hôm qua.|今天 比 昨天 冷`},
+
+{n:15,zh:"我很不舒服",vi:"Tôi rất khó chịu trong người",
+v:`不舒服|bù shūfu|khó chịu, không khỏe
+醫生|yīshēng|bác sĩ
+醫院|yīyuàn|bệnh viện
+看醫生|kàn yīshēng|đi khám bệnh
+感冒|gǎnmào|cảm
+發燒|fā shāo|sốt
+咳嗽|késou|ho
+頭|tóu|đầu
+頭痛|tóu tòng|đau đầu
+肚子|dùzi|bụng
+喉嚨|hóulóng|họng
+痛|tòng|đau
+藥|yào|thuốc
+吃藥|chī yào|uống thuốc
+休息|xiūxí|nghỉ ngơi
+睡覺|shuì jiào|ngủ
+多喝水|duō hē shuǐ|uống nhiều nước
+水|shuǐ|nước
+身體|shēntǐ|cơ thể
+健康|jiànkāng|sức khỏe
+病|bìng|bệnh
+累|lèi|mệt
+有點|yǒudiǎn|hơi (không tốt)
+別|bié|đừng
+早點|zǎodiǎn|sớm một chút
+好一點|hǎo yìdiǎn|khá hơn một chút
+口罩|kǒuzhào|khẩu trang
+戴|dài|đeo
+忘|wàng|quên`,
+g:[
+["Hỏi và nói tình trạng: 哪裡不舒服 / 覺得","你哪裡不舒服？   |   S + 覺得 + …","Hỏi bác sĩ hay bạn bè về chỗ khó chịu; nói triệu chứng: 我 + bộ phận + 痛.",`你哪裡不舒服？|Nǐ nǎlǐ bù shūfu?|Bạn khó chịu ở đâu?
+我頭痛，也有一點發燒。|Wǒ tóu tòng, yě yǒu yìdiǎn fā shāo.|Tôi đau đầu, còn hơi sốt.
+我覺得很不舒服。|Wǒ juéde hěn bù shūfu.|Tôi cảm thấy rất khó chịu.`],
+["有點 + adj — hơi… (tiêu cực)","S + 有點 + Adj","Thường nói điều không như ý (khác 一點 đứng sau tính từ).",`我有點累。|Wǒ yǒudiǎn lèi.|Tôi hơi mệt.
+我的喉嚨有點痛。|Wǒ de hóulóng yǒudiǎn tòng.|Họng tôi hơi đau.
+今天我有點不舒服。|Jīntiān wǒ yǒudiǎn bù shūfu.|Hôm nay tôi hơi khó chịu.`],
+["應該 / 要 — nên, cần","S + 應該 / 要 + V","應該 = nên (lời khuyên); 要 = cần, phải.",`你應該去看醫生。|Nǐ yīnggāi qù kàn yīshēng.|Bạn nên đi khám bác sĩ.
+你要多喝水，多休息。|Nǐ yào duō hē shuǐ, duō xiūxí.|Bạn cần uống nhiều nước, nghỉ ngơi nhiều.
+你應該早點睡覺。|Nǐ yīnggāi zǎodiǎn shuì jiào.|Bạn nên đi ngủ sớm.`],
+["別 + V — đừng","別 + V (+ 了)","Dùng để ngăn cản hoặc khuyên đừng làm.",`別吃冰的。|Bié chī bīng de.|Đừng ăn đồ lạnh.
+你別去上課了。|Nǐ bié qù shàng kè le.|Bạn đừng đi học nữa.
+別忘了吃藥。|Bié wàng le chī yào.|Đừng quên uống thuốc.`],
+["先…再… — thứ tự khi chữa bệnh","先 + V1，再 + V2","Dùng để chỉ dẫn các bước.",`你先吃藥，再睡覺。|Nǐ xiān chī yào, zài shuì jiào.|Bạn uống thuốc trước, rồi hãy ngủ.
+先看醫生，再回家休息。|Xiān kàn yīshēng, zài huí jiā xiūxí.|Khám bác sĩ trước, rồi về nhà nghỉ.
+我先喝水，再吃藥。|Wǒ xiān hē shuǐ, zài chī yào.|Tôi uống nước trước rồi mới uống thuốc.`]
+],
+s:`Tôi rất khó chịu trong người.|我很不舒服。|Wǒ hěn bù shūfu.
+Bạn khó chịu ở đâu?|你哪裡不舒服？|Nǐ nǎlǐ bù shūfu?
+Tôi đau đầu, còn hơi sốt.|我頭痛，也有一點發燒。|Wǒ tóu tòng, yě yǒu yìdiǎn fā shāo.
+Họng tôi đau, còn ho nữa.|我的喉嚨痛，也咳嗽。|Wǒ de hóulóng tòng, yě késou.
+Bạn nên đi khám bác sĩ.|你應該去看醫生。|Nǐ yīnggāi qù kàn yīshēng.
+Bác sĩ nói tôi phải uống thuốc.|醫生說我要吃藥。|Yīshēng shuō wǒ yào chī yào.
+Bạn cần nghỉ ngơi nhiều và uống nhiều nước.|你要多休息，多喝水。|Nǐ yào duō xiūxí, duō hē shuǐ.
+Bạn nên đi ngủ sớm một chút.|你應該早點睡覺。|Nǐ yīnggāi zǎodiǎn shuì jiào.
+Đừng ăn đồ lạnh.|別吃冰的。|Bié chī bīng de.
+Đừng quên uống thuốc.|別忘了吃藥。|Bié wàng le chī yào.
+Bạn uống thuốc trước, rồi hãy ngủ.|你先吃藥，再睡覺。|Nǐ xiān chī yào, zài shuì jiào.
+Hôm nay tôi hơi mệt, không muốn đi học.|今天我有點累，不想去上課。|Jīntiān wǒ yǒudiǎn lèi, bù xiǎng qù shàng kè.
+Bạn khá hơn chút nào chưa?|你好一點了嗎？|Nǐ hǎo yìdiǎn le ma?
+Tôi khá hơn nhiều rồi, cảm ơn bạn.|我好多了，謝謝你。|Wǒ hǎo duō le, xièxie nǐ.
+Chúc bạn sức khỏe.|祝你身體健康。|Zhù nǐ shēntǐ jiànkāng.
+Hôm nay tôi rất khó chịu trong người. Tôi đau đầu, đau họng, còn hơi sốt. Tôi đi bệnh viện khám bác sĩ. Bác sĩ nói tôi bị cảm. Tôi phải uống thuốc, nghỉ ngơi nhiều và uống nhiều nước. Hai ngày nay tôi không nên đi học.|今天我很不舒服。我頭痛、喉嚨痛，也有一點發燒。我去醫院看醫生。醫生說我感冒了。我要吃藥，多休息，多喝水。這兩天我不應該去上課。|Jīntiān wǒ hěn bù shūfu. Wǒ tóu tòng, hóulóng tòng, yě yǒu yìdiǎn fā shāo. Wǒ qù yīyuàn kàn yīshēng. Yīshēng shuō wǒ gǎnmào le. Wǒ yào chī yào, duō xiūxí, duō hē shuǐ. Zhè liǎng tiān wǒ bù yīnggāi qù shàng kè.`,
+o:`Tôi rất khó chịu trong người.|我 很 不舒服
+Bạn nên đi khám bác sĩ.|你 應該 去 看 醫生
+Đừng ăn đồ lạnh.|別 吃 冰 的`}
+);
+
+/* ============ HỘI THOẠI THEO BÀI ============
+ l: "Tên người|Hán|pinyin|tiếng Việt" (người nói đầu tiên = A, người thứ hai = B)
+ q: "câu đúng/sai bằng tiếng Việt|O hoặc X"                                         */
+const DIALOGS={
+1:{t:"Gặp ở sân bay",l:`小美|你好！歡迎你來臺灣！|Nǐ hǎo! Huānyíng nǐ lái Táiwān!|Xin chào! Chào mừng bạn đến Đài Loan!
+大衛|謝謝你來接我。|Xièxie nǐ lái jiē wǒ.|Cảm ơn bạn đến đón tôi.
+小美|不客氣。請問，你是美國人嗎？|Bú kèqi. Qǐngwèn, nǐ shì Měiguó rén ma?|Không có gì. Xin hỏi, bạn là người Mỹ à?
+大衛|是的，我是美國人。你呢？|Shì de, wǒ shì Měiguó rén. Nǐ ne?|Vâng, tôi là người Mỹ. Còn bạn?
+小美|我是臺灣人。我姓林，叫小美。你叫什麼名字？|Wǒ shì Táiwān rén. Wǒ xìng Lín, jiào Xiǎo Měi. Nǐ jiào shénme míngzi?|Tôi là người Đài Loan. Tôi họ Lâm, tên Tiểu Mỹ. Bạn tên là gì?
+大衛|我叫大衛。你喜歡喝咖啡嗎？|Wǒ jiào Dàwèi. Nǐ xǐhuān hē kāfēi ma?|Tôi tên David. Bạn có thích uống cà phê không?
+小美|我不喜歡喝咖啡，我喜歡喝烏龍茶。你要不要喝茶？|Wǒ bù xǐhuān hē kāfēi, wǒ xǐhuān hē wūlóngchá. Nǐ yào bu yào hē chá?|Tôi không thích cà phê, tôi thích trà ô long. Bạn có muốn uống trà không?
+大衛|好，謝謝！烏龍茶很好喝。|Hǎo, xièxie! Wūlóngchá hěn hǎohē.|Được, cảm ơn! Trà ô long rất ngon.`,
+q:`Tiểu Mỹ là người Mỹ.|X
+David là người Mỹ.|O
+Tiểu Mỹ thích uống trà ô long.|O
+David không muốn uống trà.|X`},
+2:{t:"Xem ảnh gia đình",l:`小美|這是你家人的照片嗎？|Zhè shì nǐ jiārén de zhàopiàn ma?|Đây là ảnh người nhà bạn à?
+小明|是的。這是我爸爸，這是我媽媽。|Shì de. Zhè shì wǒ bàba, zhè shì wǒ māma.|Vâng. Đây là bố tôi, đây là mẹ tôi.
+小美|他們都很漂亮！你家有幾個人？|Tāmen dōu hěn piàoliang! Nǐ jiā yǒu jǐ ge rén?|Họ đều đẹp quá! Nhà bạn có mấy người?
+小明|我家有五個人，我有一個哥哥和一個妹妹。|Wǒ jiā yǒu wǔ ge rén, wǒ yǒu yí ge gēge hé yí ge mèimei.|Nhà tôi có năm người, tôi có một anh trai và một em gái.
+小美|你哥哥也喜歡照相嗎？|Nǐ gēge yě xǐhuān zhào xiàng ma?|Anh trai bạn cũng thích chụp ảnh à?
+小明|不喜歡，他喜歡看書。我妹妹喜歡照相。|Bù xǐhuān, tā xǐhuān kàn shū. Wǒ mèimei xǐhuān zhào xiàng.|Không, anh ấy thích đọc sách. Em gái tôi thích chụp ảnh.
+小美|你家人都喜歡喝茶嗎？|Nǐ jiārén dōu xǐhuān hē chá ma?|Người nhà bạn đều thích uống trà à?
+小明|是的，我家有很多茶。|Shì de, wǒ jiā yǒu hěn duō chá.|Đúng vậy, nhà tôi có rất nhiều trà.`,
+q:`Nhà Tiểu Minh có năm người.|O
+Anh trai Tiểu Minh thích chụp ảnh.|X
+Em gái Tiểu Minh thích chụp ảnh.|O
+Nhà Tiểu Minh không có trà.|X`},
+3:{t:"Hẹn cuối tuần",l:`小美|週末你想做什麼？|Zhōumò nǐ xiǎng zuò shénme?|Cuối tuần bạn muốn làm gì?
+大明|我想去打籃球。你呢？|Wǒ xiǎng qù dǎ lánqiú. Nǐ ne?|Tôi muốn đi chơi bóng rổ. Còn bạn?
+小美|我喜歡游泳，也喜歡看電影。|Wǒ xǐhuān yóuyǒng, yě xǐhuān kàn diànyǐng.|Tôi thích bơi, cũng thích xem phim.
+大明|我們星期六晚上一起看電影吧！|Wǒmen xīngqíliù wǎnshang yìqǐ kàn diànyǐng ba!|Tối thứ Bảy chúng ta cùng xem phim nhé!
+小美|好啊！你想看臺灣電影還是日本電影？|Hǎo a! Nǐ xiǎng kàn Táiwān diànyǐng háishi Rìběn diànyǐng?|Được thôi! Bạn muốn xem phim Đài Loan hay phim Nhật?
+大明|臺灣電影，我想學中文。|Táiwān diànyǐng, wǒ xiǎng xué Zhōngwén.|Phim Đài Loan, tôi muốn học tiếng Trung.
+小美|我們也一起吃臺灣菜，怎麼樣？|Wǒmen yě yìqǐ chī Táiwān cài, zěnmeyàng?|Chúng ta cũng cùng ăn món Đài Loan, được không?
+大明|太好了！|Tài hǎo le!|Tuyệt quá!`,
+q:`Đại Minh muốn đi chơi bóng rổ.|O
+Tiểu Mỹ thích đá bóng.|X
+Họ muốn xem phim Đài Loan.|O
+Họ hẹn gặp vào sáng thứ Bảy.|X`},
+4:{t:"Mua bánh bao và cà phê",l:`老闆|歡迎！請問你要什麼？|Huānyíng! Qǐngwèn nǐ yào shénme?|Chào mừng! Xin hỏi bạn muốn gì?
+安同|我要三個包子和兩杯咖啡。|Wǒ yào sān ge bāozi hé liǎng bēi kāfēi.|Tôi muốn ba cái bánh bao và hai ly cà phê.
+老闆|咖啡要熱的還是冰的？|Kāfēi yào rè de háishi bīng de?|Cà phê nóng hay đá?
+安同|熱的。|Rè de.|Nóng.
+老闆|要大的還是小的？|Yào dà de háishi xiǎo de?|Cỡ lớn hay nhỏ?
+安同|大的。請問一共多少錢？|Dà de. Qǐngwèn yígòng duōshǎo qián?|Cỡ lớn. Xin hỏi tổng cộng bao nhiêu tiền?
+老闆|包子一個二十塊，咖啡一杯五十塊，一共一百六十塊。|Bāozi yí ge èrshí kuài, kāfēi yì bēi wǔshí kuài, yígòng yìbǎi liùshí kuài.|Bánh bao mỗi cái 20 tệ, cà phê mỗi ly 50 tệ, tổng cộng 160 tệ.
+安同|好的。我要外帶，請幫我微波包子。|Hǎo de. Wǒ yào wàidài, qǐng bāng wǒ wēibō bāozi.|Được. Tôi mang đi, làm ơn hâm bánh bao giúp tôi.`,
+q:`An Đồng mua hai cái bánh bao.|X
+Một ly cà phê giá 50 tệ.|O
+Tổng cộng 160 tệ.|O
+An Đồng ăn tại chỗ.|X`},
+5:{t:"Quán mì bò nổi tiếng",l:`月美|你覺得這家的牛肉麵怎麼樣？|Nǐ juéde zhè jiā de niúròu miàn zěnmeyàng?|Bạn thấy mì bò của quán này thế nào?
+安同|真好吃！湯也很好喝。|Zhēn hǎochī! Tāng yě hěn hǎohē.|Ngon thật! Nước dùng cũng rất ngon.
+月美|聽說這家店很有名。|Tīngshuō zhè jiā diàn hěn yǒumíng.|Nghe nói quán này rất nổi tiếng.
+安同|是啊，可是有一點辣。|Shì a, kěshì yǒu yìdiǎn là.|Đúng vậy, nhưng hơi cay.
+月美|你會做牛肉麵嗎？|Nǐ huì zuò niúròu miàn ma?|Bạn biết nấu mì bò không?
+安同|會，可是我做得不好。|Huì, kěshì wǒ zuò de bù hǎo.|Biết, nhưng tôi nấu không ngon.
+月美|明天晚上你到我家來吧，我做晚飯。|Míngtiān wǎnshang nǐ dào wǒ jiā lái ba, wǒ zuò wǎnfàn.|Tối mai bạn đến nhà tôi nhé, tôi nấu bữa tối.
+安同|太好了，謝謝你！|Tài hǎo le, xièxie nǐ!|Tuyệt quá, cảm ơn bạn!`,
+q:`Mì bò của quán rất ngon.|O
+Mì bò hơi cay.|O
+An Đồng nấu mì bò rất giỏi.|X
+Nguyệt Mỹ mời An Đồng đến nhà ăn tối mai.|O`},
+6:{t:"Trường học trên núi",l:`小明|你們學校在哪裡？|Nǐmen xuéxiào zài nǎlǐ?|Trường các bạn ở đâu?
+小美|在山上，有一點遠。|Zài shānshàng, yǒu yìdiǎn yuǎn.|Ở trên núi, hơi xa.
+小明|學校裡面有什麼？|Xuéxiào lǐmiàn yǒu shénme?|Trong trường có gì?
+小美|有教室、圖書館和宿舍。圖書館在教室後面。|Yǒu jiàoshì, túshūguǎn hé sùshè. Túshūguǎn zài jiàoshì hòumiàn.|Có lớp học, thư viện và ký túc xá. Thư viện ở phía sau lớp học.
+小明|附近有咖啡店嗎？|Fùjìn yǒu kāfēidiàn ma?|Gần đó có quán cà phê không?
+小美|有，咖啡店在游泳池旁邊。|Yǒu, kāfēidiàn zài yóuyǒngchí pángbiān.|Có, quán cà phê ở bên cạnh hồ bơi.
+小明|山上的風景漂亮嗎？|Shānshàng de fēngjǐng piàoliang ma?|Phong cảnh trên núi có đẹp không?
+小美|很漂亮！週末你來看看吧。|Hěn piàoliang! Zhōumò nǐ lái kànkan ba.|Rất đẹp! Cuối tuần bạn đến xem thử nhé.`,
+q:`Trường của Tiểu Mỹ ở trên núi.|O
+Thư viện ở phía trước lớp học.|X
+Quán cà phê ở bên cạnh hồ bơi.|O
+Phong cảnh trên núi không đẹp.|X`},
+7:{t:"Hẹn đi KTV",l:`怡君|你明天有空嗎？|Nǐ míngtiān yǒu kòng ma?|Ngày mai bạn rảnh không?
+安同|明天早上我有中文課，從八點到十二點。|Míngtiān zǎoshang wǒ yǒu Zhōngwén kè, cóng bā diǎn dào shí'èr diǎn.|Sáng mai tôi có lớp tiếng Trung, từ 8 giờ đến 12 giờ.
+怡君|下午呢？|Xiàwǔ ne?|Còn buổi chiều?
+安同|下午沒事。你想做什麼？|Xiàwǔ méi shì. Nǐ xiǎng zuò shénme?|Buổi chiều không có việc. Bạn muốn làm gì?
+怡君|我們三點去KTV唱歌，好嗎？|Wǒmen sān diǎn qù KTV chàng gē, hǎo ma?|Ba giờ chúng ta đi KTV hát nhé?
+安同|沒問題！我們在哪裡見面？|Méi wèntí! Wǒmen zài nǎlǐ jiàn miàn?|Không vấn đề! Chúng ta gặp nhau ở đâu?
+怡君|在學校旁邊的咖啡店，兩點五十見。|Zài xuéxiào pángbiān de kāfēidiàn, liǎng diǎn wǔshí jiàn.|Ở quán cà phê cạnh trường, hai giờ năm mươi gặp.
+安同|好，明天見！|Hǎo, míngtiān jiàn!|Được, mai gặp!`,
+q:`Sáng mai An Đồng có lớp từ 8 giờ đến 12 giờ.|O
+Chiều mai An Đồng bận.|X
+Họ đi KTV lúc 3 giờ.|O
+Họ gặp nhau ở thư viện.|X`},
+8:{t:"Đi Đài Nam bằng gì?",l:`如玉|週末你想跟我去臺南玩嗎？|Zhōumò nǐ xiǎng gēn wǒ qù Táinán wán ma?|Cuối tuần bạn muốn cùng tôi đi Đài Nam chơi không?
+安同|好啊。我們怎麼去？|Hǎo a. Wǒmen zěnme qù?|Được. Chúng ta đi bằng gì?
+如玉|我想坐火車。|Wǒ xiǎng zuò huǒchē.|Tôi muốn đi tàu hỏa.
+安同|坐高鐵比較快啊！|Zuò gāotiě bǐjiào kuài a!|Đi tàu cao tốc nhanh hơn mà!
+如玉|我知道，但是高鐵太貴了。坐火車比較便宜，也可以看風景。|Wǒ zhīdào, dànshì gāotiě tài guì le. Zuò huǒchē bǐjiào piányí, yě kěyǐ kàn fēngjǐng.|Tôi biết, nhưng tàu cao tốc đắt quá. Đi tàu hỏa rẻ hơn, còn ngắm được phong cảnh.
+安同|好，我們坐火車去。車票在哪裡買？|Hǎo, wǒmen zuò huǒchē qù. Chēpiào zài nǎlǐ mǎi?|Được, chúng ta đi tàu hỏa. Vé mua ở đâu?
+如玉|便利商店或是火車站都可以。|Biànlì shāngdiàn huòshi huǒchēzhàn dōu kěyǐ.|Cửa hàng tiện lợi hoặc ga tàu đều được.
+安同|太好了，謝謝你！|Tài hǎo le, xièxie nǐ!|Tuyệt quá, cảm ơn bạn!`,
+q:`Như Ngọc muốn đi tàu cao tốc.|X
+Tàu cao tốc nhanh hơn nhưng đắt.|O
+Họ quyết định đi tàu hỏa.|O
+Vé chỉ mua được ở ga tàu.|X`},
+9:{t:"Nghỉ lễ đi đâu chơi?",l:`田中|放假的時候你打算做什麼？|Fàng jià de shíhou nǐ dǎsuàn zuò shénme?|Lúc nghỉ lễ bạn định làm gì?
+月美|我打算去花蓮旅行，你呢？|Wǒ dǎsuàn qù Huālián lǚxíng, nǐ ne?|Tôi định đi Hoa Liên du lịch, còn bạn?
+田中|我還沒決定。你有什麼建議嗎？|Wǒ hái méi juédìng. Nǐ yǒu shénme jiànyì ma?|Tôi chưa quyết định. Bạn có gợi ý gì không?
+月美|貓空不錯，那裡有很多特別的茶館。|Māokōng búcuò, nàlǐ yǒu hěn duō tèbié de cháguǎn.|Miêu Không khá hay, ở đó có nhiều quán trà đặc biệt.
+田中|從學校到貓空要多久？|Cóng xuéxiào dào Māokōng yào duōjiǔ?|Từ trường đến Miêu Không mất bao lâu?
+月美|大概一個鐘頭。|Dàgài yí ge zhōngtóu.|Khoảng một tiếng.
+田中|要是你有空，我們下個星期六一起去吧！|Yàoshi nǐ yǒu kòng, wǒmen xià ge xīngqíliù yìqǐ qù ba!|Nếu bạn rảnh, thứ Bảy tuần sau chúng ta cùng đi nhé!
+月美|好啊！|Hǎo a!|Được thôi!`,
+q:`Nguyệt Mỹ định đi Hoa Liên.|O
+Điền Trung đã quyết định đi đâu.|X
+Từ trường đến Miêu Không mất khoảng một tiếng.|O
+Họ hẹn đi vào thứ Bảy tuần sau.|O`},
+10:{t:"Trái cây Đài Loan",l:`明華|你為什麼笑得這麼開心？|Nǐ wèishénme xiào de zhème kāixīn?|Sao bạn cười vui thế?
+小美|因為同學給我很多水果。|Yīnwèi tóngxué gěi wǒ hěn duō shuǐguǒ.|Vì bạn học cho tôi nhiều trái cây.
+明華|有什麼水果？|Yǒu shénme shuǐguǒ?|Có những loại trái cây nào?
+小美|有西瓜和芒果。他買的西瓜很甜。|Yǒu xīguā hé mángguǒ. Tā mǎi de xīguā hěn tián.|Có dưa hấu và xoài. Dưa hấu anh ấy mua rất ngọt.
+明華|你以前喜歡吃芒果嗎？|Nǐ yǐqián xǐhuān chī mángguǒ ma?|Trước đây bạn có thích ăn xoài không?
+小美|以前不太喜歡，可是現在喜歡了。臺灣的芒果又香又甜。|Yǐqián bú tài xǐhuān, kěshì xiànzài xǐhuān le. Táiwān de mángguǒ yòu xiāng yòu tián.|Trước đây không thích lắm, nhưng bây giờ thích rồi. Xoài Đài Loan vừa thơm vừa ngọt.
+明華|我也想吃，可以給我一個嗎？|Wǒ yě xiǎng chī, kěyǐ gěi wǒ yí ge ma?|Tôi cũng muốn ăn, cho tôi một quả được không?
+小美|好啊，請吃！|Hǎo a, qǐng chī!|Được chứ, mời ăn!`,
+q:`Tiểu Mỹ vui vì bạn học cho trái cây.|O
+Dưa hấu rất chua.|X
+Trước đây Tiểu Mỹ rất thích xoài.|X
+Tiểu Mỹ mời Minh Hoa ăn xoài.|O`},
+11:{t:"Đi xem phòng trọ",l:`安同|你好，我想租房子。|Nǐ hǎo, wǒ xiǎng zū fángzi.|Xin chào, tôi muốn thuê nhà.
+房東|好啊，你想租哪裡的？|Hǎo a, nǐ xiǎng zū nǎlǐ de?|Được, bạn muốn thuê ở đâu?
+安同|我想租學校附近的。房租一個月多少錢？|Wǒ xiǎng zū xuéxiào fùjìn de. Fángzū yí ge yuè duōshǎo qián?|Tôi muốn thuê gần trường. Tiền thuê một tháng bao nhiêu?
+房東|這個房間一個月八千塊。|Zhège fángjiān yí ge yuè bā qiān kuài.|Phòng này một tháng tám nghìn tệ.
+安同|房間裡有沒有冷氣？|Fángjiān lǐ yǒu méi yǒu lěngqì?|Trong phòng có máy lạnh không?
+房東|有，也有床、桌子和椅子。|Yǒu, yě yǒu chuáng, zhuōzi hé yǐzi.|Có, còn có giường, bàn và ghế.
+安同|這裡離捷運站遠不遠？|Zhèlǐ lí jiéyùnzhàn yuǎn bu yuǎn?|Ở đây cách ga tàu điện ngầm có xa không?
+房東|很近，很方便。|Hěn jìn, hěn fāngbiàn.|Rất gần, rất thuận tiện.
+安同|我先看看房間，再決定，可以嗎？|Wǒ xiān kànkan fángjiān, zài juédìng, kěyǐ ma?|Tôi xem phòng trước rồi quyết định, được không?
+房東|沒問題，請進。|Méi wèntí, qǐng jìn.|Không vấn đề, mời vào.`,
+q:`Phòng này một tháng 8000 tệ.|O
+Phòng không có máy lạnh.|X
+Nhà gần ga tàu điện ngầm.|O
+An Đồng thuê ngay mà không xem phòng.|X`},
+12:{t:"Học tiếng Trung được bao lâu?",l:`老師|你在臺灣學了多久的中文？|Nǐ zài Táiwān xué le duōjiǔ de Zhōngwén?|Bạn học tiếng Trung ở Đài Loan bao lâu rồi?
+大衛|我已經學了一年了。|Wǒ yǐjīng xué le yì nián le.|Tôi đã học một năm rồi.
+老師|你從什麼時候開始學？|Nǐ cóng shénme shíhou kāishǐ xué?|Bạn bắt đầu học từ khi nào?
+大衛|從去年九月開始。|Cóng qùnián jiǔ yuè kāishǐ.|Từ tháng chín năm ngoái.
+老師|你聽得懂我說的話嗎？|Nǐ tīng de dǒng wǒ shuō de huà ma?|Bạn nghe hiểu lời tôi nói không?
+大衛|聽得懂，可是這個漢字我看不懂。|Tīng de dǒng, kěshì zhège Hànzì wǒ kàn bu dǒng.|Nghe hiểu, nhưng chữ Hán này tôi đọc không hiểu.
+老師|沒關係，你每天要多練習。|Méi guānxi, nǐ měitiān yào duō liànxí.|Không sao, mỗi ngày bạn cần luyện tập nhiều.
+大衛|我每天練習兩個小時。|Wǒ měitiān liànxí liǎng ge xiǎoshí.|Mỗi ngày tôi luyện tập hai tiếng.
+老師|很好，你的中文進步了！|Hěn hǎo, nǐ de Zhōngwén jìnbù le!|Tốt lắm, tiếng Trung của bạn tiến bộ rồi!`,
+q:`David đã học tiếng Trung hai năm.|X
+David bắt đầu học từ tháng chín năm ngoái.|O
+David nghe hiểu lời thầy nói.|O
+Mỗi ngày David luyện tập hai tiếng.|O`},
+13:{t:"Sinh nhật vui vẻ",l:`小美|明天是你的生日，生日快樂！|Míngtiān shì nǐ de shēngrì, shēngrì kuàilè!|Ngày mai là sinh nhật bạn, chúc mừng sinh nhật!
+大明|謝謝！你知道我明天幾歲嗎？|Xièxie! Nǐ zhīdào wǒ míngtiān jǐ suì ma?|Cảm ơn! Bạn có biết mai tôi bao nhiêu tuổi không?
+小美|你今年二十五歲，對不對？|Nǐ jīnnián èrshíwǔ suì, duì bu duì?|Năm nay bạn 25 tuổi, đúng không?
+大明|對。你的生日是幾月幾號？|Duì. Nǐ de shēngrì shì jǐ yuè jǐ hào?|Đúng. Sinh nhật bạn là ngày mấy tháng mấy?
+小美|我的生日是五月二十號。|Wǒ de shēngrì shì wǔ yuè èrshí hào.|Sinh nhật tôi là ngày 20 tháng 5.
+大明|明天晚上我請朋友來我家吃蛋糕，你也來吧！|Míngtiān wǎnshang wǒ qǐng péngyou lái wǒ jiā chī dàngāo, nǐ yě lái ba!|Tối mai tôi mời bạn bè đến nhà ăn bánh kem, bạn cũng đến nhé!
+小美|好啊！我送你一個禮物。|Hǎo a! Wǒ sòng nǐ yí ge lǐwù.|Được thôi! Tôi tặng bạn một món quà.
+大明|謝謝你！|Xièxie nǐ!|Cảm ơn bạn!`,
+q:`Năm nay Đại Minh 25 tuổi.|O
+Sinh nhật Tiểu Mỹ là ngày 20 tháng 5.|O
+Tiệc sinh nhật ở nhà Tiểu Mỹ.|X
+Tiểu Mỹ sẽ tặng quà.|O`},
+14:{t:"Trời lạnh quá",l:`大明|今天天氣這麼冷！|Jīntiān tiānqì zhème lěng!|Hôm nay trời lạnh thế này!
+小美|是啊，今天只有十二度，比昨天冷。|Shì a, jīntiān zhǐyǒu shí'èr dù, bǐ zuótiān lěng.|Đúng vậy, hôm nay chỉ có 12 độ, lạnh hơn hôm qua.
+大明|明天呢？|Míngtiān ne?|Còn ngày mai?
+小美|天氣預報說明天更冷，可能會下雨。|Tiānqì yùbào shuō míngtiān gèng lěng, kěnéng huì xià yǔ.|Dự báo thời tiết nói ngày mai lạnh hơn, có thể sẽ mưa.
+大明|那我們明天還去爬山嗎？|Nà wǒmen míngtiān hái qù pá shān ma?|Vậy ngày mai chúng ta còn đi leo núi không?
+小美|要是下雨，我們就不去了。|Yàoshi xià yǔ, wǒmen jiù bú qù le.|Nếu mưa thì chúng ta không đi nữa.
+大明|好。你要穿外套，也要帶雨傘。|Hǎo. Nǐ yào chuān wàitào, yě yào dài yǔsǎn.|Được. Bạn phải mặc áo khoác và mang ô nữa.
+小美|好，謝謝你！|Hǎo, xièxie nǐ!|Được, cảm ơn bạn!`,
+q:`Hôm nay 12 độ.|O
+Hôm nay ấm hơn hôm qua.|X
+Nếu mai mưa họ vẫn đi leo núi.|X
+Dự báo nói ngày mai lạnh hơn.|O`},
+15:{t:"Khám bệnh",l:`醫生|你哪裡不舒服？|Nǐ nǎlǐ bù shūfu?|Bạn khó chịu ở đâu?
+安同|我頭痛，喉嚨也很痛。|Wǒ tóu tòng, hóulóng yě hěn tòng.|Tôi đau đầu, họng cũng rất đau.
+醫生|你發燒嗎？|Nǐ fā shāo ma?|Bạn có sốt không?
+安同|有一點發燒，我還咳嗽。|Yǒu yìdiǎn fā shāo, wǒ hái késou.|Hơi sốt, tôi còn ho nữa.
+醫生|你感冒了。你要吃藥，也要多休息，多喝水。|Nǐ gǎnmào le. Nǐ yào chī yào, yě yào duō xiūxí, duō hē shuǐ.|Bạn bị cảm rồi. Bạn phải uống thuốc, nghỉ ngơi nhiều và uống nhiều nước.
+安同|我可以去上課嗎？|Wǒ kěyǐ qù shàng kè ma?|Tôi đi học được không?
+醫生|這兩天別去上課了，在家休息吧。|Zhè liǎng tiān bié qù shàng kè le, zài jiā xiūxí ba.|Hai ngày nay đừng đi học, ở nhà nghỉ ngơi đi.
+安同|好，謝謝醫生。|Hǎo, xièxie yīshēng.|Được, cảm ơn bác sĩ.`,
+q:`An Đồng đau đầu và đau họng.|O
+An Đồng bị đau bụng.|X
+Bác sĩ nói An Đồng bị cảm.|O
+Bác sĩ bảo An Đồng cứ đi học bình thường.|X`}
+};
+
+/* ============ TẠO DỮ LIỆU TỪ CÁC BÀI ============ */
+const rows=s=>(s||"").split("\n").map(x=>x.trim()).filter(Boolean);
+const VOCAB=[],GRAMMAR=[],TRANS=[],ORDER=[];   // VOCAB:[hán,pinyin,nghĩa,bài]  TRANS:[vi,hán,pinyin,bài]  ORDER:[vi,[từ…],bài]
+(()=>{const seen=new Set();
+  LESSONS.forEach(L=>{
+    rows(L.v).forEach(r=>{const [z,p,v]=r.split("|");if(!seen.has(z)){seen.add(z);VOCAB.push([z,p,v,L.n])}});
+    (L.g||[]).forEach(g=>GRAMMAR.push({t:g[0],f:g[1],d:g[2],ex:rows(g[3]).map(r=>r.split("|")),l:L.n}));
+    rows(L.s).forEach(r=>{const [vi,zh,py]=r.split("|");TRANS.push([vi,zh,py,L.n])});
+    rows(L.o).forEach(r=>{const [vi,t]=r.split("|");ORDER.push([vi,t.split(" "),L.n])});
+  });})();
+const LES=Object.fromEntries(LESSONS.map(L=>[L.n,L]));
+const tLenOf=t=>{const n=t[1].replace(/[^\u4e00-\u9fff]/g,"").length;return n<=5?"short":n<=22?"long":"para"};
+
+/* ---- Sinh thêm câu luyện phản xạ bằng cách đổi từ trong mẫu câu ---- */
+(function(){
+  const seen=new Set(TRANS.map(t=>t[1]));
+  const add=(vi,zh,py,l)=>{if(!seen.has(zh)){seen.add(zh);TRANS.push([vi,zh,py,l])}};
+  const cap=s=>s[0].toUpperCase()+s.slice(1);
+  const D=["一","二","三","四","五","六","七","八","九"],DP=["yī","èr","sān","sì","wǔ","liù","qī","bā","jiǔ"];
+  const nz=n=>n<10?D[n-1]:n===10?"十":n<20?"十"+D[n-11]:D[(n/10|0)-1]+"十"+(n%10?D[n%10-1]:"");
+  const np=n=>n<10?DP[n-1]:n===10?"shí":n<20?"shí"+(n===12?"'":"")+DP[n-11]:DP[(n/10|0)-1]+"shí"+(n%10===2?"'":"")+(n%10?DP[n%10-1]:"");
+  const VN=["một","hai","ba","bốn","năm","sáu","bảy","tám","chín","mười","mười một","mười hai"];
+  const wp=p=>"xīngqí"+(/^[aeiouāáǎàēéěèīíǐìōóǒòūúǔù]/.test(p)?"'":"")+p;
+  // Bài 1: quốc tịch, đồ uống
+  [["Mỹ","美國","Měiguó"],["Nhật Bản","日本","Rìběn"],["Đài Loan","臺灣","Táiwān"],["Việt Nam","越南","Yuènán"],["Trung Quốc","中國","Zhōngguó"]].forEach(([v,z,p])=>{
+    add(`Tôi là người ${v}.`,`我是${z}人。`,`Wǒ shì ${p} rén.`,1);
+    add(`Anh ấy không phải người ${v}.`,`他不是${z}人。`,`Tā bú shì ${p} rén.`,1);
+    add(`Bạn có phải người ${v} không?`,`你是不是${z}人？`,`Nǐ shì bu shì ${p} rén?`,1);
+    add(`Cô ấy là người ${v}, còn bạn?`,`她是${z}人，你呢？`,`Tā shì ${p} rén, nǐ ne?`,1);
+  });
+  [["trà","茶","chá"],["cà phê","咖啡","kāfēi"],["trà ô long","烏龍茶","wūlóngchá"]].forEach(([v,z,p])=>{
+    add(`Bạn có uống ${v} không?`,`你喝不喝${z}？`,`Nǐ hē bu hē ${p}?`,1);
+    add(`Tôi rất thích uống ${v}.`,`我很喜歡喝${z}。`,`Wǒ hěn xǐhuān hē ${p}.`,1);
+    add(`Tôi không uống ${v}.`,`我不喝${z}。`,`Wǒ bù hē ${p}.`,1);
+  });
+  // Bài 2: gia đình
+  [["bố","爸爸","bàba"],["mẹ","媽媽","māma"],["anh trai","哥哥","gēge"],["chị gái","姐姐","jiějie"],["em trai","弟弟","dìdi"],["em gái","妹妹","mèimei"]].forEach(([v,z,p],i)=>{
+    add(`${cap(v)} tôi là giáo viên.`,`我${z}是老師。`,`Wǒ ${p} shì lǎoshī.`,2);
+    add(`${cap(v)} tôi rất thích đọc sách.`,`我${z}很喜歡看書。`,`Wǒ ${p} hěn xǐhuān kàn shū.`,2);
+    if(i>=2){
+      [["một","一","yí"],["hai","兩","liǎng"],["ba","三","sān"]].forEach(([nv,n2,np2])=>add(`Tôi có ${nv} ${v}.`,`我有${n2}個${z}。`,`Wǒ yǒu ${np2} ge ${p}.`,2));
+      add(`Tôi không có ${v}.`,`我沒有${z}。`,`Wǒ méiyǒu ${p}.`,2);
+    }
+  });
+  for(let n=2;n<=8;n++)add(`Nhà tôi có ${VN[n-1]} người.`,`我家有${n===2?"兩":nz(n)}個人。`,`Wǒ jiā yǒu ${n===2?"liǎng":np(n)} ge rén.`,2);
+  // Bài 3: hoạt động cuối tuần
+  [["chơi bóng rổ","打籃球","dǎ lánqiú"],["đánh quần vợt","打網球","dǎ wǎngqiú"],["chơi bóng chày","打棒球","dǎ bàngqiú"],["đá bóng","踢足球","tī zúqiú"],["bơi","游泳","yóuyǒng"],["xem phim","看電影","kàn diànyǐng"],["nghe nhạc","聽音樂","tīng yīnyuè"]].forEach(([v,z,p])=>{
+    add(`Cuối tuần tôi thường ${v}.`,`週末我常${z}。`,`Zhōumò wǒ cháng ${p}.`,3);
+    add(`Tôi muốn ${v}.`,`我想${z}。`,`Wǒ xiǎng ${p}.`,3);
+    add(`Bạn thích ${v} không?`,`你喜歡${z}嗎？`,`Nǐ xǐhuān ${p} ma?`,3);
+    add(`Chúng ta ${v} nhé!`,`我們${z}吧！`,`Wǒmen ${p} ba!`,3);
+  });
+  // Bài 4: mua sắm
+  [["bánh bao","包子","bāozi","個","ge","cái"],["cà phê","咖啡","kāfēi","杯","bēi","ly"],["trà ô long","烏龍茶","wūlóngchá","杯","bēi","ly"],["điện thoại","手機","shǒujī","支","zhī","chiếc"]].forEach(([v,z,p,lt,ltp,ltv])=>{
+    [["một","一",ltp==="ge"?"yí":"yì"],["hai","兩","liǎng"],["ba","三","sān"]].forEach(([nv,n2,np2])=>add(`Tôi muốn mua ${nv} ${ltv} ${v}.`,`我要買${n2}${lt}${z}。`,`Wǒ yào mǎi ${np2} ${ltp} ${p}.`,4));
+    add(`Một ${ltv} ${v} bao nhiêu tiền?`,`一${lt}${z}多少錢？`,`${ltp==="ge"?"Yí":"Yì"} ${ltp} ${p} duōshǎo qián?`,4);
+  });
+  [["hai mươi","二十","èrshí"],["ba mươi lăm","三十五","sānshíwǔ"],["năm mươi tám","五十八","wǔshíbā"],["một trăm","一百","yìbǎi"],["một trăm năm mươi","一百五十","yìbǎi wǔshí"],["hai trăm","兩百","liǎngbǎi"],["một nghìn","一千","yìqiān"]].forEach(([v,z,p])=>{
+    add(`Cái này ${v} tệ.`,`這個${z}塊。`,`Zhège ${p} kuài.`,4);
+    add(`Tổng cộng ${v} tệ.`,`一共${z}塊。`,`Yígòng ${p} kuài.`,4);
+  });
+  // Bài 5: biết làm gì (會), món ăn
+  [["nấu cơm","做飯","zuò fàn"],["đánh quần vợt","打網球","dǎ wǎngqiú"],["nói tiếng Trung","說中文","shuō Zhōngwén"],["bơi","游泳","yóuyǒng"],["làm đồ tráng miệng","做甜點","zuò tiándiǎn"]].forEach(([v,z,p])=>{
+    add(`Tôi biết ${v}.`,`我會${z}。`,`Wǒ huì ${p}.`,5);
+    add(`Tôi không biết ${v}.`,`我不會${z}。`,`Wǒ bú huì ${p}.`,5);
+    add(`Bạn biết ${v} không?`,`你會${z}嗎？`,`Nǐ huì ${p} ma?`,5);
+  });
+  [["mì bò","牛肉麵","niúròu miàn"],["đậu phụ thối","臭豆腐","chòudòufu"],["đồ tráng miệng","甜點","tiándiǎn"]].forEach(([v,z,p])=>{
+    add(`${cap(v)} thật ngon!`,`${z}真好吃！`,`${cap(p)} zhēn hǎochī!`,5);
+    add(`${cap(v)} hơi cay.`,`${z}有一點辣。`,`${cap(p)} yǒu yìdiǎn là.`,5);
+  });
+  // Bài 6: vị trí
+  [["thư viện","圖書館","túshūguǎn"],["ký túc xá","宿舍","sùshè"],["nhà hàng","餐廳","cāntīng"],["cửa hàng","商店","shāngdiàn"],["quán cà phê","咖啡店","kāfēidiàn"],["hồ bơi","游泳池","yóuyǒngchí"]].forEach(([v,z,p])=>{
+    [["phía trước","前面","qiánmiàn"],["phía sau","後面","hòumiàn"],["bên cạnh","旁邊","pángbiān"]].forEach(([r,rz,rp])=>
+      add(`${cap(v)} ở ${r} trường học.`,`${z}在學校${rz}。`,`${cap(p)} zài xuéxiào ${rp}.`,6));
+    add(`${cap(v)} ở đâu?`,`${z}在哪裡？`,`${cap(p)} zài nǎlǐ?`,6);
+    add(`Gần đây có ${v} không?`,`這附近有沒有${z}？`,`Zhè fùjìn yǒu méi yǒu ${p}?`,6);
+  });
+  // Bài 7: giờ, thứ
+  for(let h=1;h<=12;h++){
+    const z=h===2?"兩":nz(h),p=h===2?"liǎng":np(h);
+    add(`Bây giờ là ${VN[h-1]} giờ.`,`現在${z}點。`,`Xiànzài ${p} diǎn.`,7);
+    add(`Bây giờ là ${VN[h-1]} giờ rưỡi.`,`現在${z}點半。`,`Xiànzài ${p} diǎn bàn.`,7);
+    add(`Tôi ${VN[h-1]} giờ vào học.`,`我${z}點上課。`,`Wǒ ${p} diǎn shàng kè.`,7);
+  }
+  [["thứ Hai","一","yī"],["thứ Ba","二","èr"],["thứ Tư","三","sān"],["thứ Năm","四","sì"],["thứ Sáu","五","wǔ"],["thứ Bảy","六","liù"],["Chủ nhật","天","tiān"]].forEach(([v,z,p])=>{
+    add(`Hôm nay là ${v}.`,`今天星期${z}。`,`Jīntiān ${wp(p)}.`,7);
+    add(`Ngày mai là ${v}.`,`明天星期${z}。`,`Míngtiān ${wp(p)}.`,7);
+    add(`${cap(v)} tôi có việc.`,`我星期${z}有事。`,`Wǒ ${wp(p)} yǒu shì.`,7);
+  });
+  // Bài 8: phương tiện
+  const TRN=[["xe buýt","公車","gōngchē"],["tàu cao tốc","高鐵","gāotiě"],["tàu hỏa","火車","huǒchē"],["tàu điện ngầm","捷運","jiéyùn"],["taxi","計程車","jìchéngchē"]];
+  TRN.forEach(([v,z,p],ti)=>[["Đài Nam","臺南","Táinán"],["trường học","學校","xuéxiào"],["Cố Cung","故宮","Gùgōng"],["nhà bạn","你家","nǐ jiā"]].forEach(([dv,dz,dp])=>{
+    add(`Tôi đi ${v} đến ${dv}.`,`我坐${z}去${dz}。`,`Wǒ zuò ${p} qù ${dp}.`,8);
+    if(ti<3)add(`Bạn đi ${v} đến ${dv} à?`,`你坐${z}去${dz}嗎？`,`Nǐ zuò ${p} qù ${dp} ma?`,8);
+  }));
+  [["Tàu hỏa rẻ hơn tàu cao tốc.","火車比高鐵便宜。","Huǒchē bǐ gāotiě piányí."],["Taxi đắt hơn xe buýt.","計程車比公車貴。","Jìchéngchē bǐ gōngchē guì."],["Tàu điện ngầm nhanh hơn xe buýt.","捷運比公車快。","Jiéyùn bǐ gōngchē kuài."],["Xe buýt chậm hơn tàu điện ngầm.","公車比捷運慢。","Gōngchē bǐ jiéyùn màn."]].forEach(a=>add(a[0],a[1],a[2],8));
+  // Bài 9: kế hoạch nghỉ lễ
+  [["Hoa Liên","花蓮","Huālián"],["Miêu Không","貓空","Māokōng"],["Đài Nam","臺南","Táinán"],["chợ đêm","夜市","yèshì"]].forEach(([v,z,p])=>{
+    add(`Tôi dự định đi ${v} chơi.`,`我打算去${z}玩。`,`Wǒ dǎsuàn qù ${p} wán.`,9);
+    add(`Nếu rảnh, tôi sẽ đi ${v}.`,`要是有空，我就去${z}。`,`Yàoshi yǒu kòng, wǒ jiù qù ${p}.`,9);
+    add(`Bạn muốn đi ${v} không?`,`你想不想去${z}？`,`Nǐ xiǎng bu xiǎng qù ${p}?`,9);
+  });
+  for(let n=2;n<=7;n++)add(`Chúng tôi nghỉ ${VN[n-1]} ngày.`,`我們放${n===2?"兩":nz(n)}天的假。`,`Wǒmen fàng ${n===2?"liǎng":np(n)} tiān de jià.`,9);
+  // Bài 10: trái cây
+  [["dưa hấu","西瓜","xīguā"],["xoài","芒果","mángguǒ"],["chuối","香蕉","xiāngjiāo"],["táo","蘋果","píngguǒ"],["nho","葡萄","pútáo"]].forEach(([v,z,p])=>{
+    add(`Tôi thích ăn ${v}.`,`我喜歡吃${z}。`,`Wǒ xǐhuān chī ${p}.`,10);
+    add(`${cap(v)} rất ngọt.`,`${z}很甜。`,`${cap(p)} hěn tián.`,10);
+    add(`Trước đây tôi không thích ăn ${v}, bây giờ thích rồi.`,`我以前不喜歡吃${z}，現在喜歡了。`,`Wǒ yǐqián bù xǐhuān chī ${p}, xiànzài xǐhuān le.`,10);
+    add(`${cap(v)} này bao nhiêu tiền?`,`這個${z}多少錢？`,`Zhège ${p} duōshǎo qián?`,10);
+  });
+  // Bài 11: thuê nhà
+  [["năm nghìn","五千","wǔ qiān"],["tám nghìn","八千","bā qiān"],["một vạn","一萬","yí wàn"]].forEach(([v,z,p])=>add(`Tiền thuê nhà một tháng ${v} tệ.`,`房租一個月${z}塊。`,`Fángzū yí ge yuè ${p} kuài.`,11));
+  [["rẻ","便宜","piányí"],["đắt","貴","guì"],["sạch","乾淨","gānjìng"],["yên tĩnh","安靜","ānjìng"],["ồn","吵","chǎo"]].forEach(([v,z,p])=>{
+    add(`Căn phòng này rất ${v}.`,`這個房間很${z}。`,`Zhège fángjiān hěn ${p}.`,11);
+    add(`Căn phòng này không ${v}.`,`這個房間不${z}。`,`Zhège fángjiān bù ${p}.`,11);
+  });
+  // Bài 12: thời lượng
+  [["một năm","一年","yì nián"],["hai tháng","兩個月","liǎng ge yuè"],["ba tuần","三個星期","sān ge xīngqí"],["bốn ngày","四天","sì tiān"],["năm tiếng","五個小時","wǔ ge xiǎoshí"]].forEach(([v,z,p])=>{
+    add(`Tôi đã học tiếng Trung ${v}.`,`我學了${z}的中文。`,`Wǒ xué le ${p} de Zhōngwén.`,12);
+    add(`Anh ấy ở Đài Loan ${v} rồi.`,`他在臺灣住了${z}了。`,`Tā zài Táiwān zhù le ${p} le.`,12);
+  });
+  // Bài 13: sinh nhật, tuổi
+  [[1,15],[3,8],[5,20],[7,7],[9,30],[10,15],[12,25],[2,14]].forEach(([m,d])=>
+    add(`Sinh nhật tôi là ngày ${d} tháng ${m}.`,`我的生日是${nz(m)}月${nz(d)}號。`,`Wǒ de shēngrì shì ${np(m)} yuè ${np(d)} hào.`,13));
+  [18,20,22,25,30].forEach(n=>{
+    add(`Tôi ${n} tuổi.`,`我${nz(n)}歲。`,`Wǒ ${np(n)} suì.`,13);
+    add(`Anh ấy năm nay ${n} tuổi.`,`他今年${nz(n)}歲。`,`Tā jīnnián ${np(n)} suì.`,13);
+  });
+  // Bài 14: thời tiết
+  [["nóng","熱","rè"],["lạnh","冷","lěng"],["mát","涼","liáng"]].forEach(([v,z,p])=>{
+    add(`Hôm nay trời rất ${v}.`,`今天天氣很${z}。`,`Jīntiān tiānqì hěn ${p}.`,14);
+    add(`Trời ${v} thế này!`,`天氣這麼${z}！`,`Tiānqì zhème ${p}!`,14);
+    add(`Ngày mai trời sẽ ${v}.`,`明天會${z}。`,`Míngtiān huì ${p}.`,14);
+    add(`Hôm qua trời không ${v}.`,`昨天天氣不${z}。`,`Zuótiān tiānqì bù ${p}.`,14);
+  });
+  [["mùa xuân","春天","chūntiān","ấm áp","暖和","nuǎnhuo"],["mùa hè","夏天","xiàtiān","nóng","熱","rè"],["mùa thu","秋天","qiūtiān","mát","涼","liáng"],["mùa đông","冬天","dōngtiān","lạnh","冷","lěng"]].forEach(([v,z,p,av,az,ap])=>{
+    add(`${cap(v)} trời ${av}.`,`${z}很${az}。`,`${cap(p)} hěn ${ap}.`,14);
+    add(`Tôi thích ${v}.`,`我喜歡${z}。`,`Wǒ xǐhuān ${p}.`,14);
+  });
+  // Bài 15: sức khỏe
+  [["đầu","頭","tóu"],["bụng","肚子","dùzi"],["họng","喉嚨","hóulóng"]].forEach(([v,z,p])=>{
+    add(`Tôi đau ${v}.`,`我${z}痛。`,`Wǒ ${p} tòng.`,15);
+    add(`Bạn đau ${v} à?`,`你${z}痛嗎？`,`Nǐ ${p} tòng ma?`,15);
+  });
+  [["cảm","感冒","gǎnmào"],["sốt","發燒","fā shāo"],["ho","咳嗽","késou"]].forEach(([v,z,p])=>{
+    add(`Tôi bị ${v} rồi.`,`我${z}了。`,`Wǒ ${p} le.`,15);
+    add(`Anh ấy bị ${v} rồi.`,`他${z}了。`,`Tā ${p} le.`,15);
+  });
+  [["nghỉ ngơi nhiều","多休息","duō xiūxí"],["uống nhiều nước","多喝水","duō hē shuǐ"],["uống thuốc","吃藥","chī yào"],["đi khám bác sĩ","看醫生","kàn yīshēng"],["đi ngủ sớm","早點睡覺","zǎodiǎn shuì jiào"]].forEach(([v,z,p])=>
+    add(`Bạn nên ${v}.`,`你應該${z}。`,`Nǐ yīnggāi ${p}.`,15));
+})();
+
+/* ============ TIỆN ÍCH / GIỌNG ĐỌC ============ */
+window.addEventListener("error",e=>{try{toast("Lỗi trong trang: "+e.message)}catch(x){}});
+const $=s=>document.querySelector(s);
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let voices=[];
+const VKEY="tocfl1voice";
+const getV=()=>{try{return localStorage.getItem(VKEY)||""}catch(e){return ""}};
+function loadVoices(){
+  // giữ mọi giọng tiếng Trung (Đài Loan, đại lục, Hồng Kông…) mà máy có
+  voices=speechSynthesis.getVoices().filter(v=>/^zh|cmn|yue/i.test(v.lang)||/chinese|mandarin|cantonese|國語|普通话|粵/i.test(v.name));
+  const sel=$("#voiceSel");if(!sel)return;
+  const cur=getV();
+  sel.innerHTML=voices.length?`<option value="">Tự chọn (ưu tiên Đài Loan)</option>`+voices.map(v=>`<option value="${esc(v.name)}">${esc(v.name)} · ${v.lang}</option>`).join(""):`<option value="">Chưa có giọng Trung trên máy</option>`;
+  sel.value=voices.some(v=>v.name===cur)?cur:"";
+}
+function pick(){
+  const cur=getV();
+  return voices.find(v=>v.name===cur)||voices.find(v=>v.name==="Meijia")||voices.find(v=>/zh[-_]TW/i.test(v.lang))||voices.find(v=>/zh[-_]CN/i.test(v.lang))||voices[0];
+}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();}
+let sTok=0,keepU=null;
+function toast(m){
+  let d=$("#toast");
+  if(!d){d=document.createElement("div");d.id="toast";d.style.cssText="position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:10px;z-index:9;max-width:90%;font-size:14px";document.body.appendChild(d)}
+  d.textContent=m;d.style.display="block";clearTimeout(d._t);d._t=setTimeout(()=>d.style.display="none",6000);
+}
+// danh sách giọng thử lần lượt: giọng đã chọn → giọng Đài Loan khác → giọng Trung còn lại
+function voiceList(){const p=pick();return [p,...voices.filter(v=>v!==p&&/zh[-_]TW/i.test(v.lang)),...voices.filter(v=>v!==p&&!/zh[-_]TW/i.test(v.lang))].filter(Boolean)}
+function say(t,o){
+  const list=voiceList(),k=o.k||0,v=list[k],u=new SpeechSynthesisUtterance(t);
+  u.lang=v?v.lang:"zh-TW";if(v)u.voice=v;
+  u.rate=o.rate||parseFloat($("#rate").value);u.pitch=o.pitch||1;u.volume=1;
+  let started=false,failed=false;
+  const fallback=why=>{
+    if(failed)return;failed=true;
+    if(k+1<list.length){speechSynthesis.cancel();setTimeout(()=>say(t,{...o,k:k+1}),120)}
+    else toast("Không phát được âm thanh ("+why+"). Kiểm tra âm lượng máy / tab có bị tắt tiếng không, hoặc thử mở web bằng Safari.");
+  };
+  u.onstart=()=>{started=true};
+  u.onend=()=>{started=true;if(o.onend&&!failed)o.onend()};
+  u.onerror=e=>{if(e.error==="canceled"||e.error==="interrupted")return;fallback(e.error)};
+  keepU=u;                                   // giữ tham chiếu để trình duyệt không thu hồi giữa chừng
+  if(speechSynthesis.paused)speechSynthesis.resume();
+  speechSynthesis.speak(u);
+  setTimeout(()=>{if(!started&&!failed&&keepU===u)fallback("giọng không phản hồi: "+(v?v.name:"mặc định"))},2500);   // giọng bị treo → đổi giọng khác
+}
+function speak(t,rate){
+  if(!("speechSynthesis" in window)){toast("Khung/trình duyệt này không hỗ trợ giọng đọc. Hãy mở file index.html bằng Chrome hoặc Safari.");return}
+  const busy=speechSynthesis.speaking||speechSynthesis.pending;
+  if(busy)speechSynthesis.cancel();const tk=++sTok;
+  setTimeout(()=>{if(tk===sTok)say(t,{rate})},busy?120:0);   // chờ một chút sau cancel(): Chrome hay nuốt câu đọc nếu speak() ngay lập tức
+}
+const spkBtn=t=>`<button class="b spk" title="Nghe" onclick="speak('${t.replace(/'/g,"\\'")}')">🔊</button>`;
+const stripTone=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ü/g,"u").toLowerCase().replace(/[^a-z]/g,"");
+// chấp nhận cả chữ giản thể: đổi giản → phồn trước khi so sánh
+const S2T={};("师師学學谢謝对對关關系係吗嗎么麼谁誰里裡们們个個几幾点點号號说說买買卖賣钱錢块塊贵貴面麵会會来來饭飯国國湾灣这這书書习習欢歡两兩现現没沒见見请請时時间間问問题題话話语語华華开開电電听聽认認读讀长長爱愛过過还還样樣乐樂鸡雞个個东東药藥医醫医醫头頭热熱烧燒咳咳车車铁鐵机機场場费費实實进進问問远遠边邊馆館园園术術运運动動视視节節岁歲预預报報风風景景")
+.split("").forEach((c,i,a)=>{if(i%2===0)S2T[c]=a[i+1]});
+const normZh=s=>[...s.replace(/[\s，。？！、：；,.?!:;]/g,"")].map(c=>S2T[c]||c).join("");
+
+let prog={};try{prog=JSON.parse(localStorage.getItem("tocfl1")||"{}")}catch(e){}
+prog.known=prog.known||{};prog.score=prog.score||{right:0,total:0};
+const save=()=>{try{localStorage.setItem("tocfl1",JSON.stringify(prog))}catch(e){}updateHero()};
+function mark(ok){prog.score.total++;if(ok)prog.score.right++;save()}
+
+/* ============ PHẠM VI BÀI ============ */
+const NL=LESSONS.length;
+let LESSON=prog.lesson;if(!/^(all|\d+-\d+)$/.test(LESSON||""))LESSON="all";
+const inL=n=>{if(LESSON==="all")return true;const [a,b]=LESSON.split("-").map(Number);return n>=a&&n<=b};
+const pool=()=>VOCAB.filter(v=>inL(v[3]));
+(function buildSelect(){
+  const g=[["all",`Tất cả ${NL} bài`],["1-5","Bài 1–5"],["6-10","Bài 6–10"],["11-15","Bài 11–15"]];
+  $("#les").innerHTML=g.map(([k,l])=>`<option value="${k}">${l}</option>`).join("")+
+    LESSONS.map(L=>`<option value="${L.n}-${L.n}">Bài ${L.n} · ${L.zh.replace(/[？！]/g,"")}</option>`).join("");
+  $("#lbar").innerHTML=`<button class="lchip" data-v="all">Tất cả<small>${NL} bài</small></button>`+
+    LESSONS.map(L=>`<button class="lchip" data-v="${L.n}-${L.n}" title="${esc(L.vi)}">Bài ${L.n}<small>${L.zh.replace(/[？！]/g,"")}</small></button>`).join("");
+  $("#lbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setLesson(b.dataset.v)};
+})();
+function setLesson(v){
+  LESSON=prog.lesson=v;qMode=null;tIdx=0;$("#les").value=v;syncBar();save();render();
+}
+function syncBar(){
+  document.querySelectorAll(".lchip").forEach(b=>b.classList.toggle("on",b.dataset.v===LESSON));
+  const on=document.querySelector(".lchip.on");if(on)on.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
+}
+function updateHero(){
+  const k=Object.keys(prog.known).length,s=prog.score;
+  $("#stK").textContent=k;$("#stKbar").style.width=(k/VOCAB.length*100)+"%";
+  $("#stS").textContent=s.total?Math.round(s.right/s.total*100)+"%":"–";$("#stSbar").style.width=(s.total?s.right/s.total*100:0)+"%";
+  $("#stV").textContent=VOCAB.length;
+}
+
+/* ============ ĐIỀU HƯỚNG ============ */
+const TABS=[["vocab","📖 Từ vựng"],["flash","🃏 Thẻ nhớ"],["grammar","📐 Ngữ pháp"],["read","💬 Đọc"],["quiz","✍️ Bài tập"],["trans","🔤 Tập dịch"]];
+let tab="vocab";
+$("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button data-k="${k}"><span class="ic">${l.slice(0,i)}</span><span class="lb">${l.slice(i+1)}</span></button>`}).join("");
+$("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
+function render(){
+  document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
+  stopSpeak();
+  ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,quiz:quizView,trans:transView})[tab]();
+}
+const lesTag=n=>`Bài ${n} · ${LES[n].zh}`;
+const lesHead=n=>`Bài ${n} · ${annotate(LES[n].zh).html}`;
+
+/* ============ TỪ VỰNG ============ */
+let vLes="all",vQ="";
+function vocabView(){
+  const P=pool(),ls=[...new Set(P.map(v=>v[3]))];
+  if(vLes!=="all"&&!ls.includes(vLes))vLes="all";
+  $("#app").innerHTML=`<div class="chips"><span class="chip ${vLes==="all"?"on":""}" data-t="all">Tất cả</span>${ls.map(n=>`<span class="chip ${n===vLes?"on":""}" data-t="${n}">Bài ${n}</span>`).join("")}</div>
+  <input type="search" id="q" placeholder="Tìm Hán tự, pinyin hoặc tiếng Việt…" value="${esc(vQ)}">
+  <div class="stat" style="margin:8px 0">Đã thuộc: ${P.filter(v=>prog.known[v[0]]).length}/${P.length} từ trong phạm vi đang chọn</div>
+  <div id="vlist"></div>`;
+  document.querySelector(".chips").onclick=e=>{const t=e.target.dataset.t;if(t){vLes=t==="all"?"all":+t;vocabView()}};
+  $("#q").oninput=e=>{vQ=e.target.value;list()};
+  list();
+}
+function list(){
+  const q=vQ.trim().toLowerCase(),sq=stripTone(q);
+  const items=pool().filter(v=>(vLes==="all"||v[3]===vLes)&&(!q||v.join(" ").toLowerCase().includes(q)||(sq&&stripTone(v[1]).includes(sq))));
+  let html="",last=0;
+  items.forEach(v=>{
+    if(v[3]!==last){last=v[3];html+=`<div class="lh">${lesHead(last)} <span class="vi">— ${LES[last].vi}</span></div>`}
+    html+=`<div class="vl"><div>${spkBtn(v[0])}</div><div><span class="zh">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>
+    <label class="stat"><input type="checkbox" ${prog.known[v[0]]?"checked":""} onchange="toggleKnown('${v[0]}',this.checked)"> thuộc</label></div>`;
+  });
+  $("#vlist").innerHTML=html?`<div class="card">${html}</div>`:"<div class='vi'>Không tìm thấy.</div>";
+}
+function toggleKnown(z,c){if(c)prog.known[z]=1;else delete prog.known[z];save()}
+
+/* ============ THẺ NHỚ ============ */
+let fDeck=[],fi=0,fBack=false,fOnlyNew=false;
+function flashView(){fDeck=sh(pool().filter(v=>!fOnlyNew||!prog.known[v[0]]));fi=0;fBack=false;flashDraw()}
+function flashDraw(){
+  if(!fDeck.length){$("#app").innerHTML=`<div class="card">🎉 Bạn đã thuộc hết! <button class="b" onclick="fOnlyNew=false;flashView()">Ôn lại tất cả</button></div>`;return}
+  const v=fDeck[fi];
+  $("#app").innerHTML=`<div class="row" style="margin-bottom:10px;justify-content:space-between"><label><input type="checkbox" ${fOnlyNew?"checked":""} onchange="fOnlyNew=this.checked;flashView()"> Chỉ từ chưa thuộc</label><span class="stat">${fi+1}/${fDeck.length} · Bài ${v[3]}</span></div>
+  <div class="card flash" onclick="fBack=!fBack;flashDraw()">
+   ${fBack?`<div class="zh" style="font-size:36px">${v[0]}</div><div class="py">${v[1]}</div><div style="font-size:22px">${v[2]}</div>`:`<div class="zh">${v[0]}</div><div class="vi">(chạm để lật)</div>`}
+  </div>
+  <div class="row" style="justify-content:center">
+   <button class="b" onclick="speak('${v[0]}')">🔊 Nghe</button>
+   <button class="b" onclick="speak('${v[0]}',0.4)">🐢 Chậm</button>
+   <button class="b" onclick="fAns(false)">😕 Chưa thuộc</button>
+   <button class="b p" onclick="fAns(true)">✅ Đã thuộc</button></div>`;
+  if(!fBack)speak(v[0]);
+}
+function fAns(ok){const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.known[v[0]];save();fi=(fi+1)%fDeck.length;fBack=false;flashDraw()}
+
+/* ============ CHÚ THÍCH PINYIN + NGHĨA CHO TIÊU ĐỀ / CÔNG THỨC NGỮ PHÁP ============ */
+const EXTRA={"游":["yóu","bơi"],"好":["hǎo","tốt"],"多":["duō","nhiều"],"裡":["lǐ","bên trong"]};   // từ/ký tự ngữ pháp chưa nằm trong danh sách từ vựng
+const DICT=(()=>{const d={};VOCAB.forEach(v=>{d[v[0]]=[v[1],v[2]]});Object.assign(d,EXTRA);return d})();
+const isHan=c=>/[\u4e00-\u9fff]/.test(c);
+function annotate(s){   // → {html: chữ Hán có pinyin phía trên, gloss: [[hán, pinyin, nghĩa]…]}
+  let html="",gloss=[],seen=new Set(),i=0;
+  while(i<s.length){
+    if(!isHan(s[i])){let j=i;while(j<s.length&&!isHan(s[j]))j++;html+=esc(s.slice(i,j));i=j;continue}
+    let k=0;
+    for(let L=Math.min(6,s.length-i);L>=1;L--){if(DICT[s.slice(i,i+L)]&&[...s.slice(i,i+L)].every(isHan)){k=L;break}}
+    if(k){const w=s.slice(i,i+k),[py,vi]=DICT[w];html+=`<ruby>${w}<rt>${py}</rt></ruby>`;if(!seen.has(w)){seen.add(w);gloss.push([w,py,vi])}i+=k}
+    else{html+=s[i];i++}
+  }
+  return {html,gloss};
+}
+const glossHtml=g=>g.length?`<div class="gloss">${g.map(x=>`<span><b class="zh">${x[0]}</b> <i>${x[1]}</i> = ${x[2]}</span>`).join("")}</div>`:"";
+
+/* ============ NGỮ PHÁP ============ */
+function grammarView(){
+  let html="",last=0;
+  GRAMMAR.forEach((g,i)=>{
+    if(!inL(g.l))return;
+    if(g.l!==last){last=g.l;html+=`<div class="lh">${lesHead(last)} <span class="vi">— ${LES[last].vi}</span></div>`}
+    const T=annotate(g.t),F=annotate(g.f),seen=new Set(),G=[...T.gloss,...F.gloss].filter(x=>!seen.has(x[0])&&seen.add(x[0]));
+    html+=`<div class="card"><h3 class="gh">${T.html}</h3><div class="formula">${F.html}</div>${glossHtml(G)}<p style="margin:8px 0 10px">${g.d}</p>
+    ${g.ex.map(e=>`<div class="ex"><div class="row"><span class="zh">${e[0]}</span>${spkBtn(e[0])}</div><div class="py">${e[1]}</div><div class="vi">${e[2]}</div></div>`).join("")}</div>`;
+  });
+  $("#app").innerHTML=html||"<div class='card vi'>Chưa có ngữ pháp cho phạm vi này.</div>";
+}
+
+/* ============ ĐỌC — HỘI THOẠI & ĐOẠN VĂN ============ */
+let rPy=true,rVi=true,rTok=0,rAns={};
+function stopSpeak(){rTok++;sTok++;if("speechSynthesis" in window&&(speechSynthesis.speaking||speechSynthesis.pending))speechSynthesis.cancel()}
+function speakSeq(items){      // đọc lần lượt từng câu, người nói thứ hai dùng giọng thấp hơn
+  if(!("speechSynthesis" in window)){toast("Khung/trình duyệt này không hỗ trợ giọng đọc. Hãy mở file index.html bằng Chrome hoặc Safari.");return}
+  const busy=speechSynthesis.speaking||speechSynthesis.pending;
+  if(busy)speechSynthesis.cancel();const tok=++rTok;let i=0;
+  const next=()=>{
+    if(tok!==rTok||i>=items.length)return;
+    const it=items[i++];
+    say(it.t,{pitch:it.pitch,onend:()=>setTimeout(next,350)});
+  };
+  setTimeout(()=>{if(tok===rTok)next()},busy?120:0);
+}
+function playDialog(n){
+  toast("🔊 Đang đọc…");
+  const L=rows(DIALOGS[n].l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];
+  speakSeq(L.map(x=>({t:x[1],pitch:names.indexOf(x[0])===0?1.15:0.8})));
+}
+function playPara(zh){
+  toast("🔊 Đang đọc…");speakSeq(zh.split(/(?<=[。！？])/).filter(Boolean).map(t=>({t,pitch:1})))}
+function reread(){const y=window.scrollY;readView();window.scrollTo(0,y)}
+function rAnswer(k,v,a){if(rAns[k])return;rAns[k]=v;mark(v===a);reread()}
+function readView(){
+  const ns=LESSONS.map(L=>L.n).filter(inL);
+  let html=`<div class="row" style="margin-bottom:10px"><label><input type="checkbox" ${rPy?"checked":""} onchange="rPy=this.checked;reread()"> Hiện pinyin</label><label><input type="checkbox" ${rVi?"checked":""} onchange="rVi=this.checked;reread()"> Hiện tiếng Việt</label><button class="b" onclick="stopSpeak()">⏹ Dừng</button><span class="stat">Mẹo: tắt pinyin và tiếng Việt để tự đọc, rồi bật lên kiểm tra.</span></div>`;
+  ns.forEach(n=>{
+    const D=DIALOGS[n],L=LES[n];
+    html+=`<div class="lh">${lesHead(n)} <span class="vi">— ${L.vi}</span></div>`;
+    if(D){
+      const lines=rows(D.l).map(r=>r.split("|")),names=[...new Set(lines.map(x=>x[0]))];
+      html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><h3 style="margin:0">💬 ${D.t}</h3><button class="b p" onclick="playDialog(${n})">▶ Nghe cả đoạn</button></div>`+
+      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh" style="font-size:22px">${x[1]}</span>${spkBtn(x[1])}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
+      `<div style="margin-top:12px"><b>Đúng (O) hay sai (X)?</b>${rows(D.q).map((r,i)=>{
+        const [s,a]=r.split("|"),k=n+"-"+i,done=rAns[k];
+        return `<div class="qq">${s}<div class="row" style="margin-top:4px">${["O","X"].map(v=>`<button class="b ${done&&v===a?"ok":done&&v===done?"bad":""}" onclick="rAnswer('${k}','${v}','${a}')">${v}</button>`).join("")}${done?`<span class="stat">${done===a?"✅ Đúng":"❌ Đáp án: "+a}</span>`:""}</div></div>`}).join("")}</div></div>`;
+    }
+    TRANS.filter(t=>t[3]===n&&tLenOf(t)==="para").forEach(t=>{
+      html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><h3 style="margin:0">📄 Đoạn văn ngắn</h3><button class="b p" onclick="playPara('${t[1]}')">▶ Nghe cả đoạn</button></div>
+      <div class="zh" style="font-size:22px;line-height:1.7">${t[1]}</div>${rPy?`<div class="py" style="margin-top:6px">${t[2]}</div>`:""}${rVi?`<div class="vi" style="margin-top:6px">${t[0]}</div>`:""}</div>`;
+    });
+  });
+  $("#app").innerHTML=html||"<div class='card vi'>Chưa có bài đọc cho phạm vi này.</div>";
+}
+
+/* ============ BÀI TẬP ============ */
+let qMode=null,Q=null,qn=0;
+function quizView(){
+  if(!qMode){
+    $("#app").innerHTML=`<div class="stat" style="margin-bottom:10px">Điểm tích lũy: ${prog.score.right}/${prog.score.total}</div>
+    <div class="card"><h3>Chọn dạng bài</h3>
+    ${[["zh2vi","Đọc Hán tự → chọn nghĩa tiếng Việt"],["vi2zh","Nghĩa tiếng Việt → chọn Hán tự"],["listen","🎧 Nghe → chọn từ đúng"],["fill","Điền pinyin (không cần dấu thanh)"],["order","Sắp xếp từ thành câu"]].map(([k,l])=>`<button class="b opt" onclick="qMode='${k}';qn=0;nextQ()">${l}</button>`).join("")}</div>`;
+  }else{qn--;nextQ()}   // đang trong một dạng bài: vẽ lại câu mới (tránh hiện nội dung cũ của tab khác)
+}
+function nextQ(){
+  const m=qMode;qn++;
+  if(m==="order"){let OP=ORDER.filter(o=>inL(o[2]));if(!OP.length)OP=ORDER;const [vi,toks]=OP[Math.random()*OP.length|0];Q={vi,toks,pick:[],pool:sh(toks.map((t,i)=>({t,i})))};if(Q.pool.every((x,i)=>x.i===i))Q.pool.reverse();return orderDraw()}
+  const P=pool(),w=P[Math.random()*P.length|0];
+  const wrong=sh((P.length>=4?P:VOCAB).filter(v=>v!==w)).slice(0,3);const opts=sh([w,...wrong]);
+  Q={w,opts};
+  const head={zh2vi:`<div class="zh">${w[0]}</div><div class="row">${spkBtn(w[0])}</div>`,vi2zh:`<div class="stat">Chọn Hán tự cho:</div><div class="zh" style="font-size:22px">${w[2]}</div>`,listen:`<div class="stat">Nghe và chọn từ bạn nghe được:</div><div class="row"><button class="b p" onclick="speak('${w[0]}')">🔊 Nghe</button><button class="b" onclick="speak('${w[0]}',0.4)">🐢 Chậm</button></div>`,fill:`<div class="zh">${w[0]}</div><div class="vi">${w[2]}</div><div class="row" style="margin:8px 0">${spkBtn(w[0])}</div>`}[m];
+  const body=m==="fill"?`<input type="text" id="fi" placeholder="Gõ pinyin, vd: ni hao" autocomplete="off"><div class="row" style="margin-top:8px"><button class="b p" onclick="chkFill()">Kiểm tra</button></div>`
+   :opts.map((o,i)=>`<button class="b opt" onclick="chkMC(${i},this)">${m==="zh2vi"?o[2]:m==="vi2zh"?`<span class="zh" style="font-size:22px">${o[0]}</span> <span class="py">${o[1]}</span>`:`<span class="zh" style="font-size:22px">${o[0]}</span>`}</button>`).join("");
+  $("#app").innerHTML=qFrame(`<div class="card">${head}${body}<div id="fb"></div></div>`);
+  if(m==="listen")speak(w[0]);
+  if(m==="fill"){$("#fi").focus();$("#fi").onkeydown=e=>{if(e.key==="Enter")chkFill()}}
+}
+const qFrame=h=>`<div class="row" style="justify-content:space-between;margin-bottom:10px"><button class="b" onclick="qMode=null;quizView()">← Đổi dạng bài</button><span class="stat">Câu ${qn} · ${prog.score.right}/${prog.score.total}</span></div>${h}`;
+function fb(ok,msg){
+  $("#fb").innerHTML=`<div class="fb ${ok?"ok":"bad"}">${ok?"✅ Chính xác!":"❌ Chưa đúng."} ${msg||""}</div><div class="row" style="margin-top:10px"><button class="b p" onclick="nextQ()">Câu tiếp →</button></div>`;
+}
+function chkMC(i,btn){
+  if(document.querySelector(".opt.ok"))return;
+  const ok=Q.opts[i]===Q.w;mark(ok);btn.classList.add(ok?"ok":"bad");
+  if(!ok)[...document.querySelectorAll(".opt")][Q.opts.indexOf(Q.w)].classList.add("ok");
+  speak(Q.w[0]);fb(ok,`${Q.w[0]} (${Q.w[1]}) = ${Q.w[2]}`);
+}
+function chkFill(){
+  if(document.querySelector(".fb"))return;
+  const ok=stripTone($("#fi").value)===stripTone(Q.w[1]);mark(ok);fb(ok,`Đáp án: ${Q.w[1]}`);
+}
+function orderDraw(){
+  $("#app").innerHTML=qFrame(`<div class="card"><div class="stat">Sắp xếp thành câu:</div><div style="font-size:20px;margin:6px 0 10px">${Q.vi}</div>
+  <div class="ans" id="ans">${Q.pick.map(x=>`<span class="tok" onclick="unpick(${x.i})">${x.t}</span>`).join("")}</div>
+  <div>${Q.pool.filter(x=>!Q.pick.includes(x)).map(x=>`<span class="tok" onclick="doPick(${x.i})">${x.t}</span>`).join("")}</div>
+  <div class="row" style="margin-top:10px"><button class="b p" onclick="chkOrder()">Kiểm tra</button><button class="b" onclick="Q.pick=[];orderDraw()">Xóa</button></div><div id="fb"></div></div>`);
+}
+function doPick(i){Q.pick.push(Q.pool.find(x=>x.i===i));orderDraw()}
+function unpick(i){Q.pick=Q.pick.filter(x=>x.i!==i);orderDraw()}
+function chkOrder(){
+  if(Q.pick.length!==Q.toks.length)return;
+  const ok=Q.pick.map(x=>x.t).join("")===Q.toks.join("");mark(ok);speak(Q.toks.join(""));
+  fb(ok,`Đáp án: ${Q.toks.join("")}`);
+}
+
+/* ============ TẬP DỊCH ============ */
+let tReflex=false,tStart=0,tStreak=0,tTime=0,tTok=0;
+let tDir="vi2zh",tIdx=0,tLen="all",tShuf=sh(TRANS.map((_,i)=>i)),tDone=false;
+const curT=()=>{
+  let o=tShuf.filter(i=>inL(TRANS[i][3])&&(tLen==="all"||tLenOf(TRANS[i])===tLen));
+  if(!o.length)o=tShuf.filter(i=>tLen==="all"||tLenOf(TRANS[i])===tLen);
+  return TRANS[o[tIdx%o.length]];
+};
+function lcsRatio(a,b){
+  const m=a.length,n=b.length;if(!m||!n)return 0;
+  let prev=new Array(n+1).fill(0);
+  for(let i=1;i<=m;i++){const cur=[0];for(let j=1;j<=n;j++)cur[j]=a[i-1]===b[j-1]?prev[j-1]+1:Math.max(prev[j],cur[j-1]);prev=cur}
+  return prev[n]/Math.max(m,n);
+}
+function transView(){
+  const t=curT();tDone=false;tStart=Date.now();tTok++;
+  const src=tDir==="vi2zh"?t[0]:t[1],L=tLenOf(t);
+  const cnt=TRANS.filter(x=>inL(x[3])&&(tLen==="all"||tLenOf(x)===tLen)).length;
+  $("#app").innerHTML=`<div class="chips"><span class="chip ${tDir==="vi2zh"?"on":""}" onclick="tDir='vi2zh';transView()">Việt → Trung</span><span class="chip ${tDir==="zh2vi"?"on":""}" onclick="tDir='zh2vi';transView()">Trung → Việt</span>
+  <span style="width:12px"></span>${[["all","Tất cả"],["short","Câu ngắn"],["long","Câu dài"],["para","Đoạn văn"]].map(([k,l])=>`<span class="chip ${tLen===k?"on":""}" onclick="tLen='${k}';tIdx=0;transView()">${l}</span>`).join("")}
+  <span style="width:12px"></span><span class="chip ${tReflex?"on":""}" title="Đúng thì tự qua câu mới, hiện thời gian trả lời" onclick="tReflex=!tReflex;transView()">⚡ Phản xạ</span></div>
+  <div class="card"><div class="stat">Dịch câu sau:</div>
+  <div style="font-size:${tDir==="vi2zh"?20:28}px;margin:8px 0" class="${tDir==="zh2vi"?"zh":""}">${src}</div>
+  ${tDir==="zh2vi"?`<div class="row" style="margin-bottom:8px">${spkBtn(t[1])}<button class="b" onclick="speak('${t[1]}',0.4)">🐢 Chậm</button></div>`:""}
+  <div class="stat" style="margin-bottom:6px">${L==="para"?"Đoạn văn":L==="long"?"Câu dài":"Câu ngắn"} · ${lesTag(t[3])} · ${cnt} câu trong bộ lọc</div>
+  <textarea id="ti" rows="${L==="para"?5:L==="long"?2:1}" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font:inherit;font-size:18px;resize:vertical" placeholder="${tDir==="vi2zh"?"Gõ Hán tự (giản hoặc phồn) hoặc pinyin không dấu…":"Gõ nghĩa tiếng Việt…"}" autocomplete="off" spellcheck="false"></textarea>
+  <div class="row" style="margin-top:8px"><button class="b p" onclick="chkTrans()">${tDir==="vi2zh"?"Kiểm tra":"Xem đáp án"}</button><button class="b" onclick="tIdx++;transView()">Câu khác →</button></div>
+  <div id="fb"></div></div>`;
+  $("#ti").onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing&&L!=="para"){e.preventDefault();if(tDone&&tDir==="vi2zh"){tIdx++;transView()}else chkTrans()}};
+  $("#ti").focus();
+}
+function chkTrans(){
+  const t=curT();const v=$("#ti").value;
+  const show=`<div class="ex"><div class="row"><span class="zh">${t[1]}</span>${spkBtn(t[1])}</div><div class="py">${t[2]}</div><div class="vi">${t[0]}</div></div>`;
+  if(tDir==="vi2zh"){
+    const exact=normZh(v)===normZh(t[1])||(stripTone(v)&&stripTone(v)===stripTone(t[2]));
+    const r=exact?1:Math.max(lcsRatio([...normZh(v)],[...normZh(t[1])]),lcsRatio([...stripTone(v)],[...stripTone(t[2])]));
+    const ok=exact||(tLenOf(t)!=="short"&&r>=0.9);
+    if(!tDone){mark(ok);tDone=true;tStreak=ok?tStreak+1:0;tTime=((Date.now()-tStart)/1000).toFixed(1)}
+    const pct=Math.round(r*100);
+    $("#fb").innerHTML=`<div class="fb ${ok?"ok":"bad"}">${exact?"✅ Chính xác!":ok?`✅ Gần đúng hoàn toàn (${pct}% giống đáp án mẫu).`:`❌ Giống đáp án mẫu ${pct}%, hãy so sánh:`} <span class="stat">⏱ ${tTime}s · 🔥 chuỗi đúng: ${tStreak}</span></div>${show}<div class="stat" style="margin-top:6px">Nhấn Enter để sang câu tiếp.</div>`;
+    if(ok&&tReflex){const tk=tTok;speak(t[1]);setTimeout(()=>{if(tk===tTok){tIdx++;transView()}},1800)}
+  }else{
+    $("#fb").innerHTML=`${show}<div class="row"><span class="stat">Bạn dịch đúng ý chứ?</span><button class="b" onclick="selfMark(true)">✅ Đúng</button><button class="b" onclick="selfMark(false)">❌ Sai</button></div>`;
+    speak(t[1]);
+  }
+}
+function selfMark(ok){mark(ok);tIdx++;transView()}
+
+$("#voiceTest").onclick=()=>speak("你好，歡迎你來臺灣！");
+$("#voiceSel").onchange=e=>{try{localStorage.setItem(VKEY,e.target.value)}catch(x){}speak("你好，歡迎你來臺灣！")};
+setTimeout(()=>{   // sau khi danh sách giọng đã tải: báo nếu máy/khung này không có giọng tiếng Trung
+  if(!("speechSynthesis" in window)||!voices.length){
+    const w=document.createElement("div");w.className="card";w.style.cssText="border-color:var(--bad);background:var(--badbg)";
+    w.innerHTML="⚠️ Không tìm thấy giọng đọc tiếng Trung ở đây. Nếu bạn đang xem file trong khung xem trước của ứng dụng, hãy <b>mở file index.html trực tiếp bằng Chrome hoặc Safari</b> (nhấp đúp file trong Finder, hoặc chuột phải → Mở bằng).";
+    w.style.cssText+=";max-width:868px;margin:12px auto 0;padding:12px 16px";document.body.insertBefore(w,$("main"));
+  }
+},1500);
+$("#les").value=LESSON;syncBar();updateHero();
+$("#les").onchange=e=>setLesson(e.target.value);
+render();
+</script>
+</body>
+</html>
