@@ -1588,14 +1588,14 @@ function loadVoices(){
   voices=speechSynthesis.getVoices().filter(v=>/^zh|cmn|yue/i.test(v.lang)||/chinese|mandarin|cantonese|國語|普通话|粵/i.test(v.name));
   const sel=$("#voiceSel");if(!sel)return;
   const cur=getV();
-  sel.innerHTML=voices.length?`<option value="">Tự chọn (ưu tiên Đài Loan)</option>`+voices.map(v=>`<option value="${esc(v.name)}">${esc(v.name)} · ${v.lang}</option>`).join(""):`<option value="">Chưa có giọng Trung trên máy</option>`;
+  sel.innerHTML=`<option value="">🎧 Giọng thu sẵn (khuyên dùng)</option>`+voices.map(v=>`<option value="${esc(v.name)}">${esc(v.name)} · ${v.lang}</option>`).join("");
   sel.value=voices.some(v=>v.name===cur)?cur:"";
 }
 function pick(){
   const cur=getV();
   return voices.find(v=>v.name===cur)||voices.find(v=>v.name==="Meijia")||voices.find(v=>/zh[-_]TW/i.test(v.lang))||voices.find(v=>/zh[-_]CN/i.test(v.lang))||voices[0];
 }
-if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();}else{$("#voiceSel").innerHTML=`<option value="">🎧 Giọng thu sẵn (khuyên dùng)</option>`}
 let sTok=0,keepU=null;
 function toast(m){
   let d=$("#toast");
@@ -1605,6 +1605,7 @@ function toast(m){
 // danh sách giọng thử lần lượt: giọng đã chọn → giọng Đài Loan khác → giọng Trung còn lại
 function voiceList(){const p=pick();return [p,...voices.filter(v=>v!==p&&/zh[-_]TW/i.test(v.lang)),...voices.filter(v=>v!==p&&!/zh[-_]TW/i.test(v.lang))].filter(Boolean)}
 function say(t,o){
+  if(!("speechSynthesis" in window)){toast("Trình duyệt này không có giọng đọc tích hợp.");return}
   const list=voiceList(),k=o.k||0,v=list[k],u=new SpeechSynthesisUtterance(t);
   u.lang=v?v.lang:"zh-TW";if(v)u.voice=v;
   u.rate=o.rate||parseFloat($("#rate").value);u.pitch=o.pitch||1;u.volume=1;
@@ -1622,13 +1623,34 @@ function say(t,o){
   speechSynthesis.speak(u);
   setTimeout(()=>{if(!started&&!failed&&keepU===u)fallback("giọng không phản hồi: "+(v?v.name:"mặc định"))},2500);   // giọng bị treo → đổi giọng khác
 }
-function speak(t,rate){
-  if(!("speechSynthesis" in window)){toast("Khung/trình duyệt này không hỗ trợ giọng đọc. Hãy mở file index.html bằng Chrome hoặc Safari.");return}
+/* ---- Giọng thu sẵn (audio/*.m4a): chạy được trên mọi trình duyệt, kể cả Chrome không có giọng đọc ---- */
+const cyrb53=(str,seed=0)=>{let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}
+  h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)};
+const clipUrl=(t,tag)=>"audio/"+cyrb53((tag||"m")+"|"+t).toString(36)+".m4a";   // tag: m = Meijia, e = Eddy (người nói thứ hai)
+const useClips=()=>getV()==="";
+let curA=null;
+function playClip(t,o){        // o:{tag,rate,onend,onfail}
+  const a=new Audio(clipUrl(t,o.tag));curA=a;
+  a.playbackRate=Math.max(0.5,o.rate||parseFloat($("#rate").value));
+  let done=false;
+  const fail=()=>{if(done||curA!==a)return;done=true;if(o.onfail)o.onfail()};
+  a.onerror=fail;
+  a.onended=()=>{if(done||curA!==a)return;done=true;if(o.onend)o.onend()};
+  const p=a.play();
+  if(p&&p.catch)p.catch(e=>{if(e&&e.name==="NotAllowedError")toast("Trình duyệt chặn âm thanh, hãy bấm lại nút nghe.");fail()});
+}
+function speakTTS(t,rate){
+  if(!("speechSynthesis" in window)){toast("Trình duyệt này không có giọng đọc tích hợp.");return}
   const busy=speechSynthesis.speaking||speechSynthesis.pending;
   if(busy)speechSynthesis.cancel();const tk=++sTok;
   setTimeout(()=>{if(tk===sTok)say(t,{rate})},busy?120:0);   // chờ một chút sau cancel(): Chrome hay nuốt câu đọc nếu speak() ngay lập tức
 }
-const spkBtn=t=>`<button class="b spk" title="Nghe" onclick="speak('${t.replace(/'/g,"\\'")}')">🔊</button>`;
+function speak(t,rate,tag){
+  stopSpeak();const tk=++sTok;
+  if(useClips()){playClip(t,{tag,rate,onfail:()=>{if(tk===sTok)speakTTS(t,rate)}});return}   // thiếu file thu sẵn → dùng giọng của trình duyệt
+  speakTTS(t,rate);
+}
+const spkBtn=(t,tag)=>`<button class="b spk" title="Nghe" onclick="speak('${t.replace(/'/g,"\\'")}',0,'${tag||"m"}')">🔊</button>`;
 const stripTone=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ü/g,"u").toLowerCase().replace(/[^a-z]/g,"");
 // chấp nhận cả chữ giản thể: đổi giản → phồn trước khi so sánh
 const S2T={};("师師学學谢謝对對关關系係吗嗎么麼谁誰里裡们們个個几幾点點号號说說买買卖賣钱錢块塊贵貴面麵会會来來饭飯国國湾灣这這书書习習欢歡两兩现現没沒见見请請时時间間问問题題话話语語华華开開电電听聽认認读讀长長爱愛过過还還样樣乐樂鸡雞个個东東药藥医醫医醫头頭热熱烧燒咳咳车車铁鐵机機场場费費实實进進问問远遠边邊馆館园園术術运運动動视視节節岁歲预預报報风風景景")
@@ -1757,22 +1779,21 @@ function grammarView(){
 
 /* ============ ĐỌC — HỘI THOẠI & ĐOẠN VĂN ============ */
 let rPy=true,rVi=true,rTok=0,rAns={};
-function stopSpeak(){rTok++;sTok++;if("speechSynthesis" in window&&(speechSynthesis.speaking||speechSynthesis.pending))speechSynthesis.cancel()}
-function speakSeq(items){      // đọc lần lượt từng câu, người nói thứ hai dùng giọng thấp hơn
-  if(!("speechSynthesis" in window)){toast("Khung/trình duyệt này không hỗ trợ giọng đọc. Hãy mở file index.html bằng Chrome hoặc Safari.");return}
-  const busy=speechSynthesis.speaking||speechSynthesis.pending;
-  if(busy)speechSynthesis.cancel();const tok=++rTok;let i=0;
+function stopSpeak(){rTok++;sTok++;if(curA){curA.pause();curA=null}if("speechSynthesis" in window&&(speechSynthesis.speaking||speechSynthesis.pending))speechSynthesis.cancel()}
+function speakSeq(items){      // đọc lần lượt từng câu; item: {t, tag, pitch}
+  stopSpeak();const tok=++rTok;let i=0;
   const next=()=>{
     if(tok!==rTok||i>=items.length)return;
-    const it=items[i++];
-    say(it.t,{pitch:it.pitch,onend:()=>setTimeout(next,350)});
+    const it=items[i++],after=()=>setTimeout(next,350);
+    if(useClips())playClip(it.t,{tag:it.tag,onend:after,onfail:()=>{if(tok===rTok)say(it.t,{pitch:it.pitch,onend:after})}});
+    else say(it.t,{pitch:it.pitch,onend:after});
   };
-  setTimeout(()=>{if(tok===rTok)next()},busy?120:0);
+  setTimeout(()=>{if(tok===rTok)next()},60);
 }
 function playDialog(n){
   toast("🔊 Đang đọc…");
   const L=rows(DIALOGS[n].l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];
-  speakSeq(L.map(x=>({t:x[1],pitch:names.indexOf(x[0])===0?1.15:0.8})));
+  speakSeq(L.map(x=>({t:x[1],tag:names.indexOf(x[0])%2?"e":"m",pitch:names.indexOf(x[0])===0?1.15:0.8})));
 }
 function playPara(zh){
   toast("🔊 Đang đọc…");speakSeq(zh.split(/(?<=[。！？])/).filter(Boolean).map(t=>({t,pitch:1})))}
@@ -1787,7 +1808,7 @@ function readView(){
     if(D){
       const lines=rows(D.l).map(r=>r.split("|")),names=[...new Set(lines.map(x=>x[0]))];
       html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><h3 style="margin:0">💬 ${D.t}</h3><button class="b p" onclick="playDialog(${n})">▶ Nghe cả đoạn</button></div>`+
-      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh" style="font-size:22px">${x[1]}</span>${spkBtn(x[1])}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
+      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh" style="font-size:22px">${x[1]}</span>${spkBtn(x[1],names.indexOf(x[0])%2?"e":"m")}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
       `<div style="margin-top:12px"><b>Đúng (O) hay sai (X)?</b>${rows(D.q).map((r,i)=>{
         const [s,a]=r.split("|"),k=n+"-"+i,done=rAns[k];
         return `<div class="qq">${s}<div class="row" style="margin-top:4px">${["O","X"].map(v=>`<button class="b ${done&&v===a?"ok":done&&v===done?"bad":""}" onclick="rAnswer('${k}','${v}','${a}')">${v}</button>`).join("")}${done?`<span class="stat">${done===a?"✅ Đúng":"❌ Đáp án: "+a}</span>`:""}</div></div>`}).join("")}</div></div>`;

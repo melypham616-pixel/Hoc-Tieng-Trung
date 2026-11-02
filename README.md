@@ -26,6 +26,8 @@ src/data2.js      dữ liệu bài 9–15
 src/data3.js      hội thoại
 src/app.js        giao diện và logic
 build.py          ghép src/ thành index.html
+audio/            file âm thanh .m4a (tên file = mã băm của câu)
+tools/make-audio.js  thu âm các câu còn thiếu bằng lệnh `say` của macOS
 ```
 
 ## Sửa nội dung
@@ -36,4 +38,10 @@ python3 build.py
 Định dạng dữ liệu mỗi bài (từ vựng `Hán|pinyin|nghĩa`, câu dịch `tiếng Việt|Hán|pinyin`…) có chú thích ở đầu `src/data1.js`.
 
 ## Giọng đọc
-Dùng Web Speech API của trình duyệt. Chọn giọng ở đầu trang (mặc định ưu tiên giọng Đài Loan, ví dụ Meijia). Nếu không nghe được, hãy mở bằng Safari.
+Mặc định web phát **file âm thanh thu sẵn** trong `audio/` (giọng Meijia và Eddy của macOS, tiếng Quan thoại Đài Loan), nên Chrome, Safari và điện thoại đều nghe được, không phụ thuộc giọng đọc của trình duyệt. Nếu thiếu file cho một câu nào đó, web tự dùng Web Speech API của trình duyệt. Ô chọn giọng ở đầu trang cho phép đổi sang giọng của trình duyệt.
+
+Sau khi sửa nội dung (`src/`), chạy trên Mac để thu thêm các câu mới:
+```bash
+python3 build.py
+node tools/make-audio.js
+```
