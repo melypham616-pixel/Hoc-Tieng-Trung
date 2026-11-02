@@ -29,6 +29,7 @@ vm.runInContext(script+`
   TRANS.forEach(t=>{add("m",t[1]);if(tLenOf(t)==="para")t[1].split(/(?<=[。！？])/).filter(Boolean).forEach(s=>add("m",s))});
   ORDER.forEach(o=>add("m",o[1].join("")));
   Object.values(DIALOGS).forEach(D=>{const L=rows(D.l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];L.forEach(x=>add("m",x[1]))});
+  Object.keys(EXTRA).forEach(k=>add("m",k));
   add("m","你好，歡迎你來臺灣！");
   return [...m.values()];
 })();`,ctx);

@@ -286,7 +286,7 @@ function list(){
   let html="",last=0;
   items.forEach(v=>{
     if(v[3]!==last){last=v[3];html+=`<div class="lh">${lesHead(last)} <span class="vi">— ${LES[last].vi}</span></div>`}
-    html+=`<div class="vl"><div>${spkBtn(v[0])}</div><div><span class="zh">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>
+    html+=`<div class="vl"><div>${spkBtn(v[0])}</div><div><span class="zh tap" onclick="speak('${v[0]}')">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>
     <label class="stat"><input type="checkbox" ${prog.known[v[0]]?"checked":""} onchange="toggleKnown('${v[0]}',this.checked)"> thuộc</label></div>`;
   });
   $("#vlist").innerHTML=html?`<div class="card">${html}</div>`:"<div class='vi'>Không tìm thấy.</div>";
@@ -322,12 +322,12 @@ function annotate(s){   // → {html: chữ Hán có pinyin phía trên, gloss: 
     if(!isHan(s[i])){let j=i;while(j<s.length&&!isHan(s[j]))j++;html+=esc(s.slice(i,j));i=j;continue}
     let k=0;
     for(let L=Math.min(6,s.length-i);L>=1;L--){if(DICT[s.slice(i,i+L)]&&[...s.slice(i,i+L)].every(isHan)){k=L;break}}
-    if(k){const w=s.slice(i,i+k),[py,vi]=DICT[w];html+=`<ruby>${w}<rt>${py}</rt></ruby>`;if(!seen.has(w)){seen.add(w);gloss.push([w,py,vi])}i+=k}
+    if(k){const w=s.slice(i,i+k),[py,vi]=DICT[w];html+=`<ruby class="tap" onclick="speak('${w}')">${w}<rt>${py}</rt></ruby>`;if(!seen.has(w)){seen.add(w);gloss.push([w,py,vi])}i+=k}
     else{html+=s[i];i++}
   }
   return {html,gloss};
 }
-const glossHtml=g=>g.length?`<div class="gloss">${g.map(x=>`<span><b class="zh">${x[0]}</b> <i>${x[1]}</i> = ${x[2]}</span>`).join("")}</div>`:"";
+const glossHtml=g=>g.length?`<div class="gloss">${g.map(x=>`<span class="tap" onclick="speak('${x[0]}')"><b class="zh">${x[0]}</b> <i>${x[1]}</i> = ${x[2]} 🔊</span>`).join("")}</div>`:"";
 
 /* ============ NGỮ PHÁP ============ */
 function grammarView(){
@@ -337,7 +337,7 @@ function grammarView(){
     if(g.l!==last){last=g.l;html+=`<div class="lh">${lesHead(last)} <span class="vi">— ${LES[last].vi}</span></div>`}
     const T=annotate(g.t),F=annotate(g.f),seen=new Set(),G=[...T.gloss,...F.gloss].filter(x=>!seen.has(x[0])&&seen.add(x[0]));
     html+=`<div class="card"><h3 class="gh">${T.html}</h3><div class="formula">${F.html}</div>${glossHtml(G)}<p style="margin:8px 0 10px">${g.d}</p>
-    ${g.ex.map(e=>`<div class="ex"><div class="row"><span class="zh">${e[0]}</span>${spkBtn(e[0])}</div><div class="py">${e[1]}</div><div class="vi">${e[2]}</div></div>`).join("")}</div>`;
+    ${g.ex.map(e=>`<div class="ex"><div class="row"><span class="zh tap" onclick="speak('${e[0]}')">${e[0]}</span>${spkBtn(e[0])}</div><div class="py">${e[1]}</div><div class="vi">${e[2]}</div></div>`).join("")}</div>`;
   });
   $("#app").innerHTML=html||"<div class='card vi'>Chưa có ngữ pháp cho phạm vi này.</div>";
 }
@@ -373,14 +373,14 @@ function readView(){
     if(D){
       const lines=rows(D.l).map(r=>r.split("|")),names=[...new Set(lines.map(x=>x[0]))];
       html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><h3 style="margin:0">💬 ${D.t}</h3><button class="b p" onclick="playDialog(${n})">▶ Nghe cả đoạn</button></div>`+
-      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh" style="font-size:22px">${x[1]}</span>${spkBtn(x[1],"m")}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
+      lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh tap" style="font-size:22px" onclick="speak('${x[1]}')">${x[1]}</span>${spkBtn(x[1],"m")}</div>${rPy?`<div class="py">${x[2]}</div>`:""}${rVi?`<div class="vi">${x[3]}</div>`:""}</div>`).join("")+
       `<div style="margin-top:12px"><b>Đúng (O) hay sai (X)?</b>${rows(D.q).map((r,i)=>{
         const [s,a]=r.split("|"),k=n+"-"+i,done=rAns[k];
         return `<div class="qq">${s}<div class="row" style="margin-top:4px">${["O","X"].map(v=>`<button class="b ${done&&v===a?"ok":done&&v===done?"bad":""}" onclick="rAnswer('${k}','${v}','${a}')">${v}</button>`).join("")}${done?`<span class="stat">${done===a?"✅ Đúng":"❌ Đáp án: "+a}</span>`:""}</div></div>`}).join("")}</div></div>`;
     }
     TRANS.filter(t=>t[3]===n&&tLenOf(t)==="para").forEach(t=>{
       html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:8px"><h3 style="margin:0">📄 Đoạn văn ngắn</h3><button class="b p" onclick="playPara('${t[1]}')">▶ Nghe cả đoạn</button></div>
-      <div class="zh" style="font-size:22px;line-height:1.7">${t[1]}</div>${rPy?`<div class="py" style="margin-top:6px">${t[2]}</div>`:""}${rVi?`<div class="vi" style="margin-top:6px">${t[0]}</div>`:""}</div>`;
+      <div class="zh" style="font-size:22px;line-height:1.7">${t[1].split(/(?<=[。！？])/).filter(Boolean).map(s=>`<span class="tap" onclick="speak('${s}')">${s}</span>`).join("")}</div>${rPy?`<div class="py" style="margin-top:6px">${t[2]}</div>`:""}${rVi?`<div class="vi" style="margin-top:6px">${t[0]}</div>`:""}</div>`;
     });
   });
   $("#app").innerHTML=html||"<div class='card vi'>Chưa có bài đọc cho phạm vi này.</div>";
@@ -469,7 +469,7 @@ function transView(){
 }
 function chkTrans(){
   const t=curT();const v=$("#ti").value;
-  const show=`<div class="ex"><div class="row"><span class="zh">${t[1]}</span>${spkBtn(t[1])}</div><div class="py">${t[2]}</div><div class="vi">${t[0]}</div></div>`;
+  const show=`<div class="ex"><div class="row"><span class="zh tap" onclick="speak('${t[1]}')">${t[1]}</span>${spkBtn(t[1])}</div><div class="py">${t[2]}</div><div class="vi">${t[0]}</div></div>`;
   if(tDir==="vi2zh"){
     const exact=normZh(v)===normZh(t[1])||(stripTone(v)&&stripTone(v)===stripTone(t[2]));
     const r=exact?1:Math.max(lcsRatio([...normZh(v)],[...normZh(t[1])]),lcsRatio([...stripTone(v)],[...stripTone(t[2])]));
