@@ -3,6 +3,8 @@
 Web tự học tiếng Trung theo giáo trình **A Course in Contemporary Chinese – Vol. 1** (15 bài).
 Một file `index.html` duy nhất, không cần cài đặt: mở thẳng bằng Safari hoặc Chrome.
 
+Web chạy tại **https://hoctiengtrung.mely.io.vn** (GitHub Pages, nhánh `main`, tên miền cấu hình trong file `CNAME`).
+
 ## Có gì trong web
 - **Từ vựng**: ~480 từ có pinyin, nghĩa tiếng Việt, giọng đọc, đánh dấu "đã thuộc".
 - **Thẻ nhớ**: lật thẻ, nghe phát âm.
@@ -17,6 +19,7 @@ Một file `index.html` duy nhất, không cần cài đặt: mở thẳng bằn
 ## Cấu trúc
 ```
 index.html        file build sẵn, dùng trực tiếp / đưa lên hosting
+CNAME             tên miền tùy chỉnh cho GitHub Pages
 src/head.html     khung trang + CSS
 src/data1.js      dữ liệu bài 1–8
 src/data2.js      dữ liệu bài 9–15
