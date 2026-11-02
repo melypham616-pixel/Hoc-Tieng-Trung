@@ -3,7 +3,7 @@
 Web tự học tiếng Trung theo giáo trình **A Course in Contemporary Chinese – Vol. 1** (15 bài).
 Một file `index.html` duy nhất, không cần cài đặt: mở thẳng bằng Safari hoặc Chrome.
 
-Web chạy tại **https://hoctiengtrung.mely.io.vn** (GitHub Pages, nhánh `main`, tên miền cấu hình trong file `CNAME`).
+Web chạy tại **https://studychinese.mely.io.vn** (GitHub Pages, nhánh `main`, tên miền cấu hình trong file `CNAME`).
 
 ## Có gì trong web
 - **Từ vựng**: ~480 từ có pinyin, nghĩa tiếng Việt, giọng đọc, đánh dấu "đã thuộc".
