@@ -30,6 +30,7 @@ vm.runInContext(script+`
   ORDER.forEach(o=>add("m",o[1].join("")));
   Object.values(DIALOGS).forEach(D=>{const L=rows(D.l).map(r=>r.split("|")),names=[...new Set(L.map(x=>x[0]))];L.forEach(x=>add("m",x[1]))});
   Object.keys(EXTRA).forEach(k=>add("m",k));
+  STORIES.forEach(S=>rows(S.l).forEach(r=>{const z=r.split("|")[0];add("m",z);segmentWords(z).forEach(w=>add("m",w))}));
   add("m","你好，歡迎你來臺灣！");
   return [...m.values()];
 })();`,ctx);

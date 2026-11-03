@@ -255,14 +255,14 @@ function updateHero(){
 }
 
 /* ============ ĐIỀU HƯỚNG ============ */
-const TABS=[["vocab","📖 Từ vựng"],["flash","🃏 Thẻ nhớ"],["grammar","📐 Ngữ pháp"],["read","💬 Đọc"],["quiz","✍️ Bài tập"],["trans","🔤 Tập dịch"]];
+const TABS=[["vocab","📖 Từ vựng"],["flash","🃏 Thẻ nhớ"],["grammar","📐 Ngữ pháp"],["read","💬 Đọc"],["story","📚 Truyện"],["quiz","✍️ Bài tập"],["trans","🔤 Tập dịch"]];
 let tab="vocab";
 $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button data-k="${k}"><span class="ic">${l.slice(0,i)}</span><span class="lb">${l.slice(i+1)}</span></button>`}).join("");
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
-  stopSpeak();
-  ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,quiz:quizView,trans:transView})[tab]();
+  stopSpeak();stopRec();
+  ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,story:storyView,quiz:quizView,trans:transView})[tab]();
 }
 const lesTag=n=>`Bài ${n} · ${LES[n].zh}`;
 const lesHead=n=>`Bài ${n} · ${annotate(LES[n].zh).html}`;
@@ -384,6 +384,102 @@ function readView(){
     });
   });
   $("#app").innerHTML=html||"<div class='card vi'>Chưa có bài đọc cho phạm vi này.</div>";
+}
+
+/* ============ TRUYỆN ĐỌC + CHẤM PHÁT ÂM ============ */
+const SRC=window.SpeechRecognition||window.webkitSpeechRecognition;   // nhận dạng giọng nói của trình duyệt (Chrome, Safari)
+let rec=null,recKey="";
+function stopRec(){if(rec){const r=rec;rec=null;try{r.abort()}catch(e){}}recKey=""}
+
+const NAMES=/小美|大衛|大明|小明|安同|如玉|月美|美月|田中|小王|怡君|開文/g;   // tên riêng: bộ nhận dạng hay viết khác chữ nên không chấm
+// Tách câu thành các từ theo từ điển của web (từ dài nhất trước); chữ lạ tách từng chữ
+function segmentWords(s){
+  const cs=[...s].filter(isHan),raw=cs.join(""),out=[];let i=0;
+  const names=[];let mm;NAMES.lastIndex=0;while((mm=NAMES.exec(raw)))names.push([mm.index,mm[0].length]);
+  while(i<cs.length){
+    const nm=names.find(x=>x[0]===i);if(nm){out.push(raw.slice(i,i+nm[1]));i+=nm[1];continue}   // tên riêng là một từ
+    let k=1;for(let L=Math.min(6,cs.length-i);L>=2;L--){if(DICT[cs.slice(i,i+L).join("")]){k=L;break}}
+    out.push(cs.slice(i,i+k).join(""));i+=k;
+  }
+  return out;
+}
+const DIGH="零一二三四五六七八九";
+function numHan(n){   // 0–9999 → chữ Hán (110 → 一百一十)
+  if(n<10)return DIGH[n];
+  if(n<100){const t=n/10|0,u=n%10;return(t>1?DIGH[t]:"")+"十"+(u?DIGH[u]:"")}
+  let s="",r=n,started=false,zero=false;
+  for(const [v,u] of [[1000,"千"],[100,"百"]]){const q=r/v|0;if(q){if(zero)s+="零";s+=DIGH[q]+u;started=true;zero=false}else if(started)zero=true;r%=v}
+  if(r){if(zero||(started&&r<10))s+="零";if(r<10)s+=DIGH[r];else{const t=r/10|0,u=r%10;s+=DIGH[t]+"十"+(u?DIGH[u]:"")}}
+  return s;
+}
+const digHan=s=>s.replace(/\d+/g,m=>+m<=9999?numHan(+m):[...m].map(d=>DIGH[+d]).join(""));
+const EQV={"兩":"二","她":"他","牠":"他","妳":"你","裏":"裡","台":"臺"};   // các chữ nghe giống nhau, không tính là sai
+const normHan=s=>[...digHan(s)].map(c=>S2T[c]||c).filter(isHan).map(c=>EQV[c]||c);
+function compareRead(target,heard){   // so chữ Hán nhận dạng được với câu mẫu (LCS), chấm từng từ
+  const raw=[...target].filter(isHan).join(""),words=segmentWords(target),T=normHan(target),H=normHan(heard);
+  const skip=new Array(T.length).fill(false);let mm;NAMES.lastIndex=0;
+  while((mm=NAMES.exec(raw)))for(let k=0;k<mm[0].length;k++)skip[mm.index+k]=true;
+  const idx=T.map((_,i)=>i).filter(i=>!skip[i]),T2=idx.map(i=>T[i]),n=T2.length,m=H.length;
+  const dp=Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)dp[i][j]=T2[i-1]===H[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);
+  const hit=T.map((_,i)=>skip[i]);let i=n,j=m,ok=0;
+  while(i>0&&j>0){if(T2[i-1]===H[j-1]){hit[idx[i-1]]=true;ok++;i--;j--}else if(dp[i-1][j]>=dp[i][j-1])i--;else j--}
+  let pos=0;
+  const marks=words.map(w=>{const len=[...w].length,all=hit.slice(pos,pos+len).every(Boolean),isName=skip.slice(pos,pos+len).every(Boolean);pos+=len;const d=DICT[w];return{w,ok:all,name:isName,py:d?d[0]:"",vi:d?d[1]:""}});
+  return{score:n?ok/n:1,marks,heard:H.join("")};
+}
+function storyBest(si,li){return (prog.say||{})[si+"-"+li]||0}
+function showReadResult(si,li,r){
+  const pct=Math.round(r.score*100),box=$("#fb-"+si+"-"+li);if(!box)return;
+  prog.say=prog.say||{};if(pct/100>(prog.say[si+"-"+li]||0)){prog.say[si+"-"+li]=pct/100;save()}
+  const bad=r.marks.filter(m=>!m.ok);
+  const msg=pct>=90?"🎉 Tuyệt vời! Phát âm rất chuẩn.":pct>=70?"👍 Khá tốt. Luyện lại các từ màu đỏ nhé.":"💪 Chưa chuẩn lắm. Bấm vào từ đỏ để nghe mẫu rồi đọc chậm hơn.";
+  box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${msg}</div>
+   <div class="words">${r.marks.map(m=>`<span class="w ${m.name?"name":m.ok?"ok":"bad"} tap" onclick="speak('${m.w}')">${m.w}<small>${m.name?"tên riêng":m.py}</small></span>`).join("")}</div>
+   ${bad.length?`<div class="stat">Cần luyện: ${bad.map(m=>`<b class="zh">${m.w}</b> ${m.py}${m.vi?" ("+m.vi+")":""}`).join(" · ")}</div>`:""}
+   <div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div></div>`;
+  const bd=$("#bd-"+si+"-"+li);if(bd)bd.textContent=Math.round(storyBest(si,li)*100)+"%";
+  const av=$("#avg-"+si);if(av)av.textContent=storyAvg(si);
+}
+function storyAvg(si){const n=rows(STORIES[si].l).length;let s=0,c=0;for(let li=0;li<n;li++){const b=storyBest(si,li);if(b){s+=b;c++}}return c?"Điểm đọc: "+Math.round(s/c*100)+"% ("+c+"/"+n+" câu)":""}
+function readAloud(si,li){
+  const key=si+"-"+li,btn=$("#mic-"+key),box=$("#fb-"+key);
+  if(rec&&recKey===key){stopRec();return}                       // bấm lần nữa để dừng
+  if(!SRC){toast("Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Safari (Mac, iPhone).");return}
+  stopSpeak();stopRec();
+  const target=rows(STORIES[si].l)[li].split("|")[0];
+  const r=new SRC();rec=r;recKey=key;
+  r.lang="zh-TW";r.interimResults=false;r.maxAlternatives=5;r.continuous=false;
+  let got=false,failed=false;
+  const idle=()=>{document.querySelectorAll(".mic").forEach(b=>{b.classList.remove("rec");b.textContent="🎤 Đọc thử"})};
+  r.onstart=()=>{idle();btn.classList.add("rec");btn.textContent="🎙 Đang nghe… bấm để dừng";box.innerHTML=`<div class="stat">Hãy đọc to câu trên bằng giọng bình thường…</div>`};
+  r.onresult=e=>{
+    got=true;let best=null;
+    [...e.results[0]].forEach(a=>{const c=compareRead(target,a.transcript);if(!best||c.score>best.score)best=c});
+    showReadResult(si,li,best);
+  };
+  r.onerror=e=>{
+    failed=true;const m={"not-allowed":"Bạn chưa cho phép dùng micro. Bấm biểu tượng khóa ở thanh địa chỉ, chọn cho phép Micro rồi thử lại.","service-not-allowed":"Trình duyệt không cho dùng nhận dạng giọng nói ở đây.","no-speech":"Chưa nghe thấy giọng bạn. Đọc to hơn và thử lại nhé.","audio-capture":"Không tìm thấy micro.","network":"Cần có mạng: Chrome gửi âm thanh lên Google để nhận dạng."}[e.error];
+    if(e.error!=="aborted"){box.innerHTML=`<div class="rr low">${m||"Lỗi nhận dạng giọng nói ("+e.error+")."}</div>`}
+  };
+  r.onend=()=>{if(rec===r){rec=null;recKey=""}idle();if(!got&&!failed&&box&&!box.querySelector(".rr"))box.innerHTML=`<div class="stat">Chưa nghe thấy gì, bấm 🎤 thử lại nhé.</div>`};
+  try{r.start()}catch(e){toast("Không bật được micro: "+e.message)}
+}
+function playStory(si){toast("🔊 Đang đọc…");speakSeq(rows(STORIES[si].l).map(r=>({t:r.split("|")[0],tag:"m",pitch:1})))}
+function restory(){const y=window.scrollY;storyView();window.scrollTo(0,y)}
+function storyView(){
+  let html=`<div class="row" style="margin-bottom:10px"><label><input type="checkbox" ${rPy?"checked":""} onchange="rPy=this.checked;restory()"> Hiện pinyin</label><label><input type="checkbox" ${rVi?"checked":""} onchange="rVi=this.checked;restory()"> Hiện tiếng Việt</label><button class="b" onclick="stopSpeak();stopRec()">⏹ Dừng</button></div>
+  <div class="card tip">🎤 <b>Cách luyện:</b> bấm ▶ nghe cả truyện, rồi bấm <b>🎤 Đọc thử</b> ở từng câu và đọc to. Web so giọng bạn với câu mẫu và đánh dấu từ nào đọc chưa chuẩn (<span class="w bad" style="font-size:15px;padding:1px 8px">đỏ</span>). Chấm điểm dựa trên bộ nhận dạng giọng nói của trình duyệt nên chỉ mang tính tham khảo.${SRC?"":" <b>Trình duyệt này chưa hỗ trợ chấm phát âm, hãy mở bằng Chrome hoặc Safari.</b>"}</div>`;
+  STORIES.forEach((S,si)=>{
+    if(!inL(S.n))return;
+    const ls=rows(S.l).map(r=>r.split("|"));
+    html+=`<div class="lh">${lesHead(S.n)} <span class="vi">— ${LES[S.n].vi}</span></div>
+    <div class="card"><div class="row" style="justify-content:space-between;margin-bottom:6px"><h3 style="margin:0">📖 <span class="gh">${annotate(S.zh).html}</span> <span class="vi">· ${S.vi}</span></h3><button class="b p" onclick="playStory(${si})">▶ Nghe cả truyện</button></div>
+    <div class="stat" id="avg-${si}" style="margin-bottom:4px">${storyAvg(si)}</div>`+
+    ls.map((x,li)=>`<div class="sl"><div class="row"><span class="zh tap" style="font-size:24px" onclick="speak('${x[0]}')">${x[0]}</span></div>${rPy?`<div class="py">${x[1]}</div>`:""}${rVi?`<div class="vi">${x[2]}</div>`:""}
+     <div class="row" style="margin-top:6px">${spkBtn(x[0])}<button class="b mic" id="mic-${si}-${li}" onclick="readAloud(${si},${li})">🎤 Đọc thử</button><span class="badge" id="bd-${si}-${li}">${storyBest(si,li)?Math.round(storyBest(si,li)*100)+"%":""}</span></div><div id="fb-${si}-${li}"></div></div>`).join("")+`</div>`;
+  });
+  $("#app").innerHTML=html;
 }
 
 /* ============ BÀI TẬP ============ */
