@@ -42,6 +42,9 @@ python3 build.py
 ```
 Định dạng dữ liệu mỗi bài (từ vựng `Hán|pinyin|nghĩa`, câu dịch `tiếng Việt|Hán|pinyin`…) có chú thích ở đầu `src/data1.js`.
 
+## Đo lường (GA4)
+Web dùng Google Analytics 4 (mã đo lường `G-H1NFW0MK89`, đặt trong `src/head.html`). Ngoài lượt xem trang, web gửi vài sự kiện đếm lượt dùng: `tab_view`, `select_lesson`, `qa_start`, `qa_answer`, `qa_complete`, `story_sentence`, `story_whole` (chỉ kèm điểm số và số bài). Web không gửi âm thanh hay lời nói của người dùng.
+
 ## Giọng đọc
 Mặc định web phát **file âm thanh thu sẵn** trong `audio/` (một giọng duy nhất: **Meijia**, giọng Quan thoại Đài Loan của macOS), nên Chrome, Safari và điện thoại đều nghe được, không phụ thuộc giọng đọc của trình duyệt. Nếu thiếu file cho một câu nào đó, web tự dùng Web Speech API của trình duyệt.
 

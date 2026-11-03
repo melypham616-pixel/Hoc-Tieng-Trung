@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H1NFW0MK89"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-H1NFW0MK89');
+</script>
 <title>Học Tiếng Trung 當代中文課程 1</title>
 <style>
 :root{
@@ -1972,6 +1981,8 @@ const tLenOf=t=>{const n=t[1].replace(/[^\u4e00-\u9fff]/g,"").length;return n<=5
 
 STORIES.sort((a,b)=>a.n-b.n);   // xếp truyện theo bài (giữ nguyên thứ tự trong cùng bài)
 const skey=(si,li)=>STORIES[si].zh+"|"+li;   // lưu điểm theo tên truyện để thêm truyện mới không làm lệch điểm cũ
+/* ============ ĐO LƯỜNG (GA4): chỉ đếm lượt dùng và điểm số, không gửi âm thanh hay lời nói ============ */
+const track=(name,params)=>{try{if(typeof gtag==='function')gtag('event',name,params||{})}catch(e){}};
 /* ============ TIỆN ÍCH / GIỌNG ĐỌC ============ */
 window.addEventListener("error",e=>{try{toast("Lỗi trong trang: "+e.message)}catch(x){}});
 const $=s=>document.querySelector(s);
@@ -2061,7 +2072,7 @@ const pool=()=>VOCAB.filter(v=>inL(v[3]));
   $("#lbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setLesson(b.dataset.v)};
 })();
 function setLesson(v){
-  LESSON=prog.lesson=v;qMode=null;tIdx=0;$("#les").value=v;syncBar();save();render();
+  LESSON=prog.lesson=v;qMode=null;tIdx=0;track('select_lesson',{lesson:v});$("#les").value=v;syncBar();save();render();
 }
 function syncBar(){
   document.querySelectorAll(".lchip").forEach(b=>b.classList.toggle("on",b.dataset.v===LESSON));
@@ -2081,7 +2092,7 @@ $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button da
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
-  stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;
+  stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;track('tab_view',{tab});
   ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,story:storyView,qa:qaView,quiz:quizView,trans:transView})[tab]();
 }
 const lesTag=n=>`Bài ${n} · ${LES[n].zh}`;
@@ -2272,7 +2283,7 @@ function storyBest(si,li){return (prog.say||{})[skey(si,li)]||0}
 const chipsHtml=marks=>`<div class="words">${marks.map(m=>`<span class="w ${m.name?"name":m.ok?"ok":"bad"} tap" onclick="speak('${m.w}')">${m.w}<small>${m.name?"tên riêng":m.py}</small></span>`).join("")}</div>`;
 const needHtml=marks=>{const bad=marks.filter(m=>!m.ok&&!m.name);return bad.length?`<div class="stat">Cần luyện: ${bad.map(m=>`<b class="zh">${m.w}</b> ${m.py}${m.vi?" ("+m.vi+")":""}`).join(" · ")}</div>`:""};
 function showReadResult(si,li,r,heardRaw){
-  const pct=Math.round(r.score*100),box=$("#fb-"+si+"-"+li);if(!box)return;
+  const pct=Math.round(r.score*100),box=$("#fb-"+si+"-"+li);if(!box)return;track('story_sentence',{score:pct,lesson:STORIES[si].n});
   prog.say=prog.say||{};if(pct/100>(prog.say[skey(si,li)]||0)){prog.say[skey(si,li)]=pct/100;save()}
   const msg=pct>=90?"🎉 Tuyệt vời! Phát âm rất chuẩn.":pct>=70?"👍 Khá tốt. Luyện lại các từ màu đỏ nhé.":"💪 Chưa chuẩn lắm. Bấm vào từ đỏ để nghe mẫu rồi đọc chậm hơn.";
   box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${msg}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}
@@ -2362,7 +2373,7 @@ function readWhole(si){
   recordTarget(si+"-all",target,{whole:true,quiet:7000,idle:20000,max:300000},(text,info)=>{
     const A=alignHits(target,text),box=$("#fb-"+si+"-all");let off=0;
     const per=ls.map(s=>{const len=[...s].filter(isHan).length,r={s,score:sentScore(A,off,len),marks:wordMarks(s,A,off)};off+=len;return r});
-    const pct=Math.round(A.score*100),fl=fluencyOf(info,A.ok),flu=fl?fl.score:null;
+    const pct=Math.round(A.score*100),fl=fluencyOf(info,A.ok),flu=fl?fl.score:null;track('story_whole',{pronunciation:pct,fluency:flu,lesson:STORIES[si].n});
     prog.full=prog.full||{};const old=prog.full[STORIES[si].zh];
     if(!old||pct>old.p){prog.full[STORIES[si].zh]={p:pct,f:flu==null?(old?old.f:0):flu};save()}
     const bd=$("#full-"+si);if(bd)bd.textContent=fullBadge(si);
@@ -2496,7 +2507,7 @@ function qaView(){
   <div class="row" style="margin-top:12px"><button class="b p" onclick="qaStart(${QA_LEN})">▶ Bắt đầu phiên ${QA_LEN} câu</button><button class="b" onclick="qaStart(1)">🔀 Hỏi 1 câu ngẫu nhiên</button></div>
   <div class="stat" style="margin-top:10px">Có ${QA.filter(q=>inL(q.n)).length} câu hỏi trong phạm vi đang chọn.${t.done?` Bạn đã trả lời ${t.done} câu, điểm trung bình ${Math.round(t.sum/t.done)}%.`:""}</div></div><div id="qa-stage"></div>`;
 }
-function qaStart(n){qaSess={n,i:0,res:[]};qaAsk()}
+function qaStart(n){qaSess={n,i:0,res:[]};track('qa_start',{questions:n});qaAsk()}
 function qaAsk(){
   stopSpeak();stopRec();clearInterval(qaTimer);
   qaCur=qaPick();qaLast=qaCur;const Q=qaCur,k=qaSess?qaSess.i+1:1,N=qaSess?qaSess.n:1;
@@ -2551,7 +2562,7 @@ function qaRecord(E){
 function qaResult(text,info){
   const Q=qaCur,box=$("#fb-qa");if(!Q||!box)return;
   const E=text?evalAnswer(Q,text,info):null;
-  qaRecord(E);
+  qaRecord(E);track('qa_answer',{answered:!!E,overall:E?E.overall:0,grammar:E?E.grammar:0,grammar_errors:E?E.errs:0,reflex_seconds:E&&E.lat!=null?+E.lat.toFixed(1):null,lesson:Q.n});
   const sample=`<details class="qa-sample"><summary class="stat"><b>Xem câu trả lời mẫu (chỉ để tham khảo)</b></summary><div class="row"><span class="zh tap" style="font-size:22px" onclick="speak('${Q.a}')">${Q.a}</span>${spkBtn(Q.a)}</div><div class="py">${Q.apy}</div><div class="vi">${Q.avi}</div>
     <div class="row" style="margin-top:8px"><button class="b mic" data-label="🎤 Đọc theo câu mẫu" id="mic-qa2" onclick="qaShadow()">🎤 Đọc theo câu mẫu</button></div><div id="fb-qa2"></div></details>`;
   const last=qaSess&&qaSess.i+1>=qaSess.n;
@@ -2592,7 +2603,7 @@ function qaSummary(){
    <p>${avg>=80?"🎉 Rất tốt! Bạn trả lời nhanh và đúng ý.":avg>=60?"👍 Khá ổn. Luyện thêm để phản xạ nhanh hơn.":"💪 Cần luyện thêm. Hãy xem lại câu mẫu và thử lần nữa."}</p>
    ${weak.length?`<div class="stat"><b>Nên luyện lại các câu này:</b></div>`+weak.map(x=>{const Q=byQ[x.q];return `<div class="sres"><div class="row"><span class="zh tap" style="font-size:20px" onclick="speak('${Q.q}')">${Q.q}</span></div><div class="vi">${Q.qvi}</div><div class="py">Mẫu: ${Q.a} — ${Q.apy}</div></div>`}).join(""):""}
    <div class="row" style="margin-top:12px"><button class="b p" onclick="qaStart(${QA_LEN})">🔁 Phiên mới</button><button class="b" onclick="qaView()">Về màn hình đầu</button></div></div>`;
-  qaSess=null;
+  track('qa_complete',{questions:n,avg_score:Math.round(avg),avg_reflex_seconds:al==null?null:+al.toFixed(1)});qaSess=null;
 }
 
 /* ============ BÀI TẬP ============ */

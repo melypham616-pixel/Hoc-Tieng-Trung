@@ -14,7 +14,7 @@ const VOICES={m:"Meijia"};   // chỉ dùng một giọng: Meijia (zh-TW)
 const RATE=150;                                         // từ/phút, chậm hơn mặc định cho người học
 
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
-const script=html.slice(html.indexOf("<script>")+8,html.lastIndexOf("</script>"));
+const script=html.slice(html.lastIndexOf("<script>")+8,html.lastIndexOf("</script>"));   // khối script cuối cùng là ứng dụng (khối trước là mã GA4)
 const proxy=()=>new Proxy(function(){},{get:(t,k)=>k==="style"?{}:k==="value"?"all":proxy(),set:()=>true,apply:()=>proxy()});
 const ctx=vm.createContext({
   document:{querySelector:proxy,querySelectorAll:()=>[],createElement:proxy,addEventListener(){},body:proxy()},

@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiếng Anh lớp 5</title>
+<style>
+:root{--bg:#f3f6ff;--card:#fff;--ink:#1e293b;--mut:#64748b;--pri:#6366f1;--pri2:#8b5cf6;--ok:#10b981;--bad:#ef4444;--line:#e2e8f0;--soft:#eef2ff;--shadow:0 4px 14px rgba(99,102,241,.10)}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1020;--card:#171d33;--ink:#e8ecf8;--mut:#9aa6c4;--line:#2a3354;--soft:#222a4a;--shadow:0 4px 14px rgba(0,0,0,.35)}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Nunito",-apple-system,system-ui,sans-serif}
+header{background:linear-gradient(135deg,var(--pri),var(--pri2) 60%,#ec4899);color:#fff;padding:20px 16px 56px;border-radius:0 0 28px 28px}
+.hin{max-width:760px;margin:0 auto}
+h1{margin:0 0 12px;font-size:26px;letter-spacing:-.3px}
+header select{width:100%;background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);font-weight:600}
+header select option{color:#111}
+#prog{display:block;margin-top:8px;font-size:14px;opacity:.9}
+#pbar{height:6px;background:rgba(255,255,255,.25);border-radius:3px;margin-top:6px;overflow:hidden}
+#pbar i{display:block;height:100%;background:#fff;border-radius:3px;transition:width .3s}
+nav{display:flex;gap:6px;max-width:728px;margin:-30px auto 0;padding:6px;background:var(--card);border-radius:18px;box-shadow:var(--shadow);position:sticky;top:8px;z-index:5;width:calc(100% - 32px)}
+nav button{flex:1;border:0;background:transparent;padding:10px 4px;border-radius:12px;font-weight:700;color:var(--mut);font-size:14px}
+nav button.on{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;box-shadow:0 3px 8px rgba(99,102,241,.4)}
+main{max-width:760px;margin:0 auto;padding:6px 16px 48px}
+select,button{font:inherit;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;cursor:pointer;transition:transform .08s,box-shadow .15s}
+button:active{transform:scale(.96)}
+button:disabled{opacity:.6;cursor:default}
+button.pri{background:linear-gradient(135deg,var(--pri),var(--pri2));color:#fff;border:0;font-weight:700;box-shadow:0 3px 8px rgba(99,102,241,.35)}
+.card{background:var(--card);border-radius:18px;padding:14px 16px;margin:12px 0;box-shadow:var(--shadow)}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.emo{font-size:34px;width:54px;height:54px;display:grid;place-items:center;background:var(--soft);border-radius:16px}
+.big{font-size:26px;font-weight:800}
+.mut{color:var(--mut)}
+h3{margin:22px 4px 0;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--pri)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.opts button{padding:14px;font-weight:700;border-width:2px}
+.ok{background:var(--ok)!important;color:#fff!important;border-color:var(--ok)!important}
+.bad{background:var(--bad)!important;color:#fff!important;border-color:var(--bad)!important}
+.chip{display:inline-block;margin:4px;padding:9px 14px;border:2px solid var(--line);border-radius:12px;background:var(--card);font-weight:700;cursor:pointer}
+.tip{font-size:14px;margin-top:8px}
+.known{opacity:.55}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--pri2))}
+.sent{padding:10px 12px;border-radius:12px;cursor:pointer;margin:2px 0}
+.sent:hover{background:var(--soft)}
+.sent.now{background:var(--soft);outline:2px solid var(--pri)}
+.sent .vi{color:var(--mut);font-size:14px;display:none}
+.showvi .sent .vi{display:block}
+.pill{display:inline-block;background:var(--soft);color:var(--pri);padding:2px 10px;border-radius:99px;font-size:13px;font-weight:700}
+.tf{display:flex;gap:8px;margin-top:8px}.tf button{flex:1;font-weight:700;border-width:2px}
+</style>
+</head>
+<body>
+<header><div class="hin">
+  <h1>🇬🇧 Tiếng Anh lớp 5</h1>
+  <select id="unit"></select>
+  <span id="prog"></span>
+  <div id="pbar"><i></i></div>
+</div></header>
+<nav id="tabs"></nav>
+<main id="view"></main>
+
+<script>
+// Nội dung do người soạn tự viết, theo các chủ đề quen thuộc của chương trình tiếng Anh lớp 5.
+// vocab: [từ, nghĩa, emoji]; patterns: [câu mẫu, nghĩa]; talk: [người nói, câu, nghĩa]
+const UNITS = [
+{
+  title:"Unit 1 · Introducing myself · Giới thiệu bản thân",
+  vocab:[["name","tên","🏷️"],["age","tuổi","🎂"],["country","đất nước","🌏"],["Vietnamese","người/tiếng Việt","🇻🇳"],["friend","bạn bè","🧑‍🤝‍🧑"],["nice","dễ thương, tốt","😊"],["class","lớp học","🏫"],["live","sống","🏠"]],
+  patterns:[["My name is Lan.","Tên mình là Lan."],["I am ten years old.","Mình mười tuổi."],["I live in Ha Noi.","Mình sống ở Hà Nội."]],
+  talk:[["Tom","Hello! What is your name?","Xin chào! Bạn tên là gì?"],["Lan","My name is Lan. Nice to meet you.","Mình tên Lan. Rất vui được gặp bạn."],["Tom","Nice to meet you, too. Where do you live?","Mình cũng rất vui. Bạn sống ở đâu?"],["Lan","I live in Ha Noi. I am in class 5A.","Mình sống ở Hà Nội. Mình học lớp 5A."]],
+  sentences:["My name is Lan","I am ten years old","I live in Ha Noi","Nice to meet you","I am in class five A"]
+},
+{
+  title:"Unit 2 · My family · Gia đình mình",
+  vocab:[["mother","mẹ","👩"],["father","bố","👨"],["brother","anh/em trai","👦"],["sister","chị/em gái","👧"],["grandmother","bà","👵"],["grandfather","ông","👴"],["family","gia đình","👪"],["teacher","giáo viên","🧑‍🏫"]],
+  patterns:[["There are four people in my family.","Gia đình mình có bốn người."],["She is my mother.","Bà ấy là mẹ mình."],["My father is a doctor.","Bố mình là bác sĩ."]],
+  talk:[["Mai","How many people are there in your family?","Gia đình bạn có mấy người?"],["Nam","There are five. My parents, my sister and me.","Có năm người. Bố mẹ, chị mình và mình."],["Mai","What does your mother do?","Mẹ bạn làm nghề gì?"],["Nam","She is a teacher. She works at my school.","Mẹ mình là giáo viên. Mẹ làm ở trường mình."]],
+  sentences:["There are four people in my family","She is my mother","My father is a doctor","I have one sister","My grandmother is kind"]
+},
+{
+  title:"Unit 3 · My school · Trường của mình",
+  vocab:[["library","thư viện","📚"],["playground","sân chơi","🛝"],["classroom","phòng học","🏫"],["subject","môn học","📖"],["Maths","môn Toán","➗"],["Science","môn Khoa học","🔬"],["music","âm nhạc","🎵"],["lesson","bài học","📝"]],
+  patterns:[["I study Maths at school.","Mình học Toán ở trường."],["My favourite subject is Science.","Môn học yêu thích của mình là Khoa học."],["We have music on Friday.","Chúng mình có tiết âm nhạc vào thứ Sáu."]],
+  talk:[["Hoa","What subjects do you have today?","Hôm nay bạn có những môn gì?"],["Minh","We have Maths and English.","Mình có Toán và Tiếng Anh."],["Hoa","What is your favourite subject?","Môn bạn thích nhất là gì?"],["Minh","I like Science because it is fun.","Mình thích Khoa học vì nó vui."]],
+  sentences:["I study Maths at school","My favourite subject is Science","We have music on Friday","I like English because it is fun","The library is near the playground"]
+},
+{
+  title:"Unit 4 · Daily routines · Việc hằng ngày",
+  vocab:[["get up","thức dậy","⏰"],["breakfast","bữa sáng","🥣"],["brush","đánh (răng)","🪥"],["homework","bài tập về nhà","✏️"],["dinner","bữa tối","🍽️"],["bed","giường","🛏️"],["always","luôn luôn","♾️"],["usually","thường xuyên","🔁"]],
+  patterns:[["I get up at six o'clock.","Mình thức dậy lúc sáu giờ."],["She usually does homework after dinner.","Cô ấy thường làm bài tập sau bữa tối."],["What time do you go to bed?","Bạn đi ngủ lúc mấy giờ?"]],
+  talk:[["Linh","What time do you get up?","Bạn thức dậy lúc mấy giờ?"],["Duc","I get up at six. Then I have breakfast.","Mình dậy lúc sáu giờ. Rồi mình ăn sáng."],["Linh","What do you do after school?","Sau giờ học bạn làm gì?"],["Duc","I do my homework and play football.","Mình làm bài tập và chơi bóng đá."]],
+  sentences:["I get up at six o'clock","What time do you go to bed","She usually does homework after dinner","I always brush my teeth","He has breakfast at seven"]
+},
+{
+  title:"Unit 5 · Hobbies · Sở thích",
+  vocab:[["hobby","sở thích","🎯"],["draw","vẽ","🎨"],["swim","bơi","🏊"],["sing","hát","🎤"],["read","đọc","📕"],["cook","nấu ăn","🍳"],["cycle","đạp xe","🚲"],["photo","bức ảnh","📷"]],
+  patterns:[["What is your hobby?","Sở thích của bạn là gì?"],["I like drawing pictures.","Mình thích vẽ tranh."],["He can swim very well.","Cậu ấy bơi rất giỏi."]],
+  talk:[["Ben","What do you do in your free time?","Bạn làm gì lúc rảnh?"],["Lan","I like reading books and drawing.","Mình thích đọc sách và vẽ."],["Ben","Can you sing?","Bạn hát được không?"],["Lan","Yes, I can. I sing in the school club.","Được chứ. Mình hát trong câu lạc bộ của trường."]],
+  sentences:["What is your hobby","I like drawing pictures","He can swim very well","She likes cooking with her mother","We go cycling on Sunday"]
+},
+{
+  title:"Unit 6 · Weather and seasons · Thời tiết và mùa",
+  vocab:[["weather","thời tiết","🌦️"],["sunny","có nắng","☀️"],["rainy","có mưa","🌧️"],["windy","có gió","💨"],["cold","lạnh","🥶"],["hot","nóng","🥵"],["season","mùa","🍂"],["snow","tuyết","❄️"]],
+  patterns:[["What is the weather like today?","Hôm nay thời tiết thế nào?"],["It is sunny and hot.","Trời nắng và nóng."],["I like summer because I can swim.","Mình thích mùa hè vì mình có thể bơi."]],
+  talk:[["Kim","What is the weather like today?","Hôm nay thời tiết thế nào?"],["Tam","It is rainy and cold.","Trời mưa và lạnh."],["Kim","Which season do you like?","Bạn thích mùa nào?"],["Tam","I like spring. The weather is warm.","Mình thích mùa xuân. Thời tiết ấm áp."]],
+  sentences:["What is the weather like today","It is sunny and hot","It is windy in autumn","I like summer because I can swim","We do not go out when it is rainy"]
+},
+{
+  title:"Unit 7 · Animals · Động vật",
+  vocab:[["elephant","con voi","🐘"],["monkey","con khỉ","🐒"],["tiger","con hổ","🐅"],["rabbit","con thỏ","🐇"],["bird","con chim","🐦"],["zoo","sở thú","🦁"],["fast","nhanh","⚡"],["big","to","🐘"]],
+  patterns:[["I want to see the elephants.","Mình muốn xem những chú voi."],["Tigers are big and strong.","Hổ to và khỏe."],["Rabbits can run fast.","Thỏ chạy nhanh được."]],
+  talk:[["Nga","Let us go to the zoo on Saturday.","Thứ Bảy mình đi sở thú nhé."],["Hai","Great idea! What animal do you like?","Ý hay đấy! Bạn thích con vật nào?"],["Nga","I like monkeys. They are funny.","Mình thích khỉ. Chúng hài hước."],["Hai","I want to see the tigers. They are strong.","Mình muốn xem hổ. Chúng rất khỏe."]],
+  sentences:["Let us go to the zoo","Tigers are big and strong","Rabbits can run fast","I want to see the elephants","Monkeys are funny"]
+},
+{
+  title:"Unit 8 · Food and drinks · Đồ ăn thức uống",
+  vocab:[["rice","cơm, gạo","🍚"],["noodles","mì, phở","🍜"],["fish","cá","🐟"],["vegetables","rau củ","🥦"],["milk","sữa","🥛"],["juice","nước ép","🧃"],["delicious","ngon","😋"],["healthy","tốt cho sức khỏe","💪"]],
+  patterns:[["What would you like to eat?","Bạn muốn ăn gì?"],["I would like some noodles.","Mình muốn ăn một ít mì."],["Vegetables are good for you.","Rau củ tốt cho bạn."]],
+  talk:[["Mum","What would you like for dinner?","Con muốn ăn gì cho bữa tối?"],["Son","I would like fish and rice, please.","Cho con cá và cơm ạ."],["Mum","Do you want some vegetables?","Con có muốn ăn rau không?"],["Son","Yes, please. They are healthy and delicious.","Có ạ. Rau tốt cho sức khỏe và ngon."]],
+  sentences:["What would you like to eat","I would like some noodles","Vegetables are good for you","Do you want some milk","The fish is delicious"]
+},
+{
+  title:"Unit 9 · Around town · Đi lại trong thành phố",
+  vocab:[["bus","xe buýt","🚌"],["bike","xe đạp","🚲"],["street","con phố","🛣️"],["post office","bưu điện","📮"],["market","chợ","🛒"],["turn left","rẽ trái","⬅️"],["turn right","rẽ phải","➡️"],["straight","thẳng","⬆️"]],
+  patterns:[["How do you go to school?","Bạn đến trường bằng cách nào?"],["I go to school by bike.","Mình đến trường bằng xe đạp."],["Go straight and turn left.","Đi thẳng rồi rẽ trái."]],
+  talk:[["Tourist","Excuse me. Where is the post office?","Xin lỗi. Bưu điện ở đâu ạ?"],["Mai","Go straight, then turn left.","Bạn đi thẳng rồi rẽ trái."],["Tourist","Is it far from here?","Nó có xa đây không?"],["Mai","No, it is not. It is next to the market.","Không xa. Nó ở cạnh chợ."]],
+  sentences:["How do you go to school","I go to school by bike","Go straight and turn left","The market is next to the post office","Is it far from here"]
+},
+{
+  title:"Unit 10 · Holidays and trips · Kỳ nghỉ và chuyến đi",
+  vocab:[["holiday","kỳ nghỉ","🏖️"],["beach","bãi biển","🏝️"],["mountain","núi","⛰️"],["trip","chuyến đi","🧳"],["visit","thăm","🗺️"],["last summer","mùa hè năm ngoái","📅"],["wonderful","tuyệt vời","🤩"],["went","đã đi","🚶"]],
+  patterns:[["Where did you go last summer?","Mùa hè năm ngoái bạn đã đi đâu?"],["I went to the beach with my family.","Mình đã đi biển cùng gia đình."],["We had a wonderful time.","Chúng mình đã có khoảng thời gian tuyệt vời."]],
+  talk:[["Anna","Where did you go on holiday?","Bạn đã đi đâu trong kỳ nghỉ?"],["Vinh","I went to Da Nang with my family.","Mình đã đi Đà Nẵng cùng gia đình."],["Anna","What did you do there?","Bạn đã làm gì ở đó?"],["Vinh","We swam in the sea and took many photos.","Chúng mình bơi biển và chụp nhiều ảnh."]],
+  sentences:["Where did you go last summer","I went to the beach with my family","We had a wonderful time","They visited the mountains","She took many photos"]
+}
+];
+
+// Từ vựng thêm cho mỗi unit (đưa tổng lên 12 từ/unit)
+const MORE_VOCAB = [
+ [["hello","xin chào","👋"],["student","học sinh","🧒"],["boy","bé trai","👦"],["girl","bé gái","👧"]],
+ [["baby","em bé","👶"],["parents","bố mẹ","👫"],["kind","tốt bụng","💗"],["house","ngôi nhà","🏡"]],
+ [["book","quyển sách","📕"],["pen","cây bút","🖊️"],["bag","cặp sách","🎒"],["ruler","thước kẻ","📏"]],
+ [["wash","rửa","🧼"],["watch","xem","📺"],["sleep","ngủ","😴"],["shower","tắm vòi sen","🚿"]],
+ [["dance","nhảy múa","💃"],["guitar","đàn ghi-ta","🎸"],["football","bóng đá","⚽"],["puzzle","trò ghép hình","🧩"]],
+ [["cloudy","nhiều mây","☁️"],["storm","cơn bão","⛈️"],["warm","ấm áp","🌤️"],["umbrella","cái ô","☂️"]],
+ [["dog","con chó","🐶"],["cat","con mèo","🐱"],["horse","con ngựa","🐴"],["giraffe","hươu cao cổ","🦒"]],
+ [["bread","bánh mì","🍞"],["egg","quả trứng","🥚"],["apple","quả táo","🍎"],["chicken","thịt gà","🍗"]],
+ [["car","ô tô","🚗"],["train","tàu hỏa","🚆"],["plane","máy bay","✈️"],["hospital","bệnh viện","🏥"]],
+ [["hotel","khách sạn","🏨"],["sea","biển","🌊"],["camera","máy ảnh","📸"],["ticket","tấm vé","🎫"]]
+];
+UNITS.forEach((u,i) => u.vocab.push(...MORE_VOCAB[i]));
+
+// Bài đọc: mỗi unit một đoạn ngắn tự soạn. sents: [câu, nghĩa]; qs: [câu hỏi, đúng?, giải thích]
+const READS = [
+{title:"Hello, I am Lan",sents:[["My name is Lan.","Tên mình là Lan."],["I am ten years old.","Mình mười tuổi."],["I live in Ha Noi with my family.","Mình sống ở Hà Nội cùng gia đình."],["I am in class 5A.","Mình học lớp 5A."],["I have many good friends at school.","Mình có nhiều bạn tốt ở trường."]],qs:[["Lan is eleven years old.",false,"Lan is ten."],["Lan lives in Ha Noi.",true,"Lan sống ở Hà Nội."],["Lan has no friends.",false,"Lan has many good friends."]]},
+{title:"My family",sents:[["There are five people in my family.","Gia đình mình có năm người."],["My father is a doctor.","Bố mình là bác sĩ."],["My mother is a teacher.","Mẹ mình là giáo viên."],["I have one older sister.","Mình có một chị gái."],["We have dinner together every evening.","Cả nhà ăn tối cùng nhau mỗi tối."]],qs:[["The writer's father is a teacher.",false,"Bố là bác sĩ, mẹ mới là giáo viên."],["The writer has a sister.",true,"One older sister."],["The family eats dinner together.",true,"Every evening."]]},
+{title:"A day at school",sents:[["I go to school at seven o'clock.","Mình đến trường lúc bảy giờ."],["Today we have Maths and Science.","Hôm nay có Toán và Khoa học."],["Science is my favourite subject.","Khoa học là môn mình thích nhất."],["At break time, I play in the playground.","Giờ ra chơi mình chơi ở sân trường."],["After school, I read books in the library.","Sau giờ học mình đọc sách ở thư viện."]],qs:[["The writer's favourite subject is Maths.",false,"It is Science."],["The writer plays in the playground at break time.",true,"Đúng."],["The writer goes to the library after school.",true,"Đúng."]]},
+{title:"Nam's morning",sents:[["Nam gets up at six o'clock.","Nam dậy lúc sáu giờ."],["He brushes his teeth and has breakfast.","Cậu đánh răng và ăn sáng."],["He usually eats noodles.","Cậu thường ăn mì."],["Then he rides his bike to school.","Rồi cậu đạp xe đến trường."],["He always arrives before the bell rings.","Cậu luôn đến trước khi chuông reo."]],qs:[["Nam gets up at seven.",false,"He gets up at six."],["Nam goes to school by bike.",true,"Đúng."],["Nam is often late.",false,"He always arrives early."]]},
+{title:"Hobbies at the weekend",sents:[["On Saturday, Mai draws pictures.","Thứ Bảy, Mai vẽ tranh."],["She also likes singing in the school club.","Cô cũng thích hát ở câu lạc bộ."],["Her brother Tuan loves swimming.","Em trai Tuấn của cô thích bơi."],["He can swim very fast.","Cậu bơi rất nhanh."],["On Sunday they cycle in the park together.","Chủ nhật hai chị em cùng đạp xe trong công viên."]],qs:[["Mai likes drawing.",true,"Đúng."],["Tuan cannot swim.",false,"He can swim very fast."],["They cycle on Saturday.",false,"They cycle on Sunday."]]},
+{title:"Four seasons",sents:[["In my city, there are four seasons.","Ở thành phố mình có bốn mùa."],["Spring is warm and flowers are beautiful.","Mùa xuân ấm áp và hoa rất đẹp."],["Summer is hot and sunny.","Mùa hè nóng và nhiều nắng."],["Autumn is cool and windy.","Mùa thu mát và có gió."],["Winter is cold, but I like it best.","Mùa đông lạnh nhưng mình thích nhất."]],qs:[["Summer is cold.",false,"Summer is hot and sunny."],["Autumn is windy.",true,"Đúng."],["The writer likes winter best.",true,"Đúng."]]},
+{title:"A trip to the zoo",sents:[["Last Saturday, we went to the zoo.","Thứ Bảy tuần trước chúng mình đến sở thú."],["We saw big elephants and tall giraffes.","Chúng mình thấy voi to và hươu cao cổ."],["The monkeys were very funny.","Những chú khỉ rất hài hước."],["I took many photos of the tigers.","Mình chụp nhiều ảnh hổ."],["It was a great day.","Đó là một ngày tuyệt vời."]],qs:[["They went to the zoo on Sunday.",false,"They went on Saturday."],["The monkeys were funny.",true,"Đúng."],["The writer took photos of the tigers.",true,"Đúng."]]},
+{title:"Dinner time",sents:[["Mum cooks dinner at six o'clock.","Mẹ nấu bữa tối lúc sáu giờ."],["Today we have fish, rice and vegetables.","Hôm nay có cá, cơm và rau."],["I do not like fish very much.","Mình không thích cá lắm."],["But vegetables are healthy, so I eat them all.","Nhưng rau tốt cho sức khỏe nên mình ăn hết."],["After dinner, we drink orange juice.","Sau bữa tối cả nhà uống nước cam."]],qs:[["The family has noodles today.",false,"They have fish, rice and vegetables."],["The writer likes fish very much.",false,"I do not like fish very much."],["They drink juice after dinner.",true,"Đúng."]]},
+{title:"Where is the post office?",sents:[["A tourist asks me the way to the post office.","Một du khách hỏi mình đường đến bưu điện."],["I tell him to go straight along this street.","Mình bảo ông đi thẳng dọc con phố này."],["Then he should turn right at the market.","Rồi rẽ phải ở chỗ chợ."],["The post office is next to a small bookshop.","Bưu điện ở cạnh một hiệu sách nhỏ."],["He says thank you and smiles.","Ông cảm ơn và mỉm cười."]],qs:[["The tourist wants to go to the market.",false,"He wants the post office."],["He should turn right at the market.",true,"Đúng."],["The post office is next to a bookshop.",true,"Đúng."]]},
+{title:"My summer holiday",sents:[["Last summer, I went to Da Nang with my family.","Mùa hè năm ngoái mình đi Đà Nẵng cùng gia đình."],["We travelled by train.","Chúng mình đi bằng tàu hỏa."],["We swam in the sea every morning.","Sáng nào chúng mình cũng bơi biển."],["In the evening, we ate delicious seafood.","Buổi tối chúng mình ăn hải sản rất ngon."],["We had a wonderful time.","Chúng mình đã có khoảng thời gian tuyệt vời."]],qs:[["They went to Da Nang by bus.",false,"They went by train."],["They swam in the sea.",true,"Đúng."],["The holiday was boring.",false,"It was wonderful."]]}
+];
+
+// Đoạn văn luyện đọc thêm (không gắn với unit nào). sents: [câu, nghĩa]
+const PASS = [
+{title:"Anna's day",sents:[["My name is Anna.","Tên mình là Anna."],["I am ten years old.","Mình mười tuổi."],["I usually get up at six thirty in the morning.","Mình thường dậy lúc sáu giờ ba mươi sáng."],["First, I brush my teeth and wash my face.","Đầu tiên, mình đánh răng và rửa mặt."],["Then, I have breakfast with my family.","Sau đó, mình ăn sáng cùng gia đình."],["I go to school at seven o'clock.","Mình đến trường lúc bảy giờ."],["I study many subjects, such as English, Math, and Science.","Mình học nhiều môn như Tiếng Anh, Toán và Khoa học."],["After school, I play with my friends.","Sau giờ học, mình chơi với bạn."],["In the evening, I do my homework and watch TV.","Buổi tối, mình làm bài tập và xem tivi."],["I go to bed at nine thirty.","Mình đi ngủ lúc chín giờ ba mươi."]],
+ qs:[["Anna gets up at seven.",false,"Anna gets up at six thirty."],["Anna goes to school at seven o'clock.",true,"Đúng."],["Anna goes to bed at nine thirty.",true,"Đúng."]]},
+{title:"Summer at the beach",sents:[["Last summer, I went to the beach with my family.","Mùa hè năm ngoái, mình đi biển cùng gia đình."],["We stayed in a hotel near the sea for three days.","Chúng mình ở khách sạn gần biển ba ngày."],["Every morning, I walked along the beach and collected beautiful seashells.","Sáng nào mình cũng đi dạo dọc bãi biển và nhặt những vỏ sò đẹp."],["In the afternoon, I swam in the sea and played with my younger brother.","Buổi chiều, mình bơi biển và chơi với em trai."],["We also ate delicious seafood at a small restaurant.","Chúng mình còn ăn hải sản ngon ở một nhà hàng nhỏ."],["I took many photos of the beautiful beach.","Mình chụp nhiều ảnh bãi biển đẹp."],["It was a wonderful holiday, and I hope to visit that place again next summer.","Đó là một kỳ nghỉ tuyệt vời, và mình hy vọng được đến đó lần nữa vào mùa hè sau."]],
+ qs:[["They stayed in the hotel for three days.",true,"Đúng."],["The writer played with an older sister.",false,"Mình chơi với em trai (younger brother)."],["The writer hopes to visit the place again.",true,"Đúng."]]},
+{title:"My favorite hobby",sents:[["My favorite hobby is reading books.","Sở thích của mình là đọc sách."],["I often read books in my free time.","Mình thường đọc sách lúc rảnh."],["I like reading stories about animals, nature, and adventures.","Mình thích đọc truyện về động vật, thiên nhiên và phiêu lưu."],["Reading helps me learn new words and understand the world better.","Đọc sách giúp mình học từ mới và hiểu thế giới hơn."],["Sometimes, I go to the library with my friends.","Thỉnh thoảng, mình đến thư viện cùng bạn."],["We choose interesting books and read them together.","Chúng mình chọn sách hay và cùng đọc."],["I want to become a good reader because books give me a lot of useful knowledge.","Mình muốn trở thành người đọc giỏi vì sách cho mình nhiều kiến thức bổ ích."]],
+ qs:[["The writer's hobby is playing football.",false,"The hobby is reading books."],["The writer sometimes goes to the library.",true,"Đúng."],["Reading helps the writer learn new words.",true,"Đúng."]]},
+{title:"My best friend Lisa",sents:[["My best friend's name is Lisa.","Bạn thân của mình tên là Lisa."],["She is ten years old and she is in my class.","Bạn mười tuổi và học cùng lớp với mình."],["She has long black hair and big brown eyes.","Bạn có mái tóc đen dài và đôi mắt nâu to."],["She is friendly, kind, and helpful.","Bạn thân thiện, tốt bụng và hay giúp đỡ."],["We usually sit together in the classroom.","Chúng mình thường ngồi cạnh nhau trong lớp."],["During break time, we play badminton and talk about our favorite cartoons.","Giờ ra chơi, chúng mình chơi cầu lông và trò chuyện về phim hoạt hình yêu thích."],["Sometimes, we do our homework together after school.","Thỉnh thoảng, chúng mình cùng làm bài tập sau giờ học."],["I am very happy to have a good friend like Lisa.","Mình rất vui vì có một người bạn tốt như Lisa."]],
+ qs:[["Lisa has short brown hair.",false,"Lisa has long black hair."],["Lisa is in the writer's class.",true,"Đúng."],["They play badminton at break time.",true,"Đúng."]]},
+{title:"My favorite food",sents:[["My favorite food is chicken noodles.","Món ăn yêu thích của mình là mì gà."],["They are very delicious.","Món này rất ngon."],["I usually eat them for breakfast or lunch.","Mình thường ăn vào bữa sáng hoặc bữa trưa."],["To make chicken noodles, we need chicken, noodles, vegetables, and some spices.","Để nấu mì gà, cần thịt gà, mì, rau và một ít gia vị."],["My mother sometimes cooks this dish for me.","Thỉnh thoảng mẹ nấu món này cho mình."],["I also like eating fruit, especially apples, bananas, and oranges.","Mình cũng thích ăn trái cây, nhất là táo, chuối và cam."],["I think eating healthy food is very important because it helps us stay strong and healthy.","Mình nghĩ ăn đồ tốt cho sức khỏe rất quan trọng vì nó giúp chúng ta khỏe mạnh."]],
+ qs:[["The writer's favorite food is fish.",false,"It is chicken noodles."],["The writer's mother sometimes cooks this dish.",true,"Đúng."],["The writer likes apples, bananas, and oranges.",true,"Đúng."]]},
+{title:"My family",sents:[["There are four people in my family: my father, my mother, my younger brother, and me.","Gia đình mình có bốn người: bố, mẹ, em trai và mình."],["My father is a doctor.","Bố mình là bác sĩ."],["He works in a hospital.","Bố làm việc ở bệnh viện."],["My mother is a teacher.","Mẹ mình là giáo viên."],["She teaches English at a primary school.","Mẹ dạy Tiếng Anh ở một trường tiểu học."],["My younger brother is seven years old.","Em trai mình bảy tuổi."],["He likes playing football and watching cartoons.","Em thích chơi bóng đá và xem phim hoạt hình."],["On weekends, we often go to the park or visit our grandparents.","Cuối tuần, cả nhà thường đi công viên hoặc thăm ông bà."],["I love my family because they always take care of me.","Mình yêu gia đình vì mọi người luôn chăm sóc mình."]],
+ qs:[["The writer's mother is a doctor.",false,"Mẹ là giáo viên; bố mới là bác sĩ."],["The younger brother is seven years old.",true,"Đúng."],["On weekends, they visit their grandparents or go to the park.",true,"Đúng."]]}
+];
+// Mỗi unit có bài đọc gốc + (nếu có) một đoạn văn thêm
+const PASS_OF = {0:3, 1:5, 3:0, 4:2, 7:4, 9:1};
+let pi = 0;
+const passList = u => PASS_OF[u] != null ? [READS[u], PASS[PASS_OF[u]]] : [READS[u]];
+const getR = u => passList(u)[pi] || passList(u)[0];
+const rk = () => unit + ':' + pi;
+const passChips = () => passList(unit).length < 2 ? '' : `<div class="row" style="margin:12px 0">${passList(unit).map((q,i)=>`<button data-pi="${i}" class="${i===pi?'pri':''}">${i+1}. ${q.title}</button>`).join('')}</div>`;
+
+// ---------- tiện ích ----------
+const $ = s => document.querySelector(s);
+const store = {
+  get(k, d){ try{ return JSON.parse(localStorage.getItem(k)) ?? d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const norm = s => s.toLowerCase().replace(/[^a-z' ]/g,' ').replace(/\s+/g,' ').trim();
+
+// ---------- giọng đọc (máy đọc): một giọng duy nhất, file thu sẵn ----------
+function warn(msg){
+  let el = document.getElementById('ttswarn');
+  if(!el){ el = document.createElement('div'); el.id='ttswarn'; el.className='card'; el.style.cssText='position:fixed;left:16px;right:16px;bottom:16px;z-index:9;border:2px solid var(--bad)'; document.body.appendChild(el); }
+  el.innerHTML = msg + ' <button onclick="this.parentNode.remove()">Đóng</button>';
+}
+const cyrb53=(str,seed=0)=>{let h1=0xdeadbeef^seed,h2=0x41c6ce57^seed;for(let i=0,ch;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}
+  h1=Math.imul(h1^(h1>>>16),2246822507);h1^=Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507);h2^=Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)};
+const clipUrl = t => "audio-en/" + cyrb53("en|"+t).toString(36) + ".m4a";
+let curA = null, playTok = 0;
+// Đọc một danh sách câu lần lượt bằng file thu sẵn (audio-en/, giọng Samantha).
+// cb(i) được gọi khi bắt đầu câu i, done() khi đọc xong.
+function speakList(texts, cb, done){
+  const tok = ++playTok;
+  if(curA){ try{ curA.pause(); }catch(e){} curA = null; }
+  let i = 0;
+  const next = () => {
+    if(tok !== playTok) return;
+    if(i >= texts.length){ if(done) done(); return; }
+    const k = i++, t = texts[k];
+    if(cb) cb(k);
+    const a = new Audio(clipUrl(t)); curA = a;
+    let used = false;
+    const fallback = () => { if(used || tok !== playTok) return; used = true; warn('Không tải được âm thanh. Hãy mở trang cùng chỗ với thư mục audio-en.'); };
+    a.onerror = fallback;
+    a.onended = () => { if(!used && tok === playTok){ used = true; next(); } };
+    const pr = a.play();
+    if(pr && pr.catch) pr.catch(e => { if(e && e.name === 'NotAllowedError'){ used = true; warn('Trình duyệt chặn âm thanh, hãy bấm lại nút nghe.'); } else fallback(); });
+  };
+  next();
+}
+const say = text => speakList([text]);
+
+let unit = store.get('en5.unit', 0);
+if(typeof unit !== 'number' || !UNITS[unit]) unit = 0;
+let tab = store.get('en5.tab', 'vocab');
+let known = store.get('en5.known', {});   // "u:word" -> true
+let stars = store.get('en5.stars2', {});   // unit -> best score
+
+const TABS = [["vocab","📘 Từ"],["read","📖 Đọc"],["talk","💬 Nói"],["quiz","🎯 Bài tập"],["speak","🎤 Luyện"]];
+
+function init(){
+  $('#unit').innerHTML = UNITS.map((u,i)=>`<option value="${i}">${u.title}</option>`).join('');
+  $('#unit').value = unit;
+  $('#unit').onchange = e => { unit = +e.target.value; pi = 0; store.set('en5.unit', unit); render(); };
+  $('#tabs').innerHTML = TABS.map(([k,l])=>`<button data-k="${k}">${l}</button>`).join('');
+  $('#tabs').onclick = e => { const k = e.target.dataset.k; if(k){ tab = k; store.set('en5.tab', k); render(); } };
+  render();
+}
+
+function render(){
+  if(!UNITS[unit] && tab!=='read' && tab!=='speak') tab='read';
+  document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.k === tab));
+  const u = UNITS[unit] || {vocab:[]};
+  const n = u.vocab.filter(v => known[unit+':'+v[0]]).length;
+  $('#prog').textContent = `Đã thuộc ${n}/${u.vocab.length} từ` + (stars[unit] != null ? ` · Bài tập cao nhất ${stars[unit]}%` : '');
+  $('#pbar i').style.width = (u.vocab.length ? n/u.vocab.length*100 : 0)+'%';
+  if(!UNITS[unit]) $('#prog').textContent = 'Đoạn văn luyện đọc: nghe, đọc thử và chấm điểm';
+  ({vocab:viewVocab, read:viewRead, talk:viewTalk, quiz:viewQuiz, speak:viewSpeak})[tab]();
+}
+
+// ---------- từ vựng ----------
+function viewVocab(){
+  const u = UNITS[unit];
+  $('#view').innerHTML = u.vocab.map((v,i)=>`
+    <div class="card row ${known[unit+':'+v[0]]?'known':''}">
+      <span class="emo">${v[2]}</span>
+      <div style="flex:1"><div class="big" style="font-size:20px">${v[0]}</div><div class="mut">${v[1]}</div></div>
+      <button data-s="${i}">🔊</button>
+      <button data-k="${i}">${known[unit+':'+v[0]]?'✓ Đã thuộc':'Đã thuộc'}</button>
+    </div>`).join('') +
+    `<h3>Mẫu câu</h3>` + u.patterns.map((p,i)=>`
+    <div class="card row"><div style="flex:1"><b>${p[0]}</b><div class="mut">${p[1]}</div></div><button data-p="${i}">🔊</button></div>`).join('');
+  $('#view').onclick = e => {
+    const t = e.target;
+    if(t.dataset.s != null) say(u.vocab[t.dataset.s][0]);
+    if(t.dataset.p != null) say(u.patterns[t.dataset.p][0]);
+    if(t.dataset.k != null){ const key = unit+':'+u.vocab[t.dataset.k][0]; known[key] = !known[key]; store.set('en5.known', known); render(); }
+  };
+}
+
+// ---------- đọc ----------
+let showVi = store.get('en5.vi', true);
+let readAns = {};
+function viewRead(){
+  stopRec();
+  const r = getR(unit), saved = rdScore[rk()] || [];
+  $('#view').innerHTML = passChips() + `
+    <div class="card ${showVi?'showvi':''}" id="pass">
+      <div class="row"><span class="pill">Reading</span><b style="flex:1;font-size:18px">${r.title}</b></div>
+      <div class="row" style="margin:10px 0">
+        <button class="pri" id="rall">▶ Nghe cả bài</button>
+        <button id="rvi">${showVi?'Ẩn':'Hiện'} tiếng Việt</button>
+      </div>
+      ${r.sents.map((x,i)=>`<div class="sent"><div class="row"><div style="flex:1;cursor:pointer" data-i="${i}"><b>${x[0]}</b><div class="vi">${x[1]}</div></div><button data-i="${i}">🔊 Máy đọc</button><button class="pri" data-rm="${i}">🎤 Bé đọc</button></div><div class="tip" id="rr${i}">${saved[i]!=null?`Lần tốt nhất: ${saved[i]}% ${stars3(saved[i])}`:''}</div></div>`).join('')}
+      <div class="tip mut">Bấm 🔊 để máy đọc mẫu, bấm 🎤 để bé đọc, web sẽ kiểm tra từng từ.</div>
+    </div>
+    <h3>Đúng hay sai?</h3>` +
+    r.qs.map((q,i)=>`<div class="card"><div>${i+1}. ${q[0]}</div><div class="tf"><button data-q="${i}" data-a="1">✔ True</button><button data-q="${i}" data-a="0">✘ False</button></div><div class="tip" id="qf${i}"></div></div>`).join('');
+  $('#view').onclick = e => {
+    const t = e.target.closest('[data-i],[data-q],[data-rm],[data-pi],#rall,#rvi'); if(!t) return;
+    if(t.dataset.pi != null){ pi = +t.dataset.pi; viewRead(); return; }
+    if(t.dataset.rm != null){ const i=+t.dataset.rm; listenOne(r.sents[i][0], $('#rr'+i), pct => saveScore(i, pct)); return; }
+    if(t.id === 'rvi'){ showVi = !showVi; store.set('en5.vi', showVi); viewRead(); return; }
+    if(t.id === 'rall'){
+      const els = [...document.querySelectorAll('.sent')];
+      speakList(r.sents.map(x=>x[0]), i => els.forEach((el,j)=>el.classList.toggle('now', i===j)), () => els.forEach(el=>el.classList.remove('now')));
+      return;
+    }
+    if(t.dataset.i != null){ say(r.sents[t.dataset.i][0]); return; }
+    const i = +t.dataset.q, q = r.qs[i], pick = t.dataset.a === '1', right = pick === q[1];
+    document.querySelectorAll(`[data-q="${i}"]`).forEach(b => { b.disabled = true; if((b.dataset.a==='1') === q[1]) b.classList.add('ok'); });
+    if(!right) t.classList.add('bad');
+    $('#qf'+i).textContent = (right ? '✅ Chính xác! ' : '❌ Chưa đúng. ') + q[2];
+  };
+}
+
+// ---------- hội thoại ----------
+function viewTalk(){
+  const u = UNITS[unit];
+  $('#view').innerHTML = `<div class="card"><button class="pri" id="all">▶ Nghe cả hội thoại</button></div>` +
+    u.talk.map((l,i)=>`<div class="card row"><div style="flex:1"><span class="mut">${l[0]}:</span> <b>${l[1]}</b><div class="mut">${l[2]}</div></div><button data-i="${i}">🔊</button></div>`).join('');
+  $('#view').onclick = e => {
+    const t = e.target;
+    if(t.dataset.i != null) say(u.talk[t.dataset.i][1]);
+    if(t.id === 'all'){
+      speakList(u.talk.map(l=>l[1]));
+    }
+  };
+}
+
+// ---------- bài tập ----------
+let Q = null;
+const emojiOf = v => v[2];
+function buildQuiz(){
+  const u = UNITS[unit];
+  const allV = UNITS.flatMap(x => x.vocab);
+  const single = u.vocab.filter(v => !v[0].includes(' '));
+  const qs = [];
+  const others = (pred, n) => shuffle(allV.filter(pred));
+  // 1. chọn nghĩa
+  shuffle(u.vocab).slice(0,2).forEach(v => {
+    const wrong = others(x => x[1] !== v[1]).slice(0,3).map(x=>x[1]);
+    qs.push({type:'mean', q:`"${v[0]}" nghĩa là gì?`, say:v[0], ans:v[1], opts:shuffle([v[1],...wrong])});
+  });
+  // 2. nhìn hình chọn từ
+  shuffle(u.vocab).slice(0,2).forEach(v => {
+    const wrong = others(x => x[0] !== v[0] && x[2] !== v[2]).slice(0,3).map(x=>x[0]);
+    qs.push({type:'pic', q:'Hình này là gì?', big:v[2], say:v[0], ans:v[0], opts:shuffle([v[0],...wrong])});
+  });
+  // 3. nghe chọn hình
+  shuffle(u.vocab).slice(0,1).forEach(v => {
+    const wrong = others(x => x[2] !== v[2]).slice(0,3).map(x=>x[2]);
+    qs.push({type:'picw', q:'Nghe và chọn hình đúng', say:v[0], ans:v[2], opts:shuffle([v[2],...wrong]), auto:true, emo:true});
+  });
+  // 3b. Việt → Anh
+  shuffle(u.vocab).slice(0,2).forEach(v => {
+    const wrong = others(x => x[0] !== v[0]).slice(0,3).map(x=>x[0]);
+    qs.push({type:'viEn', q:`"${v[1]}" tiếng Anh là gì?`, say:v[0], ans:v[0], opts:shuffle([v[0],...wrong])});
+  });
+  // 3c. nghe từ Anh → chọn nghĩa Việt
+  shuffle(u.vocab).slice(0,2).forEach(v => {
+    const wrong = others(x => x[1] !== v[1]).slice(0,3).map(x=>x[1]);
+    qs.push({type:'hearvi', q:'Nghe từ tiếng Anh và chọn nghĩa tiếng Việt', say:v[0], ans:v[1], opts:shuffle([v[1],...wrong]), auto:true});
+  });
+  // 4. nghe chọn từ
+  shuffle(u.vocab).slice(0,1).forEach(v => {
+    const wrong = others(x => x[0] !== v[0]).slice(0,3).map(x=>x[0]);
+    qs.push({type:'listen', q:'Nghe và chọn từ đúng', say:v[0], ans:v[0], opts:shuffle([v[0],...wrong]), auto:true});
+  });
+  // 5. ghép chữ cái
+  shuffle(single.filter(v => v[0].length <= 9)).slice(0,1).forEach(v => {
+    const w = v[0].toLowerCase();
+    qs.push({type:'order', sep:'', q:`Xếp chữ cái: ${v[2]} ${v[1]}`, ans:w, words:shuffle(w.split('')), say:v[0]});
+  });
+  // 6. điền từ vào câu
+  const pool = [...u.patterns.map(p=>p[0]), ...u.talk.map(l=>l[1]), ...u.sentences.map(x=>x+'.'), ...getR(unit).sents.map(x=>x[0])];
+  const fills = [];
+  shuffle(single.filter(v => v[0].length > 2)).forEach(v => {
+    const re = new RegExp('\\b' + v[0] + '\\b', 'i');
+    const sent = shuffle(pool).find(x => re.test(x));
+    if(sent) fills.push({v, sent});
+  });
+  fills.slice(0,2).forEach(({v, sent}) => {
+    const wrong = shuffle(single.filter(x => x[0] !== v[0])).slice(0,3).map(x=>x[0].toLowerCase());
+    const ans = v[0].toLowerCase();
+    qs.push({type:'fill', q:'Chọn từ điền vào chỗ trống', big:'', text:sent.replace(new RegExp('\\b' + v[0] + '\\b','i'), '_____'), say:sent, ans, opts:shuffle([ans,...wrong])});
+  });
+  // 7. sắp xếp câu
+  shuffle(u.sentences).slice(0,2).forEach(x => {
+    qs.push({type:'order', sep:' ', q:'Sắp xếp thành câu đúng', ans:x, words:shuffle(x.split(' ')), say:x});
+  });
+  // 7b. dịch câu tiếng Việt rồi xếp từ tiếng Anh
+  shuffle([...u.patterns, ...u.talk.map(l=>[l[1],l[2]])]).slice(0,2).forEach(([en, vi]) => {
+    qs.push({type:'order', sep:' ', q:`Dịch sang tiếng Anh: “${vi}”`, ans:en, words:shuffle(en.split(' ')), say:en});
+  });
+  // 7c. xếp các câu thành đoạn đúng thứ tự
+  const rs = getR(unit).sents.map(x=>x[0]), st = Math.max(0, Math.floor(Math.random()*(rs.length-3)));
+  const part = rs.slice(st, st+4);
+  if(part.length === 4) qs.push({type:'order', sep:' ', q:'Xếp các câu thành đoạn văn đúng thứ tự', ans:part.join(' '), words:shuffle(part), say:part.join(' '), part, long:true});
+  // 8b. nối hình với từ
+  const mp = shuffle(u.vocab).slice(0,4);
+  qs.push({type:'match', q:'Nối hình với từ', left:mp.map(v=>v[2]), mean:mp.map(v=>v[0]), right:shuffle(mp.map((v,i)=>i)), done:[], sel:null, miss:0, sayMean:true, emo:true});
+  // 8. nối từ với nghĩa
+  const mv = shuffle(u.vocab).slice(0,4);
+  qs.push({type:'match', q:'Nối từ với nghĩa', left:mv.map(v=>v[0]), mean:mv.map(v=>v[1]), right:shuffle(mv.map((v,i)=>i)), done:[], sel:null, miss:0});
+  Q = {list:shuffle(qs), i:0, score:0, picked:[], unit};
+}
+function viewQuiz(){
+  if(!Q || Q.unit !== unit){ buildQuiz(); }
+  const q = Q.list[Q.i];
+  if(!q){
+    const pct = Math.round(Q.score / Q.list.length * 100);
+    if(stars[unit] == null || pct > stars[unit]){ stars[unit] = pct; store.set('en5.stars2', stars); }
+    $('#view').innerHTML = `<div class="card"><div class="big">${Q.score}/${Q.list.length} câu đúng · ${pct}% ${stars3(pct)}</div><p class="mut">${pct>=80?'Tuyệt vời! 🎉':pct>=50?'Khá tốt, thử lại để cao hơn nhé.':'Ôn lại từ vựng rồi làm lại nhé.'}</p><button class="pri" id="again">Làm lại (câu hỏi mới)</button></div>`;
+    $('#view').onclick = e => { if(e.target.id==='again'){ Q=null; viewQuiz(); } };
+    render_prog();
+    return;
+  }
+  let body = `<div class="mut">Câu ${Q.i+1}/${Q.list.length}</div><div class="bar"><i style="width:${Q.i/Q.list.length*100}%"></i></div><div class="card"><div class="big" style="font-size:20px">${q.q}</div>`;
+  if(q.big) body += `<div style="font-size:72px;text-align:center;margin:6px 0">${q.big}</div>`;
+  if(q.text) body += `<div style="font-size:20px;margin:10px 0">${q.text}</div>`;
+  if(q.type === 'order'){
+    Q.picked = Q.picked.filter(x => typeof x === 'number');
+    body += `<div style="min-height:40px;margin-top:8px;font-size:${q.long?16:22}px;font-weight:700">${Q.picked.map(i=>q.words[i]).join(q.sep)}</div><div>${q.words.map((w,i)=>`<span class="chip" data-w="${i}" style="${q.long?'display:block;':''}${Q.picked.includes(i)?'opacity:.3':''}">${w}</span>`).join('')}</div><div class="row" style="margin-top:8px"><button id="undo">↩︎ Xóa</button><button class="pri" id="check">Kiểm tra</button><button id="hear">🔊</button></div>`;
+  } else if(q.type === 'match'){
+    body += `<div class="row" style="align-items:flex-start;gap:12px"><div style="flex:1;display:grid;gap:8px">${q.left.map((w,i)=>`<button data-ml="${i}" class="${q.done.includes(i)?'ok':q.sel===i?'pri':''}" ${q.emo?'style="font-size:34px"':''} ${q.done.includes(i)?'disabled':''}>${w}</button>`).join('')}</div><div style="flex:1;display:grid;gap:8px">${q.right.map(j=>`<button data-mr="${j}" class="${q.done.includes(j)?'ok':''}" ${q.done.includes(j)?'disabled':''}>${q.mean[j]}</button>`).join('')}</div></div>`;
+  } else {
+    body += ((q.type==='listen'||q.type==='picw'||q.type==='hearvi') ? `<button id="hear">🔊 Nghe</button>` : '') + `<div class="opts">${q.opts.map(o=>`<button data-o="${o.replace(/"/g,'&quot;')}" ${q.emo?'style="font-size:40px"':''}>${o}</button>`).join('')}</div>`;
+  }
+  $('#view').innerHTML = body + `<div id="fb" class="tip"></div></div>`;
+  if(q.auto) say(q.say);
+  if(q.type === 'match' && q.done.length === q.left.length){ q.fin = true; next(); $('#fb').prepend(q.miss<=1 ? '✅ Giỏi lắm! ' : '❌ Cần luyện thêm. '); }
+  $('#view').onclick = e => {
+    const t = e.target.closest('button,.chip'); if(!t) return;
+    const fb = $('#fb');
+    if(t.id === 'hear') sayQ(q);
+    if(t.dataset.o != null){
+      const right = t.dataset.o === q.ans;
+      t.classList.add(right?'ok':'bad');
+      if(right) Q.score++; else document.querySelectorAll('[data-o]').forEach(b => { if(b.dataset.o===q.ans) b.classList.add('ok'); });
+      if(q.type !== 'listen' && q.type !== 'picw' && q.type !== 'hearvi') say(q.say);
+      next();
+    }
+    if(t.dataset.w != null){ const i = +t.dataset.w; if(!Q.picked.includes(i)){ Q.picked.push(i); viewQuiz(); } }
+    if(t.id === 'undo'){ Q.picked.pop(); viewQuiz(); }
+    if(t.id === 'check'){
+      const got = Q.picked.map(i=>q.words[i]).join(q.sep);
+      const right = got === q.ans;
+      if(right) Q.score++;
+      fb.innerHTML = right ? '✅ Chính xác!' : `❌ Đáp án: <b>${q.ans}</b>`;
+      sayQ(q);
+      next();
+    }
+    if(t.dataset.ml != null){ q.sel = +t.dataset.ml; viewQuiz(); }
+    if(t.dataset.mr != null && q.sel != null){
+      if(+t.dataset.mr === q.sel){ q.done.push(q.sel); say(q.sayMean ? q.mean[q.sel] : q.left[q.sel]); if(q.done.length === q.left.length && q.miss <= 1) Q.score++; }
+      else q.miss++;
+      q.sel = null; viewQuiz();
+    }
+  };
+}
+const sayQ = q => q.part ? speakList(q.part) : say(q.say);
+function next(){
+  document.querySelectorAll('#view button, #view .chip').forEach(b => b.disabled = true);
+  const nb = document.createElement('button'); nb.className='pri'; nb.textContent='Tiếp →'; nb.style.marginTop='10px';
+  nb.onclick = () => { Q.i++; Q.picked = []; viewQuiz(); };
+  $('#fb').appendChild(nb); nb.disabled = false;
+}
+function render_prog(){ $('#prog').textContent = `Điểm cao nhất ${stars[unit]}%`; }
+
+// ---------- luyện đọc ----------
+const NUMW = ['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'];
+const toks = s => norm(s.replace(/\b(\d+)\b/g,(m,d)=>' '+(NUMW[+d]||d)+' ')).split(' ').filter(Boolean);
+function lev(a,b){ const d=[...Array(b.length+1).keys()]; for(let i=1;i<=a.length;i++){ let p=d[0]; d[0]=i; for(let j=1;j<=b.length;j++){ const t=d[j]; d[j]=Math.min(d[j]+1,d[j-1]+1,p+(a[i-1]===b[j-1]?0:1)); p=t; } } return d[b.length]; }
+const eq = (a,b) => a===b || (a.length>3 && b.length>3 && lev(a,b)<=1);
+// Gióng hàng theo thứ tự (LCS): trả về mảng true/false cho từng từ mẫu
+function align(target, said){
+  const n=target.length, m=said.length, L=Array.from({length:n+1},()=>Array(m+1).fill(0));
+  for(let i=n-1;i>=0;i--) for(let j=m-1;j>=0;j--) L[i][j] = eq(target[i],said[j]) ? L[i+1][j+1]+1 : Math.max(L[i+1][j],L[i][j+1]);
+  const hit=Array(n).fill(false); let i=0,j=0;
+  while(i<n && j<m){ if(eq(target[i],said[j])){ hit[i]=true; i++; j++; } else if(L[i+1][j]>=L[i][j+1]) i++; else j++; }
+  return hit;
+}
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, rdScore = store.get('en5.rd', {});
+function stopRec(){ if(rec){ try{ rec.abort(); }catch(e){} rec = null; } }
+const markHtml = (words, hit) => words.map((w,i)=>`<span style="color:var(--${hit[i]?'ok':'bad'});font-weight:700">${w}</span>`).join(' ');
+const stars3 = p => p>=90?'⭐⭐⭐':p>=70?'⭐⭐':p>=40?'⭐':'';
+
+function listenOne(target, out, onScore){
+  if(!SR) return;
+  stopRec();
+  rec = new SR(); rec.lang='en-US'; rec.interimResults=false; rec.maxAlternatives=1;
+  out.textContent = '🎙️ Đang nghe…';
+  rec.onresult = ev => {
+    const said = toks(ev.results[0][0].transcript), words = target.split(' ');
+    const hit = align(words.map(w=>norm(w)), said);
+    const pct = Math.round(hit.filter(Boolean).length/words.length*100);
+    out.innerHTML = `${markHtml(words,hit)}<div>${pct}% ${stars3(pct)} <span class="mut">· Bé nói: “${said.join(' ')}”</span></div>` + (pct<100?`<div class="mut">Nghe lại máy đọc rồi thử lần nữa nhé.</div>`:'<div>🎉 Rất tốt!</div>');
+    if(onScore) onScore(pct);
+  };
+  rec.onerror = () => { out.textContent = 'Không nghe được, thử lại nhé.'; };
+  rec.start();
+}
+const saveScore = (i, pct) => { const cur = rdScore[rk()]||[]; cur[i] = Math.max(cur[i]||0, pct); rdScore[rk()]=cur; store.set('en5.rd', rdScore); };
+
+function viewSpeak(){
+  stopRec();
+  const u = UNITS[unit] || {patterns:[],talk:[]}, r = getR(unit);
+  const saved = rdScore[rk()] || [];
+  $('#view').innerHTML = (SR ? '' : `<div class="card">Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Safari.</div>`) + passChips() + `
+    <div class="card"><div class="row"><span class="pill">Bước 1</span><b style="flex:1">Đọc từng câu: ${r.title}</b></div>
+    <div class="tip mut">Bấm 🔊 nghe mẫu, bấm 🎤 rồi đọc to câu đó. Từ xanh là đọc đúng, từ đỏ là chưa rõ.</div></div>` +
+    r.sents.map((x,i)=>`<div class="card"><div class="row"><b style="flex:1;font-size:18px" id="t${i}">${x[0]}</b><button data-h="${i}">🔊</button><button class="pri" data-m="${i}">🎤 Đọc thử</button></div><div class="tip" id="r${i}">${saved[i]!=null?`Lần tốt nhất: ${saved[i]}% ${stars3(saved[i])}`:''}</div></div>`).join('') + `
+    <div class="card"><div class="row"><span class="pill">Bước 2</span><b style="flex:1">Đọc liền cả đoạn</b></div>
+    <div class="tip mut">Đọc một mạch từ đầu đến cuối, không dừng. Web chấm từng câu và đo tốc độ, số lần ngập ngừng.</div>
+    <div id="wtext" style="font-size:20px;line-height:1.8;margin:12px 0;padding:12px 14px;background:var(--soft);border-radius:14px">${r.sents.map(x=>x[0]).join(' ')}</div>
+    <div class="row" style="margin-top:10px"><button class="pri" id="whole">🎤 Đọc liền cả bài</button><button id="stopw" style="display:none">⏹ Xong</button></div>
+    <div id="wres" class="tip"></div></div>
+    ${u.patterns.length?'<h3>Mẫu câu và hội thoại</h3>':''}` +
+    [...u.patterns.map(p=>p[0]), ...u.talk.map(l=>l[1])].map((s,i)=>`<div class="card"><div class="row"><b style="flex:1" id="pt${i}">${s}</b><button data-ph="${i}">🔊</button><button data-pm="${i}">🎤</button></div><div class="tip" id="pr${i}"></div></div>`).join('');
+  const extra = [...u.patterns.map(p=>p[0]), ...u.talk.map(l=>l[1])];
+
+  function readWhole(){
+    if(!SR) return;
+    stopRec();
+    const all = r.sents.map(x=>x[0]);
+    const words = all.flatMap(x=>x.split(' ')), tw = words.map(w=>norm(w));
+    const owner = all.flatMap((x,i)=>x.split(' ').map(()=>i));
+    let finals = [], t0 = null, tLast = null, gaps = 0, lastEnd = null;
+    $('#wtext').style.display = ''; const res = $('#wres'); res.textContent = '🎙️ Đang nghe… đọc một mạch cả đoạn rồi bấm Xong.';
+    $('#whole').style.display='none'; $('#stopw').style.display='';
+    rec = new SR(); rec.lang='en-US'; rec.continuous=true; rec.interimResults=true;
+    rec.onresult = ev => {
+      const now = performance.now();
+      if(t0 === null) t0 = now;
+      if(lastEnd !== null && now-lastEnd > 1800) gaps++;
+      lastEnd = now; tLast = now;
+      finals = []; for(let i=0;i<ev.results.length;i++) finals.push(ev.results[i][0].transcript);
+    };
+    rec.onerror = () => {};
+    const finish = () => {
+      $('#whole').style.display=''; $('#stopw').style.display='none';
+      const said = toks(finals.join(' '));
+      if(!said.length){ res.textContent = 'Không nghe được gì, thử lại nhé.'; return; }
+      const hit = align(tw, said);
+      const per = all.map((_,i)=>{ const idx = owner.map((o,k)=>o===i?k:-1).filter(k=>k>=0); return Math.round(idx.filter(k=>hit[k]).length/idx.length*100); });
+      const acc = Math.round(hit.filter(Boolean).length/tw.length*100);
+      const mins = Math.max((tLast-t0)/60000, 0.05), wpm = Math.round(said.length/mins);
+      const speedTxt = wpm<50 ? 'Hơi chậm, thử đọc trôi hơn.' : wpm>170 ? 'Hơi nhanh, đọc chậm lại để rõ từng từ.' : 'Tốc độ tốt.';
+      const fluTxt = gaps===0 ? 'Không ngập ngừng.' : `${gaps} lần ngừng lâu, luyện lại các câu đỏ.`;
+      let k=0; const html = all.map((s,i)=>{ const w=s.split(' '); const h=w.map((_,j)=>hit[k+j]); k+=w.length; return `<div style="margin:6px 0">${markHtml(w,h)} <span class="pill">${per[i]}%</span></div>`; }).join('');
+      $('#wtext').style.display = 'none';
+      res.innerHTML = `<div class="big" style="font-size:22px;margin-top:10px">${acc}% ${stars3(acc)}</div>${html}<div>⏱ Tốc độ: <b>${wpm}</b> từ/phút · ${speedTxt}</div><div>🗣 ${fluTxt}</div>`;
+      const cur = rdScore[rk()] || []; per.forEach((p,i)=>{ cur[i] = Math.max(cur[i]||0, p); }); rdScore[rk()] = cur; store.set('en5.rd', rdScore);
+    };
+    rec.onend = () => { if(rec){ rec = null; finish(); } };
+    rec.start();
+  }
+
+  $('#view').onclick = e => {
+    const t = e.target.closest('button'); if(!t) return;
+    if(t.dataset.pi != null){ pi = +t.dataset.pi; viewSpeak(); return; }
+    if(t.dataset.h != null) say(r.sents[t.dataset.h][0]);
+    if(t.dataset.ph != null) say(extra[t.dataset.ph]);
+    if(t.dataset.m != null){ const i=+t.dataset.m; listenOne(r.sents[i][0], $('#r'+i), pct => saveScore(i, pct)); }
+    if(t.dataset.pm != null){ const i=+t.dataset.pm; listenOne(extra[i], $('#pr'+i)); }
+    if(t.id === 'whole') readWhole();
+    if(t.id === 'stopw' && rec){ try{ rec.stop(); }catch(e){} }
+  };
+}
+
+init();
+</script>
+</body>
+</html>
