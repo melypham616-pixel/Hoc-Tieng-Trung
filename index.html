@@ -1944,7 +1944,7 @@ let rec=null,recKey="";
 const idleMics=()=>document.querySelectorAll(".mic").forEach(b=>{b.classList.remove("rec");b.textContent="🎤 Đọc thử"});
 function stopRec(){            // hủy hẳn (đổi tab, bấm câu khác): không chấm
   const S=rec;rec=null;recKey="";
-  if(S){S.done=true;S.userStop=true;clearTimeout(S.timer);try{S.r.abort()}catch(e){}}
+  if(S){S.done=true;S.userStop=true;clearTimeout(S.timer);clearInterval(S.tick);try{S.r.abort()}catch(e){}}
   idleMics();
 }
 const NAMES=/小美|大衛|大明|小明|安同|如玉|月美|美月|田中|小王|怡君|開文/g;   // tên riêng: bộ nhận dạng hay viết khác chữ nên không chấm
@@ -1984,6 +1984,11 @@ function compareRead(target,heard){   // so chữ Hán nhận dạng được v�
   const marks=words.map(w=>{const len=[...w].length,all=hit.slice(pos,pos+len).every(Boolean),isName=skip.slice(pos,pos+len).every(Boolean);pos+=len;const d=DICT[w];return{w,ok:all,name:isName,py:d?d[0]:"",vi:d?d[1]:""}});
   return{score:n?ok/n:1,marks,heard:H.join("")};
 }
+function bestAlt(target,alts){   // trình duyệt đưa vài phương án nghe; lấy phương án gần câu mẫu nhất
+  const T=normHan(target);let best=alts[0]||"",bs=-1;
+  alts.forEach(t=>{const H=normHan(t),pool=[...T];let s=0;H.forEach(c=>{const i=pool.indexOf(c);if(i>=0){s++;pool.splice(i,1)}});if(s>bs){bs=s;best=t}});
+  return best;
+}
 function storyBest(si,li){return (prog.say||{})[si+"-"+li]||0}
 function showReadResult(si,li,r){
   const pct=Math.round(r.score*100),box=$("#fb-"+si+"-"+li);if(!box)return;
@@ -2000,7 +2005,7 @@ function showReadResult(si,li,r){
 function storyAvg(si){const n=rows(STORIES[si].l).length;let s=0,c=0;for(let li=0;li<n;li++){const b=storyBest(si,li);if(b){s+=b;c++}}return c?"Điểm đọc: "+Math.round(s/c*100)+"% ("+c+"/"+n+" câu)":""}
 function finishRec(){          // bấm "Dừng và chấm"
   const S=rec;if(!S||S.done)return;
-  S.userStop=true;clearTimeout(S.timer);
+  S.userStop=true;clearTimeout(S.timer);clearInterval(S.tick);
   try{S.r.stop()}catch(e){}
   setTimeout(()=>{if(!S.done&&S.r.onend)S.r.onend()},2500);   // phòng khi trình duyệt không báo kết thúc
 }
@@ -2010,11 +2015,11 @@ function readAloud(si,li){
   if(!SRC){toast("Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Safari (Mac, iPhone).");return}
   stopSpeak();stopRec();
   const target=rows(STORIES[si].l)[li].split("|")[0];
-  const S={target,prefix:"",cur:"",userStop:false,done:false,fatal:false,r:null,timer:0};
+  const S={target,prefix:"",cur:"",userStop:false,done:false,fatal:false,r:null,timer:0,tick:0,startAt:Date.now(),lastAt:0};
   rec=S;recKey=key;
-  const live=()=>{box.innerHTML=`<div class="stat">🎙 Hãy đọc to cả câu. <b>Đọc xong bấm nút đỏ “Dừng và chấm”.</b></div><div class="stat">Máy đang nghe: <span class="zh">${esc(S.prefix+S.cur)||"…"}</span></div>`};
+  const live=()=>{box.innerHTML=`<div class="stat">🎙 Hãy đọc to cả câu. <b>Đọc xong bấm nút đỏ “Dừng và chấm”, hoặc chờ khoảng 4 giây, web sẽ tự chấm.</b></div><div class="stat">Máy đang nghe: <span class="zh">${esc(S.prefix+S.cur)||"…"}</span></div>`};
   const finalize=()=>{
-    if(S.done)return;S.done=true;clearTimeout(S.timer);
+    if(S.done)return;S.done=true;clearTimeout(S.timer);clearInterval(S.tick);
     if(rec===S){rec=null;recKey=""}idleMics();
     if(S.fatal)return;
     const text=(S.prefix+S.cur).trim();
@@ -2023,9 +2028,9 @@ function readAloud(si,li){
   };
   const start=()=>{
     const r=new SRC();S.r=r;
-    r.lang="zh-TW";r.continuous=true;r.interimResults=true;r.maxAlternatives=1;
+    r.lang="zh-TW";r.continuous=true;r.interimResults=true;r.maxAlternatives=3;
     r.onstart=()=>{idleMics();btn.classList.add("rec");btn.textContent="⏹ Dừng và chấm";live()};
-    r.onresult=e=>{S.cur=[...e.results].map(x=>x[0].transcript).join("");live()};
+    r.onresult=e=>{S.cur=[...e.results].map(x=>bestAlt(target,[...x].map(y=>y.transcript))).join("");S.lastAt=Date.now();live()};
     r.onerror=e=>{
       if(e.error==="no-speech"||e.error==="aborted")return;       // im lặng lâu: bỏ qua, bật lại nghe tiếp
       S.fatal=true;
@@ -2041,6 +2046,12 @@ function readAloud(si,li){
     try{r.start()}catch(e){toast("Không bật được micro: "+e.message);S.fatal=true;finalize()}
   };
   start();
+  S.tick=setInterval(()=>{
+    if(S.done||S.userStop)return;
+    const said=(S.prefix+S.cur).trim();
+    if(said&&S.lastAt&&Date.now()-S.lastAt>4000)finishRec();           // đã đọc xong, im lặng 4 giây → tự chấm (vẫn có thể bấm dừng sớm hơn)
+    else if(!said&&Date.now()-S.startAt>15000)finishRec();              // 15 giây không nghe gì → dừng
+  },500);
   S.timer=setTimeout(()=>{if(!S.done)finishRec()},120000);          // tối đa 2 phút cho một câu
 }
 function playStory(si){toast("🔊 Đang đọc…");speakSeq(rows(STORIES[si].l).map(r=>({t:r.split("|")[0],tag:"m",pitch:1})))}
