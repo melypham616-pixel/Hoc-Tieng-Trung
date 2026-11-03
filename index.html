@@ -158,6 +158,10 @@ rt{font:500 .5em/1 system-ui,sans-serif;color:var(--pri);letter-spacing:0}
 .badge{font-weight:700;color:var(--ok)}
 .rr{margin-top:10px;padding:12px 14px;border-radius:14px}
 .rr.good{background:var(--okbg)}.rr.low{background:var(--badbg)}
+.fix{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card);border:1px dashed var(--bad)}
+.fix.ok{border-color:var(--ok);border-style:solid}
+.del{color:var(--bad);text-decoration:line-through;text-decoration-thickness:2px}
+.ins{color:var(--ok);font-weight:700;background:var(--okbg);border-radius:4px;padding:0 1px}
 .qa-q{font:600 28px/1.4 var(--hanzi);margin:8px 0}
 .scoregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0}
 .sc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px;text-align:center;font-size:13px;color:var(--mut)}
@@ -2267,12 +2271,12 @@ function bestAlt(target,alts){   // trình duyệt đưa vài phương án nghe;
 function storyBest(si,li){return (prog.say||{})[skey(si,li)]||0}
 const chipsHtml=marks=>`<div class="words">${marks.map(m=>`<span class="w ${m.name?"name":m.ok?"ok":"bad"} tap" onclick="speak('${m.w}')">${m.w}<small>${m.name?"tên riêng":m.py}</small></span>`).join("")}</div>`;
 const needHtml=marks=>{const bad=marks.filter(m=>!m.ok&&!m.name);return bad.length?`<div class="stat">Cần luyện: ${bad.map(m=>`<b class="zh">${m.w}</b> ${m.py}${m.vi?" ("+m.vi+")":""}`).join(" · ")}</div>`:""};
-function showReadResult(si,li,r){
+function showReadResult(si,li,r,heardRaw){
   const pct=Math.round(r.score*100),box=$("#fb-"+si+"-"+li);if(!box)return;
   prog.say=prog.say||{};if(pct/100>(prog.say[skey(si,li)]||0)){prog.say[skey(si,li)]=pct/100;save()}
   const msg=pct>=90?"🎉 Tuyệt vời! Phát âm rất chuẩn.":pct>=70?"👍 Khá tốt. Luyện lại các từ màu đỏ nhé.":"💪 Chưa chuẩn lắm. Bấm vào từ đỏ để nghe mẫu rồi đọc chậm hơn.";
   box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${msg}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}
-   <div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div></div>`;
+   <div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div>${heardRaw!=null?diffBlock(heardRaw,rows(STORIES[si].l)[li].split("|")[0]):""}</div>`;
   const bd=$("#bd-"+si+"-"+li);if(bd)bd.textContent=Math.round(storyBest(si,li)*100)+"%";
   const av=$("#avg-"+si);if(av)av.textContent=storyAvg(si);
 }
@@ -2342,7 +2346,7 @@ function recordTarget(key,target,o,onResult){
 }
 function readAloud(si,li){      // luyện từng câu
   const target=rows(STORIES[si].l)[li].split("|")[0];
-  recordTarget(si+"-"+li,target,{quiet:4000,idle:15000,max:120000},text=>showReadResult(si,li,compareRead(target,text)));
+  recordTarget(si+"-"+li,target,{quiet:4000,idle:15000,max:120000},text=>showReadResult(si,li,compareRead(target,text),text));
 }
 
 // ---- Ghép cả truyện: đọc liền một mạch, chấm từng câu + độ trôi chảy ----
@@ -2394,6 +2398,115 @@ function storyView(){
      <div class="row" style="margin-top:10px"><button class="b p" onclick="playStory(${si})">▶ Nghe mẫu cả truyện</button><button class="b mic" data-label="🎤 Đọc liền cả truyện" id="mic-${si}-all" onclick="readWhole(${si})">🎤 Đọc liền cả truyện</button></div><div id="fb-${si}-all"></div></div></div>`;
   });
   $("#app").innerHTML=html;
+}
+
+/* ============ SỬA CÂU: sửa lỗi ngữ pháp thường gặp + dựng lại câu theo ý người nói ============ */
+const cleanHan=s=>[...digHan(s)].map(c=>S2T[c]||c).filter(isHan).join("");
+const PR="(?:我們|你們|他們|我|你|他|她)";
+const ADJS="好吃|好喝|好看|好玩|漂亮|便宜|乾淨|貴|冷|熱|忙|累|難|近|遠|甜|辣|快|慢|大|小|高|矮|涼|暖和";
+const TIMEW="今天|明天|昨天|現在|晚上|早上|下午|中午|每天|週末";
+const FIXES=[
+  {re:/(.)\1+/g,test:m=>"我你他是有在也都很不".includes(m[1]),rep:"$1",tip:"Bạn đang lặp từ (nói lắp), chỉ cần nói một lần."},
+  {re:/(叫|姓)的/g,rep:"$1",tip:"Không dùng 的 sau 叫/姓: 我叫大明."},
+  {re:/二(個|杯|碗|張|支|條|件|雙|本|家|次)/g,rep:"兩$1",tip:"Trước lượng từ dùng 兩 (hai), không dùng 二: 兩個, 兩杯…"},
+  {re:/不有/g,rep:"沒有",tip:"Phủ định của 有 là 沒有, không nói 不有."},
+  {re:/沒是/g,rep:"不是",tip:"Phủ định của 是 là 不是, không nói 沒是."},
+  {re:/是也/g,rep:"也是",tip:"也 (cũng) đứng trước động từ: 我也是學生."},
+  {re:/是都/g,rep:"都是",tip:"都 (đều) đứng trước động từ: 我們都是學生."},
+  {re:new RegExp("^("+PR+")(越南人|美國人|日本人|臺灣人|中國人|學生|老師|同學|醫生)$"),rep:"$1是$2",tip:"Danh từ chỉ quốc tịch/nghề nghiệp làm vị ngữ cần 是: 我是學生."},
+  {re:new RegExp("是很(?=" +ADJS+ ")","g"),rep:"很",tip:"Tính từ làm vị ngữ không dùng 是: 我很忙 (không nói 我是很忙)."},
+  {re:new RegExp("比(.{1,6}?)很("+ADJS+")"),rep:"比$1$2",tip:"Trong câu so sánh 比 không dùng 很: 高鐵比火車快."},
+  {re:/^(.{1,6})有(前面|後面|旁邊|上面|下面|裡面|外面)$/,rep:"$1在$2",tip:"Chỉ vị trí của một vật dùng 在: 圖書館在教室後面."},
+  {re:/^(.{1,6})到(.{1,6})很(近|遠)$/,rep:"$1離$2很$3",tip:"Khoảng cách giữa hai nơi dùng 離: 我家離學校很近."},
+  {re:new RegExp("^("+PR+")(.{2,8}?)((?:"+TIMEW+")(?:[一二三四五六七八九十兩]+點(?:半|[一二三四五六七八九十]+分)?)?)$"),test:m=>/[去吃看喝做買上學玩打游睡起坐騎]/.test(m[2]),rep:"$1$3$2",tip:"Từ chỉ thời gian đứng trước động từ: 我明天去學校."},
+  {re:new RegExp("^("+PR+")(吃飯|看書|工作|上課|睡覺|喝茶|學中文|做飯|看電影|運動|吃晚飯|吃早飯)在(家|學校|圖書館|咖啡店|公司|宿舍|這裡|那裡)$"),rep:"$1在$3$2",tip:"在 + địa điểm đứng trước động từ: 我在家吃飯."},
+  {re:/(兩|三|四|五|六|七|八|九)(哥哥|姐姐|弟弟|妹妹|朋友|學生|老師|同學|人)/g,rep:"$1個$2",tip:"Giữa số và danh từ cần lượng từ 個: 兩個哥哥, 四個人."},
+  {re:/一(哥哥|姐姐|弟弟|妹妹|朋友|學生|老師|同學)/g,rep:"一個$1",tip:"Giữa số và danh từ cần lượng từ 個: 一個哥哥."},
+  {re:/是([一二三四五六七八九十兩]+)歲/,rep:"$1歲",tip:"Nói tuổi không dùng 是: 我二十五歲."},
+  {re:/^(我|他|她)(會)?說(中文|越南話|英文)(很|不)(好|錯|流利)$/,rep:"$1$3說得$4$5",tip:"Đánh giá mức độ của hành động dùng V得: 我中文說得很好."},
+  {re:/(.+?)還是(.+)/,rep:"$1",tip:"還是 chỉ dùng khi HỎI lựa chọn. Khi trả lời, hãy chọn một đáp án."},
+  {re:/嗎$/,rep:"",tip:"Câu trả lời không cần 嗎 (嗎 dùng khi đặt câu hỏi)."}
+];
+function grammarFix(text){
+  let t=cleanHan(text);const tips=[];
+  FIXES.forEach(f=>{
+    const re=new RegExp(f.re.source,f.re.flags),m=t.match(new RegExp(f.re.source,f.re.flags.replace("g","")));
+    if(!m||(f.test&&!f.test(m)))return;
+    const n=t.replace(re,f.rep);if(n!==t){tips.push(f.tip);t=n}
+  });
+  // thiếu 很 trước tính từ ở cuối câu: 今天冷 → 今天很冷
+  const m=t.match(new RegExp("^(.+?)("+ADJS+")$"));
+  if(m&&!/(很|太|真|不|最|更|非常|比較|有點|又|覺得|比|得|一點)$/.test(m[1])&&!/(比|沒有)/.test(m[1])){t=m[1]+"很"+m[2];tips.push("Tính từ làm vị ngữ thường cần 很 phía trước: 今天很冷.")}
+  return{text:t,tips};
+}
+// Dựng lại câu mẫu theo ý của người nói (thay từ khóa, tên, số bằng nội dung bạn đã nói)
+function personalize(Q,H){
+  let s=Q.a,notes=[];const nh=k=>normHan(k).join("");
+  const nameQ=Q.keys[0]&&Q.keys[0].includes("叫");
+  if(nameQ){const m=H.match(/(叫|姓)([一-鿿]{1,4})$/);if(m)return{text:"我"+m[1]+m[2]+"。",notes:["Dựng lại theo tên bạn nói."]}}
+  Q.keys.forEach(g=>{
+    if(g.length<2||["是","有","不是","沒有","要","想"].some(k=>g.includes(k)))return;   // không thay các động từ ngữ pháp (是/有/要/想) vì dễ thành câu sai
+    const u=g.find(k=>H.includes(nh(k))),sa=g.find(k=>s.includes(k));
+    if(u&&sa&&u!==sa){s=s.replace(sa,u);notes.push(`Thay “${sa}” bằng “${u}” theo ý bạn.`)}
+  });
+  const NUM="[一二三四五六七八九十百千萬零兩]+";
+  ["點","歲","塊","月","號","年","個"].forEach(unit=>{
+    const um=H.match(new RegExp("("+NUM+")"+unit));
+    if(um&&new RegExp("("+NUM+")"+unit).test(s)){const before=s;s=s.replace(new RegExp("("+NUM+")"+unit),um[1]+unit);if(s!==before)notes.push(`Thay số trước ${unit} bằng số bạn nói.`)}
+  });
+  // khung câu: giữ phần đầu trùng với câu mẫu (我想去…), thay phần nội dung bằng lời bạn nói, rồi thêm từ còn thiếu
+  const sc=cleanHan(Q.a);let p=0;while(p<sc.length&&p<H.length&&sc[p]===H[p])p++;
+  const unmet=Q.keys.filter(g=>!g.some(k=>H.includes(nh(k))));
+  if(unmet.length&&p>=2&&H.length>p){
+    let cand=H;
+    unmet.forEach(g=>{const alt=g.find(k=>sc.slice(p).includes(k));if(alt&&!cand.includes(alt))cand+=alt});
+    if(Q.keys.every(g=>g.some(k=>cand.includes(nh(k))))&&cand!==H)return{text:cand+"。",notes:["Giữ phần bạn nói và bổ sung từ còn thiếu theo mẫu câu."]};
+  }
+  return{text:s,notes};
+}
+// So sánh hai chuỗi chữ Hán theo từng chữ: a = bạn nói (chữ thừa gạch đỏ), b = câu đúng (chữ thêm/sửa tô xanh)
+function diffHtml(a,b){
+  const A=[...a],B=[...b],n=A.length,m=B.length;
+  const dp=Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)dp[i][j]=A[i-1]===B[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);
+  const ra=[],rb=[];let i=n,j=m;
+  while(i>0||j>0){
+    if(i>0&&j>0&&A[i-1]===B[j-1]){ra.push(esc(A[i-1]));rb.push(esc(B[j-1]));i--;j--}
+    else if(j>0&&(i===0||dp[i][j-1]>=dp[i-1][j])){rb.push(`<span class="ins">${esc(B[j-1])}</span>`);j--}
+    else{ra.push(`<span class="del">${esc(A[i-1])}</span>`);i--}
+  }
+  return{a:ra.reverse().join(""),b:rb.reverse().join("")};
+}
+// Khối "Bạn nói / Đúng là" dùng khi đọc theo một câu mẫu cố định
+function diffBlock(heard,target){
+  const H=cleanHan(heard),T=cleanHan(target);
+  if(!H||H===T)return"";
+  const d=diffHtml(H,T);
+  return `<div class="fix"><div class="stat"><b>✏️ So với câu đúng</b></div><div>Bạn nói: <span class="zh">${d.a}</span></div><div>Đúng là: <span class="zh">${d.b}</span></div><div class="py">${annotate(T).html}</span></div></div>`;
+}
+// Khối sửa câu cho vấn đáp
+function fixBlock(Q,text,E){
+  const g=grammarFix(text),H=g.text;
+  const groupsOk=Q.keys.map(k=>k.some(w=>H.includes(normHan(w).join(""))));
+  const allOk=groupsOk.every(Boolean);
+  let corrected,notes=[...g.tips];
+  if(allOk){corrected=H+"。"}
+  else{const p=personalize(Q,H);corrected=p.text;notes.push("Câu của bạn chưa trả lời đúng ý câu hỏi nên mình dựng lại theo mẫu.",...p.notes)}
+  const heard=cleanHan(text),fixedClean=cleanHan(corrected);
+  if(heard===fixedClean&&!notes.length)return `<div class="fix ok"><b>✅ Câu của bạn đúng ngữ pháp và đúng ý.</b></div>`;
+  const d=diffHtml(heard,fixedClean);
+  return `<div class="fix"><div class="stat"><b>✏️ Sửa lại câu của bạn</b></div>
+   <div>Bạn nói: <span class="zh">${d.a}</span></div>
+   <div>Sửa thành: <span class="zh tap" onclick="speak('${corrected}')">${d.b}。</span> ${spkBtn(corrected)}</div>
+   <div class="py" id="fix-py">${annotate(corrected).html}</div>
+   ${notes.length?`<ul class="tips">${notes.map(n=>`<li>${n}</li>`).join("")}</ul>`:""}
+   <div class="row" style="margin-top:6px"><button class="b mic" data-label="🎤 Đọc lại câu đã sửa" id="mic-qa3" onclick="qaFixRead('${corrected}')">🎤 Đọc lại câu đã sửa</button></div><div id="fb-qa3"></div></div>`;
+}
+function qaFixRead(target){
+  recordTarget("qa3",target,{quiet:4000,idle:15000,max:60000},text=>{
+    const r=compareRead(target,text),pct=Math.round(r.score*100);
+    $("#fb-qa3").innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Đọc rất chuẩn.":pct>=70?"👍 Khá tốt.":"💪 Bấm từ đỏ để nghe mẫu rồi đọc lại."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}${diffBlock(text,target)}</div>`;
+  });
 }
 
 /* ============ VẤN ĐÁP PHẢN XẠ: web hỏi bằng giọng nói, bạn trả lời ngay ============ */
@@ -2486,13 +2599,13 @@ function qaResult(text,info){
   box.innerHTML=`<div class="rr ${E.overall>=70?"good":"low"}"><div class="big"><b>${E.overall}%</b> tổng điểm</div>
    <div class="scoregrid"><div class="sc"><b>${E.content}%</b>Nội dung</div><div class="sc"><b>${E.reflex==null?"—":E.reflex+"%"}</b>Phản xạ${E.lat==null?"":` (${E.lat.toFixed(1)}s)`}</div><div class="sc"><b>${E.clarity==null?"—":E.clarity+"%"}</b>Độ rõ phát âm</div><div class="sc"><b>${E.fl?E.fl.score+"%":"—"}</b>Trôi chảy</div></div>
    <ul class="tips">${tips.map(t=>`<li>${t}</li>`).join("")}</ul>
-   <div class="stat">Máy nghe được: <span class="zh">${annotate(text).html}</span></div>${sample}${nextBtn}</div>`;
+   <div class="stat">Máy nghe được: <span class="zh">${annotate(text).html}</span></div>${fixBlock(Q,text,E)}${sample}${nextBtn}</div>`;
 }
 function qaShadow(){
   const Q=qaCur;if(!Q)return;
   recordTarget("qa2",Q.a,{quiet:4000,idle:15000,max:60000},text=>{
     const r=compareRead(Q.a,text),pct=Math.round(r.score*100);
-    $("#fb-qa2").innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Đọc theo rất chuẩn.":pct>=70?"👍 Khá tốt.":"💪 Bấm từ đỏ để nghe mẫu rồi đọc lại."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}<div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div></div>`;
+    $("#fb-qa2").innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Đọc theo rất chuẩn.":pct>=70?"👍 Khá tốt.":"💪 Bấm từ đỏ để nghe mẫu rồi đọc lại."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}<div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div>${diffBlock(text,Q.a)}</div>`;
   });
 }
 function qaNextStep(){
