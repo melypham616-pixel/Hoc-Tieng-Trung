@@ -391,7 +391,7 @@ function readView(){
 /* ============ TRUYỆN ĐỌC + CHẤM PHÁT ÂM ============ */
 const SRC=window.SpeechRecognition||window.webkitSpeechRecognition;   // nhận dạng giọng nói của trình duyệt (Chrome, Safari)
 let rec=null,recKey="";
-const idleMics=()=>document.querySelectorAll(".mic").forEach(b=>{b.classList.remove("rec");b.textContent="🎤 Đọc thử"});
+const idleMics=()=>document.querySelectorAll(".mic").forEach(b=>{b.classList.remove("rec");b.textContent=b.dataset.label||"🎤 Đọc thử"});
 function stopRec(){            // hủy hẳn (đổi tab, bấm câu khác): không chấm
   const S=rec;rec=null;recKey="";
   if(S){S.done=true;S.userStop=true;clearTimeout(S.timer);clearInterval(S.tick);try{S.r.abort()}catch(e){}}
@@ -421,8 +421,9 @@ function numHan(n){   // 0–9999 → chữ Hán (110 → 一百一十)
 const digHan=s=>s.replace(/\d+/g,m=>+m<=9999?numHan(+m):[...m].map(d=>DIGH[+d]).join(""));
 const EQV={"兩":"二","她":"他","牠":"他","妳":"你","裏":"裡","台":"臺"};   // các chữ nghe giống nhau, không tính là sai
 const normHan=s=>[...digHan(s)].map(c=>S2T[c]||c).filter(isHan).map(c=>EQV[c]||c);
-function compareRead(target,heard){   // so chữ Hán nhận dạng được với câu mẫu (LCS), chấm từng từ
-  const raw=[...target].filter(isHan).join(""),words=segmentWords(target),T=normHan(target),H=normHan(heard);
+// So chữ Hán nhận dạng được với văn bản mẫu bằng LCS; tên riêng không chấm. Dùng được cho một câu hoặc cả truyện.
+function alignHits(target,heard){
+  const raw=[...target].filter(isHan).join(""),T=normHan(target),H=normHan(heard);
   const skip=new Array(T.length).fill(false);let mm;NAMES.lastIndex=0;
   while((mm=NAMES.exec(raw)))for(let k=0;k<mm[0].length;k++)skip[mm.index+k]=true;
   const idx=T.map((_,i)=>i).filter(i=>!skip[i]),T2=idx.map(i=>T[i]),n=T2.length,m=H.length;
@@ -430,9 +431,19 @@ function compareRead(target,heard){   // so chữ Hán nhận dạng được v�
   for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)dp[i][j]=T2[i-1]===H[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);
   const hit=T.map((_,i)=>skip[i]);let i=n,j=m,ok=0;
   while(i>0&&j>0){if(T2[i-1]===H[j-1]){hit[idx[i-1]]=true;ok++;i--;j--}else if(dp[i-1][j]>=dp[i][j-1])i--;else j--}
-  let pos=0;
-  const marks=words.map(w=>{const len=[...w].length,all=hit.slice(pos,pos+len).every(Boolean),isName=skip.slice(pos,pos+len).every(Boolean);pos+=len;const d=DICT[w];return{w,ok:all,name:isName,py:d?d[0]:"",vi:d?d[1]:""}});
-  return{score:n?ok/n:1,marks,heard:H.join("")};
+  return{T,H,skip,hit,n,ok,score:n?ok/n:1};
+}
+function wordMarks(sentence,A,offset){   // đánh dấu từng từ của một câu nằm ở vị trí offset trong văn bản mẫu
+  let pos=offset;
+  return segmentWords(sentence).map(w=>{
+    const len=[...w].length,ok=A.hit.slice(pos,pos+len).every(Boolean),name=A.skip.slice(pos,pos+len).every(Boolean);pos+=len;
+    const d=DICT[w];return{w,ok,name,py:d?d[0]:"",vi:d?d[1]:""};
+  });
+}
+function sentScore(A,offset,len){let n=0,ok=0;for(let k=offset;k<offset+len;k++)if(!A.skip[k]){n++;if(A.hit[k])ok++}return n?ok/n:1}
+function compareRead(target,heard){
+  const A=alignHits(target,heard);
+  return{score:A.score,marks:wordMarks(target,A,0),heard:A.H.join("")};
 }
 function bestAlt(target,alts){   // trình duyệt đưa vài phương án nghe; lấy phương án gần câu mẫu nhất
   const T=normHan(target);let best=alts[0]||"",bs=-1;
@@ -440,47 +451,55 @@ function bestAlt(target,alts){   // trình duyệt đưa vài phương án nghe;
   return best;
 }
 function storyBest(si,li){return (prog.say||{})[skey(si,li)]||0}
+const chipsHtml=marks=>`<div class="words">${marks.map(m=>`<span class="w ${m.name?"name":m.ok?"ok":"bad"} tap" onclick="speak('${m.w}')">${m.w}<small>${m.name?"tên riêng":m.py}</small></span>`).join("")}</div>`;
+const needHtml=marks=>{const bad=marks.filter(m=>!m.ok&&!m.name);return bad.length?`<div class="stat">Cần luyện: ${bad.map(m=>`<b class="zh">${m.w}</b> ${m.py}${m.vi?" ("+m.vi+")":""}`).join(" · ")}</div>`:""};
 function showReadResult(si,li,r){
   const pct=Math.round(r.score*100),box=$("#fb-"+si+"-"+li);if(!box)return;
   prog.say=prog.say||{};if(pct/100>(prog.say[skey(si,li)]||0)){prog.say[skey(si,li)]=pct/100;save()}
-  const bad=r.marks.filter(m=>!m.ok);
   const msg=pct>=90?"🎉 Tuyệt vời! Phát âm rất chuẩn.":pct>=70?"👍 Khá tốt. Luyện lại các từ màu đỏ nhé.":"💪 Chưa chuẩn lắm. Bấm vào từ đỏ để nghe mẫu rồi đọc chậm hơn.";
-  box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${msg}</div>
-   <div class="words">${r.marks.map(m=>`<span class="w ${m.name?"name":m.ok?"ok":"bad"} tap" onclick="speak('${m.w}')">${m.w}<small>${m.name?"tên riêng":m.py}</small></span>`).join("")}</div>
-   ${bad.length?`<div class="stat">Cần luyện: ${bad.map(m=>`<b class="zh">${m.w}</b> ${m.py}${m.vi?" ("+m.vi+")":""}`).join(" · ")}</div>`:""}
+  box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${msg}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}
    <div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div></div>`;
   const bd=$("#bd-"+si+"-"+li);if(bd)bd.textContent=Math.round(storyBest(si,li)*100)+"%";
   const av=$("#avg-"+si);if(av)av.textContent=storyAvg(si);
 }
-function storyAvg(si){const n=rows(STORIES[si].l).length;let s=0,c=0;for(let li=0;li<n;li++){const b=storyBest(si,li);if(b){s+=b;c++}}return c?"Điểm đọc: "+Math.round(s/c*100)+"% ("+c+"/"+n+" câu)":""}
+function storyAvg(si){const n=rows(STORIES[si].l).length;let s=0,c=0;for(let li=0;li<n;li++){const b=storyBest(si,li);if(b){s+=b;c++}}return c?"Điểm đọc từng câu: "+Math.round(s/c*100)+"% ("+c+"/"+n+" câu)":""}
+const fullBadge=si=>{const f=(prog.full||{})[STORIES[si].zh];return f?`Đọc liền: ${f.p}% · trôi chảy ${f.f}%`:""};
+
+// ---- Ghi âm và nhận dạng: dùng chung cho một câu và cho cả truyện ----
 function finishRec(){          // bấm "Dừng và chấm"
   const S=rec;if(!S||S.done)return;
   S.userStop=true;clearTimeout(S.timer);clearInterval(S.tick);
   try{S.r.stop()}catch(e){}
   setTimeout(()=>{if(!S.done&&S.r.onend)S.r.onend()},2500);   // phòng khi trình duyệt không báo kết thúc
 }
-function readAloud(si,li){
-  const key=si+"-"+li,btn=$("#mic-"+key),box=$("#fb-"+key);
+// key: "si-li" hoặc "si-all"; quiet: số ms im lặng thì tự chấm; maxMs: thời gian tối đa; onResult(text, info)
+function recordTarget(key,target,o,onResult){
+  const btn=$("#mic-"+key),box=$("#fb-"+key);
   if(rec&&recKey===key){finishRec();return}                       // bấm lần nữa = dừng và chấm
   if(!SRC){toast("Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Safari (Mac, iPhone).");return}
   stopSpeak();stopRec();
-  const target=rows(STORIES[si].l)[li].split("|")[0];
-  const S={target,prefix:"",cur:"",userStop:false,done:false,fatal:false,r:null,timer:0,tick:0,startAt:Date.now(),lastAt:0};
+  const S={prefix:"",cur:"",userStop:false,done:false,fatal:false,r:null,timer:0,tick:0,startAt:Date.now(),lastAt:0,stamps:[]};
   rec=S;recKey=key;
-  const live=()=>{box.innerHTML=`<div class="stat">🎙 Hãy đọc to cả câu. <b>Đọc xong bấm nút đỏ “Dừng và chấm”, hoặc chờ khoảng 4 giây, web sẽ tự chấm.</b></div><div class="stat">Máy đang nghe: <span class="zh">${esc(S.prefix+S.cur)||"…"}</span></div>`};
+  const live=()=>{box.innerHTML=`<div class="stat">🎙 Hãy đọc to${o.whole?" cả truyện, liền một mạch":" cả câu"}. <b>Đọc xong bấm nút đỏ “Dừng và chấm”, hoặc chờ khoảng ${Math.round(o.quiet/1000)} giây, web sẽ tự chấm.</b></div><div class="stat">Máy đang nghe: <span class="zh">${esc(S.prefix+S.cur)||"…"}</span></div>`};
   const finalize=()=>{
     if(S.done)return;S.done=true;clearTimeout(S.timer);clearInterval(S.tick);
     if(rec===S){rec=null;recKey=""}idleMics();
     if(S.fatal)return;
     const text=(S.prefix+S.cur).trim();
     if(!text){box.innerHTML=`<div class="rr low">Chưa nghe thấy giọng bạn. Bấm 🎤 và đọc to hơn nhé.</div>`;return}
-    showReadResult(si,li,compareRead(target,text));
+    const st=S.stamps;let pauses=0,longest=0;
+    for(let i=1;i<st.length;i++){const g=st[i]-st[i-1];if(g>2000)pauses++;if(g>longest)longest=g}
+    onResult(text,{pauses,longest,dur:st.length>1?st[st.length-1]-st[0]:0});
   };
   const start=()=>{
     const r=new SRC();S.r=r;
     r.lang="zh-TW";r.continuous=true;r.interimResults=true;r.maxAlternatives=3;
     r.onstart=()=>{idleMics();btn.classList.add("rec");btn.textContent="⏹ Dừng và chấm";live()};
-    r.onresult=e=>{S.cur=[...e.results].map(x=>bestAlt(target,[...x].map(y=>y.transcript))).join("");S.lastAt=Date.now();live()};
+    r.onresult=e=>{
+      const cur=[...e.results].map(x=>bestAlt(target,[...x].map(y=>y.transcript))).join("");
+      if(cur!==S.cur){S.stamps.push(Date.now());S.lastAt=Date.now()}
+      S.cur=cur;live();
+    };
     r.onerror=e=>{
       if(e.error==="no-speech"||e.error==="aborted")return;       // im lặng lâu: bỏ qua, bật lại nghe tiếp
       S.fatal=true;
@@ -499,25 +518,63 @@ function readAloud(si,li){
   S.tick=setInterval(()=>{
     if(S.done||S.userStop)return;
     const said=(S.prefix+S.cur).trim();
-    if(said&&S.lastAt&&Date.now()-S.lastAt>4000)finishRec();           // đã đọc xong, im lặng 4 giây → tự chấm (vẫn có thể bấm dừng sớm hơn)
-    else if(!said&&Date.now()-S.startAt>15000)finishRec();              // 15 giây không nghe gì → dừng
+    if(said&&S.lastAt&&Date.now()-S.lastAt>o.quiet)finishRec();          // đã đọc xong, im lặng đủ lâu → tự chấm
+    else if(!said&&Date.now()-S.startAt>o.idle)finishRec();               // quá lâu không nghe gì → dừng
   },500);
-  S.timer=setTimeout(()=>{if(!S.done)finishRec()},120000);          // tối đa 2 phút cho một câu
+  S.timer=setTimeout(()=>{if(!S.done)finishRec()},o.max);
+}
+function readAloud(si,li){      // luyện từng câu
+  const target=rows(STORIES[si].l)[li].split("|")[0];
+  recordTarget(si+"-"+li,target,{quiet:4000,idle:15000,max:120000},text=>showReadResult(si,li,compareRead(target,text)));
+}
+
+// ---- Ghép cả truyện: đọc liền một mạch, chấm từng câu + độ trôi chảy ----
+function fluencyOf(info,okChars){
+  if(info.dur<3000||!okChars)return null;
+  const cpm=Math.round(okChars/(info.dur/60000));
+  const speed=Math.min(100,cpm);                                    // từ 100 chữ/phút trở lên là đủ nhanh cho người học
+  const penalty=Math.min(50,info.pauses*8)+(info.longest>4000?Math.min(20,Math.round((info.longest-4000)/500)):0);
+  return{cpm,score:Math.max(0,Math.min(100,Math.round(speed-penalty)))};
+}
+function readWhole(si){
+  const ls=rows(STORIES[si].l).map(r=>r.split("|")[0]),target=ls.join("");
+  recordTarget(si+"-all",target,{whole:true,quiet:7000,idle:20000,max:300000},(text,info)=>{
+    const A=alignHits(target,text),box=$("#fb-"+si+"-all");let off=0;
+    const per=ls.map(s=>{const len=[...s].filter(isHan).length,r={s,score:sentScore(A,off,len),marks:wordMarks(s,A,off)};off+=len;return r});
+    const pct=Math.round(A.score*100),fl=fluencyOf(info,A.ok),flu=fl?fl.score:null;
+    prog.full=prog.full||{};const old=prog.full[STORIES[si].zh];
+    if(!old||pct>old.p){prog.full[STORIES[si].zh]={p:pct,f:flu==null?(old?old.f:0):flu};save()}
+    const bd=$("#full-"+si);if(bd)bd.textContent=fullBadge(si);
+    const msgP=pct>=90?"Phát âm rất chuẩn.":pct>=70?"Phát âm khá tốt, luyện lại vài chỗ đỏ.":"Cần luyện thêm phát âm từng câu rồi ghép lại.";
+    const msgF=flu==null?"Đọc thêm một chút để đo độ trôi chảy.":flu>=80?"Đọc khá trôi chảy.":flu>=50?"Hơi ngập ngừng, thử đọc liền mạch hơn.":"Còn ngắt quãng nhiều, hãy luyện từng câu rồi ghép lại.";
+    box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}">
+      <div class="big"><b>${pct}%</b> phát âm${flu==null?"":` · <b>${flu}%</b> trôi chảy`}</div>
+      <div>${msgP} ${msgF}</div>
+      <div class="stat">⏱ ${(info.dur/1000).toFixed(0)} giây${fl?` · khoảng ${fl.cpm} chữ/phút (đọc thoải mái: 100–200)`:""} · ${info.pauses} lần ngập ngừng trên 2 giây${info.longest>2000?`, lâu nhất ${(info.longest/1000).toFixed(1)} giây`:""}</div>
+      <div class="stat" style="margin-top:8px"><b>Từng câu:</b></div>
+      ${per.map((p,i)=>`<div class="sres"><div class="row"><b class="${p.score>=0.7?"okc":"badc"}">${Math.round(p.score*100)}%</b><span class="zh tap" style="font-size:18px" onclick="speak('${p.s}')">${p.s}</span></div>${chipsHtml(p.marks)}</div>`).join("")}
+      <div class="stat">Máy nghe được: <span class="zh">${A.H.join("")||"(không rõ)"}</span></div>
+      <div class="stat">Điểm trôi chảy dựa vào tốc độ và số lần dừng lâu giữa các lần nhận dạng, chỉ mang tính tham khảo.</div></div>`;
+  });
 }
 function playStory(si){toast("🔊 Đang đọc…");speakSeq(rows(STORIES[si].l).map(r=>({t:r.split("|")[0],tag:"m",pitch:1})))}
 function restory(){const y=window.scrollY;storyView();window.scrollTo(0,y)}
 function storyView(){
   let html=`<div class="row" style="margin-bottom:10px"><label><input type="checkbox" ${rPy?"checked":""} onchange="rPy=this.checked;restory()"> Hiện pinyin</label><label><input type="checkbox" ${rVi?"checked":""} onchange="rVi=this.checked;restory()"> Hiện tiếng Việt</label><button class="b" onclick="stopSpeak();stopRec()">⏹ Dừng</button></div>
-  <div class="card tip">🎤 <b>Cách luyện:</b> bấm ▶ nghe cả truyện, rồi bấm <b>🎤 Đọc thử</b> ở từng câu và đọc to. Web so giọng bạn với câu mẫu và đánh dấu từ nào đọc chưa chuẩn (<span class="w bad" style="font-size:15px;padding:1px 8px">đỏ</span>). Chấm điểm dựa trên bộ nhận dạng giọng nói của trình duyệt nên chỉ mang tính tham khảo.${SRC?"":" <b>Trình duyệt này chưa hỗ trợ chấm phát âm, hãy mở bằng Chrome hoặc Safari.</b>"}</div>`;
+  <div class="card tip">🎤 <b>Cách luyện 2 bước:</b><br><b>Bước 1 · từng câu:</b> bấm 🔊 nghe mẫu, rồi bấm <b>🎤 Đọc thử</b> và đọc to. Web đánh dấu từ nào đọc chưa chuẩn (<span class="w bad" style="font-size:15px;padding:1px 8px">đỏ</span>).<br><b>Bước 2 · ghép cả truyện:</b> kéo xuống cuối truyện, bấm <b>🎤 Đọc liền cả truyện</b> và đọc một mạch từ đầu đến cuối. Web chấm phát âm từng câu và đo <b>độ trôi chảy</b> (tốc độ, số lần ngập ngừng). Chấm điểm dựa trên bộ nhận dạng giọng nói của trình duyệt nên chỉ mang tính tham khảo.${SRC?"":" <b>Trình duyệt này chưa hỗ trợ chấm phát âm, hãy mở bằng Chrome hoặc Safari.</b>"}</div>`;
   let lastL=0;
   STORIES.forEach((S,si)=>{
     if(!inL(S.n))return;
     const ls=rows(S.l).map(r=>r.split("|"));
     if(S.n!==lastL){lastL=S.n;html+=`<div class="lh">${lesHead(S.n)} <span class="vi">— ${LES[S.n].vi}</span></div>`}
     html+=`<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:6px"><h3 style="margin:0">📖 <span class="gh">${annotate(S.zh).html}</span> <span class="vi">· ${S.vi}</span></h3><button class="b p" onclick="playStory(${si})">▶ Nghe cả truyện</button></div>
-    <div class="stat" id="avg-${si}" style="margin-bottom:4px">${storyAvg(si)}</div>`+
+    <div class="stat" id="avg-${si}" style="margin-bottom:4px">${storyAvg(si)}</div><div class="stat"><b>Bước 1 · Luyện từng câu</b></div>`+
     ls.map((x,li)=>`<div class="sl"><div class="row"><span class="zh tap" style="font-size:24px" onclick="speak('${x[0]}')">${x[0]}</span></div>${rPy?`<div class="py">${x[1]}</div>`:""}${rVi?`<div class="vi">${x[2]}</div>`:""}
-     <div class="row" style="margin-top:6px">${spkBtn(x[0])}<button class="b mic" id="mic-${si}-${li}" onclick="readAloud(${si},${li})">🎤 Đọc thử</button><span class="badge" id="bd-${si}-${li}">${storyBest(si,li)?Math.round(storyBest(si,li)*100)+"%":""}</span></div><div id="fb-${si}-${li}"></div></div>`).join("")+`</div>`;
+     <div class="row" style="margin-top:6px">${spkBtn(x[0])}<button class="b mic" id="mic-${si}-${li}" onclick="readAloud(${si},${li})">🎤 Đọc thử</button><span class="badge" id="bd-${si}-${li}">${storyBest(si,li)?Math.round(storyBest(si,li)*100)+"%":""}</span></div><div id="fb-${si}-${li}"></div></div>`).join("")+
+    `<div class="whole"><div class="row" style="justify-content:space-between"><b>🧩 Bước 2 · Ghép cả truyện, đọc liền một mạch</b><span class="badge" id="full-${si}">${fullBadge(si)}</span></div>
+     <div class="zh whole-text">${ls.map(x=>`<span class="tap" onclick="speak('${x[0]}')">${x[0]}</span>`).join("")}</div>
+     ${rPy?`<div class="py">${ls.map(x=>x[1]).join(" ")}</div>`:""}${rVi?`<div class="vi" style="margin-top:4px">${ls.map(x=>x[2]).join(" ")}</div>`:""}
+     <div class="row" style="margin-top:10px"><button class="b p" onclick="playStory(${si})">▶ Nghe mẫu cả truyện</button><button class="b mic" data-label="🎤 Đọc liền cả truyện" id="mic-${si}-all" onclick="readWhole(${si})">🎤 Đọc liền cả truyện</button></div><div id="fb-${si}-all"></div></div></div>`;
   });
   $("#app").innerHTML=html;
 }

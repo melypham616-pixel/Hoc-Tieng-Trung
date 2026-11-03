@@ -10,7 +10,7 @@ Web chạy tại **https://studychinese.mely.io.vn** (GitHub Pages, nhánh `main
 - **Thẻ nhớ**: lật thẻ, nghe phát âm.
 - **Ngữ pháp**: 77 điểm, tiêu đề và công thức có pinyin + chú giải nghĩa.
 - **Đọc**: 15 hội thoại và các đoạn văn ngắn, bật/tắt pinyin và tiếng Việt, câu hỏi đúng/sai.
-- **Truyện**: 45 truyện ngắn (mỗi bài 3 truyện, 287 câu) để tập đọc. Bấm 🎤 Đọc thử ở từng câu: web nhận dạng giọng đọc của bạn (Web Speech API, cần Chrome hoặc Safari và mạng), so với câu mẫu và đánh dấu từ nào chưa chuẩn.
+- **Truyện**: 45 truyện ngắn (mỗi bài 3 truyện, 287 câu) để tập đọc. Bấm 🎤 Đọc thử ở từng câu: web nhận dạng giọng đọc của bạn (Web Speech API, cần Chrome hoặc Safari và mạng), so với câu mẫu và đánh dấu từ nào chưa chuẩn. Sau khi luyện từng câu, bấm 🎤 Đọc liền cả truyện để đọc một mạch: web chấm từng câu và đo độ trôi chảy (tốc độ, số lần ngập ngừng).
 - **Bài tập**: chọn nghĩa, chọn Hán tự, nghe chọn từ, điền pinyin, sắp xếp câu.
 - **Tập dịch**: ~600 câu Việt ↔ Trung (câu ngắn, câu dài, đoạn văn), chế độ phản xạ.
 - Lọc theo từng bài hoặc nhóm bài; tiến độ lưu trong trình duyệt (localStorage).
