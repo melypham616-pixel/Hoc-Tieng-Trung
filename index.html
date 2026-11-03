@@ -2439,31 +2439,6 @@ function grammarFix(text){
   if(m&&!/(很|太|真|不|最|更|非常|比較|有點|又|覺得|比|得|一點)$/.test(m[1])&&!/(比|沒有)/.test(m[1])){t=m[1]+"很"+m[2];tips.push("Tính từ làm vị ngữ thường cần 很 phía trước: 今天很冷.")}
   return{text:t,tips};
 }
-// Dựng lại câu mẫu theo ý của người nói (thay từ khóa, tên, số bằng nội dung bạn đã nói)
-function personalize(Q,H){
-  let s=Q.a,notes=[];const nh=k=>normHan(k).join("");
-  const nameQ=Q.keys[0]&&Q.keys[0].includes("叫");
-  if(nameQ){const m=H.match(/(叫|姓)([一-鿿]{1,4})$/);if(m)return{text:"我"+m[1]+m[2]+"。",notes:["Dựng lại theo tên bạn nói."]}}
-  Q.keys.forEach(g=>{
-    if(g.length<2||["是","有","不是","沒有","要","想"].some(k=>g.includes(k)))return;   // không thay các động từ ngữ pháp (是/有/要/想) vì dễ thành câu sai
-    const u=g.find(k=>H.includes(nh(k))),sa=g.find(k=>s.includes(k));
-    if(u&&sa&&u!==sa){s=s.replace(sa,u);notes.push(`Thay “${sa}” bằng “${u}” theo ý bạn.`)}
-  });
-  const NUM="[一二三四五六七八九十百千萬零兩]+";
-  ["點","歲","塊","月","號","年","個"].forEach(unit=>{
-    const um=H.match(new RegExp("("+NUM+")"+unit));
-    if(um&&new RegExp("("+NUM+")"+unit).test(s)){const before=s;s=s.replace(new RegExp("("+NUM+")"+unit),um[1]+unit);if(s!==before)notes.push(`Thay số trước ${unit} bằng số bạn nói.`)}
-  });
-  // khung câu: giữ phần đầu trùng với câu mẫu (我想去…), thay phần nội dung bằng lời bạn nói, rồi thêm từ còn thiếu
-  const sc=cleanHan(Q.a);let p=0;while(p<sc.length&&p<H.length&&sc[p]===H[p])p++;
-  const unmet=Q.keys.filter(g=>!g.some(k=>H.includes(nh(k))));
-  if(unmet.length&&p>=2&&H.length>p){
-    let cand=H;
-    unmet.forEach(g=>{const alt=g.find(k=>sc.slice(p).includes(k));if(alt&&!cand.includes(alt))cand+=alt});
-    if(Q.keys.every(g=>g.some(k=>cand.includes(nh(k))))&&cand!==H)return{text:cand+"。",notes:["Giữ phần bạn nói và bổ sung từ còn thiếu theo mẫu câu."]};
-  }
-  return{text:s,notes};
-}
 // So sánh hai chuỗi chữ Hán theo từng chữ: a = bạn nói (chữ thừa gạch đỏ), b = câu đúng (chữ thêm/sửa tô xanh)
 function diffHtml(a,b){
   const A=[...a],B=[...b],n=A.length,m=B.length;
@@ -2484,22 +2459,16 @@ function diffBlock(heard,target){
   const d=diffHtml(H,T);
   return `<div class="fix"><div class="stat"><b>✏️ So với câu đúng</b></div><div>Bạn nói: <span class="zh">${d.a}</span></div><div>Đúng là: <span class="zh">${d.b}</span></div><div class="py">${annotate(T).html}</span></div></div>`;
 }
-// Khối sửa câu cho vấn đáp
+// Khối sửa câu cho vấn đáp: chỉ sửa lỗi ngữ pháp, trên chính lời người nói (không dùng câu mẫu)
 function fixBlock(Q,text,E){
-  const g=grammarFix(text),H=g.text;
-  const groupsOk=Q.keys.map(k=>k.some(w=>H.includes(normHan(w).join(""))));
-  const allOk=groupsOk.every(Boolean);
-  let corrected,notes=[...g.tips];
-  if(allOk){corrected=H+"。"}
-  else{const p=personalize(Q,H);corrected=p.text;notes.push("Câu của bạn chưa trả lời đúng ý câu hỏi nên mình dựng lại theo mẫu.",...p.notes)}
-  const heard=cleanHan(text),fixedClean=cleanHan(corrected);
-  if(heard===fixedClean&&!notes.length)return `<div class="fix ok"><b>✅ Câu của bạn đúng ngữ pháp và đúng ý.</b></div>`;
-  const d=diffHtml(heard,fixedClean);
+  const g=grammarFix(text),heard=cleanHan(text),corrected=g.text;
+  if(!g.tips.length)return `<div class="fix ok"><b>✅ Câu của bạn đúng ngữ pháp.</b> Chỉ cần đúng ngữ pháp và phát âm là tốt, không cần giống câu mẫu.</div>`;
+  const d=diffHtml(heard,corrected);
   return `<div class="fix"><div class="stat"><b>✏️ Sửa lại câu của bạn</b></div>
    <div>Bạn nói: <span class="zh">${d.a}</span></div>
    <div>Sửa thành: <span class="zh tap" onclick="speak('${corrected}')">${d.b}。</span> ${spkBtn(corrected)}</div>
    <div class="py" id="fix-py">${annotate(corrected).html}</div>
-   ${notes.length?`<ul class="tips">${notes.map(n=>`<li>${n}</li>`).join("")}</ul>`:""}
+   <ul class="tips">${g.tips.map(n=>`<li>${n}</li>`).join("")}</ul>
    <div class="row" style="margin-top:6px"><button class="b mic" data-label="🎤 Đọc lại câu đã sửa" id="mic-qa3" onclick="qaFixRead('${corrected}')">🎤 Đọc lại câu đã sửa</button></div><div id="fb-qa3"></div></div>`;
 }
 function qaFixRead(target){
@@ -2522,7 +2491,7 @@ function qaPick(){
 function qaView(){
   clearInterval(qaTimer);
   const t=prog.qa||{done:0,sum:0};
-  $("#app").innerHTML=`<div class="card tip">🎙 <b>Vấn đáp phản xạ:</b> web <b>hỏi bằng giọng nói</b> (tiếng Trung), bạn <b>trả lời ngay</b> bằng tiếng Trung. Web tự bật micro sau khi hỏi xong và tính <b>thời gian phản xạ</b>. Sau mỗi câu, web chấm <b>nội dung</b> (có trả lời đúng ý không), <b>phản xạ</b>, <b>độ rõ phát âm</b> và <b>độ trôi chảy</b>, rồi cho câu mẫu để bạn đọc theo. Câu hỏi lấy theo bài đang chọn ở ô “Phạm vi”.${SRC?"":" <b>Trình duyệt này chưa hỗ trợ nhận dạng giọng nói, hãy mở bằng Chrome hoặc Safari.</b>"}</div>
+  $("#app").innerHTML=`<div class="card tip">🎙 <b>Vấn đáp phản xạ:</b> web <b>hỏi bằng giọng nói</b> (tiếng Trung), bạn <b>trả lời ngay</b> bằng tiếng Trung. Web tự bật micro sau khi hỏi xong và tính <b>thời gian phản xạ</b>. Bạn <b>không cần nói giống câu mẫu</b>: chỉ cần câu <b>đúng ngữ pháp</b> và <b>phát âm rõ</b>. Sau mỗi câu, web chấm <b>ngữ pháp</b>, <b>phản xạ</b>, <b>độ rõ phát âm</b> và <b>độ trôi chảy</b>; nếu có lỗi ngữ pháp, web <b>sửa ngay trên câu bạn vừa nói</b>. Câu mẫu chỉ để tham khảo. Câu hỏi lấy theo bài đang chọn ở ô “Phạm vi”.${SRC?"":" <b>Trình duyệt này chưa hỗ trợ nhận dạng giọng nói, hãy mở bằng Chrome hoặc Safari.</b>"}</div>
   <div class="card"><div class="row"><label><input type="checkbox" ${qaHide?"checked":""} onchange="qaHide=this.checked"> Chỉ nghe, ẩn chữ câu hỏi (luyện nghe)</label><label><input type="checkbox" ${qaAuto?"checked":""} onchange="qaAuto=this.checked"> Tự bật micro sau khi hỏi</label></div>
   <div class="row" style="margin-top:12px"><button class="b p" onclick="qaStart(${QA_LEN})">▶ Bắt đầu phiên ${QA_LEN} câu</button><button class="b" onclick="qaStart(1)">🔀 Hỏi 1 câu ngẫu nhiên</button></div>
   <div class="stat" style="margin-top:10px">Có ${QA.filter(q=>inL(q.n)).length} câu hỏi trong phạm vi đang chọn.${t.done?` Bạn đã trả lời ${t.done} câu, điểm trung bình ${Math.round(t.sum/t.done)}%.`:""}</div></div><div id="qa-stage"></div>`;
@@ -2563,41 +2532,39 @@ function qaAnswer(auto){
   },300);
 }
 function evalAnswer(Q,text,info){
-  const H=normHan(text).join(""),groups=Q.keys;
-  const matched=groups.map(g=>g.some(k=>H.includes(normHan(k).join(""))));
-  const gm=matched.filter(Boolean).length/groups.length,sampleLen=normHan(Q.a).length;
-  const complete=Math.min(1,H.length/Math.max(4,sampleLen*0.7));
-  const content=Math.round(100*(0.75*gm+0.25*complete));
+  const H=normHan(text).join(""),G=grammarFix(text);
+  const matched=Q.keys.map(g=>g.some(k=>H.includes(normHan(k).join(""))));
+  const gm=matched.filter(Boolean).length/Q.keys.length;
+  const grammar=H.length<2?50:Math.max(40,100-25*G.tips.length);          // mỗi lỗi ngữ pháp trừ 25 điểm
   const clarity=info.conf!=null?Math.round(info.conf*100):null;
   const lat=info.first&&info.listenAt?Math.max(0,(info.first-info.listenAt)/1000):null;
   const reflex=lat==null?null:lat<=2?100:Math.max(0,Math.round(100-(lat-2)/6*100));
   const fl=fluencyOf(info,H.length,1500);
-  const parts=[content,clarity,reflex,fl?fl.score:null].filter(x=>x!=null);
-  return{H,matched,content,clarity,lat,reflex,fl,overall:Math.round(parts.reduce((a,b)=>a+b,0)/parts.length),complete,gm};
+  const parts=[grammar,clarity,reflex,fl?fl.score:null].filter(x=>x!=null);   // đúng ngữ pháp và phát âm là đủ; ý câu trả lời không bị trừ điểm
+  return{H,matched,gm,grammar,errs:G.tips.length,clarity,lat,reflex,fl,overall:Math.round(parts.reduce((x,y)=>x+y,0)/parts.length)};
 }
 function qaRecord(E){
   if(!qaSess)return;
-  qaSess.res.push(E?{q:qaCur.q,overall:E.overall,content:E.content,lat:E.lat,gm:E.gm}:{q:qaCur.q,overall:0,content:0,lat:null,gm:0,skip:true});
+  qaSess.res.push(E?{q:qaCur.q,overall:E.overall,content:E.grammar,lat:E.lat,gm:E.gm}:{q:qaCur.q,overall:0,content:0,lat:null,gm:0,skip:true});
   prog.qa=prog.qa||{done:0,sum:0};prog.qa.done++;prog.qa.sum+=E?E.overall:0;save();
 }
 function qaResult(text,info){
   const Q=qaCur,box=$("#fb-qa");if(!Q||!box)return;
   const E=text?evalAnswer(Q,text,info):null;
   qaRecord(E);
-  const sample=`<div class="qa-sample"><div class="stat"><b>Câu trả lời mẫu</b></div><div class="row"><span class="zh tap" style="font-size:22px" onclick="speak('${Q.a}')">${Q.a}</span>${spkBtn(Q.a)}</div><div class="py">${Q.apy}</div><div class="vi">${Q.avi}</div>
-    <div class="row" style="margin-top:8px"><button class="b mic" data-label="🎤 Đọc theo câu mẫu" id="mic-qa2" onclick="qaShadow()">🎤 Đọc theo câu mẫu</button></div><div id="fb-qa2"></div></div>`;
+  const sample=`<details class="qa-sample"><summary class="stat"><b>Xem câu trả lời mẫu (chỉ để tham khảo)</b></summary><div class="row"><span class="zh tap" style="font-size:22px" onclick="speak('${Q.a}')">${Q.a}</span>${spkBtn(Q.a)}</div><div class="py">${Q.apy}</div><div class="vi">${Q.avi}</div>
+    <div class="row" style="margin-top:8px"><button class="b mic" data-label="🎤 Đọc theo câu mẫu" id="mic-qa2" onclick="qaShadow()">🎤 Đọc theo câu mẫu</button></div><div id="fb-qa2"></div></details>`;
   const last=qaSess&&qaSess.i+1>=qaSess.n;
   const nextBtn=`<div class="row" style="margin-top:12px"><button class="b p" onclick="qaNextStep()">${last?"🏁 Xem tổng kết":"Câu tiếp ▶"}</button></div>`;
   if(!E){box.innerHTML=`<div class="rr low"><div class="big">⏱ Chưa kịp trả lời</div><div>Hãy thử nói bất kỳ câu nào bằng tiếng Trung ngay khi nghe hỏi, dù chưa hoàn hảo. Phản xạ nhanh quan trọng hơn câu hoàn chỉnh.</div>${sample}${nextBtn}</div>`;return}
   const tips=[];
-  const miss=Q.keys.filter((g,i)=>!E.matched[i]);
-  if(miss.length)tips.push(`Chưa thấy ý: <b>${miss.map(g=>g.slice(0,3).map(k=>`<span class="zh">${k}</span>`).join(" / ")).join("</b>; <b>")}</b>. Thử dùng mẫu câu như câu mẫu bên dưới.`);else tips.push("✅ Bạn đã trả lời đúng ý câu hỏi.");
-  if(E.complete<0.7)tips.push("Câu trả lời hơi ngắn, hãy nói thành câu đầy đủ (chủ ngữ + động từ).");
+  tips.push(E.errs?`Ngữ pháp: có ${E.errs} lỗi, xem phần sửa bên dưới.`:"✅ Ngữ pháp đúng.");
+  if(E.gm<1)tips.push("Ghi chú: câu trả lời hơi khác ý câu hỏi, nhưng ngữ pháp và phát âm đúng thì vẫn được điểm (không trừ điểm vì khác câu mẫu).");
   if(E.lat!=null)tips.push(E.lat<=2?`⚡ Phản xạ rất nhanh (${E.lat.toFixed(1)} giây).`:E.lat<=4?`👍 Phản xạ ổn (${E.lat.toFixed(1)} giây), cố gắng dưới 2 giây.`:`🐢 Phản xạ hơi chậm (${E.lat.toFixed(1)} giây). Hãy nói ngay một từ khóa trước, ví dụ “我…”.`);
   if(E.clarity!=null&&E.clarity<75)tips.push("Máy nghe chưa rõ: hãy nói chậm hơn, rõ thanh điệu và ở nơi yên tĩnh.");
   if(E.fl&&E.fl.score<50)tips.push("Còn ngắt quãng nhiều, thử nói liền mạch hơn.");
   box.innerHTML=`<div class="rr ${E.overall>=70?"good":"low"}"><div class="big"><b>${E.overall}%</b> tổng điểm</div>
-   <div class="scoregrid"><div class="sc"><b>${E.content}%</b>Nội dung</div><div class="sc"><b>${E.reflex==null?"—":E.reflex+"%"}</b>Phản xạ${E.lat==null?"":` (${E.lat.toFixed(1)}s)`}</div><div class="sc"><b>${E.clarity==null?"—":E.clarity+"%"}</b>Độ rõ phát âm</div><div class="sc"><b>${E.fl?E.fl.score+"%":"—"}</b>Trôi chảy</div></div>
+   <div class="scoregrid"><div class="sc"><b>${E.grammar}%</b>Ngữ pháp</div><div class="sc"><b>${E.reflex==null?"—":E.reflex+"%"}</b>Phản xạ${E.lat==null?"":` (${E.lat.toFixed(1)}s)`}</div><div class="sc"><b>${E.clarity==null?"—":E.clarity+"%"}</b>Độ rõ phát âm</div><div class="sc"><b>${E.fl?E.fl.score+"%":"—"}</b>Trôi chảy</div></div>
    <ul class="tips">${tips.map(t=>`<li>${t}</li>`).join("")}</ul>
    <div class="stat">Máy nghe được: <span class="zh">${annotate(text).html}</span></div>${fixBlock(Q,text,E)}${sample}${nextBtn}</div>`;
 }
