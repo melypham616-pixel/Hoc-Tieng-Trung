@@ -257,14 +257,14 @@ function updateHero(){
 }
 
 /* ============ ĐIỀU HƯỚNG ============ */
-const TABS=[["vocab","📖 Từ vựng"],["flash","🃏 Thẻ nhớ"],["grammar","📐 Ngữ pháp"],["read","💬 Đọc"],["story","📚 Truyện"],["quiz","✍️ Bài tập"],["trans","🔤 Tập dịch"]];
+const TABS=[["vocab","📖 Từ vựng"],["flash","🃏 Thẻ nhớ"],["grammar","📐 Ngữ pháp"],["read","💬 Đọc"],["story","📚 Truyện"],["qa","🎙 Vấn đáp"],["quiz","✍️ Bài tập"],["trans","🔤 Tập dịch"]];
 let tab="vocab";
 $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button data-k="${k}"><span class="ic">${l.slice(0,i)}</span><span class="lb">${l.slice(i+1)}</span></button>`}).join("");
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
-  stopSpeak();stopRec();
-  ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,story:storyView,quiz:quizView,trans:transView})[tab]();
+  stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;
+  ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,story:storyView,qa:qaView,quiz:quizView,trans:transView})[tab]();
 }
 const lesTag=n=>`Bài ${n} · ${LES[n].zh}`;
 const lesHead=n=>`Bài ${n} · ${annotate(LES[n].zh).html}`;
@@ -478,7 +478,7 @@ function recordTarget(key,target,o,onResult){
   if(rec&&recKey===key){finishRec();return}                       // bấm lần nữa = dừng và chấm
   if(!SRC){toast("Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Safari (Mac, iPhone).");return}
   stopSpeak();stopRec();
-  const S={prefix:"",cur:"",userStop:false,done:false,fatal:false,r:null,timer:0,tick:0,startAt:Date.now(),lastAt:0,stamps:[]};
+  const S={prefix:"",cur:"",userStop:false,done:false,fatal:false,r:null,timer:0,tick:0,startAt:Date.now(),lastAt:0,stamps:[],listenAt:0,confs:[],curConf:{}};
   rec=S;recKey=key;
   const live=()=>{box.innerHTML=`<div class="stat">🎙 Hãy đọc to${o.whole?" cả truyện, liền một mạch":" cả câu"}. <b>Đọc xong bấm nút đỏ “Dừng và chấm”, hoặc chờ khoảng ${Math.round(o.quiet/1000)} giây, web sẽ tự chấm.</b></div><div class="stat">Máy đang nghe: <span class="zh">${esc(S.prefix+S.cur)||"…"}</span></div>`};
   const finalize=()=>{
@@ -486,17 +486,19 @@ function recordTarget(key,target,o,onResult){
     if(rec===S){rec=null;recKey=""}idleMics();
     if(S.fatal)return;
     const text=(S.prefix+S.cur).trim();
-    if(!text){box.innerHTML=`<div class="rr low">Chưa nghe thấy giọng bạn. Bấm 🎤 và đọc to hơn nhé.</div>`;return}
+    if(!text){if(o.onEmpty)o.onEmpty();else box.innerHTML=`<div class="rr low">Chưa nghe thấy giọng bạn. Bấm 🎤 và đọc to hơn nhé.</div>`;return}
+    S.confs.push(...Object.values(S.curConf));S.curConf={};
     const st=S.stamps;let pauses=0,longest=0;
     for(let i=1;i<st.length;i++){const g=st[i]-st[i-1];if(g>2000)pauses++;if(g>longest)longest=g}
-    onResult(text,{pauses,longest,dur:st.length>1?st[st.length-1]-st[0]:0});
+    onResult(text,{pauses,longest,dur:st.length>1?st[st.length-1]-st[0]:0,first:st[0]||0,listenAt:S.listenAt,conf:S.confs.length?S.confs.reduce((x,y)=>x+y,0)/S.confs.length:null});
   };
   const start=()=>{
     const r=new SRC();S.r=r;
     r.lang="zh-TW";r.continuous=true;r.interimResults=true;r.maxAlternatives=3;
-    r.onstart=()=>{idleMics();btn.classList.add("rec");btn.textContent="⏹ Dừng và chấm";live()};
+    r.onstart=()=>{if(!S.listenAt)S.listenAt=Date.now();idleMics();btn.classList.add("rec");btn.textContent="⏹ Dừng và chấm";live()};
     r.onresult=e=>{
       const cur=[...e.results].map(x=>bestAlt(target,[...x].map(y=>y.transcript))).join("");
+      [...e.results].forEach((x,i)=>{if(x.isFinal&&x[0].confidence>0)S.curConf[i]=x[0].confidence});
       if(cur!==S.cur){S.stamps.push(Date.now());S.lastAt=Date.now()}
       S.cur=cur;live();
     };
@@ -508,6 +510,7 @@ function recordTarget(key,target,o,onResult){
     };
     r.onend=()=>{
       if(S.done)return;
+      S.confs.push(...Object.values(S.curConf));S.curConf={};
       S.prefix+=S.cur;S.cur="";
       if(S.userStop||S.fatal){finalize();return}
       try{start()}catch(x){finalize()}                            // trình duyệt tự ngắt khi bạn ngừng nói một lúc → bật lại, tiếp tục nghe cho đến khi bạn bấm dừng
@@ -529,8 +532,8 @@ function readAloud(si,li){      // luyện từng câu
 }
 
 // ---- Ghép cả truyện: đọc liền một mạch, chấm từng câu + độ trôi chảy ----
-function fluencyOf(info,okChars){
-  if(info.dur<3000||!okChars)return null;
+function fluencyOf(info,okChars,minDur=3000){
+  if(info.dur<minDur||!okChars)return null;
   const cpm=Math.round(okChars/(info.dur/60000));
   const speed=Math.min(100,cpm);                                    // từ 100 chữ/phút trở lên là đủ nhanh cho người học
   const penalty=Math.min(50,info.pauses*8)+(info.longest>4000?Math.min(20,Math.round((info.longest-4000)/500)):0);
@@ -577,6 +580,125 @@ function storyView(){
      <div class="row" style="margin-top:10px"><button class="b p" onclick="playStory(${si})">▶ Nghe mẫu cả truyện</button><button class="b mic" data-label="🎤 Đọc liền cả truyện" id="mic-${si}-all" onclick="readWhole(${si})">🎤 Đọc liền cả truyện</button></div><div id="fb-${si}-all"></div></div></div>`;
   });
   $("#app").innerHTML=html;
+}
+
+/* ============ VẤN ĐÁP PHẢN XẠ: web hỏi bằng giọng nói, bạn trả lời ngay ============ */
+const QA=rows(QA_DATA).map(r=>{const p=r.split("|");return{n:+p[0],q:p[1],qpy:p[2],qvi:p[3],a:p[4],apy:p[5],avi:p[6],keys:p[7].split(";").map(g=>g.split("/"))}});
+let qaHide=true,qaAuto=true,qaCur=null,qaSess=null,qaTimer=0,qaLast=null,qaSeen=[];
+const QA_LEN=10,QA_WAIT=9;       // 10 câu mỗi phiên; 9 giây để bắt đầu trả lời
+function qaPick(){
+  let pool=QA.filter(q=>inL(q.n));if(!pool.length)pool=QA;
+  let fresh=pool.filter(q=>!qaSeen.includes(q.q));
+  if(!fresh.length){qaSeen=[];fresh=pool.filter(q=>q.q!==(qaLast&&qaLast.q));if(!fresh.length)fresh=pool}
+  const q=fresh[Math.random()*fresh.length|0];qaSeen.push(q.q);return q;
+}
+function qaView(){
+  clearInterval(qaTimer);
+  const t=prog.qa||{done:0,sum:0};
+  $("#app").innerHTML=`<div class="card tip">🎙 <b>Vấn đáp phản xạ:</b> web <b>hỏi bằng giọng nói</b> (tiếng Trung), bạn <b>trả lời ngay</b> bằng tiếng Trung. Web tự bật micro sau khi hỏi xong và tính <b>thời gian phản xạ</b>. Sau mỗi câu, web chấm <b>nội dung</b> (có trả lời đúng ý không), <b>phản xạ</b>, <b>độ rõ phát âm</b> và <b>độ trôi chảy</b>, rồi cho câu mẫu để bạn đọc theo. Câu hỏi lấy theo bài đang chọn ở ô “Phạm vi”.${SRC?"":" <b>Trình duyệt này chưa hỗ trợ nhận dạng giọng nói, hãy mở bằng Chrome hoặc Safari.</b>"}</div>
+  <div class="card"><div class="row"><label><input type="checkbox" ${qaHide?"checked":""} onchange="qaHide=this.checked"> Chỉ nghe, ẩn chữ câu hỏi (luyện nghe)</label><label><input type="checkbox" ${qaAuto?"checked":""} onchange="qaAuto=this.checked"> Tự bật micro sau khi hỏi</label></div>
+  <div class="row" style="margin-top:12px"><button class="b p" onclick="qaStart(${QA_LEN})">▶ Bắt đầu phiên ${QA_LEN} câu</button><button class="b" onclick="qaStart(1)">🔀 Hỏi 1 câu ngẫu nhiên</button></div>
+  <div class="stat" style="margin-top:10px">Có ${QA.filter(q=>inL(q.n)).length} câu hỏi trong phạm vi đang chọn.${t.done?` Bạn đã trả lời ${t.done} câu, điểm trung bình ${Math.round(t.sum/t.done)}%.`:""}</div></div><div id="qa-stage"></div>`;
+}
+function qaStart(n){qaSess={n,i:0,res:[]};qaAsk()}
+function qaAsk(){
+  stopSpeak();stopRec();clearInterval(qaTimer);
+  qaCur=qaPick();qaLast=qaCur;const Q=qaCur,k=qaSess?qaSess.i+1:1,N=qaSess?qaSess.n:1;
+  const stage=$("#qa-stage");if(!stage)return;
+  stage.innerHTML=`<div class="card"><div class="stat">Câu ${k}/${N} · ${lesTag(Q.n)}</div>
+   <div id="qa-q" class="qa-q">${qaHide?"🔊 Nghe kỹ câu hỏi…":`<span class="zh tap" onclick="speak('${Q.q}')">${Q.q}</span>`}</div>
+   <div id="qa-hint">${qaHide?"":`${rPy?`<div class="py">${Q.qpy}</div>`:""}${rVi?`<div class="vi">${Q.qvi}</div>`:""}`}</div>
+   <div class="row" style="margin-top:10px"><button class="b" onclick="qaReplay()">🔊 Nghe lại câu hỏi</button><button class="b" onclick="qaShowQ()">👁 Hiện chữ</button>
+   <button class="b mic" data-label="🎤 Trả lời" id="mic-qa" onclick="qaAnswer(false)">🎤 Trả lời</button><button class="b" onclick="qaSkip()">⏭ Bỏ qua</button></div>
+   <div id="qa-timer" class="stat" style="margin-top:8px"></div><div id="fb-qa"></div></div>`;
+  qaPlayQuestion(()=>{if(qaAuto&&SRC)qaAnswer(true)});
+}
+function qaPlayQuestion(after){
+  const Q=qaCur;
+  playClip(Q.q,{tag:"m",onend:()=>{if(qaCur===Q&&after)after()},onfail:()=>{if(qaCur===Q)say(Q.q,{onend:()=>{if(qaCur===Q&&after)after()}})}});
+}
+function qaReplay(){stopRec();clearInterval(qaTimer);$("#qa-timer").textContent="";$("#fb-qa").innerHTML="";qaPlayQuestion(null)}
+function qaShowQ(){const Q=qaCur;if(!Q)return;$("#qa-q").innerHTML=`<span class="zh tap" onclick="speak('${Q.q}')">${Q.q}</span>`;$("#qa-hint").innerHTML=`<div class="py">${Q.qpy}</div><div class="vi">${Q.qvi}</div>`}
+function qaSkip(){stopRec();clearInterval(qaTimer);qaRecord(null);qaNextStep()}
+function qaAnswer(auto){
+  const Q=qaCur;if(!Q)return;
+  if(!SRC){toast("Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy dùng Chrome hoặc Safari.");return}
+  clearInterval(qaTimer);
+  const timerEl=$("#qa-timer");
+  recordTarget("qa","",{quiet:2500,idle:QA_WAIT*1000,max:40000,qa:true,
+    onEmpty:()=>{clearInterval(qaTimer);timerEl.textContent="";qaResult(null,null)}},
+   (text,info)=>{clearInterval(qaTimer);timerEl.textContent="";qaResult(text,info)});
+  qaTimer=setInterval(()=>{                       // đếm ngược 9 giây để bắt đầu nói
+    const S=rec;if(!S||recKey!=="qa"||!S.listenAt){return}
+    if(S.stamps.length){timerEl.textContent="🎙 Đang nghe câu trả lời… (im lặng khoảng 2 giây thì web tự chấm)";return}
+    const left=Math.max(0,QA_WAIT-(Date.now()-S.listenAt)/1000);
+    timerEl.innerHTML=`⏱ Trả lời ngay! Còn <b>${left.toFixed(0)}</b> giây`;
+  },300);
+}
+function evalAnswer(Q,text,info){
+  const H=normHan(text).join(""),groups=Q.keys;
+  const matched=groups.map(g=>g.some(k=>H.includes(normHan(k).join(""))));
+  const gm=matched.filter(Boolean).length/groups.length,sampleLen=normHan(Q.a).length;
+  const complete=Math.min(1,H.length/Math.max(4,sampleLen*0.7));
+  const content=Math.round(100*(0.75*gm+0.25*complete));
+  const clarity=info.conf!=null?Math.round(info.conf*100):null;
+  const lat=info.first&&info.listenAt?Math.max(0,(info.first-info.listenAt)/1000):null;
+  const reflex=lat==null?null:lat<=2?100:Math.max(0,Math.round(100-(lat-2)/6*100));
+  const fl=fluencyOf(info,H.length,1500);
+  const parts=[content,clarity,reflex,fl?fl.score:null].filter(x=>x!=null);
+  return{H,matched,content,clarity,lat,reflex,fl,overall:Math.round(parts.reduce((a,b)=>a+b,0)/parts.length),complete,gm};
+}
+function qaRecord(E){
+  if(!qaSess)return;
+  qaSess.res.push(E?{q:qaCur.q,overall:E.overall,content:E.content,lat:E.lat,gm:E.gm}:{q:qaCur.q,overall:0,content:0,lat:null,gm:0,skip:true});
+  prog.qa=prog.qa||{done:0,sum:0};prog.qa.done++;prog.qa.sum+=E?E.overall:0;save();
+}
+function qaResult(text,info){
+  const Q=qaCur,box=$("#fb-qa");if(!Q||!box)return;
+  const E=text?evalAnswer(Q,text,info):null;
+  qaRecord(E);
+  const sample=`<div class="qa-sample"><div class="stat"><b>Câu trả lời mẫu</b></div><div class="row"><span class="zh tap" style="font-size:22px" onclick="speak('${Q.a}')">${Q.a}</span>${spkBtn(Q.a)}</div><div class="py">${Q.apy}</div><div class="vi">${Q.avi}</div>
+    <div class="row" style="margin-top:8px"><button class="b mic" data-label="🎤 Đọc theo câu mẫu" id="mic-qa2" onclick="qaShadow()">🎤 Đọc theo câu mẫu</button></div><div id="fb-qa2"></div></div>`;
+  const last=qaSess&&qaSess.i+1>=qaSess.n;
+  const nextBtn=`<div class="row" style="margin-top:12px"><button class="b p" onclick="qaNextStep()">${last?"🏁 Xem tổng kết":"Câu tiếp ▶"}</button></div>`;
+  if(!E){box.innerHTML=`<div class="rr low"><div class="big">⏱ Chưa kịp trả lời</div><div>Hãy thử nói bất kỳ câu nào bằng tiếng Trung ngay khi nghe hỏi, dù chưa hoàn hảo. Phản xạ nhanh quan trọng hơn câu hoàn chỉnh.</div>${sample}${nextBtn}</div>`;return}
+  const tips=[];
+  const miss=Q.keys.filter((g,i)=>!E.matched[i]);
+  if(miss.length)tips.push(`Chưa thấy ý: <b>${miss.map(g=>g.slice(0,3).map(k=>`<span class="zh">${k}</span>`).join(" / ")).join("</b>; <b>")}</b>. Thử dùng mẫu câu như câu mẫu bên dưới.`);else tips.push("✅ Bạn đã trả lời đúng ý câu hỏi.");
+  if(E.complete<0.7)tips.push("Câu trả lời hơi ngắn, hãy nói thành câu đầy đủ (chủ ngữ + động từ).");
+  if(E.lat!=null)tips.push(E.lat<=2?`⚡ Phản xạ rất nhanh (${E.lat.toFixed(1)} giây).`:E.lat<=4?`👍 Phản xạ ổn (${E.lat.toFixed(1)} giây), cố gắng dưới 2 giây.`:`🐢 Phản xạ hơi chậm (${E.lat.toFixed(1)} giây). Hãy nói ngay một từ khóa trước, ví dụ “我…”.`);
+  if(E.clarity!=null&&E.clarity<75)tips.push("Máy nghe chưa rõ: hãy nói chậm hơn, rõ thanh điệu và ở nơi yên tĩnh.");
+  if(E.fl&&E.fl.score<50)tips.push("Còn ngắt quãng nhiều, thử nói liền mạch hơn.");
+  box.innerHTML=`<div class="rr ${E.overall>=70?"good":"low"}"><div class="big"><b>${E.overall}%</b> tổng điểm</div>
+   <div class="scoregrid"><div class="sc"><b>${E.content}%</b>Nội dung</div><div class="sc"><b>${E.reflex==null?"—":E.reflex+"%"}</b>Phản xạ${E.lat==null?"":` (${E.lat.toFixed(1)}s)`}</div><div class="sc"><b>${E.clarity==null?"—":E.clarity+"%"}</b>Độ rõ phát âm</div><div class="sc"><b>${E.fl?E.fl.score+"%":"—"}</b>Trôi chảy</div></div>
+   <ul class="tips">${tips.map(t=>`<li>${t}</li>`).join("")}</ul>
+   <div class="stat">Máy nghe được: <span class="zh">${annotate(text).html}</span></div>${sample}${nextBtn}</div>`;
+}
+function qaShadow(){
+  const Q=qaCur;if(!Q)return;
+  recordTarget("qa2",Q.a,{quiet:4000,idle:15000,max:60000},text=>{
+    const r=compareRead(Q.a,text),pct=Math.round(r.score*100);
+    $("#fb-qa2").innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Đọc theo rất chuẩn.":pct>=70?"👍 Khá tốt.":"💪 Bấm từ đỏ để nghe mẫu rồi đọc lại."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}<div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div></div>`;
+  });
+}
+function qaNextStep(){
+  stopRec();clearInterval(qaTimer);
+  if(!qaSess){return}
+  qaSess.i++;
+  if(qaSess.i>=qaSess.n){qaSummary();return}
+  qaAsk();
+}
+function qaSummary(){
+  const R=qaSess.res,n=R.length,avg=R.reduce((a,b)=>a+b.overall,0)/n;
+  const lats=R.filter(x=>x.lat!=null).map(x=>x.lat),al=lats.length?lats.reduce((a,b)=>a+b,0)/lats.length:null;
+  const fast=lats.filter(x=>x<=2).length,weak=R.filter(x=>x.overall<70);
+  const byQ=Object.fromEntries(QA.map(q=>[q.q,q]));
+  $("#qa-stage").innerHTML=`<div class="card"><h3>🏁 Tổng kết phiên ${n} câu</h3>
+   <div class="scoregrid"><div class="sc"><b>${Math.round(avg)}%</b>Điểm trung bình</div><div class="sc"><b>${al==null?"—":al.toFixed(1)+"s"}</b>Phản xạ trung bình</div><div class="sc"><b>${fast}/${n}</b>Câu trả lời dưới 2 giây</div><div class="sc"><b>${R.filter(x=>!x.skip).length}/${n}</b>Câu đã trả lời</div></div>
+   <p>${avg>=80?"🎉 Rất tốt! Bạn trả lời nhanh và đúng ý.":avg>=60?"👍 Khá ổn. Luyện thêm để phản xạ nhanh hơn.":"💪 Cần luyện thêm. Hãy xem lại câu mẫu và thử lần nữa."}</p>
+   ${weak.length?`<div class="stat"><b>Nên luyện lại các câu này:</b></div>`+weak.map(x=>{const Q=byQ[x.q];return `<div class="sres"><div class="row"><span class="zh tap" style="font-size:20px" onclick="speak('${Q.q}')">${Q.q}</span></div><div class="vi">${Q.qvi}</div><div class="py">Mẫu: ${Q.a} — ${Q.apy}</div></div>`}).join(""):""}
+   <div class="row" style="margin-top:12px"><button class="b p" onclick="qaStart(${QA_LEN})">🔁 Phiên mới</button><button class="b" onclick="qaView()">Về màn hình đầu</button></div></div>`;
+  qaSess=null;
 }
 
 /* ============ BÀI TẬP ============ */

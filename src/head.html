@@ -66,7 +66,7 @@ nav button.on{background:linear-gradient(180deg,var(--pri),var(--pri-d));border-
 nav .ic{font-size:18px}
 @media (max-width:720px){
   nav{position:fixed;top:auto;bottom:0;left:0;right:0;margin:0;max-width:none;padding:6px max(8px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));border-top:1px solid var(--line);background:var(--card);backdrop-filter:none;gap:2px}
-  nav button{flex-direction:column;gap:1px;padding:6px 2px;font-size:11px;border:0;box-shadow:none;border-radius:10px;background:transparent}
+  nav button{flex-direction:column;gap:1px;padding:6px 1px;font-size:10px;border:0;box-shadow:none;border-radius:10px;background:transparent}
   nav button.on{background:var(--pri2);color:var(--pri)}
   nav .ic{font-size:21px}
   body{padding-bottom:78px}
@@ -158,6 +158,12 @@ rt{font:500 .5em/1 system-ui,sans-serif;color:var(--pri);letter-spacing:0}
 .badge{font-weight:700;color:var(--ok)}
 .rr{margin-top:10px;padding:12px 14px;border-radius:14px}
 .rr.good{background:var(--okbg)}.rr.low{background:var(--badbg)}
+.qa-q{font:600 28px/1.4 var(--hanzi);margin:8px 0}
+.scoregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px;text-align:center;font-size:13px;color:var(--mut)}
+.sc b{display:block;font-size:22px;color:var(--ink)}
+.tips{margin:6px 0 8px;padding-left:20px}.tips li{margin:3px 0}
+.qa-sample{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--card)}
 .whole{margin-top:16px;padding:14px;border-radius:14px;background:var(--pri2)}
 .whole-text{font-size:22px;line-height:1.8;margin:6px 0}
 .big{font-size:20px;margin-bottom:4px}
