@@ -3433,3 +3433,671 @@ BOOKS[4]={lessons:[{n:1,zh:"十七歲還是二十五歲？",vi:"17 tuổi hay 25
 短文|對有些人來說，「政治」離他們很遙遠，他們認為無論誰當選都沒有辦法改變社會的問題，照顧自己和家人的生活比選一個好的候選人更重要。他們明明知道社會裡有很多問題，但是也不想關心，就讓政治繼續骯髒下去，讓只顧自身利益的政客當選。|duì yǒu xiē rén lái shuō，「zhèng zhì」 lí tā men hěn yáo yuǎn， tā men rèn wèi wú lùn shuí dāng xuǎn dōu méi yǒu bàn fǎ gǎi biàn shè huì de wèn tí， zhào gù zì jǐ hé jiā rén de shēng huó bǐ xuǎn yí gè hǎo de hòu xuǎn rén gèng zhòng yào。 tā men míng míng zhī dào shè huì lǐ yǒu hěn duō wèn tí， dàn shì yě bù xiǎng guān xīn， jiù ràng zhèng zhì jì xù āng zāng xià qù， ràng zhǐ gù zì shēn lì yì de zhèng kè dāng xuǎn。|Với một số người "chính trị" rất xa vời, họ cho rằng ai trúng cử cũng không đổi được vấn đề xã hội, lo cho bản thân và gia đình quan trọng hơn chọn ứng viên tốt. Họ rõ ràng biết xã hội có nhiều vấn đề nhưng không muốn quan tâm, cứ để chính trị tiếp tục bẩn, để chính khách chỉ lo lợi ích riêng trúng cử.
 短文|人民縱容官商勾結，使得物價上漲、貧富懸殊。大家擔心找不到工作、擔心買不起房子、擔心孩子的教育問題、擔心拿不到老人年金、擔心核能電廠帶來災害、擔心自己的家鄉因工廠密集而遭受汙染。各種問題都無法解決，難道政府辦個活動、放個煙火，人民就忘了這些問題嗎？|rén mín zòng róng guān shāng gōu jié， shǐ de wù jià shàng zhǎng、 pín fù xuán shū。 dà jiā dān xīn zhǎo bú dào gōng zuò、 dān xīn mǎi bù qǐ fáng zi、 dān xīn hái zi de jiào yù wèn tí、 dān xīn ná bú dào lǎo rén nián jīn、 dān xīn hé néng diàn chǎng dài lái zāi hài、 dān xīn zì jǐ de jiā xiāng yīn gōng chǎng mì jí ér zāo shòu wū rǎn。 gè zhǒng wèn tí dōu wú fǎ jiě jué， nán dào zhèng fǔ bàn gè huó dòng、 fàng gè yān huǒ， rén mín jiù wàng le zhè xiē wèn tí ma？|Dân dung túng quan thương cấu kết khiến vật giá tăng, giàu nghèo chênh lệch. Mọi người lo không tìm được việc, không mua nổi nhà, lo giáo dục con, lo không nhận được lương hưu, lo nhà máy điện hạt nhân gây thảm họa, lo quê mình ô nhiễm vì nhà máy dày đặc. Các vấn đề đều không giải quyết, chẳng lẽ chính phủ tổ chức hoạt động, bắn pháo hoa là dân quên những chuyện này?
 短文|政治其實就是所有跟我們息息相關的事情，關心政治就是關心自己的未來，決定下一代過怎麼樣的生活。如果不希望我們的國家發展停滯，人民生活困苦，我們怎麼能不關心政治呢？|zhèng zhì qí shí jiù shì suǒ yǒu gēn wǒ men xī xī xiāng guān de shì qíng， guān xīn zhèng zhì jiù shì guān xīn zì jǐ de wèi lái， jué dìng xià yí dài guò zěn me yàng de shēng huó。 rú guǒ bù xī wàng wǒ men de guó jiā fā zhǎn tíng zhì， rén mín shēng huó kùn kǔ， wǒ men zěn me néng bù guān xīn zhèng zhì ne？|Chính trị thật ra là mọi chuyện liên quan mật thiết đến chúng ta, quan tâm chính trị là quan tâm tương lai mình, quyết định thế hệ sau sống thế nào. Nếu không muốn đất nước đình trệ, dân sống khốn khổ thì sao ta có thể không quan tâm chính trị?`}}]};
+BOOKS[5]={lessons:[{n:1,zh:"言論自由的界線",vi:"Ranh giới của tự do ngôn luận",v:`言論|yánlùn|ngôn luận|N
+界線|jièxiàn|ranh giới|N
+臉書|liǎnshū|Facebook|N
+則|zé|bài, mục (lượng từ cho tin ngắn)|M
+留言|liúyán|bình luận, lời nhắn|N
+停止|tíngzhǐ|dừng, ngừng|Vp
+決策|juécè|quyết sách|N
+無罪|wúzuì|vô tội|Vs
+遭|zāo|bị (câu bị động bất lợi)|Ptc
+慘|cǎn|thảm|Vs
+反應|fǎnyīng|phản ứng|N/V
+發表|fābiǎo|đăng, phát biểu|V
+司法|sīfǎ|tư pháp|Vs-attr
+判決|pànjué|phán quyết|N
+無能|wúnéng|bất tài|Vs
+幸運|xìngyùn|may mắn|Vs
+顧名思義|gùmíngsīyì|nhìn tên là hiểu nghĩa|Idiom
+接收|jiēshōu|tiếp nhận|V
+來源|láiyuán|nguồn|N
+處罰|chùfá|xử phạt|V
+包容|bāoróng|bao dung|Vst
+不論|búlùn|bất kể|Conj
+展現|zhǎnxiàn|thể hiện|V
+胡作非為|húzuòfēiwèi|làm bậy làm càn|Idiom
+一旦|yídàn|một khi|Conj
+工具|gōngjù|công cụ|N
+洗腦|xǐnǎo|tẩy não|Vi
+權益|quányì|quyền lợi|N
+盲點|mángdiǎn|điểm mù|N
+立場|lìchǎng|lập trường|N
+平衡|pínghéng|cân bằng|N
+辯護|biànhù|biện hộ|Vi
+無理取鬧|wúlǐqǔnào|vô cớ gây rối|Idiom
+指正|zhǐzhèng|chỉ ra chỗ sai|V
+一來一往|yìláiyìwǎng|qua lại|Idiom
+真理|zhēnlǐ|chân lý|N
+越辯越明|yuèbiànyuèmíng|càng tranh luận càng rõ|Idiom
+共識|gòngshí|đồng thuận|N
+亂象|luànxiàng|tình trạng hỗn loạn|N
+攻擊|gōngjī|tấn công|V
+自殺|zìshā|tự sát|Vp
+過於|guòyú|quá mức|Adv
+事實上|shìshíshàng|thực tế|Phrase
+仇恨|chóuhèn|thù hận|N
+不實|bùshí|sai sự thật|Vs-attr
+謠言|yáoyán|tin đồn|N
+霸凌|bàlíng|bắt nạt|N/V
+負責|fùzé|chịu trách nhiệm|Vs
+誤解|wùjiě|hiểu lầm|V
+意義|yìyì|ý nghĩa|N
+因此|yīncǐ|do đó|Adv
+否定|fǒudìng|phủ định|V
+價值|jiàzhí|giá trị|N
+封住|fēngzhù|bịt lại|V
+嘴|zuǐ|miệng, lời nói|N
+混亂|hùnluàn|hỗn loạn|Vs
+唯一|wéiyī|duy nhất|Vs-attr
+濫用|lànyòng|lạm dụng|V
+並非|bìngfēi|không phải|Adv
+不用|búyòng|không cần|Adv
+抓|zhuā|bắt|V
+關|guān|nhốt|V
+名嘴|míngzuǐ|bình luận viên truyền hình|N
+根據|gēnjù|căn cứ|N
+隨意|suíyì|tùy tiện|Adv
+鄉民|xiāngmín|cư dân mạng|N
+匿名|nìmíng|ẩn danh|Vi
+正義|zhèngyì|chính nghĩa|N
+惡意|èyì|ác ý|Adv/N
+情緒|qíngxù|cảm xúc|N
+成|chéng|trở thành|Vpt
+護身符|hùshēnfú|bùa hộ mệnh|N
+傳播|chuánbō|lan truyền|V
+驚人|jīngrén|đáng kinh ngạc|Vs
+股|gǔ|luồng (lượng từ cho sức mạnh)|M
+有心|yǒuxīn|cố ý|Vs
+無意|wúyì|vô ý|Vs
+威脅|wēixié|đe dọa|N/V
+諷刺|fěngcì|châm biếm|V
+得|dé|mắc (bệnh)|Vpt
+憂鬱症|yōuyùzhèng|trầm cảm|N
+閉嘴|bìzuǐ|im miệng|V-sep
+回應|huíyīng|phản hồi|V/N
+傷害|shānghài|làm tổn thương|V/N
+破壞|pòhuài|phá hoại|V
+管|guǎn|quản, để ý|V
+聰明|cōngmíng|thông minh|Vs
+標題|biāotí|tiêu đề|N
+懷疑|huáiyí|nghi ngờ|Vst
+模糊|móhú|mơ hồ|Vs
+擅長|shànzhǎng|giỏi về|Vst
+灰色|huīsè|màu xám|N
+地帶|dìdài|khu vực|N
+法院|fǎyuàn|tòa án|N
+確定|quèdìng|xác định|V
+個人|gèrén|cá nhân|N
+承擔|chéngdān|gánh vác|V
+和諧|héxié|hài hòa|Vs
+制定|zhìdìng|ban hành|V
+嚴格|yángé|nghiêm khắc|Vs
+約束|yuēshù|ràng buộc|V`,d:{l:`新聞|聽到颱風假只放半天的消息，許多網友上網表達意見，不到兩個小時，市長的臉書就有超過兩千則的留言，不久，政府決定改為全天停止上班上課。民眾的言論真的影響了政府的決策？|tīng dào tái fēng jiǎ zhǐ fàng bàn tiān de xiāo xī， xǔ duō wǎng yǒu shàng wǎng biǎo dá yì jiàn， bú dào liǎng gè xiǎo shí， shì zhǎng de liǎn shū jiù yǒu chāo guò liǎng qiān zé de liú yán， bù jiǔ， zhèng fǔ jué dìng gǎi wèi quán tiān tíng zhǐ shàng bān shàng kè。 mín zhòng de yán lùn zhēn de yǐng xiǎng le zhèng fǔ de jué cè？|Nghe tin nghỉ bão chỉ nghỉ nửa ngày, nhiều cư dân mạng lên mạng bày tỏ ý kiến, chưa đầy hai tiếng Facebook thị trưởng đã có hơn hai nghìn bình luận, không lâu sau chính quyền quyết định nghỉ làm nghỉ học cả ngày. Lời của dân thật sự ảnh hưởng quyết sách của chính phủ?
+文章|言論自由，顧名思義，是指人人都有表達意見和想法的權利，這是民主制度的基礎。每個人都能接收各種來源的訊息，不受檢查及限制，也不必擔心說了什麼以後會被處罰。這樣的社會包容各種不同意見，即使是批評、反對也不例外。|yán lùn zì yóu， gù míng sī yì， shì zhǐ rén rén dōu yǒu biǎo dá yì jiàn hé xiǎng fǎ de quán lì， zhè shì mín zhǔ zhì dù de jī chǔ。 měi gè rén dōu néng jiē shōu gè zhǒng lái yuán de xùn xī， bú shòu jiǎn chá jí xiàn zhì， yě bú bì dān xīn shuō le shén me yǐ hòu huì bèi chù fá。 zhè yàng de shè huì bāo róng gè zhǒng bù tóng yì jiàn， jí shǐ shì pī píng、 fǎn duì yě bú lì wài。|Tự do ngôn luận, đúng như tên, là ai cũng có quyền bày tỏ ý kiến và suy nghĩ, đây là nền tảng của chế độ dân chủ. Ai cũng tiếp nhận thông tin từ nhiều nguồn mà không bị kiểm duyệt hay hạn chế, cũng không phải lo nói gì rồi bị phạt. Xã hội như vậy bao dung mọi ý kiến khác nhau, kể cả phê bình, phản đối cũng không ngoại lệ.
+文章|不論是在媒體上發表文章或上街抗議，都展現了言論自由的力量。正因為有言論自由，政府的決策受到人民的監督，無法胡作非為。想想看，一旦政府把發言權當做政治工具，民眾怎麼會不被洗腦？在言論被限制的情況下，還有人敢說真話嗎？人民又怎麼有機會爭取自己的權益？|bú lùn shì zài méi tǐ shàng fā biǎo wén zhāng huò shàng jiē kàng yì， dōu zhǎn xiàn le yán lùn zì yóu de lì liàng。 zhèng yīn wèi yǒu yán lùn zì yóu， zhèng fǔ de jué cè shòu dào rén mín de jiān dū， wú fǎ hú zuò fēi wèi。 xiǎng xiǎng kàn， yí dàn zhèng fǔ bǎ fā yán quán dāng zuò zhèng zhì gōng jù， mín zhòng zěn me huì bú bèi xǐ nǎo？ zài yán lùn bèi xiàn zhì de qíng kuàng xià， hái yǒu rén gǎn shuō zhēn huà ma？ rén mín yòu zěn me yǒu jī huì zhēng qǔ zì jǐ de quán yì？|Dù đăng bài trên truyền thông hay xuống đường phản đối đều thể hiện sức mạnh của tự do ngôn luận. Chính vì có tự do ngôn luận nên quyết sách của chính phủ chịu sự giám sát của dân, không thể làm càn. Thử nghĩ, một khi chính phủ coi quyền phát ngôn là công cụ chính trị, dân sao không bị tẩy não? Khi ngôn luận bị hạn chế còn ai dám nói thật? Dân lấy đâu cơ hội giành quyền lợi?
+文章|人都有盲點，所以意見越是多元，不同立場的觀點越能得到平衡；當你受到批評，也有言論權來替自己辯護。如果有理，大家會跟你站在同一邊；若是無理取鬧，為反對而反對，也會有人跳出來批評指正。透過一來一往的討論和批評，真理將越辯越明，社會共識也慢慢形成。只有一種聲音的社會是無法進步的。|rén dōu yǒu máng diǎn， suǒ yǐ yì jiàn yuè shì duō yuán， bù tóng lì chǎng de guān diǎn yuè néng dé dào píng héng； dāng nǐ shòu dào pī píng， yě yǒu yán lùn quán lái tì zì jǐ biàn hù。 rú guǒ yǒu lǐ， dà jiā huì gēn nǐ zhàn zài tóng yì biān； ruò shì wú lǐ qǔ nào， wèi fǎn duì ér fǎn duì， yě huì yǒu rén tiào chū lái pī píng zhǐ zhèng。 tòu guò yì lái yì wǎng de tǎo lùn hé pī píng， zhēn lǐ jiāng yuè biàn yuè míng， shè huì gòng shí yě màn màn xíng chéng。 zhǐ yǒu yì zhǒng shēng yīn de shè huì shì wú fǎ jìn bù de。|Ai cũng có điểm mù nên ý kiến càng đa dạng, quan điểm các lập trường càng được cân bằng; khi bị phê bình bạn cũng có quyền ngôn luận để tự biện hộ. Nếu có lý mọi người đứng về phía bạn; nếu vô cớ gây rối, phản đối chỉ để phản đối cũng sẽ có người lên chỉ ra. Qua thảo luận và phê bình qua lại, chân lý càng tranh luận càng sáng, đồng thuận xã hội dần hình thành. Xã hội chỉ có một tiếng nói thì không thể tiến bộ.
+文章|然而，每當提到媒體亂象，或是有人因為受不了網友的言論攻擊而自殺，大家就會開始批評言論過於自由。事實上，法律早就已經禁止發表仇恨性言論及不實謠言，那些仇恨性言論、不實內容所造成的霸凌現象，不是因為言論過於自由，而是因為那些人不懂得為自己的言論負責，誤解「言論自由」的意義。這是教育的問題，不該因此否定言論自由的價值，封住人民的嘴。|rán ér， měi dāng tí dào méi tǐ luàn xiàng， huò shì yǒu rén yīn wèi shòu bù liǎo wǎng yǒu de yán lùn gōng jī ér zì shā， dà jiā jiù huì kāi shǐ pī píng yán lùn guò yú zì yóu。 shì shí shàng， fǎ lǜ zǎo jiù yǐ jīng jìn zhǐ fā biǎo chóu hèn xìng yán lùn jí bù shí yáo yán， nà xiē chóu hèn xìng yán lùn、 bù shí nèi róng suǒ zào chéng de bà líng xiàn xiàng， bú shì yīn wèi yán lùn guò yú zì yóu， ér shì yīn wèi nà xiē rén bù dǒng de wèi zì jǐ de yán lùn fù zé， wù jiě 「yán lùn zì yóu」 de yì yì。 zhè shì jiào yù de wèn tí， bù gāi yīn cǐ fǒu dìng yán lùn zì yóu de jià zhí， fēng zhù rén mín de zuǐ。|Tuy nhiên mỗi khi nhắc loạn tượng truyền thông hoặc có người vì không chịu nổi công kích của cư dân mạng mà tự tử, mọi người bắt đầu chê ngôn luận quá tự do. Thực tế luật pháp từ lâu đã cấm ngôn luận thù hận và tin đồn sai sự thật, hiện tượng bắt nạt do những nội dung đó không phải vì ngôn luận quá tự do mà vì họ không biết chịu trách nhiệm về lời mình, hiểu sai ý nghĩa "tự do ngôn luận". Đó là vấn đề giáo dục, không nên vì thế phủ nhận giá trị của tự do ngôn luận, bịt miệng người dân.
+文章|我們應該保護言論自由，因為這是讓有價值的想法，在這個混亂的時代裡，發出聲音的唯一方式。|wǒ men yīng gāi bǎo hù yán lùn zì yóu， yīn wèi zhè shì ràng yǒu jià zhí de xiǎng fǎ， zài zhè gè hùn luàn de shí dài lǐ， fā chū shēng yīn de wéi yì fāng shì。|Chúng ta nên bảo vệ tự do ngôn luận vì đó là cách duy nhất để những ý tưởng có giá trị cất tiếng trong thời đại hỗn loạn này.
+評論|在自由民主的社會裡，每個人都可以說出自己想說的話，不用擔心會因為反對政府、批評總統，甚至說錯一個字而被抓去關。可惜，很多人都濫用了這種自由。打開電視，名嘴們不是說著毫無根據的內容，就是隨意批評；網路上，鄉民躲在匿名制度的保護傘下，讓謠言滿天飛，或是自以為正義，惡意批評，引起更多的負面情緒。言論自由簡直成了這些人的護身符，難道他們都不需要為自己所說的話負責嗎？吵個不停，真理就會越辯越明嗎？|zài zì yóu mín zhǔ de shè huì lǐ， měi gè rén dōu kě yǐ shuō chū zì jǐ xiǎng shuō de huà， bú yòng dān xīn huì yīn wèi fǎn duì zhèng fǔ、 pī píng zǒng tǒng， shèn zhì shuō cuò yí gè zì ér bèi zhuā qù guān。 kě xī， hěn duō rén dōu làn yòng le zhè zhǒng zì yóu。 dǎ kāi diàn shì， míng zuǐ men bú shì shuō zhù háo wú gēn jù de nèi róng， jiù shì suí yì pī píng； wǎng lù shàng， xiāng mín duǒ zài nì míng zhì dù de bǎo hù sǎn xià， ràng yáo yán mǎn tiān fēi， huò shì zì yǐ wèi zhèng yì， è yì pī píng， yǐn qǐ gèng duō de fù miàn qíng xù。 yán lùn zì yóu jiǎn zhí chéng le zhè xiē rén de hù shēn fú， nán dào tā men dōu bù xū yào wèi zì jǐ suǒ shuō de huà fù zé ma？ chǎo gè bù tíng， zhēn lǐ jiù huì yuè biàn yuè míng ma？|Trong xã hội tự do dân chủ, ai cũng có thể nói điều mình muốn, không lo bị bắt giam vì phản đối chính phủ, phê bình tổng thống, thậm chí nói sai một chữ. Tiếc là nhiều người đã lạm dụng tự do này. Mở tivi, các bình luận viên không nói nội dung vô căn cứ thì cũng chê bai tùy tiện; trên mạng cư dân mạng nấp dưới chiếc ô ẩn danh để tin đồn bay đầy trời, hoặc tự cho mình chính nghĩa, ác ý phê bình, gây thêm cảm xúc tiêu cực. Tự do ngôn luận gần như thành bùa hộ mệnh của họ, chẳng lẽ họ không cần chịu trách nhiệm về lời mình nói? Cãi mãi thì chân lý có càng tranh luận càng sáng không?
+評論|言論自由不能完全沒有限制，網路言論尤其如此。網路匿名方式讓許多人更大膽地表達意見，加上網路傳播速度快，因此影響力更強大、更驚人。然而，這股力量可能在人們有心或無意的情況下，對個人或社會造成威脅。的確，言論自由是每個人的權利，但是我們看到太多自由被濫用的例子。只要立場不同，就攻擊、諷刺，可是不見得每個人都能輕鬆面對這樣的言論。有人因此而得了憂鬱症，甚至自殺；多數人則選擇閉嘴不回應。網路鄉民以「言論自由」之名傷害別人，不正是破壞了言論自由嗎？|yán lùn zì yóu bù néng wán quán méi yǒu xiàn zhì， wǎng lù yán lùn yóu qí rú cǐ。 wǎng lù nì míng fāng shì ràng xǔ duō rén gèng dà dǎn dì biǎo dá yì jiàn， jiā shàng wǎng lù chuán bō sù dù kuài， yīn cǐ yǐng xiǎng lì gèng qiáng dà、 gèng jīng rén。 rán ér， zhè gǔ lì liàng kě néng zài rén men yǒu xīn huò wú yì de qíng kuàng xià， duì gè rén huò shè huì zào chéng wēi xié。 de què， yán lùn zì yóu shì měi gè rén de quán lì， dàn shì wǒ men kàn dào tài duō zì yóu bèi làn yòng de lì zi。 zhǐ yào lì chǎng bù tóng， jiù gōng jī、 fěng cì， kě shì bú jiàn dé měi gè rén dōu néng qīng sōng miàn duì zhè yàng de yán lùn。 yǒu rén yīn cǐ ér dé le yōu yù zhèng， shèn zhì zì shā； duō shù rén zé xuǎn zé bì zuǐ bù huí yīng。 wǎng lù xiāng mín yǐ 「yán lùn zì yóu」 zhī míng shāng hài bié rén， bú zhèng shì pò huài le yán lùn zì yóu ma？|Tự do ngôn luận không thể hoàn toàn không giới hạn, ngôn luận mạng càng như vậy. Ẩn danh trên mạng khiến nhiều người dám nói hơn, cộng tốc độ lan truyền nhanh nên sức ảnh hưởng càng mạnh, càng kinh người. Tuy nhiên sức mạnh này, dù cố ý hay vô ý, có thể đe dọa cá nhân hay xã hội. Quả thật tự do ngôn luận là quyền của mọi người, nhưng ta thấy quá nhiều ví dụ tự do bị lạm dụng. Hễ khác lập trường là công kích, châm biếm, mà không phải ai cũng nhẹ nhàng đối diện. Có người vì thế mắc trầm cảm, thậm chí tự tử; đa số chọn im lặng không phản hồi. Cư dân mạng nhân danh "tự do ngôn luận" làm tổn thương người khác chẳng phải đang phá hoại tự do ngôn luận sao?
+評論|除了網路，媒體人更應該管好自己的嘴巴。雖然目前有法律來處罰仇恨和歧視性言論，但事實上，媒體聰明得很，他們在標題加上「？」「懷疑」或是「可能」這種模糊的方式，就是為了避開責任，法律根本處罰不到他們。名嘴們就更不用說了，他們擅長走在灰色地帶，就算被告，等法院判決確定，還不知得等多久，但傷害卻早就已經造成。|chú le wǎng lù， méi tǐ rén gèng yīng gāi guǎn hǎo zì jǐ de zuǐ bā。 suī rán mù qián yǒu fǎ lǜ lái chù fá chóu hèn hé qí shì xìng yán lùn， dàn shì shí shàng， méi tǐ cōng míng dé hěn， tā men zài biāo tí jiā shàng 「？」「huái yí」 huò shì 「kě néng」 zhè zhǒng mó hú de fāng shì， jiù shì wèi le bì kāi zé rèn， fǎ lǜ gēn běn chù fá bú dào tā men。 míng zuǐ men jiù gèng bú yòng shuō le， tā men shàn zhǎng zǒu zài huī sè dì dài， jiù suàn bèi gào， děng fǎ yuàn pàn jué què dìng， hái bù zhī dé děng duō jiǔ， dàn shāng hài què zǎo jiù yǐ jīng zào chéng。|Ngoài mạng, người làm truyền thông càng nên quản miệng mình. Dù hiện có luật phạt ngôn luận thù hận và kỳ thị, nhưng thực tế truyền thông rất khôn, họ thêm "?", "nghi ngờ" hay "có thể" vào tiêu đề kiểu mơ hồ để né trách nhiệm, luật không phạt được họ. Các bình luận viên khỏi nói, họ giỏi đi trong vùng xám, dù bị kiện đợi tòa phán quyết chưa biết đến bao giờ, nhưng tổn thương đã gây ra từ lâu.
+評論|為了解決社會亂象，小自個人，大至媒體，在享受言論自由的同時，也必須承擔起相關責任；否則，政府就應該為了民眾安全與社會和諧而制定更嚴格的法律，約束已被濫用的言論自由。|wèi liǎo jiě jué shè huì luàn xiàng， xiǎo zì gè rén， dà zhì méi tǐ， zài xiǎng shòu yán lùn zì yóu de tóng shí， yě bì xū chéng dān qǐ xiāng guān zé rèn； fǒu zé， zhèng fǔ jiù yīng gāi wèi le mín zhòng ān quán yǔ shè huì hé xié ér zhì dìng gèng yán gé de fǎ lǜ， yuē shù yǐ bèi làn yòng de yán lùn zì yóu。|Để giải quyết loạn tượng xã hội, nhỏ từ cá nhân lớn đến truyền thông, khi hưởng tự do ngôn luận cũng phải gánh trách nhiệm liên quan; nếu không chính phủ phải vì an toàn dân chúng và hài hòa xã hội mà ban hành luật nghiêm hơn, ràng buộc tự do ngôn luận đã bị lạm dụng.`}},{n:2,zh:"關於基改食品，我有話要說",vi:"Tôi có điều muốn nói về thực phẩm biến đổi gen",v:`基改|jīgǎi|biến đổi gen (viết tắt)|N
+農糧|nóngliáng|nông sản lương thực|N
+廣播節目|guǎngbōjiémù|chương trình phát thanh|N
+主持人|zhǔchírén|người dẫn chương trình|N
+聽眾|tīngzhòng|thính giả|N
+播|bō|phát sóng|V
+蟲子|chóngzi|côn trùng|N
+隔壁|gébì|bên cạnh|N
+回答|huídá|trả lời|V
+死|sǐ|chết|V
+話題|huàtí|chủ đề|N
+危害|wēihài|gây hại|V
+贊成|zànchéng|tán thành|V
+各式各樣|gèshìgèyàng|đủ loại|Phrase
+只不過|zhǐbúguò|chỉ là|Adv
+種子|zhǒngzi|hạt giống|N
+比如說|bǐrúshuō|ví dụ|Phrase
+維他命|wéitāmìng|vitamin|N
+蔬果|shūguǒ|rau quả|N
+抗癌|kàngái|chống ung thư|Vs
+過敏|guòmǐn|dị ứng|Vs
+花生|huāshēng|đậu phộng|N
+科學家|kēxuéjiā|nhà khoa học|N
+豐富|fēngfù|phong phú|Vs
+享用|xiǎngyòng|thưởng thức|V
+達到|dádào|đạt được|Vpt
+預防|yùfáng|phòng ngừa|V
+疾病|jíbìng|bệnh tật|N
+效果|xiàoguǒ|hiệu quả|N
+好幾(種)|hǎojǐ(zhǒng)|nhiều (loại)|Phrase
+警告|jǐnggào|cảnh báo|N/V
+突破|tūpò|vượt qua, đột phá|V
+糧食|liángshí|lương thực|N
+早晚|zǎowǎn|sớm muộn|Adv
+不僅|bùjǐn|không chỉ|Adv
+農作物|nóngzuòwù|cây trồng|N
+抵抗力|dǐkànglì|sức đề kháng|N
+蟲害|chónghài|sâu bệnh|N
+產量|chǎnliàng|sản lượng|N
+飢荒|jīhuāng|nạn đói|N
+含有|hányǒu|chứa|Vst
+大豆|dàdòu|đậu nành|N
+玉米|yùmǐ|bắp, ngô|N
+密不可分|mìbùkěfēn|không thể tách rời|Idiom
+生產|shēngchǎn|sản xuất|V
+缺少|quēshǎo|thiếu|Vst
+依賴|yīlài|dựa vào|V
+進口|jìnkǒu|nhập khẩu|V
+危機|wēijī|khủng hoảng|N
+生物科技|shēngwùkējì|công nghệ sinh học|N
+機構|jīgòu|cơ quan, tổ chức|N
+證據|zhèngjù|chứng cứ|N
+證明|zhèngmíng|chứng minh|V/N
+人體|réntǐ|cơ thể người|N
+結論|jiélùn|kết luận|N
+生長|shēngzhǎng|sinh trưởng|V
+除草劑|chúcǎojì|thuốc diệt cỏ|N
+物質|wùzhì|vật chất|N
+怪物|guàiwù|quái vật|N
+原料|yuánliào|nguyên liệu|N
+包裝|bāozhuāng|bao bì|N
+標示|biāoshì|ghi nhãn|V/N
+一切|yíqiè|tất cả|Det`,d:{l:`主持人|聽眾朋友大家好！我是「健康加油站」節目主持人張成方。今天中午我在一家麵店用餐，電視正播著基因改造食品新聞。我聽見老闆說：「基因改造不但可以減少農藥的使用，還能夠殺死蟲子，有什麼不好的？」隔壁桌的客人回答：「蟲子會死，人吃了就不會有問題嗎？」基改食品究竟安不安全，是大家都關心的話題，就像手機、核能一樣，帶給我們方便，卻也可能危害健康。到底該怎麼選擇呢？首先，我們來聽聽贊成的人怎麼說：|tīng zhòng péng yǒu dà jiā hǎo！ wǒ shì 「jiàn kāng jiā yóu zhàn」 jié mù zhǔ chí rén zhāng chéng fāng。 jīn tiān zhōng wǔ wǒ zài yì jiā miàn diàn yòng cān， diàn shì zhèng bō zhù jī yīn gǎi zào shí pǐn xīn wén。 wǒ tīng jiàn lǎo bǎn shuō：「jī yīn gǎi zào bú dàn kě yǐ jiǎn shǎo nóng yào de shǐ yòng， hái néng gòu shā sǐ chóng zi， yǒu shén me bù hǎo de？」 gé bì zhuō de kè rén huí dá：「chóng zi huì sǐ， rén chī le jiù bú huì yǒu wèn tí ma？」 jī gǎi shí pǐn jiū jìng ān bù ān quán， shì dà jiā dōu guān xīn de huà tí， jiù xiàng shǒu jī、 hé néng yí yàng， dài gěi wǒ men fāng biàn， què yě kě néng wēi hài jiàn kāng。 dào dǐ gāi zěn me xuǎn zé ne？ shǒu xiān， wǒ men lái tīng tīng zàn chéng de rén zěn me shuō：|Xin chào quý thính giả! Tôi là Trương Thành Phương, người dẫn chương trình "Trạm tiếp sức sức khỏe". Trưa nay tôi ăn ở một tiệm mì, tivi đang đưa tin thực phẩm biến đổi gen. Tôi nghe ông chủ nói: "Biến đổi gen không những giảm dùng thuốc trừ sâu mà còn diệt được sâu bọ, có gì không tốt?" Khách bàn bên đáp: "Sâu chết thì người ăn không sao à?" Thực phẩm biến đổi gen có an toàn hay không là chủ đề mọi người quan tâm, như điện thoại, năng lượng hạt nhân, mang lại tiện lợi nhưng cũng có thể hại sức khỏe. Rốt cuộc nên chọn thế nào? Trước hết nghe người tán thành nói:
+醫師|大家想想看，超市、早餐店、夜市，各式各樣基因改造的食物早就進了我們的肚子裡了。基因改造，簡單地說，只不過是利用科學技術，把更新、更好的基因，加在原來的種子裡而已。比如說含有更多維他命A的蔬果、能抗癌的番茄、不會引起過敏的花生……等等。科學家證實，這些基因改造的食物不但有豐富的營養價值，也讓大家在享用美味的同時，達到預防疾病的效果。|dà jiā xiǎng xiǎng kàn， chāo shì、 zǎo cān diàn、 yè shì， gè shì gè yàng jī yīn gǎi zào de shí wù zǎo jiù jìn le wǒ men de dǔ zi lǐ le。 jī yīn gǎi zào， jiǎn dān dì shuō， zhǐ bú guò shì lì yòng kē xué jì shù， bǎ gēng xīn、 gèng hǎo de jī yīn， jiā zài yuán lái de zhǒng zi lǐ ér yǐ。 bǐ rú shuō hán yǒu gèng duō wéi tā mìng A de shū guǒ、 néng kàng ái de fān qié、 bú huì yǐn qǐ guò mǐn de huā shēng …… děng děng。 kē xué jiā zhèng shí， zhè xiē jī yīn gǎi zào de shí wù bú dàn yǒu fēng fù de yíng yǎng jià zhí， yě ràng dà jiā zài xiǎng yòng měi wèi de tóng shí， dá dào yù fáng jí bìng de xiào guǒ。|Mọi người thử nghĩ xem, siêu thị, quán ăn sáng, chợ đêm, đủ loại thực phẩm biến đổi gen đã vào bụng chúng ta từ lâu. Biến đổi gen nói đơn giản chỉ là dùng kỹ thuật khoa học thêm gen mới, tốt hơn vào hạt giống ban đầu. Ví dụ rau quả chứa nhiều vitamin A, cà chua chống ung thư, đậu phộng không gây dị ứng… Các nhà khoa học xác nhận những thực phẩm này không chỉ giàu giá trị dinh dưỡng mà còn giúp phòng bệnh khi thưởng thức món ngon.
+醫師|現代人為了健康，每天都必須吃好幾種蔬菜；但是未來，一餐基改食物就能提供我們一天所需要的營養。既然越改越進步，為什麼還有人要反對呢？|xiàn dài rén wèi le jiàn kāng， měi tiān dōu bì xū chī hǎo jǐ zhǒng shū cài； dàn shì wèi lái， yì cān jī gǎi shí wù jiù néng tí gōng wǒ men yì tiān suǒ xū yào de yíng yǎng。 jì rán yuè gǎi yuè jìn bù， wèi shén me hái yǒu rén yào fǎn duì ne？|Người hiện đại vì sức khỏe mỗi ngày phải ăn vài loại rau; nhưng tương lai một bữa thực phẩm biến đổi gen đủ cung cấp dinh dưỡng cả ngày. Đã càng sửa càng tiến bộ, sao vẫn có người phản đối?
+農業研究員|我認為基改食物最大的好處是能夠解決許多問題。專家們已經提出警告，全球人口將在2050年突破百億，加上氣候不正常，糧食不足的問題早晚會發生。基改技術不僅可以減少農藥的使用、降低成本、增加農作物的抵抗力、預防蟲害、減少環境汙染，更重要的是可以提高產量，解決飢荒。|wǒ rèn wèi jī gǎi shí wù zuì dà de hǎo chù shì néng gòu jiě jué xǔ duō wèn tí。 zhuān jiā men yǐ jīng tí chū jǐng gào， quán qiú rén kǒu jiāng zài 2050 nián tū pò bǎi yì， jiā shàng qì hòu bú zhèng cháng， liáng shí bù zú de wèn tí zǎo wǎn huì fā shēng。 jī gǎi jì shù bù jǐn kě yǐ jiǎn shǎo nóng yào de shǐ yòng、 jiàng dī chéng běn、 zēng jiā nóng zuò wù de dǐ kàng lì、 yù fáng chóng hài、 jiǎn shǎo huán jìng wū rǎn， gèng zhòng yào de shì kě yǐ tí gāo chǎn liàng， jiě jué jī huāng。|Tôi cho rằng lợi ích lớn nhất của thực phẩm biến đổi gen là giải quyết nhiều vấn đề. Chuyên gia đã cảnh báo dân số toàn cầu sẽ vượt mười tỷ vào năm 2050, cộng khí hậu bất thường, thiếu lương thực sớm muộn xảy ra. Kỹ thuật này không chỉ giảm dùng thuốc trừ sâu, hạ chi phí, tăng sức đề kháng cây trồng, phòng sâu bệnh, giảm ô nhiễm mà quan trọng hơn là tăng sản lượng, giải quyết nạn đói.
+農業研究員|再說，含有基改大豆、玉米的食品早就與我們的生活密不可分。美國是生產基改食物最多的國家，多數人都能接受基改食物，我們何必擔心呢？而且一旦缺少糧食，必須依賴進口，將造成嚴重的經濟危機。基改的影響這麼大，我們都應該支持才對。|zài shuō， hán yǒu jī gǎi dà dòu、 yù mǐ de shí pǐn zǎo jiù yǔ wǒ men de shēng huó mì bù kě fēn。 měi guó shì shēng chǎn jī gǎi shí wù zuì duō de guó jiā， duō shù rén dōu néng jiē shòu jī gǎi shí wù， wǒ men hé bì dān xīn ne？ ér qiě yí dàn quē shǎo liáng shí， bì xū yī lài jìn kǒu， jiāng zào chéng yán zhòng de jīng jì wēi jī。 jī gǎi de yǐng xiǎng zhè me dà， wǒ men dōu yīng gāi zhī chí cái duì。|Hơn nữa thực phẩm chứa đậu nành, bắp biến đổi gen đã gắn bó không tách rời với đời sống ta. Mỹ là nước sản xuất nhiều thực phẩm biến đổi gen nhất, đa số người chấp nhận, ta lo làm gì? Hơn nữa một khi thiếu lương thực phải dựa vào nhập khẩu sẽ gây khủng hoảng kinh tế nghiêm trọng. Ảnh hưởng của biến đổi gen lớn như vậy, chúng ta đều nên ủng hộ mới đúng.
+生物科技公司經理|「基改食品有害健康」這種說法毫無科學根據可言。最新的一項報導指出，25年來，超過500個機構研究了大量的基改農產品，直到現在都沒有足夠的證據可以證明基改作物對人體和環境有害。他們的結論是：基改作物與傳統作物一樣安全。|「jī gǎi shí pǐn yǒu hài jiàn kāng」 zhè zhǒng shuō fǎ háo wú kē xué gēn jù kě yán。 zuì xīn de yí xiàng bào dǎo zhǐ chū，25 nián lái， chāo guò 500 gè jī gòu yán jiū le dà liàng de jī gǎi nóng chǎn pǐn， zhí dào xiàn zài dōu méi yǒu zú gòu de zhèng jù kě yǐ zhèng míng jī gǎi zuò wù duì rén tǐ hé huán jìng yǒu hài。 tā men de jié lùn shì： jī gǎi zuò wù yǔ chuán tǒng zuò wù yí yàng ān quán。|Nói "thực phẩm biến đổi gen hại sức khỏe" hoàn toàn không có căn cứ khoa học. Một báo cáo mới nhất cho biết trong 25 năm hơn 500 cơ quan nghiên cứu lượng lớn nông sản biến đổi gen, đến nay vẫn chưa đủ bằng chứng chứng minh cây trồng này hại cơ thể và môi trường. Kết luận của họ: cây trồng biến đổi gen an toàn như truyền thống.
+生物科技公司經理|英國有位農業專家也表示，有問題的其實是在農作物生長過程中所使用的農藥，如除草劑等物質，而不是基改科技本身，所以不需要把基改科技當成怪物，自己嚇自己。此外，按照我國的法律，只要食品中含有基改原料，都必須在包裝上清楚標示，消費者不必擔心。總而言之，我們可以自由地選擇，享受科技帶來的一切美好與便利。|yīng guó yǒu wèi nóng yè zhuān jiā yě biǎo shì， yǒu wèn tí de qí shí shì zài nóng zuò wù shēng zhǎng guò chéng zhōng suǒ shǐ yòng de nóng yào， rú chú cǎo jì děng wù zhì， ér bú shì jī gǎi kē jì běn shēn， suǒ yǐ bù xū yào bǎ jī gǎi kē jì dāng chéng guài wù， zì jǐ xià zì jǐ。 cǐ wài， àn zhào wǒ guó de fǎ lǜ， zhǐ yào shí pǐn zhōng hán yǒu jī gǎi yuán liào， dōu bì xū zài bāo zhuāng shàng qīng chǔ biāo shì， xiāo fèi zhě bú bì dān xīn。 zǒng ér yán zhī， wǒ men kě yǐ zì yóu dì xuǎn zé， xiǎng shòu kē jì dài lái de yí qiè měi hǎo yǔ biàn lì。|Một chuyên gia nông nghiệp Anh cũng cho biết thứ có vấn đề thật ra là thuốc trừ sâu, thuốc diệt cỏ dùng trong quá trình cây lớn chứ không phải công nghệ biến đổi gen, nên không cần coi nó là quái vật tự dọa mình. Ngoài ra theo luật nước ta, thực phẩm có nguyên liệu biến đổi gen đều phải ghi rõ trên bao bì, người tiêu dùng không cần lo. Tóm lại ta có thể tự do lựa chọn, hưởng mọi điều tốt đẹp và tiện lợi công nghệ mang lại.`}},{n:3,zh:"整型好不好",vi:"Phẫu thuật thẩm mỹ có tốt không?",v:`風氣|fēngqì|phong khí, trào lưu|N
+開放|kāifàng|cởi mở|Vs
+意外|yìwài|tai nạn, bất ngờ|N
+存在|cúnzài|tồn tại|V
+內在|nèizài|nội tại, bên trong|N
+特質|tèzhì|đặc tính|N
+勝|shèng|hơn, thắng (văn ngôn)|V
+醜|chǒu|xấu|Vs
+顏值|yánzhí|nhan sắc (giá trị gương mặt)|N
+他人|tārén|người khác|N
+不盡然|bùjǐnrán|chưa hẳn|Adv
+要求|yāoqiú|yêu cầu|V
+整出|zhěngchū|chỉnh ra (bằng phẫu thuật)|V
+鼻子|bízi|mũi|N
+皮膚|pífū|da|N
+纖|xiān|thon, mảnh|Vs
+腰|yāo|eo|N
+豐胸|fēngxiōng|ngực đầy|Vs
+高挺|gāotǐng|cao thẳng (mũi)|Vs
+水汪汪|shuǐwāngwāng|long lanh nước|Phrase
+參賽|cānsài|tham gia thi|Vi
+眼光|yǎnguāng|ánh mắt, con mắt|N
+矛盾|máodùn|mâu thuẫn|Vs
+外貌|wàimào|ngoại hình|N
+美滿|měimǎn|mỹ mãn|Vs
+職涯|zhíyá|sự nghiệp|N
+以貌取人|yǐmàoqǔrén|đánh giá người qua vẻ ngoài|Idiom
+不計一切|bújìyíqiè|bất chấp tất cả|Idiom
+英俊|yīngjùn|điển trai|Vs
+獲得|huòdé|đạt được|Vpt
+青睞|qīnglài|ưu ái|N
+對象|duìxiàng|đối tượng (hẹn hò)|N
+智力|zhìlì|trí lực|N
+同樣|tóngyàng|tương tự|Adv
+團隊|tuánduì|đội nhóm|N
+金錢|jīnqián|tiền bạc|N
+投資|tóuzī|đầu tư|V/N
+行為|xíngwèi|hành vi|N
+儘管|jǐnguǎn|cho dù|Conj
+日漸|rìjiàn|ngày càng|Adv
+失敗|shībài|thất bại|Vp
+胸部|xiōngbù|ngực|N
+大小不一|dàxiǎobùyī|to nhỏ không đều|Idiom
+變形|biànxíng|biến dạng|Vp
+失血|shīxuè|mất máu|Vp-sep
+過|guò|quá (mức)|Adv
+飽受|bǎoshòu|chịu nhiều|Vpt
+後遺症|hòuyízhèng|di chứng|N
+副作用|fùzuòyòng|tác dụng phụ|N
+多麼|duōme|biết bao|Adv
+冒險|màoxiǎn|mạo hiểm|V-sep
+如今|rújīn|ngày nay|Adv
+捷徑|jiéjìng|đường tắt|N
+進而|jìnér|tiến tới|Adv
+謹慎|jǐnshèn|cẩn trọng|Vs
+看待|kàndài|nhìn nhận|V`,d:{l:`文章|近年來，人們越來越重視外表，整型有年輕化的趨勢，甚至出現了「顏值」這樣的詞。贊成的人認為，整型可以帶來自信、增加機會，完全是與他人無關的個人選擇。然而事實上，整型卻深深地影響著整個社會的價值觀。|jìn nián lái， rén men yuè lái yuè zhòng shì wài biǎo， zhěng xíng yǒu nián qīng huà de qū shì， shèn zhì chū xiàn le 「yán zhí」 zhè yàng de cí。 zàn chéng de rén rèn wèi， zhěng xíng kě yǐ dài lái zì xìn、 zēng jiā jī huì， wán quán shì yǔ tā rén wú guān de gè rén xuǎn zé。 rán ér shì shí shàng， zhěng xíng què shēn shēn dì yǐng xiǎng zhù zhěng gè shè huì de jià zhí guān。|Những năm gần đây người ta ngày càng coi trọng ngoại hình, phẫu thuật thẩm mỹ có xu hướng trẻ hóa, thậm chí xuất hiện từ "nhan giá trị". Người tán thành cho rằng phẫu thuật mang lại tự tin, thêm cơ hội, hoàn toàn là lựa chọn cá nhân không liên quan người khác. Nhưng thực tế nó ảnh hưởng sâu sắc đến giá trị quan của cả xã hội.
+文章|整型真能讓人更美、更有自信嗎？並不盡然。許多想要整型的年輕人拿著明星的照片，要求醫生整出一樣的高鼻子、大眼睛，這是媒體洗腦的結果。不少亞洲人認為白皮膚、纖腰、豐胸、長腿、高挺的鼻子、水汪汪的大眼才是美。記得媒體報導了某場的選美比賽，三十四位參賽者幾乎都長得一樣！那是他們原來的樣子嗎？很多人原本就長得不差，只因為在意外界的眼光而不斷整型，這不是和「整型可以帶來自信」相互矛盾嗎？|zhěng xíng zhēn néng ràng rén gèng měi、 gèng yǒu zì xìn ma？ bìng bù jǐn rán。 xǔ duō xiǎng yào zhěng xíng de nián qīng rén ná zhù míng xīng de zhào piān， yāo qiú yī shēng zhěng chū yí yàng de gāo bí zi、 dà yǎn jīng， zhè shì méi tǐ xǐ nǎo de jié guǒ。 bù shǎo yà zhōu rén rèn wèi bái pí fū、 xiān yāo、 fēng xiōng、 zhǎng tuǐ、 gāo tǐng de bí zi、 shuǐ wāng wāng de dà yǎn cái shì měi。 jì dé méi tǐ bào dǎo le mǒu chǎng de xuǎn měi bǐ sài， sān shí sì wèi cān sài zhě jǐ hū dōu zhǎng dé yí yàng！ nà shì tā men yuán lái de yàng zi ma？ hěn duō rén yuán běn jiù zhǎng dé bú chà， zhǐ yīn wèi zài yì wài jiè de yǎn guāng ér bú duàn zhěng xíng， zhè bú shì hé 「zhěng xíng kě yǐ dài lái zì xìn」 xiāng hù máo dùn ma？|Phẫu thuật thật sự giúp người ta đẹp hơn, tự tin hơn sao? Chưa hẳn. Nhiều bạn trẻ cầm ảnh minh tinh yêu cầu bác sĩ chỉnh ra mũi cao mắt to như vậy, đó là kết quả của sự tẩy não truyền thông. Không ít người châu Á cho rằng da trắng, eo thon, ngực đầy, chân dài, mũi thẳng, mắt to long lanh mới là đẹp. Nhớ truyền thông đưa tin một cuộc thi sắc đẹp, 34 thí sinh gần như giống hệt nhau! Đó là dáng vẻ vốn có sao? Nhiều người vốn không xấu, chỉ vì để ý ánh mắt bên ngoài mà liên tục chỉnh sửa, chẳng phải mâu thuẫn với "phẫu thuật mang lại tự tin"?
+文章|外貌無法為我們帶來美滿的感情、順利的職涯，只有內在才可以。由於越來越多的人認為現在社會「以貌取人」，因此不計一切要讓自己看起來更英俊、漂亮，好讓自己獲得更多青睞或機會。然而，一項研究指出，男女在選擇對象的時候，友善和智力比外表更重要。同樣地，職場上需要的能力，例如團隊合作、領導能力、溝通能力等，都不是整型能帶來的。把時間和金錢投資在這些內在能力上，才是更重要的。|wài mào wú fǎ wèi wǒ men dài lái měi mǎn de gǎn qíng、 shùn lì de zhí yá， zhǐ yǒu nèi zài cái kě yǐ。 yóu yú yuè lái yuè duō de rén rèn wèi xiàn zài shè huì 「yǐ mào qǔ rén」， yīn cǐ bú jì yí qiè yào ràng zì jǐ kàn qǐ lái gèng yīng jùn、 piào liàng， hǎo ràng zì jǐ huò dé gèng duō qīng lài huò jī huì。 rán ér， yí xiàng yán jiū zhǐ chū， nán nǚ zài xuǎn zé duì xiàng de shí hòu， yǒu shàn hé zhì lì bǐ wài biǎo gèng zhòng yào。 tóng yàng dì， zhí chǎng shàng xū yào de néng lì， lì rú tuán duì hé zuò、 lǐng dǎo néng lì、 gōu tōng néng lì děng， dōu bú shì zhěng xíng néng dài lái de。 bǎ shí jiān hé jīn qián tóu zī zài zhè xiē nèi zài néng lì shàng， cái shì gèng zhòng yào de。|Ngoại hình không mang lại tình cảm mỹ mãn, sự nghiệp thuận lợi, chỉ nội tâm mới làm được. Vì ngày càng nhiều người cho rằng xã hội nay "xem mặt mà bắt hình dong" nên bất chấp tất cả làm mình trông điển trai xinh đẹp hơn để được ưu ái và nhiều cơ hội. Tuy nhiên một nghiên cứu cho thấy khi chọn đối tượng, nam nữ coi trọng sự thân thiện và trí tuệ hơn ngoại hình. Tương tự, năng lực nơi làm việc như hợp tác nhóm, lãnh đạo, giao tiếp đều không phải phẫu thuật mang lại. Đầu tư thời gian, tiền bạc vào các năng lực nội tại này mới quan trọng hơn.
+文章|整型畢竟是醫療行為，儘管技術日漸進步，但是媒體仍常報導整型失敗的例子：有的人整型後胸部大小不一、鼻子歪斜、臉部變形，甚至有人在手術中因失血過多而死。更有不少人整型後飽受各種後遺症、副作用之苦。這些問題都證明，無論醫療科技多麼進步，整型手術還是有一定的風險，對生理和心理都會帶來巨大衝擊，並不值得拿自己的生命來冒險。|zhěng xíng bì jìng shì yī liáo xíng wèi， jǐn guǎn jì shù rì jiàn jìn bù， dàn shì méi tǐ réng cháng bào dǎo zhěng xíng shī bài de lì zi： yǒu de rén zhěng xíng hòu xiōng bù dà xiǎo bù yī、 bí zi wāi xié、 liǎn bù biàn xíng， shèn zhì yǒu rén zài shǒu shù zhōng yīn shī xuè guò duō ér sǐ。 gèng yǒu bù shǎo rén zhěng xíng hòu bǎo shòu gè zhǒng hòu yí zhèng、 fù zuò yòng zhī kǔ。 zhè xiē wèn tí dōu zhèng míng， wú lùn yī liáo kē jì duō me jìn bù， zhěng xíng shǒu shù hái shì yǒu yí dìng de fēng xiǎn， duì shēng lǐ hé xīn lǐ dōu huì dài lái jù dà chōng jī， bìng bù zhí dé ná zì jǐ de shēng mìng lái mào xiǎn。|Dù sao phẫu thuật thẩm mỹ là hành vi y tế, tuy kỹ thuật ngày càng tiến bộ nhưng truyền thông vẫn thường đưa tin thất bại: có người sau phẫu thuật ngực to nhỏ không đều, mũi lệch, mặt biến dạng, thậm chí có người chết vì mất máu quá nhiều khi mổ. Nhiều người còn chịu đủ loại di chứng, tác dụng phụ. Những vấn đề này chứng tỏ dù công nghệ y tế tiến bộ thế nào phẫu thuật vẫn có rủi ro nhất định, gây tác động lớn lên thể chất lẫn tinh thần, không đáng đem tính mạng ra mạo hiểm.
+文章|整型原來是希望幫助那些遭受意外、影響健康的人重建外觀、恢復身體功能及信心，如今卻成為追求自信和獲得機會的捷徑。雖然這是個人的選擇，但當整型從「需要」變成「想要」，進而形成一股風氣時，我們就不得不更謹慎地看待它所帶來的影響。|zhěng xíng yuán lái shì xī wàng bāng zhù nà xiē zāo shòu yì wài、 yǐng xiǎng jiàn kāng de rén chóng jiàn wài guān、 huī fù shēn tǐ gōng néng jí xìn xīn， rú jīn què chéng wèi zhuī qiú zì xìn hé huò dé jī huì de jié jìng。 suī rán zhè shì gè rén de xuǎn zé， dàn dāng zhěng xíng cóng 「xū yào」 biàn chéng 「xiǎng yào」， jìn ér xíng chéng yì gǔ fēng qì shí， wǒ men jiù bù dé bú gèng jǐn shèn dì kàn dài tā suǒ dài lái de yǐng xiǎng。|Phẫu thuật thẩm mỹ vốn nhằm giúp người gặp tai nạn, ảnh hưởng sức khỏe tái tạo ngoại hình, phục hồi chức năng và sự tự tin, nay lại thành đường tắt tìm tự tin và cơ hội. Dù là lựa chọn cá nhân, khi nó từ "cần" thành "muốn" rồi thành một trào lưu thì ta không thể không cẩn trọng hơn khi nhìn nhận ảnh hưởng của nó.`}},{n:4,zh:"傳統與現代",vi:"Truyền thống và hiện đại",v:`刪減|shānjiǎn|cắt giảm|V
+鬥牛|dòuniú|đấu bò|N
+街頭|jiētóu|đường phố|N
+舉|jǔ|giơ, cử|V
+示威|shìwēi|biểu tình|Vi
+主張|zhǔzhāng|chủ trương|N/V
+保存|bǎocún|bảo tồn|V
+廢止|fèizhǐ|bãi bỏ|V
+引發|yǐnfā|gây ra|V
+正反|zhèngfǎn|tán thành và phản đối|N
+兩方|liǎngfāng|hai bên|N
+激烈|jīliè|gay gắt|Vs
+具有|jùyǒu|có|Vst
+祭品|jìpǐn|đồ cúng tế|N
+全民|quánmín|toàn dân|N
+座|zuò|tòa, ngôi (lượng từ)|M
+鬥牛場|dòuniúchǎng|đấu trường bò|N
+馬德里|mǎdélǐ|Madrid|Name
+至今|zhìjīn|đến nay|Adv
+鬥牛士|dòuniúshì|đấu sĩ bò|N
+華麗|huálì|lộng lẫy|Vs
+服飾|fúshì|trang phục|N
+一面|yímiàn|một mặt… (vừa… vừa…)|Adv
+披風|pīfēng|áo choàng|N
+激怒|jīnù|chọc giận|V
+公牛|gōngniú|bò đực|N
+優雅|yōuyǎ|tao nhã|Vs
+姿勢|zīshì|tư thế|N
+結合|jiéhé|kết hợp|N/V
+過人|guòrén|hơn người|Vs
+熟練|shúliàn|thành thạo|Vs
+崇拜|chóngbài|sùng bái|Vst
+旺季|wàngjì|mùa cao điểm|N
+遊客|yóukè|du khách|N
+前往|qiánwǎng|đi đến|V
+觀賞|guānshǎng|thưởng thức, xem|V
+奔牛節|bēnniújié|lễ hội chạy bò|Name
+重頭戲|zhòngtóuxì|tiết mục chính|N
+狂奔|kuángbēn|chạy điên cuồng|Vi
+歐元|ōuyuán|euro|N
+必要|bìyào|cần thiết|N
+獨特|dútè|độc đáo|Vs
+魅力|mèilì|sức hấp dẫn|N
+戲劇|xìjù|kịch|N
+無數|wúshù|vô số|Vs-attr
+靈感|línggǎn|cảm hứng|N
+諾貝爾|nuòbèiěr|Nobel|Name
+得主|dézhǔ|người đoạt giải|N
+作家|zuòjiā|nhà văn|N
+海明威|hǎimíngwēi|Hemingway|Name
+觀看|guānkàn|xem|V
+小說|xiǎoshuō|tiểu thuyết|N
+舉世聞名|jǔshìwénmíng|nổi tiếng thế giới|Idiom
+推廣|tuīguǎng|quảng bá|V
+遺產|yíchǎn|di sản|N
+由來已久|yóuláiyǐjiǔ|có từ lâu đời|Idiom`,d:{l:`文章|鬥牛是西班牙古老的傳統，有千年歷史。最早是把牛當做拜神的祭品，十九世紀時成為西班牙的全民運動。自1743年第一座鬥牛場在馬德里出現至今，西班牙全國鬥牛場已超過400座。|dòu niú shì xī bān yá gǔ lǎo de chuán tǒng， yǒu qiān nián lì shǐ。 zuì zǎo shì bǎ niú dāng zuò bài shén de jì pǐn， shí jiǔ shì jì shí chéng wèi xī bān yá de quán mín yùn dòng。 zì 1743 nián dì yī zuò dòu niú chǎng zài mǎ dé lǐ chū xiàn zhì jīn， xī bān yá quán guó dòu niú chǎng yǐ chāo guò 400 zuò。|Đấu bò là truyền thống cổ xưa của Tây Ban Nha, có lịch sử nghìn năm. Ban đầu bò là đồ cúng thần, thế kỷ 19 trở thành môn thể thao toàn dân. Từ năm 1743 đấu trường bò đầu tiên xuất hiện ở Madrid đến nay, cả nước có hơn 400 đấu trường.
+文章|鬥牛士穿著十六世紀華麗的傳統服飾在鬥牛場中表演，一面利用手中的紅色披風激怒公牛，一面隨著音樂以優雅的姿勢避開攻擊，可說是文化與藝術的完美結合。鬥牛士必須具備過人的勇氣、熟練的技術和冒險的精神，也是年輕人崇拜與學習的對象。鬥牛不但代表西班牙的傳統精神，更是重要的歷史文化。|dòu niú shì chuān zhù shí liù shì jì huá lì de chuán tǒng fú shì zài dòu niú chǎng zhōng biǎo yǎn， yí miàn lì yòng shǒu zhōng de hóng sè pī fēng jī nù gōng niú， yí miàn suí zhù yīn lè yǐ yōu yǎ de zī shì bì kāi gōng jī， kě shuō shì wén huà yǔ yì shù de wán měi jié hé。 dòu niú shì bì xū jù bèi guò rén de yǒng qì、 shú liàn de jì shù hé mào xiǎn de jīng shén， yě shì nián qīng rén chóng bài yǔ xué xí de duì xiàng。 dòu niú bú dàn dài biǎo xī bān yá de chuán tǒng jīng shén， gèng shì zhòng yào de lì shǐ wén huà。|Đấu sĩ mặc trang phục lộng lẫy thế kỷ 16 biểu diễn trong đấu trường, một mặt dùng áo choàng đỏ trêu bò, một mặt theo nhạc né đòn bằng tư thế tao nhã, có thể nói là sự kết hợp hoàn hảo giữa văn hóa và nghệ thuật. Đấu sĩ cần dũng khí hơn người, kỹ thuật thành thạo và tinh thần mạo hiểm, cũng là thần tượng giới trẻ. Đấu bò không chỉ đại diện tinh thần truyền thống mà còn là văn hóa lịch sử quan trọng.
+文章|旅遊業是西班牙最重要的收入來源，每年3月到9月的鬥牛旺季，總是吸引來自世界各地的遊客前往觀賞，其中奔牛節也是西班牙傳統文化的重頭戲，當地民眾和許多年輕的外國遊客，都在此享受與牛狂奔的刺激，以及西班牙人的熱情。鬥牛的相關活動每年都為西班牙政府帶來2.8億歐元的財政收入，提供20萬人就業機會。一旦廢止，對西班牙來說，將會是一場經濟災難。因此，這項傳統活動絕對有保存的必要。|lǚ yóu yè shì xī bān yá zuì zhòng yào de shōu rù lái yuán， měi nián 3 yuè dào 9 yuè de dòu niú wàng jì， zǒng shì xī yǐn lái zì shì jiè gè dì de yóu kè qián wǎng guān shǎng， qí zhōng bēn niú jié yě shì xī bān yá chuán tǒng wén huà de zhòng tóu xì， dāng dì mín zhòng hé xǔ duō nián qīng de wài guó yóu kè， dōu zài cǐ xiǎng shòu yǔ niú kuáng bēn de cì jī， yǐ jí xī bān yá rén de rè qíng。 dòu niú de xiāng guān huó dòng měi nián dōu wèi xī bān yá zhèng fǔ dài lái 2.8 yì ōu yuán de cái zhèng shōu rù， tí gōng 20 wàn rén jiù yè jī huì。 yí dàn fèi zhǐ， duì xī bān yá lái shuō， jiāng huì shì yì chǎng jīng jì zāi nán。 yīn cǐ， zhè xiàng chuán tǒng huó dòng jué duì yǒu bǎo cún de bì yào。|Du lịch là nguồn thu quan trọng nhất của Tây Ban Nha, mùa cao điểm đấu bò từ tháng 3 đến 9 luôn thu hút du khách khắp thế giới, trong đó lễ hội chạy bò là tiết mục chính của văn hóa truyền thống, dân địa phương và nhiều du khách trẻ nước ngoài đến đây tận hưởng cảm giác chạy cùng bò và sự nhiệt tình của người Tây Ban Nha. Các hoạt động đấu bò mỗi năm mang lại cho chính phủ 280 triệu euro thu ngân sách, tạo việc làm cho 200.000 người. Một khi bãi bỏ sẽ là thảm họa kinh tế. Vì vậy truyền thống này tuyệt đối cần bảo tồn.
+文章|鬥牛傳統之所以保留到現在，正是因為它代表了西班牙獨特的文化魅力和民族精神，也為戲劇、音樂、繪畫提供了無數靈感。例如諾貝爾文學獎得主——美國作家海明威在西班牙觀看奔牛節活動後寫了《太陽照常升起》這本小說，使奔牛節成為舉世聞名的節日。2013年，西班牙政府認為鬥牛不但不應該廢止，國家反而有責任保存並繼續推廣，於是將鬥牛列為國家保護的文化遺產，希望大家都能尊重這個由來已久的傳統。|dòu niú chuán tǒng zhī suǒ yǐ bǎo liú dào xiàn zài， zhèng shì yīn wèi tā dài biǎo le xī bān yá dú tè de wén huà mèi lì hé mín zú jīng shén， yě wèi xì jù、 yīn lè、 huì huà tí gōng le wú shù líng gǎn。 lì rú nuò bèi ěr wén xué jiǎng dé zhǔ —— měi guó zuò jiā hǎi míng wēi zài xī bān yá guān kàn bēn niú jié huó dòng hòu xiě le 《 tài yáng zhào cháng shēng qǐ 》 zhè běn xiǎo shuō， shǐ bēn niú jié chéng wèi jǔ shì wén míng de jié rì。2013 nián， xī bān yá zhèng fǔ rèn wèi dòu niú bú dàn bù yīng gāi fèi zhǐ， guó jiā fǎn ér yǒu zé rèn bǎo cún bìng jì xù tuī guǎng， yú shì jiāng dòu niú liè wèi guó jiā bǎo hù de wén huà yí chǎn， xī wàng dà jiā dōu néng zūn zhòng zhè gè yóu lái yǐ jiǔ de chuán tǒng。|Truyền thống đấu bò còn đến nay chính vì nó đại diện sức hấp dẫn văn hóa độc đáo và tinh thần dân tộc Tây Ban Nha, cũng mang lại vô số cảm hứng cho kịch, nhạc, hội họa. Ví dụ nhà văn Mỹ Hemingway, người đoạt giải Nobel Văn học, sau khi xem lễ hội chạy bò ở Tây Ban Nha đã viết tiểu thuyết "Mặt trời vẫn mọc", khiến lễ hội nổi tiếng thế giới. Năm 2013 chính phủ Tây Ban Nha cho rằng đấu bò không những không nên bãi bỏ mà nhà nước còn có trách nhiệm bảo tồn và tiếp tục quảng bá, nên xếp đấu bò vào di sản văn hóa được bảo vệ, mong mọi người tôn trọng truyền thống lâu đời này.`}},{n:5,zh:"代理孕母，帶來幸福？",vi:"Mang thai hộ có mang lại hạnh phúc?",v:`代理孕母|dàilǐyùnmǔ|mẹ mang thai hộ|N
+案例|ànlì|vụ việc, trường hợp|N
+名|míng|người (lượng từ trang trọng)|M
+同志|tóngzhì|người đồng tính|N
+心願|xīnyuàn|tâm nguyện|N
+自願|zìyuàn|tự nguyện|Vaux
+對|duì|đôi, cặp|M
+委託|wěituō|ủy thác|V/N
+龍鳳胎|lóngfèngtāi|cặp song sinh trai gái|N
+遺棄|yíqì|bỏ rơi|V
+缺陷|quēxiàn|khuyết tật|N
+任|rèn|nhiệm kỳ, đời (vợ/chồng)|M
+丈夫|zhàngfū|chồng|N
+懷孕|huáiyùn|mang thai|Vp-sep
+毛遂自薦|máosuízìjiàn|tự đề cử|Idiom
+日新月異|rìxīnyuèyì|ngày đổi tháng khác|Idiom
+倫理|lúnlǐ|đạo đức học|N
+整合|zhěnghé|tích hợp|V
+合法化|héfǎhuà|hợp pháp hóa|Vi
+需求|xūqiú|nhu cầu|N
+一線希望|yíxiànxīwàng|tia hy vọng|Idiom
+惡夢|èmèng|ác mộng|N
+看似|kànshì|trông có vẻ|Adv
+費盡|fèijǐn|tốn hết|Vst
+千辛萬苦|qiānxīnwànkǔ|thiên tân vạn khổ|Idiom
+因素|yīnsù|yếu tố|N
+皆|jiē|đều (trang trọng)|Adv
+承受|chéngshòu|chịu đựng|V
+不得已|bùdéyǐ|bất đắc dĩ|Vs
+代孕|dàiyùn|mang thai hộ|Vi
+婚外情|hūnwàiqíng|ngoại tình|N
+破碎|pòsuì|tan vỡ|Vs
+悲劇|bēijù|bi kịch|N
+雙方|shuāngfāng|hai bên|N
+渴望|kěwàng|khao khát|N/Vst
+供需|gōngxū|cung cầu|N
+利人利己|lìrénlìjǐ|lợi người lợi mình|Idiom
+雙贏|shuāngyíng|đôi bên cùng thắng|N
+反觀|fǎnguān|nhìn lại|Vst
+連續|liánxù|liên tiếp|Adv
+排名|páimíng|xếp hạng|Vi
+倒數|dàoshù|đếm ngược, từ dưới lên|Adv
+始終|shǐzhōng|luôn luôn, từ đầu đến cuối|Adv
+忽視|hūshì|coi nhẹ|V
+夫妻|fūqī|vợ chồng|N
+協助|xiézhù|hỗ trợ|V
+長輩|zhǎngbèi|bậc trưởng bối|N
+忍受|rěnshòu|chịu đựng|Vst
+如願|rúyuàn|như ý nguyện|Vs-sep
+自主權|zìzhǔquán|quyền tự quyết|N`,d:{l:`新聞|現代科技日新月異，代理孕母成了熱門話題。在倫理、法律、醫學尚未整合完全的今天，代理孕母合法化對需求者來說，是一線希望？還是一場惡夢？|xiàn dài kē jì rì xīn yuè yì， dài lǐ yùn mǔ chéng le rè mén huà tí。 zài lún lǐ、 fǎ lǜ、 yī xué shàng wèi zhěng hé wán quán de jīn tiān， dài lǐ yùn mǔ hé fǎ huà duì xū qiú zhě lái shuō， shì yí xiàn xī wàng？ hái shì yì chǎng è mèng？|Công nghệ hiện đại thay đổi từng ngày, mang thai hộ thành chủ đề nóng. Hôm nay khi đạo đức, luật pháp, y học chưa hợp nhất, hợp pháp hóa mang thai hộ với người có nhu cầu là tia hy vọng hay một cơn ác mộng?
+新聞|英國一名年輕單身男同志一直想擁有自己的孩子，母親為了完成他的心願，自願當代理孕母，成功生下「他們的」兒子，成為英國第一個透過代理孕母生下孩子的單身男子。|yīng guó yì míng nián qīng dān shēn nán tóng zhì yì zhí xiǎng yōng yǒu zì jǐ de hái zi， mǔ qīn wèi le wán chéng tā de xīn yuàn， zì yuàn dāng dài lǐ yùn mǔ， chéng gōng shēng xià 「tā men de」 ér zi， chéng wèi yīng guó dì yī gè tòu guò dài lǐ yùn mǔ shēng xià hái zi de dān shēn nán zi。|Một nam đồng tính độc thân trẻ ở Anh luôn muốn có con, mẹ anh để thực hiện tâm nguyện đã tự nguyện làm mẹ mang thai hộ, sinh thành công đứa con trai "của họ", anh thành người đàn ông độc thân đầu tiên ở Anh có con nhờ mang thai hộ.
+新聞|一對澳洲夫婦委託代理孕母生下一對龍鳳胎，卻只帶走女嬰，遺棄了身體有缺陷的男嬰。|yí duì ào zhōu fū fù wěi tuō dài lǐ yùn mǔ shēng xià yí duì lóng fèng tāi， què zhǐ dài zǒu nǚ yīng， yí qì le shēn tǐ yǒu quē xiàn de nán yīng。|Một cặp vợ chồng Úc nhờ mẹ mang thai hộ sinh cặp song sinh trai gái, nhưng chỉ đem bé gái đi, bỏ rơi bé trai bị khuyết tật cơ thể.
+新聞|一位已有四名子女的三十七歲美國婦女，想要為第二任丈夫生小孩，因無法再懷孕，她十八歲的女兒毛遂自薦，表示願意擔任代理孕母。但心理醫生表示，女兒若生下孩子，將對所有家人造成嚴重的心理影響。|yí wèi yǐ yǒu sì míng zǐ nǚ de sān shí qī suì měi guó fù nǚ， xiǎng yào wèi dì èr rèn zhàng fū shēng xiǎo hái， yīn wú fǎ zài huái yùn， tā shí bā suì de nǚ ér máo suí zì jiàn， biǎo shì yuàn yì dān rèn dài lǐ yùn mǔ。 dàn xīn lǐ yī shēng biǎo shì， nǚ ér ruò shēng xià hái zi， jiāng duì suǒ yǒu jiā rén zào chéng yán zhòng de xīn lǐ yǐng xiǎng。|Một phụ nữ Mỹ 37 tuổi đã có bốn con muốn sinh con cho chồng thứ hai nhưng không thể mang thai nữa, con gái 18 tuổi tự đề cử làm mẹ mang thai hộ. Nhưng bác sĩ tâm lý nói nếu con gái sinh con sẽ gây ảnh hưởng tâm lý nghiêm trọng cho cả gia đình.
+文章|擁有自己的孩子，看似簡單的願望，卻讓許多人費盡千辛萬苦仍無法實現。|yōng yǒu zì jǐ de hái zi， kàn shì jiǎn dān de yuàn wàng， què ràng xǔ duō rén fèi jǐn qiān xīn wàn kǔ réng wú fǎ shí xiàn。|Có con của chính mình, tưởng là điều ước đơn giản nhưng khiến nhiều người dốc hết gian khổ vẫn không thực hiện được.
+文章|現代人因為壓力或者身體等因素，不能生育的情形越來越普遍。自七〇年代以來，歐美各國不斷有人請代理孕母代替自己懷孕生子，以實現生育下一代的願望。生兒育女是人類最基本的需求，尤其是東方社會的婦女，如果不能為家庭傳宗接代，通常身心皆承受外界難以想像的壓力。甚至有些婦女因無法懷孕，不得已只好請姊妹、親戚代孕，沒想到孕母卻和先生發生婚外情，結果造成家庭破碎。為了不讓這樣的悲劇發生，合法代孕成了唯一的希望。|xiàn dài rén yīn wèi yā lì huò zhě shēn tǐ děng yīn sù， bù néng shēng yù de qíng xíng yuè lái yuè pǔ biàn。 zì qī líng nián dài yǐ lái， ōu měi gè guó bú duàn yǒu rén qǐng dài lǐ yùn mǔ dài tì zì jǐ huái yùn shēng zi， yǐ shí xiàn shēng yù xià yí dài de yuàn wàng。 shēng ér yù nǚ shì rén lèi zuì jī běn de xū qiú， yóu qí shì dōng fāng shè huì de fù nǚ， rú guǒ bù néng wèi jiā tíng chuán zōng jiē dài， tōng cháng shēn xīn jiē chéng shòu wài jiè nán yǐ xiǎng xiàng de yā lì。 shèn zhì yǒu xiē fù nǚ yīn wú fǎ huái yùn， bù dé yǐ zhǐ hǎo qǐng zǐ mèi、 qīn qī dài yùn， méi xiǎng dào yùn mǔ què hé xiān shēng fā shēng hūn wài qíng， jié guǒ zào chéng jiā tíng pò suì。 wèi le bú ràng zhè yàng de bēi jù fā shēng， hé fǎ dài yùn chéng le wéi yī de xī wàng。|Do áp lực hoặc yếu tố cơ thể, tình trạng không thể sinh đẻ ngày càng phổ biến. Từ thập niên 70, ở các nước Âu Mỹ liên tục có người nhờ mẹ mang thai hộ để thực hiện mong muốn có thế hệ sau. Sinh con đẻ cái là nhu cầu cơ bản nhất của con người, nhất là phụ nữ xã hội phương Đông, nếu không nối dõi cho gia đình thường phải chịu áp lực cả thể xác lẫn tinh thần mà bên ngoài khó tưởng tượng. Thậm chí có phụ nữ vì không thể mang thai đành nhờ chị em, họ hàng, không ngờ người mang thai hộ lại ngoại tình với chồng khiến gia đình tan vỡ. Để bi kịch này không xảy ra, mang thai hộ hợp pháp thành hy vọng duy nhất.
+文章|目前全球已有荷蘭等十個以上的國家將代理孕母合法化。透過合法的代孕機構，雙方都能得到應有的保障，滿足了需求者擁有自己孩子的渴望，代孕者也有機會改善生活。這是市場供需的問題，利人利己，正是雙贏的政策。|mù qián quán qiú yǐ yǒu hé lán děng shí gè yǐ shàng de guó jiā jiāng dài lǐ yùn mǔ hé fǎ huà。 tòu guò hé fǎ de dài yùn jī gòu， shuāng fāng dōu néng dé dào yīng yǒu de bǎo zhàng， mǎn zú le xū qiú zhě yōng yǒu zì jǐ hái zi de kě wàng， dài yùn zhě yě yǒu jī huì gǎi shàn shēng huó。 zhè shì shì chǎng gōng xū de wèn tí， lì rén lì jǐ， zhèng shì shuāng yíng de zhèng cè。|Hiện toàn cầu có hơn mười nước như Hà Lan hợp pháp hóa mang thai hộ. Qua cơ quan mang thai hộ hợp pháp, hai bên đều được bảo đảm xứng đáng, thỏa khát khao có con của người cần, người mang thai hộ cũng có cơ hội cải thiện cuộc sống. Đây là vấn đề cung cầu thị trường, lợi người lợi mình, chính là chính sách đôi bên cùng thắng.
+文章|反觀台灣，生育率連續多年排名全球倒數第一，政府始終只鼓勵能夠生育的婦女，提供各項補助措施，卻忽視有代孕需求的夫妻，這根本就是一種歧視。若想提高生育率，政府應該立法協助，而非全面禁止。|fǎn guān tái wān， shēng yù lǜ lián xù duō nián pái míng quán qiú dào shù dì yī， zhèng fǔ shǐ zhōng zhǐ gǔ lì néng gòu shēng yù de fù nǚ， tí gōng gè xiàng bǔ zhù cuò shī， què hū shì yǒu dài yùn xū qiú de fū qī， zhè gēn běn jiù shì yì zhǒng qí shì。 ruò xiǎng tí gāo shēng yù lǜ， zhèng fǔ yīng gāi lì fǎ xié zhù， ér fēi quán miàn jìn zhǐ。|Nhìn lại Đài Loan, tỷ lệ sinh nhiều năm liền xếp áp chót thế giới, chính phủ luôn chỉ khuyến khích phụ nữ sinh được, đưa nhiều biện pháp trợ cấp mà coi nhẹ các cặp vợ chồng có nhu cầu mang thai hộ, đó thực chất là một sự kỳ thị. Muốn nâng tỷ lệ sinh, chính phủ nên lập pháp hỗ trợ chứ không cấm hoàn toàn.
+文章|在長輩及家人的期待下，許多不孕夫妻為了擁有自己的孩子，努力嘗試各種方法、忍受一般人想像不到的痛苦之後，還是無法如願。孩子對這些家庭深具意義，讓代理孕母合法化，既是尊重夫妻對生育的自主權，也可以避免出國找代孕的可能風險。政府實在應該給不孕者、代孕者多一個選擇的機會。|zài zhǎng bèi jí jiā rén de qī dài xià， xǔ duō bú yùn fū qī wèi le yōng yǒu zì jǐ de hái zi， nǔ lì cháng shì gè zhǒng fāng fǎ、 rěn shòu yì bān rén xiǎng xiàng bú dào de tòng kǔ zhī hòu， hái shì wú fǎ rú yuàn。 hái zi duì zhè xiē jiā tíng shēn jù yì yì， ràng dài lǐ yùn mǔ hé fǎ huà， jì shì zūn zhòng fū qī duì shēng yù de zì zhǔ quán， yě kě yǐ bì miǎn chū guó zhǎo dài yùn de kě néng fēng xiǎn。 zhèng fǔ shí zài yīng gāi gěi bú yùn zhě、 dài yùn zhě duō yí gè xuǎn zé de jī huì。|Dưới kỳ vọng của bề trên và gia đình, nhiều cặp vô sinh để có con thử đủ cách, chịu nỗi đau người thường không tưởng tượng nổi mà vẫn không toại nguyện. Đứa con có ý nghĩa sâu sắc với các gia đình này, hợp pháp hóa mang thai hộ vừa tôn trọng quyền tự quyết sinh đẻ của vợ chồng, vừa tránh rủi ro ra nước ngoài tìm mang thai hộ. Chính phủ thực sự nên cho người vô sinh và người mang thai hộ thêm một cơ hội lựa chọn.`}},{n:6,zh:"死刑的存廢",vi:"Giữ hay bỏ án tử hình",v:`死刑|sǐxíng|án tử hình|N
+存廢|cúnfèi|giữ hay bỏ|N
+爭議|zhēngyì|tranh cãi|N
+僵局|jiāngjú|bế tắc|N
+各自|gèzì|mỗi bên|Adv
+嚇阻|xiàzǔ|răn đe|V
+隔離|gélí|cách ly|V
+罪犯|zuìfàn|tội phạm|N
+隨機|suíjī|ngẫu nhiên|Adv
+殺害|shāhài|sát hại|V
+黑心|hēixīn|vô lương tâm|Vs-attr
+案件|ànjiàn|vụ án|N
+法官|fǎguān|thẩm phán|N
+判|pàn|xử, tuyên án|V
+有期徒刑|yǒuqītúxíng|tù có thời hạn|Phrase
+無期徒刑|wúqītúxíng|tù chung thân|Phrase
+死者|sǐzhě|người chết|N
+交代|jiāodài|lời giải thích thỏa đáng|N
+彌補|míbǔ|bù đắp|V
+家屬|jiāshǔ|thân nhân|N
+或者|huòzhě|hoặc|Conj
+犯人|fànrén|phạm nhân|N
+出獄|chūyù|ra tù|Vi
+把|bǎ|cây, chiếc (lượng từ vật có cán)|M
+尺|chǐ|thước|N
+現行|xiànxíng|hiện hành|Vs-attr
+假釋|jiǎshì|tạm tha|Vi
+永久|yǒngjiǔ|vĩnh viễn|Adv
+害怕|hàipà|sợ|Vs
+報復|bàofù|trả thù|V/N
+納稅|nàshuì|nộp thuế|V-sep
+懲罰|chéngfá|trừng phạt|N/V
+犯罪|fànzuì|phạm tội|V-sep
+罰單|fádān|giấy phạt|N
+闖紅燈|chuǎnghóngdēng|vượt đèn đỏ|Phrase
+開|kāi|lập, viết (vé phạt)|V
+同理|tónglǐ|tương tự|Adv
+換句話說|huànjùhuàshuō|nói cách khác|Phrase
+維持|wéichí|duy trì|V
+相較於|xiāngjiàoyú|so với|Phrase
+人權|rénquán|nhân quyền|N
+廢除|fèichú|bãi bỏ|V
+被害人|bèihàirén|nạn nhân|N
+孤兒|gūér|cô nhi|N
+不然|bùrán|nếu không thì|Conj
+毀|huǐ|phá hủy|V
+氣憤|qìfèn|phẫn nộ|Vs
+恨|hèn|hận|Vst
+報仇|bàochóu|báo thù|V-sep
+便宜|piányi|tha nhẹ|Vst
+置身事外|zhìshēnshìwài|đứng ngoài cuộc|Idiom
+放下|fàngxià|buông bỏ|V
+凶手|xiōngshǒu|hung thủ|N
+感同身受|gǎntóngshēnshòu|đồng cảm|Idiom
+生前|shēngqián|lúc còn sống|N
+恐懼|kǒngjù|nỗi sợ|N
+心痛|xīntòng|đau lòng|Phrase
+天平|tiānpíng|cán cân|N
+衡量|héngliáng|cân nhắc|V
+坦白|tǎnbái|thẳng thắn|Vs
+撫慰|fǔwèi|an ủi|V
+剛剛好|gānggānghǎo|vừa đủ|Phrase`,d:{l:`文章|死刑的存廢始終爭議不斷，廢與不廢很難在短時間內突破僵局。不管支持或反對死刑制度，人們都各自有其選擇的理由。|sǐ xíng de cún fèi shǐ zhōng zhēng yì bú duàn， fèi yǔ bú fèi hěn nán zài duǎn shí jiān nèi tū pò jiāng jú。 bù guǎn zhī chí huò fǎn duì sǐ xíng zhì dù， rén men dōu gè zì yǒu qí xuǎn zé de lǐ yóu。|Việc giữ hay bỏ án tử hình luôn tranh cãi không dứt, khó phá thế bế tắc trong thời gian ngắn. Dù ủng hộ hay phản đối chế độ này, ai cũng có lý do lựa chọn riêng.
+文章|面對「隨機殺人」「為了領保險金殺害親人」「商人大賣黑心食品」……這類社會案件，如果你是法官會怎麼判呢？有期徒刑、無期徒刑還是死刑？判決的考量是為了給死者一個交代，以彌補家屬的痛苦，或者是為了符合社會大眾的期待，還是不讓犯人有機會出獄傷害別人呢？相信你的心中有著一把尺。|miàn duì 「suí jī shā rén」「wèi le lǐng bǎo xiǎn jīn shā hài qīn rén」「shāng rén dà mài hēi xīn shí pǐn」…… zhè lèi shè huì àn jiàn， rú guǒ nǐ shì fǎ guān huì zěn me pàn ne？ yǒu qī tú xíng、 wú qī tú xíng hái shì sǐ xíng？ pàn jué de kǎo liáng shì wèi le gěi sǐ zhě yí gè jiāo dài， yǐ mí bǔ jiā shǔ de tòng kǔ， huò zhě shì wèi le fú hé shè huì dà zhòng de qī dài， hái shì bú ràng fàn rén yǒu jī huì chū yù shāng hài bié rén ne？ xiāng xìn nǐ de xīn zhōng yǒu zhù yì bǎ chǐ。|Đối diện các vụ án như "giết người ngẫu nhiên", "giết người thân để lấy tiền bảo hiểm", "thương nhân bán thực phẩm bẩn vô lương tâm"…, nếu bạn là thẩm phán sẽ xử thế nào? Tù có thời hạn, chung thân hay tử hình? Phán quyết nhằm cho người chết lời giải thích, bù đắp nỗi đau thân nhân, đáp ứng kỳ vọng xã hội hay không để phạm nhân có cơ hội ra tù hại người? Tin rằng trong lòng bạn có một cây thước.
+文章|站在社會大眾的立場，死刑有存在的必要。因為在現行制度下，即使被判無期徒刑的人也有假釋出獄的機會，只有死刑才可以將罪犯永久與社會隔離，被害家屬不用害怕遭到報復，一般大眾也可以安心過日子。若以判無期徒刑取代死刑，政府須付出的金錢數目非常大，甚至得提供醫療及養老，等於用納稅人的錢來養罪犯。|zhàn zài shè huì dà zhòng de lì chǎng， sǐ xíng yǒu cún zài de bì yào。 yīn wèi zài xiàn xíng zhì dù xià， jí shǐ bèi pàn wú qī tú xíng de rén yě yǒu jiǎ shì chū yù de jī huì， zhǐ yǒu sǐ xíng cái kě yǐ jiāng zuì fàn yǒng jiǔ yǔ shè huì gé lí， bèi hài jiā shǔ bú yòng hài pà zāo dào bào fù， yì bān dà zhòng yě kě yǐ ān xīn guò rì zi。 ruò yǐ pàn wú qī tú xíng qǔ dài sǐ xíng， zhèng fǔ xū fù chū de jīn qián shù mù fēi cháng dà， shèn zhì dé tí gōng yī liáo jí yǎng lǎo， děng yú yòng nà shuì rén de qián lái yǎng zuì fàn。|Đứng từ lập trường công chúng, án tử hình cần tồn tại. Vì theo chế độ hiện hành, ngay cả người bị chung thân cũng có cơ hội được tạm tha, chỉ tử hình mới cách ly tội phạm vĩnh viễn khỏi xã hội, thân nhân nạn nhân không sợ bị trả thù, dân chúng yên tâm sống. Nếu dùng chung thân thay tử hình, chính phủ phải chi khoản tiền rất lớn, thậm chí cung cấp y tế và dưỡng lão, tức dùng tiền người nộp thuế nuôi tội phạm.
+文章|懲罰可以有效嚇阻犯罪。以交通罰單為例，知道闖紅燈會被開罰單，大部分的人會因此遵守規則。同理，如果知道犯了某些罪可能會被判死刑，多少會擔心嚴重的後果而不敢犯罪。換句話說，死刑仍能有效控制多數人的行為，具有維持社會秩序的價值。|chéng fá kě yǐ yǒu xiào xià zǔ fàn zuì。 yǐ jiāo tōng fá dān wèi lì， zhī dào chuǎng hóng dēng huì bèi kāi fá dān， dà bù fèn de rén huì yīn cǐ zūn shǒu guī zé。 tóng lǐ， rú guǒ zhī dào fàn le mǒu xiē zuì kě néng huì bèi pàn sǐ xíng， duō shǎo huì dān xīn yán zhòng de hòu guǒ ér bù gǎn fàn zuì。 huàn jù huà shuō， sǐ xíng réng néng yǒu xiào kòng zhì duō shù rén de xíng wèi， jù yǒu wéi chí shè huì zhì xù de jià zhí。|Trừng phạt có thể răn đe tội phạm hiệu quả. Lấy giấy phạt giao thông làm ví dụ, biết vượt đèn đỏ bị phạt, phần lớn người sẽ tuân thủ. Tương tự, biết phạm một số tội có thể bị tử hình thì ít nhiều lo hậu quả nghiêm trọng mà không dám phạm. Nói cách khác, tử hình vẫn kiểm soát hiệu quả hành vi đa số, có giá trị duy trì trật tự xã hội.
+文章|相較於人權團體重視的是罪犯的生命，反對廢除死刑者看重的則是被害人的生命價值，認為應該給死者一個交代。更何況除非死者是孤兒，不然殺了一個人也等於毀了一個家庭。難怪許多被害人家屬氣憤地表示：「我們如何不恨？幸虧還有政府能為我們報仇，雖說以人道的方式執行死刑也還是太便宜他了！」|xiāng jiào yú rén quán tuán tǐ zhòng shì de shì zuì fàn de shēng mìng， fǎn duì fèi chú sǐ xíng zhě kàn zhòng de zé shì bèi hài rén de shēng mìng jià zhí， rèn wèi yīng gāi gěi sǐ zhě yí gè jiāo dài。 gèng hé kuàng chú fēi sǐ zhě shì gū ér， bù rán shā le yí gè rén yě děng yú huǐ le yí gè jiā tíng。 nán guài xǔ duō bèi hài rén jiā shǔ qì fèn dì biǎo shì：「wǒ men rú hé bú hèn？ xìng kuī hái yǒu zhèng fǔ néng wèi wǒ men bào chóu， suī shuō yǐ rén dào de fāng shì zhí xíng sǐ xíng yě hái shì tài pián yi tā le！」|So với việc các tổ chức nhân quyền coi trọng mạng sống tội phạm, người phản đối bãi bỏ tử hình coi trọng giá trị mạng sống nạn nhân, cho rằng phải cho người chết lời giải thích. Huống chi trừ khi người chết là cô nhi, không thì giết một người cũng như hủy một gia đình. Hèn gì nhiều thân nhân nạn nhân phẫn nộ nói: "Sao chúng tôi không hận? May còn chính phủ báo thù giúp, dù thi hành tử hình nhân đạo vẫn còn quá nhẹ với hắn!"
+文章|家屬希望廢死團體不要用「置身事外」的態度跟他們談「放下」、原諒凶手，而是能感同身受地想像一下死者生前的恐懼與家屬一輩子的心痛。若拿出「人權的天平」來衡量，坦白說，以判死來撫慰死者與家屬只是「剛剛好」而已。|jiā shǔ xī wàng fèi sǐ tuán tǐ bú yào yòng 「zhì shēn shì wài」 de tài dù gēn tā men tán 「fàng xià」、 yuán liàng xiōng shǒu， ér shì néng gǎn tóng shēn shòu dì xiǎng xiàng yí xià sǐ zhě shēng qián de kǒng jù yǔ jiā shǔ yí bèi zi de xīn tòng。 ruò ná chū 「rén quán de tiān píng」 lái héng liáng， tǎn bái shuō， yǐ pàn sǐ lái fǔ wèi sǐ zhě yǔ jiā shǔ zhǐ shì 「gāng gāng hǎo」 ér yǐ。|Thân nhân mong các tổ chức bãi bỏ tử hình đừng dùng thái độ "đứng ngoài cuộc" nói với họ chuyện "buông bỏ", tha thứ hung thủ, mà hãy đồng cảm tưởng tượng nỗi sợ của người chết lúc còn sống và nỗi đau cả đời của gia đình. Nếu đem "cán cân nhân quyền" ra cân nhắc, nói thẳng, dùng án tử để an ủi người chết và thân nhân chỉ là "vừa đủ" mà thôi.`}},{n:7,zh:"增富人稅＝減窮人苦？",vi:"Tăng thuế người giàu = giảm khổ cho người nghèo?",v:`傷腦筋|shāngnǎojīn|đau đầu|Idiom
+受益|shòuyì|được lợi|Vi
+財富|cáifù|của cải|N
+思考|sīkǎo|suy nghĩ|V
+清晨|qīngchén|sáng sớm|N
+同齡|tónglíng|cùng tuổi|Vs
+遇上|yùshàng|gặp phải|Vpt
+白工|báigōng|làm công không|Phrase
+沖走|chōngzǒu|cuốn trôi|Vpt
+大半|dàbàn|quá nửa|Phrase
+慘重|cǎnzhòng|nặng nề, thảm|Vs
+值錢|zhíqián|có giá trị|Vs
+村|cūn|làng|N
+可憐|kělián|đáng thương|Vs
+相依為命|xiāngyīwèimìng|nương tựa nhau mà sống|Idiom
+一身病痛|yìshēnbìngtòng|bệnh tật đầy mình|Idiom
+懂事|dǒngshì|hiểu chuyện|Vs
+主動|zhǔdòng|chủ động|Adv
+援助|yuánzhù|viện trợ|V/N
+口袋|kǒudài|túi áo, túi tiền|N
+吃力|chīlì|vất vả, tốn sức|Vs
+家產|jiāchǎn|gia sản|N
+一無所有|yìwúsuǒyǒu|trắng tay|Idiom
+對於|duìyú|đối với|Prep
+累積|lèijī|tích lũy|V
+貧戶|pínhù|hộ nghèo|N
+袖手旁觀|xiùshǒupángguān|khoanh tay đứng nhìn|Idiom
+調整|diàozhěng|điều chỉnh|V/N
+創造|chuàngzào|tạo ra|V
+津貼|jīntiē|trợ cấp|N
+等同|děngtóng|tương đương|Vst
+補貼|bǔtiē|trợ giá|V/N
+分子|fènzǐ|thành viên|N
+舉例|jǔlì|nêu ví dụ|V-sep
+工資|gōngzī|tiền lương|N
+完善|wánshàn|hoàn thiện|Vs
+出手|chūshǒu|ra tay, chi tiêu|Vi
+大方|dàfāng|hào phóng|Vs
+在於|zàiyú|nằm ở chỗ|Vst
+進行|jìnxíng|tiến hành|V
+共享|gòngxiǎng|cùng hưởng|V
+倘若|tǎngruò|nếu như|Conj
+不服|bùfú|không phục|Vs
+稅收|shuìshōu|nguồn thu thuế|N
+生存|shēngcún|sinh tồn|Vi/N
+提心吊膽|tíxīndiàodǎn|thấp thỏm lo sợ|Idiom
+警力|jǐnglì|lực lượng cảnh sát|N
+治安|zhìān|trị an|N`,d:{l:`故事|紅母雞和她的小雞住在一起，羊、豬、牛是她的鄰居。紅母雞想種小麥，當她請鄰居幫忙時，鄰居卻說：「不行，我們太忙了。」因此她自己種小麥。當小麥長高了，紅母雞請鄰居們來幫忙，鄰居卻也拒絕說：「不行，我們得讀書。」因此她只好自己來。紅母雞要將小麥做成麵粉，再加上奶粉、鹽、蜂蜜做成麵包，當她請鄰居幫忙時，他們卻都說：「不，我們超累的。」紅母雞烤好了香噴噴的麵包，說：「小雞，開動囉！」此時鄰居卻來到門口，羊、豬、牛說：「好餓哦！能給我們一點麵包嗎？」紅母雞心想：「我該分給他們嗎？給他們對我來說公平嗎？」|hóng mǔ jī hé tā de xiǎo jī zhù zài yì qǐ， yáng、 zhū、 niú shì tā de lín jū。 hóng mǔ jī xiǎng zhǒng xiǎo mài， dāng tā qǐng lín jū bāng máng shí， lín jū què shuō：「bù xíng， wǒ men tài máng le。」 yīn cǐ tā zì jǐ zhǒng xiǎo mài。 dāng xiǎo mài zhǎng gāo le， hóng mǔ jī qǐng lín jū men lái bāng máng， lín jū què yě jù jué shuō：「bù xíng， wǒ men dé dú shū。」 yīn cǐ tā zhǐ hǎo zì jǐ lái。 hóng mǔ jī yào jiāng xiǎo mài zuò chéng miàn fěn， zài jiā shàng nǎi fěn、 yán、 fēng mì zuò chéng miàn bāo， dāng tā qǐng lín jū bāng máng shí， tā men què dōu shuō：「bù， wǒ men chāo lèi de。」 hóng mǔ jī kǎo hǎo le xiāng pēn pēn de miàn bāo， shuō：「xiǎo jī， kāi dòng luō！」 cǐ shí lín jū què lái dào mén kǒu， yáng、 zhū、 niú shuō：「hǎo è ó！ néng gěi wǒ men yì diǎn miàn bāo ma？」 hóng mǔ jī xīn xiǎng：「wǒ gāi fēn gěi tā men ma？ gěi tā men duì wǒ lái shuō gōng píng ma？」|Gà mái đỏ sống cùng đàn gà con, dê, heo, bò là hàng xóm. Gà mái muốn trồng lúa mì, nhờ hàng xóm giúp thì họ bảo: "Không được, chúng tôi bận quá." Nên chị tự trồng. Lúa lớn, chị nhờ hàng xóm giúp, họ lại từ chối: "Không được, chúng tôi phải đọc sách." Chị đành tự làm. Chị xay lúa thành bột rồi thêm sữa bột, muối, mật ong làm bánh mì, nhờ giúp thì họ đều nói: "Không, chúng tôi mệt lắm." Gà mái nướng xong bánh mì thơm phức, nói: "Các con, ăn thôi!" Lúc đó hàng xóm đến cửa, dê, heo, bò nói: "Đói quá! Cho chúng tôi chút bánh mì được không?" Gà mái nghĩ: "Có nên chia cho họ không? Cho họ có công bằng với tôi không?"
+文章|當政府為了「財政問題」傷腦筋時，有人認為富人應多繳稅來幫助社會，使多數人受益。但也有人認為富人的財富是他們應得的，因此要求他們多繳是不公平的。請問你比較支持哪一種主張？讓我們來思考一下人權與社會責任的關係吧！|dāng zhèng fǔ wèi le 「cái zhèng wèn tí」 shāng nǎo jīn shí， yǒu rén rèn wèi fù rén yīng duō jiǎo shuì lái bāng zhù shè huì， shǐ duō shù rén shòu yì。 dàn yě yǒu rén rèn wèi fù rén de cái fù shì tā men yīng dé de， yīn cǐ yāo qiú tā men duō jiǎo shì bù gōng píng de。 qǐng wèn nǐ bǐ jiào zhī chí nǎ yì zhǒng zhǔ zhāng？ ràng wǒ men lái sī kǎo yí xià rén quán yǔ shè huì zé rèn de guān xì ba！|Khi chính phủ đau đầu vì "vấn đề tài chính", có người cho rằng người giàu nên nộp thêm thuế giúp xã hội để đa số được lợi. Nhưng cũng có người cho của cải người giàu là họ xứng đáng được hưởng nên bắt nộp nhiều là không công bằng. Bạn ủng hộ quan điểm nào? Hãy cùng suy nghĩ mối quan hệ giữa nhân quyền và trách nhiệm xã hội.
+文章|清晨，六歲的阿月不像同齡的孩子一樣去上學，而是跟著奶奶到田裡工作。前年，收成前遇上了天災，害得阿月父母做了一整年白工，農田也被沖走一大半，損失慘重。現在，這家人只能靠著一小塊不值錢的田地，種著青菜勉強過日子。同樣地，隔壁村六歲的阿國是個可憐的孤兒，從小與外婆相依為命。他看著一身病痛的外婆每天工作十到十二小時，總是很懂事地主動洗衣、煮飯。阿國希望趕快長大，賺錢改善家裡的經濟，讓外婆不用那麼辛苦。|qīng chén， liù suì de ā yuè bú xiàng tóng líng de hái zi yí yàng qù shàng xué， ér shì gēn zhù nǎi nǎi dào tián lǐ gōng zuò。 qián nián， shōu chéng qián yù shàng le tiān zāi， hài dé ā yuè fù mǔ zuò le yì zhěng nián bái gōng， nóng tián yě bèi chōng zǒu yí dà bàn， sǔn shī cǎn zhòng。 xiàn zài， zhè jiā rén zhǐ néng kào zhù yì xiǎo kuài bù zhí qián de tián dì， zhǒng zhù qīng cài miǎn qiáng guò rì zi。 tóng yàng dì， gé bì cūn liù suì de ā guó shì gè kě lián de gū ér， cóng xiǎo yǔ wài pó xiāng yī wèi mìng。 tā kàn zhù yì shēn bìng tòng de wài pó měi tiān gōng zuò shí dào shí èr xiǎo shí， zǒng shì hěn dǒng shì dì zhǔ dòng xǐ yī、 zhǔ fàn。 ā guó xī wàng gǎn kuài zhǎng dà， zhuàn qián gǎi shàn jiā lǐ de jīng jì， ràng wài pó bú yòng nà me xīn kǔ。|Sáng sớm, A Nguyệt sáu tuổi không đi học như bạn cùng tuổi mà theo bà ra ruộng làm việc. Năm kia trước vụ gặt gặp thiên tai khiến cha mẹ làm công cả năm, ruộng bị cuốn trôi quá nửa, thiệt hại nặng. Nay nhà chỉ dựa vào mảnh ruộng nhỏ vô giá trị trồng rau sống tạm. Tương tự, A Quốc sáu tuổi ở làng bên là cô nhi đáng thương, từ nhỏ nương tựa bà ngoại. Em nhìn bà bệnh tật mỗi ngày làm mười đến mười hai tiếng, luôn hiểu chuyện chủ động giặt đồ, nấu cơm. A Quốc mong lớn nhanh kiếm tiền cải thiện kinh tế để bà bớt vất vả.
+文章|很明顯地，這兩個孩子的家庭都需要經濟援助，但是錢都在別人的口袋裡。對他們來說，所謂「公平的起跑點」根本不存在，只因出生時的環境比較差，賺起錢來自然比較吃力。雖然生活在同一片土地上，有些人一生下來就擁有大量的家產，有些人努力一輩子卻一無所有。因此，對於富人累積大量財富，而遊民與貧戶持續增加的現象，政府不能只是袖手旁觀，應該以提高富人納稅比例的方式來縮小貧富差距，調整社會公平性，創造平等的機會。|hěn míng xiǎn dì， zhè liǎng gè hái zi de jiā tíng dōu xū yào jīng jì yuán zhù， dàn shì qián dōu zài bié rén de kǒu dài lǐ。 duì tā men lái shuō， suǒ wèi 「gōng píng de qǐ pǎo diǎn」 gēn běn bù cún zài， zhǐ yīn chū shēng shí de huán jìng bǐ jiào chà， zhuàn qǐ qián lái zì rán bǐ jiào chī lì。 suī rán shēng huó zài tóng yí piàn tǔ dì shàng， yǒu xiē rén yì shēng xià lái jiù yōng yǒu dà liàng de jiā chǎn， yǒu xiē rén nǔ lì yí bèi zi què yì wú suǒ yǒu。 yīn cǐ， duì yú fù rén lèi jī dà liàng cái fù， ér yóu mín yǔ pín hù chí xù zēng jiā de xiàn xiàng， zhèng fǔ bù néng zhǐ shì xiù shǒu páng guān， yīng gāi yǐ tí gāo fù rén nà shuì bǐ lì de fāng shì lái suō xiǎo pín fù chā jù， diào zhěng shè huì gōng píng xìng， chuàng zào píng děng de jī huì。|Rõ ràng gia đình hai đứa trẻ đều cần viện trợ kinh tế nhưng tiền nằm trong túi người khác. Với chúng "vạch xuất phát công bằng" hoàn toàn không tồn tại, chỉ vì sinh ra trong hoàn cảnh kém hơn nên kiếm tiền tự nhiên vất vả hơn. Cùng sống trên một mảnh đất, có người sinh ra đã có gia sản lớn, người cố gắng cả đời vẫn trắng tay. Vì vậy trước hiện tượng người giàu tích lũy của cải khổng lồ còn người vô gia cư và hộ nghèo tăng, chính phủ không thể khoanh tay mà nên tăng tỷ lệ thuế người giàu để thu hẹp chênh lệch, điều chỉnh công bằng xã hội, tạo cơ hội bình đẳng.
+文章|也許有人認為，政府要求富人多繳稅，卻為了減輕窮人的負擔而提供許多津貼，等同於拿富人的錢來補貼窮人。但話說回來，人人都是社會的一分子，不能只自私地要求國家為你做了什麼，而是應問自己為國家做了什麼。來舉個北歐國家的例子吧！很多人羨慕北歐的社會福利，那裡的人民，即使是長期生病在家、失業，政府都會提供約75%的基本工資來照顧，更別說對弱勢團體的完善福利政策了。|yě xǔ yǒu rén rèn wèi， zhèng fǔ yāo qiú fù rén duō jiǎo shuì， què wèi le jiǎn qīng qióng rén de fù dān ér tí gōng xǔ duō jīn tiē， děng tóng yú ná fù rén de qián lái bǔ tiē qióng rén。 dàn huà shuō huí lái， rén rén dōu shì shè huì de yí fèn zǐ， bù néng zhǐ zì sī dì yāo qiú guó jiā wèi nǐ zuò le shén me， ér shì yīng wèn zì jǐ wèi guó jiā zuò le shén me。 lái jǔ gè běi ōu guó jiā de lì zi ba！ hěn duō rén xiàn mù běi ōu de shè huì fú lì， nà lǐ de rén mín， jí shǐ shì zhǎng qī shēng bìng zài jiā、 shī yè， zhèng fǔ dōu huì tí gōng yuē 75% de jī běn gōng zī lái zhào gù， gèng bié shuō duì ruò shì tuán tǐ de wán shàn fú lì zhèng cè le。|Có lẽ có người cho rằng chính phủ bắt người giàu nộp nhiều thuế để trợ cấp giảm gánh cho người nghèo, tương đương lấy tiền người giàu bù cho người nghèo. Nhưng nói đi cũng phải nói lại, ai cũng là một thành viên xã hội, không thể ích kỷ chỉ đòi nhà nước làm gì cho mình mà phải hỏi mình làm gì cho đất nước. Lấy ví dụ các nước Bắc Âu: nhiều người ngưỡng mộ phúc lợi Bắc Âu, dân ở đó dù bệnh dài ngày ở nhà hay thất nghiệp, chính phủ vẫn cấp khoảng 75% lương cơ bản, chưa nói chính sách phúc lợi hoàn thiện cho nhóm yếu thế.
+文章|國家之所以能出手這麼大方，就在於政府在制定政策時考慮了多數人的利益，把富人存著不用的錢進行「收入再分配」，建立完善的醫療、養老、失業補助的制度，提供人們遇到困難時的保障，讓大家共享更好的社會福利。|guó jiā zhī suǒ yǐ néng chū shǒu zhè me dà fāng， jiù zài yú zhèng fǔ zài zhì dìng zhèng cè shí kǎo lǜ le duō shù rén de lì yì， bǎ fù rén cún zhù bú yòng de qián jìn xíng 「shōu rù zài fēn pèi」， jiàn lì wán shàn de yī liáo、 yǎng lǎo、 shī yè bǔ zhù de zhì dù， tí gōng rén men yù dào kùn nán shí de bǎo zhàng， ràng dà jiā gòng xiǎng gèng hǎo de shè huì fú lì。|Nhà nước chi hào phóng được là vì khi ban hành chính sách đã cân nhắc lợi ích đa số, lấy số tiền người giàu cất không dùng để "tái phân phối thu nhập", xây dựng chế độ y tế, dưỡng lão, trợ cấp thất nghiệp hoàn chỉnh, bảo đảm khi gặp khó khăn để mọi người cùng hưởng phúc lợi tốt hơn.
+文章|倘若富人還是不服，其實可以換個角度來看：如果政府不透過稅收照顧窮人，那麼窮人可能為了生存而犯罪，到時每個人走在路上都提心吊膽的，政府也需要花更多預算加派警力以維護治安。從經濟的角度來看，不是更不划算嗎？|tǎng ruò fù rén hái shì bù fú， qí shí kě yǐ huàn gè jiǎo dù lái kàn： rú guǒ zhèng fǔ bú tòu guò shuì shōu zhào gù qióng rén， nà me qióng rén kě néng wèi le shēng cún ér fàn zuì， dào shí měi gè rén zǒu zài lù shàng dōu tí xīn diào dǎn de， zhèng fǔ yě xū yào huā gèng duō yù suàn jiā pài jǐng lì yǐ wéi hù zhì ān。 cóng jīng jì de jiǎo dù lái kàn， bú shì gèng bù huá suàn ma？|Nếu người giàu vẫn không phục, thật ra có thể đổi góc nhìn: nếu chính phủ không dùng thuế chăm lo người nghèo, họ có thể vì sinh tồn mà phạm tội, lúc ấy ai đi trên đường cũng thấp thỏm, chính phủ cũng phải chi thêm ngân sách tăng cảnh sát giữ trị an. Từ góc độ kinh tế chẳng phải càng không có lợi sao?`}},{n:8,zh:"左右為難的難民問題",vi:"Vấn đề người tị nạn: tiến thoái lưỡng nan",v:`左右為難|zuǒyòuwèinán|tiến thoái lưỡng nan|Idiom
+難民|nánmín|người tị nạn|N
+男童|nántóng|bé trai|N
+溺死|nìsǐ|chết đuối|Vp
+震驚|zhènjīng|chấn động|Vpt
+接連|jiēlián|liên tiếp|Adv
+事件|shìjiàn|sự kiện|N
+不滿|bùmǎn|bất mãn|Vs
+分擔|fēndān|chia sẻ gánh vác|V
+化|huà|biến thành|V
+轉機|zhuǎnjī|bước ngoặt, cơ hội|N
+海面|hǎimiàn|mặt biển|N
+難以數計|nányǐshùjì|nhiều không đếm xuể|Idiom
+屍體|shītǐ|thi thể|N
+怵目驚心|chùmùjīngxīn|rùng rợn|Idiom
+冒|mào|mạo hiểm, liều|V
+聯合國|liánhéguó|Liên Hợp Quốc|Name
+止|zhǐ|đến (văn ngôn)|Ptc
+庇護|bìhù|che chở, tị nạn|N
+人數|rénshù|số người|N
+面臨|miànlín|đối mặt|V
+團結|tuánjié|đoàn kết|Vi
+召開|zhàokāi|triệu tập|V
+高峰會|gāofēnghuì|hội nghị thượng đỉnh|N
+領袖|lǐngxiù|lãnh tụ|N
+消除|xiāochú|xóa bỏ|V
+仇外|chóuwài|bài ngoại|Vs
+前|qián|cựu, trước|Prefix
+歐巴馬|ōubāmǎ|Obama|Name
+會議|huìyì|hội nghị|N
+主義|zhǔyì|chủ nghĩa|N
+受害者|shòuhàizhě|nạn nhân|N
+向來|xiànglái|xưa nay|Adv
+單一|dānyī|đơn lẻ|Vs-attr
+共同|gòngtóng|cùng nhau|Adv
+排外|páiwài|bài ngoại|Vi
+融入|róngrù|hòa nhập|V
+收容|shōuróng|thu nhận|V
+或許|huòxǔ|có lẽ|Adv
+勞動力|láodònglì|sức lao động|N
+轉化|zhuǎnhuà|chuyển hóa|Vi
+里約|lǐyuē|Rio|Name
+奧運|àoyùn|Thế vận hội|N
+首度|shǒudù|lần đầu|Adv
+代表隊|dàibiǎoduì|đội đại diện|N
+逃離|táolí|trốn thoát|V
+戰火|zhànhuǒ|khói lửa chiến tranh|N
+殘障|cánzhàng|khuyết tật|N
+忘掉|wàngdiào|quên đi|Vpt
+英雄|yīngxióng|anh hùng|N
+身分|shēnfèn|thân phận|N
+索馬利亞|suǒmǎlìyà|Somalia|Name
+之後|zhīhòu|sau đó|N
+參選|cānxuǎn|tham gia tranh cử|V
+膚色|fūsè|màu da|N
+早日|zǎorì|sớm ngày|Adv
+扶持|fúchí|nâng đỡ|V`,d:{l:`新聞|一張三歲男童在海邊溺死的照片震驚全球，使大家對難民的問題更加地關心和同情。然而，在接連發生恐怖攻擊事件後，民眾又開始對政府的開放政策表達不滿。如何解決難民危機，正考驗著各國政府的智慧。|yì zhāng sān suì nán tóng zài hǎi biān nì sǐ de zhào piān zhèn jīng quán qiú， shǐ dà jiā duì nán mín de wèn tí gèng jiā dì guān xīn hé tóng qíng。 rán ér， zài jiē lián fā shēng kǒng bù gōng jī shì jiàn hòu， mín zhòng yòu kāi shǐ duì zhèng fǔ de kāi fàng zhèng cè biǎo dá bù mǎn。 rú hé jiě jué nán mín wēi jī， zhèng kǎo yàn zhù gè guó zhèng fǔ de zhì huì。|Bức ảnh bé trai ba tuổi chết đuối bên bờ biển gây chấn động toàn cầu, khiến mọi người quan tâm và đồng cảm hơn với vấn đề người tị nạn. Tuy nhiên sau các vụ khủng bố liên tiếp, dân chúng lại bất mãn với chính sách mở cửa của chính phủ. Làm sao giải quyết khủng hoảng người tị nạn đang thử thách trí tuệ chính phủ các nước.
+文章|海面上，難以數計的屍體讓人怵目驚心。因為宗教或戰爭的原因，幾百萬難民冒著生命危險，離鄉背井、飄洋過海，只是為了能到一個安全的地方好好活著。|hǎi miàn shàng， nán yǐ shù jì de shī tǐ ràng rén chù mù jīng xīn。 yīn wèi zōng jiào huò zhàn zhēng de yuán yīn， jǐ bǎi wàn nán mín mào zhù shēng mìng wēi xiǎn， lí xiāng bèi jǐng、 piāo yáng guò hǎi， zhǐ shì wèi le néng dào yí gè ān quán de dì fāng hǎo hǎo huó zhù。|Trên mặt biển vô số thi thể khiến người ta rùng mình. Vì tôn giáo hoặc chiến tranh, hàng triệu người tị nạn liều mạng rời quê hương vượt biển chỉ để đến nơi an toàn sống cho tử tế.
+文章|根據聯合國的統計，至2015年底止，全世界有六千多萬難民申請庇護，人數創下歷史新高，人權觀察組織就表示：「全球正面臨一個歷史性的難民危機，目前正是需要各國團結的時候。」2016年9月，聯合國在紐約召開了史上第一次難民高峰會，一百九十三國領袖和代表承諾將保護難民人權、協助難民就業，並消除國人仇外的心理。|gēn jù lián hé guó de tǒng jì， zhì 2015 nián dǐ zhǐ， quán shì jiè yǒu liù qiān duō wàn nán mín shēn qǐng bì hù， rén shù chuàng xià lì shǐ xīn gāo， rén quán guān chá zǔ zhī jiù biǎo shì：「quán qiú zhèng miàn lín yí gè lì shǐ xìng de nán mín wēi jī， mù qián zhèng shì xū yào gè guó tuán jié de shí hòu。」2016 nián 9 yuè， lián hé guó zài niǔ yuē zhào kāi le shǐ shàng dì yī cì nán mín gāo fēng huì， yì bǎi jiǔ shí sān guó lǐng xiù hé dài biǎo chéng nuò jiāng bǎo hù nán mín rén quán、 xié zhù nán mín jiù yè， bìng xiāo chú guó rén chóu wài de xīn lǐ。|Theo thống kê Liên Hợp Quốc, đến cuối 2015 toàn thế giới có hơn sáu mươi triệu người xin tị nạn, lập kỷ lục lịch sử; tổ chức theo dõi nhân quyền nói: "Toàn cầu đang đối mặt khủng hoảng tị nạn mang tính lịch sử, lúc này cần các nước đoàn kết." Tháng 9/2016 LHQ tổ chức tại New York hội nghị thượng đỉnh tị nạn đầu tiên, lãnh đạo và đại diện 193 nước cam kết bảo vệ nhân quyền người tị nạn, hỗ trợ họ có việc làm và xóa bỏ tâm lý bài ngoại.
+文章|就如美國前總統歐巴馬在會議中所言：「難民本身不是威脅，而是戰爭及恐怖主義的受害者。」人道與自由向來是西方國家的重要價值，難民問題並非單一國家的責任，只有透過國際社會共同合作與分擔才能解決。人道危機正是各國合作的轉機，仇恨與排外只會使難民更加難以融入社會，帶來更大的傷害。|jiù rú měi guó qián zǒng tǒng ōu bā mǎ zài huì yì zhōng suǒ yán：「nán mín běn shēn bú shì wēi xié， ér shì zhàn zhēng jí kǒng bù zhǔ yì de shòu hài zhě。」 rén dào yǔ zì yóu xiàng lái shì xī fāng guó jiā de zhòng yào jià zhí， nán mín wèn tí bìng fēi dān yì guó jiā de zé rèn， zhǐ yǒu tòu guò guó jì shè huì gòng tóng hé zuò yǔ fēn dān cái néng jiě jué。 rén dào wēi jī zhèng shì gè guó hé zuò de zhuǎn jī， chóu hèn yǔ pái wài zhǐ huì shǐ nán mín gèng jiā nán yǐ róng rù shè huì， dài lái gèng dà de shāng hài。|Như cựu tổng thống Mỹ Obama nói tại hội nghị: "Bản thân người tị nạn không phải mối đe dọa mà là nạn nhân của chiến tranh và chủ nghĩa khủng bố." Nhân đạo và tự do xưa nay là giá trị quan trọng của phương Tây, vấn đề tị nạn không phải trách nhiệm của riêng nước nào, chỉ có cộng đồng quốc tế hợp tác chia sẻ mới giải quyết được. Khủng hoảng nhân đạo chính là bước ngoặt hợp tác, thù hận và bài ngoại chỉ khiến họ khó hòa nhập hơn, gây tổn thương lớn hơn.
+文章|短時間收容難民或許會對收容國的財政造成負擔，但從長期來看，只要提供語言與職業訓練，就能使他們自食其力。越早讓難民就業，他們就能越早融入社會。研究指出，貧窮的新移民都想為了安定的生活而努力工作。在歐洲人口老化與勞動力不足的情況下，這正是把難民危機轉化為生產力的大好機會。他們不但能為歐洲各國停滯不前的經濟帶來好處，也對國家稅收有所貢獻。|duǎn shí jiān shōu róng nán mín huò xǔ huì duì shōu róng guó de cái zhèng zào chéng fù dān， dàn cóng zhǎng qī lái kàn， zhǐ yào tí gōng yǔ yán yǔ zhí yè xùn liàn， jiù néng shǐ tā men zì shí qí lì。 yuè zǎo ràng nán mín jiù yè， tā men jiù néng yuè zǎo róng rù shè huì。 yán jiū zhǐ chū， pín qióng de xīn yí mín dōu xiǎng wèi le ān dìng de shēng huó ér nǔ lì gōng zuò。 zài ōu zhōu rén kǒu lǎo huà yǔ láo dòng lì bù zú de qíng kuàng xià， zhè zhèng shì bǎ nán mín wēi jī zhuǎn huà wèi shēng chǎn lì de dà hǎo jī huì。 tā men bú dàn néng wèi ōu zhōu gè guó tíng zhì bù qián de jīng jì dài lái hǎo chù， yě duì guó jiā shuì shōu yǒu suǒ gòng xiàn。|Thu nhận người tị nạn thời gian ngắn có thể gây gánh nặng tài chính cho nước tiếp nhận, nhưng về lâu dài chỉ cần dạy ngôn ngữ và đào tạo nghề, họ có thể tự lập. Càng sớm cho họ việc làm càng sớm hòa nhập. Nghiên cứu cho thấy dân nhập cư mới nghèo đều muốn làm việc chăm chỉ vì cuộc sống ổn định. Khi châu Âu già hóa và thiếu lao động, đây là cơ hội lớn biến khủng hoảng tị nạn thành năng suất. Họ không chỉ mang lợi cho nền kinh tế đình trệ của châu Âu mà còn đóng góp thuế.
+文章|2016年的里約奧運，首度出現由難民組成的代表隊。有位因逃離戰火而斷了一條腿的難民，也為參加殘障奧運的游泳比賽而努力，他說：「我要忘掉過去、重新開始生活，有一天，我要以英雄的身分再回到我的國家。」另一位索馬利亞籍女性難民18歲時逃離戰火，靠著自己的努力取得美國哈佛大學碩士，成為聯合國公共衛生專家之後，回到自己的國家參選總統，希望能為國家創造繁榮和幸福。|2016 nián de lǐ yuē ào yùn， shǒu dù chū xiàn yóu nán mín zǔ chéng de dài biǎo duì。 yǒu wèi yīn táo lí zhàn huǒ ér duàn le yì tiáo tuǐ de nán mín， yě wèi cān jiā cán zhàng ào yùn de yóu yǒng bǐ sài ér nǔ lì， tā shuō：「wǒ yào wàng diào guò qù、 chóng xīn kāi shǐ shēng huó， yǒu yì tiān， wǒ yào yǐ yīng xióng de shēn fèn zài huí dào wǒ de guó jiā。」 lìng yí wèi suǒ mǎ lì yà jí nǚ xìng nán mín 18 suì shí táo lí zhàn huǒ， kào zhù zì jǐ de nǔ lì qǔ dé měi guó hā fú dà xué shuò shì， chéng wèi lián hé guó gōng gòng wèi shēng zhuān jiā zhī hòu， huí dào zì jǐ de guó jiā cān xuǎn zǒng tǒng， xī wàng néng wèi guó jiā chuàng zào fán róng hé xìng fú。|Thế vận hội Rio 2016 lần đầu có đội đại diện gồm người tị nạn. Một người mất một chân vì chạy chiến tranh cũng cố gắng thi bơi ở Paralympic, anh nói: "Tôi muốn quên quá khứ, bắt đầu cuộc sống mới, một ngày nào đó tôi sẽ trở về quê hương với tư cách anh hùng." Một phụ nữ tị nạn Somalia khác năm 18 tuổi chạy chiến tranh, nhờ nỗ lực lấy thạc sĩ Harvard, thành chuyên gia y tế công cộng LHQ rồi về nước tranh cử tổng thống, mong tạo thịnh vượng và hạnh phúc cho đất nước.
+文章|每個人都是世界的一分子，應該用友善與尊重的態度，不分國籍、種族、膚色與性別，幫助難民早日成為我們的同事和鄰居，重新建立幸福的家庭。希望下一代在讀到這段歷史時，看到的是，我們曾經一起努力扶持那些需要被保護的人們。|měi gè rén dōu shì shì jiè de yí fèn zǐ， yīng gāi yòng yǒu shàn yǔ zūn zhòng de tài dù， bù fēn guó jí、 zhǒng zú、 fū sè yǔ xìng bié， bāng zhù nán mín zǎo rì chéng wèi wǒ men de tóng shì hé lín jū， chóng xīn jiàn lì xìng fú de jiā tíng。 xī wàng xià yí dài zài dú dào zhè duàn lì shǐ shí， kàn dào de shì， wǒ men céng jīng yì qǐ nǔ lì fú chí nà xiē xū yào bèi bǎo hù de rén men。|Mỗi người đều là một phần của thế giới, nên dùng thái độ thân thiện tôn trọng, không phân biệt quốc tịch, chủng tộc, màu da, giới tính, giúp người tị nạn sớm thành đồng nghiệp và hàng xóm, xây lại gia đình hạnh phúc. Mong thế hệ sau khi đọc đoạn lịch sử này sẽ thấy chúng ta từng cùng nỗ lực nâng đỡ những người cần bảo vệ.`}},{n:9,zh:"有核到底可不可？",vi:"Có điện hạt nhân rốt cuộc có nên không?",v:`核電廠|hédiànchǎng|nhà máy điện hạt nhân|N
+熱烈|rèliè|sôi nổi|Vs
+乃至|nǎizhì|thậm chí|Adv
+遠處|yuǎnchù|nơi xa|N
+輻射|fúshè|bức xạ|N
+外洩|wàixiè|rò rỉ|Vi
+爆炸|bàozhà|nổ|Vp
+危言聳聽|wēiyánsǒngtīng|nói giật gân|Idiom
+致命|zhìmìng|chết người|Vs
+退燒|tuìshāo|hạ nhiệt|Vp
+行之有年|xíngzhīyǒunián|thực hiện nhiều năm|Idiom
+三哩島|sānlīdǎo|đảo Three Mile|Name
+烏克蘭|wūkèlán|Ukraine|Name
+車諾比|chēnuòbǐ|Chernobyl|Name
+福島|fúdǎo|Fukushima|Name
+核災|hézāi|thảm họa hạt nhân|N
+核電|hédiàn|điện hạt nhân|N
+列為|lièwèi|xếp vào|Vst
+等級|děngjí|cấp độ|N
+位於|wèiyú|nằm ở|Vst
+海嘯|hǎixiào|sóng thần|N
+洪水|hóngshuǐ|lũ lụt|N
+數百萬|shùbǎiwàn|vài triệu|Adv
+及時|jíshí|kịp thời|Adv
+顆|kē|viên, quả (lượng từ)|M
+炸彈|zhàdàn|bom|N
+立即|lìjí|lập tức|Adv
+令|lìng|khiến|Vs
+擔憂|dānyōu|lo lắng|Vs
+歐洲癌症護理雜誌|ōuzhōuáizhènghùlǐzázhì|Tạp chí Chăm sóc ung thư châu Âu|Name
+數字|shùzì|con số|N
+周圍|zhōuwéi|xung quanh|N
+罹癌|líái|mắc ung thư|Vp
+偏|piān|hơi lệch, thiên về|Adv
+青少年|qīngshàonián|thanh thiếu niên|N
+細胞|xìbāo|tế bào|N
+製造|zhìzào|chế tạo, tạo ra|V
+廢料|fèiliào|chất thải|N
+可行|kěxíng|khả thi|Vs
+偏遠|piānyuǎn|hẻo lánh|Vs
+任誰|rènshuí|bất cứ ai|Phrase
+因應|yīnyīng|ứng phó|V
+再生能源|zàishēngnéngyuán|năng lượng tái tạo|N
+妥善|tuǒshàn|thỏa đáng|Adv
+頭痛|tóutòng|đau đầu|Vs
+無解|wújiě|không có lời giải|Vs
+難題|nántí|bài toán khó|N
+正確|zhèngquè|đúng đắn|Vs`,d:{l:`文章|「核電廠的存廢」一直是許多國家熱烈討論的社會議題，與經濟、環境，乃至個人生命財產安全息息相關，你我都無法置身事外。|「hé diàn chǎng de cún fèi」 yì zhí shì xǔ duō guó jiā rè liè tǎo lùn de shè huì yì tí， yǔ jīng jì、 huán jìng， nǎi zhì gè rén shēng mìng cái chǎn ān quán xī xī xiāng guān， nǐ wǒ dōu wú fǎ zhì shēn shì wài。|"Giữ hay bỏ nhà máy điện hạt nhân" luôn là vấn đề xã hội được nhiều nước bàn luận sôi nổi, liên quan mật thiết kinh tế, môi trường, thậm chí an toàn tính mạng tài sản mỗi người, bạn và tôi đều không thể đứng ngoài.
+文章|你可以想像自己住的城市不遠處有座核電廠嗎？會不會擔心有一天輻射外洩，甚至發生爆炸，來不及逃離呢？這不是危言聳聽，正因核電廠有著致命風險，所以「反核」一直都是不退燒的社會議題。雖然核能發電行之有年，但從美國三哩島、烏克蘭車諾比，到日本福島核災事件，都顯示人類控制核電的能力仍然不足。|nǐ kě yǐ xiǎng xiàng zì jǐ zhù de chéng shì bù yuǎn chù yǒu zuò hé diàn chǎng ma？ huì bú huì dān xīn yǒu yì tiān fú shè wài xiè， shèn zhì fā shēng bào zhà， lái bù jí táo lí ne？ zhè bú shì wēi yán sǒng tīng， zhèng yīn hé diàn chǎng yǒu zhù zhì mìng fēng xiǎn， suǒ yǐ 「fǎn hé」 yì zhí dōu shì bú tuì shāo de shè huì yì tí。 suī rán hé néng fā diàn xíng zhī yǒu nián， dàn cóng měi guó sān lī dǎo、 wū kè lán chē nuò bǐ， dào rì běn fú dǎo hé zāi shì jiàn， dōu xiǎn shì rén lèi kòng zhì hé diàn de néng lì réng rán bù zú。|Bạn có thể tưởng tượng thành phố mình sống không xa có một nhà máy điện hạt nhân không? Có lo một ngày bức xạ rò rỉ, thậm chí nổ, không kịp chạy? Đó không phải nói giật gân, chính vì nhà máy có rủi ro chết người nên "chống hạt nhân" luôn là vấn đề không hạ nhiệt. Tuy điện hạt nhân dùng nhiều năm, từ đảo Three Mile của Mỹ, Chernobyl Ukraine đến thảm họa Fukushima Nhật đều cho thấy khả năng kiểm soát điện hạt nhân của con người vẫn chưa đủ.
+文章|以臺灣為例，在這座小島上就有超過三座的核電廠，且皆被列為「全球最危險等級」，人口過度密集是原因之一，加上臺灣位於地震帶上，地震頻率高，核電廠卻離海邊及城市不遠，得同時面對地震、海嘯、洪水等威脅。若發生七級以上的強震，恐怕無法讓數百萬人及時逃離。就像是一顆未爆的炸彈，如何讓人能安心睡覺？|yǐ tái wān wèi lì， zài zhè zuò xiǎo dǎo shàng jiù yǒu chāo guò sān zuò de hé diàn chǎng， qiě jiē bèi liè wèi 「quán qiú zuì wēi xiǎn děng jí」， rén kǒu guò dù mì jí shì yuán yīn zhī yī， jiā shàng tái wān wèi yú dì zhèn dài shàng， dì zhèn pín lǜ gāo， hé diàn chǎng què lí hǎi biān jí chéng shì bù yuǎn， dé tóng shí miàn duì dì zhèn、 hǎi xiào、 hóng shuǐ děng wēi xié。 ruò fā shēng qī jí yǐ shàng de qiáng zhèn， kǒng pà wú fǎ ràng shù bǎi wàn rén jí shí táo lí。 jiù xiàng shì yì kē wèi bào de zhà dàn， rú hé ràng rén néng ān xīn shuì jué？|Lấy Đài Loan làm ví dụ, trên hòn đảo nhỏ này có hơn ba nhà máy, đều bị xếp vào "cấp nguy hiểm nhất thế giới", dân số quá dày là một nguyên nhân, cộng Đài Loan nằm trên vành đai động đất tần suất cao mà nhà máy cách biển và thành phố không xa, phải đối mặt đồng thời động đất, sóng thần, lũ. Nếu xảy ra động đất mạnh trên cấp 7, e rằng hàng triệu người không kịp chạy. Như một quả bom chưa nổ, làm sao yên tâm ngủ?
+文章|就算沒有立即危險，輻射的問題也令人擔憂。《歐洲癌症護理雜誌》所提供的數字以及德國的研究資料都顯示核電廠周圍居民罹癌的比例偏高。日本福島核災事件發生後，六年之間，青少年罹癌人數也超過一百五十人。許多例子都證明輻射會讓正常的細胞變成癌細胞，也可以說核能發電廠製造出了讓人容易生病的環境。|jiù suàn méi yǒu lì jí wēi xiǎn， fú shè de wèn tí yě lìng rén dān yōu。《 ōu zhōu ái zhèng hù lǐ zá zhì 》 suǒ tí gōng de shù zì yǐ jí dé guó de yán jiū zī liào dōu xiǎn shì hé diàn chǎng zhōu wéi jū mín lí ái de bǐ lì piān gāo。 rì běn fú dǎo hé zāi shì jiàn fā shēng hòu， liù nián zhī jiān， qīng shào nián lí ái rén shù yě chāo guò yì bǎi wǔ shí rén。 xǔ duō lì zi dōu zhèng míng fú shè huì ràng zhèng cháng de xì bāo biàn chéng ái xì bāo， yě kě yǐ shuō hé néng fā diàn chǎng zhì zào chū le ràng rén róng yì shēng bìng de huán jìng。|Dù không nguy hiểm tức thì, vấn đề bức xạ cũng đáng lo. Số liệu của "Tạp chí Chăm sóc ung thư châu Âu" và nghiên cứu của Đức đều cho thấy tỷ lệ mắc ung thư của cư dân quanh nhà máy khá cao. Sau thảm họa Fukushima, trong sáu năm số thanh thiếu niên mắc ung thư cũng vượt 150. Nhiều ví dụ chứng minh bức xạ biến tế bào bình thường thành tế bào ung thư, cũng có thể nói nhà máy tạo ra môi trường dễ sinh bệnh.
+文章|除了看不見的輻射威脅，看得見的核廢料處理更是一大難題。核廢料造成的輻射汙染超過數百年，無論是埋在土裡還是丟到海底，長遠來看都不太可行。更糟糕的是，有些國家選擇犧牲住在偏遠地區的人民，把他們的家園當做核廢料的「垃圾場」，這種做法更是任誰都無法接受。|chú le kàn bú jiàn de fú shè wēi xié， kàn dé jiàn de hé fèi liào chù lǐ gèng shì yí dà nán tí。 hé fèi liào zào chéng de fú shè wū rǎn chāo guò shù bǎi nián， wú lùn shì mái zài tǔ lǐ hái shì diū dào hǎi dǐ， zhǎng yuǎn lái kàn dōu bú tài kě xíng。 gèng zāo gāo de shì， yǒu xiē guó jiā xuǎn zé xī shēng zhù zài piān yuǎn dì qū de rén mín， bǎ tā men de jiā yuán dāng zuò hé fèi liào de 「lā jī chǎng」， zhè zhǒng zuò fǎ gèng shì rèn shuí dōu wú fǎ jiē shòu。|Ngoài mối đe dọa bức xạ vô hình, xử lý chất thải hạt nhân hữu hình càng là bài toán lớn. Ô nhiễm bức xạ do chất thải kéo dài hàng trăm năm, dù chôn dưới đất hay thả đáy biển, về lâu dài đều không khả thi. Tệ hơn, có nước chọn hy sinh dân vùng hẻo lánh, biến quê hương họ thành "bãi rác" chất thải hạt nhân, cách làm này ai cũng không thể chấp nhận.
+文章|多年前，許多國家為了因應大量用電需求而蓋了核電廠。當時，再生能源技術不足且設備昂貴，從經濟的角度考量，選擇最低成本的核能發電是可以理解的。然而，核電風險究竟多高？如何妥善控制核輻射？廢料又應如何處理？皆是令人頭痛且仍無解的難題。沒有什麼比安全與健康更重要的了。人們不應該為了害怕電價上漲而選擇生活在危險當中，努力發展再生能源以取代核能發電才是正確的道路。|duō nián qián， xǔ duō guó jiā wèi le yīn yīng dà liàng yòng diàn xū qiú ér gài le hé diàn chǎng。 dāng shí， zài shēng néng yuán jì shù bù zú qiě shè bèi áng guì， cóng jīng jì de jiǎo dù kǎo liáng， xuǎn zé zuì dī chéng běn de hé néng fā diàn shì kě yǐ lǐ jiě de。 rán ér， hé diàn fēng xiǎn jiū jìng duō gāo？ rú hé tuǒ shàn kòng zhì hé fú shè？ fèi liào yòu yīng rú hé chù lǐ？ jiē shì lìng rén tóu tòng qiě réng wú jiě de nán tí。 méi yǒu shén me bǐ ān quán yǔ jiàn kāng gèng zhòng yào de le。 rén men bù yīng gāi wèi le hài pà diàn jià shàng zhǎng ér xuǎn zé shēng huó zài wēi xiǎn dāng zhōng， nǔ lì fā zhǎn zài shēng néng yuán yǐ qǔ dài hé néng fā diàn cái shì zhèng què de dào lù。|Nhiều năm trước, nhiều nước vì ứng phó nhu cầu điện lớn đã xây nhà máy hạt nhân. Lúc đó công nghệ năng lượng tái tạo chưa đủ, thiết bị đắt, xét kinh tế chọn điện hạt nhân chi phí thấp nhất là có thể hiểu. Nhưng rủi ro hạt nhân rốt cuộc cao đến đâu? Kiểm soát bức xạ thế nào? Chất thải xử lý ra sao? Đều là bài toán đau đầu chưa có lời giải. Không gì quan trọng hơn an toàn và sức khỏe. Người ta không nên vì sợ giá điện tăng mà chọn sống trong nguy hiểm, nỗ lực phát triển năng lượng tái tạo thay thế điện hạt nhân mới là con đường đúng.`}},{n:10,zh:"同性婚姻合法化",vi:"Hợp pháp hóa hôn nhân đồng giới",v:`同性|tóngxìng|đồng giới|Vs-attr
+主播|zhǔbō|người dẫn bản tin|N
+記者|jìzhě|phóng viên|N
+連線|liánxiàn|kết nối trực tuyến|Vi
+傳達|chuándá|truyền đạt|V
+陣線|zhènxiàn|mặt trận, phe|N
+發起|fāqǐ|khởi xướng|V
+盡快|jǐnkuài|càng nhanh càng tốt|Adv
+同性戀|tóngxìngliàn|đồng tính luyến ái|N
+異性戀|yìxìngliàn|dị tính luyến ái|N
+相同|xiāngtóng|giống nhau|Vs
+相愛|xiāngài|yêu nhau|Vs
+核心|héxīn|cốt lõi|N
+伴侶|bànlǚ|bạn đời|N
+無關|wúguān|không liên quan|Vs
+打破|dǎpò|phá vỡ|V
+平權|píngquán|quyền bình đẳng|N
+藉由|jíyóu|thông qua|Prep
+節稅|jiéshuì|tiết kiệm thuế|Vi
+病危|bìngwēi|bệnh nguy kịch|Vs
+簽署|qiānshǔ|ký kết|V
+文件|wénjiàn|văn kiện|N
+彼此|bǐcǐ|lẫn nhau|N
+親密|qīnmì|thân mật|Vs
+伙伴|huǒbàn|bạn đồng hành|N
+陌生|mòshēng|xa lạ|Vs
+性病|xìngbìng|bệnh tình dục|N
+偏見|piānjiàn|định kiến|N
+身上|shēnshàng|trên người|N
+異性|yìxìng|khác giới|Vs-attr
+有情人終成眷屬|yǒuqíngrénzhōngchéngjuànshǔ|người có tình cuối cùng nên duyên|Idiom
+末日|mòrì|ngày tận thế|N
+擴大|kuòdà|mở rộng|V
+範圍|fànwéi|phạm vi|N
+心聲|xīnshēng|tiếng lòng|N
+法案|fǎàn|dự luật|N
+鏡頭|jìngtóu|ống kính, cảnh quay|N
+聯邦|liánbāng|liên bang|N
+彩虹|cǎihóng|cầu vồng|N
+旗|qí|cờ|N
+時刻|shíkè|thời khắc|N
+駐外|zhùwài|đóng ở nước ngoài|Vi
+歡慶|huānqìng|mừng vui|V
+擠進|jǐjìn|chen vào|Vpt
+生物|shēngwù|sinh vật|N
+本能|běnnéng|bản năng|N
+繁衍|fányǎn|sinh sôi|V
+尋找|xúnzhǎo|tìm kiếm|V
+交配|jiāopèi|giao phối|Vi
+法則|fǎzé|quy luật|N
+定義|dìngyì|định nghĩa|N
+互補|hùbǔ|bổ sung cho nhau|Vs
+組合|zǔhé|tổ hợp|N
+全體|quántǐ|toàn thể|N
+詞彙|cíhuì|từ vựng|N
+稱呼|chēnghū|xưng hô|V
+建構|jiàngòu|xây dựng|V
+革命|gémìng|cách mạng|N
+做為|zuòwèi|làm (cho)|Vst
+無視|wúshì|phớt lờ|V
+干涉|gānshè|can thiệp|V
+邏輯|luójí|logic|N
+納入|nàrù|đưa vào|V
+第三者|dìsānzhě|người thứ ba|N
+原則|yuánzé|nguyên tắc|N
+無異|wúyì|không khác gì|Vst
+形式|xíngshì|hình thức|N
+亂倫|luànlún|loạn luân|N
+不倫|bùlún|ngoại tình|N
+白宮|báigōng|Nhà Trắng|Name
+巴黎鐵塔|bālítiětǎ|tháp Eiffel|Name
+打上|dǎshàng|chiếu lên|Vpt
+燈光|dēngguāng|ánh đèn|N`,d:{l:`主播|各位觀眾朋友大家好，和平廣場前正在舉辦一場爭取同性婚姻合法化的遊行活動。情況如何，我們現在與現場記者連線。|gè wèi guān zhòng péng yǒu dà jiā hǎo， hé píng guǎng chǎng qián zhèng zài jǔ bàn yì chǎng zhēng qǔ tóng xìng hūn yīn hé fǎ huà de yóu xíng huó dòng。 qíng kuàng rú hé， wǒ men xiàn zài yǔ xiàn chǎng jì zhě lián xiàn。|Chào quý khán giả, trước quảng trường Hòa Bình đang diễn ra cuộc tuần hành đòi hợp pháp hóa hôn nhân đồng giới. Tình hình thế nào, ta nối máy với phóng viên hiện trường.
+記者|記者現在所在位置是和平廣場前，現場擠滿了參加活動的民眾，高喊「同志朋友，你們並不孤單！」，希望傳達出他們跟同志站在同一陣線的立場。活動發起人表示，這個活動主要是希望政府能盡快通過同性婚姻法律。|jì zhě xiàn zài suǒ zài wèi zhì shì hé píng guǎng chǎng qián， xiàn chǎng jǐ mǎn le cān jiā huó dòng de mín zhòng， gāo hǎn 「tóng zhì péng yǒu， nǐ men bìng bù gū dān！」， xī wàng chuán dá chū tā men gēn tóng zhì zhàn zài tóng yí zhèn xiàn de lì chǎng。 huó dòng fā qǐ rén biǎo shì， zhè gè huó dòng zhǔ yào shì xī wàng zhèng fǔ néng jǐn kuài tōng guò tóng xìng hūn yīn fǎ lǜ。|Vị trí phóng viên đang đứng là trước quảng trường Hòa Bình, hiện trường chật người tham gia hô "Bạn bè đồng tính, các bạn không cô đơn!", mong truyền đạt lập trường đứng chung chiến tuyến với cộng đồng đồng tính. Người khởi xướng nói hoạt động chủ yếu mong chính phủ sớm thông qua luật hôn nhân đồng giới.
+記者|他說：「同性戀不是病，我們生來如此，和異性戀沒有兩樣。我們只是愛上相同性別的人，但這並沒有錯。我們也希望能跟相愛的人組成家庭，和對方分享物質和精神生活。婚姻的核心是愛，是伴侶之間的事，與性別無關。相愛的兩個人結婚是基本人權。過去，不同種族、不同階級的人不能結婚，這些歧視與限制漸漸被打破。同樣地，同性婚姻合法化也是往平權的方向努力。我們希望藉由這個活動讓大家更了解我們，也替自己爭取應有的權利。」|tā shuō：「tóng xìng liàn bú shì bìng， wǒ men shēng lái rú cǐ， hé yì xìng liàn méi yǒu liǎng yàng。 wǒ men zhǐ shì ài shàng xiàng tóng xìng bié de rén， dàn zhè bìng méi yǒu cuò。 wǒ men yě xī wàng néng gēn xiāng ài de rén zǔ chéng jiā tíng， hé duì fāng fēn xiǎng wù zhì hé jīng shén shēng huó。 hūn yīn de hé xīn shì ài， shì bàn lǚ zhī jiān de shì， yǔ xìng bié wú guān。 xiāng ài de liǎng gè rén jié hūn shì jī běn rén quán。 guò qù， bù tóng zhǒng zú、 bù tóng jiē jí de rén bù néng jié hūn， zhè xiē qí shì yǔ xiàn zhì jiàn jiàn bèi dǎ pò。 tóng yàng dì， tóng xìng hūn yīn hé fǎ huà yě shì wǎng píng quán de fāng xiàng nǔ lì。 wǒ men xī wàng jí yóu zhè gè huó dòng ràng dà jiā gèng liǎo jiě wǒ men， yě tì zì jǐ zhēng qǔ yīng yǒu de quán lì。」|Anh nói: "Đồng tính không phải bệnh, chúng tôi sinh ra đã vậy, không khác dị tính. Chúng tôi chỉ yêu người cùng giới, điều đó không sai. Chúng tôi cũng mong lập gia đình với người mình yêu, chia sẻ đời sống vật chất và tinh thần. Cốt lõi hôn nhân là tình yêu, là chuyện giữa bạn đời, không liên quan giới tính. Hai người yêu nhau kết hôn là nhân quyền cơ bản. Trước đây người khác chủng tộc, khác giai cấp không được cưới, những kỳ thị này dần bị phá bỏ. Tương tự, hợp pháp hóa hôn nhân đồng giới cũng là nỗ lực hướng tới bình đẳng. Chúng tôi mong qua hoạt động này mọi người hiểu hơn và giành quyền lợi xứng đáng."
+記者|說到法律面，一位參與活動的民眾表示：「即使跟同性伴侶生活了一輩子，得到家人朋友的認同，但在法律上，因為沒有擁有正式的合法關係，無法節稅、共享財產、領養小孩，在對方病危時也無法簽署文件，替他做出最好的決定。儘管彼此是生活中最親密的伙伴，卻是法律上的陌生人，不能像異性戀伴侶一樣享有同樣的權益，這是不公平的。同性婚姻合法化能提供法律基礎，讓同性伴侶在財產、醫療、身分等方面享有應有的保障和權利。」|shuō dào fǎ lǜ miàn， yí wèi cān yǔ huó dòng de mín zhòng biǎo shì：「jí shǐ gēn tóng xìng bàn lǚ shēng huó le yí bèi zi， dé dào jiā rén péng yǒu de rèn tóng， dàn zài fǎ lǜ shàng， yīn wèi méi yǒu yōng yǒu zhèng shì de hé fǎ guān xì， wú fǎ jié shuì、 gòng xiǎng cái chǎn、 lǐng yǎng xiǎo hái， zài duì fāng bìng wēi shí yě wú fǎ qiān shǔ wén jiàn， tì tā zuò chū zuì hǎo de jué dìng。 jǐn guǎn bǐ cǐ shì shēng huó zhōng zuì qīn mì de huǒ bàn， què shì fǎ lǜ shàng de mò shēng rén， bù néng xiàng yì xìng liàn bàn lǚ yí yàng xiǎng yǒu tóng yàng de quán yì， zhè shì bù gōng píng de。 tóng xìng hūn yīn hé fǎ huà néng tí gōng fǎ lǜ jī chǔ， ràng tóng xìng bàn lǚ zài cái chǎn、 yī liáo、 shēn fèn děng fāng miàn xiǎng yǒu yīng yǒu de bǎo zhàng hé quán lì。」|Nói đến mặt pháp lý, một người tham gia nói: "Dù sống cả đời với bạn đời đồng giới, được gia đình bạn bè chấp nhận, nhưng về pháp luật vì không có quan hệ hợp pháp chính thức nên không thể tiết kiệm thuế, chia sẻ tài sản, nhận con nuôi, khi đối phương nguy kịch cũng không thể ký giấy tờ quyết định tốt nhất. Dù là bạn đồng hành thân thiết nhất lại là người xa lạ về pháp luật, không hưởng quyền lợi như cặp dị tính, thật bất công. Hợp pháp hóa tạo cơ sở pháp lý để cặp đồng giới được bảo đảm về tài sản, y tế, thân phận."
+記者|性別平權雖已是世界潮流，但目前的社會尚未取得共識。許多人會把同志跟性病、複雜的性關係等負面印象連在一起。對此，發起人說：「這完全是一種偏見。同性戀並不等於隨便的性關係，這些問題同樣也會發生在異性戀者身上。當同性婚姻合法化，同性伴侶間的關係就跟異性伴侶一樣了，在法律的規定下得約束自己的行為，有了法律的保障，同性伴侶間的關係就能更穩定，也更願意承諾與負責。」|xìng bié píng quán suī yǐ shì shì jiè cháo liú， dàn mù qián de shè huì shàng wèi qǔ dé gòng shí。 xǔ duō rén huì bǎ tóng zhì gēn xìng bìng、 fù zá de xìng guān xì děng fù miàn yìn xiàng lián zài yì qǐ。 duì cǐ， fā qǐ rén shuō：「zhè wán quán shì yì zhǒng piān jiàn。 tóng xìng liàn bìng bù děng yú suí biàn de xìng guān xì， zhè xiē wèn tí tóng yàng yě huì fā shēng zài yì xìng liàn zhě shēn shàng。 dāng tóng xìng hūn yīn hé fǎ huà， tóng xìng bàn lǚ jiān de guān xì jiù gēn yì xìng bàn lǚ yí yàng le， zài fǎ lǜ de guī dìng xià dé yuē shù zì jǐ de xíng wèi， yǒu le fǎ lǜ de bǎo zhàng， tóng xìng bàn lǚ jiān de guān xì jiù néng gèng wěn dìng， yě gèng yuàn yì chéng nuò yǔ fù zé。」|Bình đẳng giới tuy là trào lưu thế giới nhưng xã hội hiện chưa đạt đồng thuận. Nhiều người gắn đồng tính với bệnh tình dục, quan hệ phức tạp. Về điều này người khởi xướng nói: "Đó hoàn toàn là định kiến. Đồng tính không đồng nghĩa quan hệ tùy tiện, các vấn đề này cũng xảy ra với dị tính. Khi hợp pháp hóa, quan hệ cặp đồng giới như cặp dị tính, phải tự ràng buộc hành vi theo pháp luật, có luật bảo đảm quan hệ ổn định hơn, sẵn lòng cam kết và chịu trách nhiệm hơn."
+記者|一位參加活動的異性戀者也表示：「我們常說有情人終成眷屬。承認同志婚姻不是世界末日，也不會破壞家庭價值。不僅不影響異性婚姻者的生活及權利，反而還擴大了保障範圍，讓更多人能按照自己所喜愛的方式生活。」隨著社會越開放、越多元，遊行者希望政府聽見他們的心聲，讓法案保障更多人。以上是記者在和平廣場前的報導。|yí wèi cān jiā huó dòng de yì xìng liàn zhě yě biǎo shì：「wǒ men cháng shuō yǒu qíng rén zhōng chéng juàn shǔ。 chéng rèn tóng zhì hūn yīn bú shì shì jiè mò rì， yě bú huì pò huài jiā tíng jià zhí。 bù jǐn bù yǐng xiǎng yì xìng hūn yīn zhě de shēng huó jí quán lì， fǎn ér hái kuò dà le bǎo zhàng fàn wéi， ràng gèng duō rén néng àn zhào zì jǐ suǒ xǐ ài de fāng shì shēng huó。」 suí zhù shè huì yuè kāi fàng、 yuè duō yuán， yóu xíng zhě xī wàng zhèng fǔ tīng jiàn tā men de xīn shēng， ràng fǎ àn bǎo zhàng gèng duō rén。 yǐ shàng shì jì zhě zài hé píng guǎng chǎng qián de bào dǎo。|Một người dị tính tham gia cũng nói: "Ta thường nói người có tình cuối cùng nên duyên. Thừa nhận hôn nhân đồng giới không phải ngày tận thế, cũng không phá giá trị gia đình. Không những không ảnh hưởng đời sống và quyền lợi người hôn nhân dị tính mà còn mở rộng phạm vi bảo đảm, để nhiều người sống theo cách mình thích." Khi xã hội ngày càng cởi mở đa dạng, người tuần hành mong chính phủ nghe tiếng lòng họ, để dự luật bảo vệ nhiều người hơn. Trên đây là bản tin của phóng viên trước quảng trường Hòa Bình.
+主播|鏡頭轉到國外。美國聯邦最高法院昨天做出判決，宣布同性伴侶結婚的權利應受憲法保障。消息一出，社群媒體紛紛換上彩虹旗慶祝這個歷史性的時刻。儘管如此，社會仍有許多反對的聲音。以下是駐外記者來自法國的報導。|jìng tóu zhuǎn dào guó wài。 měi guó lián bāng zuì gāo fǎ yuàn zuó tiān zuò chū pàn jué， xuān bù tóng xìng bàn lǚ jié hūn de quán lì yīng shòu xiàn fǎ bǎo zhàng。 xiāo xī yì chū， shè qún méi tǐ fēn fēn huàn shàng cǎi hóng qí qìng zhù zhè gè lì shǐ xìng de shí kè。 jǐn guǎn rú cǐ， shè huì réng yǒu xǔ duō fǎn duì de shēng yīn。 yǐ xià shì zhù wài jì zhě lái zì fǎ guó de bào dǎo。|Máy quay chuyển ra nước ngoài. Tòa án Tối cao liên bang Mỹ hôm qua phán quyết quyền kết hôn của cặp đồng giới được hiến pháp bảo vệ. Tin vừa ra, mạng xã hội thi nhau đổi cờ cầu vồng mừng thời khắc lịch sử. Dù vậy xã hội vẫn có nhiều tiếng phản đối. Sau đây là bản tin từ phóng viên thường trú tại Pháp.
+記者|當許多人正在歡慶美國聯邦最高法院的判決時，巴黎市中心擠進了數萬民眾反對同性婚姻合法化。我們來聽聽他們怎麼說。|dāng xǔ duō rén zhèng zài huān qìng měi guó lián bāng zuì gāo fǎ yuàn de pàn jué shí， bā lí shì zhōng xīn jǐ jìn le shù wàn mín zhòng fǎn duì tóng xìng hūn yīn hé fǎ huà。 wǒ men lái tīng tīng tā men zěn me shuō。|Khi nhiều người đang mừng phán quyết của Tòa tối cao Mỹ, trung tâm Paris chật hàng chục nghìn người phản đối hợp pháp hóa hôn nhân đồng giới. Hãy nghe họ nói.
+民眾一|從生物觀點來看，動物的本能之一就是生存，而繁衍下一代是生存的方式之一。為了繁衍下一代而去尋找異性交配，這是自然法則。同性戀是不自然的，也不是婚姻制度裡預期的對象。因為婚姻的定義中需要一男一女的結合，唯有如此，雙方才能在生理和心理各方面互補，自然地生育下一代。然而，同性伴侶無法擁有自己的孩子，男男、女女的組合違反自然，因此同性戀的婚姻是不可能成立的。|cóng shēng wù guān diǎn lái kàn， dòng wù de běn néng zhī yí jiù shì shēng cún， ér fán yǎn xià yí dài shì shēng cún de fāng shì zhī yī。 wèi le fán yǎn xià yí dài ér qù xún zhǎo yì xìng jiāo pèi， zhè shì zì rán fǎ zé。 tóng xìng liàn shì bú zì rán de， yě bú shì hūn yīn zhì dù lǐ yù qī de duì xiàng。 yīn wèi hūn yīn de dìng yì zhōng xū yào yì nán yì nǚ de jié hé， wéi yǒu rú cǐ， shuāng fāng cái néng zài shēng lǐ hé xīn lǐ gè fāng miàn hù bǔ， zì rán dì shēng yù xià yí dài。 rán ér， tóng xìng bàn lǚ wú fǎ yōng yǒu zì jǐ de hái zi， nán nán、 nǚ nǚ de zǔ hé wéi fǎn zì rán， yīn cǐ tóng xìng liàn de hūn yīn shì bù kě néng chéng lì de。|Nhìn từ sinh học, một trong những bản năng động vật là sinh tồn, mà sinh sôi thế hệ sau là cách sinh tồn. Tìm bạn khác giới giao phối để sinh sôi là quy luật tự nhiên. Đồng tính không tự nhiên, cũng không phải đối tượng dự kiến trong chế độ hôn nhân. Vì định nghĩa hôn nhân cần một nam một nữ kết hợp, chỉ vậy hai bên mới bổ sung nhau về sinh lý và tâm lý, tự nhiên sinh con. Tuy nhiên cặp đồng giới không thể có con riêng, tổ hợp nam nam, nữ nữ trái tự nhiên nên hôn nhân đồng tính không thể thành lập.
+民眾二|人類為了穩定社會結構而發展出婚姻制度，因此，婚姻不只是兩個人的自由選擇，更是與社會全體有關的公共議題。同性婚姻合法化將徹底改變婚姻、家庭的定義。我們需要重新解釋這些傳統詞彙，例如什麼是爸爸、媽媽、夫妻？孩子要怎麼稱呼他們？而什麼又是「家」？同性伴侶無法生兒育女，我們如何靠家庭來維持建構社會的基礎？這是一場社會革命，不能只是以「包容」「尊重多元」做為口號，而無視婚姻在人類文化上的意義，要求大眾改變婚姻的基本概念。|rén lèi wèi le wěn dìng shè huì jié gòu ér fā zhǎn chū hūn yīn zhì dù， yīn cǐ， hūn yīn bù zhǐ shì liǎng gè rén de zì yóu xuǎn zé， gèng shì yǔ shè huì quán tǐ yǒu guān de gōng gòng yì tí。 tóng xìng hūn yīn hé fǎ huà jiāng chè dǐ gǎi biàn hūn yīn、 jiā tíng de dìng yì。 wǒ men xū yào chóng xīn jiě shì zhè xiē chuán tǒng cí huì， lì rú shén me shì bà bà、 mā mā、 fū qī？ hái zi yào zěn me chēng hū tā men？ ér shén me yòu shì 「jiā」？ tóng xìng bàn lǚ wú fǎ shēng ér yù nǚ， wǒ men rú hé kào jiā tíng lái wéi chí jiàn gòu shè huì de jī chǔ？ zhè shì yì chǎng shè huì gé mìng， bù néng zhǐ shì yǐ 「bāo róng」「zūn zhòng duō yuán」 zuò wèi kǒu hào， ér wú shì hūn yīn zài rén lèi wén huà shàng de yì yì， yāo qiú dà zhòng gǎi biàn hūn yīn de jī běn gài niàn。|Loài người phát triển chế độ hôn nhân để ổn định cấu trúc xã hội, nên hôn nhân không chỉ là lựa chọn tự do của hai người mà còn là vấn đề công cộng liên quan toàn xã hội. Hợp pháp hóa sẽ thay đổi triệt để định nghĩa hôn nhân và gia đình. Cần giải thích lại các từ truyền thống như bố, mẹ, vợ chồng là gì? Con gọi họ thế nào? Còn "gia đình" là gì? Cặp đồng giới không sinh con, ta dựa vào gia đình duy trì nền tảng xã hội thế nào? Đây là cuộc cách mạng xã hội, không thể chỉ lấy "bao dung", "tôn trọng đa dạng" làm khẩu hiệu mà phớt lờ ý nghĩa hôn nhân trong văn hóa, đòi công chúng thay đổi khái niệm cơ bản về hôn nhân.
+民眾三|支持者認為每個人對婚姻都有自主權，有選擇伴侶的自由，法律、政府或任何人都不該干涉或破壞。按照這個邏輯，彼此相愛、願意做出承諾、也願意負擔婚姻責任的兩個人，都應該納入法律保障範圍。那麼為什麼同性戀者可以，相愛的父女、母子、第三者卻不可以呢？自由不能拿來當做同性婚姻合法化的原則，因為法律不可能在同一個原則之下，只保障某些人而不保障其他人。一旦讓同性婚姻合法化，無異間接鼓勵其他形式的伴侶關係，讓亂倫、不倫躲在自由的保護傘下有機可乘。|zhī chí zhě rèn wèi měi gè rén duì hūn yīn dōu yǒu zì zhǔ quán， yǒu xuǎn zé bàn lǚ de zì yóu， fǎ lǜ、 zhèng fǔ huò rèn hé rén dōu bù gāi gān shè huò pò huài。 àn zhào zhè gè luó jí， bǐ cǐ xiāng ài、 yuàn yì zuò chū chéng nuò、 yě yuàn yì fù dān hūn yīn zé rèn de liǎng gè rén， dōu yīng gāi nà rù fǎ lǜ bǎo zhàng fàn wéi。 nà me wèi shén me tóng xìng liàn zhě kě yǐ， xiāng ài de fù nǚ、 mǔ zi、 dì sān zhě què bù kě yǐ ne？ zì yóu bù néng ná lái dāng zuò tóng xìng hūn yīn hé fǎ huà de yuán zé， yīn wèi fǎ lǜ bù kě néng zài tóng yí gè yuán zé zhī xià， zhǐ bǎo zhàng mǒu xiē rén ér bù bǎo zhàng qí tā rén。 yí dàn ràng tóng xìng hūn yīn hé fǎ huà， wú yì jiān jiē gǔ lì qí tā xíng shì de bàn lǚ guān xì， ràng luàn lún、 bù lún duǒ zài zì yóu de bǎo hù sǎn xià yǒu jī kě chéng。|Người ủng hộ cho rằng ai cũng có quyền tự chủ hôn nhân, tự do chọn bạn đời, pháp luật, chính phủ hay ai cũng không nên can thiệp. Theo logic đó, hai người yêu nhau, sẵn sàng cam kết và gánh trách nhiệm hôn nhân đều nên được pháp luật bảo vệ. Vậy sao đồng tính được mà cha con, mẹ con yêu nhau, người thứ ba lại không? Tự do không thể làm nguyên tắc hợp pháp hóa vì luật không thể cùng một nguyên tắc mà chỉ bảo vệ một số người. Một khi hợp pháp hóa hôn nhân đồng giới thì chẳng khác gì gián tiếp khuyến khích các hình thức quan hệ khác, để loạn luân, ngoại tình nấp dưới chiếc ô tự do mà lợi dụng.
+記者|當白宮、巴黎鐵塔等世界地標打上彩虹燈光的同時，這些反對的聲音也不容忽視。人類社會將如何發展？有賴各界不斷對話與激辯。記者來自巴黎的報導。鏡頭交還給主播。|dāng bái gōng、 bā lí tiě tǎ děng shì jiè dì biāo dǎ shàng cǎi hóng dēng guāng de tóng shí， zhè xiē fǎn duì de shēng yīn yě bù róng hū shì。 rén lèi shè huì jiāng rú hé fā zhǎn？ yǒu lài gè jiè bú duàn duì huà yǔ jī biàn。 jì zhě lái zì bā lí de bào dǎo。 jìng tóu jiāo hái gěi zhǔ bō。|Khi Nhà Trắng, tháp Eiffel và các địa danh thế giới được chiếu đèn cầu vồng, những tiếng phản đối này cũng không thể bỏ qua. Xã hội loài người sẽ phát triển ra sao? Phụ thuộc vào đối thoại và tranh luận không ngừng của các giới. Phóng viên đưa tin từ Paris. Trả lại ống kính cho người dẫn.`}}]};
