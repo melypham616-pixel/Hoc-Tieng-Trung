@@ -15,6 +15,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
 <title>Học Tiếng Trung 當代中文課程 1</title>
 <style>
 :root{
@@ -208,6 +210,70 @@ rt{font:500 .5em/1 system-ui,sans-serif;color:var(--pri);letter-spacing:0}
 .w.name{background:var(--card);outline:1px dashed var(--line)}
 /* ---------- phụ ---------- */
 @media (max-width:480px){.zh{font-size:25px}.card{padding:14px;border-radius:16px}.bub{max-width:96%}.ctrl select{max-width:150px}}
+
+/* ======== Làm mới giao diện (v2) ======== */
+:root{
+  --bg:#f3eee4;--card:#fffefb;--ink:#26211c;--mut:#7a6f63;--line:#e6dccb;
+  --pri:#c23b2b;--pri-d:#9c2b1f;--pri2:#fbece6;
+  --acc:#17695f;--acc2:#e3f0ec;--gold:#c8962e;
+  --shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(60,40,20,.06),0 14px 30px -18px rgba(60,40,20,.32);
+  --hero-bg:linear-gradient(160deg,#1f1a17 0%,#2b2320 60%,#3a2a24 100%);
+  --hanzi:"Noto Serif TC","Songti TC","PingFang TC","Hiragino Sans CNS",serif;
+  --ui:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15120f;--card:#211d1a;--line:#38312a;--pri:#ee6a56;--pri2:#33231f;--hero-bg:linear-gradient(160deg,#0e0c0a,#1c1613 70%,#2a1d18)}}
+:root[data-theme="dark"]{--bg:#15120f;--card:#211d1a;--line:#38312a;--pri:#ee6a56;--pri2:#33231f;--hero-bg:linear-gradient(160deg,#0e0c0a,#1c1613 70%,#2a1d18)}
+body{font-family:var(--ui);font-size:15.5px;line-height:1.6;
+  background:radial-gradient(900px 420px at 85% -80px,color-mix(in srgb,var(--pri) 9%,transparent),transparent 70%),var(--bg)}
+.hero{position:relative;padding:26px 16px 22px;background:var(--hero-bg);border-bottom:3px solid var(--pri)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(circle at 92% 0,rgba(200,150,46,.28),transparent 45%)}
+.hero-in{position:relative;z-index:1}
+.seal{width:58px;height:58px;border-radius:12px;background:var(--pri);color:#fff;border:2px solid rgba(255,255,255,.85);
+  box-shadow:0 0 0 3px var(--pri),0 10px 20px -8px rgba(0,0,0,.6);transform:rotate(-3deg);font-family:var(--hanzi);font-weight:900}
+.brand h1{font-family:var(--hanzi);font-weight:900;letter-spacing:1px}
+.brand p{color:#e9dccb;opacity:.9}
+.stat-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px}
+.stat-card b{font-family:var(--hanzi);color:#ffd98a}
+.bar{background:rgba(255,255,255,.15)}.bar i{background:linear-gradient(90deg,#e0a93a,#ffd98a)}
+.ctrl select,.ctrl button{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.22)}
+.ctrl select option{color:#222}
+.lessonbar{padding:2px 16px 6px;margin-top:16px}
+.lchip{border-radius:14px;padding:7px 14px;box-shadow:none;font-family:var(--ui);font-weight:600;transition:all .15s}
+.lchip:hover{border-color:var(--pri);transform:translateY(-1px)}
+.lchip.on{background:var(--pri);box-shadow:0 8px 16px -10px var(--pri-d)}
+#bbar{margin-top:18px}
+#bbar .lchip{border-radius:99px;padding:7px 16px}
+#bbar .lchip small{font-family:var(--ui);font-weight:500}
+nav button{border-radius:99px;box-shadow:none;font-family:var(--ui);font-size:14.5px}
+nav button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+@media (max-width:720px){nav button.on{background:var(--pri2);color:var(--pri);border:0}}
+.card{border-radius:22px;padding:20px;border-color:color-mix(in srgb,var(--line) 70%,transparent)}
+h3{font-family:var(--hanzi);font-weight:700}
+.zh,.qa-q,.w,.tok{font-family:var(--hanzi)}
+.zh{font-weight:700}
+.py{font-weight:500}
+.lh{font-family:var(--hanzi);font-size:19px;margin-top:26px}
+.lh::before{width:5px;height:22px}
+.b{font-family:var(--ui);font-weight:600;padding:10px 18px;box-shadow:0 1px 2px rgba(60,40,20,.06)}
+.b.p{background:var(--pri);border-color:var(--pri-d);box-shadow:0 10px 18px -10px var(--pri-d)}
+.b.spk{background:var(--acc2);color:var(--acc);box-shadow:none}
+.b.spk:hover{background:var(--acc);color:#fff}
+.chip{font-family:var(--ui)}
+.seg{background:color-mix(in srgb,var(--line) 55%,transparent);padding:5px}
+.seg button{font-family:var(--ui);font-size:13.5px;padding:10px 4px}
+.seg button.on{color:var(--pri);box-shadow:0 2px 8px -2px rgba(60,40,20,.25)}
+.tf-intro{background:linear-gradient(120deg,var(--pri2),transparent 80%);border-left:4px solid var(--gold);border-radius:0 16px 16px 0}
+.vl{border-radius:14px;padding:12px 10px;margin:0 -10px;transition:background .15s}
+.vl:hover{background:color-mix(in srgb,var(--acc2) 55%,transparent)}
+.vl .zh{font-size:28px}
+.flash{border-radius:28px;border:1.5px solid var(--pri);background:radial-gradient(circle at 50% 0,var(--pri2),var(--card) 70%);box-shadow:0 24px 50px -28px var(--pri-d)}
+.flash .zh{font-weight:900}
+.ex{border-left-color:var(--gold);background:linear-gradient(90deg,var(--pri2),transparent)}
+.bub{border-radius:20px;box-shadow:var(--shadow)}
+input[type=text],input[type=search],textarea,.tf-bar select{font-family:var(--ui);border-radius:16px}
+footer{padding:8px 16px 28px}
+@media (max-width:480px){.seg{gap:2px;padding:4px}.seg button{font-size:12px;padding:9px 2px}.hero{padding:20px 14px 18px}.seal{width:50px;height:50px}.card{padding:16px}}
 </style>
 </head>
 <body>
