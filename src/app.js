@@ -329,7 +329,7 @@ function fAns(ok){const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.kn
 const TF=rows(TOCFL_DATA).map((r,i)=>{const p=r.split("|");return{i,h:p[0],p:p[1],m:p[2],pos:p[3],l:p[4],s:p[0].replace(/[()（）]/g,"").split("/")[0].trim(),k:p[0]+"|"+p[1]}});
 prog.tk=prog.tk||{};
 const TFL=["A1","A2","B1","B2"],TF_SET=25,TF_NAME={A1:"Sơ cấp 1",A2:"Sơ cấp 2",B1:"Trung cấp 1",B2:"Trung cấp 2"};
-const BOOK_IDS=["1","2","3","4","5","6","T"],BOOK_TOTAL={2:15,3:12,4:12,5:10};   // số bài của từng quyển trong sách; quyển nào chưa đủ bài thì báo "đang cập nhật"
+const BOOK_IDS=["1","2","3","4","5","6","T"],BOOK_TOTAL={2:15,3:12,4:12,5:10,6:10};   // số bài của từng quyển trong sách; quyển nào chưa đủ bài thì báo "đang cập nhật"
 const BKW={};Object.keys(BOOKS).forEach(n=>{BKW[n]=BOOKS[n].lessons.flatMap(L=>rows(L.v).map(r=>{const p=r.split("|");return{h:p[0],p:p[1],m:p[2],pos:p[3]||"",l:"Bài "+L.n,s:p[0].replace(/[()（）]/g,"").split("/")[0].trim(),k:n+":"+p[0]+"|"+p[1]}}))});
 let bk=BOOK_IDS.includes(prog.book)?prog.book:"1";
 const tfSrc=()=>bk==="T"?TF:(BKW[bk]||[]);

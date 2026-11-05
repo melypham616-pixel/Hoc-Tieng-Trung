@@ -1,0 +1,581 @@
+@1|職校教育|Giáo dục trường nghề
+職校|trường nghề|N
+技職|kỹ thuật và nghề nghiệp|Vs-attr
+成功之處|điểm thành công|Phrase
+高等|bậc cao|Vs-attr
+緊密|chặt chẽ|Vs
+連結|liên kết|N/V
+爭相|đua nhau|Adv
+典範|mô hình mẫu|N
+放眼|phóng tầm mắt|V
+出版|xuất bản|V
+總要|nhất định phải|Vaux
+嚴陣以待|nghiêm trận chờ đợi|Idiom
+直言|nói thẳng|V
+分析|phân tích|V
+身為|với tư cách là|Prep
+文憑|bằng cấp|N
+一技在身|có một nghề trong tay|Idiom
+點出|chỉ ra|V
+比比皆是|đâu đâu cũng có|Idiom
+理論|lý thuyết|N
+製造業|ngành chế tạo|N
+上工|bắt đầu làm việc|Vi
+關鍵|then chốt|N
+案|dự án, vụ|N
+中小型|cỡ vừa và nhỏ|Vs-attr
+企業|doanh nghiệp|N
+投入|đầu tư, dốc vào|V
+研發|nghiên cứu phát triển|V
+聘請|mời, thuê|V
+高階|cấp cao|Vs-attr
+人才|nhân tài|N
+升級|nâng cấp|V
+瑞士|Thụy Sĩ|Name
+洛桑管理學院|Học viện Quản lý Lausanne|Name
+葛瑞里|Garelli|Name
+奧地利|Áo|Name
+瑞典|Thụy Điển|Name
+#
+摘要|瑞士技職學校畢業生，往往比碩士、博士更容易找到工作，成功之處在於高等教育與產業緊密連結，如今更是歐洲各國爭相學習的典範。|Sinh viên tốt nghiệp trường nghề Thụy Sĩ thường dễ tìm việc hơn thạc sĩ, tiến sĩ, điểm thành công nằm ở sự gắn kết chặt chẽ giữa giáo dục đại học và doanh nghiệp, nay là mô hình các nước châu Âu đua nhau học theo.
+文章|洛桑管理學院每年出版的世界競爭力報告，讓各國政府、媒體總要嚴陣以待。負責這項報告廿五年的世界競爭力中心主任葛瑞里，談到教育與競爭力關係，他直言，瑞士教育制度成功之處，在於產業和高等教育的緊密合作與連結。|Báo cáo năng lực cạnh tranh thế giới do Học viện Quản lý Lausanne xuất bản hằng năm khiến chính phủ và truyền thông các nước luôn phải nghiêm trận chờ đợi. Ông Garelli, giám đốc Trung tâm Cạnh tranh Thế giới phụ trách báo cáo 25 năm, khi nói về quan hệ giữa giáo dục và năng lực cạnh tranh, thẳng thắn cho rằng điểm thành công của giáo dục Thụy Sĩ là sự hợp tác, liên kết chặt chẽ giữa doanh nghiệp và giáo dục đại học.
+文章|葛瑞里指出，目前全球最有競爭力的是職校畢業生。他分析歐洲目前幾個較有競爭力的國家，包括瑞士、德國、奧地利和瑞典，都具有技職教育的傳統，如今成為各國爭相學習的典範。|Garelli chỉ ra hiện nay người có sức cạnh tranh nhất toàn cầu là sinh viên trường nghề. Ông phân tích vài nước châu Âu có sức cạnh tranh gồm Thụy Sĩ, Đức, Áo và Thụy Điển đều có truyền thống giáo dục kỹ thuật nghề, nay thành mô hình các nước đua nhau học.
+文章|在瑞士，即使公司管理階層，沒上過大學的比比皆是，很多只懂得理論的人，對企業運作不見得了解。經常和各國大、小企業接觸的他，很清楚不管是製造業還是服務業，都發現職校、商業學校的學生，通常一畢業就可上工，反而是光會念書的大學生，還需要經過一段時間訓練。|Ở Thụy Sĩ, ngay cả tầng lớp quản lý công ty, người chưa học đại học đâu đâu cũng có, nhiều người chỉ biết lý thuyết thì chưa chắc hiểu vận hành doanh nghiệp. Thường xuyên tiếp xúc doanh nghiệp lớn nhỏ các nước, ông biết rõ dù ngành chế tạo hay dịch vụ đều thấy sinh viên trường nghề, trường thương mại thường tốt nghiệp là làm được ngay, ngược lại sinh viên đại học chỉ biết học cần được đào tạo một thời gian.
+文章|身為洛桑管理學院裡唯一的瑞士籍教授，葛瑞里更認為，高等教育需要政府和企業共同合作，瑞士教育制度成功之處，關鍵在於和產業有緊密合作與連結，尤其是科技大學與產業的合作。|Là giáo sư mang quốc tịch Thụy Sĩ duy nhất ở Học viện Lausanne, Garelli càng cho rằng giáo dục đại học cần chính phủ và doanh nghiệp cùng hợp tác, then chốt thành công của giáo dục Thụy Sĩ là hợp tác, liên kết chặt chẽ với ngành, nhất là giữa đại học kỹ thuật và doanh nghiệp.
+文章|他說，不只大企業和各大學、研究中心都有合作計畫案，即使是中、小型企業，沒有能力像大企業投入大筆資金研發、聘請高階研究人才，仍可透過和學校合作，讓產業不斷升級、維持競爭力。|Ông nói không chỉ doanh nghiệp lớn có dự án hợp tác với các trường đại học và trung tâm nghiên cứu, ngay cả doanh nghiệp vừa và nhỏ, dù không đủ sức rót vốn lớn nghiên cứu phát triển hay thuê nhân tài nghiên cứu cao cấp như doanh nghiệp lớn, vẫn có thể hợp tác với trường để ngành liên tục nâng cấp, giữ sức cạnh tranh.
+@2|科技與生活|Khoa học công nghệ và đời sống
+洞察|nhìn thấu|V
+鍥而不捨|kiên trì không bỏ|Idiom
+專精|chuyên sâu|Vs
+開創|khai mở|V
+契機|cơ hội, bước ngoặt|N
+未必|chưa chắc|Adv
+出發|xuất phát|Vi
+特殊|đặc biệt|Vs
+群|nhóm, bầy|M
+突發奇想|chợt nảy ý lạ|Idiom
+原理|nguyên lý|N
+醫師|bác sĩ|N
+配|làm (kính)|V
+眼鏡|kính mắt|N
+相對|tương đối|Adv
+窮困|nghèo khổ|Vs
+任務|nhiệm vụ|N
+估計|ước tính|V
+發明|phát minh|V/N
+自行|tự mình|Adv
+度數|độ (kính)|N
+副|cặp, bộ (kính)|M
+鏡片|tròng kính|N
+充滿|đầy|Vpt
+液體|chất lỏng|N
+創見|ý tưởng sáng tạo|N
+原始|ban đầu|Vs
+出自|xuất phát từ|V
+儀器|dụng cụ, thiết bị|N
+製造商|nhà sản xuất|N
+矯正|chỉnh sửa|V
+視力|thị lực|N
+大放光明|sáng rực|Idiom
+影像|hình ảnh|N
+開發中國家|nước đang phát triển|Phrase
+需求量|lượng cầu|N
+極|cực kỳ|Adv
+供不應求|cung không đủ cầu|Idiom
+貢獻|cống hiến|N
+根源|căn nguyên|N
+從而|từ đó|Conj
+人群|đám đông, cộng đồng|N
+牛津大學|Đại học Oxford|Name
+喬許·席爾佛|Joshua Silver|Name
+#
+摘要|科學家觀察現象、洞察需求，鍥而不捨、表現專精，突破科技、改善生活，開創契機、改變世界。|Nhà khoa học quan sát hiện tượng, nhìn thấu nhu cầu, kiên trì chuyên sâu, đột phá công nghệ, cải thiện đời sống, mở ra cơ hội, thay đổi thế giới.
+文章|科技改變人類的生活有時未必是科學上的大發現或大突破。科學家從他的專精領域出發，觀察到某些特殊的社會現象，了解到某一群人的需求，常能突發奇想，以基礎的科學原理，加上簡單工具，就能解決一些社會問題。|Công nghệ thay đổi đời sống con người đôi khi chưa chắc là khám phá hay đột phá lớn. Nhà khoa học xuất phát từ lĩnh vực chuyên sâu, quan sát một số hiện tượng xã hội đặc biệt, hiểu nhu cầu một nhóm người, thường nảy ý tưởng bất ngờ, dùng nguyên lý khoa học cơ bản cộng công cụ đơn giản là giải quyết được vài vấn đề xã hội.
+文章|如果我們眼睛看不清楚，會去看眼科醫師或去配眼鏡，這事情看似簡單，但對住在地球上相對窮困地區的人來說，卻是一項困難的任務。他們不是根本找不到眼科醫師，就是負擔不起。而這樣的人，全球估計有五億之多。|Nếu mắt nhìn không rõ ta đến bác sĩ nhãn khoa hoặc đi làm kính, việc này có vẻ đơn giản nhưng với người sống ở vùng tương đối nghèo trên Trái Đất lại là nhiệm vụ khó. Họ hoặc không tìm được bác sĩ mắt, hoặc không đủ tiền. Những người như vậy ước tính toàn cầu có tới 500 triệu.
+文章|有個聰明人想到一個辦法，英國牛津大學的喬許·席爾佛教授，發明了一種「可自行調整度數」的眼鏡。這副眼鏡的鏡片內充滿液體，使用者自行調整鏡片內的液體量，便能將眼鏡調整到適合自己的度數。|Có người thông minh nghĩ ra cách: giáo sư Joshua Silver của Đại học Oxford phát minh loại kính "tự điều chỉnh độ". Tròng kính chứa đầy chất lỏng, người dùng tự chỉnh lượng chất lỏng là có thể điều chỉnh kính đến độ phù hợp.
+文章|這個發明並不是席教授的創見，原始的想法其實是出自十八世紀德國的一位科學儀器的製造商，但席爾佛博士把這個簡單的想法實際運用在製造上，讓原本看不清楚，也不知道可以使用眼鏡矯正視力的人，多年來第一次「大放光明」，看到清楚的影像。他成立了一家公司，每天要製造兩千副這種眼鏡，由於開發中國家需求量極大，仍供不應求。|Phát minh này không phải ý tưởng riêng của giáo sư Silver, ý tưởng gốc xuất phát từ một nhà sản xuất dụng cụ khoa học Đức thế kỷ 18, nhưng tiến sĩ Silver đưa ý tưởng đơn giản vào chế tạo thực tế, khiến những người vốn nhìn không rõ, không biết có thể dùng kính chỉnh thị lực, lần đầu sau nhiều năm "sáng bừng" thấy hình ảnh rõ ràng. Ông lập công ty, mỗi ngày làm hai nghìn chiếc, do các nước đang phát triển nhu cầu rất lớn vẫn cung không đủ cầu.
+文章|席教授的貢獻，在於他能洞察問題根源，利用簡單科技找到解決問題的方法，從而改善人群的生活，這是很值得我們學習的。|Đóng góp của giáo sư Silver nằm ở chỗ ông nhìn ra căn nguyên vấn đề, dùng công nghệ đơn giản tìm cách giải quyết, từ đó cải thiện đời sống cộng đồng, rất đáng để ta học tập.
+@3|舞蹈藝術|Nghệ thuật múa
+前所未有|chưa từng có|Idiom
+盡情|thỏa thích|Adv
+揮灑|vung vẩy, thể hiện thoải mái|Vi
+舞蹈家|nghệ sĩ múa|N
+描述|miêu tả|V
+舞者|vũ công|N
+舞台|sân khấu|N
+舞碼|tiết mục múa|N
+傳人|người kế thừa|N
+芭蕾|ba-lê|N
+及格|đạt, đậu|Vp
+滿分|điểm tối đa|N
+眾所皆知|ai cũng biết|Idiom
+大師|đại sư, bậc thầy|N
+特地|đặc biệt, cố ý|Adv
+解散|giải tán|V
+舞團|đoàn múa|N
+邀約|lời mời|N
+培訓|bồi dưỡng đào tạo|V
+無|không có (văn ngôn)|V
+傳承|truyền thừa|V
+邀請|mời|V
+編舞家|biên đạo múa|N
+量身打造|đo ni đóng giày|Idiom
+舞目|chương trình múa|N
+首席|vị trí đầu bảng|N
+舞星|ngôi sao múa|N
+會|gặp gỡ, đối đầu|V
+心血|tâm huyết|N
+化為|biến thành|V
+作品|tác phẩm|N
+規劃|quy hoạch|N/V
+舞曲|nhạc múa|N
+民俗|dân gian|N
+生平|cả đời|N
+不得不|buộc phải|Adv
+硬著頭皮|cắn răng|Phrase
+灑落|rải xuống|Vi
+剎那|khoảnh khắc|N
+感到|cảm thấy|Vst
+存在感|cảm giác tồn tại|N
+報考|đăng ký thi|V
+民族舞|múa dân tộc|N
+終|cuối cùng|Adv
+上帝|Thượng đế|N
+疼愛|yêu thương|Vst
+生身不息|"Sinh thân bất tức" (tên vũ phẩm)|Name
+許芳宜|Hứa Phương Nghi (vũ công Đài Loan)|Name
+勞勃·阿特曼|Robert Altman|Name
+舞動世紀|The Company (tên phim)|Name
+瑪莎·葛蘭姆|Martha Graham|Name
+倫敦|London|Name
+阿喀郎·汗|Akram Khan|Name
+克理斯多福·惠爾敦|Christopher Wheeldon|Name
+紐約市立芭蕾舞團|Ba-lê Thành phố New York|Name
+溫蒂·威倫|Wendy Whelan|Name
+華岡藝校|trường nghệ thuật Hoa Cương|Name
+#
+摘要|在舞蹈的世界裡，感到前所未有的自在，也找到了存在的價值。盡情揮灑演出，直到跳不動，這就是「生身不息」，而自己的生命，也早就交給舞蹈了。|Trong thế giới múa, cô cảm thấy tự tại chưa từng có, cũng tìm được giá trị tồn tại. Thỏa sức thể hiện cho đến khi không nhảy nổi, đó là "sinh thân bất tức", cuộc đời cô từ lâu đã giao cho múa.
+文章|大導演勞勃·阿特曼幾年前拍了一部電影叫《舞動世紀》，這電影是描述女舞者夢想能在舞台上盡情表演，盡情揮灑。這部電影讓我想到「生身不息」舞碼。|Đạo diễn lớn Robert Altman mấy năm trước quay bộ phim "The Company" miêu tả nữ vũ công mơ được biểu diễn thỏa thích trên sân khấu. Bộ phim làm tôi nhớ đến vũ phẩm "Sinh thân bất tức".
+文章|「瑪莎·葛蘭姆的傳人」這舞碼是由許芳宜演出，她是一個芭蕾只考三分的學生。結果這個不及格的學生，竟然在現代舞這塊得滿分，成為眾所皆知的現代舞大師「瑪莎·葛蘭姆的傳人」。為這次表演，許芳宜特地做了一些改變，她去年解散自己的舞團，以個人身分接受國際邀約，並且開始培訓一些年輕的舞者，讓她舞蹈的夢想可以無限制地傳承下去。|Vũ phẩm do Hứa Phương Nghi trình diễn, cô là học sinh thi ba-lê chỉ được ba điểm. Kết quả học sinh trượt này lại đạt điểm tối đa ở múa đương đại, thành bậc thầy ai cũng biết, "người kế thừa Martha Graham". Cho buổi diễn này cô cố ý thay đổi: năm ngoái giải tán đoàn múa riêng, nhận lời mời quốc tế với tư cách cá nhân và bắt đầu đào tạo vũ công trẻ để giấc mơ múa của cô được truyền thừa không giới hạn.
+文章|此外，她特別邀請倫敦奧運編舞家阿喀郎·汗及克理斯多福·惠爾敦，量身打造「生身不息」新的舞目，她還邀請紐約市立芭蕾舞團首席舞星溫蒂·威倫，來個現代舞大會芭蕾舞，許芳宜希望自己二十多年來的心血，能化為最好的作品。|Ngoài ra cô đặc biệt mời biên đạo múa Thế vận hội London Akram Khan và Christopher Wheeldon đo ni đóng giày tiết mục mới "Sinh thân bất tức", còn mời ngôi sao đầu bảng Ba-lê Thành phố New York Wendy Whelan, cho múa đương đại gặp ba-lê. Hứa Phương Nghi mong tâm huyết hơn hai mươi năm hóa thành tác phẩm đẹp nhất.
+文章|她從來不知道自己的命運會有這麼大的改變，在她的人生規劃裡，原本是沒有這段舞曲的人生，沒想到國小四年級一場表演，改變了她，改變了她的未來。她說：「那年參加民俗舞蹈比賽，是生平第一次上台，所以很緊張，但又不得不硬著頭皮上去。上去後就在燈光灑落的剎那，自己感到前所未有的自在，我好像在另一個世界，感覺是在演別人，可以很自在大方。」|Cô chưa từng biết số phận mình sẽ đổi lớn như vậy, trong kế hoạch đời cô vốn không có đoạn đời múa này, không ngờ một buổi diễn năm lớp bốn tiểu học đã đổi cô, đổi tương lai cô. Cô kể: "Năm đó thi múa dân gian, là lần đầu tiên đời lên sân khấu nên rất căng thẳng nhưng lại buộc phải cắn răng bước lên. Lên rồi, khoảnh khắc ánh đèn rọi xuống, em thấy tự tại chưa từng có, như ở thế giới khác, cảm giác như đang diễn người khác, có thể rất thoải mái tự nhiên."
+文章|這種舞台感覺，讓她發現過去所沒有的快樂，也讓她找到存在的價值。這個存在感讓她衝動地去報考華岡藝校，沒想到芭蕾只考三分。許芳宜說：「去考試時我才發現，舞蹈不是只有民族舞，還有芭蕾及其他，還好努力的小孩終會被上帝疼愛的，最後我考上學校了。」|Cảm giác sân khấu này giúp cô khám phá niềm vui chưa từng có, cũng giúp cô tìm giá trị tồn tại. Cảm giác tồn tại ấy khiến cô bốc đồng đi thi trường Hoa Cương, không ngờ ba-lê chỉ được ba điểm. Hứa Phương Nghi nói: "Đi thi em mới biết múa không chỉ có múa dân tộc mà còn ba-lê và nhiều thể loại khác, may là đứa trẻ cố gắng rốt cuộc được trời thương, cuối cùng em đỗ vào trường."
+@4|做人心法|Bí quyết đối nhân xử thế
+做人|đối nhân xử thế|Vi
+心法|tâm pháp, bí quyết|N
+談論|bàn luận|V
+真誠|chân thành|Vs
+讚美|khen ngợi|V/N
+親和力|sức thân thiện|N
+笑容|nụ cười|N
+此|này (văn ngôn)|Det
+祕訣|bí quyết|N
+拉近距離|kéo gần khoảng cách|Phrase
+傳授|truyền thụ|V
+獨門|độc môn|Vs-attr
+人際|giữa người với người|Vs-attr
+銷售|bán hàng|V/N
+暢銷|bán chạy|Vs
+謙稱|khiêm tốn nói|V
+抱持|giữ, ôm (quan điểm)|V
+哲學|triết lý|N
+讀者|độc giả|N
+踏出|bước ra|V
+悅耳|êm tai|Vs
+熱忱|nhiệt huyết|N
+不妨|không ngại|Adv
+好比|ví như|Vst
+告別|chia tay, từ biệt|Vi
+記住|nhớ kỹ|V
+對方|đối phương|N
+宴會|tiệc|N
+自顧自|chỉ lo cho mình|Adv
+講|nói|V
+整整|trọn vẹn|Adv
+插嘴|chen lời|V-sep
+餘地|chỗ để, khoảng trống|N
+以致|dẫn đến|Conj
+同桌|cùng bàn|Vi
+罰站|phạt đứng|V-sep
+聽教|nghe giáo huấn|Vi
+似地|như thể|Ptc
+凝滯|đình trệ, ngưng đọng|Vs
+一吐為快|nói ra cho sướng|Idiom
+提問|đặt câu hỏi|Vi
+黑幼龍|Hắc Ấu Long (John Hei)|Name
+卡內基|Carnegie|Name
+#
+摘要|記得別人的名字、談論別人感興趣的話題、真誠地讚美別人、具有親和力的笑容，是學習做人的四大心法。以此祕訣培養出的技巧，可以拉近人的距離。|Nhớ tên người khác, nói chuyện về điều người ta quan tâm, khen ngợi chân thành, nụ cười thân thiện là bốn tâm pháp đối nhân xử thế. Kỹ năng rèn từ bí quyết này giúp kéo gần khoảng cách giữa người với người.
+文章|拉近距離的技巧是可以培養的，人際溝通專家黑幼龍與你分享他的祕訣。寫過許多有關溝通、銷售、人際關係暢銷書，對於做人，黑幼龍謙稱自己還在學習，並抱持著「努力，是不夠的；練習，才能成功」的哲學。至於，要如何學做人，他提供4個小習慣，供讀者練習：|Kỹ năng kéo gần khoảng cách có thể rèn luyện, chuyên gia giao tiếp Hắc Ấu Long chia sẻ bí quyết. Ông viết nhiều sách bán chạy về giao tiếp, bán hàng, quan hệ, còn về đối nhân xử thế ông khiêm tốn nói mình vẫn đang học, giữ triết lý "chỉ cố gắng là chưa đủ, luyện tập mới thành công". Còn học cách làm người thế nào, ông đưa ra 4 thói quen nhỏ để độc giả luyện:
+文章|一、記得別人的名字。想想看，當你跟人一起拍團體照，拿到照片，你會先看誰？答案一定是先看你自己。黑幼龍指出，人通常只對自己感興趣，只關心自己。要踏出關心的第一步，就先從記得別人的名字開始，因為溝通大師卡內基曾說過：「一個人的名字，是他耳朵所能聽到最悅耳的聲音。」|Một: nhớ tên người khác. Thử nghĩ khi chụp ảnh tập thể, nhận ảnh bạn nhìn ai trước? Chắc chắn nhìn mình. Hắc Ấu Long chỉ ra con người thường chỉ quan tâm bản thân. Muốn bước đầu quan tâm thì bắt đầu từ nhớ tên người khác, vì bậc thầy giao tiếp Carnegie từng nói: "Tên của một người là âm thanh êm tai nhất mà tai họ nghe được."
+文章|記得別人名字，最關鍵的就是你要對別人感興趣，有熱忱，再加上一些方法。當我們說話時，不妨將別人的名字帶到話的內容裡，好比與別人告別時，你可以說：「再見！」也可以說：「XXX再見。」盡量將別人的名字帶到你們的對話中，那麼你記住別人名字的可能性就高很多了。當你下次再見到時，能直接喊出對方的名字，不知他會有多高興！|Điều then chốt để nhớ tên là bạn phải hứng thú với người ta, có nhiệt tình, cộng thêm vài phương pháp. Khi nói chuyện, không ngại đưa tên người vào câu, như khi chia tay bạn có thể nói "Tạm biệt!" hoặc "Tạm biệt XXX". Cố đưa tên đối phương vào cuộc trò chuyện thì khả năng nhớ tên cao hơn nhiều. Lần sau gặp lại gọi ngay tên họ, không biết họ sẽ vui đến thế nào!
+文章|二、多談別人感興趣的事。半年前，黑幼龍與一位在美國念書認識的老朋友見面，只見宴會桌上那位70多歲的老先生，自顧自地講自己的事，整整2個鐘頭，完全不讓人有插嘴的餘地，以致於同桌的朋友，像被罰站聽教似地，氣氛一片凝滯。黑幼龍指出，若要讓自己成為受歡迎的人，記得要引發別人的談話興趣，也就是要能多談對方感興趣的事，並讓他能有一吐為快的機會。他進一步提醒，鼓勵他人談論他感興趣的話題，最好的方法就是提問，而且要真誠。|Hai: nói nhiều về điều người khác quan tâm. Nửa năm trước Hắc Ấu Long gặp một người bạn cũ quen thời du học Mỹ, thấy ông cụ hơn 70 tuổi trên bàn tiệc chỉ lo kể chuyện mình suốt hai tiếng, không để ai chen lời, khiến bạn cùng bàn như bị phạt đứng nghe giảng, không khí đông cứng. Ông chỉ ra muốn được yêu mến phải khơi gợi hứng thú nói chuyện của người khác, tức nói nhiều chuyện đối phương quan tâm và cho họ cơ hội nói thỏa. Ông nhắc thêm cách tốt nhất khuyến khích người khác nói về chủ đề họ thích là đặt câu hỏi, và phải chân thành.
+@5|國際語言|Ngôn ngữ quốc tế
+開闊|rộng mở|Vs
+轉動|chuyển động|Vi
+共通|chung|Vs-attr
+水果攤|sạp trái cây|N
+瓜香果豔|trái cây thơm ngon rực rỡ|Phrase
+常客|khách quen|N
+秤|cân|V
+手擺腳動|tay chân khoa múa|Phrase
+身陷|rơi vào|Vst
+迷宮|mê cung|N
+文法|ngữ pháp|N
+濃重|nặng (giọng)|Vs
+回覆|đáp lại|V
+焦急|sốt ruột|Vs
+催熟|làm chín nhanh|V
+急忙|vội vàng|Adv
+臨時|tạm thời, lâm thời|Vs-attr
+口譯|phiên dịch miệng|N/V
+達成|đạt được|Vpt
+道謝|nói lời cảm ơn|V-sep
+面前|trước mặt|N
+紊亂|rối loạn|Vs
+錯亂|lộn xộn|Vs
+人家|người ta|N
+校長|hiệu trưởng|N
+旅途|chặng đường|N
+勞累|mệt nhọc|Vs
+傲慢|ngạo mạn|Vs
+皺眉|nhíu mày|V-sep
+標識|biển báo, ký hiệu|N
+國際觀|tầm nhìn quốc tế|N
+接軌|hòa nhập, kết nối|Vi
+身在|đang ở|Vst
+柏林|Berlin|Name
+土耳其|Thổ Nhĩ Kỳ|Name
+#
+摘要|學好英文，世界更開闊。擁有英文能力，就能主動了解世界如何轉動。但外語不等同於英文，不同語言有不同角度，應該尊重每個國家母語的保有與使用。|Học giỏi tiếng Anh, thế giới rộng mở hơn. Có năng lực tiếng Anh là chủ động hiểu thế giới vận hành ra sao. Nhưng ngoại ngữ không đồng nghĩa tiếng Anh, mỗi ngôn ngữ có góc nhìn riêng, nên tôn trọng việc mỗi nước giữ gìn và dùng tiếng mẹ đẻ.
+文章|我柏林家的隔壁是一家土耳其人開的水果攤，瓜香果豔，我是常客。柏林觀光客多，水果攤老闆說德文與土耳其文，但不說英文，面對各種國籍的旅客秤斤算錢時，手擺腳動取代語言，英文、西班牙文、中文、德文、法文、日文都出現過，水果攤每天都非常「國際化」。|Cạnh nhà tôi ở Berlin là một sạp trái cây của người Thổ, trái cây thơm ngon rực rỡ, tôi là khách quen. Berlin nhiều du khách, ông chủ nói tiếng Đức và tiếng Thổ nhưng không nói tiếng Anh; khi cân tính tiền cho khách các nước, tay chân khoa múa thay ngôn ngữ, tiếng Anh, Tây Ban Nha, Trung, Đức, Pháp, Nhật đều từng xuất hiện, sạp ngày nào cũng rất "quốc tế hóa".
+文章|一次我來買菜，前面的客人與土耳其老闆正身陷語言迷宮裡，客人說著文法亂、有濃重口音的英文，老闆則一直以德文回覆，客人的焦急，都快把手中的綠芒果給催熟了。老闆看到我，急忙請我幫忙，有我這個臨時口譯當橋，兩人終於達成買賣。|Một lần tôi đi mua đồ, vị khách phía trước và ông chủ người Thổ đang lạc trong mê cung ngôn ngữ, khách nói tiếng Anh sai ngữ pháp giọng nặng, ông chủ cứ đáp bằng tiếng Đức, sự sốt ruột của khách như làm quả xoài xanh trong tay chín luôn. Ông chủ thấy tôi vội nhờ giúp, có tôi làm phiên dịch tạm thời bắc cầu, hai người cuối cùng chốt được giao dịch.
+文章|這位說英文的客人向我道謝，接著問我：「為什麼他們都不會說英文呢？好奇怪。」我答：「因為你在德國。這裡，人們說德文。」|Vị khách nói tiếng Anh cảm ơn tôi rồi hỏi: "Sao họ đều không nói tiếng Anh? Lạ thật." Tôi đáp: "Vì anh đang ở Đức. Ở đây người ta nói tiếng Đức."
+文章|其實，我面前這位買水果客人，本身英文也紊亂，口音濃重，文法錯亂，但他卻覺得老闆應該要會說英文，這邏輯很奇怪，自己都不太行的事，怎麼會要求人家一定要做到呢？我想，這位先生大概就是覺得「英文是國際共通語言」，而忘了去尊重每個國家對於自己母語的保有與使用。|Thật ra vị khách mua trái cây trước mặt tôi tiếng Anh của chính anh cũng lộn xộn, giọng nặng, ngữ pháp loạn, vậy mà anh cho rằng ông chủ phải biết tiếng Anh, logic lạ lùng, việc mình còn làm chưa tốt sao lại đòi người ta nhất định làm được? Tôi nghĩ có lẽ anh cho "tiếng Anh là ngôn ngữ chung quốc tế" mà quên tôn trọng việc mỗi nước giữ gìn và dùng tiếng mẹ đẻ.
+文章|幾年前，我在柏林採訪台灣某知名大學校長，他或許是旅途勞累，態度有些傲慢。問他這幾天在柏林的經驗，他皺眉抱怨：「怎麼德國英文標識這麼少？這樣誰看得懂啊？」那時我才發現，原來我們一直重視英文教育，到最後卻培養出了只以英文為世界中心的人才，他們把英文當做是唯一合理的外語想像。來到柏林看不懂標識，卻沒想過，這些標識其實主要是給本地人看的。|Mấy năm trước tôi phỏng vấn ở Berlin hiệu trưởng một trường đại học nổi tiếng Đài Loan, có lẽ vì mệt đường xa ông hơi ngạo mạn. Hỏi trải nghiệm mấy ngày ở Berlin, ông nhíu mày than: "Sao ở Đức biển tiếng Anh ít thế? Vậy ai đọc hiểu?" Lúc đó tôi mới nhận ra ta luôn coi trọng giáo dục tiếng Anh nhưng cuối cùng đào tạo ra nhân tài chỉ lấy tiếng Anh làm trung tâm thế giới, coi tiếng Anh là ngoại ngữ duy nhất hợp lý. Đến Berlin đọc không hiểu biển báo mà không nghĩ các biển đó chủ yếu dành cho người địa phương.
+文章|我不禁想，學外語，不是為了培養大家一天到晚強調的「國際觀」嗎？不是為了跟國際接軌嗎？不是為了讓自己世界更開闊嗎？怎麼這位校長，身在德國，心中卻只剩下了英文。|Tôi không khỏi nghĩ học ngoại ngữ chẳng phải để bồi dưỡng "tầm nhìn quốc tế" mà ai cũng nhấn mạnh suốt ngày sao? Chẳng phải để hòa nhập quốc tế, để thế giới của mình rộng mở hơn sao? Sao vị hiệu trưởng này ở Đức mà trong lòng chỉ còn tiếng Anh.
+@6|貓熊角色|Vai trò của gấu trúc
+貓熊|gấu trúc|N
+人見人愛|ai thấy cũng yêu|Idiom
+征服|chinh phục|V
+促進|thúc đẩy|Vpt
+友好|hữu nghị|Vs
+使者|sứ giả|N
+沾染|nhiễm, vấy|Vpt
+色彩|màu sắc, sắc thái|N
+抵制|tẩy chay|V
+繁殖|sinh sản|Vi
+名義|danh nghĩa|N
+租借|thuê, mượn|V
+出訪|thăm nước ngoài|Vi
+風雲女性|phụ nữ của năm|Phrase
+全程|toàn bộ quá trình|Adv
+直播|phát sóng trực tiếp|Vpt
+產下|sinh ra|V-sep
+雙胞胎|cặp song sinh|N
+睜眼|mở mắt|Vpt
+登上|lên (trang nhất)|Vp
+頭條|tiêu đề đầu trang|N
+數位化|số hóa|Vi
+追溯|truy ngược|V
+至|đến|Prep
+何時何地|bất cứ lúc nào nơi đâu|Phrase
+女皇|nữ hoàng|N
+贈送|tặng|V
+記載|ghi chép|V/N
+夫人|phu nhân|N
+表|bày tỏ|V
+救濟|cứu tế|V/N
+謝意|lòng biết ơn|N
+自此|từ đó|Adv
+政權|chính quyền|N
+欲|muốn (văn ngôn)|Vaux
+藉此|nhờ đó|Phrase
+雙邊|song phương|Vs-attr
+稀有|hiếm có|Vs
+飼養場|trại nuôi|N
+分別|lần lượt, riêng|Adv
+貨幣|tiền tệ|N
+設|đặt ra, lập|V
+互|lẫn nhau|Adv
+訪問|thăm, phỏng vấn|V/N
+領取|nhận|V
+否決|bác bỏ|V
+因而|vì vậy|Conj
+作罷|thôi, bỏ dở|Vi
+甜甜|Điềm Điềm (tên gấu trúc)|Name
+美香|Mỹ Hương (tên gấu trúc)|Name
+圓仔|Viên Tử (tên gấu trúc)|Name
+唐朝|triều Đường|Name
+武則天|Võ Tắc Thiên|Name
+天武天皇|Thiên hoàng Temmu|Name
+宋美齡|Tống Mỹ Linh|Name
+中共|Đảng Cộng sản Trung Quốc|Name
+蘇聯|Liên Xô|Name
+北韓|Bắc Triều Tiên|Name
+邁阿密|Miami|Name
+芝加哥|Chicago|Name
+國務院|Bộ Ngoại giao Mỹ|Name
+#
+摘要|貓熊人見人愛，總能征服人心，成為促進友好關係的外交使者。後因沾染商業色彩，遭環保團體抵制，目前各國動物園改以繁殖、保護名義向中國大陸租借。|Gấu trúc ai thấy cũng yêu, luôn chinh phục lòng người, thành sứ giả ngoại giao thúc đẩy quan hệ hữu nghị. Sau vì nhuốm màu thương mại bị các tổ chức bảo vệ môi trường tẩy chay, nay sở thú các nước thuê từ Trung Quốc đại lục với danh nghĩa nhân giống, bảo tồn.
+文章|「甜甜」當選2011年BBC選出的十大風雲女性，今年美國全程直播貓熊「美香」產下雙胞胎，台灣「圓仔」睜眼登上新聞頭條，可見貓熊人見人愛。英國媒體認為，這將成為數位化時代的「新貓熊外交」。|"Điềm Điềm" được BBC chọn vào mười phụ nữ của năm 2011, năm nay Mỹ phát trực tiếp toàn bộ quá trình "Mỹ Hương" sinh đôi, "Viên Tử" của Đài Loan mở mắt lên trang nhất, đủ thấy gấu trúc ai cũng yêu. Truyền thông Anh cho rằng đây sẽ thành "ngoại giao gấu trúc mới" thời số hóa.
+文章|貓熊外交可追溯至唐朝。無論何時何地，貓熊總是征服人心的大明星。中國「貓熊外交」的歷史可以追溯到西元685年唐代女皇武則天時期，當時武則天贈送二隻貓熊給日本天武天皇，是歷史記載最早的「貓熊外交」。|Ngoại giao gấu trúc có thể truy ngược đến nhà Đường. Dù khi nào ở đâu gấu trúc luôn là ngôi sao chinh phục lòng người. Lịch sử "ngoại giao gấu trúc" của Trung Quốc có thể truy đến năm 685 thời nữ hoàng Võ Tắc Thiên nhà Đường, bà tặng hai con gấu trúc cho Thiên hoàng Temmu của Nhật, là "ngoại giao gấu trúc" sớm nhất được sử ghi.
+文章|從西元685年到1982年，中國一共向國外贈送了約40隻貓熊。1941年，當時的總統夫人宋美齡贈送美國一對貓熊，以表救濟中國難民的謝意，貓熊自此開始以外交使者身分，被贈送到各國。|Từ năm 685 đến 1982, Trung Quốc tặng nước ngoài tổng cộng khoảng 40 con gấu trúc. Năm 1941 phu nhân tổng thống Tống Mỹ Linh tặng Mỹ một cặp gấu trúc để bày tỏ lòng biết ơn việc Mỹ cứu tế người tị nạn Trung Quốc, từ đó gấu trúc bắt đầu được tặng các nước với tư cách sứ giả ngoại giao.
+文章|1949年中共取得政權後，熱衷於「貓熊外交」，將貓熊贈送給各個友好、或欲建立友好關係的國家，這時期「出訪」的貓熊，相當具有政治意義。從1957年至1982年，共有23隻貓熊被贈送給蘇聯、北韓、美、日、法、德等九個國家，藉此促進雙邊的友好關係。|Sau khi Đảng Cộng sản Trung Quốc nắm chính quyền năm 1949, họ say mê "ngoại giao gấu trúc", tặng gấu trúc cho các nước hữu nghị hoặc muốn xây quan hệ hữu nghị, gấu trúc "xuất ngoại" thời kỳ này mang ý nghĩa chính trị rõ. Từ 1957 đến 1982 có 23 con được tặng chín nước như Liên Xô, Bắc Triều Tiên, Mỹ, Nhật, Pháp, Đức để thúc đẩy quan hệ song phương.
+文章|1956年至1957年，美國邁阿密稀有鳥類飼養場以及美國芝加哥動物園，分別向中國大陸表達希望以貨幣或動物交換一對貓熊的想法，中國大陸在1957年同意，但設下「雙方互派人員到對方動物園訪問並領取交換的動物」的條件，遭美國國務院以「不同意直接與中國進行動物交換」否決，因而作罷。|Năm 1956–1957 trại nuôi chim quý Miami và sở thú Chicago của Mỹ lần lượt bày tỏ muốn đổi một cặp gấu trúc bằng tiền hoặc động vật, Trung Quốc đồng ý năm 1957 nhưng đặt điều kiện "hai bên cử người sang sở thú đối phương thăm và nhận vật đổi", bị Bộ Ngoại giao Mỹ bác với lý do "không đồng ý trao đổi động vật trực tiếp với Trung Quốc" nên bỏ dở.
+@7|感情世界|Thế giới tình cảm
+自我|bản ngã, cái tôi|N
+膨脹|phình to, tự mãn|Vs
+面貌|diện mạo|N
+醒悟|tỉnh ngộ|Vp
+體會|thấu hiểu|V
+苦澀|chua chát|Vs/N
+情敵|tình địch|N
+我行我素|cứ làm theo ý mình|Idiom
+未婚|chưa kết hôn|Vs
+立志|lập chí|Vi
+志向|chí hướng|N
+減肥|giảm cân|Vi
+撐|chống đỡ, cầm cự|Vi
+定下來|ổn định lại|Phrase
+殘酷|tàn khốc|Vs
+當下|ngay lúc đó|N
+重來|làm lại|Vi
+鬼東西|cái thứ quỷ quái|Phrase
+俊男美女|trai tài gái sắc|Phrase
+歡喜|vui mừng|N
+悲傷|bi thương|N
+激發出來|khơi dậy|Phrase
+發福|phát tướng, mập ra|Vp
+想幹嘛就幹嘛|muốn làm gì thì làm|Phrase
+幹|làm|Vi
+無趣|vô vị|Vs
+斟酌|cân nhắc|V
+何時|bao giờ|N
+閃人|chuồn đi|Vi
+尷尬|ngượng ngùng|Vs
+忠於|trung thành với|Vst
+萎縮|teo tóp|Vs
+當頭棒喝|gậy đánh thức|Idiom
+自以為是|tự cho mình đúng|Idiom
+幹嘛|để làm gì|Adv
+破綻|sơ hở|N
+德性|bộ dạng (chê)|N
+勇敢|dũng cảm|Vs
+私生子|con ngoài giá thú|N
+縱使|dù cho|Conj
+自詡|tự cho là|Vi
+開明|cởi mở|Vs
+知識份子|trí thức|Phrase
+留洋|du học nước ngoài|V-sep
+老夫子|người bảo thủ cổ hủ|N
+提早|sớm hơn|Adv
+溫和|ôn hòa|Vs
+幹架|đánh nhau|V-sep
+逼出|ép ra|Vpt
+苦|đắng|Vs
+邪惡|tà ác|Vs
+發揮|phát huy|V
+極致|tột đỉnh|N
+#
+摘要|自我讓自己膨脹，看不到人與事真正的面貌。自我太多的人看不到盲點，錯過了重要的人與事，才醒悟過來。其實，體會承諾的美好與苦澀，是一種難得的人生經驗。|Cái tôi khiến người ta phình to, không thấy diện mạo thật của người và việc. Người nhiều cái tôi không thấy điểm mù, bỏ lỡ người việc quan trọng mới tỉnh ngộ. Thật ra, thấu hiểu vị ngọt và chua chát của lời hứa là trải nghiệm đời người quý hiếm.
+文章|Dear文華：你成家了嗎？這句話通常是你媽問你，現在我來問。我行我素的一個人生活，有什麼不好？如果你還未婚，我不是要你立志在今年結婚。這種志向跟減肥和上健身房一樣，很難撐過兩個星期。喔，不對，這種志向比減肥和上健身房更難！因為你可以一個人減肥，但不能一個人結婚。我只希望你想想這個問題。|Văn Hoa thân mến: Anh lập gia đình chưa? Câu này thường mẹ anh hỏi, giờ tôi hỏi. Sống một mình theo ý mình có gì không tốt? Nếu anh chưa kết hôn, tôi không bắt anh lập chí cưới năm nay. Chí hướng này giống giảm cân và đi gym, khó cầm cự quá hai tuần. Ồ không, còn khó hơn giảm cân đi gym! Vì anh có thể giảm cân một mình nhưng không thể kết hôn một mình. Tôi chỉ mong anh nghĩ về vấn đề này.
+文章|不結婚的原因：20歲時沒結婚，因為美女太多，定下來可惜。結果現在別人娶了適合你的老婆，生出來的可愛女兒叫你叔叔，而不是爸爸。一生只有一兩次真愛，你浪費了一次。你浪費後再碰到其他美女，但她們覺得和你定下來可惜。30歲時沒結婚，因為工作太多，沒時間愛別人。結果你現在事業上又了不起到哪裡去呢？|Lý do không kết hôn: 20 tuổi chưa cưới vì nhiều gái đẹp, ổn định thì tiếc. Kết quả giờ người khác cưới người hợp với anh, cô con gái đáng yêu gọi anh là chú chứ không phải bố. Cả đời chỉ có một hai lần tình thật, anh đã lãng phí một. Sau đó gặp các cô gái đẹp khác, nhưng họ thấy ổn định với anh thì tiếc. 30 tuổi chưa cưới vì nhiều việc, không thời gian yêu ai. Kết quả sự nghiệp anh giờ giỏi hơn được bao nhiêu?
+文章|人生很殘酷，我們總無法在人或事出現的當下，了解那人或事真正的重要性。總要經過一段時間，才醒悟過來。但醒悟時，已錯過了重要的人或事。真正重要的人或事，不會重來。生像死，沒有第二次機會。|Đời rất tàn khốc, ta không thể hiểu tầm quan trọng thật của người hay việc ngay khi họ xuất hiện. Luôn phải qua một thời gian mới tỉnh ngộ. Nhưng khi tỉnh thì đã bỏ lỡ người việc quan trọng. Người việc thực sự quan trọng sẽ không đến lần hai. Sống cũng như chết, không có cơ hội thứ hai.
+文章|「自我」這個鬼東西：那40歲時沒結婚，又因為什麼呢？應該是「自我」太多吧！你想得沒錯。在任何感情中，最大的情敵不是另一個俊男美女，而是「自我」這個鬼東西。「自我」怎麼會是鬼東西？個人的成功失敗、歡喜悲傷、甚至愛人和被愛的原因，不都是「自我」激發出來的嗎？|"Cái tôi" thứ quỷ quái này: Còn 40 tuổi chưa cưới lại vì sao? Chắc là "cái tôi" quá nhiều. Anh nghĩ không sai. Trong mọi tình cảm, tình địch lớn nhất không phải trai tài gái sắc khác mà là "cái tôi" thứ quỷ quái. Sao "cái tôi" lại là quỷ? Thành bại, vui buồn của một người, thậm chí lý do yêu và được yêu chẳng phải đều do "cái tôi" khơi dậy sao?
+文章|「自我」當然重要。只不過它跟甜點一樣，實際的營養價值沒有看起來高，而且吃多了只是讓你膨脹發福，看不到自己的腳，和人與事真正的面貌。你一定記得：你很多所謂自由的夜晚，並不是「想幹嘛就幹嘛」，而是一個人坐在電腦前，什麼都沒幹。或是在一個無趣的party，斟酌著何時閃人才不會尷尬。|"Cái tôi" đương nhiên quan trọng. Chỉ là như món tráng miệng, giá trị dinh dưỡng thực không cao như nhìn, ăn nhiều chỉ khiến anh phình to, không thấy chân mình và diện mạo thật của người việc. Anh chắc nhớ nhiều "đêm tự do" của anh không phải "muốn làm gì thì làm" mà là ngồi một mình trước máy tính, chẳng làm gì. Hoặc ở một bữa tiệc chán, cân nhắc khi nào chuồn đi mới không ngượng.
+文章|你很多所謂「忠於自我」的選擇，忠於的其實是膨脹或萎縮的自我，或只是社會眼中的你。如果有一個真心的伴，她可以當頭棒喝，指出你的盲點，叫你別再自以為是。「自我」太多的人，看不到盲點。|Nhiều lựa chọn gọi là "trung thành với bản thân" của anh thực ra trung thành với cái tôi phình hay teo, hoặc chỉ là anh trong mắt xã hội. Nếu có người bạn đời chân thành, cô có thể đánh thức anh, chỉ ra điểm mù, bảo anh đừng tự cho mình đúng nữa. Người nhiều cái tôi không thấy điểm mù.
+文章|有伴很好，幹嘛結婚？不過你一定看得出我邏輯的破綻：是啊，有伴很好，但幹嘛要結婚？因為我知道你想養小孩，而看你這德性，沒勇敢到能接受別人說你有私生子。縱使你自己能接受，也不希望別人這樣叫你孩子。你自詡為開明的知識份子，其實只是留過洋的老夫子。|Có bạn đời là tốt, kết hôn làm gì? Nhưng anh chắc thấy sơ hở logic của tôi: Đúng, có bạn đời tốt, nhưng cưới làm gì? Vì tôi biết anh muốn nuôi con, mà nhìn bộ dạng anh, chưa đủ can đảm chấp nhận người ta nói anh có con ngoài giá thú. Dù bản thân chấp nhận, cũng không muốn người khác gọi con mình vậy. Anh tự xưng trí thức cởi mở nhưng thực ra chỉ là ông đồ cổ hủ từng du học.
+文章|但這不是最重要的原因，最重要的是：你想體會「承諾」的美好與苦澀，那是一種難得的人生經驗。婚姻，都在解決問題。談戀愛，只是在「實習」如何解決問題。為什麼要去解決問題，因為在過程中，會激發出你身體和心理上，最好和最壞的一面。|Nhưng đó chưa phải lý do quan trọng nhất; quan trọng nhất là: anh muốn thấu hiểu vị ngọt và chua chát của "lời hứa", đó là trải nghiệm đời người hiếm có. Hôn nhân luôn là giải quyết vấn đề, yêu đương chỉ là "thực tập" cách giải quyết. Vì sao phải giải quyết vấn đề? Vì trong quá trình sẽ khơi ra mặt tốt nhất và tệ nhất về thể chất lẫn tâm lý của anh.
+文章|你可能發現：哇！我愛玩，竟會為了孩子提早回家。哇！我溫和，但會跟老婆幹架。Surprise你自己，好事或壞事。逼出每一種感覺，甜的或苦的。你像大部分人一樣，既善良也邪惡。走這一趟，你總希望把自己善良和邪惡的潛力都發揮到極致吧！|Có thể anh sẽ thấy: Ồ! Mình mê chơi mà lại vì con về sớm. Ồ! Mình hiền mà lại cãi nhau với vợ. Làm bản thân ngạc nhiên, chuyện tốt hay xấu. Ép ra mọi cảm giác, ngọt hay đắng. Anh như đa số người, vừa lương thiện vừa tà ác. Đi chuyến này, anh hẳn muốn phát huy tối đa cả tiềm năng thiện và ác của mình!
+@8|奧運黑洞|Hố đen Olympic
+黑洞|hố đen|N
+榮耀|vinh quang|N
+國力|quốc lực|N
+債務|nợ|N
+謹慎為之|thận trọng làm|Phrase
+主辦|đăng cai|V
+強心針|mũi thuốc trợ tim|N
+國債|nợ quốc gia|N
+歷經|trải qua|V
+輪|vòng|M
+脫穎而出|nổi bật vượt lên|Idiom
+申奧|xin đăng cai Olympic|Phrase
+宣傳|tuyên truyền, quảng bá|VIN
+盛大|long trọng|Vs
+項目|hạng mục, nội dung|N
+盛會|sự kiện lớn|N
+無不|không ai không|Adv
+贊助|tài trợ|V/N
+宣稱|tuyên bố|V
+龐大|to lớn|Vs
+蓬勃|phát triển mạnh|Vs
+絢麗|rực rỡ|Vs
+綻放|nở rộ|Vp
+歸於|rồi trở về|Vst
+前車之鑑|bài học từ người đi trước|Idiom
+財務|tài chính|N
+興建|xây dựng|V
+運動場館|sân vận động, nhà thi đấu|Phrase
+周遭|xung quanh|N
+更新|đổi mới|V
+舉債|vay nợ|Vi
+籌措|huy động (vốn)|V
+還清|trả hết|Vpt
+施工|thi công|Vi
+塔柱|cột tháp|N
+花費|chi phí|V/N
+預估|ước tính|V
+一路|suốt đường|Adv
+人士|nhân sĩ|N
+足足|đầy đủ, tròn|Adv
+參與|tham gia|V
+有餘|dư|Adv
+超支|chi vượt|N
+專屬|riêng của|Adv
+必|ắt sẽ|Adv
+巨額|khoản khổng lồ|N
+足以|đủ để|Adv
+回本|hoàn vốn|V-sep
+最終|cuối cùng|Adv
+買單|trả hóa đơn, chịu thiệt|V-sep
+雅典|Athens|Name
+奧林匹克運動會|Thế vận hội Olympic|Name
+世界盃足球賽|World Cup|Name
+蒙特婁|Montréal|Name
+美金|đô la Mỹ|Name
+英鎊|bảng Anh|Name
+#
+摘要|舉辦奧運是極大的榮耀，也是國力的展現，既可行銷城市，也可促進旅遊。但如何不使財政被債務負擔拖垮，則是困難任務，不可不謹慎為之。|Đăng cai Olympic là vinh quang lớn, cũng là biểu hiện quốc lực, vừa quảng bá thành phố vừa thúc đẩy du lịch. Nhưng làm sao để tài chính không bị nợ nần kéo sập là nhiệm vụ khó, phải thận trọng.
+新聞|在歷經兩輪投票之後，日本東京脫穎而出，成為西元2020年夏季奧運的主辦城市。這也是東京自1964年之後，再次舉辦夏季奧運會，也是亞洲第一個以及世界第五個舉辦過兩次夏季奧運會的城市（倫敦、雅典各三次，洛杉磯以及巴黎也有兩次舉辦夏季奧運的紀錄）。|Sau hai vòng bỏ phiếu, Tokyo (Nhật Bản) vượt lên thành thành phố đăng cai Olympic mùa hè 2020. Đây là lần Tokyo đăng cai lần nữa kể từ 1964, cũng là thành phố châu Á đầu tiên và thứ năm thế giới đăng cai hai lần (London, Athens ba lần, Los Angeles và Paris cũng hai lần).
+文章|奧林匹克運動會以及世界盃足球賽一直是世界上最盛大的運動賽事。而奧運會，因為比賽的項目以及參賽國家的數量之多，更是吸引全球觀眾目光的盛會，世界各國城市，也無不把主辦奧運會當成一個極大的榮耀。一個城市舉辦奧運，不但是一個極好的城市行銷機會，也可以促進當地旅遊業的發展，更因為各種不同企業公司的贊助，會獲得極大的經濟發展；同時，主辦奧運一直以來可以視為一種國力的展現。|Thế vận hội Olympic và World Cup luôn là sự kiện thể thao lớn nhất thế giới. Olympic, vì số môn thi và số nước tham dự đông, càng là đại hội thu hút mắt toàn cầu, thành phố các nước đều coi đăng cai là vinh dự lớn. Một thành phố đăng cai không chỉ là cơ hội quảng bá tốt mà còn thúc đẩy du lịch địa phương, nhờ tài trợ của nhiều doanh nghiệp còn phát triển kinh tế lớn; đồng thời đăng cai luôn được xem là biểu hiện quốc lực.
+文章|然而，主辦奧運會真的能夠帶來媒體上所宣稱的龐大經濟利益嗎？在奧運會過後，該國的運動會持續蓬勃發展，還是像一場絢麗的煙火，在綻放後歸於平靜呢？歷史上有許多前車之鑑可以讓人參考。|Tuy nhiên đăng cai Olympic thật sự mang lại lợi ích kinh tế khổng lồ như truyền thông tuyên bố? Sau Thế vận hội thể thao nước đó tiếp tục phát triển mạnh hay như màn pháo hoa rực rỡ nở rồi lặng? Lịch sử có nhiều bài học đáng tham khảo.
+文章|1976年的蒙特婁奧運恐怕是歷史上財務負擔最重的一次奧運會。為了興建奧運運動場館以及周遭街道更新，蒙特婁政府大幅舉債以籌措資金，後果即是花了30年，直到2006年蒙特婁政府才把15億美金的債務還清。而所興建的奧運運動場，更因為財務上的困難以及施工時間不足，直到1980年代才把主要的塔柱完成，遠在奧運會結束之後。|Olympic Montréal 1976 có lẽ là kỳ có gánh nặng tài chính nặng nhất lịch sử. Để xây sân vận động và cải tạo đường phố xung quanh, chính quyền Montréal vay nợ lớn gom vốn, hậu quả là mất 30 năm, đến 2006 mới trả hết nợ 1,5 tỷ đô. Sân vận động còn do khó khăn tài chính và thiếu thời gian thi công, đến thập niên 1980 mới hoàn thành tháp trụ chính, rất lâu sau khi Thế vận hội kết thúc.
+文章|2012年的倫敦奧運則恐怕是近五十年來花費最多的一次奧運會，從奧運會前預估的24億英鎊預算，一路提升至93億英鎊。到了奧運會該年，已有人士預估此次奧運會所舉辦的代價恐怕會花費240億英鎊，足足比當初參與競選奧運主辦城市時所提出的預算多了十倍有餘。花費超支恐怕不是倫敦奧運會的專屬，而是每屆奧運會必會傳承的傳統，2004年的雅典奧運也是由事前的60億美金，到最後共花了150億美金。|Olympic London 2012 có lẽ tốn kém nhất gần 50 năm, từ ngân sách dự tính 2,4 tỷ bảng lên 9,3 tỷ. Đến năm diễn ra, đã có người ước tính chi phí có thể 24 tỷ bảng, gấp hơn mười lần ngân sách lúc tranh cử đăng cai. Vượt chi có lẽ không riêng London mà là truyền thống mỗi kỳ Olympic đều kế thừa; Olympic Athens 2004 cũng từ 6 tỷ đô trước đó đến cuối tốn 15 tỷ.
+文章|而這些巨額的花費，只靠著贊助商、門票收入還有遊客所產生的經濟利益，似乎是不足以回本的。最終，還是需要納稅人來買單。|Những khoản chi khổng lồ này chỉ dựa vào nhà tài trợ, tiền vé và lợi ích kinh tế từ du khách dường như không đủ hoàn vốn. Cuối cùng vẫn cần người nộp thuế gánh.
+@9|鄉關何處|Quê hương ở nơi đâu
+鄉關何處|quê nhà ở đâu|Phrase
+開啟|mở ra|V
+浪遊|lang thang|Vi
+泰半|phần lớn|Det
+遷移|di chuyển|Vi
+變換|thay đổi|N
+安身|an cư|Vp-sep
+念頭|ý nghĩ|N
+前提|điều kiện tiên quyết|N
+遠行|đi xa|Vi
+山洞|hang núi, hầm|N
+姑媽|dì/cô (chị em của cha)|N
+自助餐|bữa tự chọn|N
+寄宿生|học sinh nội trú|N
+爛漫|rực rỡ, hồn nhiên|Vs
+年歲|tuổi tác, năm tháng|N
+鄉愁|nỗi nhớ quê|N
+他鄉|đất khách|N
+異地|nơi xa lạ|N
+腳步|bước chân|N
+算計|tính toán|V
+飄泊|phiêu bạt|Vi
+不時|thường xuyên, lúc nào đó|Adv
+居留|cư trú|Vi
+來日|ngày sau|N
+認定|xác định, tin chắc|Vst
+形態|hình thái|N
+彷彿|dường như|Adv
+旅程|hành trình|N
+前移|tiến lên|Vi
+邁進|bước tới|Vi
+不巧|không may|Adv
+派駐|cử đến đóng ở|V
+流轉|luân chuyển|Vi
+之類|đại loại|Det
+度假|nghỉ phép, đi nghỉ|V-sep
+居所|nơi ở|N
+恆常不變|bất biến|Phrase
+地址|địa chỉ|N
+養老|dưỡng già|Vi
+愕然|sững sờ|Vs
+驚醒|giật mình tỉnh ra|V
+已然|đã|Adv
+失根|mất gốc|Vp-sep
+理所當然|đương nhiên|Idiom
+依舊|vẫn như cũ|Adv
+碧綠|xanh biếc|Vs
+寧靜|yên tĩnh|Vs
+住所|nơi ở|N
+落地窗|cửa sổ sát đất|N
+望見|trông thấy|V
+星空|bầu trời sao|N
+後院|sân sau|N
+樹|cây|N
+松鼠|sóc|N
+麻雀|chim sẻ|N
+嬉戲|đùa nghịch|Vi
+具體|cụ thể|Vs
+基隆|Cơ Long (Keelung)|Name
+亞力山大|Alexander|Name
+#
+文章|大學畢業後開啟了浪遊人生，泰半生活是在遷移變換之中，不知不覺失去了安身的念頭。在哪裡居住已經不再是問題，在哪裡好住才是前提。|Sau đại học bắt đầu cuộc đời lang bạt, phần lớn sống trong di chuyển và thay đổi, bất giác đánh mất ý niệm an cư. Ở đâu không còn là vấn đề, ở đâu ở thoải mái mới là tiền đề.
+文章|小時候喜歡遠行，經常坐火小車過山洞去基隆的姑媽家看海；上了中學離開家鄉去了台北念書，成了一個經常吃自助餐的寄宿生；大學畢業不久，帶著好奇與夢想開啟了浪遊的人生。|Hồi nhỏ thích đi xa, thường đi tàu nhỏ qua hầm núi đến nhà dì ở Cơ Long ngắm biển; lên trung học rời quê lên Đài Bắc học, thành học sinh nội trú hay ăn cơm tự chọn; tốt nghiệp đại học không lâu, mang theo tò mò và ước mơ bắt đầu cuộc đời lang bạt.
+文章|爛漫的年歲都不知鄉愁，他鄉異地腳步愈走愈遠。算計起來，泰半生活是在遷移變換之中，過半的時間是在家國之外，似乎已經習慣了這樣的飄泊，以致到了中年，不時談起或被人問起：會在此地居留多久？來日可有何打算？|Tuổi trẻ hồn nhiên chẳng biết nhớ quê, bước chân nơi đất khách càng đi càng xa. Tính ra phần lớn cuộc sống là di chuyển thay đổi, hơn nửa thời gian ở ngoài quê hương, dường như đã quen phiêu bạt, đến trung niên thỉnh thoảng nói hoặc bị hỏi: sẽ ở đây bao lâu? sau này tính sao?
+文章|習慣了這樣的話題，心裡似乎也認定了這樣的生活形態，不知不覺中失去了所謂「家」的觀念以及所謂「安身」這樣的念頭。彷彿生活是一段又一段的旅程，日子就隨著腳步前移邁進，家在哪裡？鄉關何處？|Quen với chủ đề ấy, trong lòng dường như cũng cho rằng lối sống này là đương nhiên, bất giác mất khái niệm "nhà" và ý niệm "an thân". Cuộc sống như hết chặng hành trình này đến chặng khác, ngày tháng theo bước chân tiến lên: nhà ở đâu? quê nhà nơi nào?
+文章|不巧，生活裡的朋友泰半是這類隨工作派駐各地，在城市與機場之間流轉的「國際人士」，大部分人的家都是地球上臨時居住的某個城市，只有在義大利南部或瑞士山間之類的度假居所或伊媚兒，才是比較恆常不變的地址。|Không may, bạn bè quanh tôi phần lớn là những "người quốc tế" theo công việc đóng ở khắp nơi, luân chuyển giữa thành phố và sân bay; nhà của đa số là một thành phố tạm trú nào đó trên Trái Đất, chỉ có nơi nghỉ dưỡng ở miền nam Ý hay vùng núi Thụy Sĩ hoặc địa chỉ email mới là địa chỉ tương đối không đổi.
+文章|以致，不小心問了一個已經在亞洲住了二十多年的朋友亞力山大：將來打算在哪裡退休養老？對方有點愕然地回答：香港，當然在香港，這是家。這一回答才驚醒夢中人，原來，自己已然成了失根之人，心裡從來沒有一個理所當然的「家」，心裡的家依舊是在夢想中：|Vì thế, tôi vô tình hỏi người bạn Alexander đã sống ở châu Á hơn hai mươi năm: sau này định dưỡng già ở đâu? Anh ngạc nhiên đáp: Hồng Kông, đương nhiên là Hồng Kông, đó là nhà. Câu trả lời làm tôi tỉnh ngộ: hóa ra mình đã thành người mất gốc, trong lòng chưa từng có một "nhà" đương nhiên; ngôi nhà trong tim vẫn nằm trong mơ:
+文章|一個有碧綠湖水或者可從窗外看著藍天大海的寧靜住所，落地窗前可以望見夜晚的星空，後院的老樹下有松鼠、麻雀嬉戲……這樣的地方具體是在哪裡？如果有人問，實在也沒有確定的答案，也許是在旅途中偶然發現的無名村落？|Một nơi ở yên tĩnh có hồ nước xanh biếc hoặc nhìn qua cửa sổ thấy trời xanh biển cả, trước cửa sổ sát đất ngắm bầu trời sao đêm, dưới gốc cây già sân sau có sóc, chim sẻ nô đùa… Nơi ấy cụ thể ở đâu? Nếu có người hỏi thật sự cũng không có đáp án chắc chắn, có lẽ là ngôi làng vô danh tình cờ gặp trên đường đi?
+@10|智慧與能力|Trí tuệ và năng lực
+修練|tu luyện, rèn luyện|N/V
+記憶|ký ức, ghi nhớ|N
+詮釋|diễn giải|N/V
+相輔相成|bổ trợ cho nhau|Idiom
+書中自有黃金屋|trong sách có nhà vàng|Phrase
+讀萬卷書、行萬里路|đọc vạn quyển sách, đi vạn dặm đường|Phrase
+脫逃|trốn thoát|Vi
+實戰|thực chiến|N
+出類拔萃|xuất chúng|Idiom
+階段|giai đoạn|N
+孰|ai, cái nào (văn ngôn)|Pron
+頗|khá, rất (văn ngôn)|Adv
+引人深思|khiến người suy ngẫm|Idiom
+管理學院|học viện quản lý|Phrase
+院長|viện trưởng|N
+猴子|khỉ|N
+差別|khác biệt|N
+從此|từ đó|Conj
+脫鉤|tách rời|V-sep
+叢林|rừng rậm|N
+步入|bước vào|V
+野獸|dã thú|N
+聚焦|tập trung|Vi
+視野|tầm nhìn|N
+從容|thong thả, bình tĩnh|Adv
+應對|ứng phó|Vi
+綜觀|nhìn tổng thể|V
+總經理|tổng giám đốc|N
+曲折|quanh co, trắc trở|Vs
+缺點|khuyết điểm|N
+思維|tư duy|N
+行走|đi, trải nghiệm|V
+江湖|giang hồ, xã hội|N
+回頭|quay đầu|V-sep
+實驗|thí nghiệm|N
+領悟|lĩnh hội|N
+為人處世|cách đối nhân xử thế|Phrase
+更為|càng|Adv
+圓融|viên dung, khéo léo|Vs
+幽默|hài hước|Vs-sep
+思考術|nghệ thuật tư duy|N
+善於|giỏi về|Vst
+台科大|ĐH Khoa học Kỹ thuật Đài Loan|Name
+盧希鵬|Lư Hy Bằng|Name
+中經合集團|Tập đoàn WI Harper|Name
+朱永光|Chu Vĩnh Quang|Name
+#
+摘要|讀書智慧與街頭智慧都是人生中不可少的修練，前者靠的是讀書與記憶，後者要的是觀察與詮釋，兩者若能發揮互補，必能相輔相成。|Trí tuệ sách vở và trí tuệ đường phố đều là sự rèn luyện không thể thiếu của đời người; cái trước dựa vào đọc và nhớ, cái sau cần quan sát và diễn giải, nếu bổ sung cho nhau ắt tương hỗ nhau.
+文章|古人說，「書中自有黃金屋」，也鼓勵「讀萬卷書、行萬里路」；在地球村的現代，人們常說「讀萬卷書不如行萬里路」，尤其中外有不少創業家曾由學校教育中「脫逃」，卻能在實戰中出類拔萃。因此，究竟「讀書智慧」與「街頭智慧」在人生的不同階段孰輕、孰重，如何相輔相成？頗引人深思。|Người xưa nói "trong sách có nhà vàng", cũng khuyến khích "đọc vạn cuốn sách, đi vạn dặm đường"; thời nay làng toàn cầu, người ta hay nói "đọc vạn sách không bằng đi vạn dặm", nhất là nhiều nhà khởi nghiệp trong ngoài nước từng "trốn" khỏi giáo dục trường học mà vẫn xuất chúng trong thực chiến. Vậy rốt cuộc "trí tuệ sách vở" và "trí tuệ đường phố" ở các giai đoạn đời người cái nào nhẹ cái nào nặng, làm sao bổ trợ nhau? Khá đáng suy ngẫm.
+文章|前台科大管理學院院長盧希鵬就點出，我們的教育比較強調「讀書智慧」，讀書因而成為現在學生唯一的目標，但學校很少教的「街頭智慧」，其實才是離開學校後融入社會最重要的技巧。|Nguyên viện trưởng Học viện Quản lý ĐH Khoa học Kỹ thuật Đài Loan, Lư Hy Bằng, chỉ ra rằng giáo dục của ta nhấn mạnh "trí tuệ sách vở", đọc sách trở thành mục tiêu duy nhất của học sinh, nhưng "trí tuệ đường phố" mà trường ít dạy mới thật là kỹ năng quan trọng nhất để hòa nhập xã hội sau khi rời trường.
+文章|盧希鵬說，「人類與猴子主要的差別之一，在於人類發明了『學校』，從此人類的學習開始與現實脫鉤。你看，猴子從小在叢林中學習，很快地就能獨立生存。人類從小在校園中學習，受教育20年後，步入社會叢林，卻什麼也不懂，好像隨時都會被野獸吃掉似的。」|Lư Hy Bằng nói: "Một trong những khác biệt chính giữa người và khỉ là con người phát minh ra 'trường học', từ đó việc học tách rời thực tế. Bạn xem, khỉ học trong rừng từ nhỏ, rất nhanh tự sống được. Con người học trong trường từ bé, được giáo dục 20 năm rồi bước vào rừng xã hội thì chẳng hiểu gì, như thể lúc nào cũng có thể bị thú dữ ăn thịt."
+文章|他認為，戴眼鏡的人類優點是能「聚焦」，解決核心問題；不戴眼鏡的猴子則因「周邊視野」開闊，機會與風險都能從容應對。盧希鵬希望學生讀書的同時也能綜觀大環境，因為核心與周邊同樣重要。|Ông cho rằng ưu điểm của con người đeo kính là biết "tập trung", giải quyết vấn đề cốt lõi; còn khỉ không đeo kính nhờ "tầm nhìn xung quanh" rộng nên ung dung đối phó cả cơ hội lẫn rủi ro. Ông mong học sinh vừa đọc sách vừa nhìn tổng thể môi trường lớn, vì cốt lõi và xung quanh quan trọng như nhau.
+文章|美商中經合集團總經理朱永光表示，讀書智慧跟街頭智慧都是人生中不可缺少的修練。學校教育重點往往放在「避免危險」，畢竟前人的經驗可讓後人少走很多曲折路，但只走熟悉的路，缺點是不敢突破，長期下來在不知不覺中失去了應變、創新思維，偏偏這是行走江湖時很重要的能力。|Tổng giám đốc tập đoàn WI Harper (Mỹ) Chu Vĩnh Quang nói trí tuệ sách vở và đường phố đều là rèn luyện không thể thiếu. Giáo dục nhà trường thường đặt trọng tâm ở "tránh nguy hiểm"; kinh nghiệm người đi trước giúp người sau bớt đường vòng, nhưng chỉ đi đường quen thì khuyết điểm là không dám đột phá, lâu dần bất giác mất khả năng ứng biến và tư duy sáng tạo, mà đây lại là năng lực rất quan trọng khi bước vào đời.
+文章|朱永光認為「當生活中遇到困難，有時我們也會回頭在書中找答案……這是讀書智慧；街頭智慧某種程度來說，是書中讀到那些技巧的實驗。」|Chu Vĩnh Quang cho rằng: "Khi gặp khó khăn trong cuộc sống, đôi khi ta cũng quay lại tìm đáp án trong sách… đó là trí tuệ sách vở; trí tuệ đường phố ở mức độ nào đó là sự thực nghiệm những kỹ năng đọc được trong sách."
+文章|盧希鵬認為「讀書智慧」靠的是讀書和記憶；「街頭智慧」要的是觀察與詮釋，兩者都很重要。朱永光也指出，兩者若能相輔相成，在關鍵時刻發揮互補的效果，將能讓個人在職場、創業過程或為人處世上更為圓融。|Lư Hy Bằng cho rằng "trí tuệ sách vở" dựa vào đọc và ghi nhớ; "trí tuệ đường phố" cần quan sát và diễn giải, cả hai đều quan trọng. Chu Vĩnh Quang cũng chỉ ra, nếu hai bên bổ trợ nhau, phát huy hiệu quả bù đắp vào thời khắc then chốt, sẽ giúp cá nhân khéo léo hơn trong công sở, khởi nghiệp hay đối nhân xử thế.
+文章|盧希鵬幽默地說，「關於思考術，你認為是人（讀書智慧）強還是猴子（街頭智慧）強？我只能說，人類愛看書，猴子善觀察……如果你天生是猴子，就要多學學人；如果你本來就是人，不妨多學學猴子，或許有所突破。」|Lư Hy Bằng hóm hỉnh nói: "Về nghệ thuật tư duy, bạn nghĩ người (trí tuệ sách vở) mạnh hay khỉ (trí tuệ đường phố) mạnh? Tôi chỉ có thể nói: con người thích đọc sách, khỉ giỏi quan sát… Nếu bạn sinh ra là khỉ thì nên học người nhiều hơn; nếu vốn là người thì cứ học khỉ thêm, biết đâu đột phá."
