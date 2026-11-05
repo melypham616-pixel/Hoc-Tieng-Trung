@@ -16,7 +16,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
 <title>Học Tiếng Trung 當代中文課程 1</title>
 <style>
 :root{
@@ -274,6 +274,83 @@ h3{font-family:var(--hanzi);font-weight:700}
 input[type=text],input[type=search],textarea,.tf-bar select{font-family:var(--ui);border-radius:16px}
 footer{padding:8px 16px 28px}
 @media (max-width:480px){.seg{gap:2px;padding:4px}.seg button{font-size:12px;padding:9px 2px}.hero{padding:20px 14px 18px}.seal{width:50px;height:50px}.card{padding:16px}}
+
+/* ======== v3: phong cách hihsk (slate + xanh) ======== */
+:root{--bg:#020617;--card:#0f172a;--ink:#f1f5f9;--mut:#94a3b8;--line:#1e293b;
+  --pri:#60a5fa;--pri-d:#3b82f6;--pri2:#0f1f3d;--acc:#34d399;--acc2:#0c2a2a;--gold:#fbbf24;
+  --ok:#4ade80;--okbg:#0d2a1b;--bad:#f87171;--badbg:#2e1316;
+  --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 10px 30px -16px rgba(0,0,0,.7);color-scheme:dark;--hero-bg:radial-gradient(700px 320px at 85% -20%,rgba(66,153,225,.35),transparent 70%),radial-gradient(500px 260px at 0% 110%,rgba(90,103,216,.28),transparent 70%),#020617;
+  --hanzi:"Noto Sans TC","LXGW WenKai","PingFang TC","Hiragino Sans CNS",sans-serif;--ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--grad:linear-gradient(135deg,#4299e1,#5a67d8);}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f1f5f9;--card:#ffffff;--ink:#0f172a;--mut:#64748b;--line:#e2e8f0;
+  --pri:#2b78c9;--pri-d:#2563eb;--pri2:#e8f1fb;--acc:#059669;--acc2:#e2f6ef;--gold:#d97706;
+  --ok:#16a34a;--okbg:#e4f7ea;--bad:#dc2626;--badbg:#fdeaea;
+  --shadow:0 4px 20px rgba(15,23,42,.08);color-scheme:light;--hero-bg:radial-gradient(700px 320px at 85% -20%,rgba(66,153,225,.35),transparent 70%),radial-gradient(500px 260px at 0% 110%,rgba(90,103,216,.28),transparent 70%),#020617;
+  --hanzi:"Noto Sans TC","LXGW WenKai","PingFang TC","Hiragino Sans CNS",sans-serif;--ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--grad:linear-gradient(135deg,#4299e1,#5a67d8);}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#020617;--card:#0f172a;--ink:#f1f5f9;--mut:#94a3b8;--line:#1e293b;
+  --pri:#60a5fa;--pri-d:#3b82f6;--pri2:#0f1f3d;--acc:#34d399;--acc2:#0c2a2a;--gold:#fbbf24;
+  --ok:#4ade80;--okbg:#0d2a1b;--bad:#f87171;--badbg:#2e1316;
+  --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 10px 30px -16px rgba(0,0,0,.7);color-scheme:dark;--hero-bg:radial-gradient(700px 320px at 85% -20%,rgba(66,153,225,.35),transparent 70%),radial-gradient(500px 260px at 0% 110%,rgba(90,103,216,.28),transparent 70%),#020617;
+  --hanzi:"Noto Sans TC","LXGW WenKai","PingFang TC","Hiragino Sans CNS",sans-serif;--ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--grad:linear-gradient(135deg,#4299e1,#5a67d8);}}
+:root[data-theme="dark"]{--bg:#020617;--card:#0f172a;--ink:#f1f5f9;--mut:#94a3b8;--line:#1e293b;
+  --pri:#60a5fa;--pri-d:#3b82f6;--pri2:#0f1f3d;--acc:#34d399;--acc2:#0c2a2a;--gold:#fbbf24;
+  --ok:#4ade80;--okbg:#0d2a1b;--bad:#f87171;--badbg:#2e1316;
+  --shadow:0 1px 0 rgba(255,255,255,.04) inset,0 10px 30px -16px rgba(0,0,0,.7);color-scheme:dark;--hero-bg:radial-gradient(700px 320px at 85% -20%,rgba(66,153,225,.35),transparent 70%),radial-gradient(500px 260px at 0% 110%,rgba(90,103,216,.28),transparent 70%),#020617;
+  --hanzi:"Noto Sans TC","LXGW WenKai","PingFang TC","Hiragino Sans CNS",sans-serif;--ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--grad:linear-gradient(135deg,#4299e1,#5a67d8);}
+:root[data-theme="light"]{--bg:#f1f5f9;--card:#ffffff;--ink:#0f172a;--mut:#64748b;--line:#e2e8f0;
+  --pri:#2b78c9;--pri-d:#2563eb;--pri2:#e8f1fb;--acc:#059669;--acc2:#e2f6ef;--gold:#d97706;
+  --ok:#16a34a;--okbg:#e4f7ea;--bad:#dc2626;--badbg:#fdeaea;
+  --shadow:0 4px 20px rgba(15,23,42,.08);color-scheme:light;--hero-bg:radial-gradient(700px 320px at 85% -20%,rgba(66,153,225,.35),transparent 70%),radial-gradient(500px 260px at 0% 110%,rgba(90,103,216,.28),transparent 70%),#020617;
+  --hanzi:"Noto Sans TC","LXGW WenKai","PingFang TC","Hiragino Sans CNS",sans-serif;--ui:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--grad:linear-gradient(135deg,#4299e1,#5a67d8);}
+body{background:var(--bg);font-family:var(--ui);letter-spacing:-.005em}
+.hero{background:var(--hero-bg);border-bottom:1px solid #1e293b;padding:22px 16px 20px}
+.hero::after{display:none}
+.seal{background:var(--grad);border:0;box-shadow:0 8px 24px -8px rgba(66,153,225,.7);border-radius:16px;transform:none;font-family:var(--hanzi);font-weight:700}
+.brand h1{font-family:var(--ui);font-weight:800;letter-spacing:-.02em;background:linear-gradient(90deg,#fff 30%,#8fc4f5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand p{color:#94a3b8}
+.stat-card{background:rgba(15,23,42,.7);border:1px solid #1e293b;border-radius:18px;backdrop-filter:blur(8px)}
+.stat-card b{font-family:var(--ui);font-weight:800;color:#f1f5f9}
+.stat-card span{color:#94a3b8}
+.bar{background:#1e293b}.bar i{background:var(--grad)}
+.ctrl{color:#cbd5e1}
+.ctrl select,.ctrl button{background:#0f172a;border:1px solid #334155;color:#e2e8f0;border-radius:12px}
+.ctrl input[type=range]{accent-color:#4299e1}
+.lchip{border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--ink)}
+.lchip:hover{border-color:#4299e1}
+.lchip.on,#bbar .lchip.on{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 8px 20px -10px #4299e1}
+#bbar .lchip{border-radius:12px}
+nav button{border-radius:14px;background:var(--card);box-shadow:none}
+nav button.on{background:var(--grad);border-color:transparent;color:#fff}
+@media (max-width:720px){nav{background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(12px)}nav button{background:transparent}nav button.on{background:var(--pri2);color:var(--pri)}}
+.card{border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+h3,.lh{font-family:var(--ui);font-weight:700}
+.lh::before{background:var(--grad)}
+.zh,.qa-q,.w,.tok{font-family:var(--hanzi)}
+.py{color:var(--pri)}
+.b{border-radius:12px;background:var(--card);border-color:var(--line);box-shadow:none}
+.b:hover{border-color:#4299e1}
+.b.p{background:var(--grad);border-color:transparent;box-shadow:0 10px 24px -12px #4299e1}
+.b.spk{background:var(--pri2);color:var(--pri);border-radius:50%}
+.b.spk:hover{background:var(--grad);color:#fff}
+.chip{border-radius:99px}
+.chip.on{background:var(--pri2);border-color:var(--pri);color:var(--pri)}
+.seg{background:var(--card);border:1px solid var(--line)}
+.seg button{color:var(--mut)}
+.seg button.on{background:var(--grad);color:#fff;box-shadow:0 6px 16px -8px #4299e1}
+.tf-intro{background:var(--pri2);border-left:4px solid #4299e1;color:var(--ink)}
+.vl:hover{background:color-mix(in srgb,var(--pri2) 70%,transparent)}
+.flash{background:radial-gradient(circle at 50% 0,var(--pri2),var(--card) 70%);border:1px solid #334155;box-shadow:0 30px 60px -30px rgba(66,153,225,.5)}
+.flash .zh{font-weight:700}
+.ex{border-left-color:#4299e1;background:var(--pri2)}
+.bub.l{background:var(--pri2)}.bub.l .who{color:var(--pri)}
+rt{color:var(--pri)}
+.formula,.whole{background:var(--pri2)}
+.pos{border-color:var(--line)}
+.lv-B1,.lv-B2{background:#2a1f0c;color:var(--gold)}
+:root[data-theme="light"] .lv-B1,:root[data-theme="light"] .lv-B2{background:#fef3c7}
+input[type=text],input[type=search],textarea,.tf-bar select,#les{background:var(--card);border-color:var(--line);color:var(--ink)}
+input[type=text]:focus,input[type=search]:focus,textarea:focus{border-color:#4299e1;box-shadow:0 0 0 4px rgba(66,153,225,.2)}
+footer{color:var(--mut)}
+.lchip.on small,#bbar .lchip.on small{color:rgba(255,255,255,.9)}
 </style>
 </head>
 <body>
