@@ -265,9 +265,17 @@ $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button da
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
-  stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;track('tab_view',{tab});
+  stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;
+  const b1=bk==="1";$("#lbar").style.display=b1?"":"none";$("#nav").style.display=b1?"":"none";$("#les").closest(".sp").style.display=b1?"":"none";
+  document.querySelectorAll("#bbar .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk));
+  document.querySelector(".stats").style.display=b1?"":"none";
+  $("#hS").textContent=bk==="T"?"Từ vựng TOCFL Band A + B · 4.844 từ · thẻ nhớ, trắc nghiệm, nghe đọc":b1?"Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch":`Học tiếng Trung · ${BOOKS[bk]?BOOKS[bk].lessons.length+" bài":"đang cập nhật"} · từ vựng, hội thoại, thẻ nhớ, trắc nghiệm`;
+  $("#hT").textContent=bk==="T"?"TOCFL 詞彙 A1–B2":"當代中文課程 "+bk;
+  if(!b1){track('book_view',{book:bk});tocflView();return}
+  track('tab_view',{tab});
   ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,story:storyView,qa:qaView,quiz:quizView,trans:transView})[tab]();
 }
+function setBook(n){bk=prog.book=n;tfLv=tfKeys()[0]||tfLv;tfSet=0;tfDeck=[];tfQz=null;tfNew=false;tfMode=tfMode==="dlg"&&n==="T"?"list":tfMode;save();render();window.scrollTo({top:0})}
 const lesTag=n=>`Bài ${n} · ${LES[n].zh}`;
 const lesHead=n=>`Bài ${n} · ${annotate(LES[n].zh).html}`;
 
@@ -315,6 +323,110 @@ function flashDraw(){
   if(!fBack)speak(v[0]);
 }
 function fAns(ok){const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.known[v[0]];save();fi=(fi+1)%fDeck.length;fBack=false;flashDraw()}
+
+
+/* ============ TOCFL (Band A + Band B) ============ */
+const TF=rows(TOCFL_DATA).map((r,i)=>{const p=r.split("|");return{i,h:p[0],p:p[1],m:p[2],pos:p[3],l:p[4],s:p[0].replace(/[()（）]/g,"").split("/")[0].trim(),k:p[0]+"|"+p[1]}});
+prog.tk=prog.tk||{};
+const TFL=["A1","A2","B1","B2"],TF_SET=25,TF_NAME={A1:"Sơ cấp 1",A2:"Sơ cấp 2",B1:"Trung cấp 1",B2:"Trung cấp 2"};
+const BOOK_IDS=["1","2","3","4","5","6","T"],BOOK_TOTAL={2:15,3:12,4:12};   // số bài của từng quyển trong sách; quyển nào chưa đủ bài thì báo "đang cập nhật"
+const BKW={};Object.keys(BOOKS).forEach(n=>{BKW[n]=BOOKS[n].lessons.flatMap(L=>rows(L.v).map(r=>{const p=r.split("|");return{h:p[0],p:p[1],m:p[2],pos:p[3]||"",l:"Bài "+L.n,s:p[0].replace(/[()（）]/g,"").split("/")[0].trim(),k:n+":"+p[0]+"|"+p[1]}}))});
+let bk=BOOK_IDS.includes(prog.book)?prog.book:"1";
+const tfSrc=()=>bk==="T"?TF:(BKW[bk]||[]);
+const tfKeys=()=>bk==="T"?TFL:[...new Set(tfSrc().map(x=>x.l))];
+const tfByL=l=>tfSrc().filter(x=>x.l===l);
+let tfLv=TFL.includes(prog.tfLv)?prog.tfLv:"A1",tfDlgPy=true,tfDlgVi=true,tfSet=0,tfMode="list",tfQ="",tfNew=false,tfLim=100;
+let tfDeck=[],tfi=0,tfBack=false,tfQm="h2m",tfQz=null,tfStreak=0,tfDone=false;
+const tfSets=()=>tfByL(tfLv).length>60?Math.ceil(tfByL(tfLv).length/TF_SET):0;
+function tfScope(){   // các từ trong cấp + bộ đang chọn
+  let a=tfByL(tfLv);if(tfSet>0&&tfSets())a=a.slice((tfSet-1)*TF_SET,tfSet*TF_SET);
+  return tfNew?a.filter(x=>!prog.tk[x.k]):a;
+}
+const tfKnownN=a=>a.filter(x=>prog.tk[x.k]).length;
+function tocflView(){
+  const keys=tfKeys();
+  if(!keys.length){$("#app").innerHTML=`<div class="card">📚 <b>Quyển ${bk}</b> đang được cập nhật, sẽ có sớm. Bạn có thể học Quyển 1 hoặc TOCFL trong lúc chờ.</div>`;return}
+  if(!keys.includes(tfLv)){tfLv=keys[0];tfSet=0}
+  const L=tfByL(tfLv),ns=tfSets(),isT=bk==="T";
+  const setOpts=ns?`<option value="0">Cả ${isT?"cấp":""} ${tfLv} (${L.length} từ)</option>`+Array.from({length:ns},(_,j)=>{const a=L.slice(j*TF_SET,(j+1)*TF_SET);return `<option value="${j+1}"${tfSet===j+1?" selected":""}>Bộ ${j+1} · ${a[0].s}…${a[a.length-1].s} · ${tfKnownN(a)}/${a.length}</option>`}).join(""):"";
+  const intro=isT?`<b>🎯 TOCFL</b> — từ vựng thi chứng chỉ tiếng Hoa (Đài Loan): <b>Band A</b> (A1–A2, ${tfByL("A1").length+tfByL("A2").length} từ) và <b>Band B</b> (B1–B2, ${tfByL("B1").length+tfByL("B2").length} từ). Chọn cấp → chọn bộ ${TF_SET} từ → học bằng danh sách, thẻ nhớ hoặc trắc nghiệm.`
+    :`<b>📘 Quyển ${bk}</b> — ${BOOKS[bk].lessons.length}${BOOK_TOTAL[bk]&&BOOK_TOTAL[bk]>BOOKS[bk].lessons.length?"/"+BOOK_TOTAL[bk]:""} bài, ${tfSrc().length} từ vựng${BOOK_TOTAL[bk]&&BOOK_TOTAL[bk]>BOOKS[bk].lessons.length?" (các bài còn lại đang được cập nhật)":""}. Chọn bài, rồi học từ vựng, thẻ nhớ, trắc nghiệm hoặc đọc hội thoại.`;
+  const modes=[["list","📋 Từ vựng"],["flash","🃏 Thẻ nhớ"],["quiz","✍️ Trắc nghiệm"]];if(!isT)modes.push(["dlg","💬 Hội thoại"]);
+  if(tfMode==="dlg"&&isT)tfMode="list";
+  $("#app").innerHTML=`
+  <div class="card tf-intro">${intro}</div>
+  <div class="chips">${keys.map(l=>{const a=tfByL(l);return `<span class="chip ${l===tfLv?"on":""}" onclick="tfPickLv('${l}')">${l}<small class="tf-n"> ${tfKnownN(a)}/${a.length}</small></span>`}).join("")}</div>
+  ${tfMode==="dlg"?"":`<div class="row tf-bar">${ns?`<select id="tfSet" onchange="tfSet=+this.value;tfLim=100;tfDeck=[];tfQz=null;tocflView()">${setOpts}</select>`:""}
+   <label class="stat"><input type="checkbox" ${tfNew?"checked":""} onchange="tfNew=this.checked;tfDeck=[];tfQz=null;tocflView()"> chỉ từ chưa thuộc</label></div>`}
+  <div class="seg">${modes.map(([k,l])=>`<button class="${tfMode===k?"on":""}" onclick="tfMode='${k}';tfDeck=[];tfQz=null;tocflView()">${l}</button>`).join("")}</div>
+  <div id="tfbody"></div>`;
+  ({list:tfListView,flash:tfFlashView,quiz:tfQuizView,dlg:tfDlgView})[tfMode]();
+}
+function tfDlgView(){
+  const L=BOOKS[bk].lessons.find(x=>"Bài "+x.n===tfLv),D=L&&L.d;
+  if(!D){$("#tfbody").innerHTML=`<div class="card">Bài này chưa có hội thoại.</div>`;return}
+  const lines=rows(D.l).map(r=>r.split("|")),names=[...new Set(lines.map(x=>x[0]))];
+  $("#tfbody").innerHTML=`<div class="lh">Bài ${L.n} · ${L.zh} <span class="vi">— ${esc(L.vi||"")}</span></div>
+  <div class="row" style="margin-bottom:10px"><label><input type="checkbox" ${tfDlgPy?"checked":""} onchange="tfDlgPy=this.checked;tfDlgView()"> Hiện pinyin</label><label><input type="checkbox" ${tfDlgVi?"checked":""} onchange="tfDlgVi=this.checked;tfDlgView()"> Hiện tiếng Việt</label><button class="b p" onclick="tfPlayDlg()">▶ Nghe cả đoạn</button><button class="b" onclick="stopSpeak()">⏹ Dừng</button></div>
+  <div class="card">${lines.map(x=>`<div class="bub ${names.indexOf(x[0])%2?"r":"l"}"><div class="who">${x[0]}</div><div class="row"><span class="zh tap" style="font-size:22px" onclick="speak('${x[1]}')">${x[1]}</span>${spkBtn(x[1],"m")}</div>${tfDlgPy?`<div class="py">${x[2]||""}</div>`:""}${tfDlgVi?`<div class="vi">${x[3]||""}</div>`:""}</div>`).join("")}</div>`;
+}
+function tfPlayDlg(){const L=BOOKS[bk].lessons.find(x=>"Bài "+x.n===tfLv);toast("🔊 Đang đọc…");speakSeq(rows(L.d.l).map(r=>({t:r.split("|")[1],tag:"m",pitch:1})))}
+function tfPickLv(l){tfLv=l;if(bk==='T')prog.tfLv=l;tfSet=0;tfLim=100;tfDeck=[];tfQz=null;save();track('tocfl_level',{book:bk,level:l});tocflView()}
+const tfRow=(x,showLv)=>`<div class="vl"><div>${spkBtn(x.s)}</div><div><span class="zh tap" onclick="speak('${x.s}')">${x.h}</span> <span class="py">${x.p}</span> <span class="pos">${x.pos}</span>${showLv?` <span class="lv lv-${x.l}">${x.l}</span>`:""}<div class="vi">${esc(x.m)}</div></div>
+  <label class="stat"><input type="checkbox" ${prog.tk[x.k]?"checked":""} onchange="tfKnown('${x.k.replace(/'/g,"\\'")}',this.checked)"> thuộc</label></div>`;
+function tfKnown(k,c){if(c)prog.tk[k]=1;else delete prog.tk[k];save()}
+function tfListView(){
+  $("#tfbody").innerHTML=`<input type="search" id="tfq" placeholder="${bk==='T'?'Tìm trong cả 4 cấp':'Tìm trong quyển này'}: Hán tự, pinyin hoặc tiếng Việt…" value="${esc(tfQ)}"><div id="tflist" style="margin-top:8px"></div>`;
+  $("#tfq").oninput=e=>{tfQ=e.target.value;tfLim=100;tfDraw()};
+  tfDraw();
+}
+function tfDraw(){
+  const q=tfQ.trim().toLowerCase(),sq=stripTone(q);
+  const items=q?tfSrc().filter(x=>x.h.includes(q)||x.m.toLowerCase().includes(q)||(sq&&stripTone(x.p).includes(sq))):tfScope();
+  const shown=items.slice(0,tfLim);
+  $("#tflist").innerHTML=(q?`<div class="stat" style="margin:6px 0">Tìm thấy ${items.length} từ</div>`:`<div class="stat" style="margin:6px 0">${items.length} từ · đã thuộc ${tfKnownN(items)}</div>`)+
+    (shown.length?`<div class="card">${shown.map(x=>tfRow(x,!!q&&bk==='T')).join("")}</div>`:"<div class='vi'>Không có từ nào.</div>")+
+    (items.length>tfLim?`<div style="text-align:center;margin:12px"><button class="b" onclick="tfLim+=200;tfDraw()">Hiện thêm (${items.length-tfLim} từ nữa)</button></div>`:"");
+}
+function tfFlashView(){
+  if(!tfDeck.length){tfDeck=sh(tfScope());tfi=0;tfBack=false}
+  if(!tfDeck.length){$("#tfbody").innerHTML=`<div class="card">🎉 Bạn đã thuộc hết phần này! Bỏ chọn “chỉ từ chưa thuộc” để ôn lại.</div>`;return}
+  const x=tfDeck[tfi];
+  $("#tfbody").innerHTML=`<div class="stat" style="text-align:right;margin-bottom:6px">${tfi+1}/${tfDeck.length} · ${x.l}</div>
+  <div class="card flash" onclick="tfBack=!tfBack;tfFlashView()">
+   ${tfBack?`<div class="zh" style="font-size:40px">${x.h}</div><div class="py">${x.p} <span class="pos">${x.pos}</span></div><div style="font-size:22px">${esc(x.m)}</div>`:`<div class="zh">${x.h}</div><div class="vi">(chạm để lật)</div>`}
+  </div>
+  <div class="row" style="justify-content:center">
+   <button class="b" onclick="speak('${x.s}')">🔊 Nghe</button>
+   <button class="b" onclick="tfAns(false)">😕 Chưa thuộc</button>
+   <button class="b p" onclick="tfAns(true)">✅ Đã thuộc</button></div>`;
+  if(!tfBack)speak(x.s);
+}
+function tfAns(ok){const x=tfDeck[tfi];if(ok)prog.tk[x.k]=1;else delete prog.tk[x.k];save();tfi=(tfi+1)%tfDeck.length;tfBack=false;tfFlashView()}
+function tfQuizView(){
+  const sc=tfScope();
+  if(sc.length<4){$("#tfbody").innerHTML=`<div class="card">Cần ít nhất 4 từ để làm trắc nghiệm. Hãy chọn phạm vi rộng hơn.</div>`;return}
+  const x=sc[Math.random()*sc.length|0],pool=tfByL(tfLv),wrong=[];
+  while(wrong.length<3){const y=pool[Math.random()*pool.length|0];if(y.m!==x.m&&!wrong.some(w=>w.m===y.m))wrong.push(y)}
+  tfQz={x,opts:sh([x,...wrong]),done:false};
+  const modes=[["h2m","Nhìn chữ → nghĩa"],["a2m","Nghe → nghĩa"],["m2h","Nghĩa → chữ"]];
+  const q=tfQm==="h2m"?`<div class="zh" style="font-size:54px;text-align:center">${x.h}</div><div class="py" style="text-align:center">${x.p}</div>`
+    :tfQm==="a2m"?`<div style="text-align:center"><button class="b p" onclick="speak('${x.s}')">🔊 Nghe lại</button></div>`
+    :`<div style="text-align:center;font-size:22px;margin:6px 0">${esc(x.m)}</div>`;
+  $("#tfbody").innerHTML=`<div class="chips">${modes.map(([k,l])=>`<span class="chip ${tfQm===k?"on":""}" onclick="tfQm='${k}';tfQz=null;tfQuizView()">${l}</span>`).join("")}</div>
+  <div class="card">${q}<div id="tfopts" style="margin-top:12px">${tfQz.opts.map((o,i)=>`<button class="b opt" onclick="tfCheck(${i},this)">${tfQm==="m2h"?`<span class="zh" style="font-size:24px">${o.h}</span> <span class="py">${o.p}</span>`:esc(o.m)}</button>`).join("")}</div>
+  <div id="tffb"></div><div class="stat" style="margin-top:8px">Chuỗi đúng liên tiếp: ${tfStreak}</div></div>`;
+  if(tfQm==="a2m")speak(x.s);
+}
+function tfCheck(i,btn){
+  if(tfQz.done)return;tfQz.done=true;const x=tfQz.x,ok=tfQz.opts[i]===x;mark(ok);
+  btn.classList.add(ok?"ok":"bad");
+  if(ok){prog.tk[x.k]=1;tfStreak++}else{delete prog.tk[x.k];tfStreak=0;[...document.querySelectorAll("#tfopts .opt")][tfQz.opts.indexOf(x)].classList.add("ok")}
+  save();
+  $("#tffb").innerHTML=`<div class="vi" style="margin:10px 0"><b class="zh">${x.h}</b> <span class="py">${x.p}</span> — ${esc(x.m)}</div><button class="b p" onclick="tfQuizView()">Câu tiếp ➜</button>`;
+  if(tfQm!=="a2m")speak(x.s);
+  track('tocfl_quiz',{level:x.l,correct:ok?1:0});
+}
 
 /* ============ CHÚ THÍCH PINYIN + NGHĨA CHO TIÊU ĐỀ / CÔNG THỨC NGỮ PHÁP ============ */
 const EXTRA={"游":["yóu","bơi"],"好":["hǎo","tốt"],"多":["duō","nhiều"],"裡":["lǐ","bên trong"]};   // từ/ký tự ngữ pháp chưa nằm trong danh sách từ vựng
@@ -886,6 +998,8 @@ setTimeout(()=>{   // sau khi danh sách giọng đã tải: báo nếu máy/khu
     w.style.cssText+=";max-width:868px;margin:12px auto 0;padding:12px 16px";document.body.insertBefore(w,$("main"));
   }
 },1500);
+$("#bbar").innerHTML=BOOK_IDS.map(n=>`<button class="lchip" data-b="${n}">${n==="T"?"🎯 TOCFL":"Quyển "+n}<small>${n==="T"?"A1–B2 · "+TF.length+" từ":n==="1"?"15 bài":BOOKS[n]?BOOKS[n].lessons.length+(BOOK_TOTAL[n]&&BOOK_TOTAL[n]>BOOKS[n].lessons.length?"/"+BOOK_TOTAL[n]:"")+" bài":"sắp có"}</small></button>`).join("");
+$("#bbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setBook(b.dataset.b)};
 $("#les").value=LESSON;syncBar();updateHero();
 $("#les").onchange=e=>setLesson(e.target.value);
 render();

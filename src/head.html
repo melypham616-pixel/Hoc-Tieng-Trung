@@ -108,6 +108,21 @@ h3{margin:0 0 8px;font-size:18px}
 .b.ok{background:var(--okbg);border-color:var(--ok)}
 .b.bad{background:var(--badbg);border-color:var(--bad)}
 
+#bbar{padding-bottom:2px}
+#bbar .lchip{font-weight:700}
+#bbar .lchip.on{background:linear-gradient(180deg,var(--pri),var(--pri-d));color:#fff;border-color:var(--pri-d)}
+#bbar .lchip.on small{color:rgba(255,255,255,.85)}
+.tf-intro{font-size:15px;line-height:1.6;margin-bottom:12px}
+.tf-n{font-weight:500;opacity:.75;font-size:12px}
+.tf-bar{align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.tf-bar select{flex:1;min-width:200px;padding:10px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit;font-size:15px}
+.seg{display:flex;gap:4px;padding:4px;background:var(--acc2);border-radius:99px;margin-bottom:14px}
+.seg button{flex:1;white-space:nowrap;border:0;background:transparent;color:var(--ink);font:inherit;font-size:13px;font-weight:600;padding:9px 4px;border-radius:99px;cursor:pointer}
+.seg button.on{background:var(--card);color:var(--acc);box-shadow:var(--shadow)}
+.pos{font-size:11px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:0 5px;vertical-align:middle}
+.lv{font-size:11px;font-weight:700;border-radius:6px;padding:1px 6px;vertical-align:middle;background:var(--acc2);color:var(--acc)}
+.lv-B1,.lv-B2{background:var(--pri2);color:var(--pri)}
+
 /* chip */
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
 .chip{padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);cursor:pointer;font-size:14px;color:var(--ink);transition:background .15s}
@@ -198,7 +213,7 @@ rt{font:500 .5em/1 system-ui,sans-serif;color:var(--pri);letter-spacing:0}
 <body>
 <header class="hero"><div class="hero-in">
   <div class="brand"><div class="seal">學</div>
-    <div><h1>當代中文課程 1</h1><p>Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch</p></div></div>
+    <div><h1 id="hT">當代中文課程 1</h1><p id="hS">Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch</p></div></div>
   <div class="stats">
     <div class="stat-card"><b id="stK">0</b><span>từ đã thuộc</span><div class="bar"><i id="stKbar" style="width:0"></i></div></div>
     <div class="stat-card"><b id="stS">–</b><span>trả lời đúng</span><div class="bar"><i id="stSbar" style="width:0"></i></div></div>
@@ -210,6 +225,7 @@ rt{font:500 .5em/1 system-ui,sans-serif;color:var(--pri);letter-spacing:0}
     <div class="sp"><span>Giọng</span><b>Meijia · zh-TW</b><button id="voiceTest">🔊 Nghe thử</button></div>
   </div>
 </div></header>
+<div class="lessonbar" id="bbar"></div>
 <div class="lessonbar" id="lbar"></div>
 <nav id="nav"></nav>
 <main id="app"></main>

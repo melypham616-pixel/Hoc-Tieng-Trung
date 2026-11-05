@@ -5,7 +5,13 @@ Một file `index.html` duy nhất, không cần cài đặt: mở thẳng bằn
 
 Web chạy tại **https://studychinese.mely.io.vn** (GitHub Pages, nhánh `main`, tên miền cấu hình trong file `CNAME`).
 
-## Có gì trong web
+## Các quyển và TOCFL
+Thanh trên cùng chọn **Quyển 1–6** và **🎯 TOCFL**:
+- **Quyển 1**: đầy đủ như mô tả bên dưới (từ vựng, ngữ pháp, đọc, truyện, vấn đáp, bài tập, tập dịch).
+- **Quyển 2–6** (giáo trình 當代中文課程 2–6): theo từng bài có từ vựng (Hán, pinyin, nghĩa Việt, loại từ), thẻ nhớ, trắc nghiệm và hội thoại/bài đọc có pinyin + tiếng Việt + giọng đọc. Dữ liệu gõ tay từ sách trong `tools/books/v2.txt`…`v6.txt`; chạy `python3 tools/mkbook.py` để sinh `src/data8.js` (pinyin tự thêm bằng `pypinyin`).
+- **TOCFL**: 4.844 từ Band A (A1–A2) và Band B (B1–B2) chia thành bộ 25 từ, có danh sách, thẻ nhớ, trắc nghiệm (`src/data7.js`).
+
+## Có gì trong web (Quyển 1)
 - **Từ vựng**: ~480 từ có pinyin, nghĩa tiếng Việt, giọng đọc, đánh dấu "đã thuộc".
 - **Thẻ nhớ**: lật thẻ, nghe phát âm.
 - **Ngữ pháp**: 77 điểm, tiêu đề và công thức có pinyin + chú giải nghĩa.
@@ -29,9 +35,12 @@ src/data3.js      hội thoại
 src/data4.js      truyện đọc (15 truyện đầu)
 src/data5.js      truyện đọc (30 truyện thêm)
 src/data6.js      câu hỏi vấn đáp
+src/data7.js      từ vựng TOCFL (Band A + B)
+src/data8.js      Quyển 2–6 (sinh bằng tools/mkbook.py)
 src/app.js        giao diện và logic
 build.py          ghép src/ thành index.html
 audio/            file âm thanh .m4a (tên file = mã băm của câu)
+tools/mkbook.py   sinh data8.js từ tools/books/*.txt
 tools/make-audio.js  thu âm các câu còn thiếu bằng lệnh `say` của macOS
 ```
 

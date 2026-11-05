@@ -1,0 +1,1077 @@
+@1|請問，到師大怎麼走？|Xin hỏi, đến Shida đi thế nào?
+走|đi (đến)|Vi
+路人|người đi đường|N
+幫忙|giúp đỡ|V-sep
+迷路|bị lạc đường|Vp-sep
+下|tiếp theo, kế tiếp|Det
+路口|ngã tư, giao lộ|N
+段|đoạn (đường)|N
+過|đi qua, băng qua|V
+第|thứ (số thứ tự)|Det
+紅綠燈|đèn giao thông|N
+告訴|nói cho biết|V
+提款機|máy ATM|N
+超商|cửa hàng tiện lợi|N
+應該|nên, hẳn là|Vaux
+郵局|bưu điện|N
+提|rút (tiền)|V
+那邊|bên đó|N
+師大|Đại học Sư phạm Quốc gia Đài Loan (Shida)|Name
+和平東路|đường Hòa Bình Đông|Name
+往前|về phía trước|Phrase
+右轉|rẽ phải|Phrase
+聽起來|nghe có vẻ|Phrase
+看見|nhìn thấy|Vpt
+下載|tải xuống|V
+地圖|bản đồ|N
+好用|dễ dùng|Vs
+著|đang (trợ từ tiếp diễn)|Ptc
+日用品|đồ dùng hằng ngày|N
+經過|đi ngang qua|V
+巷子|ngõ, hẻm|N
+餓|đói|Vs
+一邊|vừa… vừa…|Adv
+發現|phát hiện|Vpt
+離|cách|Prep
+背包|ba lô|N
+正好|vừa hay, đúng lúc|Adv
+最後|cuối cùng|Adv
+枝|cây (lượng từ của bút)|M
+筆|bút|N
+本|quyển (lượng từ của sách)|M
+本子|vở|N
+左轉|rẽ trái|Phrase
+麵店|tiệm mì|Phrase
+#
+路人|你需要我幫忙嗎？|Bạn cần tôi giúp không?
+安同|我好像迷路了。|Hình như tôi bị lạc đường.
+路人|你要去哪裡？|Bạn muốn đi đâu?
+安同|請問，到師大怎麼走？|Xin hỏi, đến Shida đi thế nào?
+路人|你從這裡往前走，到了下一個路口，右轉——|Bạn đi thẳng từ đây, đến ngã tư tiếp theo thì rẽ phải——
+安同|右轉就到了嗎？聽起來不遠。|Rẽ phải là tới ạ? Nghe có vẻ không xa.
+路人|還沒到！你右轉以後，是和平東路一段，再往前一直走，過了第二個紅綠燈，就看見師大了。|Chưa tới đâu! Sau khi rẽ phải là đường Hòa Bình Đông đoạn 1, cứ đi thẳng tiếp, qua đèn đỏ thứ hai là thấy Shida.
+安同|謝謝，我知道了。|Cảm ơn, tôi hiểu rồi.
+路人|你的中文很好。|Tiếng Trung của bạn rất giỏi.
+安同|謝謝，我還得多學一點。能不能再告訴我，這附近有沒有提款機？|Cảm ơn, tôi còn phải học thêm. Bạn có thể nói thêm gần đây có máy ATM không?
+路人|從這裡往和平東路走，好像沒有銀行，不過大部分的超商裡應該都有。|Từ đây đi về phía đường Hòa Bình Đông hình như không có ngân hàng, nhưng phần lớn cửa hàng tiện lợi chắc đều có.
+安同|你說的「超商」是「7-11」那種便利商店嗎？|"Siêu thương" bạn nói là cửa hàng tiện lợi kiểu 7-11 phải không?
+路人|是的。對了，郵局也可以提錢。|Đúng vậy. À, bưu điện cũng rút tiền được.
+安同|我看見了，那邊有一家便利商店。謝謝，謝謝！|Tôi thấy rồi, bên kia có một cửa hàng tiện lợi. Cảm ơn, cảm ơn!
+路人|不客氣。|Không có gì.
+短文|馬安同下載了新的地圖到手機裡，他找白如玉跟他在師大附近走走，試試地圖好用不好用。|Mã An Đồng tải bản đồ mới vào điện thoại, rủ Bạch Như Ngọc đi dạo quanh Shida cùng để thử bản đồ có dễ dùng không.
+短文|他們看著地圖，從學校門口往左轉，過了和平東路就到了師大路。|Hai người nhìn bản đồ, từ cổng trường rẽ trái, qua đường Hòa Bình Đông là đến đường Shida.
+短文|在師大路上，他們看見很多賣小吃的店，也有賣衣服和日用品的商店。|Trên đường Shida, họ thấy nhiều quán bán đồ ăn vặt, cũng có cửa hàng bán quần áo và đồ dùng hằng ngày.
+短文|他們經過兩個小巷子再右轉，這邊的商店比師大路的多。|Họ đi qua hai con hẻm nhỏ rồi rẽ phải, bên này cửa hàng nhiều hơn đường Shida.
+短文|他們逛了半天，白如玉覺得有一點餓，所以他們到一家麵店，點了兩碗牛肉麵。|Dạo nửa ngày, Bạch Như Ngọc thấy hơi đói nên họ vào một tiệm mì, gọi hai tô mì bò.
+短文|他們一邊吃麵，一邊看著手機裡的地圖，發現離麵店不遠的巷子裡有一家賣背包的店。|Vừa ăn mì họ vừa xem bản đồ trong điện thoại, phát hiện trong hẻm không xa tiệm mì có một cửa hàng bán ba lô.
+短文|馬安同正好想買一個背包，所以決定吃了麵就到這家店去看看。|Mã An Đồng đúng lúc muốn mua một cái ba lô nên quyết định ăn mì xong sẽ đến cửa hàng này xem.
+短文|最後，馬安同買了一個背包，白如玉也在附近買了兩枝筆和一本本子。|Cuối cùng, Mã An Đồng mua một cái ba lô, Bạch Như Ngọc cũng mua gần đó hai cây bút và một quyển vở.
+短文|馬安同和白如玉都覺得，逛師大附近的店真有意思，吃的東西和日用品也很便宜。|Cả hai đều thấy dạo các cửa hàng quanh Shida rất thú vị, đồ ăn và đồ dùng hằng ngày cũng rất rẻ.
+@2|還是坐捷運吧！|Đi tàu điện ngầm (MRT) thì hơn!
+還是|nên, tốt hơn là|Adv
+早|chào buổi sáng|Vs
+約|hẹn, mời (vào lúc cụ thể)|V
+對面|đối diện, phía bên kia|N
+直接|trực tiếp|Adv
+不必|không cần, không nhất thiết|Adv
+換|đổi, chuyển (xe)|V
+車站|bến xe, ga tàu|N
+麻煩|phiền phức|Vs
+趕快|mau lên, nhanh lên|Adv
+走|rời đi, đi|V
+班次|chuyến (xe, tàu, máy bay)|N
+禮拜|tuần|N
+見|gặp|V
+電腦展|triển lãm máy tính|Name
+世貿|Trung tâm Thương mại Thế giới|Name
+展覽館|nhà triển lãm|N
+台北101|Taipei 101 (tòa nhà cao nhất Đài Loan)|Name
+台北|Đài Bắc|Name
+2號線|tuyến số 2 (của MRT Đài Bắc)|Phrase
+別急|đừng vội|Phrase
+飛機|máy bay|N
+轉機|chuyển máy bay|V-sep
+機場|sân bay|N
+巴士|xe buýt|N
+市區|nội thành, trung tâm thành phố|N
+下|xuống (xe)|V
+交通|giao thông|N
+便利|tiện lợi|Vs
+到處|khắp nơi|Adv
+路線|tuyến đường|N
+複雜|phức tạp|Vs
+輕鬆|nhẹ nhàng, thoải mái|Vs
+東部|miền đông|N
+海邊|bờ biển|N
+島|đảo|N
+搭|đi (xe, tàu, máy bay…)|V
+船|thuyền, tàu thủy|N
+地|(trợ từ trạng ngữ)|Ptc
+美美|Mỹ Mỹ (tên một cô gái)|Name
+法國|nước Pháp|Name
+歐洲|châu Âu|Name
+悠遊卡|thẻ EasyCard (thẻ đi tàu xe)|Name
+綠島|đảo Xanh (Lục Đảo)|Name
+東南邊|phía đông nam|Phrase
+好好地|một cách tử tế, thỏa thích|Phrase
+#
+如玉|安同，早！你要去哪裡？|An Đồng, chào buổi sáng! Bạn định đi đâu?
+安同|早！我約了朋友一起去看電影，你呢？|Chào! Tôi hẹn bạn đi xem phim, còn bạn?
+如玉|我要去看電腦展。|Tôi đi xem triển lãm máy tính.
+安同|你去哪裡看電腦展？|Bạn xem triển lãm máy tính ở đâu?
+如玉|世貿展覽館，我現在要去對面坐公車。|Ở nhà triển lãm Thế Mậu, bây giờ tôi sang đối diện đi xe buýt.
+安同|那裡離台北101不遠，妳怎麼不坐捷運呢？|Chỗ đó cách Taipei 101 không xa, sao bạn không đi MRT?
+如玉|朋友告訴我公車直接到展覽館，不必換車。|Bạn tôi nói xe buýt đến thẳng nhà triển lãm, không phải đổi xe.
+安同|坐捷運也很方便。妳先坐2號線到台北車站，再換車到展覽館。|Đi MRT cũng rất tiện. Bạn đi tuyến 2 đến ga Đài Bắc, rồi đổi tàu đến nhà triển lãm.
+如玉|聽起來坐捷運比較麻煩。|Nghe có vẻ đi MRT phiền hơn.
+安同|一點也不麻煩，捷運比較快，坐公車要花一個多小時。你還是坐捷運吧！|Không phiền chút nào, MRT nhanh hơn, đi xe buýt mất hơn một tiếng. Bạn nên đi MRT thì hơn!
+如玉|捷運站遠嗎？|Ga MRT có xa không?
+安同|捷運站就在前面。|Ga MRT ở ngay phía trước.
+如玉|謝謝！我得趕快走了。|Cảm ơn! Tôi phải đi gấp rồi.
+安同|別急，走慢一點。捷運的班次很多。|Đừng vội, đi chậm thôi. MRT có rất nhiều chuyến.
+如玉|好，我們下禮拜見。|Vâng, tuần sau gặp nhé.
+短文|如玉的朋友美美從法國到台灣來玩兩個禮拜，她先從歐洲坐飛機到越南，再轉機到台灣。|Bạn của Như Ngọc là Mỹ Mỹ từ Pháp đến Đài Loan chơi hai tuần, cô bay từ châu Âu sang Việt Nam rồi quá cảnh đến Đài Loan.
+短文|到了機場，美美直接坐巴士到台北。|Đến sân bay, Mỹ Mỹ đi thẳng xe buýt vào Đài Bắc.
+短文|如玉告訴她，在市區坐捷運是最方便的，所以她下了巴士，就坐捷運到旅館去了。|Như Ngọc bảo trong nội thành đi MRT là tiện nhất, nên cô xuống xe buýt rồi đi MRT về khách sạn.
+短文|美美覺得台北的交通非常便利，到處都有公車、計程車，還有捷運，去哪裡都很方便。|Mỹ Mỹ thấy giao thông Đài Bắc rất tiện lợi, khắp nơi có xe buýt, taxi và cả MRT, đi đâu cũng tiện.
+短文|台北捷運的路線不複雜，車票也不貴，買一張悠遊卡，誰都可以輕輕鬆鬆地去逛逛。|Tuyến MRT Đài Bắc không phức tạp, vé cũng không đắt, mua một thẻ EasyCard là ai cũng thong thả đi dạo được.
+短文|美美住在法國東部，沒有什麼機會到海邊。|Mỹ Mỹ sống ở miền đông nước Pháp, hầu như không có dịp ra biển.
+短文|聽說台灣附近的小島，風景都很美，所以她決定到綠島去看看。|Nghe nói các đảo nhỏ quanh Đài Loan phong cảnh rất đẹp nên cô quyết định đến Lục Đảo xem thử.
+短文|綠島在台灣的東南邊，到那裡不太方便。|Lục Đảo ở phía đông nam Đài Loan, đến đó không tiện lắm.
+短文|美美得先坐火車到台東，再搭船或是飛機到綠島。|Mỹ Mỹ phải đi tàu hỏa đến Đài Đông, rồi đi thuyền hoặc máy bay đến Lục Đảo.
+短文|她打算第二個星期去綠島，好好地玩一玩。|Cô định tuần thứ hai sẽ đến Lục Đảo chơi cho thỏa thích.
+@3|你的中文進步了！|Tiếng Trung của bạn tiến bộ rồi!
+進步|tiến bộ|Vp
+早|sớm|Vs
+考試|bài thi, kỳ thi|N
+準備|chuẩn bị|V
+考|thi|V
+聽寫|chính tả (nghe viết)|N
+容易|dễ|Vs
+小學|tiểu học|N
+漢字|chữ Hán|N
+高中|trung học phổ thông|N
+過|đã từng (trợ từ kinh nghiệm)|Ptc
+才|mới, chỉ|Adv
+說話|nói chuyện|V-sep
+不夠|chưa đủ, không đủ|Adv
+流利|lưu loát|Vs
+雖然|tuy, mặc dù|Conj
+環境|môi trường, hoàn cảnh|N
+同意|đồng ý|Vst
+報紙|báo, tờ báo|N
+麵包|bánh mì|N
+演講|bài diễn thuyết, buổi nói chuyện|N
+噢|ồ (à)|Ptc
+活動中心|trung tâm sinh hoạt|Phrase
+想起來|nhớ ra|Phrase
+選|chọn|V
+作業|bài tập về nhà|N
+練習|luyện tập|V
+半夜|nửa đêm, khuya|N
+高興|vui, hài lòng|Vs
+平常|bình thường, thường ngày|Adv
+爬山|leo núi|V-sep
+認識|quen biết|Vpt
+聊天|trò chuyện|V-sep
+文化|văn hóa|N
+廣告|quảng cáo|N
+位|vị (lượng từ lịch sự cho người)|M
+了解|hiểu rõ|Vst
+生活|cuộc sống|N
+陽明山|núi Dương Minh|Name
+外國人|người nước ngoài|Phrase
+一些|một ít, một số|Phrase
+#
+田中|早，妳今天來得真早。|Chào buổi sáng, hôm nay bạn đến sớm thật.
+如玉|是啊！我今天是搭捷運來的。|Đúng vậy! Hôm nay tôi đi MRT đến.
+田中|今天的考試，妳準備了嗎？|Bài thi hôm nay bạn chuẩn bị chưa?
+如玉|準備得差不多了，應該可以考得不錯。你覺得聽寫很容易吧？|Chuẩn bị gần xong rồi, chắc sẽ thi khá. Bạn thấy chính tả rất dễ đúng không?
+田中|是啊，日本人從小學就開始學寫漢字。|Đúng vậy, người Nhật học viết chữ Hán từ tiểu học.
+如玉|我現在也覺得寫字不難，因為我在美國念高中的時候就學過了。|Bây giờ tôi cũng thấy viết chữ không khó, vì hồi học cấp ba ở Mỹ tôi đã học rồi.
+田中|妳在這個語言中心學了多久了？|Bạn học ở trung tâm ngôn ngữ này được bao lâu rồi?
+如玉|我才學了半年，你呢？|Tôi mới học nửa năm, còn bạn?
+田中|我來了快一年了，可是我說話，還說得不夠流利。|Tôi đến gần một năm rồi, nhưng nói vẫn chưa đủ lưu loát.
+如玉|雖然我只來了半年，但是我知道我的中文進步了。|Tuy tôi chỉ đến nửa năm, nhưng tôi biết tiếng Trung của mình đã tiến bộ.
+田中|我覺得在說中文的環境裡學中文，進步得比較快。|Tôi thấy học tiếng Trung trong môi trường nói tiếng Trung thì tiến bộ nhanh hơn.
+如玉|我同意。我希望回國的時候能看中文報紙。|Tôi đồng ý. Tôi hy vọng khi về nước có thể đọc báo tiếng Trung.
+田中|我想妳一定可以。今天下了課，妳要去哪裡？|Tôi nghĩ bạn chắc chắn làm được. Hôm nay tan học bạn đi đâu?
+如玉|我要去活動中心跟語言交換的朋友見面。|Tôi đến trung tâm sinh hoạt gặp bạn trao đổi ngôn ngữ.
+田中|妳說的活動中心在哪裡？|Trung tâm sinh hoạt bạn nói ở đâu?
+如玉|在一樓有麵包店的那棟樓裡面，我們一起去聽過一次演講，記得嗎？|Trong tòa nhà có tiệm bánh mì ở tầng một, chúng ta từng cùng đi nghe một buổi diễn thuyết, nhớ không?
+田中|噢，我想起來了。|Ồ, tôi nhớ ra rồi.
+短文|馬安同到師大來學中文，他選了每天上三個小時的課，下了課要寫作業，還要準備第二天的課。|Mã An Đồng đến Shida học tiếng Trung, anh chọn học mỗi ngày ba tiếng, tan học còn phải làm bài tập và chuẩn bị bài hôm sau.
+短文|馬安同剛開始學寫中國字，覺得真難，所以每天都練習寫字，常常半夜十二點多才睡覺。|An Đồng mới bắt đầu học viết chữ Hán, thấy thật khó nên mỗi ngày luyện viết, thường hơn mười hai giờ khuya mới ngủ.
+短文|雖然有點累，但是他很高興現在會寫很多字了。|Tuy hơi mệt nhưng anh rất vui vì giờ đã viết được nhiều chữ.
+短文|週末，馬安同比平常輕鬆多了。他有時候搭捷運去貓空喝茶，有時候坐公車去陽明山爬山。|Cuối tuần, An Đồng thoải mái hơn ngày thường nhiều. Có khi anh đi MRT lên Miêu Không uống trà, có khi đi xe buýt lên núi Dương Minh leo núi.
+短文|爬山的時候，他認識了很多台灣人。台灣人對外國人很好，常常跟馬安同聊天，告訴他一些台灣的文化。|Khi leo núi, anh quen nhiều người Đài Loan. Người Đài Loan rất tốt với người nước ngoài, thường trò chuyện với An Đồng và kể cho anh nghe một số điều về văn hóa Đài Loan.
+短文|馬安同有一個語言交換的朋友，他們一有空，就拿著地圖搭捷運去逛逛。|An Đồng có một người bạn trao đổi ngôn ngữ, hễ rảnh là hai người cầm bản đồ đi MRT đi dạo.
+短文|安同喜歡看捷運上的廣告，要是有沒學過的字，他就會問那位朋友怎麼說。|An Đồng thích xem quảng cáo trên MRT, nếu có chữ chưa học thì hỏi người bạn đó cách nói.
+短文|他覺得到處走走，可以了解台灣人的生活，也可以練習練習中文，哪裡都能學中文，真是不錯。|Anh thấy đi đây đó vừa hiểu được cuộc sống người Đài Loan vừa luyện được tiếng Trung, đâu cũng học được tiếng Trung, thật tuyệt.
+@4|我打工，我教法文|Tôi làm thêm, tôi dạy tiếng Pháp
+高美玲|Cao Mỹ Linh (cô gái người Pháp)|Name
+打工|làm thêm|V-sep
+主任|chủ nhiệm, trưởng bộ phận|N
+介紹|giới thiệu|V
+歲|tuổi|M
+語言學|ngôn ngữ học|N
+經驗|kinh nghiệm|N
+談|nói chuyện, bàn bạc|V
+當|làm (giữ chức vụ)|V
+助教|trợ giảng|N
+上午|buổi sáng|N
+除了|ngoài… ra|Prep
+年級|năm học, lớp|N
+暑假|kỳ nghỉ hè|N
+請教|xin chỉ giáo, xin hỏi (lịch sự)|V
+貴|quý (của quý vị)|Vs-attr
+薪水|tiền lương|N
+算|tính|V
+按照|theo, dựa theo|Prep
+教授|giáo sư|N
+鐘點費|tiền lương theo giờ|N
+份|phần, việc (lượng từ cho công việc)|M
+法文|tiếng Pháp|Name
+亞洲|châu Á|Name
+西班牙語|tiếng Tây Ban Nha|Name
+英文|tiếng Anh|Name
+三年級|năm thứ ba|Phrase
+法律|pháp luật|N
+夠|đủ|Vs-pred
+履歷表|sơ yếu lý lịch, CV|N
+面談|phỏng vấn, nói chuyện trực tiếp|Vi
+華僑|Hoa kiều|N
+辦公室|văn phòng|N
+談話|nói chuyện|V-sep
+情形|tình hình|N
+適合|phù hợp|Vst
+說明|giải thích, trình bày|V
+然後|sau đó|Adv
+月底|cuối tháng|N
+發|phát (lương)|V
+馬上|ngay lập tức|Adv
+答應|đồng ý, nhận lời|V
+順利|thuận lợi|Vs
+黃|Hoàng (một họ phổ biến, nghĩa là “vàng”)|Name
+沒想到|không ngờ|Phrase
+#
+主任|請坐，妳是高美玲嗎？|Mời ngồi, bạn là Cao Mỹ Linh phải không?
+美玲|是。您好。|Vâng. Chào ông.
+主任|請妳先介紹一下自己。|Mời bạn giới thiệu qua về bản thân.
+美玲|我叫高美玲，是法國人，今年二十八歲，現在在師大學中文。我念大學的時候上過亞洲文化和語言學。|Tôi là Cao Mỹ Linh, người Pháp, năm nay 28 tuổi, hiện đang học tiếng Trung ở Shida. Hồi đại học tôi từng học văn hóa châu Á và ngôn ngữ học.
+主任|妳有沒有教法文的經驗？請妳談一談。|Bạn có kinh nghiệm dạy tiếng Pháp không? Mời bạn nói qua.
+美玲|有。我當過語言助教，那時候的學生都是外國人。|Có. Tôi từng làm trợ giảng ngôn ngữ, lúc đó học viên đều là người nước ngoài.
+主任|妳一個星期能來幾天？|Một tuần bạn có thể đến mấy ngày?
+美玲|我現在上午學中文，下午兩點以後都可以，但是我希望一個禮拜教三天就好了。|Hiện giờ buổi sáng tôi học tiếng Trung, sau hai giờ chiều là được, nhưng tôi mong mỗi tuần chỉ dạy ba ngày.
+主任|妳除了法文、中文，還會什麼語言？|Ngoài tiếng Pháp và tiếng Trung, bạn còn biết ngôn ngữ nào?
+美玲|我還會說西班牙語和英文。|Tôi còn nói được tiếng Tây Ban Nha và tiếng Anh.
+主任|妳教過西班牙語嗎？|Bạn từng dạy tiếng Tây Ban Nha chưa?
+美玲|我大學三年級的暑假，當過西班牙語老師。|Kỳ nghỉ hè năm ba đại học tôi từng làm giáo viên tiếng Tây Ban Nha.
+主任|妳的工作經驗聽起來很不錯。|Kinh nghiệm làm việc của bạn nghe rất tốt.
+美玲|謝謝您。對了，我想請教一下，貴中心老師的薪水怎麼算？|Cảm ơn ông. À, cho tôi hỏi, lương giáo viên của trung tâm tính thế nào?
+主任|我們是按照大學教授的鐘點費算的。薪水跟大學老師的一樣。|Chúng tôi tính theo tiền giờ của giáo sư đại học, lương bằng giảng viên đại học.
+美玲|我很想試試這份工作。|Tôi rất muốn thử công việc này.
+主任|歡迎妳，妳下個月一號就可以來嗎？|Hoan nghênh bạn, mùng một tháng sau bạn đến được không?
+美玲|可以的。謝謝。|Được ạ. Cảm ơn.
+短文|高美玲來了一年了，按照台灣的法律，她已經可以打工了，所以她的台灣朋友給她介紹了一個在大學語言中心教法文的工作。|Cao Mỹ Linh đến được một năm, theo luật Đài Loan cô đã được làm thêm, nên bạn người Đài Loan giới thiệu cho cô công việc dạy tiếng Pháp ở trung tâm ngôn ngữ của trường đại học.
+短文|雖然高美玲覺得自己的經驗還不夠，可是決定去試一試。所以她帶著履歷表到語言中心去跟主任面談。|Tuy thấy kinh nghiệm của mình chưa đủ, cô vẫn quyết định thử. Cô mang CV đến trung tâm phỏng vấn với chủ nhiệm.
+短文|這位主任姓黃，是法國華僑，在台灣住了十幾年，他也在大學工作了十年了。|Vị chủ nhiệm họ Hoàng, là Hoa kiều ở Pháp, sống ở Đài Loan hơn mười năm và cũng làm ở trường đại học mười năm.
+短文|高美玲在辦公室跟他談話的時候，他先問高美玲在法國的工作經驗，再問她在台灣學中文跟生活的情形。|Khi nói chuyện ở văn phòng, ông hỏi kinh nghiệm làm việc ở Pháp của cô trước, rồi hỏi tình hình học tiếng Trung và sinh sống ở Đài Loan.
+短文|黃主任覺得高美玲的經驗很適合這份工作。|Chủ nhiệm Hoàng thấy kinh nghiệm của Mỹ Linh rất phù hợp với công việc này.
+短文|黃主任也給高美玲介紹了上課的書，還跟她說明了工作環境。|Ông cũng giới thiệu sách giảng dạy và giải thích môi trường làm việc cho cô.
+短文|然後，黃主任告訴高美玲，薪水按照工作的時間算，每個月的月底發薪水。高美玲覺得這份工作聽起來很不錯，所以馬上就答應了。|Sau đó ông cho biết lương tính theo thời gian làm việc, phát vào cuối mỗi tháng. Mỹ Linh thấy công việc này nghe rất tốt nên nhận lời ngay.
+短文|黃主任對她說，下個月一號就開始上班。高美玲沒想到這次的面談這麼順利。|Ông bảo cô mùng một tháng sau bắt đầu đi làm. Mỹ Linh không ngờ buổi phỏng vấn lại thuận lợi đến vậy.
+@5|吃喜酒|Dự tiệc cưới
+喜酒|tiệc cưới|N
+恭喜|chúc mừng|V
+新娘|cô dâu|N
+參加|tham dự|V
+婚禮|lễ cưới|N
+西裝|com-lê, âu phục|N
+正式|trang trọng, chính thức|Vs
+客人|khách|N
+手|tay|N
+照相機|máy ảnh|N
+新郎|chú rể|N
+站|đứng|Vi
+白|trắng|Vs
+帥|đẹp trai|Vs
+禮服|lễ phục|N
+座位|chỗ ngồi|N
+看起來|trông có vẻ|Phrase
+結婚|kết hôn|Vp-sep
+日子|ngày|N
+親戚|họ hàng|N
+熱鬧|náo nhiệt, rộn ràng|Vs
+慶祝|chúc mừng, ăn mừng|V
+件|bộ, cái (lượng từ cho quần áo, việc)|M
+喜事|việc vui (đám cưới…)|N
+請客|mời khách, đãi tiệc|V-sep
+紅包|bao lì xì|N
+送|tặng, tiễn|V
+新人|cô dâu chú rể|N
+喜宴|tiệc cưới|N
+敬酒|mời rượu, nâng ly|V-sep
+大人|người lớn|N
+小孩|trẻ con|N
+不得了|vô cùng, ghê gớm|Vs
+另外|khác, ngoài ra|Det
+糖|kẹo|N
+離開|rời khỏi|Vp
+句|câu (lượng từ cho lời nói)|M
+祝福|chúc phúc|V
+話|lời nói|N
+一會兒|một lát|Phrase
+有說有笑|vừa nói vừa cười|Phrase
+有吃有喝|có ăn có uống|Phrase
+百年好合|trăm năm hạnh phúc|Phrase
+早生貴子|sớm sinh quý tử|Phrase
+#
+明華|安同，你們來了。|An Đồng, các bạn đến rồi.
+安同|恭喜！恭喜！明華，這是我常跟你說的高美玲。美玲，他就是新娘的哥哥，李明華。|Chúc mừng! Chúc mừng! Minh Hoa, đây là Cao Mỹ Linh mà tôi hay kể. Mỹ Linh, đây là anh của cô dâu, Lý Minh Hoa.
+美玲|李先生，恭喜你們！謝謝你請我們來參加你妹妹的婚禮。|Anh Lý, chúc mừng gia đình! Cảm ơn anh mời chúng tôi dự đám cưới của em gái anh.
+明華|你太客氣了。安同，你今天穿西裝真好看。|Bạn khách sáo quá. An Đồng, hôm nay bạn mặc com-lê đẹp thật.
+安同|謝謝，參加婚禮應該要穿得很正式。|Cảm ơn, dự đám cưới thì nên ăn mặc trang trọng.
+美玲|客人怎麼都還沒到？|Sao khách vẫn chưa đến?
+明華|現在才六點，婚禮六點半開始，時間還早。|Mới sáu giờ, đám cưới sáu rưỡi mới bắt đầu, còn sớm.
+安同|明華，手裡拿著照相機的那個人是誰？|Minh Hoa, người cầm máy ảnh trên tay kia là ai?
+明華|他是新郎的弟弟。|Đó là em trai chú rể.
+安同|新郎呢？|Còn chú rể đâu?
+明華|他在門口站著跟客人說話。|Anh ấy đang đứng ở cửa nói chuyện với khách.
+安同|哪一個？|Là người nào?
+明華|就是穿著白西裝的那個。|Chính là người mặc com-lê trắng đó.
+安同|新郎看起來好帥。|Chú rể trông đẹp trai quá.
+美玲|你看，那邊那位穿著紅色禮服，跟客人說話的太太是誰？|Anh xem, bà mặc lễ phục đỏ đang nói chuyện với khách ở bên kia là ai?
+明華|那是新郎的媽媽。|Đó là mẹ chú rể.
+美玲|她看起來好高興啊！怎麼沒看見新娘呢？|Trông bà vui quá! Sao chưa thấy cô dâu nhỉ?
+明華|等一下你們就會看見她了。婚禮要開始了，我帶你們去你們的座位吧！|Lát nữa các bạn sẽ thấy cô ấy. Lễ cưới sắp bắt đầu, tôi đưa các bạn đến chỗ ngồi nhé!
+短文|李明華請安同和美玲去參加他妹妹的婚禮，這是安同他們第一次去吃喜酒。|Lý Minh Hoa mời An Đồng và Mỹ Linh dự đám cưới của em gái, đây là lần đầu họ đi ăn tiệc cưới.
+短文|李明華告訴他們，在台灣，要結婚的人大部分都會找一個好日子，請親戚、朋友一起吃飯，熱熱鬧鬧地慶祝這件喜事。|Minh Hoa kể ở Đài Loan, phần lớn người sắp cưới chọn một ngày tốt, mời họ hàng bạn bè cùng ăn tiệc, náo nhiệt chúc mừng việc vui này.
+短文|請客的那天，新郎、新娘，還有來吃喜酒的客人都穿得漂漂亮亮的。來參加的客人都會準備一個紅包送新人。|Hôm đãi tiệc, cô dâu chú rể và khách đều ăn mặc thật đẹp. Khách dự tiệc đều chuẩn bị một bao lì xì tặng đôi tân hôn.
+短文|等客人都到了，喜宴就開始了。大家吃了一會兒，有的人忙著到處敬酒，有的人忙著跟朋友聊天，大人有說有笑，小孩有吃有喝，熱鬧得不得了。|Khách đến đủ thì tiệc bắt đầu. Ăn một lát, người thì bận đi khắp nơi mời rượu, người thì bận trò chuyện với bạn, người lớn vừa nói vừa cười, trẻ con có ăn có uống, náo nhiệt vô cùng.
+短文|大家吃著吃著，新郎、新娘和他們的父母就來敬酒了。客人也會祝新人百年好合、早生貴子。|Đang ăn thì cô dâu chú rể và cha mẹ hai bên đến mời rượu. Khách cũng chúc đôi tân hôn trăm năm hạnh phúc, sớm sinh quý tử.
+短文|等喜酒吃得差不多了，新娘會換另外一件漂亮的禮服，跟新郎拿著糖在門口送客人離開。|Khi tiệc gần xong, cô dâu thay một bộ lễ phục đẹp khác, cùng chú rể cầm kẹo đứng ở cửa tiễn khách.
+短文|這個時候很多人會跟新人一起照相，再多說幾句祝福的話。等客人都回去了，喜宴就結束了。|Lúc này nhiều người chụp ảnh cùng đôi tân hôn và nói thêm vài lời chúc phúc. Khi khách ra về hết thì tiệc cưới kết thúc.
+@6|我打算搬到學校附近|Tôi định dọn đến gần trường
+李東健|Lý Đông Kiện (người Seoul)|Name
+搬|dọn, chuyển|V
+河邊|bờ sông|N
+公園|công viên|N
+腳踏車|xe đạp|N
+正在|đang|Adv
+網站|trang web|N
+資料|thông tin, tài liệu|N
+搬家|dọn nhà|V-sep
+近|gần|Vs
+合約|hợp đồng|N
+到期|đến hạn, hết hạn|Vp
+還好|may mà|Adv
+光線|ánh sáng|N
+重要|quan trọng|Vs
+如果|nếu|Conj
+別的|khác|Det
+合適|thích hợp|Vs
+少|thiếu|Vpt
+可惜|đáng tiếc|Vs
+放|để, cất|V
+兩邊|hai bên|N
+願意|sẵn lòng|Vaux
+開|lái (xe)|V
+存|lưu, cất giữ|V
+隨身碟|USB|N
+什麼樣|loại nào, như thế nào|Phrase
+慢慢來|cứ từ từ|Phrase
+不急|không vội|Phrase
+相當|khá, tương đối|Adv
+自行車|xe đạp|N
+床|giường|N
+桌子|bàn|N
+椅子|ghế|N
+家具|đồ nội thất|N
+而且|hơn nữa, mà còn|Conj
+吵|ồn ào|Vs
+生活費|chi phí sinh hoạt|N
+低|thấp|Vs
+留|ở lại, để lại|V
+長|dài|Vs
+討論|thảo luận|V
+社團|câu lạc bộ, hội đoàn|N
+活動|hoạt động|N
+失望|thất vọng|Vs
+放心|yên tâm|Vs-sep
+用|dùng|V
+首爾|Seoul|Name
+#
+美玲|你在做什麼？要不要到河邊的公園去騎騎腳踏車？|Bạn đang làm gì thế? Có muốn ra công viên ven sông đạp xe không?
+東健|我正在網站上找租房子的資料。|Tôi đang tìm thông tin thuê nhà trên mạng.
+美玲|我聽說你打算搬家？|Tôi nghe nói bạn định dọn nhà?
+東健|是啊，我想搬到離學校近一點的地方。|Ừ, tôi muốn dọn đến nơi gần trường hơn.
+美玲|可是我記得你三個月以前才搬到這裡的。|Nhưng tôi nhớ bạn mới dọn đến đây ba tháng trước mà.
+東健|對，我的合約還沒到期。還好我有一個同學喜歡這個環境，他可以搬到這裡來住。|Đúng, hợp đồng của tôi chưa hết hạn. May mà có một bạn học thích khu này, cậu ấy có thể dọn đến ở.
+美玲|你想找什麼樣的房子？|Bạn muốn tìm nhà thế nào?
+東健|我先找捷運站附近的房子。還有，環境好、光線好也很重要。|Tôi tìm nhà gần ga MRT trước. Ngoài ra môi trường tốt, ánh sáng tốt cũng rất quan trọng.
+美玲|捷運站附近的房子比較貴吧？|Nhà gần ga MRT chắc đắt hơn nhỉ?
+東健|如果太貴，我再找別的地方。捷運站那麼多，我想應該有合適的。|Nếu đắt quá tôi sẽ tìm chỗ khác. Ga MRT nhiều như vậy, chắc có chỗ thích hợp.
+美玲|如果你搬家了，我就少了一個朋友跟我練習中文。好可惜！|Nếu bạn dọn đi, tôi sẽ mất một người bạn luyện tiếng Trung. Tiếc quá!
+東健|我會常來啊。我不會把東西都搬到新家，有一些東西，我會送給朋友或是先放在這裡。|Tôi sẽ thường ghé mà. Tôi không dọn hết đồ sang nhà mới, một số đồ tôi sẽ tặng bạn bè hoặc để lại đây trước.
+美玲|那麼，你要付兩邊的房租啊？|Vậy bạn phải trả tiền thuê cả hai nơi à?
+東健|這裡的房租當然是我同學付，他還願意開車幫我搬家。|Tiền thuê ở đây tất nhiên bạn học của tôi trả, cậu ấy còn sẵn lòng lái xe giúp tôi chuyển nhà.
+美玲|你同學真好！|Bạn học của bạn tốt thật!
+東健|是啊！他是我在台灣最好的朋友。妳再等我一下，我把資料存在隨身碟裡。|Ừ! Cậu ấy là người bạn tốt nhất của tôi ở Đài Loan. Bạn đợi tôi một chút, tôi lưu thông tin vào USB.
+美玲|慢慢來，不急！等一會兒我們再去騎腳踏車。|Cứ từ từ, không vội! Lát nữa chúng ta lại đi đạp xe.
+短文|李東健租的房子離師大相當遠，每天騎自行車到學校都得花一個小時左右，他覺得很不方便，所以他最近計畫找房子搬家。|Nhà Lý Đông Kiện thuê cách Shida khá xa, mỗi ngày đạp xe đến trường mất khoảng một tiếng, anh thấy bất tiện nên gần đây dự định tìm nhà dọn đi.
+短文|這一天，他在網站上看了很多租房子的資料。|Hôm nay anh xem rất nhiều thông tin thuê nhà trên mạng.
+短文|李東健最想在捷運站附近租一間套房，有床、桌子和椅子這些家具，而且房間的光線要好，環境也不要太吵。|Đông Kiện muốn nhất là thuê một phòng studio gần ga MRT, có giường, bàn, ghế, ánh sáng phòng phải tốt và môi trường không quá ồn.
+短文|可是台灣朋友都說，這種套房房租會比較貴，李東健覺得台北的生活費比首爾低，如果多花一點時間找，一定能找到便宜而且合適的。|Nhưng bạn Đài Loan đều bảo loại phòng này tiền thuê khá đắt; Đông Kiện thấy chi phí sinh hoạt Đài Bắc thấp hơn Seoul, nếu bỏ thêm thời gian tìm chắc chắn sẽ thấy phòng vừa rẻ vừa hợp.
+短文|李東健想，如果他搬到學校附近住，除了留在圖書館的時間能長一點，可以念書、寫作業、跟同學討論功課，還可以參加一些學校的社團活動。|Anh nghĩ nếu dọn đến gần trường thì có thể ở thư viện lâu hơn để học bài, làm bài, thảo luận với bạn, còn có thể tham gia câu lạc bộ của trường.
+短文|不過他的好朋友高美玲有一點失望，她覺得少了一個可以練習中文的朋友。|Nhưng bạn thân Cao Mỹ Linh hơi thất vọng, cô thấy mất đi một người bạn để luyện tiếng Trung.
+短文|李東健要高美玲放心，因為他打算把一些不常用的東西先留在這裡，所以還會常來找他們聊天。|Đông Kiện bảo Mỹ Linh yên tâm vì anh định để lại đây vài món ít dùng nên vẫn sẽ thường đến trò chuyện với họ.
+@7|垃圾車來了！|Xe rác đến rồi!
+垃圾|rác|N
+倒|đổ (rác)|V
+丟|ném, vứt|V
+收|thu gom|V
+以為|tưởng rằng|Vst
+回收|tái chế, thu hồi|V
+規定|quy định|N
+要不然|nếu không thì|Conj
+皮包|túi xách, ví da|N
+跑|chạy|Vi
+追|đuổi theo|V
+有趣|thú vị|Vs
+不壞|không tệ|Vs
+天天|mỗi ngày|Phrase
+汽水罐|lon nước ngọt|Phrase
+紙杯|ly giấy|Phrase
+放下|đặt xuống|Phrase
+走出來|đi ra|Phrase
+怎麼辦|làm sao đây|Phrase
+聊|trò chuyện|V
+忽然|đột nhiên|Adv
+聲音|âm thanh|N
+奇怪|kỳ lạ|Vs
+袋子|túi|N
+輛|chiếc (lượng từ cho xe)|M
+一定|nhất định, cố định|Vs-attr
+地點|địa điểm|N
+為了|để, vì|Prep
+保護|bảo vệ|V
+分類|phân loại|N
+利用|tận dụng, sử dụng|V
+紙|giấy|N
+瓶子|chai, lọ|N
+塑膠|nhựa|N
+資源|tài nguyên|N
+回收桶|thùng tái chế|N
+城市|thành phố|N
+聽見|nghe thấy|Phrase
+開過來|lái đến|Phrase
+走過去|đi sang|Phrase
+丟進去|ném vào|Phrase
+路上|trên đường|Phrase
+#
+陳太太|東健，要出去啊？|Đông Kiện, đi ra ngoài à?
+東健|是啊！垃圾車快來了，我得趕快下樓去倒垃圾。|Vâng! Xe rác sắp đến, tôi phải nhanh xuống lầu đổ rác.
+陳太太|丟垃圾？今天是星期三，不收垃圾啊！|Đổ rác? Hôm nay thứ Tư, không thu rác đâu!
+東健|真的嗎？我以為天天都收。|Thật sao? Tôi tưởng ngày nào cũng thu.
+陳太太|不是，每個星期三和星期天是不收的。|Không phải, mỗi thứ Tư và Chủ nhật không thu.
+東健|那麼，我這些汽水罐和紙杯也不能拿出去回收了嗎？|Vậy mấy lon nước ngọt và ly giấy này cũng không đem đi tái chế được ạ?
+陳太太|是啊！|Đúng vậy!
+東健|為什麼在台北倒垃圾這麼麻煩？|Sao đổ rác ở Đài Bắc phiền phức thế?
+陳太太|剛開始的時候，台北人也覺得這個規定很麻煩，現在大家都習慣了。|Lúc đầu người Đài Bắc cũng thấy quy định này phiền, giờ mọi người quen cả rồi.
+東健|更麻煩的是，我一定要在晚上九點把垃圾拿出去，要不然就不能倒了。|Phiền hơn nữa là tôi nhất định phải mang rác ra lúc chín giờ tối, không thì không đổ được.
+陳太太|你說的對，有一次，我一回來，垃圾車就來了。我馬上放下皮包，跑出去倒垃圾。|Bạn nói đúng, có lần tôi vừa về thì xe rác đến. Tôi vội đặt túi xuống, chạy ra đổ rác.
+東健|對啊！我常常看到有人追垃圾車。|Đúng vậy! Tôi hay thấy người ta chạy đuổi theo xe rác.
+陳太太|晚上，這麼多人從家裡拿著垃圾走出來，一起站著等垃圾車，你不覺得很有趣嗎？|Buổi tối, nhiều người xách rác từ nhà đi ra, cùng đứng chờ xe rác, bạn không thấy thú vị sao?
+東健|大家常一邊聊天，一邊等，看起來真的很有意思。|Mọi người thường vừa trò chuyện vừa đợi, trông thật thú vị.
+陳太太|雖然倒垃圾有點麻煩，但是好像也不壞。|Tuy đổ rác hơi phiền nhưng hình như cũng không tệ.
+東健|那麼，我這包垃圾怎麼辦？|Vậy bọc rác này của tôi làm sao đây?
+陳太太|你拿回家去，明天再倒吧！|Bạn mang về nhà, mai hãy đổ!
+短文|馬安同到台灣的第二天，晚上在房間上網，跟父母聊台灣的情形，他忽然聽見外面有音樂的聲音，可是不知道音樂是從哪裡來的，覺得有一點奇怪，所以從窗戶往外看。|Ngày thứ hai đến Đài Loan, tối đó An Đồng lên mạng trong phòng trò chuyện với cha mẹ thì bỗng nghe tiếng nhạc bên ngoài, không biết từ đâu tới, thấy hơi lạ nên nhìn ra cửa sổ.
+短文|他看見很多人拿著袋子往路口走，路口已經站了很多人，才知道是垃圾車的音樂。那輛垃圾車一開過來，大家就走過去把手裡的垃圾丟進去。|Anh thấy nhiều người xách túi đi về phía ngã tư, ở đó đã đứng đông người, lúc ấy mới biết là nhạc của xe rác. Xe rác vừa đến, mọi người đi tới ném rác trong tay vào xe.
+短文|外國人剛到台北，不知道哪裡可以丟垃圾，也不知道什麼時候可以丟垃圾，馬安同問了台灣人才知道，台北的垃圾車只在一定的時間、一定的地點收垃圾。|Người nước ngoài mới đến Đài Bắc không biết đổ rác ở đâu, lúc nào; An Đồng hỏi người Đài Loan mới biết xe rác Đài Bắc chỉ thu vào giờ cố định, địa điểm cố định.
+短文|雖然有點麻煩，但是路上沒有垃圾，對台北的環境比較好。|Tuy hơi phiền nhưng trên đường không có rác, tốt hơn cho môi trường Đài Bắc.
+短文|為了保護環境，大家都應該做垃圾分類，那些可以再利用的紙、瓶子、塑膠杯都要回收，丟進資源回收桶裡。|Để bảo vệ môi trường, mọi người đều nên phân loại rác, giấy, chai, ly nhựa có thể tái sử dụng đều phải thu hồi, bỏ vào thùng tái chế.
+短文|現在大家都知道，一個乾乾淨淨的城市也是一個進步的城市。|Giờ ai cũng biết một thành phố sạch sẽ cũng là một thành phố tiến bộ.
+@8|學功夫|Học võ công (Kungfu)
+功夫|công phu, võ thuật|N
+叫|gọi|V
+見|(trợ từ kết quả: thấy, nghe thấy)|Ptc
+推|đẩy|V
+體育館|nhà thi đấu, phòng tập thể thao|N
+太極拳|Thái cực quyền|N
+師父|sư phụ, thầy|N
+天分|năng khiếu|N
+懂|hiểu|Vpt
+起來|ngủ dậy, dậy|Vp
+動作|động tác|N
+輕|nhẹ nhàng|Vs
+腿|chân (cẳng chân, đùi)|N
+了|(liǎo) được, nổi (bổ ngữ khả năng)|Ptc
+下去|tiếp tục (làm gì)|Ptc
+興趣|hứng thú, sở thích|N
+借|mượn|V
+有天分|có năng khiếu|Phrase
+學會|học được, học xong|Phrase
+起不來|không dậy nổi|Phrase
+走不了路|không đi nổi|Phrase
+好處|lợi ích|N
+抱怨|phàn nàn|Vi
+公尺|mét|N
+總是|luôn luôn|Adv
+完|xong, hết|Ptc
+體力|thể lực|N
+整天|cả ngày|N
+精神|tinh thần, sức sống|N
+本來|vốn dĩ, lúc đầu|Adv
+可能|có thể, có lẽ|Vaux
+回|về|V
+影響|ảnh hưởng|V
+身體|cơ thể, sức khỏe|N
+練|luyện tập|V
+想起|nhớ lại, nghĩ đến|Phrase
+#
+東健|安同！安同！|An Đồng! An Đồng!
+安同|東健！對不起，沒聽見你叫我。|Đông Kiện! Xin lỗi, tôi không nghe thấy bạn gọi.
+東健|音樂那麼吵，你當然聽不見。|Nhạc ồn thế, tất nhiên bạn không nghe thấy.
+安同|有什麼事嗎？|Có chuyện gì không?
+東健|沒事，只是一到學校門口，就看見你推著腳踏車走過來。|Không có gì, chỉ là vừa đến cổng trường thì thấy bạn dắt xe đạp đi tới.
+安同|你下午要做什麼？|Chiều bạn định làm gì?
+東健|我要去體育館運動。對了，你現在還在學太極拳嗎？|Tôi đến nhà thể thao tập. À, bạn còn đang học Thái cực quyền không?
+安同|是啊！我的師父說我有天分，學得不錯。|Còn chứ! Sư phụ nói tôi có năng khiếu, học khá tốt.
+東健|你師父是台灣人吧？他說中文你聽得懂嗎？|Sư phụ bạn là người Đài Loan nhỉ? Thầy nói tiếng Trung bạn nghe hiểu không?
+安同|剛開始我都聽不懂，可是現在沒問題了。|Lúc đầu tôi nghe không hiểu gì, nhưng giờ không sao rồi.
+東健|太極拳難嗎？你學了多久了？|Thái cực quyền có khó không? Bạn học bao lâu rồi?
+安同|不太容易，而且要很早起來。我學了三個多月了，才學會了一點。|Không dễ lắm, lại phải dậy rất sớm. Tôi học hơn ba tháng rồi mà mới học được chút ít.
+東健|可是太極拳的動作看起來慢慢的，輕輕的，應該很輕鬆。|Nhưng động tác Thái cực quyền trông chậm rãi, nhẹ nhàng, chắc là thoải mái lắm.
+安同|那些動作好像很容易，但是剛開始的時候，我早上常常累得起不來，腿也痛得走不了路。|Động tác trông có vẻ dễ nhưng lúc đầu tôi sáng nào cũng mệt đến không dậy nổi, chân đau đến đi không nổi.
+東健|那你怎麼還學得下去？|Vậy sao bạn vẫn học tiếp được?
+安同|雖然很累，可是這是我的興趣。|Tuy mệt nhưng đây là sở thích của tôi.
+東健|你下午沒事吧？要不要跟我一起去運動？|Chiều bạn rảnh chứ? Có muốn đi tập cùng tôi không?
+安同|好啊！我先去圖書館借書，下午再跟你去運動。|Được chứ! Tôi đến thư viện mượn sách trước, chiều sẽ đi tập với bạn.
+短文|今天李東健跟馬安同在體育館運動的時候，安同一直跟他說學太極拳的好處，還問他有沒有興趣，下次練習的時候可以帶他一起去。|Hôm nay lúc tập ở nhà thể thao, An Đồng cứ nói với Đông Kiện về lợi ích của Thái cực quyền, còn hỏi anh có hứng thú không, lần tập sau có thể dẫn anh đi cùng.
+短文|東健想起安同剛開始學功夫的時候，常跟他抱怨，師父每次練習以前，都要大家先跑一千公尺，安同總是最後一個跑完，有的時候還跑不完。|Đông Kiện nhớ lúc An Đồng mới học võ hay phàn nàn rằng trước mỗi buổi tập sư phụ bắt mọi người chạy một nghìn mét, An Đồng luôn là người chạy xong cuối cùng, có lúc còn chạy không nổi.
+短文|現在，東健發現安同的體力比三個月以前好多了，上了整天的課，安同還是很有精神。|Giờ Đông Kiện thấy thể lực của An Đồng tốt hơn ba tháng trước nhiều, học cả ngày mà An Đồng vẫn rất khỏe khoắn.
+短文|李東健本來以為學功夫要花很多時間，安同可能沒有時間念書了，但是安同為了多練習，每天一下課，就回宿舍念書、做功課。|Đông Kiện vốn tưởng học võ tốn nhiều thời gian, An Đồng có thể không còn thì giờ học, nhưng để luyện nhiều hơn, mỗi ngày vừa tan học anh về ký túc xá học bài, làm bài.
+短文|做完了功課，再去練習。雖然練習的時間不少，但是一點都沒影響安同的成績。|Làm xong bài thì đi luyện tập. Tuy thời gian luyện không ít nhưng hoàn toàn không ảnh hưởng đến thành tích của An Đồng.
+短文|李東健看馬安同學了太極拳以後，身體健康了，功課也進步了，覺得練太極拳的好處真不少，決定明天就跟安同說他也要學太極拳。|Đông Kiện thấy sau khi học Thái cực quyền An Đồng khỏe hơn, bài vở cũng tiến bộ, thấy lợi ích của việc luyện Thái cực quyền không ít nên quyết định mai sẽ nói với An Đồng rằng mình cũng muốn học.
+@9|那個城市好漂亮|Thành phố đó đẹp quá
+春假|kỳ nghỉ xuân|N
+好|xong, tốt (trợ từ kết quả: hoàn tất đúng cách)|Ptc
+到|được, đạt (trợ từ kết quả: hoàn thành)|Ptc
+特色|nét đặc sắc|N
+夠|đủ|Vs-pred
+顏色|màu sắc|N
+廟|miếu, chùa|N
+像|giống|Vst
+教堂|nhà thờ|N
+南部|miền nam|N
+潛水|lặn|V-sep
+各|các, mỗi|Det
+魚|cá|N
+酸|chua|Vs
+檸檬|chanh|N
+味道|mùi vị|N
+泰國|Thái Lan|Name
+比起來|so với|Phrase
+極了|cực kỳ, vô cùng|Phrase
+忘不了|không thể quên|Phrase
+鄉下|nông thôn, miền quê|N
+氣氛|bầu không khí|N
+鎮|thị trấn|N
+不同|khác nhau|Vs
+現代|hiện đại|N
+公寓|chung cư|N
+馬路|đường phố|N
+寬|rộng|Vs
+汽車|ô tô|N
+建築|kiến trúc, công trình xây dựng|N
+老|cũ, già|Vs
+層|tầng|M
+北部|miền bắc|N
+熱情|nhiệt tình, hiếu khách|Vs
+擠|chật chội, đông đúc|Vs
+飲料|đồ uống|N
+巴黎|Paris|Name
+高雄市|thành phố Cao Hùng|Name
+中南部|miền trung và nam|Phrase
+買得起|mua nổi|Phrase
+百貨公司|trung tâm bách hóa|Phrase
+越來越|càng ngày càng|Phrase
+#
+美玲|我放春假的時候到泰國去玩了一個星期，你呢？|Kỳ nghỉ xuân tôi đi Thái Lan chơi một tuần, còn bạn?
+東健|我哪裡也沒去，忙著搬家。|Tôi chẳng đi đâu cả, bận chuyển nhà.
+美玲|都搬好了嗎？|Chuyển xong hết rồi à?
+東健|都搬好了。泰國怎麼樣？|Xong hết rồi. Thái Lan thế nào?
+美玲|我好喜歡，沒想到泰國這麼有特色，玩一個星期也不夠。|Tôi rất thích, không ngờ Thái Lan đặc sắc thế, chơi một tuần cũng không đủ.
+東健|真的啊！有些什麼特色呢？|Thật à! Có những nét đặc sắc gì vậy?
+美玲|那裡的房子很漂亮，跟法國的比起來，顏色比較多。|Nhà ở đó rất đẹp, so với Pháp thì nhiều màu sắc hơn.
+東健|聽說泰國的廟很多。|Nghe nói Thái Lan có rất nhiều chùa.
+美玲|是。泰國到處都是廟，就像法國有很多教堂一樣。|Đúng. Thái Lan đâu đâu cũng có chùa, giống như Pháp có nhiều nhà thờ.
+東健|泰國的海邊怎麼樣？|Biển Thái Lan thế nào?
+美玲|美極了。我到南部的小島去潛水，藍藍的海水非常乾淨，看得見各種顏色的魚。|Đẹp tuyệt. Tôi ra đảo nhỏ phía nam lặn biển, nước biển xanh biếc rất sạch, thấy được cá đủ màu.
+東健|聽起來好美啊！除了到處去玩，妳一定也吃了很多泰國菜吧？|Nghe đẹp quá! Ngoài đi chơi khắp nơi, chắc bạn cũng ăn nhiều món Thái nhỉ?
+美玲|當然啊，在那裡吃的泰國菜跟我在法國吃的不一樣。|Tất nhiên rồi, món Thái ăn ở đó khác món tôi ăn ở Pháp.
+東健|有什麼不一樣？|Khác chỗ nào?
+美玲|在法國，沒有那麼多酸酸辣辣的菜，但是在泰國，很多菜都放了檸檬，味道比較酸。|Ở Pháp không có nhiều món chua cay như vậy, còn ở Thái nhiều món cho chanh nên vị chua hơn.
+東健|泰國這麼好玩，妳不想回來吧？|Thái Lan vui thế, chắc bạn không muốn về nhỉ?
+美玲|對啊！這些都是忘不了的經驗。如果不必上課，我一定要多住一個月。|Đúng vậy! Đó đều là trải nghiệm không quên được. Nếu không phải đi học, tôi nhất định ở thêm một tháng.
+東健|妳下次去的時候，我可以跟妳一起去嗎？|Lần sau bạn đi, tôi đi cùng được không?
+美玲|好，沒問題。|Được, không vấn đề.
+短文|高美玲利用放假的時候到處去旅行，她喜歡台北這個大城市，也喜歡中南部鄉下。|Cao Mỹ Linh tận dụng kỳ nghỉ đi du lịch khắp nơi, cô thích thành phố lớn Đài Bắc, cũng thích vùng quê miền trung nam.
+短文|因為她家在巴黎，已經習慣大城市熱鬧的氣氛，但是她覺得台灣鄉下小鎮也很有意思。|Vì nhà cô ở Paris, đã quen không khí náo nhiệt của đô thị lớn, nhưng cô thấy các thị trấn quê Đài Loan cũng rất thú vị.
+短文|高美玲發現中南部跟台北有很多不同的地方。台北市區現代的公寓、大樓比較多，馬路寬、汽車多。|Mỹ Linh nhận ra miền trung nam và Đài Bắc có nhiều điểm khác. Nội thành Đài Bắc có nhiều chung cư, tòa nhà hiện đại, đường rộng, xe nhiều.
+短文|中南部除了新建築，也看得見傳統的老房子。她在高雄市看見很多三層樓的房子，朋友告訴她，買得起房子的南部人，比較喜歡這種房子。|Miền trung nam ngoài công trình mới còn thấy nhà cổ truyền thống. Ở Cao Hùng cô thấy nhiều nhà ba tầng, bạn bảo người miền nam mua nổi nhà thường thích loại này.
+短文|台灣不是很大，但是南部的天氣比北部好多了。夏天雖然熱得很，可是冬天不冷，而且不常下雨。|Đài Loan không lớn nhưng thời tiết miền nam tốt hơn miền bắc nhiều. Mùa hè tuy rất nóng nhưng mùa đông không lạnh, lại ít mưa.
+短文|美玲覺得可能天氣好，所以南部人很熱情。|Mỹ Linh nghĩ có lẽ thời tiết tốt nên người miền nam rất hiếu khách.
+短文|台北跟中南部比起來，雖然生活費高，環境比較擠，但是美玲還是喜歡住在台北。|So với miền trung nam, Đài Bắc tuy chi phí sinh hoạt cao, môi trường đông đúc hơn nhưng Mỹ Linh vẫn thích sống ở Đài Bắc.
+短文|她覺得台北到處都有餐廳、便利商店，百貨公司也很多，什麼時候都吃得到飯，也買得到飲料，所以她越來越喜歡生活方便的台北了。|Cô thấy Đài Bắc đâu cũng có nhà hàng, cửa hàng tiện lợi, trung tâm bách hóa cũng nhiều, lúc nào cũng có cơm ăn, nước uống nên cô càng ngày càng thích Đài Bắc tiện nghi.
+@10|歡迎到我家來包餃子|Mời đến nhà tôi gói sủi cảo
+馬丁|Martin (người Anh)|Name
+包|gói|V
+餃子|sủi cảo, bánh xếp|N
+脫|cởi (quần áo, giày)|V
+鞋|giày|N
+關|đóng|V
+門|cửa|N
+春捲|chả giò, gỏi cuốn|N
+泡菜|kim chi, rau muối|N
+飯廳|phòng ăn|N
+下|chứa được, đủ chỗ|Ptc
+洗|rửa|V
+做菜|nấu ăn|V-sep
+水餃|sủi cảo luộc|N
+煮|nấu, luộc|V
+壞|hỏng|Vp
+破|rách, vỡ|Vp
+餡兒|nhân (bánh)|N
+扁|dẹt|Vs
+材料|nguyên liệu|N
+道|món (lượng từ cho món ăn)|M
+飽|no|Vs
+光|hết sạch|Ptc
+鍋子|nồi, chảo|N
+筷子|đũa|N
+碗|bát, tô|N
+韓國|Hàn Quốc|Name
+看不出來|không nhìn ra được|Phrase
+酸辣湯|súp chua cay|Phrase
+學期|học kỳ|N
+趁|nhân lúc, tranh thủ|Prep
+皮|vỏ, lớp bọc|N
+嚐|nếm|V
+大白菜|cải thảo|N
+加|thêm|V
+鹽|muối|N
+拌|trộn|V
+辣椒|ớt|N
+調味料|gia vị|N
+裝|đựng, cho vào|V
+玻璃|thủy tinh|N
+壽司|sushi|N
+像|chẳng hạn như, như là|Vst
+食物|thức ăn|N
+做起來|làm thử thì|Phrase
+#
+張老師|歡迎，歡迎，大家請進，不要脫鞋。月美，麻煩妳關門。|Hoan nghênh, mời mọi người vào, không cần cởi giày. Nguyệt Mỹ, phiền em đóng cửa.
+月美|謝謝老師請我們來包餃子，我也帶了我們越南的春捲。|Cảm ơn thầy mời chúng em đến gói sủi cảo, em cũng mang chả giò Việt Nam của chúng em đến.
+東健|張老師，這是我做的韓國泡菜。|Thầy Trương, đây là kim chi Hàn Quốc em làm.
+張老師|看不出來你還會做泡菜！馬丁、高美玲，你們也帶東西來了啊？|Nhìn không ra em còn biết làm kim chi! Martin, Cao Mỹ Linh, các em cũng mang đồ đến à?
+馬丁|我們剛剛去超市買了水果跟飲料。老師，你們家的飯廳真大。|Bọn em vừa ra siêu thị mua trái cây và đồ uống. Thầy ơi, phòng ăn nhà thầy rộng thật.
+美玲|老師家的飯廳應該坐得下十個人吧？|Phòng ăn nhà thầy chắc ngồi được mười người nhỉ?
+張老師|坐得下，所以請你們幾個人一起來吃飯沒問題。|Ngồi được, nên mời mấy em đến ăn cơm không thành vấn đề.
+東健|老師，我們要幫忙準備什麼？|Thầy ơi, chúng em cần giúp chuẩn bị gì?
+張老師|我把包餃子的東西都準備好了，你們去把手洗一洗，我們就開始包吧！|Thầy đã chuẩn bị xong đồ gói sủi cảo, các em đi rửa tay rồi chúng ta bắt đầu gói nhé!
+美玲|這是我第一次包餃子，你們包過嗎？|Đây là lần đầu tôi gói sủi cảo, các bạn đã từng gói chưa?
+月美|我跟馬丁以前上過做菜的課，包過水餃，對不對？|Tôi và Martin trước đây từng học lớp nấu ăn, có gói sủi cảo, đúng không?
+馬丁|包過，可是我包的水餃一煮就壞了。|Từng gói, nhưng sủi cảo tôi gói vừa luộc là hỏng.
+張老師|不是壞了，是煮破了。如果你們沒把餃子包好，一煮就破了。|Không phải hỏng, là luộc bị rách. Nếu các em không gói kỹ thì vừa luộc là rách.
+東健|老師，您看我這麼包，對嗎？|Thầy xem em gói thế này có đúng không ạ?
+張老師|很好，不過你還可以多放一點餡兒，如果扁扁的，看起來就不像餃子了。|Tốt lắm, nhưng em có thể cho thêm ít nhân, nếu dẹt lép trông sẽ không giống sủi cảo.
+月美|老師，我們五個人要包多少餃子？|Thầy ơi, năm người chúng em phải gói bao nhiêu sủi cảo?
+張老師|我準備的材料大概可以包一百多個，再做幾道菜，還有一大碗酸辣湯，應該夠了。大家一定都吃得飽。|Nguyên liệu thầy chuẩn bị gói được hơn một trăm cái, thêm vài món và một tô lớn súp chua cay chắc đủ. Chắc chắn ai cũng no.
+美玲|馬丁，你來以前不是一直說餓嗎？你能吃幾個餃子？|Martin, trước khi đến bạn chẳng phải cứ kêu đói sao? Bạn ăn được mấy cái sủi cảo?
+馬丁|我想我吃得下二十個，要是妳吃不完，我可以幫妳吃。|Tôi nghĩ tôi ăn nổi hai mươi cái, nếu bạn ăn không hết tôi giúp bạn ăn.
+張老師|大家最好能把餃子都吃光。你們包，我去把鍋子洗了，就要準備煮餃子了。|Tốt nhất mọi người ăn hết sạch sủi cảo. Các em gói đi, thầy đi rửa nồi rồi chuẩn bị luộc.
+月美|老師，我幫您把筷子和碗放在桌上。|Thầy ơi, em giúp thầy đặt đũa và bát lên bàn.
+短文|這個學期，馬丁、陳月美、高美玲和李東健都是張老師的學生，他們趁學期結束以前的一個週末，到張老師家包餃子。|Học kỳ này Martin, Trần Nguyệt Mỹ, Cao Mỹ Linh và Lý Đông Kiện đều là học trò của thầy Trương, họ tranh thủ một cuối tuần trước khi hết học kỳ đến nhà thầy gói sủi cảo.
+短文|張老師已經把餃子餡兒跟餃子皮都準備好了。到了老師家以後，張老師就教他們怎麼包餃子，怎麼把餃子包得好看，怎麼包不容易煮破。|Thầy đã chuẩn bị sẵn nhân và vỏ. Đến nhà thầy, thầy dạy cách gói, cách gói cho đẹp và cách gói để luộc không dễ rách.
+短文|除了包餃子，李東健跟陳月美還帶了自己做的韓國泡菜和越南春捲請大家吃。大家嚐了泡菜都說看不出來李東健會做泡菜。|Ngoài gói sủi cảo, Đông Kiện và Nguyệt Mỹ còn mang kim chi Hàn Quốc và chả giò Việt Nam tự làm mời mọi người. Ai nếm kim chi cũng bảo nhìn không ra Đông Kiện biết làm kim chi.
+短文|李東健說他是跟媽媽學的，做起來不太難。先把大白菜洗乾淨，加鹽拌一拌，再放辣椒和調味料，最後裝進玻璃或是塑膠罐裡，放一下就可以吃了。|Đông Kiện nói anh học từ mẹ, làm không khó lắm. Rửa sạch cải thảo, thêm muối trộn, rồi cho ớt và gia vị, cuối cùng cho vào hũ thủy tinh hoặc nhựa, để một lúc là ăn được.
+短文|張老師也說，像中國的餃子、韓國的泡菜，或是越南的春捲、日本的壽司，材料很容易買得到，做起來也不難，都是大家常吃的食物。|Thầy Trương cũng nói như sủi cảo Trung Quốc, kim chi Hàn Quốc, chả giò Việt Nam hay sushi Nhật Bản, nguyên liệu dễ mua, làm cũng không khó, đều là món mọi người thường ăn.
+@11|台灣好玩的地方真多|Đài Loan có thật nhiều nơi vui chơi
+其他|khác, còn lại|Det
+假期|kỳ nghỉ|N
+溫泉|suối nước nóng|N
+建議|đề nghị, gợi ý|V
+票|vé|N
+考慮|cân nhắc|V
+順便|tiện thể|Adv
+湖|hồ|N
+原住民|người bản địa|N
+趟|chuyến, lần (đi)|M
+後來|sau đó|Adv
+注意|chú ý|V
+沙灘|bãi cát|N
+錢包|ví tiền|N
+不見|mất, biến mất|Vp
+被|bị, được (câu bị động)|Ptc
+偷|ăn trộm|V
+安全|an toàn|Vs
+值得|đáng|Vs
+墾丁|Khẩn Đinh (vùng cực nam Đài Loan nổi tiếng với biển)|Name
+台中|Đài Trung|Name
+日月潭|hồ Nhật Nguyệt|Name
+水上活動|hoạt động trên nước|Phrase
+風景區|khu danh lam thắng cảnh|Phrase
+又|rồi lại, sau đó lại|Adv
+遍|lượt, lần (xem hết từ đầu đến cuối)|M
+民宿|nhà nghỉ homestay|N
+運氣|vận may|N
+摩托車|xe máy|N
+熱帶|vùng nhiệt đới|N
+植物|thực vật|N
+所有|tất cả|Vs-attr
+白天|ban ngày|N
+躺|nằm|Vi
+黃昏|hoàng hôn|N
+條|con đường (lượng từ)|M
+街|phố|N
+啤酒|bia|N
+上|(trợ từ chỉ sự tiếp xúc, ví dụ 愛上)|Ptc
+浪漫|lãng mạn|Vs
+家鄉|quê hương|N
+觀光客|khách du lịch|Phrase
+曬太陽|tắm nắng|Phrase
+水上摩托車|mô tô nước|Phrase
+愛上|phải lòng, yêu thích|Phrase
+#
+馬丁|我來台灣以後，沒離開過台北，所以想到其他地方去看看。|Từ khi đến Đài Loan tôi chưa rời Đài Bắc, nên muốn đến những nơi khác xem thử.
+如玉|假期快到了，你可以計畫一下啊！|Kỳ nghỉ sắp đến rồi, bạn có thể lên kế hoạch đi!
+馬丁|你們去過很多地方，可不可以告訴我，哪裡一定要去看看呢？|Các bạn đã đi nhiều nơi, có thể cho tôi biết nơi nào nhất định phải đến không?
+美玲|如果你喜歡海邊和游泳，可以到墾丁去，那裡有各種水上活動。|Nếu bạn thích biển và bơi lội thì đến Khẩn Đinh, ở đó có đủ loại hoạt động trên nước.
+如玉|上次我朋友來，去綠島玩了三天，她說風景很美，而且海邊有個溫泉，非常特別。|Lần trước bạn tôi đến, đi đảo Xanh chơi ba ngày, cô ấy bảo phong cảnh rất đẹp, ngoài ra bên bờ biển có suối nước nóng, rất đặc biệt.
+美玲|綠島我去過兩次。如果時間夠，我建議你去看看。|Tôi đã đến đảo Xanh hai lần. Nếu đủ thời gian tôi đề nghị bạn đến xem.
+如玉|夏天去綠島的人很多，船票常常買不到，你可以考慮去墾丁，交通比較方便。|Mùa hè người đi đảo Xanh rất đông, vé tàu thường mua không được, bạn có thể cân nhắc Khẩn Đinh, giao thông tiện hơn.
+美玲|墾丁也不錯。你回來的時候，可以順便去台中玩，台中附近也有很多有名的風景區。|Khẩn Đinh cũng không tệ. Khi về bạn có thể tiện đường ghé Đài Trung, gần Đài Trung cũng có nhiều khu danh lam nổi tiếng.
+馬丁|噢！我聽說有個地方叫什麼湖？|Ồ! Tôi nghe nói có nơi gọi là hồ gì đó?
+如玉|你說的是日月潭吧！在台灣中部，離台中不遠。那裡不錯，有山有水，還有原住民的文化。|Bạn nói là hồ Nhật Nguyệt nhỉ! Ở miền trung Đài Loan, không xa Đài Trung. Chỗ đó tuyệt, có núi có nước, còn có văn hóa người bản địa.
+馬丁|我也聽說台中的夜市有各種小吃，比台北多。|Tôi cũng nghe nói chợ đêm Đài Trung có đủ món ăn vặt, nhiều hơn Đài Bắc.
+美玲|對，上個月我本來計畫去台中玩一趟，後來因為颱風就沒去。|Đúng, tháng trước tôi vốn định đi Đài Trung chơi một chuyến, sau đó vì bão nên không đi.
+如玉|好可惜，台中很有意思。|Tiếc quá, Đài Trung rất thú vị.
+美玲|沒關係，以後一定還有機會。|Không sao, sau này chắc còn cơ hội.
+馬丁|聽了你們的建議，我打算先去墾丁，然後再到台中去玩。|Nghe đề nghị của các bạn, tôi định đến Khẩn Đinh trước rồi mới đi Đài Trung chơi.
+如玉|夏天去玩的人很多，去墾丁一定要先訂好旅館，才不會找不到地方住。|Mùa hè người đi chơi đông, đến Khẩn Đinh nhất định phải đặt khách sạn trước, mới không bị không có chỗ ở.
+馬丁|還要注意什麼呢？|Còn cần chú ý gì nữa?
+美玲|我上一次去的時候，把錢包和衣服放在沙灘上，沒想到錢包不見了，大概被偷了。|Lần trước tôi đi, để ví và quần áo trên bãi cát, không ngờ ví biến mất, chắc bị trộm.
+如玉|雖然台灣很安全，但是還是要小心一點啊！|Tuy Đài Loan rất an toàn nhưng vẫn phải cẩn thận một chút!
+美玲|除了這件事，墾丁真的很值得去。|Ngoài chuyện đó, Khẩn Đinh thật sự rất đáng đến.
+短文|馬丁利用學期假到台灣中南部去玩了一趟。他先到南部的墾丁去住了三天，然後又到台中玩了兩天，玩得開心極了。|Martin tận dụng kỳ nghỉ học kỳ đi chơi miền trung nam Đài Loan một chuyến. Anh ở Khẩn Đinh ba ngày trước, rồi đến Đài Trung chơi hai ngày, vui cực kỳ.
+短文|去旅行以前，馬丁把網路上的各種資料都看了一遍。因為夏天觀光客多，很難訂到房間，他就先訂了一家在網路上很多人都說不錯的民宿。|Trước chuyến đi, Martin xem hết một lượt các thông tin trên mạng. Vì mùa hè khách du lịch đông, khó đặt phòng nên anh đặt trước một homestay được nhiều người trên mạng khen.
+短文|沒想到民宿就在海邊，風景比網站上的照片更漂亮，他覺得自己的運氣太好了。|Không ngờ homestay ngay bên bờ biển, cảnh còn đẹp hơn ảnh trên mạng, anh thấy mình thật may mắn.
+短文|馬丁一到墾丁，就租了摩托車到處逛逛。墾丁除了漂亮的海邊，還有很多熱帶植物。他第一天就把所有的地方都逛了一遍。|Vừa đến Khẩn Đinh, Martin thuê xe máy đi dạo khắp nơi. Ngoài bờ biển đẹp, Khẩn Đinh còn nhiều thực vật nhiệt đới. Ngày đầu anh đã đi hết một lượt mọi nơi.
+短文|第二天白天，馬丁去海邊游泳，累了，就躺在沙灘上曬太陽。因為看見很多人在騎水上摩托車，他也試了試。|Ban ngày hôm sau, Martin ra biển bơi, mệt thì nằm trên bãi cát tắm nắng. Thấy nhiều người chạy mô tô nước, anh cũng thử.
+短文|黃昏，馬丁逛到墾丁最熱鬧的那條街，看見賣各國食物的餐廳，他選了一家走進去。|Chiều tà, Martin đi đến con phố sầm uất nhất Khẩn Đinh, thấy các nhà hàng bán món ăn nhiều nước, anh chọn một quán bước vào.
+短文|在餐廳裡，馬丁聽著音樂、喝著啤酒，跟別的觀光客聊聊天，他愛上了這種輕鬆又浪漫的氣氛，好像回到了自己的家鄉。馬丁覺得這一趟旅行真是太值得了。|Trong quán, Martin nghe nhạc, uống bia, trò chuyện với du khách khác, anh yêu bầu không khí thoải mái và lãng mạn này, như trở về quê nhà. Martin thấy chuyến đi thật đáng giá.
+@12|怎麼吃才健康？|Ăn thế nào mới khỏe mạnh?
+新|mới (vừa mới)|Adv
+開|mở (cửa hàng)|V
+素食|đồ ăn chay|N
+速食|đồ ăn nhanh|N
+錯|sai, nhầm|Vp
+肉|thịt|N
+欸|ê (này)|Ptc
+讓|để, khiến|V
+吃素|ăn chay|V-sep
+漢堡|hamburger|N
+變|trở nên, biến thành|Vp
+胖|mập, béo|Vs
+素菜|món chay|N
+油膩|nhiều dầu mỡ, ngấy|Vs
+樣|loại, món|M
+好奇|tò mò|Vs
+女孩|cô gái|N
+青菜|rau xanh|N
+瘦|gầy, ốm|Vs
+室友|bạn cùng phòng|N
+豬肉|thịt heo|N
+西方|phương Tây|N
+完全|hoàn toàn|Adv
+鹹|mặn|Vs
+炸|chiên rán|V
+烤|nướng|V
+沙拉|salad|N
+麥當勞|McDonald's|Name
+速食店|tiệm đồ ăn nhanh|Phrase
+只要|chỉ cần|Conj
+討厭|ghét|Vst
+餐|bữa (ăn)|M
+宗教|tôn giáo|N
+關係|quan hệ, liên quan|N
+薯條|khoai tây chiên|N
+作法|cách làm|N
+越|càng|Adv
+簡單|đơn giản|Vs
+蒸|hấp|V
+有機|hữu cơ|Vs-attr
+食品|thực phẩm|N
+地球|trái đất|N
+汙染|ô nhiễm|N
+嚴重|nghiêm trọng|Vs
+衛生|vệ sinh|N
+營養|dinh dưỡng|N
+什麼的|vân vân|Phrase
+#
+月美|我正在等白如玉，我們要去吃飯，你想跟我們一起去嗎？|Tôi đang đợi Bạch Như Ngọc, chúng tôi đi ăn, bạn có muốn đi cùng không?
+馬丁|好啊！妳們要去吃什麼？|Được chứ! Các bạn đi ăn gì?
+月美|我們打算去學校對面一家新開的素食餐廳。|Bọn tôi định đến nhà hàng chay mới mở đối diện trường.
+馬丁|速食？學校對面有「麥當勞」？我怎麼沒注意到？|Đồ ăn nhanh? Đối diện trường có McDonald's? Sao tôi không để ý nhỉ?
+月美|你想錯了，不是麥當勞那種速食店，是不吃肉的素食餐廳。|Bạn nghĩ sai rồi, không phải tiệm đồ ăn nhanh kiểu McDonald's, mà là nhà hàng chay không ăn thịt.
+馬丁|新開的餐廳我都想去嚐一嚐，好，我跟妳們一起去。|Nhà hàng mới mở nào tôi cũng muốn nếm thử, được, tôi đi cùng các bạn.
+如玉|欸！馬丁，好久不見！月美，對不起，讓妳等了這麼久。|Ê! Martin, lâu rồi không gặp! Nguyệt Mỹ, xin lỗi để bạn đợi lâu.
+月美|沒關係，我也剛下課。馬丁也跟我們去吃飯。|Không sao, tôi cũng vừa tan học. Martin cũng đi ăn với chúng ta.
+如玉|馬丁，你拿了這麼多菜，我沒想到你也喜歡吃素。|Martin, bạn lấy nhiều món thế, tôi không ngờ bạn cũng thích ăn chay.
+馬丁|我是到了台灣以後才覺得吃素不錯，我以前吃漢堡的機會比較多。|Đến Đài Loan tôi mới thấy ăn chay cũng hay, trước đây tôi hay ăn hamburger hơn.
+如玉|漢堡吃多了對健康不好，而且容易讓你變胖。|Ăn nhiều hamburger không tốt cho sức khỏe, lại dễ khiến bạn béo.
+月美|我在越南就常常吃素。還有，這家餐廳的素菜看起來不油膩，好像每一樣都值得試試。|Ở Việt Nam tôi cũng hay ăn chay. Ngoài ra món chay nhà hàng này trông không ngấy, hình như món nào cũng đáng thử.
+馬丁|我很好奇台灣女孩是不是都喜歡吃青菜？她們看起來個個都很瘦。|Tôi tò mò không biết các cô gái Đài Loan có phải đều thích ăn rau không? Trông ai cũng gầy.
+月美|這也不一定，我室友吃素，但是有一點胖。如玉，我記得妳男朋友不吃肉，對不對？|Cũng chưa chắc, bạn cùng phòng tôi ăn chay mà vẫn hơi mập. Như Ngọc, tôi nhớ bạn trai bạn không ăn thịt, đúng không?
+如玉|對，牛肉、豬肉，他不常吃，他只吃魚。|Đúng, thịt bò, thịt heo anh ấy ít ăn, chỉ ăn cá.
+月美|我聽說西方一些吃素的人跟我們不太一樣，我們是完全不吃肉的。|Tôi nghe nói một số người ăn chay phương Tây khác chúng ta, chúng ta hoàn toàn không ăn thịt.
+馬丁|我覺得吃素應該是為了健康。|Tôi thấy ăn chay chắc là vì sức khỏe.
+如玉|菜的味道不要太鹹，不要常吃炸的、烤的東西，就比較健康。|Món ăn đừng quá mặn, đừng thường ăn đồ chiên, nướng thì sẽ khỏe hơn.
+月美|下次有機會，請你們吃我做的越南素食。|Lần sau có dịp mời các bạn ăn đồ chay Việt Nam tôi nấu.
+如玉|我也可以做一些青菜沙拉請大家吃。|Tôi cũng có thể làm salad rau mời mọi người.
+馬丁|真的？太好了，我希望多吃素，瘦一點，讓自己更健康。|Thật à? Tuyệt quá, tôi muốn ăn chay nhiều hơn, gầy bớt, khỏe hơn.
+如玉|快一點吃吧！我跟月美等一下還要準備下午的考試。|Ăn nhanh nào! Lát nữa tôi và Nguyệt Mỹ còn phải chuẩn bị bài thi chiều.
+短文|白如玉、馬丁和陳月美一起到一家素食餐廳吃午餐，他們聊起吃素的經驗。|Bạch Như Ngọc, Martin và Trần Nguyệt Mỹ cùng đến một nhà hàng chay ăn trưa, họ trò chuyện về kinh nghiệm ăn chay.
+短文|他們注意到只要在學校附近就找得到素食餐廳，他們也覺得很多台灣人都不討厭吃素，但是不一定餐餐都吃素；還有，很多台灣人吃素是因為宗教的關係。|Họ để ý chỉ cần ở gần trường là tìm được nhà hàng chay, cũng thấy nhiều người Đài Loan không ghét ăn chay nhưng không nhất thiết bữa nào cũng chay; ngoài ra nhiều người ăn chay vì tôn giáo.
+短文|白如玉說她吃素跟宗教沒有關係，只是覺得吃太多肉容易變胖。她建議馬丁應該少吃一點漢堡、薯條什麼的，多吃青菜，可以讓身體更健康。|Như Ngọc nói cô ăn chay không liên quan tôn giáo, chỉ thấy ăn nhiều thịt dễ béo. Cô khuyên Martin nên bớt hamburger, khoai tây chiên…, ăn nhiều rau để khỏe hơn.
+短文|陳月美也同意，最好不要常吃炸的、烤的食物，菜的作法越簡單越好，煮的或是蒸的東西，都不太油膩。|Nguyệt Mỹ cũng đồng ý, tốt nhất đừng thường ăn đồ chiên, nướng, cách nấu càng đơn giản càng tốt, món luộc hay hấp đều không ngấy.
+短文|陳月美還說，在她家附近有一家賣有機食品的店，天天都有很多人去買他們的食品，好像人人都很注意身體健康。|Nguyệt Mỹ còn nói gần nhà cô có cửa hàng thực phẩm hữu cơ, ngày nào cũng nhiều người đến mua, dường như ai cũng chú ý sức khỏe.
+短文|他們覺得，這大概是因為地球的環境汙染越來越嚴重，不少人吃了有問題的食物就生病了，所以才慢慢開始注意食品的衛生和營養問題。|Họ cho rằng có lẽ vì ô nhiễm môi trường trái đất ngày càng nặng, không ít người ăn thực phẩm có vấn đề rồi sinh bệnh, nên dần dần mới bắt đầu chú ý vệ sinh và dinh dưỡng thực phẩm.
+短文|馬丁聽了以後說，他可以趁在台灣的機會，多吃吃素食，讓自己瘦下來。|Nghe xong Martin nói anh có thể tranh thủ lúc ở Đài Loan ăn chay nhiều hơn để gầy bớt.
+@13|我的手機掉了|Tôi làm rơi điện thoại rồi
+林愛麗|Lâm Ái Lệ (cô gái người Canada)|Name
+掉|rơi, mất|Vp
+低頭|cúi đầu|V-sep
+傳|gửi (tin nhắn, email)|V
+過|(trợ từ hoàn thành hành động)|Ptc
+簡訊|tin nhắn SMS|N
+功能|chức năng|N
+生氣|tức giận|Vs-sep
+叫|bảo, dặn|V
+罵|mắng|V
+健身房|phòng tập gym|N
+啦|(trợ từ cuối câu: la)|Ptc
+查|tra cứu|V
+班機|chuyến bay|N
+訂位|đặt chỗ|V-sep
+電|điện|N
+充電|sạc pin|V-sep
+糊塗|lơ đễnh, hồ đồ|Vs
+喔|nhé (trợ từ gợi ý)|Ptc
+義大利|nước Ý|Name
+拿走|lấy đi|Phrase
+撿到|nhặt được|Phrase
+留下|giữ lại, để lại|Phrase
+網路|mạng internet|N
+發生|xảy ra|Vp
+事情|sự việc|N
+消息|tin tức|N
+透過|thông qua|Prep
+世界|thế giới|N
+節省|tiết kiệm|V
+起床|ngủ dậy|Vp-sep
+檢查|kiểm tra|V
+郵件|thư điện tử|N
+立刻|lập tức|Adv
+上傳|tải lên, đăng|V
+正常|bình thường|Vs
+談|bàn bạc, nói về|V
+現代人|người hiện đại|Phrase
+比方說|ví dụ|Phrase
+做到|làm được|Phrase
+第一手|trực tiếp, đầu tiên|Phrase
+急著|vội vàng|Phrase
+打招呼|chào hỏi|Phrase
+面對面|mặt đối mặt|Phrase
+#
+愛麗|怎麼了？在找什麼？|Sao vậy? Bạn tìm gì thế?
+馬丁|找我的手機，我怎麼找都找不到。|Tìm điện thoại của tôi, tìm thế nào cũng không thấy.
+愛麗|我早上還看到你在餐廳低頭玩手機，你是不是在餐廳掉的？|Sáng nay tôi còn thấy bạn cúi đầu chơi điện thoại ở nhà hàng, có phải bạn đánh rơi ở đó không?
+馬丁|不是，我離開餐廳後，還給義大利朋友傳過簡訊。|Không, sau khi rời nhà hàng tôi còn nhắn tin cho bạn người Ý.
+愛麗|是不是被誰拿走了？要是有人撿到了，看見你的手機那麼新，功能又好，就留下自己用了。|Có phải ai đó lấy mất không? Nếu có người nhặt được, thấy điện thoại bạn mới, chức năng lại tốt, có thể giữ lại dùng luôn.
+馬丁|我就怕是這樣，這已經是我掉的第三支手機了。|Tôi cũng sợ thế, đây đã là chiếc điện thoại thứ ba tôi làm mất.
+愛麗|你的手機是你女朋友送的禮物？這樣會讓她生氣吧！|Điện thoại là quà bạn gái tặng à? Thế thì cô ấy sẽ giận nhỉ!
+馬丁|是啊！她還叫我別再掉手機了。要是被她知道了，一定會罵我的。|Đúng vậy! Cô ấy còn dặn tôi đừng làm mất điện thoại nữa. Nếu bị cô biết, chắc chắn sẽ mắng tôi.
+愛麗|你是什麼時候發現手機不見的？|Bạn phát hiện mất điện thoại khi nào?
+馬丁|我剛剛想上網，才發現不見的。|Vừa rồi tôi định lên mạng mới phát hiện mất.
+愛麗|你傳完簡訊後，還去了什麼地方？|Sau khi nhắn tin xong bạn còn đi đâu nữa?
+馬丁|我先去健身房做運動，然後去圖書館做功課。|Tôi đến phòng gym tập trước, rồi đến thư viện làm bài.
+愛麗|你去圖書館找過了嗎？|Bạn tìm ở thư viện chưa?
+馬丁|到處都找過了，還是找不到。怎麼辦？我女朋友不會讓我再買新手機的。|Chỗ nào cũng tìm rồi mà vẫn không thấy. Làm sao đây? Bạn gái tôi sẽ không cho tôi mua điện thoại mới nữa.
+愛麗|那健身房呢？|Thế phòng gym thì sao?
+馬丁|我在健身房沒用手機。啊！我想起來了！|Ở phòng gym tôi không dùng điện thoại. A! Tôi nhớ ra rồi!
+愛麗|想起來啦？放在什麼地方了？|Nhớ ra rồi à? Để ở đâu?
+馬丁|剛剛我在查回國的班機資料，正要訂位的時候，手機沒電了。所以我去健身房的時候，放在那裡充電。|Vừa rồi tôi tra chuyến bay về nước, đang định đặt chỗ thì điện thoại hết pin. Nên khi đến phòng gym tôi để ở đó sạc.
+愛麗|你怎麼這麼糊塗，趕快回去拿吧！|Sao bạn lơ đễnh thế, mau quay lại lấy đi!
+馬丁|那我先走了！妳別告訴我女朋友喔！|Vậy tôi đi trước! Bạn đừng nói với bạn gái tôi nhé!
+短文|現代人的生活已經離不開網路了，生活裡有很多事，比方說買東西、查資料、下載音樂，只要上網，就能做到。|Cuộc sống người hiện đại đã không thể thiếu internet, nhiều việc như mua đồ, tra thông tin, tải nhạc chỉ cần lên mạng là làm được.
+短文|住在不同國家的人，也能天天用網路聊天。要是哪裡發生了事情，這些消息，都能透過網路，馬上傳到世界每一個地方，讓大家知道第一手資料。|Người ở các nước khác nhau cũng có thể trò chuyện mỗi ngày qua mạng. Nếu nơi nào có chuyện, tin tức có thể truyền ngay đến mọi nơi trên thế giới, để ai cũng biết thông tin đầu tiên.
+短文|網路替我們節省了時間，還把世界變小了。|Internet giúp chúng ta tiết kiệm thời gian, còn khiến thế giới nhỏ lại.
+短文|雖然網路讓我們的生活變得更便利，但是也有一些問題。很多人每天早上才起床，就急著上網。|Tuy internet làm cuộc sống tiện lợi hơn nhưng cũng có vài vấn đề. Nhiều người sáng vừa ngủ dậy đã vội lên mạng.
+短文|每五分鐘就要檢查一次郵件，一有新消息、新照片就立刻上傳。他們什麼時候都在上網，好像只有睡覺的時候，才離開網路。|Cứ năm phút lại kiểm tra thư một lần, có tin hay ảnh mới là đăng ngay. Lúc nào họ cũng online, dường như chỉ khi ngủ mới rời mạng.
+短文|在網路上花太多時間，讓很多人的生活變得不正常了。|Dành quá nhiều thời gian trên mạng khiến cuộc sống nhiều người trở nên không bình thường.
+短文|網路太方便了，讓大家已經習慣透過網路跟朋友打招呼、聊天、談事情，但是不想跟人面對面地說話，人跟人的關係好像越來越遠了。|Internet quá tiện, mọi người quen chào hỏi, trò chuyện, bàn việc với bạn qua mạng nhưng không muốn nói chuyện trực tiếp, quan hệ giữa người với người dường như ngày càng xa.
+短文|我們應該想一想，怎麼好好地利用網路，才不會影響人跟人的關係。|Chúng ta nên nghĩ cách sử dụng internet cho tốt để không ảnh hưởng quan hệ giữa người với người.
+@14|我要開始找工作了|Tôi sắp bắt đầu đi tìm việc
+將來|tương lai|N
+徵求|tuyển, tìm kiếm|V
+教師|giáo viên|N
+認為|cho rằng|Vst
+畢業|tốt nghiệp|Vp-sep
+發展|phát triển|V
+連|ngay cả, thậm chí|Prep
+想法|suy nghĩ, ý tưởng|N
+不但|không những|Conj
+繼續|tiếp tục|Vaux
+使用|sử dụng|V
+實現|thực hiện được, thành hiện thực|Vp
+招待|tiếp đãi, chiêu đãi|V
+研究所|viện nghiên cứu, cao học|N
+聚|tụ họp|Vi
+香港|Hồng Kông|Name
+上海|Thượng Hải|Name
+說到|nói đến|Phrase
+念完|học xong|Phrase
+分公司|chi nhánh|Phrase
+捨不得|không nỡ, luyến tiếc|Phrase
+聚一聚|tụ họp một chút|Phrase
+當時|lúc đó|Adv
+聲調|thanh điệu|N
+發音|phát âm|N
+準|chuẩn xác|Vs
+企業|doanh nghiệp|N
+管理|quản lý|N
+系|khoa (của trường đại học)|N
+經濟|kinh tế|N
+幫助|giúp đỡ|N
+有關|có liên quan|Vst
+語法|ngữ pháp|N
+研究|nghiên cứu|V
+教書|dạy học|V-sep
+方法|phương pháp|N
+目的|mục đích|N
+國際|quốc tế|Vs-attr
+翻譯|biên dịch, phiên dịch|N
+外交|ngoại giao|N
+人員|nhân viên|N
+充實|bồi dưỡng, làm phong phú|V
+專業|chuyên môn|N
+能力|năng lực|N
+加拿大|Canada|Name
+企業管理系|khoa quản trị doanh nghiệp (企管系)|Phrase
+國際關係|quan hệ quốc tế|Phrase
+#
+美玲|如玉，好久不見，跟我們一起坐吧。|Như Ngọc, lâu rồi không gặp, ngồi cùng bọn mình đi.
+如玉|好啊！妳們在聊什麼，聊得這麼高興？|Được chứ! Các bạn đang nói gì mà vui thế?
+美玲|這個學期結束，我就要離開台灣了，正在跟愛麗說我將來的計畫。|Kết thúc học kỳ này tôi sẽ rời Đài Loan, đang kể với Ái Lệ kế hoạch tương lai của tôi.
+如玉|時間過得好快啊！妳已經來了快一年半了。|Thời gian trôi nhanh quá! Bạn đã đến gần một năm rưỡi rồi.
+美玲|對啊！在我回國以前，要開始找工作。|Đúng vậy! Trước khi về nước tôi phải bắt đầu tìm việc.
+愛麗|妳剛剛說到對一個工作有興趣，是什麼工作呢？|Vừa rồi bạn nói có hứng thú với một công việc, là việc gì vậy?
+美玲|我以前念的高中正在徵求一位教中文的教師，我想試試看。|Trường cấp ba trước đây tôi học đang tuyển một giáo viên dạy tiếng Trung, tôi muốn thử.
+愛麗|妳的中文學得不錯，我認為妳回去教中文應該沒問題。|Tiếng Trung của bạn khá tốt, tôi nghĩ bạn về dạy tiếng Trung chắc không vấn đề.
+美玲|真的嗎？我也希望這樣。|Thật à? Tôi cũng hy vọng vậy.
+愛麗|如玉，妳也快要離開了，有什麼打算呢？|Như Ngọc, bạn cũng sắp đi, có dự định gì?
+如玉|我得先回美國把大學念完，等我畢業了，再到香港或是上海找工作。|Tôi phải về Mỹ học xong đại học, đợi tốt nghiệp rồi sang Hồng Kông hoặc Thượng Hải tìm việc.
+愛麗|妳怎麼會想到上海找工作呢？|Sao bạn lại nghĩ đến chuyện tìm việc ở Thượng Hải?
+如玉|我聽幾位朋友說，這幾年上海發展得很快，連外國人都很容易找到工作。如果能找到美國分公司的工作，應該不錯。|Tôi nghe vài người bạn nói mấy năm nay Thượng Hải phát triển rất nhanh, ngay cả người nước ngoài cũng dễ tìm việc. Nếu tìm được việc ở chi nhánh công ty Mỹ thì rất tốt.
+美玲|這個想法不錯，不但可以繼續使用中文，而且可以了解那裡跟台灣有什麼不同。|Ý này hay đấy, không những tiếp tục dùng tiếng Trung mà còn hiểu nơi đó khác Đài Loan thế nào.
+如玉|真希望我的計畫都能實現。|Thật mong kế hoạch của tôi đều thành hiện thực.
+愛麗|我才認識妳們幾個月，妳們就要回國了，真捨不得妳們。|Tôi mới quen các bạn vài tháng mà các bạn sắp về nước, thật luyến tiếc.
+美玲|妳可以到法國來找我，我一定會好好招待妳。|Bạn có thể đến Pháp tìm tôi, tôi nhất định sẽ tiếp đãi bạn thật tốt.
+愛麗|太好了！有機會我一定去找妳。|Tuyệt quá! Có dịp tôi nhất định sẽ đến tìm bạn.
+美玲|愛麗，妳還要在台灣住多久？|Ái Lệ, bạn còn ở Đài Loan bao lâu nữa?
+愛麗|我覺得還得再學半年中文，然後在這裡念研究所。|Tôi thấy phải học tiếng Trung thêm nửa năm rồi học cao học ở đây.
+如玉|我們回國以前，大家再聚一聚吧！|Trước khi chúng ta về nước, mọi người họp mặt một buổi nhé!
+美玲|這個建議不錯，我們就這麼決定吧！|Đề nghị hay, vậy quyết định thế nhé!
+短文|白如玉從高中就開始學中文，當時她覺得中文的聲調和漢字都好難，練習了很久，發音才越來越準，字也寫得越來越好。|Bạch Như Ngọc bắt đầu học tiếng Trung từ cấp ba, lúc ấy cô thấy thanh điệu và chữ Hán đều rất khó, luyện lâu thì phát âm mới chuẩn dần, chữ cũng viết đẹp dần.
+短文|上了大學以後，如玉念了企業管理系。她認為中國經濟發展得很快，懂中文對找工作會有幫助。她打算畢業以後找一個跟中文有關的工作，才不會把中文忘了。|Lên đại học Như Ngọc học khoa quản trị doanh nghiệp. Cô cho rằng kinh tế Trung Quốc phát triển nhanh, biết tiếng Trung giúp ích khi tìm việc. Cô định sau tốt nghiệp tìm việc liên quan tiếng Trung để không quên tiếng.
+短文|高美玲本來是學語言學的，她對語法特別有興趣，常研究中文跟法文不同的地方。|Cao Mỹ Linh vốn học ngôn ngữ học, đặc biệt hứng thú ngữ pháp, thường nghiên cứu chỗ khác nhau giữa tiếng Trung và tiếng Pháp.
+短文|美玲打算學好中文以後，回國教書，把自己學中文的方法和經驗教給學生，這樣學生應該能學得更順利。|Mỹ Linh định học giỏi tiếng Trung rồi về nước dạy học, truyền lại phương pháp và kinh nghiệm học tiếng Trung của mình cho học sinh để họ học thuận lợi hơn.
+短文|她在台灣也發現了很多有意思的文化，所以除了教語言，她也希望順便把台灣的文化介紹給學生。|Cô cũng phát hiện nhiều nét văn hóa thú vị ở Đài Loan nên ngoài dạy ngôn ngữ còn muốn tiện thể giới thiệu văn hóa Đài Loan cho học sinh.
+短文|林愛麗是加拿大華僑，雖然在家跟父母說中文，可是不太會寫漢字。她到台灣來的目的就是把中文學好。|Lâm Ái Lệ là Hoa kiều Canada, tuy ở nhà nói tiếng Trung với cha mẹ nhưng không rành viết chữ Hán. Mục đích cô đến Đài Loan là học giỏi tiếng Trung.
+短文|林愛麗大學念的是國際關係，她還沒決定將來要當翻譯，還是外交人員。為了充實自己的專業能力，她決定留在台灣念研究所。|Ái Lệ học quan hệ quốc tế ở đại học, chưa quyết định sau này làm phiên dịch hay nhân viên ngoại giao. Để nâng cao năng lực chuyên môn, cô quyết định ở lại Đài Loan học cao học.
+@15|過春節|Đón Tết Nguyên đán
+春節|Tết Nguyên đán|N
+伯伯|bác (cách gọi người đàn ông lớn tuổi)|N
+年夜飯|bữa cơm tất niên|N
+打擾|làm phiền|V
+女兒|con gái|N
+國外|nước ngoài|N
+圍爐|quây quần bên bếp lửa (bữa cơm tất niên)|V-sep
+意思|ý nghĩa|N
+全家|cả nhà|N
+孩子|con cái, trẻ con|N
+吉祥|may mắn, cát tường|Vs
+年紀|tuổi tác|N
+過年|ăn Tết|Phrase
+除夕夜|đêm giao thừa|Phrase
+睡著|ngủ thiếp đi|Phrase
+壓歲錢|tiền mừng tuổi|Phrase
+恭喜發財|chúc mừng phát tài|Phrase
+好了|được rồi|Phrase
+節日|ngày lễ|N
+打掃|dọn dẹp, quét dọn|V
+另外|ngoài ra|Conj
+春聯|câu đối Tết|N
+除夕|đêm giao thừa|N
+年糕|bánh tổ (bánh gạo năm mới)|N
+橘子|quýt|N
+守歲|thức đón giao thừa|Vi
+說法|cách nói, quan niệm|N
+晚|muộn|Vs
+活|sống|Vs
+平安|bình an|Vs
+出門|ra ngoài|V-sep
+拜年|chúc Tết|V-sep
+又|lại|Adv
+起來|(trợ từ chỉ bắt đầu)|Ptc
+華人|người Hoa|Name
+貼上|dán lên|Phrase
+年年有餘|năm nào cũng dư dả|Phrase
+步步高升|thăng tiến từng bước|Phrase
+大吉大利|đại cát đại lợi|Phrase
+放鞭炮|đốt pháo|Phrase
+大年初一|mùng một Tết|Phrase
+大年初五|mùng năm Tết|Phrase
+#
+馬丁|陳伯伯、陳伯母，謝謝你們請我來吃年夜飯。她是林愛麗。|Bác Trần, bác gái, cảm ơn bác mời cháu đến ăn cơm tất niên. Đây là Lâm Ái Lệ.
+愛麗|陳伯伯、陳伯母好！不好意思，打擾你們了。|Cháu chào bác Trần, bác gái! Xin lỗi đã làm phiền bác.
+陳先生|過年就是要熱熱鬧鬧的，人越多越有過年的氣氛。|Ăn Tết là phải rộn ràng, người càng đông càng có không khí Tết.
+陳太太|我們女兒在國外念書，不能回來跟我們一起吃年夜飯，還好你們來陪我們圍爐。|Con gái chúng tôi học ở nước ngoài, không về ăn cơm tất niên cùng được, may mà các cháu đến quây quần với chúng tôi.
+馬丁|「圍爐」是什麼意思？|"Vi lô" nghĩa là gì ạ?
+陳先生|「圍爐」就是除夕夜全家一起吃年夜飯。|"Vi lô" là cả nhà cùng ăn cơm tất niên đêm giao thừa.
+愛麗|我在加拿大的時候，每年過年都跟父母、親戚一起吃年夜飯。吃了飯，一家人就開開心心地聊天，一直聊到半夜。|Hồi ở Canada, năm nào ăn Tết cháu cũng ăn cơm tất niên với cha mẹ và họ hàng. Ăn xong cả nhà vui vẻ trò chuyện đến tận nửa đêm.
+馬丁|有那麼多事能聊啊！|Có nhiều chuyện để nói thế sao!
+陳太太|很多人在離家很遠的地方工作、念書，不能常跟家人見面。過年大家都回來了，當然有說不完的話。|Nhiều người làm việc, học hành xa nhà, không thường gặp gia đình. Ăn Tết ai cũng về, đương nhiên có chuyện nói không hết.
+愛麗|對，現在我在台灣念書，每次我給爸爸、媽媽打電話，都要說好久。|Đúng ạ, giờ cháu học ở Đài Loan, mỗi lần gọi điện cho bố mẹ đều nói rất lâu.
+馬丁|那小孩子呢？一定會累得睡著了吧！|Vậy trẻ con thì sao? Chắc mệt đến ngủ thiếp đi nhỉ!
+陳太太|有那麼多好吃的東西，還等著拿壓歲錢，怎麼睡得著？|Có nhiều món ngon thế, lại còn chờ nhận tiền mừng tuổi, sao ngủ được?
+愛麗|我覺得過年最開心的就是拿紅包了。|Cháu thấy vui nhất khi ăn Tết là nhận bao lì xì.
+馬丁|我知道，拿紅包以前，得先說「恭喜發財」。|Cháu biết, trước khi nhận lì xì phải nói "Cung hỉ phát tài".
+陳先生|真不錯，這你也學會了。|Giỏi lắm, cái này cháu cũng học được rồi.
+陳太太|想起以前，我們孩子得一個一個跟爸爸、媽媽說吉祥話，才拿得到壓歲錢。|Nhớ hồi trước, các con của chúng tôi phải lần lượt nói lời chúc may mắn với bố mẹ mới nhận được tiền mừng tuổi.
+陳先生|吃了年夜飯，我們也給你們壓歲錢。|Ăn cơm tất niên xong chúng tôi cũng mừng tuổi các cháu.
+馬丁|我們不是小孩了，也可以拿紅包嗎？|Chúng cháu không còn là trẻ con, cũng được nhận lì xì ạ?
+陳先生|當然可以！你們的年紀跟我女兒差不多大，就像我們的孩子一樣。|Đương nhiên được! Tuổi các cháu xấp xỉ con gái bác, như con của chúng tôi vậy.
+陳太太|好了，菜都準備好了，我們一邊吃，一邊聊吧！|Được rồi, đồ ăn chuẩn bị xong cả, chúng ta vừa ăn vừa trò chuyện nhé!
+短文|春節就是中國新年，是華人一年裡最大的一個節日。過年前一個月大家就忙起來了，得把家裡打掃乾淨，也要準備過年的食物，還要給孩子買新衣服。|Xuân tiết là Tết Trung Quốc, ngày lễ lớn nhất trong năm của người Hoa. Từ một tháng trước Tết mọi người đã bận rộn, phải dọn nhà sạch sẽ, chuẩn bị đồ ăn Tết và mua quần áo mới cho trẻ.
+短文|另外，每家門口都要貼上春聯，才有過年的氣氛。|Ngoài ra cửa mỗi nhà đều dán câu đối Tết mới có không khí Tết.
+短文|春節前一天是除夕，大部分的人都比平常早回家，因為大家要吃年夜飯。|Một ngày trước Tết là giao thừa, phần lớn mọi người về nhà sớm hơn thường lệ vì phải ăn cơm tất niên.
+短文|過年的食物都有特別的意思，吃魚的意思是年年有餘（魚）；吃年糕是步步高（糕）升，希望大家工作、功課一年比一年好；吃橘子是希望新的一年大吉大利。|Món ăn Tết đều có ý nghĩa riêng: ăn cá nghĩa là năm nào cũng dư dả; ăn bánh tổ là thăng tiến từng bước, mong công việc, học hành năm sau hơn năm trước; ăn quýt là mong năm mới đại cát đại lợi.
+短文|吃了年夜飯，一家人就一起聊聊天、看看電視，等新的一年開始，這叫守歲。|Ăn cơm tất niên xong cả nhà trò chuyện, xem tivi, chờ năm mới bắt đầu, gọi là thức giao thừa.
+短文|傳統的說法是：除夕夜孩子越晚睡，父母就活得越久。父母也會給孩子壓歲錢，希望他們新的一年都能平平安安的。|Quan niệm truyền thống là đêm giao thừa con cái ngủ càng muộn thì cha mẹ càng sống lâu. Cha mẹ cũng mừng tuổi cho con, mong năm mới bình an.
+短文|過了十二點，很多人就到外面放鞭炮，慶祝新年。|Qua mười hai giờ nhiều người ra ngoài đốt pháo mừng năm mới.
+短文|新年的第一天，也叫大年初一。大家會出門給親戚、朋友拜年，祝他們新年快樂。到了大年初五，大部分的人都得上班，街上又熱鬧起來了。|Ngày đầu năm mới gọi là mùng một Tết. Mọi người ra ngoài chúc Tết họ hàng bạn bè. Đến mùng năm, phần lớn người phải đi làm, phố xá lại náo nhiệt trở lại.

@@ -32,6 +32,9 @@ vm.runInContext(script+`
   Object.keys(EXTRA).forEach(k=>add("m",k));
   QA.forEach(q=>[q.q,q.a].forEach(z=>{add("m",z);segmentWords(z).forEach(w=>add("m",w))}));
   STORIES.forEach(S=>rows(S.l).forEach(r=>{const z=r.split("|")[0];add("m",z);segmentWords(z).forEach(w=>add("m",w))}));
+  TF.forEach(x=>add("m",x.s));
+  Object.values(BKW).forEach(a=>a.forEach(x=>add("m",x.s)));
+  Object.values(BOOKS).forEach(B=>B.lessons.forEach(L=>L.d&&rows(L.d.l).forEach(r=>add("m",r.split("|")[1]))));
   add("m","你好，歡迎你來臺灣！");
   return [...m.values()];
 })();`,ctx);

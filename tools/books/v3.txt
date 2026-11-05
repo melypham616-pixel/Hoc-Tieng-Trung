@@ -1,0 +1,1176 @@
+@1|開學了|Khai giảng rồi
+安德思|An Đức Tư (người Honduras)|Name
+羅珊蒂|La San Đế (người Indonesia)|Name
+何雅婷|Hà Nhã Đình (người Đài Loan)|Name
+開學|khai giảng, bắt đầu học kỳ|Vp
+班|lớp (tập thể học sinh)|N
+新生|sinh viên mới|N
+嚴|nghiêm khắc|Vs
+口試|thi vấn đáp|N
+筆試|thi viết|N
+以外|ngoài ra, ngoại trừ|N
+口頭|bằng lời nói|Vs-attr
+報告|bài thuyết trình, báo cáo|N
+壓力|áp lực|N
+說明|giải thích, hướng dẫn|N
+清楚|rõ ràng|Vs
+位子|chỗ ngồi|N
+旁聽|dự thính|V
+分|điểm|N
+羨慕|ngưỡng mộ, ghen tị|Vst
+休學|bảo lưu, nghỉ học|Vp-sep
+用功|chăm chỉ học|Vs
+行|được, ổn|Vs
+轉|chuyển (ngành)|V
+原來|vốn dĩ, thì ra|Adv
+會計|kế toán|N
+熱門|hot, được ưa chuộng|Vs
+熬夜|thức khuya|V-sep
+當|trượt (môn)|V
+恐怕|e rằng|Adv
+口才|tài ăn nói|N
+事|việc|N
+遲到|đến muộn|Vp
+差一點|suýt nữa, gần như|Phrase
+這樣下去|cứ thế này mãi|Phrase
+沒辦法|hết cách|Phrase
+獨生女|con gái một|N
+私立|tư thục|Vs-attr
+理想|lý tưởng|Vs
+合|hợp|Vst
+痛苦|đau khổ|Vs
+科系|ngành, khoa|N
+放棄|từ bỏ|V
+不管|bất kể|Conj
+反對|phản đối|Vst
+個性|tính cách|N
+活潑|hoạt bát|Vs
+外語|ngoại ngữ|N
+擔心|lo lắng|Vst
+填|điền (biểu mẫu)|V
+表|biểu mẫu|N
+辦|làm, xử lý|V
+手續|thủ tục|N
+申請|xin, đăng ký|V
+成績單|bảng điểm|N
+考上|thi đỗ|Phrase
+推薦信|thư giới thiệu|Phrase
+#
+安德思|羅珊蒂，下課啦！怎麼樣？你們班上有我們上個學期的同學嗎？|La San Đế, tan học rồi! Thế nào? Lớp bạn có bạn học kỳ trước của chúng ta không?
+羅珊蒂|沒有，都沒有。你們班怎麼樣？|Không, chẳng có ai. Lớp bạn thế nào?
+安德思|都是新生，我一個也不認識，而且只有我一個男的。|Toàn sinh viên mới, tôi không quen ai, lại chỉ có mình tôi là nam.
+羅珊蒂|老師呢？老師怎麼樣？|Còn thầy cô thì sao?
+安德思|老師很嚴。他說我們這學期除了每一課的口試、筆試以外，還要做兩次口頭報告。我覺得壓力好大。你們班呢？|Thầy rất nghiêm. Thầy bảo học kỳ này ngoài thi nói, thi viết mỗi bài còn phải thuyết trình hai lần. Tôi thấy áp lực lớn lắm. Còn lớp bạn?
+羅珊蒂|老師的說明很清楚，同學也很熱情。我們今天就一起去吃中飯了。|Cô giải thích rất rõ, bạn học cũng nhiệt tình. Hôm nay bọn tôi đã cùng đi ăn trưa.
+安德思|聽起來不錯。還有位子嗎？有位子的話，我想去旁聽。|Nghe hay đấy. Còn chỗ không? Nếu còn tôi muốn đến dự thính.
+羅珊蒂|你想換班啊？你不是打算在台灣上大學嗎？老師嚴才學得快，學得好啊。|Bạn muốn đổi lớp à? Chẳng phải bạn định học đại học ở Đài Loan sao? Thầy nghiêm mới học nhanh, học tốt chứ.
+安德思|可是我是獎學金學生。要是成績不到80分，拿不到獎學金，就得回國了。|Nhưng tôi là sinh viên học bổng. Nếu điểm dưới 80 mà không nhận được học bổng thì phải về nước.
+羅珊蒂|我真羨慕你有獎學金。不像我休學來台灣，花的都是父母的錢，一定得用功念書才行。|Tôi thật ngưỡng mộ bạn có học bổng. Không như tôi bảo lưu đến Đài Loan, tiêu toàn tiền cha mẹ, nhất định phải chăm học.
+安德思|何雅婷，聽說妳轉系了？|Hà Nhã Đình, nghe nói bạn chuyển khoa rồi?
+何雅婷|是啊，這個學期我轉到國際關係系去了。|Đúng vậy, học kỳ này tôi chuyển sang khoa quan hệ quốc tế.
+安德思|妳原來念的會計系不是很熱門嗎？怎麼不念了？|Khoa kế toán bạn học trước chẳng phải rất hot sao? Sao lại không học nữa?
+何雅婷|我念不下去了。我每天熬夜念書，可是還是差一點被當。這樣下去，四年恐怕沒辦法畢業。|Tôi học không nổi nữa. Ngày nào cũng thức khuya học mà vẫn suýt trượt. Cứ thế này, bốn năm e không tốt nghiệp được.
+羅珊蒂|念國際關係很適合妳。妳的英文那麼流利，口才又好，以後可以當外交人員。|Học quan hệ quốc tế rất hợp bạn. Tiếng Anh bạn lưu loát, ăn nói lại giỏi, sau này có thể làm nhân viên ngoại giao.
+何雅婷|謝謝妳這麼說。我真想多跟你們聊聊。可惜我得走了，我跟教授約好了討論選課的事，不能遲到。再見。|Cảm ơn bạn nói vậy. Tôi thật muốn trò chuyện thêm. Tiếc là tôi phải đi, đã hẹn thầy bàn chuyện chọn môn, không thể muộn. Tạm biệt.
+短文|何雅婷是家裡的獨生女。從小父母讓她念私立小學，下了課還去學西班牙文、書法、游泳跟網球。|Hà Nhã Đình là con gái một trong nhà. Từ nhỏ cha mẹ cho cô học tiểu học tư thục, tan học còn đi học tiếng Tây Ban Nha, thư pháp, bơi lội và quần vợt.
+短文|何雅婷也沒讓父母失望，成績一直都很好，還考上了理想的大學，念的是熱門的會計系。|Nhã Đình cũng không làm cha mẹ thất vọng, thành tích luôn tốt, còn thi đỗ trường đại học lý tưởng, học khoa kế toán đang hot.
+短文|沒想到才念了一個學期，她就發現跟她的興趣不合，念起來非常痛苦。她想了很久，決定跟媽媽討論轉系的事。|Không ngờ mới học một học kỳ cô đã nhận ra không hợp sở thích, học rất khổ sở. Cô nghĩ rất lâu rồi quyết định bàn với mẹ chuyện chuyển khoa.
+短文|媽媽聽到何雅婷打算轉到國際關係系，非常生氣。她覺得何雅婷好不容易才考上這麼好的科系，怎麼可以說放棄就放棄？|Mẹ nghe Nhã Đình định chuyển sang khoa quan hệ quốc tế thì rất giận. Bà thấy con khó khăn lắm mới đỗ khoa tốt như vậy, sao có thể nói bỏ là bỏ?
+短文|而且，念會計系工作機會比較多。跟興趣比起來，將來的發展當然更重要。如果她真的對別的課有興趣，利用時間去旁聽就好了。不管何雅婷怎麼說，她都反對。|Hơn nữa học kế toán nhiều cơ hội việc làm hơn. So với sở thích, tương lai đương nhiên quan trọng hơn. Nếu thật sự thích môn khác, tranh thủ đi dự thính là được. Dù Nhã Đình nói thế nào bà cũng phản đối.
+短文|不過何雅婷告訴媽媽，她個性活潑，而且外語能力不錯，如果念國際關係，會有更好的成績，請媽媽不必擔心她的將來。|Nhưng Nhã Đình nói với mẹ rằng cô tính cách hoạt bát, ngoại ngữ khá, nếu học quan hệ quốc tế sẽ đạt kết quả tốt hơn, xin mẹ đừng lo cho tương lai của cô.
+短文|這一次就請媽媽讓她自己決定吧。媽媽想了又想，捨不得女兒念得這麼痛苦，最後還是同意了。|Lần này xin mẹ để con tự quyết định. Mẹ suy nghĩ mãi, không nỡ thấy con học khổ sở như vậy, cuối cùng vẫn đồng ý.
+短文|何雅婷聽了非常高興，她立刻上網填表辦轉系的手續，申請上學期的成績單，然後還請教授幫她寫推薦信。|Nhã Đình nghe xong rất vui, cô lập tức lên mạng điền đơn làm thủ tục chuyển khoa, xin bảng điểm học kỳ trước, rồi còn nhờ giáo sư viết thư giới thiệu.
+@2|八折起|Giảm giá từ 20%
+起|từ… trở đi (bắt đầu từ)|Vp
+外套|áo khoác|N
+一般|nói chung|Adv
+商品|hàng hóa|N
+折扣|chiết khấu, giảm giá|N
+省|tiết kiệm|V
+牌子|nhãn hiệu|N
+品質|chất lượng|N
+選擇|lựa chọn|N
+樣子|kiểu dáng|N
+摸|sờ|V
+店員|nhân viên cửa hàng|N
+短|ngắn|Vs
+羊毛|len cừu|N
+暖和|ấm áp|Vs
+打折|giảm giá|V-sep
+原價|giá gốc|N
+刷卡|quẹt thẻ|V-sep
+現金|tiền mặt|N
+麻煩|phiền (xin nhờ)|V
+簽名|ký tên|V-sep
+破洞|bị thủng lỗ|Vp-sep
+發票|hóa đơn|N
+弄|làm (động từ chung)|V
+退|trả lại|V
+換|đổi|V
+店長|cửa hàng trưởng|N
+週年慶|lễ kỷ niệm thành lập (sale)|Phrase
+一般來說|nói chung|Phrase
+試穿|mặc thử|Phrase
+打完折|sau khi giảm giá|Phrase
+弄丟|làm mất|Phrase
+購物|mua sắm|Vi
+糾紛|tranh chấp, rắc rối|N
+電信|viễn thông|N
+門市|cửa hàng bán lẻ|N
+居留證|thẻ cư trú|N
+月租型|gói cước thuê bao tháng|N
+帳單|hóa đơn thanh toán|N
+並|(không) hề, hoàn toàn (không)|Adv
+包括|bao gồm|V
+解釋|giải thích|N
+顧客|khách hàng|N
+尤其|đặc biệt là|Adv
+騙|lừa|V
+頓|trận, bữa (lượng từ cho hành động)|M
+辦法|cách, biện pháp|N
+自動|tự động|Adv
+關機|tắt máy|Vp-sep
+修理|sửa chữa|V
+繳費|đóng phí|V-sep
+預付卡|SIM trả trước|Phrase
+換成|đổi thành|Phrase
+吃到飽|dùng thoải mái không giới hạn|Phrase
+嚇一跳|giật mình|Phrase
+客服中心|trung tâm chăm sóc khách hàng|Phrase
+#
+羅珊蒂|謝謝妳陪我來買外套。沒想到今天人這麼多。|Cảm ơn bạn đi cùng tôi mua áo khoác. Không ngờ hôm nay đông người thế.
+何雅婷|現在百貨公司週年慶。一般來說，週年慶的時候大部分的商品都會有不錯的折扣。很多人趁這時候來買需要的東西，可以省不少錢。這個牌子品質不錯，選擇也多，我們進去看看吧。|Giờ trung tâm đang kỷ niệm thành lập. Thường dịp này phần lớn hàng đều giảm giá khá. Nhiều người tranh thủ mua đồ cần, tiết kiệm được nhiều. Nhãn hiệu này chất lượng tốt, nhiều lựa chọn, mình vào xem đi.
+何雅婷|妳看，這件黃色的樣子不錯，摸起來也很舒服。妳覺得怎麼樣？|Bạn xem, cái màu vàng này kiểu đẹp, sờ cũng êm. Bạn thấy sao?
+羅珊蒂|我比較喜歡那件咖啡色的。|Tôi thích cái màu nâu kia hơn.
+何雅婷|妳還是兩件都拿去試穿吧。有時候得穿上才知道好看不好看。|Bạn cứ lấy cả hai cái thử đi. Có lúc phải mặc lên mới biết đẹp hay không.
+店員|小姐，這件外套妳穿起來真漂亮。大小、長短都很合適，顏色也好看，而且是羊毛的，又輕又暖和。|Cô ơi, áo này cô mặc đẹp quá. Size, độ dài đều vừa, màu cũng đẹp, lại là len cừu vừa nhẹ vừa ấm.
+何雅婷|這件打完折多少錢？|Cái này sau khi giảm giá bao nhiêu tiền?
+店員|原價3,900，現在九折，打完折3,510，算妳3,500。|Giá gốc 3.900, hiện giảm 10%, còn 3.510, tính cho cô 3.500.
+何雅婷|廣告上不是寫八折嗎？|Quảng cáo chẳng phải ghi giảm 20% sao?
+店員|不好意思，是八折起。那件八折，可是這件打九折。|Xin lỗi, là giảm từ 20% trở đi. Cái kia giảm 20% nhưng cái này giảm 10%.
+何雅婷|羊毛外套3,500，雖然不便宜，可是品質不錯，樣子也好，值得買。|Áo len 3.500 tuy không rẻ nhưng chất lượng tốt, kiểu cũng đẹp, đáng mua.
+羅珊蒂|好吧。我就買這件。|Được rồi. Tôi mua cái này.
+店員|刷卡還是付現金？今天刷Visa卡，可以再打九五折。|Quẹt thẻ hay trả tiền mặt? Hôm nay quẹt thẻ Visa được giảm thêm 5%.
+羅珊蒂|那就刷卡。|Vậy quẹt thẻ.
+店員|請等我一下。麻煩妳在這裡簽名。謝謝。歡迎下次再來。|Xin chờ một chút. Phiền cô ký tên ở đây. Cảm ơn. Hoan nghênh lần sau lại đến.
+羅珊蒂|我昨天買的這件外套，裡面破了一個洞。我要換一件新的。|Chiếc áo tôi mua hôm qua bên trong bị thủng một lỗ. Tôi muốn đổi cái mới.
+店員|請問妳帶發票來了嗎？|Xin hỏi cô có mang hóa đơn đến không?
+羅珊蒂|我弄丟了，找不到。|Tôi làm mất rồi, không tìm thấy.
+店員|那不好意思。按照我們公司的規定，沒有發票不能退換。|Vậy xin lỗi. Theo quy định công ty, không có hóa đơn không thể đổi trả.
+羅珊蒂|我昨天是刷卡買的，你們應該查得到資料。再說，衣服有問題也不是我的錯。|Hôm qua tôi quẹt thẻ mua, các bạn chắc tra được dữ liệu. Hơn nữa quần áo có vấn đề cũng không phải lỗi của tôi.
+店員|對不起，對不起。請等一下，我去問問店長。|Xin lỗi, xin lỗi. Xin chờ một lát, tôi đi hỏi cửa hàng trưởng.
+短文|安德思上個月在電信公司的門市辦了一支新手機。他剛到台灣的時候，用的是預付卡，所以一拿到居留證就馬上去換成月租型的。|Tháng trước An Đức Tư làm một số điện thoại mới ở cửa hàng viễn thông. Lúc mới đến Đài Loan anh dùng SIM trả trước nên vừa có thẻ cư trú là đổi ngay sang gói thuê bao tháng.
+短文|店員告訴他，一個月只要一千多塊就能吃到飽。安德思高興得不得了，就放心地給親戚朋友打電話。|Nhân viên bảo mỗi tháng chỉ hơn một nghìn đồng là dùng thoải mái. An Đức Tư vui vô cùng, yên tâm gọi điện cho người thân bạn bè.
+短文|沒想到前幾天收到帳單，一看要三千多塊，嚇了他一大跳。|Không ngờ mấy hôm trước nhận hóa đơn, xem thấy hơn ba nghìn đồng, anh giật nảy mình.
+短文|他馬上找何雅婷陪他去問清楚。店員告訴他，按照合約，吃到飽只是網路，並不包括打電話。|Anh lập tức nhờ Hà Nhã Đình đi cùng hỏi cho rõ. Nhân viên bảo theo hợp đồng, "dùng thoải mái" chỉ là mạng, không bao gồm gọi điện.
+短文|何雅婷聽了店員的解釋，非常生氣。外國人怎麼看得懂這麼複雜的中文合約？店員應該把重要的事情跟顧客說清楚，尤其是對外國人的時候。這不是騙人嗎？|Nhã Đình nghe nhân viên giải thích thì rất giận. Người nước ngoài sao đọc hiểu hợp đồng tiếng Trung phức tạp như vậy? Nhân viên nên nói rõ những việc quan trọng với khách, nhất là với người nước ngoài. Thế chẳng phải lừa người sao?
+短文|何雅婷把店員罵了一頓，可是一點辦法也沒有。|Nhã Đình mắng nhân viên một trận nhưng chẳng có cách nào.
+短文|回家的路上，何雅婷告訴安德思，她在報上看到過不少買手機的糾紛。有人剛買的新手機常常自動關機，修理了幾次都修不好，可是電信公司不願意換新的給他。|Trên đường về, Nhã Đình kể với An Đức Tư rằng cô từng đọc nhiều vụ tranh chấp mua điện thoại trên báo. Có người mới mua điện thoại hay tự tắt máy, sửa mấy lần không được mà công ty viễn thông không chịu đổi cái mới.
+短文|還有人手機聽不清楚，電信公司也說是因為他們住在山邊，不同意退錢。何雅婷建議安德思給電信公司的客服中心打電話。要是還不行，就只好去繳費了。|Lại có người nghe không rõ, công ty bảo do họ ở gần núi nên không đồng ý hoàn tiền. Nhã Đình khuyên An Đức Tư gọi trung tâm chăm sóc khách hàng; nếu vẫn không được thì đành đi đóng phí.
+@3|外套帶了沒有？|Bạn mang áo khoác chưa?
+陳敏萱|Trần Mẫn Huyên (người Hà Lan)|Name
+高橋健太|Takahashi Kenta (người Nhật)|Name
+空氣|không khí|N
+影響|ảnh hưởng|N
+穩定|ổn định|Vs
+幸虧|may mà|Adv
+躲|trốn, ẩn nấp|Vi
+度|độ|M
+溫度|nhiệt độ|N
+零下|dưới không độ|Vs-attr
+感覺|cảm thấy|Vst
+實際|thực tế|Vs
+難怪|hèn gì|Adv
+季節|mùa|N
+火鍋|lẩu|N
+海鮮|hải sản|N
+新鮮|tươi|Vs
+櫻花|hoa anh đào|N
+變化|biến đổi|N
+氣溫|nhiệt độ không khí|N
+差|chênh lệch|Vst
+幾乎|hầu như|Adv
+乾|khô|Vs
+發霉|bị mốc|Vp-sep
+除濕機|máy hút ẩm|N
+雨季|mùa mưa|N
+涼快|mát mẻ|Vs
+潮濕|ẩm ướt|Vs
+悶|oi bức, ngột ngạt|Vs
+冷氣|máy lạnh|N
+荷蘭|Hà Lan|Name
+出大太陽|nắng chói chang|Phrase
+颳風|nổi gió|Phrase
+受到|bị, chịu (ảnh hưởng)|Phrase
+受不了|không chịu nổi|Phrase
+餓死了|đói chết đi được|Phrase
+後母臉|mặt dì ghẻ (thời tiết thất thường)|Phrase
+祖先|tổ tiên|N
+移民|di dân, nhập cư|Vi
+當中|trong số, giữa|N
+根據|dựa theo|Prep
+農曆|âm lịch|N
+農業|nông nghiệp|N
+農人|nông dân|N
+難得|hiếm có|Vs
+祭祖|cúng tổ tiên|Vi
+拜|lạy, bái|V
+神|thần|N
+拜拜|cúng bái|Vi
+蚊蟲|muỗi và côn trùng|N
+戴|đeo, đội|V
+香包|túi thơm|N
+掛|treo|V
+瘟疫|dịch bệnh|N
+做法|cách làm|N
+多少|phần nào, ít nhiều|Adv
+作用|tác dụng|N
+迷信|mê tín|N
+收成|thu hoạch|N
+民族|dân tộc|N
+月亮|mặt trăng|N
+圓|tròn|Vs
+社會|xã hội|N
+團聚|đoàn tụ|Vi
+月餅|bánh trung thu|N
+柚子|bưởi|N
+故事|câu chuyện|N
+溫馨|ấm áp, thân thương|Vs
+端午節|Tết Đoan Ngọ|Name
+中秋節|Tết Trung Thu|Name
+雄黃酒|rượu hùng hoàng|Name
+古時候|ngày xưa|Phrase
+趕走|đuổi đi|Phrase
+過節|ăn lễ, đón lễ|Phrase
+#
+陳敏萱|妳怎麼現在才來？我們等妳等半天了。|Sao bây giờ bạn mới đến? Bọn mình đợi bạn mãi rồi.
+羅珊蒂|對不起，我來晚了。我走到半路下起雨來了，只好又回去拿傘。台灣的天氣真奇怪，說變就變。|Xin lỗi, tôi đến muộn. Đi nửa đường thì mưa nên đành quay lại lấy dù. Thời tiết Đài Loan lạ thật, nói đổi là đổi.
+陳敏萱|就是啊。昨天還出大太陽，今天就又颳風又下雨。|Đúng vậy. Hôm qua còn nắng chang chang, hôm nay đã gió lại mưa.
+高橋健太|台灣是個海島，冬天的時候，受到北方來的冷空氣的影響，天氣很不穩定。|Đài Loan là đảo biển, mùa đông chịu ảnh hưởng không khí lạnh từ phương bắc nên thời tiết rất thất thường.
+羅珊蒂|幸虧我買了外套，要不然就只好躲在家裡了。|May mà tôi mua áo khoác, không thì đành trốn ở nhà.
+陳敏萱|沒那麼嚴重吧，今天還有18度。這樣的溫度在荷蘭只能算是夏天。荷蘭的冬天還常常到零下呢。|Đâu đến nỗi vậy, hôm nay còn 18 độ. Nhiệt độ này ở Hà Lan chỉ tính là mùa hè. Mùa đông Hà Lan còn hay xuống dưới không độ.
+高橋健太|今天溫度是不低，不過因為下雨，感覺比實際溫度低得多，難怪羅珊蒂受不了。|Hôm nay nhiệt độ không thấp nhưng vì mưa nên cảm giác lạnh hơn nhiều so với thực tế, hèn gì La San Đế chịu không nổi.
+羅珊蒂|我餓死了，我們趕快點菜吧。天氣這麼冷，吃牛肉最好。你們呢？想吃點什麼？|Tôi đói chết đi được, mình gọi món nhanh đi. Trời lạnh thế này ăn thịt bò là nhất. Các bạn muốn ăn gì?
+陳敏萱|我昨天剛吃過烤肉，今天就吃素菜鍋吧。這個季節的大白菜最甜了。|Hôm qua tôi vừa ăn đồ nướng, hôm nay ăn lẩu rau chay. Cải thảo mùa này ngọt nhất.
+高橋健太|聽說這家火鍋店的海鮮很新鮮。我要海鮮。|Nghe nói hải sản quán lẩu này rất tươi. Tôi chọn hải sản.
+羅珊蒂|沒想到台灣的冬天這麼冷，看起來我得讓我男朋友春天的時候再來。|Không ngờ mùa đông Đài Loan lạnh thế, xem ra phải để bạn trai tôi mùa xuân hãy đến.
+高橋健太|春天真的很浪漫，到處都看得到櫻花，可是在台灣有句話說：「春天後母臉」。春天天氣變化比冬天更大，早晚的氣溫也差很多。|Mùa xuân thật lãng mạn, đâu cũng thấy hoa anh đào, nhưng ở Đài Loan có câu: "Mùa xuân mặt dì ghẻ". Thời tiết xuân biến đổi còn nhiều hơn mùa đông, sáng tối chênh lệch nhiều.
+陳敏萱|高橋說的沒錯。我朋友告訴我，去年春天幾乎每天都下雨，衣服總是乾不了。|Takahashi nói đúng. Bạn tôi kể mùa xuân năm ngoái gần như ngày nào cũng mưa, quần áo mãi không khô.
+高橋健太|是啊，衣服、鞋子都發霉了，所以我去年買了除濕機。|Phải, quần áo giày dép đều mốc nên năm ngoái tôi mua máy hút ẩm.
+羅珊蒂|我們那兒雖然也有雨季，可是下過雨以後晚上就涼快了。不像台北這麼潮濕。我六月來的時候，又悶又熱，又沒有冷氣，真受不了。|Chỗ chúng tôi tuy cũng có mùa mưa nhưng mưa xong buổi tối mát. Không ẩm như Đài Bắc. Tháng sáu tôi đến vừa oi vừa nóng lại không có máy lạnh, thật chịu không nổi.
+陳敏萱|我是八月來的。我一來就去海邊曬太陽，朋友都羨慕死了。本來打算六月底回國，但是因為台灣的夏天可以玩很多水上活動，而且吃得到很多熱帶水果，所以我決定晚一點再回去。|Tôi đến tháng tám. Vừa đến là ra biển tắm nắng, bạn bè ghen tị chết đi. Vốn định cuối tháng sáu về nước nhưng mùa hè Đài Loan chơi được nhiều hoạt động trên nước, lại có nhiều trái cây nhiệt đới nên tôi quyết định về muộn hơn.
+高橋健太|快吃吧。肉煮久了就不好吃了。|Ăn nhanh đi. Thịt nấu lâu sẽ không ngon.
+羅珊蒂|真的很好吃。我男朋友來的時候，我們一定要再來這裡聚一聚。|Ngon thật. Khi bạn trai tôi đến, chúng ta nhất định phải họp mặt ở đây lần nữa.
+大家|那有什麼問題。|Có gì đâu mà không được.
+短文|在台灣，除了原住民以外，大部分的人的祖先都是從中國移民來的，所以我們的傳統節日都跟中國一樣。一年當中，最重要的三個節日——春節、端午節跟中秋節——都是根據農曆來的。|Ở Đài Loan, ngoài người bản địa, tổ tiên của đa số đều di cư từ Trung Quốc nên các lễ truyền thống giống Trung Quốc. Ba lễ quan trọng nhất trong năm — Tết, Đoan Ngọ và Trung Thu — đều tính theo âm lịch.
+短文|古時候，中國是一個農業國家，農人的生活和節日都跟季節的變化有關係。比方說，新年又叫春節，就是春天的開始。這時候，天氣還很冷，農人利用這段難得的休息時間，跟家人好好地聚聚。|Ngày xưa Trung Quốc là nước nông nghiệp, đời sống và lễ hội của nông dân gắn với sự thay đổi mùa. Ví dụ năm mới còn gọi là Xuân tiết, tức bắt đầu mùa xuân. Lúc đó trời còn lạnh, nông dân tận dụng khoảng nghỉ hiếm có để sum họp gia đình.
+短文|除夕這一天，在家除了祭祖，還要拜神。大年初一，全家人到廟裡拜拜，希望新的一年，神能讓他們一家人平安、健康。|Ngày giao thừa, ở nhà ngoài cúng tổ tiên còn phải bái thần. Mùng một Tết cả nhà đến chùa cúng bái, mong năm mới thần phù hộ cả nhà bình an, khỏe mạnh.
+短文|到了農曆五月，天氣越來越熱，蚊蟲慢慢多起來，人也容易生病。五月五號端午節這一天，古代的人戴香包、喝雄黃酒，還在門上掛一些植物。這些都是為了把瘟疫趕走。|Đến tháng năm âm lịch trời ngày càng nóng, muỗi và côn trùng dần nhiều, con người dễ sinh bệnh. Ngày mùng năm tháng năm, Tết Đoan Ngọ, người xưa đeo túi thơm, uống rượu hùng hoàng, còn treo vài loại cây trước cửa, tất cả để đuổi dịch bệnh.
+短文|在現代，有人還按照傳統的做法過節，他們覺得這麼做多少有一點作用，有的人認為這是一種迷信。|Thời nay có người vẫn đón lễ theo cách truyền thống, họ thấy làm vậy ít nhiều có tác dụng, có người cho đó là mê tín.
+短文|秋天是收成的季節，很多民族都有慶祝活動。農曆八月十五日的中秋節就是這樣來的。這一天，月亮又大又圓。|Mùa thu là mùa thu hoạch, nhiều dân tộc có hoạt động ăn mừng. Tết Trung Thu ngày rằm tháng tám âm lịch ra đời như vậy. Hôm đó trăng vừa to vừa tròn.
+短文|雖然現在台灣已經不是農業社會了，但是離開家鄉的人，再遠也要回家團聚。晚餐以後，一家人吃著月餅、柚子，一邊給孩子說月亮的故事，過一個溫馨的節日。|Tuy Đài Loan nay không còn là xã hội nông nghiệp, người xa quê dù xa mấy cũng về đoàn tụ. Sau bữa tối cả nhà ăn bánh trung thu, bưởi, vừa kể cho con nghe chuyện về mặt trăng, đón một ngày lễ ấm cúng.
+@4|我愛台灣的人情味|Tôi yêu nghĩa tình của người Đài Loan
+愛|yêu|Vst
+人情味|tình người, sự ấm áp|N
+放|thả|V
+天燈|đèn trời|N
+願望|điều ước|N
+訊號|tín hiệu, sóng|N
+元宵|bánh trôi nước (nguyên tiêu)|N
+牆|tường|N
+耐心|kiên nhẫn|N
+感動|cảm động|Vs
+擔仔麵|mì Đạm Tử (đặc sản Đài Nam)|N
+招牌|bảng hiệu|N
+當地|địa phương|Vs-attr
+賺|kiếm (tiền)|V
+而|mà, trái lại|Adv
+交|kết (bạn)|V
+理想|lý tưởng|N
+剛剛|vừa rồi|Adv
+改天|hôm khác|Adv
+無聊|chán|Vs
+東區|khu Đông (Đài Bắc)|N
+煙火|pháo hoa|N
+跨年|đón năm mới|Vi
+種類|chủng loại|N
+價錢|giá cả|N
+感覺|cảm giác|N
+雞排|gà cốm, gà rán phi lê|N
+口|miếng, ngụm|M
+紅茶|hồng trà|N
+平溪|Bình Khê (thị trấn phía bắc Đài Loan)|Name
+元宵節|Tết Nguyên Tiêu|Name
+孔廟|Văn Miếu|Name
+校外教學|tham quan học tập ngoài trường|Phrase
+碰到|gặp, tình cờ gặp|Phrase
+水煎包|bánh bao chiên|Phrase
+同事|đồng nghiệp|N
+美食|món ngon|N
+上|lên|V
+泡|ngâm (trà, suối nước nóng)|V
+錯過|bỏ lỡ|Vpt
+營業|kinh doanh, mở cửa|Vi
+夜景|cảnh đêm|N
+古老|cổ xưa|Vs
+古蹟|di tích|N
+重視|coi trọng|Vst
+歷史|lịch sử|N
+風俗|phong tục|N
+習慣|thói quen|N
+道地|chính gốc|Vs
+粥|cháo|N
+講究|chú trọng, cầu kỳ|Vst
+頓|bữa (lượng từ)|M
+速度|tốc độ|N
+窄|hẹp|Vs
+街道|đường phố|N
+蓋|xây|V
+待|ở lại|Vi
+欣賞|thưởng thức|V
+美麗|xinh đẹp|Vs
+鈴木|Suzuki|Name
+赤崁樓|lầu Xích Khảm|Name
+留下來|để lại|Phrase
+木造|làm bằng gỗ|Phrase
+非去不可|nhất định phải đi|Phrase
+#
+陳敏萱|你們昨天去校外教學，玩得怎麼樣？|Hôm qua các bạn đi tham quan ngoài trường, vui không?
+安德思|很不錯。我們去了很多地方。我最喜歡平溪老街，那裡的氣氛讓我想起了家鄉。|Rất tuyệt. Chúng tôi đi nhiều nơi. Tôi thích nhất phố cổ Bình Khê, bầu không khí ở đó khiến tôi nhớ quê nhà.
+羅珊蒂|平溪，我元宵節的時候剛去過。我語言交換的朋友帶我去放天燈。他告訴我把願望寫在天燈上，就可以實現。|Bình Khê, Tết Nguyên Tiêu tôi vừa đến. Bạn trao đổi ngôn ngữ dẫn tôi đi thả đèn trời. Cậu ấy bảo viết điều ước lên đèn trời thì sẽ thành hiện thực.
+安德思|聽說那天放天燈的人特別多。|Nghe nói hôm đó người thả đèn trời đặc biệt đông.
+羅珊蒂|是啊，後來我找不到我朋友，手機又收不到訊號，還好碰到一位熱心的小姐，她不但帶我回車站，還請我吃了一碗元宵。|Đúng vậy, sau đó tôi không tìm thấy bạn, điện thoại lại không có sóng, may gặp một cô gái nhiệt tình, không những dẫn tôi về ga còn mời tôi ăn một bát bánh trôi.
+高橋健太|對、對、對，台灣人真有人情味。有一次，我去參觀台南孔廟，正在研究牆上的字，有一位老先生過來很有耐心地給我解釋。這件事情讓我非常感動。|Đúng đúng, người Đài Loan thật giàu tình người. Có lần tôi đến tham quan Văn Miếu Đài Nam, đang xem chữ trên tường thì có một cụ ông đến giải thích rất kiên nhẫn. Chuyện đó khiến tôi rất cảm động.
+安德思|我聽說台南有很多有特色的老店，夜市的小吃也很有名。你吃了擔仔麵嗎？|Nghe nói Đài Nam có nhiều tiệm lâu đời đặc sắc, đồ ăn vặt chợ đêm cũng nổi tiếng. Bạn ăn mì Đạm Tử chưa?
+高橋健太|當然吃了。我朋友帶我去吃了好幾樣小吃。那些店都在巷子裡，沒有招牌，只有當地人才知道，可是東西都好吃得不得了。|Tất nhiên rồi. Bạn tôi dẫn đi ăn mấy món. Các tiệm đó đều trong hẻm, không có bảng hiệu, chỉ dân địa phương mới biết, nhưng món nào cũng ngon cực kỳ.
+陳敏萱|台北的巷子裡也有很多有特色的商店。像我們學校附近的巷子裡有一家茶館，你一進去老闆就拿好茶招待你，跟你談茶、談生活。|Trong hẻm Đài Bắc cũng có nhiều cửa hàng đặc sắc. Như trong hẻm gần trường chúng ta có một quán trà, bạn vừa vào ông chủ đã mời trà ngon, nói chuyện về trà và cuộc sống.
+陳敏萱|老闆說，他開茶館，不是為了賺錢，而是為了讓大家認識茶文化，也交朋友。|Ông chủ nói ông mở quán trà không phải để kiếm tiền mà để mọi người hiểu văn hóa trà và kết bạn.
+高橋健太|台灣有特色的商店很多都不在大街上，你得走進巷子才找得到。|Nhiều cửa hàng đặc sắc ở Đài Loan không nằm trên phố lớn, phải đi vào hẻm mới tìm thấy.
+羅珊蒂|為什麼？|Tại sao?
+高橋健太|因為台北的房租太貴了，一些有理想的人只好把店開在巷子裡。|Vì tiền thuê ở Đài Bắc quá đắt, một số người có lý tưởng đành mở tiệm trong hẻm.
+安德思|敏萱剛剛說的那家茶館，我很有興趣。改天我們一起去，怎麼樣？|Quán trà Mẫn Huyên vừa nói tôi rất hứng thú. Hôm nào cùng đi nhé?
+羅珊蒂|去茶館，太無聊了吧。我還是比較喜歡去熱鬧的地方，尤其是台北101新年放煙火的時候，跟幾十萬人一起看煙火、跨年，以前我從來沒有過這樣的經驗。|Đi quán trà chán chết. Tôi vẫn thích nơi náo nhiệt hơn, nhất là lúc Taipei 101 bắn pháo hoa năm mới, cùng mấy trăm nghìn người xem pháo hoa đón năm, trước đây tôi chưa từng có trải nghiệm như vậy.
+高橋健太|我最喜歡逛夜市。那裡的東西種類又多，價錢又便宜。|Tôi thích nhất dạo chợ đêm. Đồ ở đó nhiều loại, giá lại rẻ.
+陳敏萱|我也喜歡夜市的熱鬧，讓我有過節的感覺。在我家鄉，只有過年過節的時候才看得到這麼多人。|Tôi cũng thích sự náo nhiệt của chợ đêm, cho tôi cảm giác như ngày lễ. Ở quê tôi chỉ dịp Tết lễ mới thấy đông người thế.
+羅珊蒂|我到夜市一定先找吃的，像臭豆腐、水煎包這些都不錯，不過我最愛的還是炸雞排。一口雞排，一口冰紅茶，真是開心極了。|Đến chợ đêm tôi nhất định tìm đồ ăn trước, như đậu hũ thối, bánh bao chiên đều ngon, nhưng tôi thích nhất vẫn là gà rán. Một miếng gà, một ngụm trà đá, vui hết sức.
+高橋健太|我們這個週末就一起去吧！|Cuối tuần này chúng ta cùng đi nhé!
+短文|鈴木先生是高橋健太在日本的同事。他常聽高橋談到台灣的人情味和美食，所以上個星期他趁放假來台灣旅行。|Ông Suzuki là đồng nghiệp của Takahashi Kenta ở Nhật. Ông thường nghe Takahashi nói về tình người và món ngon Đài Loan nên tuần trước tranh thủ kỳ nghỉ đến Đài Loan du lịch.
+短文|高橋帶他去參觀故宮博物院，上陽明山泡茶、泡溫泉，當然也沒錯過東區，逛了24小時營業的書店，看了101的夜景，也吃了很多台北的美食。|Takahashi dẫn ông tham quan Bảo tàng Cố cung, lên núi Dương Minh uống trà, ngâm suối nước nóng, tất nhiên cũng không bỏ lỡ khu Đông, đi dạo hiệu sách mở 24 giờ, ngắm cảnh đêm Taipei 101 và ăn nhiều món ngon Đài Bắc.
+短文|健太還帶他在師大附近的巷子裡參觀了一些日本人留下來的木造房子。他覺得台北真是一個有特色的大城市。|Kenta còn dẫn ông tham quan vài ngôi nhà gỗ người Nhật để lại trong hẻm gần Shida. Ông thấy Đài Bắc đúng là thành phố lớn đặc sắc.
+短文|高橋告訴他，台灣還有一個地方非去不可——台南。台南是台灣最古老的城市，有很多古蹟，而且那裡的人特別重視傳統。|Takahashi bảo ông Đài Loan còn một nơi nhất định phải đến — Đài Nam. Đài Nam là thành phố cổ nhất Đài Loan, có nhiều di tích và người dân đặc biệt coi trọng truyền thống.
+短文|要是他對歷史有興趣或是想多了解一些台灣人傳統的風俗習慣，應該去台南走一趟。鈴木聽了，就決定第二天搭高鐵去。|Nếu ông hứng thú lịch sử hoặc muốn hiểu thêm phong tục tập quán truyền thống của người Đài Loan thì nên đến Đài Nam một chuyến. Suzuki nghe vậy quyết định hôm sau đi tàu cao tốc.
+短文|高橋健太也說到，對台南人來說，早餐非常重要。在赤崁樓附近就有很多小店賣台南人常吃的道地美食，所以鈴木一下高鐵就去吃了鹹粥、牛肉湯。|Takahashi còn nói với người Đài Nam bữa sáng rất quan trọng. Gần lầu Xích Khảm có nhiều tiệm nhỏ bán món chính gốc người Đài Nam thường ăn nên Suzuki vừa xuống tàu cao tốc đã đi ăn cháo mặn và canh thịt bò.
+短文|他沒想到台南人對吃這麼講究，每天花這麼多時間吃一頓早飯。|Ông không ngờ người Đài Nam cầu kỳ chuyện ăn uống đến thế, mỗi ngày dành nhiều thời gian cho một bữa sáng.
+短文|吃飽了，他在附近逛逛，發現台南人不但走路慢，說話速度也慢多了。窄窄的街道兩邊還留著很多日本人蓋的房子，跟台北真的很不一樣。|Ăn no ông đi dạo quanh đó, nhận ra người Đài Nam không chỉ đi chậm mà nói cũng chậm hơn nhiều. Hai bên đường hẹp vẫn còn nhiều nhà do người Nhật xây, thật khác Đài Bắc.
+短文|雖然他在台北玩得很開心，可是在台南才讓他有輕鬆的感覺。他決定在台南多待幾天，好好地欣賞這個美麗的城市。|Tuy chơi ở Đài Bắc rất vui nhưng chỉ ở Đài Nam ông mới cảm thấy thư thả. Ông quyết định ở Đài Nam thêm vài ngày để thưởng thức thành phố xinh đẹp này.
+@5|現在流行什麼？|Bây giờ đang thịnh hành gì?
+流行|thịnh hành|Vst
+唉|than ôi|Ptc
+演唱會|buổi hòa nhạc|N
+塞車|kẹt xe, nghẽn mạng|Vs
+上線|lên mạng, đăng nhập|V-sep
+成功|thành công|Vp
+倒楣|xui xẻo|Vs
+樂團|ban nhạc|N
+唱|hát|V
+興奮|phấn khích|Vs
+迷|mê, say mê|Vst
+歌詞|lời bài hát|N
+難過|buồn|Vs
+不如|không bằng|Vst
+現場|hiện trường, tại chỗ|N
+跳|nhảy|Vi
+整|cả, toàn bộ|Det
+震動|rung chuyển|Vi
+漫畫|truyện tranh|N
+內容|nội dung|N
+色情|khiêu dâm|Vs
+放鬆|thư giãn|Vst
+心情|tâm trạng|N
+五月天|Mayday (ban nhạc rock Đài Loan)|Name
+算了|thôi bỏ đi|Phrase
+受歡迎|được ưa chuộng|Phrase
+擠滿|chật kín|Phrase
+租書店|tiệm cho thuê sách|Phrase
+平板電腦|máy tính bảng|Phrase
+智慧型手機|điện thoại thông minh|Phrase
+殺時間|giết thời gian|Phrase
+漫畫展|triển lãm truyện tranh|Phrase
+來不及|không kịp|Phrase
+撞衫|đụng hàng (mặc giống nhau)|Vs
+它|nó|N
+塞|nhét|V
+當季|đúng mùa|N
+款式|kiểu dáng|N
+連續劇|phim truyền hình nhiều tập|N
+主角|vai chính|N
+甜美|ngọt ngào, dễ thương|Vs
+寄|gửi (qua bưu điện)|V
+居然|không ngờ, thế mà|Adv
+害|làm hại, khiến|V
+既然|đã… thì|Conj
+服裝|trang phục|N
+媒體|truyền thông|N
+方式|phương thức|N
+吸引|thu hút|Vst
+避免|tránh|V
+包包|túi xách|N
+商人|thương nhân|N
+產品|sản phẩm|N
+電子|điện tử|N
+市場|thị trường|N
+新型|kiểu mới|Vs-attr
+落伍|lạc hậu|Vs
+知音|tri âm|N
+想像|tưởng tượng|V
+喇叭褲|quần ống loe|N
+印象|ấn tượng|N
+遊戲|trò chơi|N
+化妝|trang điểm|V-sep
+一模一樣|y hệt|Phrase
+淺藍色|màu xanh nhạt|Phrase
+脫掉|cởi ra|Phrase
+小題大作|chuyện bé xé ra to|Phrase
+推出|tung ra|Phrase
+#
+陳敏萱|你怎麼了？怎麼那麼沒精神？|Bạn sao vậy? Sao trông không có tinh thần thế?
+高橋健太|唉！氣死了！昨天我上網買五月天演唱會的票。沒想到網路塞車，我試了兩、三個鐘頭，等我上線成功，票已經賣完了。真倒楣！|Ôi! Tức chết đi được! Hôm qua tôi lên mạng mua vé concert Mayday. Không ngờ mạng nghẽn, tôi thử hai ba tiếng, đến khi vào được thì vé đã bán hết. Xui thật!
+陳敏萱|你別生氣了。買不到就算了。為什麼非聽不可？|Bạn đừng giận nữa. Không mua được thì thôi. Sao nhất định phải nghe?
+羅珊蒂|五月天是誰？什麼演唱會啊？|Mayday là ai? Concert gì vậy?
+高橋健太|妳聽。這就是他們的歌。五月天是華人世界最受歡迎的樂團。下個月他們的演唱會，我當然不能錯過。|Bạn nghe này. Đây là bài của họ. Mayday là ban nhạc được yêu thích nhất thế giới người Hoa. Concert tháng sau tôi đương nhiên không thể bỏ lỡ.
+陳敏萱|我朋友去聽了他們的跨年演唱會。她說，那天體育館擠滿了人，大家都站在椅子上又唱又叫，興奮極了。|Bạn tôi đi nghe concert đón năm mới của họ. Cô ấy nói hôm đó nhà thi đấu chật cứng, mọi người đứng trên ghế vừa hát vừa hét, phấn khích cực kỳ.
+羅珊蒂|他們很帥嗎？為什麼這麼多人迷他們？|Họ đẹp trai à? Sao nhiều người mê họ thế?
+高橋健太|大家喜歡他們是因為他們的歌詞不但都寫得很美，而且能說出年輕人心裡的話。高興的時候，要聽；難過的時候，更要聽。|Mọi người thích họ vì lời bài hát không chỉ hay mà còn nói được tiếng lòng người trẻ. Lúc vui thì nghe, lúc buồn càng phải nghe.
+陳敏萱|演唱會人那麼多，票又不好買，不如在家上網看舒服。|Concert đông người, vé lại khó mua, chi bằng xem trên mạng ở nhà cho thoải mái.
+高橋健太|聽演唱會當然要去現場，大家一起唱，一起跳，整個體育館都在震動。這樣的感覺沒去過的是不能了解的。|Nghe concert đương nhiên phải đến tận nơi, mọi người cùng hát, cùng nhảy, cả nhà thi đấu rung chuyển. Cảm giác này ai chưa từng đi thì không hiểu được.
+陳敏萱|聲音那麼大，吵死了。還是在家好。|Âm thanh to thế ồn chết đi được. Vẫn ở nhà hơn.
+高橋健太|妳整天在家不會太無聊嗎？|Bạn ở nhà cả ngày không chán lắm sao?
+陳敏萱|怎麼會呢？有那麼多有趣的漫畫，怎麼會覺得無聊呢？|Sao lại chán? Có nhiều truyện tranh thú vị thế, sao thấy chán được?
+羅珊蒂|我媽媽說租書店的漫畫內容都太色情，不適合我們看。|Mẹ tôi bảo truyện tranh ở tiệm cho thuê nội dung đều quá khiêu dâm, không hợp để chúng ta đọc.
+高橋健太|現在誰去租書店啊？大家都用平板電腦跟智慧型手機上網看了。|Giờ ai còn đến tiệm thuê sách? Mọi người đều dùng máy tính bảng và điện thoại thông minh đọc trên mạng.
+羅珊蒂|我媽也說她朋友的孩子因為迷漫畫，花了太多時間，影響了功課，所以她不讓我們看。|Mẹ tôi cũng nói con của bạn bà vì mê truyện tranh, tốn quá nhiều thời gian, ảnh hưởng bài vở nên bà không cho chúng tôi đọc.
+高橋健太|不會啊，好的漫畫也很多啊。看漫畫除了可以放鬆心情，還可以學到很多歷史、文化和傳統。|Không đâu, truyện hay cũng nhiều mà. Đọc truyện tranh ngoài thư giãn còn học được nhiều lịch sử, văn hóa và truyền thống.
+陳敏萱|沒錯。我也是看了漫畫才知道壽司是怎麼做的。|Đúng vậy. Tôi cũng nhờ đọc truyện tranh mới biết sushi làm thế nào.
+羅珊蒂|看漫畫就是為了殺時間。你們想太多啦。|Đọc truyện tranh chỉ để giết thời gian thôi. Các bạn nghĩ nhiều quá.
+陳敏萱|幾點了？這麼晚啦？我跟朋友約了去看漫畫展，他們在捷運站等我，再不走就來不及了。改天再聊吧。|Mấy giờ rồi? Muộn thế sao? Tôi hẹn bạn đi xem triển lãm truyện tranh, họ đợi ở ga MRT, không đi nữa là không kịp. Hôm khác nói chuyện tiếp nhé.
+短文|何雅婷昨天晚上去上西班牙文課的時候，發現班上有個同學穿著一件跟她一模一樣的淺藍色外套。何雅婷馬上脫掉外套，把它塞進背包裡。|Tối qua khi đi học lớp tiếng Tây Ban Nha, Hà Nhã Đình thấy một bạn trong lớp mặc áo khoác xanh nhạt giống y hệt áo cô. Cô lập tức cởi áo, nhét vào ba lô.
+短文|她覺得怎麼會發生這種事情呢？這件外套是當季款式，她看到連續劇裡的女主角穿了這件衣服看起來很甜美，所以才特別請朋友從國外寄來的。沒想到居然撞衫，害她整個晚上心情都很不好。|Cô nghĩ sao lại xảy ra chuyện này? Áo này là mẫu theo mùa, cô thấy nữ chính phim truyền hình mặc trông rất dễ thương nên nhờ bạn đặc biệt gửi từ nước ngoài về. Không ngờ lại đụng hàng, khiến cả tối cô rất bực.
+短文|今天中午下了課以後，何雅婷跟陳敏萱和安德思見面的時候，談到了這件事。陳敏萱覺得不需要為了這種事不高興。既然是最流行的款式，當然會有很多人穿。|Trưa nay sau giờ học, khi gặp Trần Mẫn Huyên và An Đức Tư, Nhã Đình kể chuyện này. Mẫn Huyên thấy không cần buồn vì chuyện đó. Đã là mẫu thịnh hành nhất thì tất nhiên nhiều người mặc.
+短文|服裝公司在各種媒體上用不同的方式做廣告，吸引大家去買，撞衫就很難避免。只要能穿出不同的感覺就好了。|Các công ty thời trang quảng cáo trên đủ loại truyền thông bằng nhiều cách để thu hút mọi người mua, nên đụng hàng khó tránh. Chỉ cần mặc ra cảm giác khác là được.
+短文|安德思不懂為什麼有人怕撞衫。他認為何雅婷太小題大作了。衣服、包包跟別人一樣有什麼關係。|An Đức Tư không hiểu sao có người sợ đụng hàng. Anh cho rằng Nhã Đình làm to chuyện. Quần áo, túi xách giống người khác thì có sao.
+短文|商人為了賺錢，每年都要推出新的產品，新的款式，像電子產品，如果市場上有了最新型的，自己沒有，就落伍了。如果別人有跟自己一樣的新產品，一定會說個不停，像碰到了知音。既然這樣，女人為什麼怕撞衫呢？|Thương nhân để kiếm tiền mỗi năm đều tung sản phẩm, mẫu mới; như đồ điện tử, thị trường có loại mới nhất mà mình không có thì lạc hậu. Nếu người khác có sản phẩm mới giống mình thì nhất định nói không ngừng như gặp tri âm. Đã vậy sao phụ nữ lại sợ đụng hàng?
+短文|何雅婷覺得他說的沒錯，是很難想像如果自己穿著喇叭褲去上課，會給別人什麼印象。再說，如果不懂流行，不看最受歡迎的連續劇，不去最熱門的餐廳，不玩最流行的電腦遊戲，不知道現在流行化什麼樣的妝，大概就沒什麼朋友了。|Nhã Đình thấy anh nói đúng, thật khó tưởng tượng nếu mình mặc quần ống loe đi học sẽ gây ấn tượng gì. Hơn nữa nếu không hiểu mốt, không xem phim ăn khách nhất, không đến quán hot nhất, không chơi game thịnh hành nhất, không biết đang chuộng kiểu trang điểm nào thì chắc chẳng có mấy bạn.
+@6|到鄉下住一晚！|Về quê ở một đêm!
+李文彥|Lý Văn Ngạn (người Mỹ gốc Hoa)|Name
+表哥|anh họ (con của cô)|N
+隨便|tùy ý, cứ tự nhiên|Adv
+種|trồng|V
+蔬菜|rau củ|N
+農夫|nông dân|N
+減少|giảm bớt|V
+農藥|thuốc trừ sâu|N
+天然|thiên nhiên|Vs-attr
+堆肥|phân ủ|N
+辛苦|vất vả|Vs
+地位|địa vị|N
+收入|thu nhập|N
+利潤|lợi nhuận|N
+屋子|căn nhà, gian phòng|N
+番茄|cà chua|N
+品種|giống, chủng loại|N
+氣候|khí hậu|N
+長|mọc, lớn lên|Vi
+熟|chín|Vp
+片|mảnh, vạt (đất)|M
+田|ruộng|N
+照顧|chăm sóc|V
+敢|dám|Vaux
+條件|điều kiện|N
+黑|tối, đen|Vp
+摘下來|hái xuống|Phrase
+做不動|làm không nổi|Phrase
+基因改造|biến đổi gen|Phrase
+忙得過來|xoay xở kịp|Phrase
+開玩笑|nói đùa|Phrase
+看天吃飯|ăn nhờ ông trời|Phrase
+小農|tiểu nông, nông dân nhỏ|N
+市集|chợ phiên|N
+食材|nguyên liệu thực phẩm|N
+產地|nơi sản xuất|N
+盡量|cố gắng hết sức|Adv
+友善|thân thiện|Vs
+對待|đối xử|V
+土地|đất đai|N
+信任|tin tưởng|Vst
+寧可|thà rằng|Vst
+跑|chạy (đi đi lại lại)|Vi
+支持|ủng hộ|V
+文章|bài viết|N
+推銷|quảng bá, chào bán|V
+其中|trong đó|Det
+師傅|thợ cả, sư phụ|N
+農村|nông thôn|N
+長大|lớn lên|Vi
+幫助|giúp đỡ|V
+拜訪|thăm viếng|V
+出產|sản xuất ra|V
+由於|do, bởi vì|Conj
+許多|nhiều|Det
+接近|gần gũi, tiếp cận|Vst
+自然|tự nhiên|N
+變成|biến thành|Vpt
+休閒|thư giãn, giải trí|Vs
+隨著|cùng với, theo sự|Prep
+觀光|tham quan du lịch|Vi
+消費|tiêu dùng|Vi
+安靜|yên tĩnh|Vs
+消失|biến mất|Vp
+出問題|xảy ra vấn đề|Phrase
+一方面|một mặt|Phrase
+#
+表哥|歡迎、歡迎。大家隨便坐。這是剛摘下來的芒果，大家嚐嚐。|Hoan nghênh, hoan nghênh. Mọi người cứ tự nhiên ngồi. Đây là xoài vừa hái, mời mọi người nếm thử.
+李文彥|很好吃吧？我表哥除了芒果以外，還種了很多有機蔬菜。他是現代農夫。|Ngon chứ? Anh họ tôi ngoài xoài còn trồng nhiều rau hữu cơ. Anh là nông dân hiện đại.
+安德思|為什麼說他是現代農夫？|Sao nói anh ấy là nông dân hiện đại?
+李文彥|因為他跟傳統農夫很不一樣。為了減少對環境的污染，他不用農藥，而且只用天然堆肥，大家可以放心地吃。|Vì anh rất khác nông dân truyền thống. Để giảm ô nhiễm môi trường, anh không dùng thuốc trừ sâu, chỉ dùng phân ủ tự nhiên, mọi người cứ yên tâm ăn.
+安德思|當農夫不是很辛苦嗎？你為什麼要當農夫？|Làm nông chẳng phải rất vất vả sao? Sao anh lại làm nông?
+表哥|我本來在大學教書，因為看到父母年紀大了，做不動了，才決定回來幫忙的。|Tôi vốn dạy đại học, thấy cha mẹ tuổi cao làm không nổi nữa mới quyết định về giúp.
+羅珊蒂|你家人不反對你回來嗎？|Gia đình anh không phản đối anh về sao?
+表哥|當然反對。農夫在台灣的社會地位不高，工作辛苦不說，收入也不穩定，父母都希望孩子有更好的發展。|Đương nhiên phản đối. Nông dân ở Đài Loan địa vị xã hội không cao, công việc vất vả chưa kể thu nhập cũng không ổn định, cha mẹ đều mong con có tương lai tốt hơn.
+羅珊蒂|怎麼會呢？超市的有機蔬菜都貴得不得了。|Sao lại thế? Rau hữu cơ ở siêu thị đắt kinh khủng.
+表哥|賣給超市，農夫的利潤很低，可是自己賣的話，問題更多。|Bán cho siêu thị thì lợi nhuận của nông dân rất thấp, còn tự bán thì vấn đề càng nhiều.
+表哥|今天不談這個。天氣這麼好，別一直待在屋子裡，我們出去走走吧。|Hôm nay đừng nói chuyện này. Trời đẹp thế, đừng ở mãi trong nhà, chúng ta ra ngoài đi dạo.
+安德思|這些番茄真漂亮！|Những quả cà chua này đẹp quá!
+表哥|這不是基因改造的，是新品種。今年氣候特別好，再加上沒有颱風，所以青菜水果都長得很好。|Đây không phải biến đổi gen mà là giống mới. Năm nay khí hậu đặc biệt tốt, lại không có bão nên rau quả đều lớn rất tốt.
+安德思|這些番茄熟了嗎？|Cà chua này chín chưa?
+表哥|熟了，熟了，摘下來就可以吃了。這些番茄都是有機的，不必洗。|Chín rồi, chín rồi, hái xuống là ăn được. Cà chua này đều hữu cơ, không cần rửa.
+安德思|這麼大的一片田，你一個人照顧，忙得過來嗎？|Một thửa ruộng lớn thế này mình anh chăm, có xoay xở kịp không?
+表哥|平常還好，可是收成的時候，很難找到人幫忙。|Ngày thường còn ổn, nhưng lúc thu hoạch rất khó tìm người giúp.
+李文彥|這幾年，回到鄉下種田的年輕人不是很多嗎？|Mấy năm nay chẳng phải nhiều người trẻ về quê làm ruộng sao?
+表哥|忙的時候，大家都一樣，連自己的事都做不完，怎麼有時間幫別人的忙？|Lúc bận ai cũng vậy, việc mình còn làm không xong, đâu có thời gian giúp người khác?
+羅珊蒂|你怎麼不找個太太來幫你？|Sao anh không tìm một người vợ giúp?
+李文彥|妳這個問題問得真好。我表哥什麼都有，就是少了一個太太。|Câu hỏi của bạn hay lắm. Anh họ tôi cái gì cũng có, chỉ thiếu một người vợ.
+表哥|別開玩笑了。農夫看天吃飯，收入這麼不穩定，怎麼敢結婚？|Đừng đùa. Nông dân ăn nhờ ông trời, thu nhập bất ổn thế sao dám cưới vợ?
+羅珊蒂|表哥，你條件這麼好，我給你介紹一個，怎麼樣？|Anh à, điều kiện anh tốt thế, tôi giới thiệu một người nhé?
+表哥|以後再說吧！天黑了，我們快回去吃飯。|Sau hãy nói! Trời tối rồi, mình mau về ăn cơm.
+短文|星期天一大早，何雅婷就陪著媽媽到農夫市集去買菜。最近食品安全出了好幾次問題，何雅婷的媽媽為了家人的健康，開始注意食材的產地，也盡量到有機商店和農夫市集買菜。|Sáng sớm Chủ nhật, Hà Nhã Đình theo mẹ đến chợ nông sản mua thức ăn. Gần đây an toàn thực phẩm xảy ra mấy lần, mẹ Nhã Đình vì sức khỏe gia đình bắt đầu để ý nơi sản xuất nguyên liệu, cố gắng mua ở cửa hàng hữu cơ và chợ nông dân.
+短文|雖然這些地方賣的東西種類沒有市場那麼多，價錢也比較高，可是媽媽常跟農夫聊天，了解小農用友善的方式對待土地和環境，很信任他們，所以寧可每個星期跑一趟，多花一點錢，也要支持小農。|Tuy hàng ở đây không đa dạng như chợ, giá cũng cao hơn, nhưng mẹ hay trò chuyện với nông dân, hiểu tiểu nông đối xử thân thiện với đất đai môi trường nên rất tin họ, thà mỗi tuần đi một chuyến, trả thêm chút tiền cũng muốn ủng hộ tiểu nông.
+短文|像何雅婷媽媽這樣關心小農的人越來越多。有人寫文章介紹小農種的蔬菜水果，有人到處幫小農推銷，其中最有名的是一位麵包師傅。|Người quan tâm tiểu nông như mẹ Nhã Đình ngày càng nhiều. Có người viết bài giới thiệu rau quả tiểu nông trồng, có người đi khắp nơi giúp họ quảng bá, nổi tiếng nhất là một thợ làm bánh mì.
+短文|他從小在農村長大，了解農夫的辛苦。為了幫助小農，也為了幫自己的產品找更好的食材，他常常拜訪小農，用他們出產的食材做出受歡迎的麵包。|Ông lớn lên ở nông thôn từ nhỏ, hiểu nỗi vất vả của nông dân. Để giúp tiểu nông và tìm nguyên liệu tốt hơn cho sản phẩm, ông thường đến thăm họ, dùng nguyên liệu họ sản xuất làm ra bánh mì được yêu thích.
+短文|由於報紙、網路的介紹，許多住在城市裡的人開始羨慕小農的生活。他們利用放假的時候，帶著孩子到農村去，一方面可以讓孩子在田裡跑跑跳跳，接近自然，一方面自己也可以放鬆心情。到鄉下住一晚變成了現在熱門的休閒活動。|Nhờ báo chí, mạng giới thiệu, nhiều người ở thành phố bắt đầu ngưỡng mộ cuộc sống tiểu nông. Họ tranh thủ kỳ nghỉ dẫn con về nông thôn, một mặt cho con chạy nhảy trên ruộng, gần gũi thiên nhiên, mặt khác bản thân thư giãn. Về quê ở một đêm trở thành hoạt động giải trí thịnh hành.
+短文|隨著小農越來越受重視，到農村來觀光的人也慢慢地多起來了，連便利商店都來了。以前當地人習慣自己做飯，或是到傳統的小商店和小吃店消費，現在便利商店更方便也更吸引他們。|Khi tiểu nông ngày càng được coi trọng, khách du lịch đến nông thôn cũng dần đông, đến cả cửa hàng tiện lợi cũng có mặt. Trước đây người địa phương quen tự nấu ăn hoặc mua ở tiệm nhỏ truyền thống, nay cửa hàng tiện lợi tiện hơn và hấp dẫn họ hơn.
+短文|傳統的小店生意受到了影響，原來安靜的農村有了很大的變化。現在農人擔心的是傳統的生活方式會不會消失。|Việc buôn bán của các tiệm nhỏ truyền thống bị ảnh hưởng, nông thôn vốn yên tĩnh đã thay đổi lớn. Giờ nông dân lo lối sống truyền thống có biến mất không.
+@7|我最親的家「人」|"Người nhà" thân thiết nhất của tôi
+親|thân|Vs
+爺爺|ông nội|N
+鄰居|hàng xóm|N
+狗|chó|N
+叫|sủa|Vi
+嗯|ừ (đồng ý)|Ptc
+奶奶|bà nội|N
+過世|qua đời|Vp
+領養|nhận nuôi|V
+隻|con (lượng từ cho động vật)|M
+可愛|đáng yêu|Vs
+孤單|cô đơn|Vs
+牠|nó (chỉ con vật)|N
+髒|bẩn|Vs
+洗澡|tắm|V-sep
+養|nuôi|V
+亂|lung tung, bừa bãi|Adv
+咬|cắn|V
+打|đánh|V
+分手|chia tay|Vp
+緊張|căng thẳng|Vs
+減輕|làm giảm nhẹ|V
+送|đưa đi|V
+美容院|tiệm làm đẹp|N
+推車|xe đẩy|N
+主人|chủ nhân|N
+相處|chung sống|V
+生|sinh|V
+寵物|thú cưng|N
+單身|độc thân|Vs
+醫院|bệnh viện|N
+意見|ý kiến|N
+建立|thiết lập, xây dựng|V
+散步|đi dạo|V-sep
+家庭|gia đình|N
+真正|thực sự|Vs-attr
+幸福|hạnh phúc|N
+跌倒|ngã|Phrase
+當成|coi như|Phrase
+忍不住|không nhịn được|Phrase
+多元|đa dạng|Vs-attr
+阿姨|dì|N
+先生|chồng|N
+下班|tan làm|V-sep
+改|chấm, sửa (bài)|V
+公公|bố chồng|N
+全|hoàn toàn|Adv
+靠|dựa vào|V
+單親|đơn thân (cha hoặc mẹ)|Vs-attr
+貴族|quý tộc|N
+時代|thời đại, thời kỳ|N
+強|mạnh, giỏi|Vs
+追|theo đuổi (người yêu)|V
+自由|tự do|Vs
+獨立|độc lập|Vs
+安排|sắp xếp|V
+享受|hưởng thụ|V
+身邊|bên cạnh|N
+伴|bạn đồng hành|N
+同居|sống chung (như vợ chồng)|Vi
+成家|lập gia đình|Vp
+負擔|gánh vác|V
+養家|nuôi gia đình|V-sep
+責任|trách nhiệm|N
+亂|hỗn loạn|Vs
+教養|dạy dỗ|V
+接受|chấp nhận|V
+組成|hình thành, cấu thành|V
+道德|đạo đức|Vs
+因此|vì vậy|Conj
+完整|đầy đủ, trọn vẹn|Vs
+美真|Mỹ Chân (tên nữ)|Name
+家華|Gia Hoa (tên nam)|Name
+風雲人物|nhân vật nổi bật|Phrase
+下決心|hạ quyết tâm|Phrase
+#
+羅珊蒂|何雅婷，昨天我們去打籃球，妳怎麼沒去？|Hà Nhã Đình, hôm qua bọn mình đi chơi bóng rổ, sao bạn không đi?
+何雅婷|我媽說我爺爺跌倒，叫我去看他。|Mẹ tôi bảo ông nội tôi bị ngã, kêu tôi đến thăm ông.
+羅珊蒂|妳爺爺還好吧？|Ông bạn không sao chứ?
+何雅婷|還好。幸虧鄰居聽見狗一直叫，很快地過來幫忙，所以沒什麼關係。|Cũng ổn. May mà hàng xóm nghe chó cứ sủa, nhanh chóng sang giúp nên không sao.
+羅珊蒂|妳爺爺一個人住啊？|Ông bạn ở một mình sao?
+何雅婷|嗯，奶奶過世以後，爺爺就一個人住。我爸擔心爺爺，所以領養了一隻狗陪他。|Ừ, từ khi bà nội mất ông ở một mình. Bố tôi lo cho ông nên nhận nuôi một con chó ở với ông.
+羅珊蒂|幸虧有這隻可愛的狗，要不然就太孤單了。|May mà có chú chó dễ thương này, không thì cô đơn lắm.
+何雅婷|我爺爺很愛牠，把牠當成家人一樣，晚上還讓牠睡在自己的床上。|Ông tôi rất yêu nó, coi như người nhà, tối còn cho nó ngủ trên giường mình.
+李文彥|什麼？睡在他床上？狗不髒嗎？不怕牠把床弄髒嗎？|Gì cơ? Ngủ trên giường ông? Chó không bẩn sao? Không sợ nó làm bẩn giường à?
+何雅婷|我爺爺常給狗洗澡，牠乾淨得很。|Ông tôi hay tắm cho chó, nó sạch lắm.
+李文彥|以前我女朋友養了一隻狗，整天亂叫、亂咬東西。有一天，我忍不住打了牠，我女朋友氣得要跟我分手。|Trước đây bạn gái tôi nuôi một con chó, cả ngày sủa bậy, cắn đồ lung tung. Có hôm tôi không nhịn được đánh nó, bạn gái tức đến đòi chia tay.
+羅珊蒂|你怎麼可以打狗？狗是人最好的朋友。很多研究報告都說，人緊張的時候，摸摸狗會減輕壓力。|Sao bạn có thể đánh chó? Chó là người bạn tốt nhất của con người. Nhiều báo cáo nghiên cứu nói khi người căng thẳng, vuốt ve chó sẽ giảm áp lực.
+李文彥|不過台灣人對狗太好了。不但送狗去美容院，還帶狗去餐廳慶祝生日。現在狗連路都不必走了，坐在推車裡讓主人推著逛街。|Nhưng người Đài Loan đối xử với chó quá tốt. Không những đưa chó đến tiệm làm đẹp, còn dẫn chó đi nhà hàng mừng sinh nhật. Giờ chó không cần đi bộ, ngồi xe đẩy cho chủ đẩy đi dạo phố.
+羅珊蒂|對狗好有什麼不對？現代社會大家各忙各的，常常回到家就只有一個人。人跟狗相處的時間有時候比家人還長呢。|Tốt với chó thì có gì sai? Xã hội hiện đại ai cũng bận việc mình, về nhà thường chỉ có một người. Thời gian người ở với chó có khi còn dài hơn với người nhà.
+何雅婷|是啊，現在有些人覺得生活壓力太大，養不起孩子，就算結了婚也不生孩子，寧可養寵物。還有很多單身的人，他們一個人住，寵物對他們來說，比家人還親。|Đúng vậy, nay có người thấy áp lực sống quá lớn, nuôi không nổi con, dù kết hôn cũng không sinh con, thà nuôi thú cưng. Còn nhiều người độc thân sống một mình, với họ thú cưng còn thân hơn người nhà.
+李文彥|不管怎麼說，狗不是人。你生病的時候，牠不能照顧你，給你買晚飯，陪你去醫院。而且，你有問題的時候，也不能問牠的意見。人還是應該建立跟人的關係。|Dù nói thế nào, chó không phải người. Khi bạn bệnh nó không chăm sóc bạn, mua cơm tối, đi bệnh viện cùng bạn. Hơn nữa khi bạn có vấn đề cũng không thể hỏi ý kiến nó. Con người vẫn nên xây dựng quan hệ với con người.
+羅珊蒂|可是狗可以幫你建立跟別人的關係。|Nhưng chó có thể giúp bạn xây dựng quan hệ với người khác.
+何雅婷|是啊，我爺爺養狗以後，快樂多了。每天帶著狗去散步，認識了很多朋友。他們有說不完的話，回家以後還上網繼續聊。|Đúng vậy, từ khi nuôi chó ông tôi vui hơn nhiều. Mỗi ngày dắt chó đi dạo, quen nhiều bạn. Họ có nói không hết chuyện, về nhà còn lên mạng trò chuyện tiếp.
+李文彥|妳們說的也對。可是我還是覺得一個人應該有家庭，更應該有孩子，一家人熱熱鬧鬧地一起生活才是真正的幸福。|Các bạn nói cũng đúng. Nhưng tôi vẫn thấy một người nên có gia đình, càng nên có con, cả nhà náo nhiệt sống cùng nhau mới là hạnh phúc thực sự.
+短文|李文彥的阿姨一個人帶著孩子住在台北。她的先生因為工作的關係，大部分的時間都在國外。阿姨白天在學校教書，下了班，接了孩子回家，就忙著做飯、陪孩子做功課。|Dì của Lý Văn Ngạn một mình dẫn con sống ở Đài Bắc. Chồng dì vì công việc phần lớn thời gian ở nước ngoài. Ban ngày dì dạy ở trường, tan làm đón con về là bận nấu cơm, kèm con làm bài.
+短文|好不容易等孩子睡了，才能開始改學生的作業，準備第二天上課的資料。週末的時候，還要上市場幫公公買一個星期的菜。家裡大大小小的事全靠她一個人。她常說，她雖然不是單親媽媽，可是生活比單親媽媽更辛苦。|Khó khăn lắm đợi con ngủ mới bắt đầu chấm bài, chuẩn bị tài liệu hôm sau. Cuối tuần còn đi chợ mua thức ăn cả tuần cho bố chồng. Việc lớn nhỏ trong nhà đều dựa vào một mình dì. Dì thường nói tuy không phải mẹ đơn thân nhưng cuộc sống còn vất vả hơn mẹ đơn thân.
+短文|阿姨很羨慕她的同學美真。美真是一個單身貴族。大學時代，在學校就是一個風雲人物，不但人長得美，而且能力強，追她的人多得不得了。|Dì rất ngưỡng mộ bạn học Mỹ Chân. Mỹ Chân là một "quý tộc độc thân". Thời đại học cô là nhân vật nổi bật ở trường, không chỉ xinh mà năng lực mạnh, người theo đuổi đông không kể xiết.
+短文|可是她一直不想結婚，一來怕結了婚不自由，不能發展自己的興趣，二來，她的經濟獨立，可以把自己的生活安排得很好。雖然大部分的時候她都很享受單身生活，但是一個人旅行的時候，她也常想，要是身邊有個伴也不錯。|Nhưng cô luôn không muốn kết hôn: một là sợ kết hôn mất tự do, không phát triển được sở thích; hai là cô độc lập kinh tế, tự sắp xếp cuộc sống rất tốt. Tuy phần lớn thời gian cô tận hưởng cuộc sống độc thân, nhưng khi đi du lịch một mình cô cũng hay nghĩ nếu có người bên cạnh cũng không tệ.
+短文|美真的朋友家華，也不願意結婚。他雖然跟女朋友已經同居好幾年了，但是一想到成家以後，得負擔起養家的責任，他就下不了決心。|Bạn của Mỹ Chân là Gia Hoa cũng không muốn kết hôn. Tuy đã sống chung với bạn gái nhiều năm nhưng nghĩ đến việc lập gia đình, phải gánh trách nhiệm nuôi gia đình là anh không hạ nổi quyết tâm.
+短文|而且，要是結了婚，就會有生孩子的壓力。現在社會這麼亂，怎麼教養孩子？他想來想去，覺得還是現在的生活比較好。雖然女朋友跟他說過幾次，年紀不小，應該結婚了，他還是沒答應。|Hơn nữa nếu kết hôn sẽ có áp lực sinh con. Xã hội bây giờ hỗn loạn, dạy con thế nào? Nghĩ đi nghĩ lại anh thấy cuộc sống hiện tại vẫn tốt hơn. Dù bạn gái nhiều lần nói tuổi không nhỏ nên kết hôn, anh vẫn chưa đồng ý.
+短文|現在社會慢慢地接受了各種家庭的組成方式。同居不再被認為是不道德的事了，一個人也能是一個「單身家庭」。因此，只要有愛，愛自己、愛家人，就是一個完整的家。|Xã hội nay dần chấp nhận nhiều hình thức tạo nên gia đình. Sống chung không còn bị coi là thiếu đạo đức, một người cũng là một "gia đình độc thân". Vì vậy chỉ cần có tình yêu, yêu bản thân, yêu người nhà thì đó là một mái ấm trọn vẹn.
+@8|我想做自己|Tôi muốn là chính mình
+整夜|suốt đêm|N
+開|bật (đèn, máy)|V
+燈|đèn|N
+電玩|trò chơi điện tử|N
+球賽|trận bóng|N
+激動|kích động, phấn khích|Vs
+喊|la hét|Vi
+公職|công chức, việc nhà nước|N
+其實|thật ra|Adv
+公務員|công chức|N
+煩|phiền, bực|Vs
+聽話|nghe lời|Vs-sep
+失業率|tỷ lệ thất nghiệp|N
+門|môn (lượng từ cho môn học)|M
+讀書|đọc sách, học|V-sep
+學分|tín chỉ|N
+修|học (môn), tu sửa|V
+專心|chuyên tâm|Vs
+修課|học môn|V-sep
+輔系|ngành phụ|N
+瘋|điên|Vp
+誇張|phóng đại|Vs
+舉行|tổ chức|V
+遺憾|đáng tiếc|Vs
+兒子|con trai|N
+期望|kỳ vọng|N
+狀元|trạng nguyên|N
+努力|nỗ lực|Vs
+怎麼回事|chuyện gì vậy|Phrase
+大喊大叫|la hét ầm ĩ|Phrase
+期中考|thi giữa kỳ|Phrase
+密集班|lớp cấp tốc|Phrase
+畢業展|triển lãm tốt nghiệp|Phrase
+服裝設計|thiết kế thời trang|Phrase
+醫學系|khoa y|Phrase
+行行出狀元|nghề nào cũng có trạng nguyên|Phrase
+冠軍|quán quân|N
+大賽|cuộc thi lớn|N
+通過|vượt qua, thông qua|Vpt
+高級|cao cấp|Vs-attr
+碩士|thạc sĩ|N
+面試|phỏng vấn|N
+卻|nhưng lại|Adv
+國中|trung học cơ sở|N
+學歷|trình độ học vấn|N
+拒絕|từ chối|V
+引起|gây ra|Vpt
+彈性|tính linh hoạt|N
+改變|thay đổi|V
+制度|chế độ, quy định|N
+基礎|nền tảng|N
+認真|nghiêm túc|Vs
+公平|công bằng|Vs
+出生|sinh ra|Vp
+窮|nghèo|Vs
+父親|cha|N
+母親|mẹ|N
+學徒|học việc|N
+吃苦|chịu khổ|Vs-sep
+明白|hiểu rõ|Vst
+當兵|đi nghĩa vụ quân sự|V-sep
+認字|nhận mặt chữ|Vi
+烘焙|nướng bánh|V
+學習|học tập|V
+技術|kỹ thuật|N
+藝術|nghệ thuật|N
+經過|sau khi, trải qua|Prep
+終於|cuối cùng|Adv
+億|trăm triệu|N
+夢想|ước mơ|N
+成為|trở thành|Vpt
+企業家|doanh nhân|N
+分店|chi nhánh|N
+原因|nguyên nhân|N
+錄取|tuyển, nhận (hồ sơ)|V
+成功|thành công|Vs
+鼓勵|khích lệ|V
+吳寶春|Ngô Bảo Xuân (thợ làm bánh nổi tiếng Đài Loan)|Name
+新加坡|Singapore|Name
+日文|tiếng Nhật|Name
+世界麵包大賽|Giải bánh mì thế giới|Phrase
+EMBA|EMBA (thạc sĩ quản trị kinh doanh điều hành)|Phrase
+小時候|hồi nhỏ|Phrase
+#
+陳敏萱|早，李文彥。欸？你怎麼看起來不太有精神？怎麼回事？|Chào, Lý Văn Ngạn. Ơ? Sao trông bạn không có tinh thần thế? Chuyện gì vậy?
+李文彥|別說了。我那個室友，最近不是整夜開著燈打電玩，就是熬夜看球賽，激動的時候，還大喊大叫，害我睡不著覺。|Đừng nhắc nữa. Bạn cùng phòng tôi dạo này không bật đèn chơi game thâu đêm thì thức khuya xem bóng, lúc phấn khích còn la hét, làm tôi không ngủ được.
+陳敏萱|他不是在準備公職人員考試嗎？怎麼有時間打電玩？|Chẳng phải cậu ấy đang ôn thi công chức sao? Sao có thời gian chơi game?
+李文彥|其實他對當公務員一點興趣都沒有，是他媽媽叫他去考的。他覺得很煩，所以最近常打電玩。|Thật ra cậu ấy chẳng hứng thú gì với làm công chức, là mẹ bảo đi thi. Cậu thấy phiền nên dạo này hay chơi game.
+陳敏萱|既然沒興趣就別去考啊。為什麼要那麼聽話？|Đã không hứng thú thì đừng thi. Sao phải nghe lời thế?
+李文彥|因為他媽媽說，現在大學生的失業率很高。考上公職的話，薪水不錯，工作又穩定。這樣父母才放心。算了，算了，不說這個。妳最近怎麼樣？|Vì mẹ cậu nói tỷ lệ thất nghiệp của sinh viên hiện nay cao. Thi đỗ công chức thì lương khá, việc lại ổn định, cha mẹ mới yên tâm. Thôi thôi, không nói chuyện này. Dạo này bạn sao rồi?
+陳敏萱|快要期中考了，我壓力好大啊！這學期我在大學選了好幾門課，還在語言中心上密集班，每天忙得連睡覺的時間都不夠。|Sắp thi giữa kỳ rồi, áp lực lớn quá! Học kỳ này tôi học mấy môn ở đại học, còn học lớp cấp tốc ở trung tâm ngôn ngữ, mỗi ngày bận đến không đủ thời gian ngủ.
+李文彥|這樣一來，妳不是就沒時間參加學校的社團活動了嗎？|Thế thì bạn chẳng phải không có thời gian tham gia câu lạc bộ trường sao?
+陳敏萱|那有什麼關係。我來台灣是來讀書的，不是來玩的。我希望早一點把中文系的學分修完，回國以後專心修輔系的課，這樣明年才能畢業。|Có sao đâu. Tôi đến Đài Loan để học, không phải để chơi. Tôi muốn sớm học xong tín chỉ khoa tiếng Trung, về nước chuyên tâm học ngành phụ, như vậy sang năm mới tốt nghiệp được.
+李文彥|妳還修輔系啊？為什麼要把自己弄得這麼累？如果我是妳，恐怕早就瘋了。|Bạn còn học ngành phụ nữa à? Sao tự làm mình mệt thế? Nếu là tôi chắc điên từ lâu.
+陳敏萱|你太誇張了。沒那麼嚴重吧。|Bạn nói quá rồi. Đâu đến nỗi.
+李文彥|妳應該趁著在台灣的時候，到處走走，多了解這裡的文化。|Bạn nên tranh thủ lúc ở Đài Loan đi đây đó, hiểu thêm văn hóa nơi này.
+陳敏萱|旅行的機會以後還很多。為了將來的發展，現在我應該好好利用時間，充實自己。|Sau này còn nhiều cơ hội đi du lịch. Vì tương lai, giờ tôi nên tận dụng thời gian, bồi dưỡng bản thân.
+何雅婷|你們都在這裡啊？在聊什麼？|Các bạn đều ở đây à? Đang nói chuyện gì thế?
+李文彥|我們在聊畢業以後的計畫。對了，妳男朋友的畢業展什麼時候舉行？|Bọn mình nói về kế hoạch sau tốt nghiệp. À, triển lãm tốt nghiệp của bạn trai bạn bao giờ tổ chức?
+何雅婷|下個月五號。到時候歡迎大家來看。|Mùng năm tháng sau. Đến lúc đó mời mọi người đến xem.
+陳敏萱|他爸媽會去嗎？我聽妳說過，他爸媽很反對他念服裝設計。現在還是這樣嗎？|Bố mẹ anh ấy có đến không? Tôi nghe bạn kể, bố mẹ anh rất phản đối anh học thiết kế thời trang. Giờ vẫn vậy sao?
+何雅婷|他父母到現在還覺得很遺憾，兒子沒去念醫學系。他從小功課就很好，父母對他的期望一直很高，念服裝設計讓他們很失望。|Cha mẹ anh đến nay vẫn thấy tiếc, con trai không học khoa y. Anh học giỏi từ nhỏ, cha mẹ luôn kỳ vọng cao, học thiết kế thời trang làm họ rất thất vọng.
+李文彥|為什麼要失望？行行出狀元。不管做什麼，只要有興趣，願意努力就好了。|Sao phải thất vọng? Nghề nào cũng có trạng nguyên. Dù làm gì, chỉ cần có hứng thú, chịu nỗ lực là được.
+短文|2013年三月，世界麵包大賽冠軍吳寶春通過新加坡大學EMBA（高級管理人員工商管理碩士）研究所的面試，準備從七月起，開始他的學生生活。吳寶春也申請過台灣的EMBA，卻因為只有國中畢業，學歷太低而被拒絕。|Tháng ba năm 2013, quán quân Giải bánh mì thế giới Ngô Bảo Xuân đã qua vòng phỏng vấn chương trình EMBA của Đại học Singapore, chuẩn bị từ tháng bảy bắt đầu cuộc sống sinh viên. Ông cũng từng nộp đơn EMBA ở Đài Loan nhưng vì chỉ tốt nghiệp trung học cơ sở, học vấn quá thấp nên bị từ chối.
+短文|「吳寶春要念研究所」在台灣引起了很多人的討論。有人認為學校太沒有彈性。時代已經改變了，制度也應該隨著改變。但是也有人認為他的基礎不夠，如果讓他念研究所，對認真念書的人不公平。|"Ngô Bảo Xuân sẽ học cao học" gây nhiều bàn luận ở Đài Loan. Có người cho rằng nhà trường thiếu linh hoạt, thời đại đã đổi, chế độ cũng nên thay đổi theo. Nhưng cũng có người cho rằng nền tảng của ông chưa đủ, nếu cho học cao học thì không công bằng với người học nghiêm túc.
+短文|吳寶春出生在台灣南部鄉下，他是家裡最小的孩子。他家很窮。父親很早就過世了。母親為了養八個孩子，每天辛苦地工作。吳寶春小時候不了解讀書的重要，不喜歡念書。按照他自己的說法，國中畢業的時候，他認識的字還不到五百個。|Ngô Bảo Xuân sinh ra ở vùng quê miền nam Đài Loan, là con út trong nhà. Nhà ông rất nghèo, cha mất sớm. Mẹ để nuôi tám đứa con, ngày nào cũng làm việc vất vả. Hồi nhỏ ông không hiểu tầm quan trọng của học, không thích học. Theo lời ông, lúc tốt nghiệp cấp hai ông biết chưa đến năm trăm chữ.
+短文|17歲那一年，他離開家鄉，一個人到台北一家麵包店當學徒。工作的時候因為書念得不多，吃了很多苦。這時候他才明白讀書的重要。當兵的時候，他利用時間看電視認字。|Năm 17 tuổi, ông rời quê, một mình lên Đài Bắc làm học việc ở một tiệm bánh mì. Vì học ít nên khi làm việc ông chịu nhiều khổ cực, lúc ấy mới hiểu tầm quan trọng của việc học. Thời đi lính, ông tận dụng thời gian xem tivi để nhận mặt chữ.
+短文|後來他因為想看懂日文烘焙書，去學日文。幾年以後，更因為工作的關係到日本學習，讓他大開眼界，了解到烘焙麵包不但是專業技術，也是一門藝術。|Sau đó ông vì muốn đọc hiểu sách làm bánh tiếng Nhật nên đi học tiếng Nhật. Vài năm sau, vì công việc ông sang Nhật học tập, mở mang tầm mắt và hiểu làm bánh mì không chỉ là kỹ thuật chuyên môn mà còn là một nghệ thuật.
+短文|吳寶春經過20多年的努力，終於在2010年拿到世界麵包大賽冠軍。回台灣以後，他開了自己的麵包店，一年能做兩億的生意。他的夢想是成為企業家，能在亞洲各國開分店。新加坡大學也因為這個原因錄取了他。|Sau hơn 20 năm nỗ lực, năm 2010 Ngô Bảo Xuân cuối cùng giành quán quân Giải bánh mì thế giới. Về Đài Loan ông mở tiệm riêng, một năm kinh doanh hai trăm triệu. Ước mơ của ông là trở thành doanh nhân, mở chi nhánh ở các nước châu Á. Đại học Singapore cũng vì lý do này mà nhận ông.
+短文|吳寶春成功的故事鼓勵了很多人做自己。可是，是不是每個人都能像他在碰到機會以前，做好了百分之百的準備？|Câu chuyện thành công của Ngô Bảo Xuân đã khích lệ nhiều người sống là chính mình. Nhưng liệu ai cũng như ông, đã chuẩn bị trăm phần trăm trước khi gặp cơ hội?
+@9|網購時代|Thời đại mua sắm trực tuyến
+訂單|đơn đặt hàng|N
+客戶|khách hàng|N
+方便|tạo thuận tiện|V
+訂購|đặt mua|V
+成立|thành lập|V
+假日|ngày nghỉ|N
+販賣|bán|V
+阿嬤|bà (tiếng Đài)|N
+中間商|thương lái, trung gian|N
+經營|kinh doanh|V
+宅配|giao hàng tận nhà|Vi
+下|đặt (đơn)|V
+不只|không chỉ|Adv
+隨時|bất cứ lúc nào|Adv
+搜尋|tìm kiếm|V
+冰箱|tủ lạnh|N
+吃虧|chịu thiệt|Vs-sep
+比價|so sánh giá|V-sep
+風險|rủi ro|N
+賣家|người bán|N
+必須|phải|Vaux
+信用|uy tín|N
+萬一|lỡ như|Conj
+滿意|hài lòng|Vst
+以內|trong vòng|N
+普遍|phổ biến|Vs
+選擇|chọn lựa|V
+網購|mua sắm trực tuyến|Phrase
+貨比三家|so sánh ba tiệm mới không bị thiệt|Phrase
+不吃虧|không bị thiệt|Phrase
+兩成|hai phần mười (20%)|Phrase
+鳳梨|dứa, thơm|N
+農產品|nông sản|N
+出口|xuất khẩu|V
+曾經|đã từng|Adv
+占|chiếm|Vst
+成本|chi phí|N
+價格|giá cả|N
+競爭|cạnh tranh|Vi
+好運|vận may|N
+內餡|nhân bánh|N
+當做|coi như|V
+喜餅|bánh cưới|N
+喜愛|yêu thích|Vst
+茶點|điểm tâm uống trà|N
+商機|cơ hội kinh doanh|N
+代表|đại diện|V
+政府|chính phủ|N
+舉辦|tổ chức|V
+產值|giá trị sản xuất|N
+提高|nâng cao|V
+知名|nổi tiếng|Vs
+出現|xuất hiện|Vp
+科技|công nghệ|N
+斤|cân (台斤)|M
+叔叔|chú|N
+口味|khẩu vị, hương vị|N
+結果|kết quả|Adv
+購買|mua|V
+改善|cải thiện|V
+並且|đồng thời, và còn|Conj
+行銷|tiếp thị|V
+團購|mua theo nhóm|V
+店面|mặt bằng cửa hàng|N
+全|toàn|Det
+閩南語|tiếng Mân Nam|Name
+旺來|Vượng Lai (đồng âm với "thơm")|Name
+東京|Tokyo|Name
+鳳梨酥|bánh dứa|Phrase
+第二位|vị trí thứ hai|Phrase
+鳳梨農|nông dân trồng dứa|Phrase
+#
+表哥|你們先喝茶聊天，我上網查一下訂單，把明天要寄給客戶的東西準備好。|Các bạn uống trà trò chuyện trước, tôi lên mạng xem đơn hàng, chuẩn bị đồ mai gửi khách.
+李文彥|你以前不是都拿到農夫市集去賣嗎？怎麼現在上網賣了？|Trước đây anh chẳng phải đem ra chợ nông sản bán sao? Sao giờ bán trên mạng?
+表哥|為了方便客戶訂購，我成立了一個網站，可是現在網路上的客戶不太多，收入不穩定，所以假日還是到農夫市集去，讓更多的人認識我們的產品。慢慢地，我希望能只靠網路販賣。|Để khách tiện đặt mua tôi lập một trang web, nhưng khách trên mạng chưa nhiều, thu nhập không ổn định, nên cuối tuần vẫn ra chợ nông sản để nhiều người biết sản phẩm. Dần dần tôi hy vọng chỉ dựa vào bán trên mạng.
+羅珊蒂|你的產品種類多嗎？一個網站不是得要有很多不同的產品才可以嗎？|Sản phẩm của anh nhiều loại không? Một trang web chẳng phải cần nhiều sản phẩm khác nhau sao?
+表哥|我認識的一位老阿嬤種了很多蔬菜。以前她只賣給中間商，利潤很低，所以我幫她上網賣。另外，我也找了一些回到鄉下種田的年輕人一起經營網站。|Tôi quen một bà cụ trồng nhiều rau. Trước đây bà chỉ bán cho thương lái, lợi nhuận rất thấp nên tôi giúp bà bán trên mạng. Ngoài ra tôi còn rủ vài người trẻ về quê làm ruộng cùng điều hành trang web.
+羅珊蒂|上網訂的話，多久可以收到？|Đặt trên mạng thì bao lâu nhận được?
+表哥|在台灣宅配很快，一般來說，下訂單24小時後就能收到。客戶能吃到既新鮮又便宜的蔬果。不好意思，我得去忙了，你們繼續聊。|Ở Đài Loan giao hàng tận nhà rất nhanh, thường đặt đơn xong 24 giờ là nhận. Khách ăn được rau quả vừa tươi vừa rẻ. Xin lỗi, tôi phải đi làm việc, các bạn cứ trò chuyện.
+安德思|網路真的很方便。一天二十四小時，只要你需要，隨時都可以上網訂購。再說，網路商店的商品種類很多，搜尋一下就能找到你要的東西。|Mạng thật tiện. 24 giờ mỗi ngày, chỉ cần bạn cần là lúc nào cũng đặt mua được. Hơn nữa hàng ở cửa hàng online rất nhiều loại, tìm một chút là ra thứ bạn cần.
+李文彥|我的冰箱就是在網路上買的。我媽常說，「貨比三家不吃虧」。我利用比價網站，很快就找到了，節省了很多跑來跑去的時間。|Tủ lạnh của tôi mua trên mạng. Mẹ tôi hay nói "so sánh ba tiệm không bị thiệt". Tôi dùng trang so sánh giá, nhanh chóng tìm được, tiết kiệm nhiều thời gian chạy đi chạy lại.
+何雅婷|在網路上買東西也有風險。上次我買了一個皮包，沒想到收到以後，發現跟網站上的照片完全不一樣。更讓人生氣的是，我找不到賣家退貨。|Mua đồ trên mạng cũng có rủi ro. Lần trước tôi mua một cái túi da, không ngờ nhận được thấy hoàn toàn khác ảnh trên web. Tức hơn nữa là tôi không tìm được người bán để trả hàng.
+安德思|是有這樣的問題。所以網購必須找有信用的網站。這樣的話，萬一不滿意，七天以內還可以退換。而且，一般來說，上網買還是可以便宜一、兩成。|Có vấn đề như vậy. Nên mua sắm online phải chọn trang web uy tín. Như vậy lỡ không hài lòng, trong bảy ngày còn đổi trả được. Hơn nữa thường mua trên mạng vẫn rẻ hơn một hai phần mười.
+羅珊蒂|看起來上網購物越來越普遍。這兩年大家的購物習慣改變了這麼多。將來我開服裝店，還會有客人嗎？|Xem ra mua sắm trực tuyến ngày càng phổ biến. Hai năm nay thói quen mua sắm thay đổi nhiều thế. Sau này tôi mở tiệm quần áo còn có khách không?
+何雅婷|別擔心，對很多人來說，買東西的時候，最重要的還是能看到、摸到商品，尤其是服裝，一定要試穿。|Đừng lo, với nhiều người khi mua đồ quan trọng nhất vẫn là nhìn được, sờ được hàng, nhất là quần áo thì nhất định phải thử.
+李文彥|妳說的沒錯，這兩種購物方式各有好處，大家可以按照自己的習慣跟需要選擇適合的購物方式。|Bạn nói đúng, hai cách mua sắm này đều có điểm tốt, mọi người có thể tùy thói quen và nhu cầu chọn cách phù hợp.
+羅珊蒂|聽你這麼說，我就放心了。|Nghe bạn nói vậy tôi yên tâm rồi.
+短文|鳳梨是台灣很重要的農產品，對台灣的經濟發展一直有很大的幫助。台灣出口的鳳梨曾經占世界第二位，可惜後來因為成本太高，在價格上沒有辦法跟別的國家競爭，很多農夫因為種的鳳梨賣不出去，生活很辛苦。|Dứa là nông sản rất quan trọng của Đài Loan, luôn giúp ích lớn cho phát triển kinh tế. Dứa xuất khẩu của Đài Loan từng đứng thứ hai thế giới, tiếc là sau này chi phí quá cao, không cạnh tranh nổi về giá với nước khác, nhiều nông dân vì dứa bán không được mà sống rất vất vả.
+短文|鳳梨在閩南語叫「旺來」，意思是可以給人帶來好運，所以用鳳梨做成內餡的甜點一直很受歡迎，不但拿來當做喜餅，也是大家喜愛的茶點，更是過年過節最好的禮物。|Dứa trong tiếng Mân Nam gọi là "vượng lai", nghĩa là mang lại may mắn nên bánh ngọt nhân dứa luôn được ưa chuộng, không chỉ làm bánh cưới mà còn là món điểm tâm trà yêu thích, càng là quà tốt nhất dịp Tết lễ.
+短文|一方面看到了這個商機，一方面希望能讓大家認識最能代表當地文化的傳統美食，台北市政府從2006年起年年舉辦鳳梨酥文化節，成功地讓鳳梨酥的產值從每年19億提高到現在的200多億。|Một mặt thấy cơ hội kinh doanh này, mặt khác mong mọi người biết món ăn truyền thống tiêu biểu văn hóa địa phương, chính quyền Đài Bắc từ năm 2006 hằng năm tổ chức lễ hội văn hóa bánh dứa, giúp giá trị sản xuất bánh dứa tăng từ 1,9 tỷ mỗi năm lên hơn 20 tỷ hiện nay.
+短文|在台灣，早就有很多知名麵包店賣鳳梨酥，但是在2009年出現了第一家只賣鳳梨酥的店。老闆本來經營一家科技公司，因為看見家鄉鄰居和親戚朋友種的鳳梨一斤只能賣一塊半，生活非常不容易。|Ở Đài Loan từ lâu nhiều tiệm bánh nổi tiếng đã bán bánh dứa, nhưng năm 2009 xuất hiện tiệm đầu tiên chỉ bán bánh dứa. Ông chủ vốn điều hành một công ty công nghệ, thấy dứa của hàng xóm và người thân quê nhà chỉ bán được một đồng rưỡi một cân, đời sống rất khó khăn.
+短文|他為了提高家鄉鳳梨農的收入，決定賣鳳梨酥。他找來開麵包店的叔叔，用當地出產的鳳梨研究出新口味，結果大受歡迎。因此，他能用穩定的價格跟鳳梨農購買鳳梨，改善了他們的生活。|Để nâng thu nhập cho nông dân trồng dứa quê mình, ông quyết định bán bánh dứa. Ông nhờ người chú mở tiệm bánh, dùng dứa địa phương nghiên cứu hương vị mới, kết quả rất được ưa chuộng. Nhờ vậy ông mua dứa của nông dân với giá ổn định, cải thiện đời sống họ.
+短文|使用當地的食材，講究品質，並且利用現代的行銷方式，透過網路團購，才一年多這家公司的產品就成為台灣最受歡迎的鳳梨酥，而且在東京、上海開了店，跟Prada當了鄰居。一塊小小的鳳梨酥，因為有了網路才能不靠店面，不靠電視廣告，行銷全世界。|Dùng nguyên liệu địa phương, chú trọng chất lượng, lại tận dụng cách tiếp thị hiện đại, mua theo nhóm qua mạng, chỉ hơn một năm sản phẩm của công ty trở thành bánh dứa được ưa chuộng nhất Đài Loan, còn mở tiệm ở Tokyo, Thượng Hải, làm hàng xóm của Prada. Một chiếc bánh dứa nhỏ nhờ có mạng mới không cần mặt bằng, không cần quảng cáo tivi mà vẫn bán khắp thế giới.
+@10|我住院了|Tôi nhập viện rồi
+住院|nằm viện|V-sep
+臉|mặt|N
+受傷|bị thương|Vp-sep
+撞|đâm, va chạm|V
+遵守|tuân thủ|V
+規則|quy tắc|N
+報警|báo cảnh sát|V-sep
+急診室|phòng cấp cứu|N
+傷|vết thương|N
+骨折|gãy xương|Vp
+片子|phim (X-quang)|N
+開刀|phẫu thuật|V-sep
+病人|bệnh nhân|N
+情況|tình hình|N
+緊急|khẩn cấp|Vs
+病床|giường bệnh|N
+要命|chết người, kinh khủng|Vs
+打針|tiêm|V-sep
+止痛|giảm đau|Vi
+手術|ca phẫu thuật|N
+警察|cảnh sát|N
+危險|nguy hiểm|N
+至於|còn về|Ptc
+部位|bộ phận, vị trí|N
+恢復|phục hồi|Vp
+傷口|vết thương|N
+哎呀|ối chà|Ptc
+出車禍|bị tai nạn xe|Phrase
+趕時間|vội, gấp thời gian|Phrase
+撞倒|đâm ngã|Phrase
+救護車|xe cấp cứu|Phrase
+照X光|chụp X-quang|Phrase
+動手術|phẫu thuật|Phrase
+醫美|y học thẩm mỹ|N
+合理|hợp lý|Vs
+休假|nghỉ phép|V-sep
+迷人|quyến rũ|Vs
+職場|nơi làm việc|N
+競爭力|sức cạnh tranh|N
+調查|điều tra, khảo sát|N
+整型|chỉnh hình, phẫu thuật thẩm mỹ|V-sep
+增加|tăng|V
+自信|tự tin|N
+外表|vẻ bề ngoài|N
+普通|bình thường|Vs
+從事|làm (nghề), theo đuổi|V
+醫治|chữa trị|V
+一向|xưa nay|Adv
+一般|phổ biến, thông thường|Vs-attr
+主要|chủ yếu|Vs-attr
+待遇|đãi ngộ|N
+公立|công lập|Vs-attr
+外科|ngoại khoa|N
+超過|vượt quá|Vpt
+倍|lần (gấp)|M
+另|khác|Det
+價值觀|giá trị quan|N
+尊敬|tôn kính|Vst
+告|kiện|V
+平均|trung bình|Adv
+醫療|y tế|N
+怪|trách|V
+愛林|Ái Lâm (tên nữ)|Name
+微整型|phẫu thuật thẩm mỹ nhỏ|Phrase
+數一數二|hàng đầu|Phrase
+人際關係|quan hệ giữa người với người|Phrase
+動不動就|hơi một chút là|Phrase
+找回|tìm lại|Phrase
+#
+羅珊蒂|怎麼回事？你的手怎麼了？臉也受傷了。|Chuyện gì vậy? Tay bạn sao thế? Mặt cũng bị thương.
+李文彥|我出車禍了。我上個禮拜騎腳踏車來學校的路上被一輛車撞了。|Tôi bị tai nạn. Tuần trước trên đường đạp xe đến trường tôi bị một chiếc xe đâm.
+羅珊蒂|你一定是為了趕時間，不遵守交通規則。|Chắc bạn vội nên không tuân thủ luật giao thông.
+李文彥|哪裡是我的錯。我過馬路的時候，有一輛右轉車不讓我，把我撞倒了。我躺在地上，痛得起不來。|Đâu phải lỗi của tôi. Lúc tôi sang đường có chiếc xe rẽ phải không nhường, đâm ngã tôi. Tôi nằm dưới đất đau không dậy nổi.
+羅珊蒂|好可怕！當時有沒有人幫你？誰送你去醫院的？|Đáng sợ quá! Lúc đó có ai giúp bạn không? Ai đưa bạn đến bệnh viện?
+李文彥|撞到我的人打電話報警。救護車馬上把我送到急診室去了。|Người đâm tôi gọi cảnh sát. Xe cấp cứu lập tức đưa tôi đến phòng cấp cứu.
+陳敏萱|你的傷嚴重嗎？是不是骨折了？|Vết thương nặng không? Có phải gãy xương không?
+李文彥|是啊，我一進急診室，醫生就讓我去照X光。|Đúng vậy, vừa vào phòng cấp cứu bác sĩ đã cho tôi đi chụp X-quang.
+陳敏萱|後來呢？|Sau đó thì sao?
+李文彥|醫生看了片子，要我住院開刀。我住院住了五天呢。|Bác sĩ xem phim, bảo tôi nhập viện phẫu thuật. Tôi nằm viện năm ngày đấy.
+羅珊蒂|我聽說大醫院的急診室總是擠滿了病人。如果情況不是那麼緊急的話，有時候要等幾天才等得到病床，真的嗎？|Tôi nghe nói phòng cấp cứu bệnh viện lớn luôn chật bệnh nhân. Nếu không quá khẩn cấp, đôi khi phải đợi vài ngày mới có giường bệnh, thật không?
+李文彥|是啊，我那個時候痛得要命，醫生先給我打止痛針。可是他說還有更緊急的病人，讓我等一等。最快要到第二天才能動手術。|Đúng vậy, lúc đó tôi đau muốn chết, bác sĩ tiêm thuốc giảm đau cho trước. Nhưng bảo còn bệnh nhân khẩn cấp hơn, bảo tôi đợi. Nhanh nhất cũng phải hôm sau mới mổ được.
+陳敏萱|出車禍的事，你家人知道嗎？|Chuyện tai nạn gia đình bạn biết chưa?
+李文彥|警察幫我打電話給我阿姨。她一聽說要開刀，緊張得一直問醫生，有沒有危險，以後動作會不會受到影響。|Cảnh sát gọi điện cho dì tôi. Dì vừa nghe phải mổ thì căng thẳng hỏi bác sĩ mãi, có nguy hiểm không, sau này vận động có bị ảnh hưởng không.
+羅珊蒂|醫生怎麼說？|Bác sĩ nói sao?
+李文彥|醫生說這不算大手術，可是開刀多少會有一些風險。至於動作會不會受到影響，得看受傷的部位。最好的情況大概可以恢復八成到九成。|Bác sĩ nói đây không tính là đại phẫu nhưng mổ ít nhiều có rủi ro. Còn vận động có ảnh hưởng không phải xem vị trí bị thương. Tình huống tốt nhất có thể hồi phục tám đến chín phần.
+羅珊蒂|你現在覺得怎麼樣了？|Bây giờ bạn thấy thế nào?
+李文彥|我還好，不怎麼痛了。可是很不方便，連穿衣服都要別人幫忙。只好搬到阿姨家去住一段時間。|Tôi còn ổn, không đau mấy nữa. Nhưng rất bất tiện, ngay cả mặc quần áo cũng cần người giúp. Đành dọn đến nhà dì ở một thời gian.
+陳敏萱|你在阿姨家還習慣嗎？|Bạn ở nhà dì có quen không?
+李文彥|我跟阿姨很親，她像媽媽一樣地照顧我，每天都煮魚湯給我喝。你看我現在除了手不太方便以外，不是都很好嗎？|Tôi thân với dì, dì chăm tôi như mẹ, mỗi ngày nấu canh cá cho tôi uống. Bạn xem ngoài tay hơi bất tiện ra, tôi chẳng phải đều ổn sao?
+陳敏萱|喝魚湯？你阿姨為什麼讓你每天喝魚湯？|Uống canh cá? Sao dì bạn cho bạn uống canh cá mỗi ngày?
+李文彥|阿姨說多喝魚湯，傷口會恢復得比較快。哎呀，我得走了。我得去看醫生。明天見。|Dì nói uống nhiều canh cá vết thương sẽ lành nhanh hơn. Ối, tôi phải đi rồi. Phải đi khám bác sĩ. Mai gặp.
+短文|何雅婷的香港朋友愛林聽說台灣的微整型技術在亞洲是數一數二的，而且價錢又合理，因此她趁休假到台灣來做微整型。有許多像愛林這樣的外國人利用假期來台灣做醫美手術。他們希望假期結束以後，能變得更迷人，在職場上更有競爭力。|Cô bạn Hồng Kông của Hà Nhã Đình là Ái Lâm nghe nói kỹ thuật thẩm mỹ nhỏ ở Đài Loan thuộc hàng đầu châu Á, giá lại hợp lý nên tranh thủ kỳ nghỉ sang Đài Loan làm. Nhiều người nước ngoài như Ái Lâm tận dụng kỳ nghỉ đến Đài Loan phẫu thuật thẩm mỹ, mong sau kỳ nghỉ quyến rũ hơn, cạnh tranh tốt hơn nơi làm việc.
+短文|根據調查，百分之六十一的人認為整型除了可以增加自信，還可以改善職場的人際關係。另外，研究也發現，外表好看的人收入比外表普通的人多百分之十到十五。|Theo khảo sát, 61% người cho rằng phẫu thuật thẩm mỹ ngoài tăng sự tự tin còn cải thiện quan hệ nơi làm việc. Ngoài ra nghiên cứu cho thấy người ngoại hình đẹp thu nhập cao hơn người bình thường 10 đến 15%.
+短文|因為這樣，這幾年醫美成為很大的商機，一年有好幾百億的產值，而且一直在增加。也因此，全台灣44,000多位醫生，其中有12,000多位從事醫美。|Vì thế mấy năm nay y học thẩm mỹ thành cơ hội kinh doanh lớn, mỗi năm giá trị sản xuất hàng chục tỷ và vẫn tăng. Vì vậy trong hơn 44.000 bác sĩ toàn Đài Loan có hơn 12.000 người làm thẩm mỹ.
+短文|醫生的工作是醫治病人，社會地位一向很高，但是現在為什麼有這麼多的醫生選擇去做一般人認為不需要太多專業技術的微整型？主要原因有兩個：一個是在一般的醫院工作辛苦，待遇又不高，另外一個是社會環境改變了。|Bác sĩ chữa bệnh cho người, địa vị xã hội xưa nay rất cao, nhưng sao nay nhiều bác sĩ chọn làm thẩm mỹ nhỏ vốn bị coi là không cần nhiều kỹ thuật chuyên môn? Lý do chính có hai: một là làm ở bệnh viện thường vất vả mà đãi ngộ không cao, hai là môi trường xã hội đã thay đổi.
+短文|就拿公立醫院外科醫生來說，每星期工作時間超過一百個小時，但是薪水只有十萬塊。可是當微整型醫生，每星期只要工作四十五個小時，薪水卻是兩、三倍。|Lấy bác sĩ ngoại khoa bệnh viện công làm ví dụ, mỗi tuần làm hơn một trăm giờ mà lương chỉ mười vạn. Nhưng làm bác sĩ thẩm mỹ nhỏ mỗi tuần chỉ cần bốn mươi lăm giờ, lương lại gấp hai ba lần.
+短文|另一方面是價值觀的問題。以前醫生受人尊敬，可是現在的病人動不動就告醫生；平均每天最少有一位醫生被告；醫療糾紛也給醫生帶來很大的壓力。|Mặt khác là vấn đề giá trị quan. Trước đây bác sĩ được kính trọng, nay bệnh nhân hơi một chút là kiện bác sĩ; trung bình mỗi ngày ít nhất một bác sĩ bị kiện; tranh chấp y tế cũng tạo áp lực lớn.
+短文|很多人擔心，我們的醫療品質會不會因為那麼多外科醫生去從事整型工作而受到影響？可是如果醫生的工作環境和待遇不能改善，我們怎麼能怪他們選擇醫美。再說，醫美也是幫助人找回自信，開始新生活的好方法，不是嗎？|Nhiều người lo chất lượng y tế có bị ảnh hưởng khi nhiều bác sĩ ngoại khoa chuyển sang thẩm mỹ. Nhưng nếu môi trường và đãi ngộ không cải thiện, sao ta trách họ chọn thẩm mỹ? Hơn nữa y học thẩm mỹ cũng giúp người ta tìm lại tự tin, bắt đầu cuộc sống mới, phải không?
+@11|台灣故事|Câu chuyện Đài Loan
+建|xây dựng (văn ngôn)|V
+重建|xây lại|V
+到底|rốt cuộc|Adv
+世紀|thế kỷ|N
+貿易|mậu dịch, buôn bán|N
+商業|thương nghiệp|N
+利益|lợi ích|N
+派|phái, cử|V
+軍隊|quân đội|N
+燒|đốt|V
+城牆|tường thành|N
+頭髮|tóc|N
+甚至|thậm chí|Adv
+打仗|đánh nhau, chiến tranh|V-sep
+少數|thiểu số|N
+開墾|khai khẩn|V
+將軍|tướng quân|N
+軍人|quân nhân|N
+平原|đồng bằng|N
+人口|dân số|N
+血統|huyết thống|N
+嘍|(trợ từ: vậy thì)|Ptc
+孫子|cháu nội|N
+領土|lãnh thổ|N
+男性|nam giới|N
+禁止|cấm|V
+娶|cưới (vợ)|V
+相信|tin tưởng|Vst
+精彩|đặc sắc, tuyệt vời|Vs
+紅毛城|Hồng Mao Thành (pháo đài Santo Domingo)|Name
+東方|phương Đông|Name
+淡水|Đạm Thủy|Name
+漢人|người Hán|Name
+鄭成功|Trịnh Thành Công (Quốc Tính Gia)|Name
+明朝|triều Minh|Name
+中南美洲|Trung và Nam Mỹ|Name
+清朝|triều Thanh|Name
+大清帝國|Đại Thanh Đế quốc|Name
+輪到|đến lượt|Phrase
+十七世紀初|đầu thế kỷ 17|Phrase
+打敗|đánh bại|Phrase
+十七世紀末|cuối thế kỷ 17|Phrase
+餐桌|bàn ăn|N
+中式|kiểu Trung Hoa|N
+套|bộ, set|M
+燒餅|bánh nướng mè|N
+油條|bánh quẩy|N
+飯糰|cơm nắm|N
+豆漿|sữa đậu nành|N
+內戰|nội chiến|N
+人民|nhân dân|N
+攤子|sạp hàng|N
+菜單|thực đơn|N
+蘿蔔|củ cải|N
+接著|tiếp theo|Adv
+戰爭|chiến tranh|N
+不斷|không ngừng|Vs
+遷移|di cư|Vi
+多半|phần lớn|Adv
+困難|khó khăn|Vs
+節儉|tiết kiệm|Vs
+主婦|nội trợ|N
+煎|chiên|V
+菜色|món ăn|N
+以及|cũng như|Conj
+美味|ngon|Vs
+點心|điểm tâm, bánh ngọt|N
+日式|kiểu Nhật|N
+飲食|ăn uống|N
+蔣介石|Tưởng Giới Thạch|Name
+國共內戰|nội chiến Quốc–Cộng|Name
+客家人|người Khách Gia (Hakka)|Name
+閩南人|người Mân Nam|Name
+蛋餅|bánh trứng cuộn|Phrase
+打輸|thua trận|Phrase
+擺攤子|bày sạp hàng|Phrase
+蘿蔔糕|bánh củ cải|Phrase
+烹飪課|lớp nấu ăn|Phrase
+曬乾|phơi khô|Phrase
+各種各樣|đủ loại|Phrase
+殖民統治|thống trị thực dân|Phrase
+味噌湯|súp miso|Phrase
+蘿蔔乾|củ cải khô|Phrase
+進一步|tiến thêm một bước|Phrase
+#
+安德思|何雅婷，妳現在有空嗎？能不能幫我看一下這份作業？|Hà Nhã Đình, bạn có rảnh không? Có thể xem giúp tôi bài tập này không?
+何雅婷|什麼作業？紅毛城的故事？你們現在學台灣歷史嗎？|Bài gì? Câu chuyện Hồng Mao Thành? Giờ các bạn học lịch sử Đài Loan sao?
+安德思|是啊。下個星期一輪到我報告紅毛城的歷史。可是我的中文不夠好，有些資料看不懂，想請妳幫忙。|Phải. Thứ Hai tuần sau đến lượt tôi báo cáo lịch sử Hồng Mao Thành. Nhưng tiếng Trung tôi chưa đủ, có tài liệu đọc không hiểu, muốn nhờ bạn giúp.
+何雅婷|好啊，有什麼問題？|Được, có vấn đề gì?
+安德思|網路上說，紅毛城最早是西班牙人建的，後來荷蘭人又重建。到底是怎麼回事？|Trên mạng nói Hồng Mao Thành ban đầu do người Tây Ban Nha xây, sau đó người Hà Lan xây lại. Rốt cuộc thế nào?
+何雅婷|十六世紀，歐洲許多國家到東方從事貿易活動。十七世紀初，荷蘭人先在台灣南部建立城市。過了兩年，西班牙人也到了台灣北部，在淡水建了紅毛城。1642年，為了商業利益，荷蘭派軍隊打敗了西班牙。西班牙人離開台灣以前，把城燒了。所以現在的紅毛城是荷蘭人重建的。|Thế kỷ 16 nhiều nước châu Âu đến phương Đông buôn bán. Đầu thế kỷ 17 người Hà Lan lập thành ở nam Đài Loan trước. Hai năm sau người Tây Ban Nha cũng đến bắc Đài Loan, xây Hồng Mao Thành ở Đạm Thủy. Năm 1642 vì lợi ích thương mại Hà Lan phái quân đánh bại Tây Ban Nha. Trước khi rời Đài Loan người Tây Ban Nha đốt thành. Nên Hồng Mao Thành hiện nay do người Hà Lan xây lại.
+安德思|為什麼叫紅毛城？因為城牆是紅色的嗎？|Sao gọi là Hồng Mao Thành? Vì tường thành màu đỏ à?
+何雅婷|不是，不是，是因為西方人頭髮顏色的關係。當時的台灣人叫西方人「紅毛」。|Không, không, là vì màu tóc người phương Tây. Người Đài Loan lúc đó gọi người phương Tây là "tóc đỏ".
+安德思|那時候台灣沒有政府嗎？為什麼歐洲人可以自由地來來去去，甚至在台灣打仗？|Lúc đó Đài Loan không có chính phủ sao? Sao người châu Âu đến đi tự do, thậm chí đánh nhau ở Đài Loan?
+何雅婷|那時候台灣不是一個國家，沒有政府。除了少數來開墾跟做生意的漢人以外，都是原住民。|Lúc đó Đài Loan không phải một quốc gia, không có chính phủ. Ngoài số ít người Hán đến khai khẩn và buôn bán, đều là người bản địa.
+安德思|這麼說，台灣應該有很多原住民才對。可是為什麼我的朋友當中一個原住民都沒有？|Vậy thì Đài Loan phải có nhiều người bản địa mới đúng. Sao trong bạn tôi chẳng có ai là người bản địa?
+何雅婷|這就要從鄭成功說起了。鄭成功是明朝的一位將軍，他在1662年帶著兩萬五千個軍人打敗荷蘭，建立台灣歷史上第一個漢人政府。|Chuyện này phải bắt đầu từ Trịnh Thành Công. Ông là một tướng triều Minh, năm 1662 dẫn hai vạn năm nghìn quân đánh bại Hà Lan, lập chính quyền người Hán đầu tiên trong lịch sử Đài Loan.
+安德思|鄭成功到台灣就跟西班牙人到中南美洲的情形一樣嗎？|Trịnh Thành Công đến Đài Loan giống như người Tây Ban Nha đến Trung Nam Mỹ sao?
+何雅婷|嗯。從那以後，移民到台灣來的漢人越來越多。慢慢地，本來住在平原的原住民有的搬到山上去，更多的人跟漢人結婚了。現在台灣人口當中原住民只占百分之二，差不多有五十幾萬人。|Ừ. Từ đó người Hán di cư đến Đài Loan ngày càng nhiều. Dần dần người bản địa vốn sống ở đồng bằng có người dọn lên núi, nhiều người hơn kết hôn với người Hán. Nay dân số Đài Loan người bản địa chỉ chiếm 2%, khoảng hơn năm trăm nghìn.
+安德思|妳的意思是，台灣有很多人都有原住民的血統嘍？|Ý bạn là nhiều người Đài Loan có huyết thống người bản địa à?
+何雅婷|是的。十七世紀末，清朝政府打敗了鄭成功的孫子，台灣正式成為大清帝國的領土。但是清朝政府只讓男性來台灣開墾，禁止他們帶家人來。所以漢人男性想結婚只能娶原住民。|Đúng vậy. Cuối thế kỷ 17, triều Thanh đánh bại cháu nội Trịnh Thành Công, Đài Loan chính thức thành lãnh thổ Đại Thanh. Nhưng triều Thanh chỉ cho nam giới đến khai khẩn, cấm mang gia đình. Nên đàn ông Hán muốn kết hôn chỉ có thể cưới người bản địa.
+安德思|謝謝妳告訴我這麼多跟台灣有關的故事。我相信下個星期我的報告會非常精彩。|Cảm ơn bạn kể nhiều chuyện về Đài Loan. Tôi tin báo cáo tuần sau của tôi sẽ rất đặc sắc.
+短文|星期六早上何雅婷帶安德思到一家很有名的中式早餐店去吃早餐。何雅婷點了一套燒餅油條、一份蛋餅、一個飯糰，還有一碗甜豆漿跟一碗鹹豆漿。|Sáng thứ Bảy Hà Nhã Đình dẫn An Đức Tư đến một tiệm điểm tâm kiểu Trung nổi tiếng. Nhã Đình gọi một phần bánh nướng quẩy, một bánh trứng cuộn, một cơm nắm, cùng một bát sữa đậu nành ngọt và một bát mặn.
+短文|何雅婷告訴他，這家早餐店的老闆是1949年的時候跟著蔣介石一起到台灣來的。國共內戰，蔣介石打輸了，就帶著一百多萬的軍隊跟人民到了台灣。那時候有些人為了生活，不得不擺個攤子，賣起家鄉的美食。這家店就是這麼開始的。|Nhã Đình kể ông chủ tiệm này năm 1949 theo Tưởng Giới Thạch đến Đài Loan. Nội chiến Quốc–Cộng, Tưởng thua nên đưa hơn một triệu quân và dân sang Đài Loan. Lúc đó có người vì mưu sinh đành bày sạp bán món quê nhà. Tiệm này bắt đầu như vậy.
+短文|但是安德思看到早餐店的菜單上也有蘿蔔糕。他想起上烹飪課的時候，老師說過蘿蔔糕是客家人過年時一定要吃的。何雅婷告訴他，因為蘿蔔長得快，而且不太需要照顧，秋天收成以後種下的蘿蔔就成了客家人冬天重要的蔬菜。|Nhưng An Đức Tư thấy thực đơn cũng có bánh củ cải. Anh nhớ lúc học lớp nấu ăn thầy từng nói bánh củ cải là món người Hakka nhất định ăn dịp Tết. Nhã Đình bảo vì củ cải mọc nhanh, ít cần chăm sóc nên củ cải trồng sau mùa thu hoạch mùa thu trở thành rau quan trọng mùa đông của người Hakka.
+短文|何雅婷接著又說，在中國歷史上，客家人因為戰爭不斷而往南方遷移，現在台灣客家人的祖先多半是清朝的時候移民來的。因為來的時間比閩南人晚，只好住在山邊，生活比較困難。節儉的客家主婦就利用曬乾以後的蘿蔔煎蛋、煮湯，做出各種各樣的菜色，以及美味的點心。|Nhã Đình nói tiếp, trong lịch sử Trung Quốc người Hakka vì chiến tranh liên miên mà di cư xuống phương nam, tổ tiên người Hakka ở Đài Loan phần lớn nhập cư thời Thanh. Vì đến muộn hơn người Mân Nam nên đành ở gần núi, đời sống khó hơn. Các bà nội trợ Hakka tiết kiệm dùng củ cải phơi khô chiên trứng, nấu canh, làm đủ món ăn và bánh ngon.
+短文|安德思還發現，這家早餐店賣的飯糰跟他在便利商店買的不一樣。何雅婷覺得安德思買的應該是日式飯糰。日本曾經殖民統治台灣五十年，所以台灣人的飲食習慣受到很深的影響，像壽司、味噌湯都很普遍，到處都吃得到。|An Đức Tư còn nhận ra cơm nắm ở tiệm này khác loại anh mua ở cửa hàng tiện lợi. Nhã Đình nghĩ anh mua là cơm nắm kiểu Nhật. Nhật từng thống trị thực dân Đài Loan năm mươi năm nên thói quen ăn uống của người Đài Loan chịu ảnh hưởng sâu, sushi, súp miso đều phổ biến, đâu cũng ăn được.
+短文|不過台灣的味噌湯裡有時候會加一小段油條，飯糰裡也常能見到客家蘿蔔乾。安德思從來沒想到從餐桌上可以看出一個地方的歷史。這頓早餐讓他對台灣有了更進一步的了解。|Nhưng súp miso Đài Loan đôi khi thêm một đoạn bánh quẩy nhỏ, cơm nắm cũng thường có củ cải khô Hakka. An Đức Tư chưa từng nghĩ từ bàn ăn có thể thấy lịch sử một vùng. Bữa sáng này giúp anh hiểu Đài Loan sâu hơn.
+@12|我要去投票|Tôi sẽ đi bỏ phiếu
+投票|bỏ phiếu|V-sep
+抱歉|xin lỗi, áy náy|Vs
+表妹|em họ gái|N
+反核|chống điện hạt nhân|Vs-attr
+遊行|diễu hành, biểu tình|N
+政治|chính trị|N
+熱衷|nhiệt tình, say mê|Vst
+前途|tiền đồ, tương lai|N
+勸|khuyên|V
+而已|mà thôi|Ptc
+民主|dân chủ|Vs
+表達|bày tỏ|V
+公共|công cộng|Vs-attr
+議題|vấn đề (nghị sự)|N
+核能|năng lượng hạt nhân|N
+電廠|nhà máy điện|N
+由|do (ai quyết định)|Prep
+專家|chuyên gia|N
+全面|toàn diện|Adv
+民意|ý dân|N
+代表|đại biểu|N
+處理|xử lý|V
+政黨|đảng phái chính trị|N
+難道|chẳng lẽ|Adv
+滿|đủ (tuổi)|Vpt
+憲法|hiến pháp|N
+投票權|quyền bỏ phiếu|N
+選舉|bầu cử|N
+權利|quyền lợi|N
+表示|biểu thị|V
+反映|phản ánh|Vpt
+為|vì, cho|Prep
+服務|phục vụ|V
+職位|chức vụ|N
+任期|nhiệm kỳ|N
+選民|cử tri|N
+完美|hoàn hảo|Vs
+積極|tích cực|Vs
+最佳|tốt nhất|Vs-attr
+推銷員|nhân viên tiếp thị|N
+有道理|có lý|Phrase
+候選人|ứng viên|Phrase
+學術界|giới học thuật|N
+從政|làm chính trị|Vi
+政策|chính sách|N
+安定|ổn định|Vs
+辭|từ chức|Vp
+頭腦|đầu óc|N
+改革|cải cách|N
+看法|quan điểm|N
+教育|giáo dục|N
+方面|phương diện|N
+得到|nhận được|V
+連任|tái cử|V
+屆|khóa, nhiệm kỳ|M
+支持度|mức ủng hộ|N
+落選|thất cử|Vp
+得票率|tỷ lệ phiếu|N
+預期|dự kiến|N
+暫時|tạm thời|Adv
+老家|quê nhà|N
+形象|hình ảnh|N
+商量|bàn bạc|V
+人脈|mối quan hệ|N
+弱勢|yếu thế|N
+退休|nghỉ hưu|Vp
+事業|sự nghiệp|N
+捐|quyên góp|V
+義務|miễn phí, tình nguyện|Adv
+經費|kinh phí|N
+競選|tranh cử|V
+也許|có lẽ|Adv
+政治界|giới chính trị|N
+權力|quyền lực|N
+#
+何雅婷|真抱歉，今天晚上我不能跟你們去聽演唱會了。|Thật xin lỗi, tối nay tôi không đi nghe concert cùng các bạn được.
+高橋健太|不是說好了嗎？怎麼不去了？|Chẳng phải đã hẹn rồi sao? Sao lại không đi?
+何雅婷|我表妹從香港回來了。我阿姨叫我過去吃晚飯。|Em họ tôi từ Hồng Kông về. Dì tôi bảo tôi qua ăn tối.
+陳敏萱|妳表妹不是在香港念書嗎？現在不是假期，她怎麼回來了？|Em họ bạn chẳng phải đang học ở Hồng Kông sao? Giờ không phải kỳ nghỉ, sao lại về?
+何雅婷|她要參加這個週末的反核遊行。我阿姨擔心她對政治太熱衷，會影響她的前途，讓我過去勸勸她。|Em ấy muốn tham gia diễu hành phản đối điện hạt nhân cuối tuần này. Dì tôi lo em quá hăng hái chuyện chính trị, ảnh hưởng tương lai nên bảo tôi sang khuyên.
+陳敏萱|只不過參加遊行而已，妳阿姨想太多了吧。在民主社會，人民參加遊行，直接表達意見是很普遍的。妳表妹關心公共議題是件很好的事啊。|Chỉ là tham gia diễu hành thôi, dì bạn nghĩ nhiều rồi. Trong xã hội dân chủ, dân tham gia diễu hành, trực tiếp bày tỏ ý kiến rất phổ biến. Em bạn quan tâm vấn đề công cộng là chuyện tốt.
+高橋健太|妳的話雖然有道理，可是要不要核能電廠是一個專業的問題，應該由專家來討論、決定。再說，一般人對這個問題沒有辦法全面了解。既然我們選了民意代表，就應該由他們代表人民處理這些問題，不是嗎？|Lời bạn tuy có lý, nhưng có cần nhà máy điện hạt nhân hay không là vấn đề chuyên môn, nên do chuyên gia thảo luận quyết định. Hơn nữa người thường không hiểu toàn diện vấn đề này. Đã bầu đại biểu dân thì họ nên thay mặt dân xử lý, phải không?
+何雅婷|政治是很複雜的。我覺得民意代表關心的常常不是人民的利益，而是他們自己或是政黨的利益。我怎麼能相信他們呢？|Chính trị rất phức tạp. Tôi thấy đại biểu dân thường không quan tâm lợi ích của dân mà là của bản thân hay của đảng. Sao tôi tin họ được?
+陳敏萱|難道妳從來不去投票嗎？|Lẽ nào bạn chưa từng đi bỏ phiếu?
+何雅婷|我今年滿二十歲。按照憲法的規定，有投票權了。不過年底的選舉我不會去投票的。|Năm nay tôi tròn hai mươi tuổi. Theo hiến pháp đã có quyền bỏ phiếu. Nhưng cuối năm tôi sẽ không đi bầu.
+高橋健太|我覺得妳應該去投票。如果妳不去，不就放棄了表達意見的權利嗎？|Tôi thấy bạn nên đi bỏ phiếu. Nếu bạn không đi chẳng phải từ bỏ quyền bày tỏ ý kiến sao?
+何雅婷|不去投票也是表達意見的一種方式。這樣做表示我對所有的候選人都不滿意。|Không đi bỏ phiếu cũng là một cách bày tỏ ý kiến. Làm vậy nghĩa là tôi không hài lòng với tất cả ứng viên.
+高橋健太|可是如果大家都像妳一樣，不去投票，投票的結果就不能反映真正的民意，不是嗎？|Nhưng nếu ai cũng như bạn không đi bầu, kết quả sẽ không phản ánh ý dân thật sự, phải không?
+陳敏萱|對啊。再說，還是有一些有理想的候選人，願意出來為人民服務。妳應該支持這些又熱心、又有能力的人，讓他們有機會為大家做事。|Đúng vậy. Hơn nữa vẫn có ứng viên có lý tưởng sẵn sàng ra phục vụ dân. Bạn nên ủng hộ những người vừa nhiệt tình vừa có năng lực, cho họ cơ hội làm việc cho mọi người.
+高橋健太|民主政治有一個好處，就是每一個職位都有任期。如果選民不滿意當選的人，下次別再選他就好了。|Chính trị dân chủ có một điểm tốt: mỗi chức vụ đều có nhiệm kỳ. Nếu cử tri không hài lòng người trúng cử, lần sau đừng bầu ông ta nữa.
+陳敏萱|雖然民主制度並不完美，但是選民還是應該積極地表達自己的意見，這樣社會才會更好。如果我是妳，我一定會去投票的。|Tuy chế độ dân chủ không hoàn hảo, cử tri vẫn nên tích cực bày tỏ ý kiến, xã hội mới tốt hơn. Nếu là bạn tôi nhất định đi bỏ phiếu.
+何雅婷|好吧，我會好好考慮的。謝謝。你們真是民主政治的最佳推銷員。|Được rồi, tôi sẽ cân nhắc kỹ. Cảm ơn. Các bạn thật là nhân viên tiếp thị tốt nhất của nền chính trị dân chủ.
+短文|李文彥的叔叔原來是一位知名的大學教授，在學術界有很高的地位。可是他一直想從政。他認為只有好的政策才能為人民帶來幸福、安定的生活。為了理想，他辭掉了工作，參加民意代表選舉。|Chú của Lý Văn Ngạn vốn là giáo sư đại học nổi tiếng, có địa vị cao trong giới học thuật. Nhưng ông luôn muốn làm chính trị. Ông cho rằng chỉ có chính sách tốt mới mang lại cuộc sống hạnh phúc, ổn định cho dân. Vì lý tưởng ông từ chức, tham gia tranh cử đại biểu dân.
+短文|因為頭腦清楚、口才好，再加上常上電視對許多政治改革的議題提出看法，因此很受選民的歡迎。尤其是他在教育改革跟國民年金方面的努力，讓他得到選民普遍的支持，順利地連任了四屆。|Vì đầu óc minh mẫn, ăn nói giỏi, lại thường lên tivi nêu quan điểm về nhiều vấn đề cải cách chính trị nên rất được cử tri yêu mến. Nhất là nỗ lực về cải cách giáo dục và lương hưu quốc dân giúp ông được cử tri ủng hộ rộng rãi, thuận lợi tái cử bốn khóa.
+短文|不過，上一屆的選舉，雖然他的民意支持度在所有的候選人當中一直是最高的，結果卻落選了。他覺得很失望。他本來以為，中間選民會把票投給他，沒想到得票率不如預期。太太看他這麼難過，建議暫時先回鄉下老家休息一陣子，再考慮下一步怎麼走。|Nhưng kỳ bầu cử trước, tuy mức ủng hộ của ông luôn cao nhất trong các ứng viên, kết quả lại thất cử. Ông rất thất vọng. Ông vốn nghĩ cử tri trung dung sẽ bỏ phiếu cho mình, không ngờ tỷ lệ phiếu không như dự kiến. Vợ thấy ông buồn bèn khuyên tạm về quê nghỉ một thời gian rồi tính bước tiếp theo.
+短文|回到老家以後，因為以前從政形象好，家鄉的人大大小小的事都來找叔叔商量，他也盡可能利用自己的人脈和資源幫助了不少弱勢家庭。沒過多久，有一家出版社老闆要退休，可是孩子不願意接他的事業。老闆找到了李文彥的叔叔。|Về quê, vì trước đây làm chính trị có hình ảnh tốt, người quê việc lớn nhỏ đều đến bàn với chú; ông cũng hết sức dùng quan hệ và nguồn lực giúp nhiều gia đình yếu thế. Không lâu sau, ông chủ một nhà xuất bản sắp nghỉ hưu mà con không muốn nối nghiệp. Ông chủ tìm đến chú của Văn Ngạn.
+短文|經過考慮，叔叔答應買下出版社，並且在鄉下開了一家書店。他到處請認識的人捐出二手書、捐錢，甚至請大學生下課以後過來義務教孩子英文。另外，他還在書店裡幫小農賣有機農產品，把賺來的錢當做英文班的經費。|Sau cân nhắc, chú nhận mua nhà xuất bản và mở một hiệu sách ở quê. Ông khắp nơi nhờ người quen quyên sách cũ, quyên tiền, thậm chí mời sinh viên tan học đến dạy tiếng Anh miễn phí cho trẻ. Ngoài ra ông còn bán nông sản hữu cơ giúp tiểu nông trong hiệu sách, dùng tiền lời làm kinh phí lớp tiếng Anh.
+短文|日子雖然過得很充實，叔叔也很滿意現在的生活，但是隨著選舉越來越接近，叔叔也開始考慮要不要再出來競選民意代表。也許回到政治界，有了權力，他能為更多人服務。但是也許離開政治、離開城市，他為大家服務的理想更容易實現。誰知道呢？|Cuộc sống tuy phong phú, chú cũng hài lòng hiện tại, nhưng khi bầu cử gần kề, chú bắt đầu cân nhắc có nên tái tranh cử không. Có lẽ trở lại chính trường có quyền lực thì phục vụ được nhiều người hơn. Nhưng cũng có thể rời chính trị, rời thành phố, lý tưởng phục vụ mọi người dễ thành hiện thực hơn. Ai biết được?

@@ -1,0 +1,657 @@
+@1|十七歲還是二十五歲？|17 tuổi hay 25 tuổi?
+小玲|Tiểu Linh (nữ)|Name
+阿建|A Kiến (nam)|Name
+聊天室|phòng chat|N
+上班族|dân văn phòng|N
+與其|thay vì|Conj
+冷清|vắng vẻ, lạnh lẽo|Vs
+高就|làm ở đâu (cách hỏi lịch sự)|Vi
+部門|bộ phận, phòng ban|N
+厲害|giỏi, ghê gớm|Vs
+加班|làm thêm giờ|V-sep
+類|loại|M
+恐怖片|phim kinh dị|N
+愛情片|phim tình cảm|N
+嚇|dọa, sợ|Vp
+哭|khóc|V
+上癮|nghiện, mê|Vp
+刺激|kích thích, hồi hộp|Vs
+簡直|quả thực, đúng là|Adv
+膽子|gan, lá gan|N
+部|bộ (lượng từ cho phim)|M
+限制級|phim giới hạn độ tuổi|N
+電影院|rạp chiếu phim|N
+呃|ờ… (ngập ngừng, ngượng)|Ptc
+建設公司|công ty xây dựng|Phrase
+業務經理|giám đốc kinh doanh|Phrase
+室內設計|thiết kế nội thất|Phrase
+溫暖|ấm áp|Vs
+目前|hiện nay|Adv
+所|ngôi (lượng từ cho trường)|M
+就讀|đang theo học|Vi
+不至於|không đến nỗi|Adv
+但|nhưng (trang trọng)|Conj
+放學|tan học|Vp
+後|sau (trang trọng)|N
+解決|giải quyết|V
+寂寞|cô đơn|Vs
+網友|bạn trên mạng|N
+陪伴|ở bên cạnh, bầu bạn|V
+電腦|máy tính|N
+進入|bước vào|V
+線上|trực tuyến|N
+感情|tình cảm|N
+小氣|keo kiệt|Vs
+時|khi (trang trọng)|N
+往往|thường thường|Adv
+打氣|cổ vũ|Vi
+安慰|an ủi|V
+心裡|trong lòng|N
+大膽|gan dạ|Vs
+紓解|giải tỏa|V
+轉換|chuyển đổi|V
+虛擬|ảo|Vs-attr
+現實|thực tế|Vs
+心理|tâm lý|N
+即使|dù cho|Conj
+責備|trách mắng|V
+期待|kỳ vọng|N
+喘|thở dốc|V-sep
+自在|thoải mái|Vs
+交友|kết bạn|Vi
+暴力|bạo lực|N
+點|nhấp (chuột)|V
+懂得|biết cách|Vst
+陷阱|cái bẫy|N
+明星高中|trường cấp ba danh tiếng|Phrase
+早出晚歸|đi sớm về khuya|Phrase
+打開|mở ra|Phrase
+喘不過氣|ngộp thở|Phrase
+躲進|trốn vào|Phrase
+#
+阿建|小玲，第一次看到妳。妳是學生還是上班族？|Tiểu Linh, lần đầu thấy bạn. Bạn là học sinh hay dân văn phòng?
+小玲|我是上班族，剛下班回到家。|Mình là dân văn phòng, vừa tan làm về đến nhà.
+阿建|剛到家？這麼晚？真辛苦！|Vừa về đến nhà? Muộn thế? Vất vả quá!
+小玲|不晚啊，現在才八點半而已。平常我都九點多才下班，有時候甚至工作到十點多。而且我自己一個人住，與其回到冷清的家，不如留在辦公室，還有同事陪我吃飯。|Đâu có muộn, mới tám giờ rưỡi thôi. Thường mình chín giờ mấy mới tan, có khi làm đến hơn mười giờ. Hơn nữa mình sống một mình, thay vì về căn nhà vắng vẻ thà ở văn phòng, còn có đồng nghiệp ăn cơm cùng.
+阿建|妳幾歲？單身嗎？沒跟家人住在一起嗎？|Bạn bao nhiêu tuổi? Độc thân à? Không sống cùng gia đình sao?
+小玲|二十五歲，單身。家在台南，大學畢業後來台北工作，自己在外面租房子。你呢？|Hai mươi lăm tuổi, độc thân. Nhà ở Đài Nam, tốt nghiệp đại học lên Đài Bắc làm việc, tự thuê nhà bên ngoài. Còn bạn?
+阿建|我也單身，三十二歲。|Mình cũng độc thân, ba mươi hai tuổi.
+小玲|在哪裡高就？|Bạn làm ở đâu?
+阿建|我在建設公司上班，是業務經理。部門裡有二十幾個人。|Mình làm ở công ty xây dựng, là giám đốc kinh doanh. Phòng có hơn hai mươi người.
+小玲|你才三十二歲就已經是業務經理了，真厲害！你的工作能力一定很強。|Bạn mới ba mươi hai đã là giám đốc kinh doanh, giỏi quá! Năng lực làm việc chắc rất mạnh.
+阿建|還可以。妳在哪裡工作呢？|Cũng tạm. Còn bạn làm ở đâu?
+小玲|我在一家室內設計公司工作，畢業才兩年，經驗還不夠，所以工作常常做不完，得常加班。|Mình làm ở một công ty thiết kế nội thất, tốt nghiệp mới hai năm, kinh nghiệm chưa đủ nên việc hay làm không xong, phải thường tăng ca.
+阿建|妳的興趣是什麼？有空的時候做些什麼？|Sở thích của bạn là gì? Lúc rảnh làm gì?
+小玲|看書、看電影、吃美食。|Đọc sách, xem phim, ăn ngon.
+阿建|妳愛看哪類電影？|Bạn thích xem loại phim nào?
+小玲|我最愛看恐怖片。|Mình thích xem phim kinh dị nhất.
+阿建|恐怖片！妳敢看恐怖片！我以為女生都只喜歡看浪漫的愛情片。好多女生都因為覺得恐怖片太可怕而被嚇哭了。|Phim kinh dị! Bạn dám xem phim kinh dị! Mình tưởng con gái chỉ thích phim tình cảm lãng mạn. Nhiều cô vì thấy phim kinh dị quá đáng sợ mà bị dọa khóc.
+小玲|並不是所有的女生都喜歡看愛情片，我就不喜歡，愛情片無聊死了！剛開始看恐怖片的時候，我也怕得不得了，但是看著看著就上癮了。現在覺得很刺激呢！|Không phải con gái nào cũng thích phim tình cảm, mình thì không, phim tình cảm chán chết! Lúc mới xem phim kinh dị mình cũng sợ lắm, nhưng xem mãi rồi nghiện. Giờ thấy rất hồi hộp!
+阿建|別說女生，就是男生也有很多不敢看恐怖片的。|Đừng nói con gái, con trai cũng có nhiều người không dám xem.
+小玲|不敢看恐怖片的男生簡直不是男生！膽子比我還小！|Con trai không dám xem phim kinh dị đúng là không phải con trai! Gan còn nhỏ hơn mình!
+阿建|好啦！好啦！別這麼激動，下次我們一起去找部恐怖片看吧！|Thôi nào! Đừng kích động thế, lần sau cùng tìm một bộ phim kinh dị xem nhé!
+小玲|好啊！可是有的恐怖片是限制級的，我不能去電影院看。|Được! Nhưng có phim kinh dị bị giới hạn độ tuổi, mình không thể vào rạp xem.
+阿建|為什麼？妳不是二十五歲嗎？|Tại sao? Chẳng phải bạn hai mươi lăm tuổi sao?
+小玲|呃……|Ờ…
+短文|十七歲的小玲是家裡的獨生女，目前在一所明星高中就讀。爸爸從事新聞媒體方面的工作，早出晚歸；媽媽的工作不至於那麼忙，但也常需要加班。因此，小玲放學後回到冷清的家，晚餐都是自己解決。|Tiểu Linh mười bảy tuổi là con gái một, hiện học ở một trường cấp ba danh tiếng. Bố làm trong ngành truyền thông báo chí, đi sớm về khuya; công việc mẹ không đến nỗi bận như vậy nhưng cũng thường phải tăng ca. Vì thế tan học về căn nhà vắng vẻ, Tiểu Linh tự lo bữa tối.
+短文|雖然這樣，小玲並不寂寞，因為有許多網友陪伴她。每天小玲一打開電腦，進入聊天室，就有許多網友在線上聊著今天發生的大小事。有人聊著感情的問題，有人抱怨老闆太小氣……。|Dù vậy Tiểu Linh không cô đơn vì có nhiều bạn mạng bên cạnh. Mỗi ngày vừa mở máy vào phòng chat là có nhiều người online trò chuyện chuyện lớn nhỏ hôm nay. Có người nói chuyện tình cảm, có người than ông chủ keo kiệt…
+短文|網友們看見小玲上線了，都會熱情地跟她打招呼。在她心情不好時，大家往往會給她加油打氣、安慰她。在小玲心裡，這個聊天室裡住著很多沒見過面的兄弟姐妹。雖然她在學校裡也有好朋友，但在網路上好像更能放心大膽地聊。|Bạn mạng thấy Tiểu Linh online đều nhiệt tình chào hỏi. Khi cô buồn, mọi người thường cổ vũ, an ủi. Trong lòng cô, phòng chat này có nhiều anh chị em chưa từng gặp mặt. Tuy ở trường cô cũng có bạn thân nhưng trên mạng dường như càng yên tâm nói chuyện thoải mái.
+短文|另外，玩線上遊戲也是小玲紓解壓力的方法，讀書讀累了，就玩一下，不但可以轉換心情，有的跟歷史有關的遊戲還可以讓小玲對歷史更了解呢。|Ngoài ra chơi game online cũng là cách Tiểu Linh giải tỏa áp lực, học mệt thì chơi một lát, không chỉ đổi tâm trạng, có game liên quan lịch sử còn giúp cô hiểu lịch sử hơn.
+短文|對小玲來說，網路的虛擬關係比現實生活中的關係簡單多了。在網路世界裡，所有的事情都可以得到安慰和支持，不會有心理負擔，即使做錯了，也不會有人責備；在現實生活中，家人的期待、學校裡的競爭都讓她喘不過氣來。躲進網路世界裡，比較自在。|Với Tiểu Linh, quan hệ ảo trên mạng đơn giản hơn nhiều so với quan hệ ngoài đời. Trong thế giới mạng mọi chuyện đều được an ủi, ủng hộ, không có gánh nặng tâm lý, dù làm sai cũng không ai trách; ngoài đời kỳ vọng của gia đình và cạnh tranh ở trường khiến cô ngộp thở. Trốn vào thế giới mạng thoải mái hơn.
+短文|雖然小玲常常跟網友聊天，但是小玲只是聊著玩的。她知道網路交友有時候很危險，所以色情、暴力網站她都不會點進去；她也知道懂得保護自己，才不會掉進這種網路陷阱裡。|Tuy Tiểu Linh hay trò chuyện với bạn mạng nhưng chỉ chat cho vui. Cô biết kết bạn trên mạng đôi khi nguy hiểm nên trang web khiêu dâm, bạo lực cô không bao giờ nhấp vào; cô cũng biết biết bảo vệ bản thân mới không rơi vào bẫy mạng.
+@2|眼睛、耳朵的饗宴|Bữa tiệc cho mắt và tai
+李雲真|Lý Vân Chân (nữ)|Name
+眼睛|mắt|N
+耳朵|tai|N
+饗宴|bữa tiệc, yến tiệc|N
+打扮|trang điểm, ăn diện|V
+音樂廳|nhà hát hòa nhạc|N
+表演|biểu diễn|N
+整齊|chỉnh tề, gọn gàng|Vs
+穿著|cách ăn mặc|N
+丟臉|mất mặt|Vs-sep
+短褲|quần short|N
+涼鞋|dép xăng-đan|N
+擋|chặn, ngăn|V
+演出者|người biểu diễn|N
+尊重|tôn trọng|Vst
+社交|giao tiếp xã hội|N
+免得|để khỏi, kẻo|Conj
+中場|giờ nghỉ giữa chương trình|N
+準時|đúng giờ|Vs
+禮貌|lịch sự|N
+或|hoặc (trang trọng)|Conj
+熟|quen thuộc, thân|Vs
+提|nhắc đến|V
+咳嗽|ho|Vi
+關|tắt|V
+哇|ôi chao|Ptc
+水準|trình độ, đẳng cấp|N
+手冊|cẩm nang, tập hướng dẫn|N
+洗手間|nhà vệ sinh|N
+提醒|nhắc nhở|V
+響|vang lên, kêu|Vp
+糟|tệ, hỏng bét|Vs
+噓|suỵt|Ptc
+看不成|không xem được|Phrase
+聯絡感情|gắn kết tình cảm|Phrase
+擤鼻涕|xì mũi|Phrase
+場|buổi (lượng từ cho buổi diễn)|M
+強調|nhấn mạnh|V
+團體|nhóm, đoàn thể|N
+千萬|nhất định (phải)|Adv
+鋼琴|đàn piano|N
+小提琴|vi-ô-lông|N
+古典|cổ điển|Vs
+畫家|họa sĩ|N
+畫|vẽ, tranh|V
+舞蹈|múa|N
+文學|văn học|N
+繪畫|hội họa|N
+等|vân vân|Ptc
+寺廟|đền chùa|N
+表現|biểu hiện|V
+之|của (văn ngôn)|Ptc
+劇情|cốt truyện|N
+導演|đạo diễn|N
+所|(trợ từ danh hóa trước động từ)|Ptc
+紅|nổi tiếng|Vs
+明星|ngôi sao|N
+演技|diễn xuất|N
+得|đạt được|Vpt
+獎|giải thưởng|N
+廣場|quảng trường|N
+仔細|cẩn thận, tỉ mỉ|Adv
+留意|lưu ý|Vst
+處處|khắp nơi|Adv
+滿足|thỏa mãn|Vst
+豐盛|thịnh soạn, phong phú|Vs
+國家戲劇院|Nhà hát Quốc gia|Name
+雲門舞集|Vân Môn Vũ Tập (đoàn múa)|Name
+國家音樂廳|Nhà hát hòa nhạc Quốc gia|Name
+金馬影展|Liên hoan phim Kim Mã|Name
+現代舞|múa đương đại|Phrase
+無人不知|ai cũng biết|Phrase
+無人不曉|ai cũng hay|Phrase
+百聞不如一見|trăm nghe không bằng một thấy|Phrase
+老街|phố cổ|Phrase
+街頭藝術|nghệ thuật đường phố|Phrase
+裝置藝術|nghệ thuật sắp đặt|Phrase
+填飽|làm no bụng|Phrase
+口腹之慾|thú ăn uống|Phrase
+#
+李雲真|快一點，打扮好了沒有？遲到的話，音樂廳就不讓我們進去，表演恐怕就看不成了。|Nhanh lên, trang điểm xong chưa? Đến muộn thì nhà hát không cho vào, e là không xem được buổi diễn.
+白如玉|好了，好了，馬上好。妳不認為我們應該穿得正式一點嗎？萬一別人都穿得很正式怎麼辦？|Xong rồi, xong rồi, ngay đây. Bạn không nghĩ chúng ta nên ăn mặc trang trọng hơn sao? Lỡ người khác đều ăn mặc trang trọng thì sao?
+李雲真|我想只要穿得整齊就可以了。我第一次去看表演的時候，以為要穿非常正式的服裝，沒想到平常的穿著就可以了。|Mình nghĩ chỉ cần ăn mặc gọn gàng là được. Lần đầu mình đi xem biểu diễn tưởng phải mặc rất trang trọng, không ngờ đồ thường ngày cũng được.
+白如玉|這是我第一次去，可不能丟臉。|Đây là lần đầu mình đi, không thể mất mặt.
+李雲真|聽我朋友說，有一次他穿了短褲和涼鞋，就被擋在門外了。|Nghe bạn mình nói, có lần anh ấy mặc quần short và dép xăng-đan thì bị chặn ngoài cửa.
+白如玉|我同意妳的看法，去看表演時，穿著整齊對演出者也算是一種尊重。每個國家的文化都不太一樣，在我的國家，欣賞藝術表演也算是一種社交活動。|Mình đồng ý với bạn, đi xem biểu diễn ăn mặc chỉnh tề cũng là một sự tôn trọng người diễn. Văn hóa mỗi nước không giống nhau, ở nước mình thưởng thức biểu diễn nghệ thuật cũng là một hoạt động xã giao.
+李雲真|怎麼說呢？|Nói sao nhỉ?
+白如玉|我們邊走邊說吧，免得遲到就得等中場休息時間才能進去了。準時也是一種禮貌。|Chúng ta vừa đi vừa nói, kẻo đến muộn phải đợi giờ nghỉ giữa chừng mới vào được. Đúng giờ cũng là một phép lịch sự.
+李雲真|對了，妳剛說的社交活動是什麼意思？|À, hoạt động xã giao bạn vừa nói nghĩa là gì?
+白如玉|因為我們沒有夜市，KTV也很少，一般人下班後，晚上能去的地方不多，欣賞藝術活動可以跟朋友或同事聯絡感情。|Vì nước mình không có chợ đêm, KTV cũng ít, người bình thường tan làm tối đi được nơi không nhiều, thưởng thức nghệ thuật có thể gắn kết tình cảm với bạn bè hoặc đồng nghiệp.
+李雲真|說到聯絡感情，後天我和建國要去看電影，一起去吧？|Nhắc đến gắn kết tình cảm, ngày kia mình và Kiến Quốc đi xem phim, cùng đi nhé?
+白如玉|妳說的是英文系的林建國嗎？|Bạn nói là Lâm Kiến Quốc khoa tiếng Anh à?
+李雲真|就是他，你們很熟嗎？|Chính anh ấy, hai bạn thân lắm à?
+白如玉|唉！別提了，上次我們好幾個人一起去看電影，他又擤鼻涕，又不停地咳嗽，還忘了關手機。|Ôi! Đừng nhắc nữa, lần trước mấy người bọn mình đi xem phim, anh ta vừa xì mũi, vừa ho không ngừng, còn quên tắt điện thoại.
+李雲真|哇！怎麼那麼沒有水準，感冒的話就應該在家休息，看電影時手機應該關機。|Chà! Sao kém ý thức thế, cảm thì nên ở nhà nghỉ, xem phim phải tắt điện thoại.
+白如玉|到了！到了！還好還有15分鐘才開始。我先去買一本表演手冊。|Đến rồi! Đến rồi! May còn 15 phút mới bắt đầu. Mình đi mua tập hướng dẫn chương trình trước.
+李雲真|我去一下洗手間，等一下裡面見。|Mình đi vệ sinh một chút, lát gặp bên trong.
+白如玉|妳的手機關了嗎？|Điện thoại bạn tắt chưa?
+李雲真|謝謝妳提醒我，要不然等一下手機響了就糟了。|Cảm ơn bạn nhắc, không thì lát điện thoại reo là hỏng chuyện.
+白如玉|噓，表演開始了。|Suỵt, buổi diễn bắt đầu rồi.
+短文|今天是白如玉來台灣以後，第一次到「國家戲劇院」看表演，她覺得非常興奮。她跟李雲真約好了，晚上要一起欣賞一場現代舞的表演。|Hôm nay là lần đầu Bạch Như Ngọc đến "Nhà hát Quốc gia" xem biểu diễn kể từ khi đến Đài Loan, cô rất phấn khích. Cô hẹn Lý Vân Chân tối nay cùng xem một buổi múa đương đại.
+短文|在美國時，白如玉曾經看過一次現代舞的表演。她覺得現代舞很難懂，但是很有意思。另外，李雲真還特別強調，今天晚上表演的團體「雲門舞集」在台灣幾乎無人不知、無人不曉，千萬別錯過了這個難得的好機會。|Ở Mỹ Như Ngọc từng xem một buổi múa đương đại. Cô thấy khó hiểu nhưng rất thú vị. Vân Chân còn nhấn mạnh đoàn "Vân Môn Vũ Tập" diễn tối nay hầu như ai ở Đài Loan cũng biết, nhất định đừng bỏ lỡ cơ hội hiếm có này.
+短文|「國家音樂廳」在「國家戲劇院」對面，在那裡可以欣賞到各種音樂。白如玉小時候學過鋼琴和小提琴，特別喜歡古典音樂，她打算下次要請李雲真一起來聽音樂。|"Nhà hát hòa nhạc Quốc gia" đối diện "Nhà hát Quốc gia", ở đó thưởng thức được đủ loại nhạc. Hồi nhỏ Như Ngọc học piano và vi-ô-lông, đặc biệt thích nhạc cổ điển, cô định lần sau mời Vân Chân cùng đến nghe nhạc.
+短文|白如玉的父親是畫家，她受到父親的影響也非常喜歡畫畫。除了音樂、舞蹈和繪畫以外，她對文學、建築和電影等藝術都非常有興趣。|Cha của Như Ngọc là họa sĩ, chịu ảnh hưởng của cha cô cũng rất thích vẽ. Ngoài âm nhạc, múa và hội họa, cô còn rất hứng thú với văn học, kiến trúc, điện ảnh…
+短文|記得剛來台灣時，她常去參觀寺廟，她認為寺廟最能表現出傳統建築之美。她還聽她的同學高橋健太提過，台南有不少古蹟，其中最值得欣賞的就是台南的寺廟了。百聞不如一見，下次一定要去看看。|Nhớ lúc mới đến Đài Loan, cô thường đi tham quan đền chùa, cho rằng đền chùa thể hiện rõ nhất vẻ đẹp kiến trúc truyền thống. Cô còn nghe bạn Takahashi Kenta kể Đài Nam có nhiều di tích, đáng chiêm ngưỡng nhất là các đền chùa. Trăm nghe không bằng một thấy, lần sau nhất định phải đến.
+短文|由於白如玉的中文進步了不少，除了參觀寺廟以外，她還常去看中文電影。上個週末她看了一部台灣電影，劇情非常特別。她想，導演所要表達的意思是現代人孤單寂寞的感覺吧。男、女主角都是台灣目前最紅的明星，他們的演技不但好，男主角還得了今年金馬影展的最佳男主角獎。|Do tiếng Trung của Như Ngọc tiến bộ nhiều, ngoài tham quan đền chùa cô còn hay xem phim tiếng Trung. Cuối tuần trước cô xem một phim Đài Loan, cốt truyện rất đặc biệt. Cô nghĩ điều đạo diễn muốn nói là cảm giác cô đơn của con người hiện đại. Nam nữ chính đều là ngôi sao nổi nhất Đài Loan hiện nay, diễn xuất xuất sắc, nam chính còn đoạt giải Nam chính xuất sắc nhất Kim Mã năm nay.
+短文|白如玉有時逛街經過台北101大樓附近的商業廣場，或週末去淡水老街附近，都看到不少街頭藝術的演出。在我們的生活中仔細留意的話，處處都是藝術，捷運站或公園裡也有不少裝置藝術可以欣賞。|Có lúc dạo phố qua quảng trường thương mại gần Taipei 101 hoặc cuối tuần đến gần phố cổ Đạm Thủy, Như Ngọc thấy nhiều màn biểu diễn nghệ thuật đường phố. Nếu để ý kỹ trong đời sống, đâu đâu cũng là nghệ thuật, ga MRT hay công viên cũng có nhiều tác phẩm sắp đặt để chiêm ngưỡng.
+短文|如果說食物能填飽我們的肚子，滿足我們的口腹之慾的話，那麼藝術就是眼睛和耳朵最豐盛的饗宴了。|Nếu thức ăn lấp đầy bụng, thỏa mãn thú ăn uống của chúng ta thì nghệ thuật là bữa tiệc thịnh soạn nhất cho đôi mắt và đôi tai.
+@3|雲端科技|Công nghệ đám mây
+李文麗|Lý Văn Lệ (nữ)|Name
+外婆|bà ngoại|N
+女裝|quần áo nữ|N
+何必|hà tất|Adv
+指|chỉ, có nghĩa là|Vst
+划算|đáng giá, có lợi|Vs
+身材|dáng người|N
+模特兒|người mẫu|N
+不見得|chưa chắc|Adv
+仿冒品|hàng nhái|N
+瑕疵|khuyết điểm, lỗi|N
+圖片|hình ảnh|N
+落差|chênh lệch|N
+提供|cung cấp|V
+資訊|thông tin|N
+疑問|nghi vấn|N
+嘛|(trợ từ: hiển nhiên là)|Ptc
+慣|quen|Ptc
+瀏覽|duyệt (web)|V
+後悔|hối hận|Vs
+深夜|đêm khuya|N
+任何|bất kỳ|Det
+駭客|hacker|N
+盜用|dùng trộm|V
+認證|chứng nhận, xác thực|V/N
+銀髮族|người cao tuổi|N
+從前|trước đây|N
+通常|thông thường|Adv
+取貨|lấy hàng|V-sep
+付款|thanh toán|V-sep
+雲端科技|công nghệ đám mây|Phrase
+宅經濟|kinh tế ở nhà|Phrase
+用不慣|không quen dùng|Phrase
+退換|trả hoặc đổi hàng|Phrase
+信用卡|thẻ tín dụng|Phrase
+縮短|rút ngắn|Vpt
+人們|con người, mọi người|N
+距離|khoảng cách|N
+取代|thay thế|V
+信|thư|N
+影集|phim truyền hình nhiều tập|N
+取得|thu được|V
+例如|ví dụ|Vst
+民眾|dân chúng|N
+高速公路|đường cao tốc|N
+前|trước (trang trọng)|N
+查詢|tra cứu|V
+路況|tình hình giao thông|N
+避開|tránh|V
+路段|đoạn đường|N
+若|nếu|Conj
+運用|vận dụng|V
+病歷|bệnh án|N
+例子|ví dụ|N
+更加|càng thêm|Adv
+原本|vốn dĩ|Adv
+忙碌|bận rộn|Vs
+確實|quả thật|Adv
+控制|kiểm soát|V
+表弟|em họ trai|N
+退步|thụt lùi|Vp
+過度|quá mức|Adv
+與|và (trang trọng)|Conj
+生理|sinh lý|N
+盯|nhìn chằm chằm|V
+螢幕|màn hình|N
+疲倦|mệt mỏi|Vs
+視力|thị lực|N
+家長|phụ huynh|N
+此外|ngoài ra|Conj
+戶外|ngoài trời|N
+人類|nhân loại|N
+正面|tích cực|Vs
+同時|đồng thời|Adv
+負面|tiêu cực|Vs
+沉迷|đắm chìm|Vs
+無形中|vô hình trung|Phrase
+遠距教學|dạy học từ xa|Phrase
+大吵大鬧|làm ầm ĩ|Phrase
+焦慮不安|lo âu bất an|Phrase
+總而言之|nói tóm lại|Phrase
+#
+外婆|喂，文麗，這個週末妳有空嗎？我們去逛百貨公司，買幾件新衣吧！|Alô, Văn Lệ, cuối tuần này cháu rảnh không? Bà cháu mình đi dạo trung tâm bách hóa mua mấy bộ đồ mới nhé!
+李文麗|外婆，週末我有事，網路商店就有很多流行女裝，何必去百貨公司呢？|Bà ơi, cuối tuần cháu có việc, cửa hàng online có nhiều đồ nữ thịnh hành, hà tất đến trung tâm bách hóa?
+外婆|在網路商店買東西，很麻煩吧？|Mua đồ ở cửa hàng online chắc phiền lắm nhỉ?
+李文麗|網路購物很簡單，現在是宅經濟時代，不會網路購物就落伍了。|Mua sắm online rất đơn giản, giờ là thời đại kinh tế ở nhà, không biết mua online là lạc hậu.
+外婆|什麼叫「宅經濟」啊？我沒聽過！|"Kinh tế ở nhà" là gì vậy? Bà chưa nghe bao giờ!
+李文麗|外婆，「宅」是指在家裡，「宅經濟」是指在家逛虛擬商店買東西，也就是線上購物。|Bà ơi, "trạch" nghĩa là ở nhà, "kinh tế ở nhà" là ở nhà dạo cửa hàng ảo mua đồ, tức là mua sắm trực tuyến.
+外婆|在家上網買東西會不會比較貴啊？|Ở nhà lên mạng mua đồ có đắt hơn không?
+李文麗|網路商店沒有店面，不需要請店員，可以省很多錢，當然比較便宜。|Cửa hàng online không có mặt bằng, không cần thuê nhân viên, tiết kiệm nhiều tiền nên đương nhiên rẻ hơn.
+外婆|比較便宜的話，那就應該在網路上買才划算，可是我的身材不好，模特兒穿起來好看，我穿，不見得好看。|Rẻ hơn thì nên mua trên mạng mới có lợi, nhưng dáng bà không đẹp, người mẫu mặc đẹp, bà mặc chưa chắc đẹp.
+李文麗|外婆，網路商店裡的款式多得不得了。一定有合適的。|Bà ơi, mẫu mã ở cửa hàng online nhiều vô kể. Nhất định có cái hợp.
+外婆|會不會買到仿冒品或是有瑕疵的東西呢？聽說網路上有的圖片跟實際的商品落差很大，我怎麼能相信賣家提供的圖片和資訊呢？|Có mua phải hàng nhái hoặc có lỗi không? Nghe nói ảnh trên mạng có khi khác xa hàng thực, sao bà tin được ảnh và thông tin người bán đưa?
+李文麗|要是對商品有疑問的話，可以直接上網問賣家，如果不相信那家網路商店，就不要買他們的東西嘛！|Nếu có thắc mắc về hàng thì hỏi thẳng người bán trên mạng, nếu không tin cửa hàng đó thì đừng mua đồ của họ!
+外婆|我這麼老了才開始用電腦，現在還用不慣，我平常只上網瀏覽，從來沒上網買過東西，我怕買了會後悔。|Bà già thế này mới bắt đầu dùng máy tính, giờ vẫn chưa quen, thường chỉ lên mạng xem, chưa từng mua gì, bà sợ mua rồi hối hận.
+李文麗|外婆，不滿意可以退換。網路購物很方便，不必出門，不管白天還是深夜，任何時間都可以買。|Bà ơi, không hài lòng có thể đổi trả. Mua online rất tiện, không cần ra khỏi nhà, bất kể ban ngày hay đêm khuya, lúc nào cũng mua được.
+外婆|網路購物真的那麼好嗎？上網用信用卡買東西有沒有風險？會不會被駭客盜用？|Mua online thật sự tốt vậy sao? Lên mạng dùng thẻ tín dụng có rủi ro không? Có bị hacker lấy trộm không?
+李文麗|是有風險啊！不過只要選擇經過認證的安全網站，就不會有問題了。|Có rủi ro chứ! Nhưng chỉ cần chọn trang web an toàn đã được chứng nhận thì không sao.
+外婆|嗯，那我去網路上看看有沒有我喜歡的。|Ừ, vậy bà lên mạng xem có món nào bà thích không.
+李文麗|雲端科技進步了，利用網路購物的人越來越多，現在有很多銀髮族也上網買東西。上次我們去逛百貨公司，花了好多時間，妳累得走不動了。妳不記得了嗎？|Công nghệ đám mây tiến bộ, người mua sắm online ngày càng nhiều, giờ nhiều người cao tuổi cũng mua trên mạng. Lần trước đi dạo trung tâm bách hóa tốn nhiều thời gian, bà mệt đến đi không nổi. Bà không nhớ sao?
+外婆|是啊！人老了，體力不如從前了，以後就上網買東西好了！噢，還有，在網路商店買東西會不會收不到呢？|Phải rồi! Người già, thể lực không bằng trước, sau này lên mạng mua đồ cho xong! À, còn nữa, mua đồ cửa hàng online có không nhận được hàng không?
+李文麗|通常有宅配和超商取貨兩種方式。要是怕收不到，就選擇超商取貨再付款的方式。外婆，妳先試試看吧！有問題再問我。|Thường có hai cách: giao tận nhà và lấy hàng ở cửa hàng tiện lợi. Nếu sợ không nhận được thì chọn lấy hàng ở cửa hàng tiện lợi rồi mới trả tiền. Bà cứ thử trước đi! Có vấn đề thì hỏi cháu.
+短文|由於雲端科技的進步，無形中縮短了人們的距離。現代人用電子郵件取代紙筆寫信，也比較少看報紙、電視，直接在網路上看新聞、影集。越來越多人選擇網路購物、玩線上遊戲。任何人都可以把資料存在雲端上，也可以透過網路取得資訊。|Nhờ công nghệ đám mây tiến bộ, khoảng cách giữa người với người vô hình trung rút ngắn. Người hiện đại dùng email thay giấy bút viết thư, cũng ít xem báo, tivi hơn, xem tin tức, phim thẳng trên mạng. Ngày càng nhiều người chọn mua sắm online, chơi game online. Ai cũng có thể lưu dữ liệu lên đám mây và lấy thông tin qua mạng.
+短文|例如民眾開車上高速公路前，只要上網查詢路況，就可以避開塞車的路段。若要搭火車，可以利用網路訂票，等公車的時候也可以查詢公車到站時間。除了交通，雲端科技也運用在醫療、教育、商業等方面，像電子病歷、遠距教學、電子發票等等，都是很實際的例子。|Ví dụ trước khi lái xe lên đường cao tốc, chỉ cần tra tình hình giao thông online là tránh được đoạn kẹt xe. Muốn đi tàu hỏa có thể đặt vé qua mạng, lúc chờ xe buýt cũng tra giờ xe đến. Ngoài giao thông, công nghệ đám mây còn dùng trong y tế, giáo dục, thương mại, như bệnh án điện tử, dạy học từ xa, hóa đơn điện tử… đều là ví dụ thực tế.
+短文|雲端科技讓我們的生活更加便利，原本以為它可以幫人們節省很多時間，沒想到它卻讓有些人更忙碌了。網路上的資訊又新又有趣，確實容易讓人上癮，特別是對那些不能控制自己的人。|Công nghệ đám mây làm cuộc sống tiện hơn, vốn tưởng giúp tiết kiệm nhiều thời gian, không ngờ lại khiến một số người bận hơn. Thông tin trên mạng vừa mới vừa thú vị, quả thật dễ gây nghiện, nhất là với người không kiểm soát được bản thân.
+短文|像小玲的表弟只想玩線上遊戲，沒興趣念書，功課退步了很多，每天上網玩到半夜，早上起不來，上課常常遲到。父母勸他，他不但不聽，還大吵大鬧，父母只好帶他去看醫生。|Như em họ của Tiểu Linh chỉ muốn chơi game online, không hứng thú học, bài vở sa sút nhiều, ngày nào cũng chơi đến nửa đêm, sáng dậy không nổi, đi học hay muộn. Cha mẹ khuyên thì không những không nghe còn làm ầm ĩ, cha mẹ đành dẫn đi khám bác sĩ.
+短文|醫生說，過度使用網路會影響生活與健康。對生理、心理都不好。生理上，有的人因為長時間一直盯著螢幕看，眼睛容易疲倦，視力會變差。心理上，如果不能上網，就會覺得焦慮不安。即使知道不應該一直上網，也改不了。|Bác sĩ nói dùng mạng quá mức ảnh hưởng đời sống và sức khỏe, không tốt cho cả thể chất lẫn tâm lý. Về thể chất, có người nhìn chằm chằm màn hình lâu nên mắt dễ mệt, thị lực giảm. Về tâm lý, nếu không lên mạng được sẽ lo âu bất an. Dù biết không nên lên mạng mãi cũng không bỏ được.
+短文|醫生建議家長多陪伴孩子，讓他減少上網的時間。此外，要鼓勵他多參加戶外活動，這樣他的生活才會正常。|Bác sĩ khuyên phụ huynh ở bên con nhiều hơn để cậu giảm thời gian lên mạng. Ngoài ra nên khuyến khích tham gia hoạt động ngoài trời, như vậy cuộc sống mới bình thường.
+短文|總而言之，雲端科技給人類帶來正面的影響，同時也帶來了負面的影響。我們在享受雲端科技的便利時，要控制自己，不要沉迷在網路世界裡。|Tóm lại, công nghệ đám mây mang đến tác động tích cực cho nhân loại, đồng thời cũng mang tác động tiêu cực. Khi hưởng tiện ích của nó ta phải kiểm soát bản thân, đừng đắm chìm trong thế giới mạng.
+@4|床該擺哪裡？|Giường nên đặt ở đâu?
+該|nên|Vaux
+擺|bày, đặt|V
+總算|cuối cùng cũng|Adv
+欸|ê, này|Ptc
+呀|hả, nhỉ (nghi vấn)|Ptc
+衣櫥|tủ quần áo|N
+梳妝台|bàn trang điểm|N
+位置|vị trí|N
+空間|không gian|N
+科學|khoa học|N
+風水師|thầy phong thủy|N
+在意|để ý, bận tâm|Vs
+所謂|cái gọi là|V
+角度|góc độ|N
+改造|cải tạo|V
+學問|học vấn, môn học|N
+居住|cư trú|Vi
+日常|hằng ngày|Vs-attr
+布置|bố trí, trang trí|N/V
+凶猛|hung dữ|Vs
+動物|động vật|N
+刀|dao|N
+劍|kiếm|N
+脾氣|tính khí|N
+暴躁|nóng nảy|Vs
+衝動|bốc đồng|Vs
+鏡子|gương|N
+床腳|chân giường|N
+光|chỉ riêng|Adv
+擺飾|đồ trang trí|N
+老婆|vợ|N
+把|(lượng từ vật có cán)|M
+欺負|bắt nạt|V
+風水學|phong thủy học|Name
+正對門|đối diện cửa chính|Phrase
+譬如說|ví dụ|Phrase
+一口氣|một hơi|Phrase
+死定了|chết chắc rồi|Phrase
+地理|địa lý|N
+便利性|tính tiện lợi|N
+周邊|xung quanh|N
+住宅|nhà ở|N
+詞|từ|N
+西元|Công nguyên|N
+推翻|lật đổ|V
+心中|trong lòng|N
+名言|danh ngôn|N
+建造|xây dựng|V
+塑造|nhào nặn, định hình|V
+命運|vận mệnh|N
+本身|bản thân|N
+地標|địa danh nổi bật|N
+參考|tham khảo|V
+外觀|bề ngoài|N
+疊|chồng lên|V
+盆子|cái chậu|N
+斜|nghiêng|Vs
+牆面|mặt tường|N
+聚寶盆|chậu tụ bảo|N
+角|góc|N
+龍|rồng|N
+古|cổ|Vs-attr
+錢幣|tiền xu|N
+屋頂|mái nhà|N
+龜|rùa|N
+招財|chiêu tài|Vi
+側門|cửa hông|N
+遮雨棚|mái che mưa|N
+如意|như ý (vật cát tường)|N
+設計|thiết kế|N/V
+偶然|ngẫu nhiên|Vs
+晉代|đời Tấn|Name
+郭璞|Quách Phác|Name
+英國|nước Anh|Name
+邱吉爾|Churchill|Name
+信義路|đường Tín Nghĩa|Name
+松智路|đường Tùng Trí|Name
+一命二運三風水|nhất mệnh nhì vận tam phong thủy|Phrase
+加起來|cộng lại|Phrase
+咬錢龜|rùa ngậm tiền|Phrase
+十全十美|thập toàn thập mỹ|Phrase
+#
+林先生|總算把所有的東西都搬過來了，累死了！|Cuối cùng cũng chuyển hết đồ sang, mệt chết đi được!
+林太太|欸！別急著坐下，先把一些大家具擺好吧。|Này! Đừng vội ngồi, bày mấy món đồ nội thất lớn cho xong đã.
+林先生|床要放在哪裡呀？衣櫥旁邊好不好？|Giường đặt ở đâu nhỉ? Cạnh tủ quần áo được không?
+林太太|不行！不行！不要放在那裡，放在我的梳妝台旁邊。|Không được! Đừng đặt ở đó, đặt cạnh bàn trang điểm của em.
+林先生|那裡太擠了，進出不方便。|Chỗ đó chật quá, ra vào bất tiện.
+林太太|那就把衣櫥跟梳妝台換個位置，空間就比較大了。|Vậy đổi vị trí tủ quần áo và bàn trang điểm, không gian sẽ rộng hơn.
+林先生|為什麼不擺在這裡呢？|Sao không đặt ở đây?
+林太太|放在這裡會正對門，不好。|Đặt ở đây sẽ đối diện thẳng cửa, không tốt.
+林先生|什麼正對門，妳太迷信了吧！|Gì mà đối diện cửa, em mê tín quá!
+林太太|這並不是迷信，而是有科學根據的。|Đây không phải mê tín mà có căn cứ khoa học.
+林先生|什麼科學根據！還不就是風水師的那些說法。如果太在意那些說法，就什麼事都做不成了。|Căn cứ khoa học gì! Chẳng phải mấy lời của thầy phong thủy sao. Nếu để ý quá thì chẳng làm nên việc gì.
+林太太|才不是你說的那樣呢！所謂現代風水學，是指站在科學的角度，利用環境、改造環境的一門學問，研究的是人與居住環境的關係。你不懂不要亂說好不好！|Không phải như anh nói đâu! Phong thủy học hiện đại là môn học đứng từ góc độ khoa học để tận dụng và cải tạo môi trường, nghiên cứu quan hệ giữa con người và môi trường sống. Anh không hiểu đừng nói bậy!
+林先生|好！那妳說風水到底跟我們的日常生活有什麼關係？|Được! Vậy em nói phong thủy rốt cuộc liên quan gì đến đời sống thường ngày?
+林太太|譬如說家裡的布置，如果在牆上掛很凶猛的動物，或是刀、劍這樣的東西，就會讓居住者的脾氣暴躁、容易衝動。又譬如說，鏡子不能正對床腳，這樣起床時容易被自己嚇到。|Ví dụ cách bài trí trong nhà, nếu treo trên tường động vật hung dữ hay dao, kiếm thì khiến người ở nóng tính, dễ bốc đồng. Lại như gương không được đối thẳng chân giường, như vậy lúc thức dậy dễ tự dọa mình.
+林先生|等一下！等一下！妳一口氣說了那麼多，我怎麼聽得清楚？妳是說連牆上掛什麼東西都會對人的個性有影響嗎？|Khoan! Khoan! Em nói một hơi nhiều thế sao anh nghe rõ? Ý em là ngay cả treo gì trên tường cũng ảnh hưởng tính cách người sao?
+林太太|對啊！光擺飾就有很多學問，你想了解的話，我以後再慢慢告訴你。|Đúng vậy! Riêng đồ trang trí đã có nhiều học vấn, anh muốn hiểu thì sau này em từ từ nói.
+林先生|我懂了，難怪我老婆脾氣那麼壞。那把劍可別再掛上去了！|Anh hiểu rồi, hèn gì vợ anh tính khí tệ thế. Thanh kiếm đó đừng treo lên nữa nhé!
+林太太|喂！你居然敢欺負我！你死定了！|Này! Anh dám bắt nạt em! Anh chết chắc rồi!
+林先生|好啦！好啦！開玩笑的。不過我覺得不知道這樣的事情比較好，知道家裡風水有問題，可是卻沒辦法改變，這樣不是住得很不自在嗎？|Thôi nào! Anh đùa thôi. Nhưng anh thấy không biết những chuyện này thì tốt hơn, biết phong thủy nhà có vấn đề mà không đổi được thì ở chẳng thoải mái sao?
+林太太|話是這樣說沒錯，但是如果可以早一點了解，在租房子、買房子的時候就可以多注意這方面的問題，才不會一搬進去就後悔了。你說是不是？|Nói thế không sai, nhưng nếu hiểu sớm hơn thì lúc thuê nhà, mua nhà có thể chú ý chuyện này, không đến nỗi vừa dọn vào đã hối hận. Anh nói có đúng không?
+短文|一般來說，選一個房子，大概會考慮幾個條件：地理位置、交通的便利性、周邊的環境和價格等。隨著生活水準不斷提高，人們對選擇住宅的考慮條件更多了。不只是上面所提到的幾個，風水的好壞也成為重要的考慮條件了。|Thường khi chọn nhà người ta cân nhắc vài điều kiện: vị trí địa lý, giao thông tiện lợi, môi trường xung quanh và giá cả. Khi mức sống không ngừng nâng cao, điều kiện cân nhắc khi chọn nhà càng nhiều. Không chỉ mấy điều trên, phong thủy tốt xấu cũng trở thành điều kiện quan trọng.
+短文|「風水」這個詞是中國晉代的郭璞（西元276年到324年）第一個提出的，到現在已經有一千七百多年了。相信風水的人認為，如果風水不值得相信，都過了一千七百多年了，怎麼可能不被推翻？中國有句話說：「一命，二運，三風水。」從這裡可以看出風水在中國人心中占了很重要的地位。|Từ "phong thủy" do Quách Phác thời Tấn (năm 276–324) đưa ra đầu tiên, đến nay hơn 1.700 năm. Người tin phong thủy cho rằng nếu không đáng tin thì hơn 1.700 năm sao chưa bị lật đổ? Người Trung Quốc có câu "nhất mệnh, nhì vận, tam phong thủy", cho thấy phong thủy chiếm vị trí rất quan trọng trong lòng họ.
+短文|英國的邱吉爾曾經說過一句名言：「人建造房子，房子塑造我們。」意思是說，房子對人的影響是很大的。從風水學的角度來看，對人的個性、健康、命運有影響的不只是房子本身，房子外面的環境以及房子裡面的布置、擺飾等都是有影響的。|Churchill của Anh từng có câu danh ngôn: "Con người xây nhà, ngôi nhà định hình chúng ta." Nghĩa là nhà ảnh hưởng rất lớn đến người. Theo góc độ phong thủy học, ảnh hưởng đến tính cách, sức khỏe, vận mệnh không chỉ là ngôi nhà mà cả môi trường bên ngoài, cách bài trí và đồ trang trí bên trong.
+短文|拿台北的地標——台北101大樓來說，雖然它是一棟非常現代的建築，可是建築師參考了許多風水的想法。先從外觀看起，它像一個個往上疊的盆子，每八層樓是一個盆子。往外斜的牆面，讓每個盆子看起來都像個聚寶盆，每個「聚寶盆」的四個角都有代表吉祥的龍，加起來就有三十二條飛龍。|Lấy địa danh Đài Bắc — tòa Taipei 101 — làm ví dụ, tuy là công trình rất hiện đại nhưng kiến trúc sư đã tham khảo nhiều quan niệm phong thủy. Nhìn từ ngoài, nó như những chiếc chậu xếp chồng lên, cứ tám tầng là một chậu. Mặt tường nghiêng ra ngoài khiến mỗi chậu giống một "chậu tụ bảo", bốn góc mỗi chậu có rồng cát tường, cộng lại có ba mươi hai con rồng bay.
+短文|另外，大樓牆上的古錢幣和左邊的屋頂上的咬錢龜都是招財的意思。信義路正門和松智路側門上面的遮雨棚，都有十條魚、十個錢幣和十個如意，意思是十全十美。走進大樓裡面，到處可見代表吉祥的「如意」。|Ngoài ra tiền cổ trên tường tòa nhà và rùa ngậm tiền trên mái bên trái đều có nghĩa chiêu tài. Mái che cửa chính đường Tín Nghĩa và cửa hông đường Tùng Trí đều có mười con cá, mười đồng tiền, mười như ý, nghĩa là thập toàn thập mỹ. Vào trong tòa nhà đâu đâu cũng thấy "như ý" tượng trưng cát tường.
+短文|這些設計都不是偶然的，是建築師在參考了中國的風水學以後所設計出來的，下次如果你到台北101大樓去，可以算算裡面一共有多少個「如意」。|Những thiết kế này đều không ngẫu nhiên mà do kiến trúc sư tham khảo phong thủy Trung Quốc rồi thiết kế ra; lần sau nếu bạn đến Taipei 101 có thể đếm xem bên trong tổng cộng có bao nhiêu "như ý".
+@5|有夢最美|Có ước mơ là đẹp nhất
+排隊|xếp hàng|V-sep
+校刊|báo trường|N
+採訪|phỏng vấn (báo chí)|V
+校友|cựu sinh viên|N
+博士|tiến sĩ|N
+學位|học vị|N
+考|thi|V
+司機|tài xế|N
+學士|cử nhân|N
+地攤|sạp bán hàng vỉa hè|N
+現象|hiện tượng|N
+稀奇|hiếm lạ|Vs
+搶|cướp|V
+批評|phê bình|V
+浪費|lãng phí|V
+畢竟|rốt cuộc|Adv
+貢獻|cống hiến|V
+的確|quả thật|Adv
+盲目|mù quáng|Adv
+升學|học lên|Vi
+逃避|trốn tránh|V
+就業|có việc làm|N/Vi
+延後|hoãn lại|V
+靠爸族|nhóm ăn bám cha (dựa vào quan hệ cha)|N
+啃老族|nhóm ăn bám cha mẹ|N
+收攤|dọn hàng, đóng sạp|V-sep
+清潔隊員|nhân viên vệ sinh|Phrase
+擺地攤|bày bán vỉa hè|Phrase
+大多數|đa số|Phrase
+話說回來|nói đi cũng phải nói lại|Phrase
+自食其力|tự lực cánh sinh|Phrase
+下一期|số tiếp theo|Phrase
+段|đoạn (thời gian)|M
+物價|vật giá|N
+上漲|tăng giá|Vp
+所得|thu nhập|N
+漲|tăng|V
+勉強|gắng gượng, miễn cưỡng|Vs
+根本|căn bản, hoàn toàn|Adv
+組織|tổ chức|N
+抗議|phản đối|V
+地價|giá đất|N
+房價|giá nhà|N
+高漲|tăng vọt|Vi
+造成|gây ra|V
+統計|thống kê|N
+窮忙|bận rộn nghèo khó|Vs
+全球|toàn cầu|N
+景氣|tình hình kinh tế|N
+施行|thi hành|V
+薪資|lương bổng|N
+多年|nhiều năm|N
+未|chưa (trang trọng)|Adv
+調高|điều chỉnh tăng|V
+裁員|sa thải|Vp-sep
+觀察|quan sát|V
+彩券|vé số|N
+中獎|trúng thưởng|V-sep
+做夢|nằm mơ|Vp-sep
+發財|phát tài|V-sep
+臉色|sắc mặt|N
+報導|bản tin, bài báo|N
+指出|chỉ ra|V
+創業|khởi nghiệp|Vi
+餐飲業|ngành ăn uống|N
+人生|đời người|N
+及|và (trang trọng)|Conj
+挑戰|thách thức|N
+培養|bồi dưỡng|V
+實力|thực lực|N
+等待|chờ đợi|V
+擁有|sở hữu|Vst
+中國大陸|Trung Quốc đại lục|Name
+存不了|để dành không nổi|Phrase
+無殼蝸牛|ốc sên không vỏ (người không mua nổi nhà)|Phrase
+貧富不均|chênh lệch giàu nghèo|Phrase
+苦哈哈|khổ sở, chật vật|Phrase
+另謀發展|tìm hướng phát triển khác|Phrase
+恨不得|ước gì được ngay|Phrase
+一夜致富|một đêm giàu to|Phrase
+一片天|một chân trời riêng|Phrase
+#
+馬安同|雲真，妳也受到連續劇的影響來排隊買雞排嗎？|Vân Chân, bạn cũng chịu ảnh hưởng phim truyền hình nên đến xếp hàng mua gà rán à?
+李雲真|我哪裡有時間看連續劇？我不是來買雞排的，而是為了校刊來採訪老闆的。|Mình đâu có thời gian xem phim? Mình không đến mua gà rán mà vì báo trường đến phỏng vấn ông chủ.
+馬安同|這個賣雞排的老闆很有名嗎？|Ông chủ bán gà rán này nổi tiếng à?
+李雲真|你沒聽說過嗎？他是我們學校的校友，去年剛得到博士學位。|Bạn chưa nghe sao? Ông là cựu sinh viên trường mình, năm ngoái vừa lấy bằng tiến sĩ.
+馬安同|我沒聽錯吧？既然有那麼高的學歷，為什麼要在夜市裡賣雞排呢？|Mình nghe nhầm không? Đã có học vấn cao thế, sao lại bán gà rán ở chợ đêm?
+李雲真|現在博士去考清潔隊員、碩士去當司機和學士擺地攤的現象在台灣越來越普遍，已經不稀奇了。|Hiện nay tiến sĩ đi thi nhân viên vệ sinh, thạc sĩ làm tài xế, cử nhân bày sạp vỉa hè ở Đài Loan ngày càng phổ biến, không còn hiếm lạ.
+馬安同|賣雞排並不丟臉，不偷不搶，靠自己賺錢，很好啊！|Bán gà rán không mất mặt, không trộm không cướp, dựa vào bản thân kiếm tiền, tốt mà!
+李雲真|我也這麼認為，但也聽到不少負面的看法，批評這種人浪費國家的教育資源。|Mình cũng nghĩ thế, nhưng cũng nghe nhiều ý kiến tiêu cực, chê những người này lãng phí tài nguyên giáo dục quốc gia.
+馬安同|這個我可以了解，畢竟念到博士不容易，應該可以為國家貢獻更多才對。|Điều này mình hiểu, dù sao học đến tiến sĩ không dễ, lẽ ra có thể đóng góp nhiều hơn cho đất nước.
+李雲真|這的確是個很嚴重的問題。很多人盲目升學，甚至有些學生因為要逃避就業而延後畢業的時間。|Đây quả là vấn đề rất nghiêm trọng. Nhiều người học lên mù quáng, thậm chí có sinh viên vì muốn trốn đi làm mà hoãn thời gian tốt nghiệp.
+馬安同|在我的國家並沒有這個問題，因為大多數人都念不起大學。|Ở nước mình không có vấn đề này vì đa số người không đủ tiền học đại học.
+李雲真|不過話說回來，能自食其力的人比那些「靠爸族」好多了。|Nhưng nói đi cũng phải nói lại, người tự lực cánh sinh tốt hơn nhiều so với "nhóm dựa vào bố".
+馬安同|所謂「靠爸族」是指靠父母生活嗎？|"Nhóm dựa vào bố" nghĩa là sống dựa vào cha mẹ à?
+李雲真|大概的意思是：自己沒什麼能力，這些人之所以成功是因為父母的關係。另外還有一種人叫「啃老族」，就是自己沒有能力獨立生活，還住在家裡靠父母的人。|Đại ý là bản thân không có năng lực, những người này thành công là nhờ quan hệ của cha mẹ. Còn một loại gọi là "nhóm gặm già", tức không đủ năng lực sống độc lập, vẫn ở nhà dựa cha mẹ.
+馬安同|我的國家現在也有不少這種人。我沒有有錢的父母，得趕快去圖書館看書了，畢業後我得靠自己啊！|Nước mình giờ cũng có nhiều người như vậy. Mình không có bố mẹ giàu, phải mau đến thư viện học bài, tốt nghiệp xong phải dựa vào bản thân!
+李雲真|我也該去採訪了，免得等一下老闆收攤，我就採訪不成了。|Mình cũng nên đi phỏng vấn rồi, kẻo lát nữa ông chủ dọn hàng thì không phỏng vấn được.
+馬安同|那麼，希望妳採訪順利，我等著看下一期的校刊。|Vậy chúc bạn phỏng vấn thuận lợi, mình chờ xem số báo trường tới.
+李雲真|謝謝，明天見。|Cảm ơn, mai gặp.
+馬安同|對了，採訪完了以後，別忘了買一些「博士雞排」吃吃看。|À, phỏng vấn xong đừng quên mua "gà rán tiến sĩ" ăn thử nhé.
+李雲真|希望我吃了以後，也可以早一點拿到博士學位。|Mong ăn xong mình cũng sớm lấy được bằng tiến sĩ.
+短文|在台灣生活了一段時間以後，馬安同覺得台灣的物價比他剛來的時候上漲了不少。有越來越多的台灣人抱怨這種低所得、高物價的情況，什麼都漲了，就是薪水沒漲。|Sống ở Đài Loan một thời gian, Mã An Đồng thấy vật giá tăng nhiều so với lúc mới đến. Ngày càng nhiều người Đài Loan than phiền thu nhập thấp, giá cả cao, cái gì cũng tăng chỉ lương không tăng.
+短文|一般大學剛畢業的年輕人，不是找不到工作，就是每個月的薪水只能勉強生活。不少人辛苦工作了很多年，卻根本存不了什麼錢，更別說有能力買房子了。有些人還成立了「無殼蝸牛」組織，抗議台灣地價和房價高漲，造成貧富不均，人民買不起房子。|Người trẻ mới tốt nghiệp đại học không tìm được việc thì lương mỗi tháng chỉ đủ sống gắng gượng. Không ít người làm vất vả nhiều năm mà chẳng để dành được gì, chưa nói đến mua nhà. Có người còn lập tổ chức "ốc sên không vỏ" phản đối giá đất và giá nhà tăng vọt, gây chênh lệch giàu nghèo, dân mua không nổi nhà.
+短文|根據台灣政府的統計，每年的失業率大概在百分之三到五左右。雖然跟其他國家比起來，台灣的失業率並不特別高，但人民卻覺得生活苦哈哈的，很多人都是「窮忙族」。|Theo thống kê chính phủ Đài Loan, tỷ lệ thất nghiệp mỗi năm khoảng 3 đến 5%. Tuy so với nước khác không đặc biệt cao, người dân vẫn thấy cuộc sống chật vật, nhiều người thuộc "nhóm bận rộn mà nghèo".
+短文|這種現象一方面受到全球經濟不景氣的影響，另一方面是因為政府所施行的經濟政策也有問題。大多數人的薪資多年未調高不說，還有不少人被裁員。在台灣找不到工作的，不得不去中國大陸或別的國家另謀發展。|Hiện tượng này một mặt chịu ảnh hưởng kinh tế toàn cầu suy thoái, mặt khác chính sách kinh tế của chính phủ cũng có vấn đề. Lương đa số nhiều năm không tăng chưa nói, còn không ít người bị sa thải. Ai không tìm được việc ở Đài Loan đành sang Trung Quốc đại lục hay nước khác tìm hướng phát triển.
+短文|馬安同今年在台灣過年時，他觀察到一些有趣的現象。不少台灣人恨不得能一夜致富，大家喜歡買彩券，希望能中獎，常做發財夢。|Năm nay đón Tết ở Đài Loan, Mã An Đồng quan sát thấy vài hiện tượng thú vị. Không ít người Đài Loan ước gì giàu qua một đêm, thích mua vé số, mong trúng thưởng, hay mơ phát tài.
+短文|另外還有一個現象就是每個人都想當老闆，不想看別人的臉色，所以在台灣有不少只有三、四個人的小公司。根據新聞報導指出，台灣有八成的年輕人想自己創業，而且大部分都想從事餐飲業。|Ngoài ra mỗi người đều muốn làm ông chủ, không muốn nhìn sắc mặt người khác nên Đài Loan có nhiều công ty nhỏ chỉ ba bốn người. Theo báo chí, 80% người trẻ Đài Loan muốn tự khởi nghiệp, phần lớn muốn làm ngành ăn uống.
+短文|目前雖然經濟情況差，就業機會少，但是人生因為夢想而美麗，有夢最美。有句話說：「機會是留給準備好的人」，夢想的實現要經過許多努力及挑戰。培養實力，等待機會，相信每一個人都能擁有自己的一片天。|Hiện tại tuy kinh tế kém, cơ hội việc làm ít, nhưng đời người đẹp nhờ ước mơ, có ước mơ là đẹp nhất. Có câu "cơ hội dành cho người chuẩn bị sẵn sàng", thực hiện ước mơ cần trải qua nhiều nỗ lực và thử thách. Bồi dưỡng thực lực, chờ cơ hội, tin rằng ai cũng có thể có một chân trời riêng.
+@6|天搖地動|Trời rung đất chuyển
+高來恩|Cao Lai Ân (nam, người Thụy Sĩ)|Name
+地震|động đất|N
+搖|rung lắc|Vp
+厲害|dữ dội|Vs
+經常|thường xuyên|Adv
+倒|đổ, sập|Vp
+橋|cầu|N
+斷|đứt, gãy|Vp
+多|biết bao, thật là|Adv
+地區|khu vực|N
+強烈|mạnh mẽ|Vs
+頻率|tần suất|N
+預測|dự đoán|V
+徵兆|điềm báo, dấu hiệu|N
+鳥類|loài chim|N
+雞|gà|N
+預先|trước, từ trước|Adv
+老鼠|chuột|N
+貓|mèo|N
+馬|ngựa|N
+證實|chứng thực|V
+應變|ứng phó tình huống|Vi
+隨手|tiện tay|Adv
+白|uổng công|Adv
+嫌|phàn nàn, chê|Vst
+事前|trước khi xảy ra|Adv
+總是|luôn luôn|Adv
+西歐|Tây Âu|Name
+北歐|Bắc Âu|Name
+中歐|Trung Âu|Name
+澳洲|châu Úc|Name
+南美洲|Nam Mỹ|Name
+地球科學|khoa học Trái Đất|Name
+菲律賓|Philippines|Name
+天搖地動|trời rung đất chuyển|Phrase
+壓死|đè chết|Phrase
+災情慘重|thiệt hại thảm khốc|Phrase
+東半部|nửa phía đông|Phrase
+地震帶|vành đai động đất|Phrase
+救生包|túi sinh tồn|Phrase
+有備無患|có chuẩn bị thì không lo|Phrase
+如何|như thế nào|Adv
+逃生|thoát hiểm|Vi
+發達|phát triển|Vs
+天災|thiên tai|N
+災害|tai họa|N
+程度|mức độ|N
+首先|trước hết|Adv
+其次|thứ đến|Adv
+災難|tai nạn, thảm họa|N
+緊急|khẩn cấp|Vs
+必需品|đồ cần thiết|N
+譬如|ví dụ|Vst
+手電筒|đèn pin|N
+餅乾|bánh quy|N
+平時|ngày thường|N
+狀況|tình huống|N
+慌張|hoảng hốt|Vs
+停電|mất điện|Vp-sep
+黑暗|bóng tối|N
+方向|phương hướng|N
+集合|tập hợp|Vi
+裂縫|vết nứt|N
+瓦斯|gas|N
+開關|công tắc|N
+火災|hỏa hoạn|N
+門框|khung cửa|N
+歪|vẹo, lệch|Vp
+頭部|đầu|N
+冷靜|bình tĩnh|Vs
+穩|vững|Vs
+櫃子|tủ|N
+牆壁|tường|N
+倒塌|sụp đổ|Vp
+電梯|thang máy|N
+反而|trái lại|Conj
+堅固|vững chắc|Vs
+柱子|cột|N
+碰|đụng|V
+形成|hình thành|V
+三角形|hình tam giác|N
+保持|giữ|V
+平靜|bình tĩnh, yên|Vs
+指示|chỉ thị|N
+救援|cứu viện|Vi
+行動|hành động|N
+掉下來|rơi xuống|Phrase
+倒下來|đổ xuống|Phrase
+救災人員|nhân viên cứu hộ|Phrase
+#
+高來恩|昨天晚上七點左右有地震，妳知道嗎？|Tối qua khoảng bảy giờ có động đất, bạn biết không?
+李文麗|那時候我正在車上，完全沒感覺到。我是後來看新聞才知道的。|Lúc đó mình đang trên xe, hoàn toàn không cảm thấy. Sau xem tin mới biết.
+高來恩|我住在二十樓，搖得好厲害。地震怎麼這麼可怕啊！|Mình ở tầng hai mươi, rung dữ lắm. Động đất sao đáng sợ thế!
+李文麗|不要怕，這裡經常有地震，我們都已經習慣了，昨天的地震不算大。|Đừng sợ, ở đây thường xuyên có động đất, chúng mình quen rồi, trận hôm qua không tính là lớn.
+高來恩|聽說有一次台灣發生大地震，很多房子倒了，橋斷了。多恐怖啊！|Nghe nói có lần Đài Loan xảy ra động đất lớn, nhiều nhà sập, cầu gãy. Kinh khủng quá!
+李文麗|那一次的大地震，有很多人受傷了，還有很多人被壓死了。台灣中部災情慘重，台北也有一棟大樓倒了。|Trận động đất lớn đó nhiều người bị thương, còn nhiều người bị đè chết. Miền trung Đài Loan thiệt hại thảm khốc, Đài Bắc cũng có một tòa nhà đổ.
+高來恩|在我的國家從來沒有發生過地震，對我來說，這是一個很特別的經驗。|Ở nước mình chưa từng xảy ra động đất, với mình đây là trải nghiệm rất đặc biệt.
+李文麗|西歐、北歐、中歐都沒有地震，澳洲幾乎沒有地震，南美洲東半部也很少。|Tây Âu, Bắc Âu, Trung Âu đều không có động đất, châu Úc hầu như không có, nửa đông Nam Mỹ cũng hiếm.
+高來恩|哪些地區常發生地震呢？|Những khu vực nào hay xảy ra động đất?
+李文麗|根據地球科學研究，世界上發生地震的位置大部分都在地震帶上。|Theo nghiên cứu khoa học Trái Đất, phần lớn nơi động đất xảy ra trên thế giới nằm trên vành đai động đất.
+高來恩|台灣的地震那麼多，台灣一定是在地震帶上。|Đài Loan nhiều động đất thế, chắc nằm trên vành đai động đất.
+李文麗|沒錯，像台灣、日本、菲律賓這些國家都在地震帶上，所以發生強烈地震的頻率相當高。|Đúng vậy, Đài Loan, Nhật Bản, Philippines đều nằm trên vành đai động đất nên tần suất động đất mạnh khá cao.
+高來恩|現在颱風都可以預測了，地震應該也可以預測吧？|Giờ bão còn dự đoán được, động đất chắc cũng dự đoán được nhỉ?
+李文麗|有人說地震快來的時候，動物會出現一些徵兆，在人類還沒有感覺震動前，鳥類已經對地震有感覺了，像雞就可以預先知道。其他像老鼠、貓、狗、馬……等等，也會預先知道，可是因為都沒有經過證實，所以到現在地震還是沒辦法預測。|Có người nói khi động đất sắp đến động vật xuất hiện dấu hiệu, trước khi người cảm nhận được rung chuyển loài chim đã cảm thấy, như gà biết trước. Chuột, mèo, chó, ngựa… cũng biết trước, nhưng vì chưa được chứng thực nên đến nay vẫn chưa dự đoán được.
+高來恩|既然地震是沒辦法預測的，我們應該怎麼辦？|Đã không dự đoán được thì chúng ta nên làm sao?
+李文麗|我們平常要隨時做好準備，萬一發生地震就知道怎麼應變了。|Ngày thường lúc nào cũng phải chuẩn bị sẵn, lỡ có động đất sẽ biết ứng phó.
+高來恩|那麼我們要怎麼做準備呢？|Vậy chúng ta chuẩn bị thế nào?
+李文麗|家中要準備一個救生包，就放在隨手拿得到的地方。|Trong nhà chuẩn bị một túi sinh tồn, để nơi tiện tay lấy được.
+高來恩|可是如果大地震沒發生，那我不是白準備了嗎？|Nhưng nếu động đất lớn không xảy ra, chẳng phải mình chuẩn bị uổng công sao?
+李文麗|不要嫌麻煩，有備無患，事前準備總是比較好啊！|Đừng ngại phiền, có chuẩn bị thì không lo, chuẩn bị trước luôn tốt hơn!
+短文|大家好！今天我很高興到這裡來跟大家談一談地震發生時如何逃生及應變。雖然現在科技已經很發達了，但是地震還是沒有辦法避免的天災，我們應該隨時做好準備，才可以讓災害減少到最低的程度。|Chào mọi người! Hôm nay tôi rất vui được đến đây nói chuyện về cách thoát hiểm và ứng phó khi động đất. Dù khoa học kỹ thuật đã rất phát triển, động đất vẫn là thiên tai không thể tránh, chúng ta nên luôn chuẩn bị sẵn để giảm thiệt hại đến mức thấp nhất.
+短文|首先我們在家裡要準備一個救生包，其次要練習如何在災難發生時逃生。救生包裡面應該放一些緊急時的必需品，譬如手電筒、水、餅乾等等。平時要和家人練習怎麼逃生，知道各種狀況發生時應該怎麼辦，這樣萬一發生地震才不會慌張。|Trước hết trong nhà cần chuẩn bị túi sinh tồn, tiếp đó là luyện tập thoát hiểm khi có thảm họa. Trong túi nên có đồ cần thiết lúc khẩn cấp như đèn pin, nước, bánh quy… Ngày thường cùng gia đình tập thoát hiểm, biết các tình huống phải làm gì để lỡ có động đất không hoảng.
+短文|要是晚上停電，我們得在黑暗中找到逃生的方向，也應該先和家人約好逃生後集合的地點，這是平常可以練習的。另外要檢查房子有沒有裂縫？家裡的擺飾會不會在地震時掉下來？|Nếu ban đêm mất điện, ta phải tìm hướng thoát trong bóng tối, cũng nên hẹn trước với gia đình điểm tập trung sau khi thoát, điều này có thể luyện ngày thường. Ngoài ra kiểm tra nhà có vết nứt không? Đồ trang trí có rơi xuống khi động đất không?
+短文|當地震發生時，逃生前應該先關瓦斯開關，才不會發生火災；還要把門打開，免得因為門框歪了，打不開門。地震的時候，如果人在房子裡，要趕快找東西保護頭部。逃生時最重要的是冷靜，如果一慌張，就容易錯過逃生的機會。|Khi động đất xảy ra, trước khi thoát nên tắt công tắc gas để khỏi cháy; còn phải mở cửa kẻo khung cửa vẹo không mở được. Khi động đất nếu đang trong nhà phải mau tìm vật bảo vệ đầu. Khi thoát hiểm quan trọng nhất là bình tĩnh, hoảng loạn dễ bỏ lỡ cơ hội thoát thân.
+短文|如果地震非常厲害，大到連站都站不穩，這時候不要急著往外面跑，因為這時可能會有櫃子倒下來，甚至牆壁也會倒塌。急著往外面跑，或是搭電梯下樓，不但不安全，反而更危險。|Nếu động đất rất mạnh đến mức đứng không vững, lúc này đừng vội chạy ra ngoài vì có thể tủ đổ, thậm chí tường sập. Vội chạy ra hoặc đi thang máy xuống không những không an toàn mà còn nguy hiểm hơn.
+短文|一棟房子最堅固的地方就是柱子，所以柱子的旁邊是比較安全的。也有專家建議，可以躲在比較堅固的桌子旁邊，那麼當櫃子或牆壁倒下來的時候會先碰到桌子，形成一個保護自己的三角形空間。|Chỗ vững nhất của ngôi nhà là cột nên cạnh cột tương đối an toàn. Cũng có chuyên gia khuyên trốn cạnh chiếc bàn chắc chắn, khi tủ hay tường đổ sẽ chạm bàn trước, tạo thành không gian tam giác bảo vệ mình.
+短文|如果地震發生後造成很嚴重的災害，我們要讓自己盡量保持平靜，讓最需要幫助的人先得到照顧，要聽救災人員的指示，這樣災後的救援行動和重建工作才會更順利。|Nếu sau động đất gây thiệt hại nghiêm trọng, ta nên giữ bình tĩnh, để người cần giúp nhất được chăm sóc trước, nghe chỉ thị của nhân viên cứu hộ để hoạt động cứu viện và tái thiết sau thảm họa thuận lợi hơn.
