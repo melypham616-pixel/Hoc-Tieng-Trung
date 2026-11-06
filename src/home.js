@@ -1,5 +1,20 @@
 
 /* ============ TRANG CHỦ (kiểu hihsk) ============ */
+/* Nơi nhận email đăng ký — điền 1 trong 2:
+   Formspree:   {url:"https://formspree.io/f/xxxxxx"}
+   Google Form: {url:"https://docs.google.com/forms/d/e/<ID>/formResponse", field:"entry.123456"}  */
+const SIGNUP={url:"https://formspree.io/f/mwllzyok",field:""};
+async function signup(ev){
+  ev.preventDefault();const f=ev.target,em=f.email.value.trim(),msg=f.querySelector(".su-msg"),btn=f.querySelector("button");
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent="Email chưa đúng định dạng.";msg.style.color="var(--bad)";return}
+  btn.disabled=true;msg.style.color="var(--mut)";msg.textContent="Đang gửi…";
+  try{
+    if(SIGNUP.url&&SIGNUP.field){const b=new URLSearchParams();b.set(SIGNUP.field,em);await fetch(SIGNUP.url,{method:"POST",mode:"no-cors",body:b})}
+    else if(SIGNUP.url){const r=await fetch(SIGNUP.url,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email:em})});if(!r.ok)throw 0}
+    else{try{const a=JSON.parse(localStorage.getItem("signups")||"[]");a.push(em);localStorage.setItem("signups",JSON.stringify(a))}catch(e){}}
+    track('signup');prog.email=em;save();f.innerHTML='<div class="su-ok">✅ Cảm ơn bạn! Mình sẽ gửi thông tin bài học mới qua email này.</div>';
+  }catch(e){btn.disabled=false;msg.style.color="var(--bad)";msg.textContent="Gửi chưa được, bạn thử lại sau nhé."}
+}
 function goTo(b,t,m){if(t)tab=t;if(m)tfMode=m;track('home_go',{b,t:t||m||""});setBook(b)}
 function homeCounts(){
   let words=VOCAB.length,lessons=LESSONS.length;
@@ -58,6 +73,8 @@ function homeView(){
     <div class="hstat"><b>${fmt(c.words)}</b><span>Từ vựng giáo trình</span><small>kèm pinyin &amp; nghĩa</small></div>
     <div class="hstat"><b>${fmt(TF.length)}</b><span>Từ TOCFL</span><small>Band A + Band B</small></div>
   </div>
+  <section class="signup"><div><h3>📬 Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài, từ vựng và tính năng mới. Không spam, hủy bất cứ lúc nào.</p></div>
+    <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required value="${prog.email||""}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg"></div></form></section>
   <div class="cta-band"><span class="pill">Miễn phí · không cần đăng ký</span><h2>Sẵn sàng chinh phục tiếng Trung phồn thể?</h2><p>Tiến độ học được lưu ngay trên trình duyệt của bạn.</p>
     <div class="cta"><button class="btn-l p" onclick="setBook('1')">Bắt đầu Quyển 1</button><button class="btn-l" onclick="setBook('T')">Xem từ vựng TOCFL</button></div></div>`;
 }

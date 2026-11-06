@@ -423,6 +423,12 @@ main.home{max-width:1120px;padding-top:0}
 .cta-band .pill{background:rgba(255,255,255,.1);color:#bfdbfe;border-color:rgba(255,255,255,.2)}
 @media (max-width:860px){.hm-hero{grid-template-columns:1fr;padding-top:28px}.hstats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.minis{grid-template-columns:1fr}.logo small{display:none}}
+.signup{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:var(--shadow)}
+.signup h3{margin:0 0 6px;font-size:21px}.signup p{margin:0;color:var(--mut)}
+.su-row{display:flex;gap:10px}.su-row input{flex:1;min-width:0}.su-row .btn-l{white-space:nowrap}
+.su-msg{min-height:20px;margin-top:8px;font-size:13.5px}
+.su-ok{padding:14px;border-radius:14px;background:var(--okbg);font-weight:600}
+@media (max-width:860px){.signup{grid-template-columns:1fr;padding:20px}.su-row{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -11559,6 +11565,21 @@ BOOKS[6]={lessons:[{n:1,zh:"職校教育",vi:"Giáo dục trường nghề",v:`�
 文章|盧希鵬幽默地說，「關於思考術，你認為是人（讀書智慧）強還是猴子（街頭智慧）強？我只能說，人類愛看書，猴子善觀察……如果你天生是猴子，就要多學學人；如果你本來就是人，不妨多學學猴子，或許有所突破。」|lú xī péng yōu mò dì shuō，「guān yú sī kǎo shù， nǐ rèn wèi shì rén （dú shū zhì huì） qiáng hái shì hóu zi （jiē tóu zhì huì） qiáng？ wǒ zhǐ néng shuō， rén lèi ài kàn shū， hóu zi shàn guān chá …… rú guǒ nǐ tiān shēng shì hóu zi， jiù yào duō xué xué rén； rú guǒ nǐ běn lái jiù shì rén， bù fáng duō xué xué hóu zi， huò xǔ yǒu suǒ tū pò。」|Lư Hy Bằng hóm hỉnh nói: "Về nghệ thuật tư duy, bạn nghĩ người (trí tuệ sách vở) mạnh hay khỉ (trí tuệ đường phố) mạnh? Tôi chỉ có thể nói: con người thích đọc sách, khỉ giỏi quan sát… Nếu bạn sinh ra là khỉ thì nên học người nhiều hơn; nếu vốn là người thì cứ học khỉ thêm, biết đâu đột phá."`}}]};
 
 /* ============ TRANG CHỦ (kiểu hihsk) ============ */
+/* Nơi nhận email đăng ký — điền 1 trong 2:
+   Formspree:   {url:"https://formspree.io/f/xxxxxx"}
+   Google Form: {url:"https://docs.google.com/forms/d/e/<ID>/formResponse", field:"entry.123456"}  */
+const SIGNUP={url:"https://formspree.io/f/mwllzyok",field:""};
+async function signup(ev){
+  ev.preventDefault();const f=ev.target,em=f.email.value.trim(),msg=f.querySelector(".su-msg"),btn=f.querySelector("button");
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){msg.textContent="Email chưa đúng định dạng.";msg.style.color="var(--bad)";return}
+  btn.disabled=true;msg.style.color="var(--mut)";msg.textContent="Đang gửi…";
+  try{
+    if(SIGNUP.url&&SIGNUP.field){const b=new URLSearchParams();b.set(SIGNUP.field,em);await fetch(SIGNUP.url,{method:"POST",mode:"no-cors",body:b})}
+    else if(SIGNUP.url){const r=await fetch(SIGNUP.url,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email:em})});if(!r.ok)throw 0}
+    else{try{const a=JSON.parse(localStorage.getItem("signups")||"[]");a.push(em);localStorage.setItem("signups",JSON.stringify(a))}catch(e){}}
+    track('signup');prog.email=em;save();f.innerHTML='<div class="su-ok">✅ Cảm ơn bạn! Mình sẽ gửi thông tin bài học mới qua email này.</div>';
+  }catch(e){btn.disabled=false;msg.style.color="var(--bad)";msg.textContent="Gửi chưa được, bạn thử lại sau nhé."}
+}
 function goTo(b,t,m){if(t)tab=t;if(m)tfMode=m;track('home_go',{b,t:t||m||""});setBook(b)}
 function homeCounts(){
   let words=VOCAB.length,lessons=LESSONS.length;
@@ -11617,6 +11638,8 @@ function homeView(){
     <div class="hstat"><b>${fmt(c.words)}</b><span>Từ vựng giáo trình</span><small>kèm pinyin &amp; nghĩa</small></div>
     <div class="hstat"><b>${fmt(TF.length)}</b><span>Từ TOCFL</span><small>Band A + Band B</small></div>
   </div>
+  <section class="signup"><div><h3>📬 Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài, từ vựng và tính năng mới. Không spam, hủy bất cứ lúc nào.</p></div>
+    <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required value="${prog.email||""}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg"></div></form></section>
   <div class="cta-band"><span class="pill">Miễn phí · không cần đăng ký</span><h2>Sẵn sàng chinh phục tiếng Trung phồn thể?</h2><p>Tiến độ học được lưu ngay trên trình duyệt của bạn.</p>
     <div class="cta"><button class="btn-l p" onclick="setBook('1')">Bắt đầu Quyển 1</button><button class="btn-l" onclick="setBook('T')">Xem từ vựng TOCFL</button></div></div>`;
 }
