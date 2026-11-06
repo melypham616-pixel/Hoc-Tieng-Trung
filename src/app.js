@@ -1019,3 +1019,5 @@ headerInit();
 sbInit();
 footerView();
 render();
+try{routeHash()}catch(e){}
+

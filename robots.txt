@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /audio/
+Disallow: /audio-en/
+Disallow: /backend/
+
+Sitemap: https://studychinese.mely.io.vn/sitemap.xml

@@ -278,3 +278,14 @@ function plansView(){
   ${isPro()?`<p class="act" style="padding:14px 18px">✅ Gói Pro đang hoạt động${SUB&&SUB.expires_at?" đến "+new Date(SUB.expires_at).toLocaleDateString("vi-VN"):""}.</p>`:(sbOn()&&!signedIn()?`<p class="stat">Đã mua? <a href="#" onclick="showLogin();return false">Đăng nhập</a> bằng email đã dùng khi mua.</p>`:"")}`;
 }
 const MAINP={dash:dashView,courses:coursesView,vocab:vocabLView,practice:practiceView,profile:profileView,plans:plansView};
+
+/* liên kết sâu từ trang tĩnh/Google: /#quyen-3, /#tocfl, /#khoa-hoc ... */
+function routeHash(){
+  const h=(location.hash||"").replace(/^#\/?/,"").toLowerCase();if(!h)return;
+  let m=h.match(/^quyen-([1-6])$/);
+  if(m)return setBook(m[1]);
+  if(h==="tocfl")return setBook("T");
+  const P={"khoa-hoc":"courses","tong-quan":"dash","tu-vung":"vocab","luyen-tap":"practice","ho-so":"profile","goi":"plans","chinh-ta":"dictation","thi-thu":"exam"};
+  if(P[h])goPage(P[h]);
+}
+addEventListener("hashchange",()=>routeHash());
