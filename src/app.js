@@ -264,6 +264,9 @@ let tab="vocab";
 $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button data-k="${k}"><span class="ic">${l.slice(0,i)}</span><span class="lb">${l.slice(i+1)}</span></button>`}).join("");
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
+  const isH=bk==="H";document.querySelector(".hero").style.display=isH?"none":"";$("main").className=isH?"home":"";
+  document.querySelectorAll("#bbar .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk));
+  if(isH){stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;$("#lbar").style.display="none";$("#nav").style.display="none";track('home_view');homeView();return}
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
   stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;
   const b1=bk==="1";$("#lbar").style.display=b1?"":"none";$("#nav").style.display=b1?"":"none";$("#les").closest(".sp").style.display=b1?"":"none";
@@ -275,7 +278,7 @@ function render(){
   track('tab_view',{tab});
   ({vocab:vocabView,flash:flashView,grammar:grammarView,read:readView,story:storyView,qa:qaView,quiz:quizView,trans:transView})[tab]();
 }
-function setBook(n){bk=prog.book=n;tfLv=tfKeys()[0]||tfLv;tfSet=0;tfDeck=[];tfQz=null;tfNew=false;tfMode=tfMode==="dlg"&&n==="T"?"list":tfMode;save();render();window.scrollTo({top:0})}
+function setBook(n){bk=n;if(n!=="H")prog.book=prog.last=n;tfLv=tfKeys()[0]||tfLv;tfSet=0;tfDeck=[];tfQz=null;tfNew=false;tfMode=tfMode==="dlg"&&n==="T"?"list":tfMode;save();render();window.scrollTo({top:0})}
 const lesTag=n=>`Bài ${n} · ${LES[n].zh}`;
 const lesHead=n=>`Bài ${n} · ${annotate(LES[n].zh).html}`;
 
@@ -331,7 +334,7 @@ prog.tk=prog.tk||{};
 const TFL=["A1","A2","B1","B2"],TF_SET=25,TF_NAME={A1:"Sơ cấp 1",A2:"Sơ cấp 2",B1:"Trung cấp 1",B2:"Trung cấp 2"};
 const BOOK_IDS=["1","2","3","4","5","6","T"],BOOK_TOTAL={2:15,3:12,4:12,5:10,6:10};   // số bài của từng quyển trong sách; quyển nào chưa đủ bài thì báo "đang cập nhật"
 const BKW={};Object.keys(BOOKS).forEach(n=>{BKW[n]=BOOKS[n].lessons.flatMap(L=>rows(L.v).map(r=>{const p=r.split("|");return{h:p[0],p:p[1],m:p[2],pos:p[3]||"",l:"Bài "+L.n,s:p[0].replace(/[()（）]/g,"").split("/")[0].trim(),k:n+":"+p[0]+"|"+p[1]}}))});
-let bk=BOOK_IDS.includes(prog.book)?prog.book:"1";
+let bk="H";if(!BOOK_IDS.includes(prog.last))prog.last=BOOK_IDS.includes(prog.book)?prog.book:"1";
 const tfSrc=()=>bk==="T"?TF:(BKW[bk]||[]);
 const tfKeys=()=>bk==="T"?TFL:[...new Set(tfSrc().map(x=>x.l))];
 const tfByL=l=>tfSrc().filter(x=>x.l===l);
@@ -998,8 +1001,10 @@ setTimeout(()=>{   // sau khi danh sách giọng đã tải: báo nếu máy/khu
     w.style.cssText+=";max-width:868px;margin:12px auto 0;padding:12px 16px";document.body.insertBefore(w,$("main"));
   }
 },1500);
-$("#bbar").innerHTML=BOOK_IDS.map(n=>`<button class="lchip" data-b="${n}">${n==="T"?"🎯 TOCFL":"Quyển "+n}<small>${n==="T"?"A1–B2 · "+TF.length+" từ":n==="1"?"15 bài":BOOKS[n]?BOOKS[n].lessons.length+(BOOK_TOTAL[n]&&BOOK_TOTAL[n]>BOOKS[n].lessons.length?"/"+BOOK_TOTAL[n]:"")+" bài":"sắp có"}</small></button>`).join("");
+$("#bbar").innerHTML=`<button class="lchip" data-b="H">🏠 Trang chủ</button>`+BOOK_IDS.map(n=>`<button class="lchip" data-b="${n}">${n==="T"?"🎯 TOCFL":"Quyển "+n}<small>${n==="T"?"A1–B2 · "+TF.length+" từ":n==="1"?"15 bài":BOOKS[n]?BOOKS[n].lessons.length+(BOOK_TOTAL[n]&&BOOK_TOTAL[n]>BOOKS[n].lessons.length?"/"+BOOK_TOTAL[n]:"")+" bài":"sắp có"}</small></button>`).join("");
 $("#bbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setBook(b.dataset.b)};
 $("#les").value=LESSON;syncBar();updateHero();
 $("#les").onchange=e=>setLesson(e.target.value);
+(function(){const r=document.documentElement;try{const t=localStorage.getItem("theme");if(t)r.dataset.theme=t}catch(e){}
+$("#thm").onclick=()=>{const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}}})();
 render();

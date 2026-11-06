@@ -351,9 +351,88 @@ input[type=text],input[type=search],textarea,.tf-bar select,#les{background:var(
 input[type=text]:focus,input[type=search]:focus,textarea:focus{border-color:#4299e1;box-shadow:0 0 0 4px rgba(66,153,225,.2)}
 footer{color:var(--mut)}
 .lchip.on small,#bbar .lchip.on small{color:rgba(255,255,255,.9)}
+
+/* ======== v4: layout kiểu hihsk (thanh trên + trang chủ) ======== */
+.site{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.site-in{max-width:1120px;margin:auto;padding:0 16px}
+.site-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 6px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.logo .lg{width:38px;height:38px;border-radius:12px;background:var(--grad);color:#fff;display:grid;place-items:center;font:700 22px/1 var(--hanzi);box-shadow:0 6px 16px -6px rgba(66,153,225,.7)}
+.logo b{display:block;font-size:19px;font-weight:800;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.logo small{display:block;font-size:11.5px;color:var(--mut);font-family:var(--hanzi)}
+.ibtn{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:17px;color:var(--ink)}
+.ibtn:hover{border-color:#4299e1}
+.subnav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0 10px;margin:0}
+.subnav::-webkit-scrollbar{display:none}
+.subnav .lchip{padding:6px 12px;border-radius:10px;font-size:13.5px;box-shadow:none;background:transparent;border-color:transparent;color:var(--mut)}
+.subnav .lchip small{display:none}
+.subnav .lchip:hover{background:var(--card);color:var(--ink);transform:none}
+.subnav .lchip.on{background:var(--pri2);color:var(--pri);border-color:transparent;box-shadow:none}
+#bbar{margin-top:0}
+#bbar .lchip{border-radius:10px;padding:6px 12px}
+#bbar .lchip.on{background:var(--pri2);color:var(--pri);box-shadow:none}
+main.home{max-width:1120px;padding-top:0}
+.hm-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:44px 0 28px;position:relative}
+.hm-hero::before{content:"";position:absolute;inset:-60px -40px auto auto;width:520px;height:360px;background:radial-gradient(closest-side,rgba(66,153,225,.22),transparent);pointer-events:none;z-index:-1}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;background:var(--pri2);color:var(--pri);border:1px solid var(--line);font-size:13px;font-weight:600}
+.hm-hero h1{font:800 clamp(34px,6vw,58px)/1.08 var(--ui);letter-spacing:-.035em;margin:18px 0 14px}
+.hm-hero h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hm-hero p.lead{color:var(--mut);font-size:17px;max-width:540px;margin:0 0 22px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-l{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:14px;font:700 15.5px var(--ui);cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn-l.p{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 14px 30px -14px #4299e1}
+.btn-l:hover{transform:translateY(-1px)}
+.hm-side{display:grid;gap:14px}
+.sample{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:20px;box-shadow:var(--shadow)}
+.sample .tag{display:inline-block;font-size:12px;font-weight:600;color:var(--pri);background:var(--pri2);padding:4px 10px;border-radius:99px}
+.sample .big-zh{font:700 clamp(46px,9vw,68px)/1.2 var(--hanzi);text-align:center;margin:14px 0 2px}
+.sample .sp-py{text-align:center;color:var(--pri);font-weight:600}
+.sample .sp-vi{text-align:center;font-weight:600;margin:4px 0 14px}
+.sample .ex-box{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-align:center}
+.sample .ex-box .zh{font-size:19px}.sample .ex-box small{color:var(--mut)}
+.sample .foot{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:8px;flex-wrap:wrap}
+.minis{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow)}
+.mini h6{margin:0 0 10px;font-size:12px;letter-spacing:.06em;color:var(--mut);text-transform:uppercase}
+.lvs{display:flex;gap:6px;flex-wrap:wrap}
+.lvs button{min-width:34px;height:34px;padding:0 8px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 13px var(--ui);cursor:pointer}
+.lvs button:hover{background:var(--grad);color:#fff;border-color:transparent}
+.mini .bignum{font:800 30px/1 var(--ui);margin:2px 0 4px}
+.mini .bar{background:var(--line)}
+.sec-h{text-align:center;margin:56px 0 26px}
+.sec-h .pill{margin-bottom:12px}
+.sec-h h2{font:800 clamp(26px,4.4vw,38px)/1.15 var(--ui);letter-spacing:-.03em;margin:0 0 10px}
+.sec-h p{color:var(--mut);margin:0 auto;max-width:560px}
+.feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.feat{position:relative;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;cursor:pointer;color:var(--ink);font-family:var(--ui);transition:transform .15s,border-color .15s,box-shadow .15s}
+.feat:hover{transform:translateY(-3px);border-color:#4299e1;box-shadow:0 18px 40px -22px rgba(66,153,225,.6)}
+.feat .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:23px;background:var(--pri2);margin-bottom:14px}
+.feat h4{margin:0 0 6px;font-size:17px}
+.feat p{margin:0 0 14px;color:var(--mut);font-size:14px;line-height:1.5}
+.feat .cnt{display:inline-block;font-size:12.5px;font-weight:700;color:var(--pri);background:var(--pri2);padding:3px 10px;border-radius:99px}
+.feat .new{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,#f59e0b,#ef4444);padding:2px 8px;border-radius:99px}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.hstat{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 10px}
+.hstat b{display:block;font:800 clamp(26px,4vw,38px)/1.1 var(--ui);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hstat span{display:block;font-weight:600;margin-top:4px}.hstat small{color:var(--mut)}
+.cta-band{margin-top:56px;text-align:center;padding:44px 20px;border-radius:30px;background:radial-gradient(600px 240px at 50% 0,rgba(66,153,225,.35),transparent 70%),linear-gradient(160deg,#0f172a,#1e1b4b);color:#fff;border:1px solid #1e293b}
+.cta-band h2{font:800 clamp(24px,4vw,34px)/1.2 var(--ui);margin:12px 0 8px;letter-spacing:-.03em}
+.cta-band p{color:#cbd5e1;margin:0 0 22px}
+.cta-band .cta{justify-content:center}
+.cta-band .btn-l:not(.p){background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25)}
+.cta-band .pill{background:rgba(255,255,255,.1);color:#bfdbfe;border-color:rgba(255,255,255,.2)}
+@media (max-width:860px){.hm-hero{grid-template-columns:1fr;padding-top:28px}.hstats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.minis{grid-template-columns:1fr}.logo small{display:none}}
 </style>
 </head>
 <body>
+<div class="site"><div class="site-in">
+  <div class="site-top">
+    <a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b><small>當代中文 · TOCFL · 繁體</small></span></a>
+    <div class="site-r"><button class="ibtn" id="thm" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện">🌓</button></div>
+  </div>
+  <div class="subnav" id="bbar"></div>
+</div></div>
 <header class="hero"><div class="hero-in">
   <div class="brand"><div class="seal">學</div>
     <div><h1 id="hT">當代中文課程 1</h1><p id="hS">Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch</p></div></div>
@@ -368,7 +447,6 @@ footer{color:var(--mut)}
     <div class="sp"><span>Giọng</span><b>Meijia · zh-TW</b><button id="voiceTest">🔊 Nghe thử</button></div>
   </div>
 </div></header>
-<div class="lessonbar" id="bbar"></div>
 <div class="lessonbar" id="lbar"></div>
 <nav id="nav"></nav>
 <main id="app"></main>
