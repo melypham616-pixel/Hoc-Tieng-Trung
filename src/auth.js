@@ -2,7 +2,7 @@
 /* ============ ĐĂNG NHẬP (Supabase) + THANH TOÁN TỰ ĐỘNG ============
    Điền SB.url và SB.key (khóa "anon public" của dự án Supabase — khóa này được phép công khai) để bật đăng nhập và thanh toán tự động.
    Để trống thì site chạy như cũ: không có đăng nhập, gói Pro chưa mở bán. */
-const SB={url:"",key:"",google:false};
+const SB={url:"https://wncbgajsdavxyoprrusb.supabase.co",key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InduY2JnYWpzZGF2eHlvcHJydXNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM5NDE2NTksImV4cCI6MjEwOTUxNzY1OX0.ppBr2LbcW1ykY3n_fg3-RNAjQZkJV06DKdesXCTWImU",google:false};   // khóa anon là khóa công khai theo thiết kế của Supabase; dữ liệu được bảo vệ bằng RLS
 let sbc=null,SESS=null;
 const sbOn=()=>!!(SB.url&&SB.key);
 const signedIn=()=>!!SESS;
