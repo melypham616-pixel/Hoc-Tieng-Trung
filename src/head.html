@@ -559,7 +559,7 @@ nav#nav{position:static!important;max-width:920px;margin:12px auto 0;padding:0 1
 nav#nav::-webkit-scrollbar{display:none}
 nav#nav button{flex:none;flex-direction:row;gap:6px;min-height:44px;padding:0 16px;border-radius:99px;font:600 14px var(--ui);background:var(--card);border:1px solid var(--line);box-shadow:none;color:var(--ink)}
 nav#nav button .ic{font-size:16px}nav#nav button.on{background:var(--pri);border-color:var(--pri);color:#fff}
-@media (max-width:860px){
+@media (max-width:1000px){
   .site-in{padding:6px 16px;gap:10px}
   #bbar{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:40;background:var(--card);border-top:1px solid var(--line);justify-content:space-around;padding:4px 2px calc(4px + env(safe-area-inset-bottom));gap:0}
   #bbar .nv{flex:1;flex-direction:column;gap:2px;padding:4px 0;min-height:54px;font-size:11px;border-radius:10px;min-width:0}
@@ -667,7 +667,9 @@ body.hasl .hero .brand{display:none}
 .lgmenu[hidden]{display:none}
 .lgmenu button{min-height:44px;text-align:left;padding:0 12px;border:0;border-radius:10px;background:none;color:var(--ink);font:600 14px var(--ui);cursor:pointer}.lgmenu button:hover{background:var(--pri2)}
 .hbtn{padding:0 16px}.logo b,.logo small{white-space:nowrap}
-@media (max-width:860px){.hbtn{display:none!important}.site-r{gap:6px}}
+@media (max-width:1180px){.hbtn{display:none!important}.site-r{gap:6px}}
+#bbar .nv{white-space:nowrap}
+@media (min-width:1001px) and (max-width:1180px){.logo small{display:none}#bbar .nv{padding:0 9px;font-size:14px}#bbar .nv .ic{display:none}.site-in{gap:10px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
