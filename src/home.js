@@ -196,17 +196,19 @@ function pageView(){
   m.innerHTML=`<div class="pg-head"><a href="#" onclick="setBook('H');return false">← Trang chủ</a><h1>${P.ic} ${P.t}</h1></div>
   <div class="pg-wrap"><aside class="pg-nav">${keys.map(k=>`<button class="${k===page?"on":""}" onclick="goPage('${k}')">${src(k).ic} ${src(k).t}</button>`).join("")}</aside><article class="card pg-body">${body}</article></div>`;
 }
+/* Liên kết mạng xã hội / email hiển thị ở chân trang — điền để hiện, để trống thì ẩn */
+const SOCIAL={fb:"",group:"",yt:"",email:""};
 function footerView(){
   const L=(f,t,c)=>`<li><a href="#" ${c?`class="${c}" `:""}onclick="${f};return false">${t}</a></li>`;
   const ft=document.querySelector("footer");ft.className="sitefoot";
   ft.innerHTML=`<div class="sf-in"><div class="sf-grid">
    <div class="sf-brand"><a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b></span></a>
     <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
-    <div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div></div>
+    ${(SOCIAL.fb||SOCIAL.group||SOCIAL.yt)?`<div class="sf-soc">${SOCIAL.fb?`<a class="ci" href="${SOCIAL.fb}" target="_blank" rel="noopener" aria-label="Facebook">f</a>`:""}${SOCIAL.group?`<a class="grp" href="${SOCIAL.group}" target="_blank" rel="noopener">👥 Nhóm FB</a>`:""}${SOCIAL.yt?`<a class="ci" href="${SOCIAL.yt}" target="_blank" rel="noopener" aria-label="YouTube">▶</a>`:""}</div>`:`<div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div>`}</div>
    <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("setBook('T')","Từ vựng chuyên ngành & theo cấp độ")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goTo('T',null,'quiz')","Luyện thi")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
    <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
    <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
-   <div><h5>Liên hệ</h5><ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
+   <div><h5>Liên hệ</h5>${SOCIAL.email?`<p class="sf-mail">✉ ${SOCIAL.email}</p>`:""}<ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
   </div>
   <div class="sf-bot"><span>© ${new Date().getFullYear()} Học Tiếng Trung · Trang học tập phi chính thức, không liên kết với nhà xuất bản giáo trình hay đơn vị tổ chức TOCFL.</span><span>加油！Mỗi ngày một chút 💪</span></div></div>`;
 }

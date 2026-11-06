@@ -487,6 +487,24 @@ main.page{max-width:1000px}
 .hist{list-style:none;padding:0!important;display:grid;gap:6px}.hist li{display:flex;gap:10px;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:12px}.hist li span{color:var(--mut);min-width:96px}
 .wk{margin:10px 0}.wk h4{margin:14px 0 6px!important}.step{display:block;width:100%;text-align:left;margin:6px 0;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font:600 15px var(--ui);cursor:pointer}.step.done{opacity:.6}.step.next{border-color:#4299e1;background:var(--pri2)}
 .docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+/* footer giống hihsk */
+.sitefoot{margin-top:72px;font-size:16px}
+.sf-in{max-width:1240px;padding:64px 20px 36px}
+.sf-grid{grid-template-columns:1.1fr 1fr 1fr 1.25fr 1fr;gap:32px}
+.sitefoot h5{font-size:20px;font-weight:700;margin:0 0 22px;letter-spacing:-.01em}
+.sitefoot ul{gap:0}.sitefoot li{padding:9px 0;line-height:1.35}
+.sitefoot a{font-size:15px;color:#94a3b8}.sitefoot a.hot{color:#fb923c;font-weight:700}.sitefoot a.blue{color:#38bdf8;font-weight:700}
+.sitefoot .logo{gap:14px}.sitefoot .logo .lg{width:52px;height:52px;border-radius:16px;font-size:30px}.sitefoot .logo b{font-size:30px;-webkit-text-fill-color:transparent}
+.sitefoot .logo b{color:#fff;background:none;-webkit-text-fill-color:#fff}
+.sf-brand p{font-size:17px;line-height:1.7;margin:22px 0 24px;max-width:340px}
+.sf-soc{display:flex;gap:14px;align-items:center}
+.sf-soc a{display:inline-flex;align-items:center;justify-content:center;height:50px;border-radius:99px;background:#1e293b;color:#e2e8f0;text-decoration:none;font-weight:700}
+.sf-soc .ci{width:50px;font-size:20px}.sf-soc .grp{padding:0 22px;background:#0b1e46;border:1px solid #1d4ed8;color:#93c5fd;font-size:16px}
+.sf-mail{color:#e2e8f0;font-size:17px;margin:0 0 18px}
+.sf-note{font-size:14px}
+.sf-bot{margin-top:56px;border-top:1px solid #1e293b}
+@media (max-width:1000px){.sf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sf-brand{grid-column:1/-1}}
+@media (max-width:480px){.sf-grid{grid-template-columns:1fr}.sitefoot .logo b{font-size:24px}}
 </style>
 </head>
 <body>
@@ -12024,17 +12042,19 @@ function pageView(){
   m.innerHTML=`<div class="pg-head"><a href="#" onclick="setBook('H');return false">← Trang chủ</a><h1>${P.ic} ${P.t}</h1></div>
   <div class="pg-wrap"><aside class="pg-nav">${keys.map(k=>`<button class="${k===page?"on":""}" onclick="goPage('${k}')">${src(k).ic} ${src(k).t}</button>`).join("")}</aside><article class="card pg-body">${body}</article></div>`;
 }
+/* Liên kết mạng xã hội / email hiển thị ở chân trang — điền để hiện, để trống thì ẩn */
+const SOCIAL={fb:"",group:"",yt:"",email:""};
 function footerView(){
   const L=(f,t,c)=>`<li><a href="#" ${c?`class="${c}" `:""}onclick="${f};return false">${t}</a></li>`;
   const ft=document.querySelector("footer");ft.className="sitefoot";
   ft.innerHTML=`<div class="sf-in"><div class="sf-grid">
    <div class="sf-brand"><a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b></span></a>
     <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
-    <div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div></div>
+    ${(SOCIAL.fb||SOCIAL.group||SOCIAL.yt)?`<div class="sf-soc">${SOCIAL.fb?`<a class="ci" href="${SOCIAL.fb}" target="_blank" rel="noopener" aria-label="Facebook">f</a>`:""}${SOCIAL.group?`<a class="grp" href="${SOCIAL.group}" target="_blank" rel="noopener">👥 Nhóm FB</a>`:""}${SOCIAL.yt?`<a class="ci" href="${SOCIAL.yt}" target="_blank" rel="noopener" aria-label="YouTube">▶</a>`:""}</div>`:`<div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div>`}</div>
    <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("setBook('T')","Từ vựng chuyên ngành & theo cấp độ")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goTo('T',null,'quiz')","Luyện thi")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
    <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
    <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
-   <div><h5>Liên hệ</h5><ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
+   <div><h5>Liên hệ</h5>${SOCIAL.email?`<p class="sf-mail">✉ ${SOCIAL.email}</p>`:""}<ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
   </div>
   <div class="sf-bot"><span>© ${new Date().getFullYear()} Học Tiếng Trung · Trang học tập phi chính thức, không liên kết với nhà xuất bản giáo trình hay đơn vị tổ chức TOCFL.</span><span>加油！Mỗi ngày một chút 💪</span></div></div>`;
 }
