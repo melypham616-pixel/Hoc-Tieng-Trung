@@ -48,3 +48,19 @@ Dùng một email của bạn, mua gói 49.000đ thật bằng app MB, chờ và
 - Khách nước ngoài trả bằng PayPal/Visa: vào **Table Editor → subscriptions**, thêm dòng: `user_id` (lấy ở Authentication → Users), `plan` (`m` hoặc `y`), `expires_at`.
 - Xem đơn lệch tiền: bảng `orders`, lọc `status = amount_mismatch`; cột `note` ghi số tiền nhận được.
 - Xem mọi giao dịch SePay đã gửi: bảng `payments`.
+
+---
+
+# Thanh toán thẻ Visa/Mastercard bằng Stripe (khách quốc tế)
+
+Luồng: khách bấm **Pay by card** → hàm `stripe-checkout` tạo phiên thanh toán với **số tiền do server quyết định** ($4.99 hoặc $39.99) → khách trả trên trang của Stripe (số thẻ không đi qua website của bạn) → Stripe gọi `stripe-webhook` → hàm kiểm tra chữ ký, **đúng USD và đúng số tiền** rồi mới mở Pro.
+
+Bạn cần làm (mình không tạo tài khoản hay nhập khóa thay bạn):
+
+1. **Tài khoản Stripe:** đăng ký tại stripe.com. Kiểm tra trên trang Stripe xem quốc gia/loại hình của bạn có được hỗ trợ nhận tiền không (mình không chắc Stripe nhận tài khoản ở Việt Nam).
+2. **Chạy `backend/stripe.sql`** trong Supabase → SQL Editor.
+3. **Tạo 2 hàm** trong Supabase → Edge Functions: `stripe-checkout` (dán `backend/functions/stripe-checkout/index.ts`) và `stripe-webhook` (dán `backend/functions/stripe-webhook/index.ts`). Cả hai **tắt "Verify JWT"** trong cài đặt hàm (hàm tự kiểm tra danh tính bên trong).
+4. **Khóa Stripe:** Stripe Dashboard → Developers → API keys → copy **Secret key** (`sk_live_…`, hoặc `sk_test_…` để thử) và dán vào Supabase → Edge Functions → Secrets với tên `STRIPE_SECRET_KEY`. **Không gửi khóa này cho ai.**
+5. **Webhook Stripe:** Developers → Webhooks → Add endpoint, URL `https://<project-ref>.supabase.co/functions/v1/stripe-webhook`, chọn sự kiện **checkout.session.completed**. Stripe hiện **Signing secret** (`whsec_…`): dán vào Supabase Secrets với tên `STRIPE_WEBHOOK_SECRET`.
+6. **Bật trên website:** đổi `const STRIPE_ON=false` thành `true` trong `src/auth.js`, chạy `python3 build.py`, đưa lên. (Hoặc nhờ mình làm.)
+7. **Thử bằng chế độ Test:** dùng khóa `sk_test_…` và thẻ thử `4242 4242 4242 4242` (hạn bất kỳ, CVC bất kỳ), xem Pro tự mở, rồi đổi sang khóa Live.

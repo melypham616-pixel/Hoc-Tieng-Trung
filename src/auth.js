@@ -3,6 +3,7 @@
    Điền SB.url và SB.key (khóa "anon public" của dự án Supabase — khóa này được phép công khai) để bật đăng nhập và thanh toán tự động.
    Để trống thì site chạy như cũ: không có đăng nhập, gói Pro chưa mở bán. */
 const SB={url:"https://wncbgajsdavxyoprrusb.supabase.co",key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InduY2JnYWpzZGF2eHlvcHJydXNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM5NDE2NTksImV4cCI6MjEwOTUxNzY1OX0.ppBr2LbcW1ykY3n_fg3-RNAjQZkJV06DKdesXCTWImU",google:false};   // khóa anon là khóa công khai theo thiết kế của Supabase; dữ liệu được bảo vệ bằng RLS
+const STRIPE_ON=false;   // đổi thành true sau khi đã deploy 2 hàm stripe-checkout, stripe-webhook và đặt secret (xem backend/README.md)
 let sbc=null,SESS=null;
 const sbOn=()=>!!(SB.url&&SB.key);
 const signedIn=()=>!!SESS;
@@ -15,6 +16,7 @@ async function sbInit(){
     const {data}=await sbc.auth.getSession();SESS=data.session;
     sbc.auth.onAuthStateChange((ev,s)=>{const was=!!SESS;SESS=s;if(ev==="SIGNED_IN"&&!was||ev==="SIGNED_OUT")refreshSub(true)});
     await refreshSub(false);
+    if(/[?&]paid=1/.test(location.search)&&SESS)pollPaid();
   }catch(e){console.warn("Supabase không tải được",e)}
 }
 async function refreshSub(rerender){
@@ -57,6 +59,21 @@ function showAccount(){
 }
 
 /* ---------- Mua gói: tạo đơn trên server → hiện VietQR đúng số tiền → chờ hệ thống báo đã nhận ---------- */
+const stripeHtml=(pl,usd)=>`<p>Pay with <b>Visa / Mastercard</b> — <b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}. You will be taken to Stripe's secure payment page; your plan is activated automatically on <b>${esc(SESS.user.email||"")}</b>.</p>
+  <p><button class="btn-l p" id="stripeBtn" style="width:100%">💳 Pay $${usd} by card</button></p><div class="su-msg" id="stripeMsg" role="status"></div>`;
+async function goStripe(id,btn,msg){
+  btn.disabled=true;msg.style.color="var(--mut)";msg.textContent="Opening secure checkout…";track('stripe_click',{plan:id});
+  try{
+    const {data,error}=await sbc.functions.invoke("stripe-checkout",{body:{plan:id}});
+    if(error||!data||!data.url)throw 0;
+    location.href=data.url;
+  }catch(e){btn.disabled=false;msg.style.color="var(--bad)";msg.textContent="Could not start checkout. Please try again."}
+}
+/* quay lại từ Stripe (?paid=1): chờ webhook kích hoạt gói rồi báo */
+async function pollPaid(){
+  for(let i=0;i<12;i++){await refreshSub(false);if(isPro()){toast("✅ Payment received — Pro activated");history.replaceState(null,"",location.pathname+location.hash);return}await new Promise(r=>setTimeout(r,3000))}
+  toast("Payment is being confirmed. Your plan will activate shortly.");
+}
 let _poll=0;
 async function buy(id){
   const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
@@ -67,8 +84,9 @@ async function buy(id){
     :`<p>Card payments (Visa / Mastercard) are being set up. Tap below and we will email you a secure payment link for <b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}; your plan is activated on <b>${esc(SESS.user.email||"")}</b> right after payment.</p><p><button class="btn-l p" id="reqIntl" style="width:100%">Request payment link</button></p><div class="su-msg" id="reqMsg" role="status"></div>`;
   const d=modalBox(`<h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3>
    <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">💳 Thẻ Visa & Quốc tế</button></div>
-   <div class="ptab" data-p="vn"><p class="stat">Đang tạo đơn hàng…</p></div><div class="ptab" data-p="in" hidden>${intlHtml}</div>`);
+   <div class="ptab" data-p="vn"><p class="stat">Đang tạo đơn hàng…</p></div><div class="ptab" data-p="in" hidden>${STRIPE_ON?stripeHtml(pl,usd):intlHtml}</div>`);
   d.querySelector(".seg").onclick=e=>{const b=e.target.closest("button");if(!b)return;d.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b));d.querySelectorAll(".ptab").forEach(p=>p.hidden=p.dataset.p!==b.dataset.t)};
+  const sb2=d.querySelector("#stripeBtn");if(sb2)sb2.onclick=()=>goStripe(id,sb2,d.querySelector("#stripeMsg"));
   const rq=d.querySelector("#reqIntl");
   if(rq)rq.onclick=async()=>{
     const msg=d.querySelector("#reqMsg");rq.disabled=true;msg.style.color="var(--mut)";msg.textContent="Sending…";
