@@ -7,6 +7,6 @@ from pathlib import Path
 root = Path(__file__).parent
 src = root / "src"
 head = (src / "head.html").read_text(encoding="utf8")
-body = "".join((src / f).read_text(encoding="utf8") for f in ["data1.js", "data2.js", "data3.js", "data4.js", "data5.js", "data6.js", "data7.js", "data8.js", "gate.js", "tools.js", "tools2.js", "home.js", "app.js"])
+body = "".join((src / f).read_text(encoding="utf8") for f in ["data1.js", "data2.js", "data3.js", "data4.js", "data5.js", "data6.js", "data7.js", "data8.js", "gate.js", "tools.js", "tools2.js", "home.js", "ui.js", "app.js"])
 (root / "index.html").write_text(head + "<script>\n" + body + "</script>\n</body>\n</html>\n", encoding="utf8")
 print("Đã tạo index.html")

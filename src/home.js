@@ -44,85 +44,10 @@ function homeCounts(){
   Object.values(BKW).forEach(a=>{if(a&&a.length)words+=a.length});
   return {words,lessons};
 }
-function homeView(){
-  const m=$("main");m.className="home";
-  const c=homeCounts(),fmt=n=>n.toLocaleString("vi-VN");
-  const v=VOCAB[Math.floor(Math.random()*VOCAB.length)],TS=TRANS.filter(x=>x[1].length<=18),t=TS.length?TS[Math.floor(Math.random()*TS.length)]:null;
-  const known=Object.keys(prog.known).length,last=BOOK_IDS.includes(prog.last)?prog.last:"1";
-  const lastName=last==="T"?"TOCFL":"Quyển "+last;
-  const F=[
-    ["📖","Giáo trình 當代中文 1–6","Học theo từng quyển, từng bài: từ vựng, hội thoại, bài đọc có phiên âm và dịch.",c.lessons+" bài","1"],
-    ["🎯","Từ vựng TOCFL A1–B2","Band A + Band B theo cấp độ, có nghĩa Việt, từ loại và nghe đọc.",fmt(TF.length)+" từ","T"],
-    ["🃏","Thẻ nhớ","Lật thẻ ghi nhớ từ vựng, đánh dấu từ đã thuộc để ôn lại từ còn yếu.","Mọi quyển","1","flash"],
-    ["✍️","Trắc nghiệm & Bài tập","Chọn nghĩa, nghe chọn chữ, sắp xếp câu — có chấm điểm ngay.","Mọi quyển","1","quiz"],
-    ["💬","Hội thoại & Bài đọc","Nghe từng câu, bật/tắt pinyin và bản dịch, nghe cả đoạn liền mạch.","Quyển 2–6","2",null,"dlg"],
-    ["📐","Ngữ pháp","Công thức, giải thích và ví dụ có phiên âm cho 15 bài Quyển 1.","15 bài","1","grammar"],
-    ["📚","Truyện ngắn","Đọc truyện phồn thể, chạm vào từ để xem pinyin và nghĩa.","Quyển 1","1","story"],
-    ["🎙","Vấn đáp luyện nói","Trả lời bằng giọng nói, hệ thống chấm phát âm từng câu.","Quyển 1","1","qa"],
-    ["🔤","Tập dịch","Dịch Việt → Trung, sắp xếp từ thành câu đúng.","Quyển 1","1","trans"],
-    ["✍️","Chép chính tả","Nghe câu bằng giọng Meijia rồi gõ lại chữ Hán, chấm từng chữ.","Quyển 1–6","page","dictation"],
-    ["🎬","Shadowing video","Xem video bản xứ rồi nhại theo, 2 danh sách phát từ HSK 1–2 đến HSK 3–4.","32 video","page","vid"],
-    ["🗣️","Shadowing","Nghe rồi nhại lại ngay, chấm độ giống từng từ để luyện nhịp và thanh điệu.","Quyển 1–6","page","shadow"],
-    ["💬","Mẫu câu giao tiếp","Câu thông dụng từ hội thoại Quyển 1–6, có pinyin trên chữ và nghe đọc.","Theo bài","page","sentences"],
-    ["📏","Lượng từ 量詞","Hơn 50 lượng từ nhóm theo cách dùng, kèm ví dụ và nghe đọc.","Mới","page","measure"],
-    ["🗂️","Từ vựng theo chủ đề","Từ vựng Quyển 1–6 và TOCFL gom theo 13 chủ đề đời sống.","13 chủ đề","page","topics"],
-    ["🖌️","Luyện thứ tự nét","Xem nét chạy và tự viết lại chữ phồn thể trên màn hình.","Hanzi Writer","page","strokes"],
-    ["📝","Đề thi thử TOCFL","Bài trắc nghiệm bấm giờ A1–B2, chấm điểm và xem lại câu sai.","A1–B2","page","exam"],
-    ["🧩","214 Bộ thủ","Tra và nghe 214 bộ thủ phồn thể, xếp theo số nét, kèm Hán Việt và nghĩa.","214 bộ","page","radicals"],
-    ["🔁","Ôn tập SRS ngắt quãng","Lịch nhắc từ tự động 10 phút → 30 ngày, giúp nhớ lâu hơn.","Pro","page","srs"],
-    ["🔎","Tra từ & phân tích câu","Dán câu tiếng Trung để xem pinyin và nghĩa từng từ, hoặc tra bằng pinyin/tiếng Việt.","Công cụ","page","lookup"],
-    ["🎼","Lộ trình Pinyin","Thanh mẫu, vận mẫu và 4 thanh điệu, chạm để nghe ví dụ.","Cho người mới","page","pinyin"],
-  ];
-  m.innerHTML=`
-  <section class="hm-hero">
-    <div>
-      <span class="pill">✨ Tự học tiếng Trung phồn thể · 當代中文課程 &amp; TOCFL</span>
-      <h1>Chinh phục<br><em>Tiếng Trung</em> dễ dàng</h1>
-      <p class="lead">Học từ vựng, hội thoại, bài đọc và luyện nghe theo giáo trình 當代中文課程 Quyển 1–6 cùng bộ từ TOCFL — chữ phồn thể, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
-      <div class="cta">
-        <button class="btn-l p" onclick="setBook('${last}')">🚀 Tiếp tục học · ${lastName}</button>
-        <button class="btn-l" onclick="document.getElementById('hm-feats').scrollIntoView({behavior:'smooth'})">📘 Khám phá mục học</button>
-      </div>
-    </div>
-    <div class="hm-side">
-      <div class="sample">
-        <span class="tag">Từ vựng mẫu · Quyển 1 · Bài ${v[3]}</span>
-        <div class="big-zh">${v[0]}</div>
-        <div class="sp-py">${v[1]}</div>
-        <div class="sp-vi">${v[2]}</div>
-        ${t?`<div class="ex-box"><div class="zh">${t[1]}</div><small>${t[0]}</small></div>`:""}
-        <div class="foot"><button class="b" onclick="speak('${v[0].replace(/'/g,"\\'")}',0,'m')">🔊 Nghe phát âm</button><button class="b" onclick="homeView()">🔄 Từ khác</button></div>
-      </div>
-      <div class="minis">
-        <div class="mini"><h6>Chọn quyển · chạm để vào</h6><div class="lvs">${BOOK_IDS.map(n=>`<button onclick="setBook('${n}')">${n==="T"?"TOCFL":"Q"+n}</button>`).join("")}</div></div>
-        <div class="mini"><h6>Tiến độ Quyển 1</h6><div class="bignum">${known}<small style="font:600 14px var(--ui);color:var(--mut)"> / ${VOCAB.length} từ</small></div><div class="bar"><i style="width:${known/VOCAB.length*100}%"></i></div></div>
-      </div>
-    </div>
-  </section>
-  <div class="sec-h" id="hm-feats"><span class="pill">Hệ sinh thái học tập</span><h2>Tất cả những gì bạn cần<br>để thành thạo tiếng Trung</h2><p>Các mục học được gom về một nơi — chọn mục bạn muốn và vào học ngay.</p></div>
-  <div class="feats">${F.map(f=>`<button class="feat" onclick="${f[4]==="page"?(f[5]==="vid"?`goVideo()`:f[5]==="shadow"?`goShadow()`:`goPage('${f[5]}')`):`goTo('${f[4]}',${f[5]?`'${f[5]}'`:"null"},${f[6]?`'${f[6]}'`:"null"})`}"><div class="ico">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><span class="cnt">${f[3]}</span></button>`).join("")}</div>
-  <div class="hstats">
-    <div class="hstat"><b>6</b><span>Quyển giáo trình</span><small>當代中文課程</small></div>
-    <div class="hstat"><b>${c.lessons}</b><span>Bài học</span><small>hội thoại &amp; bài đọc</small></div>
-    <div class="hstat"><b>${fmt(c.words)}</b><span>Từ vựng giáo trình</span><small>kèm pinyin &amp; nghĩa</small></div>
-    <div class="hstat"><b>${fmt(TF.length)}</b><span>Từ TOCFL</span><small>Band A + Band B</small></div>
-  </div>
-  <div class="sec-h" id="hm-plans"><span class="pill">Gói học</span><h2>Chọn gói phù hợp với bạn</h2><p>Học miễn phí không giới hạn; Pro dành cho ai muốn thêm tài liệu ôn tập và được hỗ trợ.</p></div>
-  <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Đề xuất</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('${last}')">Học ngay</button>`}</div>`).join("")}</div>
-  <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Free</th><th>Pro</th></tr></thead><tbody>
-   ${[["Học từ vựng cơ bản","✓","✓"],["Xem bài học","Một số bài","Toàn bộ"],["Nghe phát âm (giọng Meijia)","✓","✓"],["Flashcards","15 thẻ/ngày","Không giới hạn"],["Ôn tập ngắt quãng (SRS)","—","✓"],["Quiz kiểm tra","15 câu/ngày, dạng cơ bản","Không giới hạn, mọi dạng"],["Theo dõi tiến độ chi tiết","—","✓"],["Lưu lịch sử học tập","—","✓"],["Bài kiểm tra TOCFL (mọi cấp)","Cấp A1","✓"],["Tài liệu bổ sung (Anki, bản in)","—","Pro năm"],["Lộ trình học theo mục tiêu","—","Pro năm"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}
-  </tbody></table><p class="stat" style="margin:10px 4px 0">Gói Free vẫn cho bạn trải nghiệm đủ tốt trước khi quyết định nâng cấp.</p></div>
-  <details class="act" ${isPro()?"open":""}><summary>${isPro()?"✅ Gói Pro "+(isYear()?"năm":"tháng")+" đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPro()?"":premForm()}</details>
-  <section class="signup"><div><h3>📬 Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài, từ vựng và tính năng mới. Không spam, hủy bất cứ lúc nào.</p></div>
-    <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required value="${prog.email||""}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg"></div></form></section>
-  <div class="cta-band"><span class="pill">Miễn phí · không cần đăng ký</span><h2>Sẵn sàng chinh phục tiếng Trung phồn thể?</h2><p>Tiến độ học được lưu ngay trên trình duyệt của bạn.</p>
-    <div class="cta"><button class="btn-l p" onclick="setBook('1')">Bắt đầu Quyển 1</button><button class="btn-l" onclick="setBook('T')">Xem từ vựng TOCFL</button></div></div>`;
-}
-
 /* ============ CHÂN TRANG + CÁC TRANG THÔNG TIN ============ */
 let page="guide",wipeArm=false;
 function goPage(k){page=k;wipeArm=false;bk="P";track('page_view',{page:k});render();window.scrollTo({top:0})}
-function goPlans(){setBook("H");setTimeout(()=>{const e=document.getElementById("hm-plans");if(e)e.scrollIntoView({behavior:"smooth"})},60)}
+function goPlans(){goPage("plans")}
 function wipeData(){if(!wipeArm){wipeArm=true;pageView();return}try{localStorage.removeItem("tocfl1");localStorage.removeItem("signups")}catch(e){}location.reload()}
 async function sendFeedback(ev){
   ev.preventDefault();const f=ev.target,msg=f.querySelector(".su-msg"),btn=f.querySelector("button");
@@ -197,7 +122,8 @@ const PAGES={
    <button class="btn-l p">Gửi phản ánh</button><div class="su-msg"></div></form>`}
 };
 function pageView(){
-  const m=$("main");m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
+  const m=$("main");if(MAINP[page]){m.className="home page main";m.innerHTML=MAINP[page]();return}
+  m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
   const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","pinyin","measure","topics","sentences","dictation","strokes","exam","lookup","srs","progress","path","docs"];
   const tool=!!TOOLS[page],keys=tool?TL:["guide",...POL],src=k=>PAGES[k]||TOOLS[k];
   const body=typeof P.h==="function"?P.h():P.h;

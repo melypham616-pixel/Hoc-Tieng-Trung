@@ -512,6 +512,119 @@ main.page{max-width:1000px}
 .tg{font-size:11.5px;font-weight:800;padding:2px 9px;border-radius:99px}.tg.fr{background:var(--okbg);color:var(--ok)}.tg.vip{background:#2a1f0c;color:var(--gold)}
 .vwrap{position:relative;padding-top:56.25%;border-radius:18px;overflow:hidden;background:#000}.vwrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}.vcard{text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 0 12px;overflow:hidden;cursor:pointer;color:var(--ink);font-family:var(--ui)}.vcard:hover{border-color:#4299e1}.vcard .th{position:relative}.vcard img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--line)}.vcard .tg{position:absolute;top:8px;left:8px}.vcard em{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.75);color:#fff;font-style:normal;font-size:12px;padding:1px 6px;border-radius:6px}.vcard .tt{padding:10px 12px 2px;font-weight:600;font-size:14.5px;line-height:1.35}.vcard small{padding:0 12px}
+
+/* ======================= v5: Study Chinese — thiết kế lại sản phẩm ======================= */
+:root{--bg:#FAFAF7;--card:#FFFFFF;--ink:#252A28;--mut:#737B77;--line:#E5E6DF;--pri:#2E8B70;--pri-d:#247159;--pri2:#E8F3EF;--acc:#2E8B70;--acc2:#E8F3EF;--gold:#9A6A12;--ok:#2E8B70;--okbg:#E8F3EF;--bad:#C0392B;--badbg:#FBEAE7;--shadow:0 1px 2px rgba(37,42,40,.05);--grad:#2E8B70;--hero-bg:#FFFFFF;color-scheme:light}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#FAFAF7;--card:#FFFFFF;--ink:#252A28;--mut:#737B77;--line:#E5E6DF;--pri:#2E8B70;--pri-d:#247159;--pri2:#E8F3EF;--acc:#2E8B70;--acc2:#E8F3EF;--gold:#9A6A12;--ok:#2E8B70;--okbg:#E8F3EF;--bad:#C0392B;--badbg:#FBEAE7;--shadow:0 1px 2px rgba(37,42,40,.05);--grad:#2E8B70;--hero-bg:#FFFFFF;color-scheme:light}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141816;--card:#1C211F;--ink:#ECEFED;--mut:#9AA39F;--line:#2D3431;--pri:#4DB896;--pri-d:#3A9C7D;--pri2:#1C2E28;--acc:#4DB896;--acc2:#1C2E28;--gold:#E0B04A;--ok:#4DB896;--okbg:#1C2E28;--bad:#F0705F;--badbg:#38221F;--shadow:none;--grad:#2E8B70;--hero-bg:#1C211F;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141816;--card:#1C211F;--ink:#ECEFED;--mut:#9AA39F;--line:#2D3431;--pri:#4DB896;--pri-d:#3A9C7D;--pri2:#1C2E28;--acc:#4DB896;--acc2:#1C2E28;--gold:#E0B04A;--ok:#4DB896;--okbg:#1C2E28;--bad:#F0705F;--badbg:#38221F;--shadow:none;--grad:#2E8B70;--hero-bg:#1C211F;color-scheme:dark}
+:root[data-theme="light"]{--bg:#FAFAF7;--card:#FFFFFF;--ink:#252A28;--mut:#737B77;--line:#E5E6DF;--pri:#2E8B70;--pri-d:#247159;--pri2:#E8F3EF;--acc:#2E8B70;--acc2:#E8F3EF;--gold:#9A6A12;--ok:#2E8B70;--okbg:#E8F3EF;--bad:#C0392B;--badbg:#FBEAE7;--shadow:0 1px 2px rgba(37,42,40,.05);--grad:#2E8B70;--hero-bg:#FFFFFF;color-scheme:light}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--ui)}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--pri) 55%,transparent);outline-offset:2px}
+/* nút & chạm tối thiểu 44px */
+.b,.chip,.lchip,.seg button,.ibtn,.btn-l,input[type=text],input[type=email],input[type=search],select{min-height:44px}
+.b{border-radius:12px;box-shadow:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.b.spk{width:44px;height:44px;min-height:44px}
+.b.p,.btn-l.p,.hotb,.steps li::before,.chart i,.lh::before,.pb i,.prow .bar i,.bar i{background:var(--pri);box-shadow:none;border-color:transparent;color:#fff}
+.b.on{background:var(--pri2);border-color:var(--pri);color:var(--pri-d)}
+.b:disabled{opacity:.45;cursor:not-allowed}
+.btn-l{border-radius:12px;box-shadow:none;justify-content:center}
+.btn-l.p:hover,.b.p:hover{background:var(--pri-d)}
+.logo .lg{background:var(--pri);box-shadow:none;border-radius:12px}
+.logo b,.hm-hero h1 em,.hstat b{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:var(--pri)}
+.logo small{font-family:var(--hanzi)}
+.card,.mini,.plan,.feat,.vcard,.dcard,.sample,.course,.vp,.cat,.hstat,.act,.cmp,.signup,.vcardx,.empty,.rad,.pyc,.tn,.mw,.step,.lessonx .lx-in{box-shadow:none;border-color:var(--line);border-radius:14px}
+.feat:hover,.rad:hover,.pyc:hover,.tn:hover,.dcard:hover,.vcard:hover,.idx a:hover,.lchip:hover,.ibtn:hover,.b:hover,.lvs button:hover,.cat:hover,.vp.link:hover,.course:hover{border-color:var(--pri);transform:none}
+.plan.hot{border-color:var(--pri);box-shadow:none}
+input:focus,textarea:focus,select:focus{border-color:var(--pri)!important;box-shadow:0 0 0 3px var(--pri2)!important}
+.pill{background:var(--pri2);color:var(--pri-d);border:0}
+.tg.vip{background:var(--pri2);color:var(--gold)}
+.chip.on,.lchip.on{background:var(--pri);color:#fff;border-color:var(--pri);box-shadow:none}
+.seg{background:var(--bg);border:1px solid var(--line)}.seg button.on{background:var(--pri);color:#fff;box-shadow:none}
+.tf-intro{background:var(--pri2);border-left-color:var(--pri)}
+.ex{border-left-color:var(--pri);background:var(--pri2)}
+.step.next{border-color:var(--pri);background:var(--pri2)}
+.modal{background:rgba(37,42,40,.5);backdrop-filter:none}
+/* khung đầu trang: logo + điều hướng 6 mục */
+.site{background:var(--card);backdrop-filter:none;border-bottom:1px solid var(--line)}
+.site-in{display:flex;align-items:center;gap:20px;max-width:1120px;padding:8px 16px}
+.site-top{display:contents}.logo{order:1}.site-r{order:3;margin-left:auto}
+#bbar{order:2;flex:1;display:flex;gap:2px;padding:0;margin:0;overflow:visible}
+#bbar .nv{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:12px;background:none;border:0;color:var(--mut);font:600 15px var(--ui);cursor:pointer}
+#bbar .nv .ic{font-size:18px}#bbar .nv:hover{background:var(--pri2);color:var(--ink)}#bbar .nv.on{background:var(--pri2);color:var(--pri-d)}
+.bstrip{max-width:1120px;margin:0 auto;padding:12px 16px 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.bstrip::-webkit-scrollbar{display:none}
+.bstrip .lchip{flex:none;padding:0 16px;border-radius:99px;font:600 14px var(--ui)}
+nav#nav{position:static!important;max-width:920px;margin:12px auto 0;padding:0 16px;display:flex;gap:8px;overflow-x:auto;background:none;border:0;backdrop-filter:none;scrollbar-width:none}
+nav#nav::-webkit-scrollbar{display:none}
+nav#nav button{flex:none;flex-direction:row;gap:6px;min-height:44px;padding:0 16px;border-radius:99px;font:600 14px var(--ui);background:var(--card);border:1px solid var(--line);box-shadow:none;color:var(--ink)}
+nav#nav button .ic{font-size:16px}nav#nav button.on{background:var(--pri);border-color:var(--pri);color:#fff}
+@media (max-width:860px){
+  .site-in{padding:6px 16px;gap:10px}
+  #bbar{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:40;background:var(--card);border-top:1px solid var(--line);justify-content:space-around;padding:4px 2px calc(4px + env(safe-area-inset-bottom));gap:0}
+  #bbar .nv{flex:1;flex-direction:column;gap:2px;padding:4px 0;min-height:54px;font-size:11px;border-radius:10px;min-width:0}
+  #bbar .nv .ic{font-size:21px}
+  body{padding-bottom:84px}
+}
+/* đầu trang của quyển (sáng, gọn) */
+.hero{background:var(--card);color:var(--ink);border-bottom:1px solid var(--line);padding:16px}
+.hero::after{display:none}
+.seal{width:44px;height:44px;border-radius:12px;background:var(--pri);box-shadow:none;transform:none;font-size:24px}
+.brand h1{background:none;-webkit-text-fill-color:currentColor;color:var(--ink);font:700 clamp(20px,4vw,26px)/1.2 var(--hanzi)}
+.brand p{color:var(--mut);opacity:1}
+.stat-card{background:var(--bg);border:1px solid var(--line);backdrop-filter:none;border-radius:14px}.stat-card b{color:var(--ink);font-family:var(--ui)}.stat-card span{color:var(--mut)}
+.bar,.pb{background:var(--line)}.pb{height:8px;border-radius:99px;overflow:hidden}.pb i{display:block;height:100%;border-radius:99px;transition:width .3s}
+.ctrl{color:var(--mut)}.ctrl select,.ctrl button{background:var(--card);border:1px solid var(--line);color:var(--ink)}
+.ctrl input[type=range]{accent-color:var(--pri)}
+/* thanh chi tiết bài học */
+.lessonx{display:none;max-width:920px;margin:12px auto 0;padding:0 16px}
+.lx-in{display:grid;grid-template-columns:1.2fr 1fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);padding:14px 16px}
+.lx-t small{color:var(--pri-d);font-weight:700}.lx-t h2{margin:2px 0;font-size:20px;line-height:1.3}.lx-a{display:flex;gap:8px;flex-wrap:wrap}
+.lx-p small{color:var(--mut)}
+@media (max-width:760px){.lx-in{grid-template-columns:1fr}.lx-a .b{flex:1}}
+/* trang chủ & khối nội dung */
+main.main{max-width:1120px}
+.hm-hero::before{display:none}
+.hm-hero h1{letter-spacing:-.025em}.ticks{list-style:none;display:flex;gap:6px 18px;flex-wrap:wrap;padding:0;margin:18px 0 0;color:var(--mut);font-size:14px}.ticks li::before{content:"✓ ";color:var(--pri);font-weight:800}
+.sample{padding:22px}.sample .tag{background:var(--pri2);color:var(--pri-d)}
+.sample .ex-box{background:var(--bg)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.vp{background:var(--card);border:1px solid var(--line);padding:20px;text-align:left;color:var(--ink);font-family:var(--ui)}.vp .ico,.cat .ico{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--pri2);font-size:22px;margin-bottom:12px}.vp h4{margin:0 0 6px;font-size:17px}.vp p{margin:0;color:var(--mut);font-size:14.5px}.vp.link{cursor:pointer}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.cat{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:var(--card);border:1px solid var(--line);padding:16px;cursor:pointer;color:var(--ink);font-family:var(--ui)}.cat b{font-size:16px}.cat small{color:var(--mut);font-size:13.5px;line-height:1.4}
+.feature-course{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}.feature-course h3{margin:10px 0 6px;font-size:24px}.feature-course p{color:var(--mut);margin:0 0 14px;max-width:640px}
+.how{list-style:none;counter-reset:h;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0}.how li{counter-increment:h;position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 64px}.how li::before{content:counter(h);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--pri);color:#fff;display:grid;place-items:center;font-weight:800}.how p{margin:4px 0 0;color:var(--mut);font-size:14.5px}
+.hstats{margin-top:32px}.hstat{box-shadow:none}
+.cta-band{background:var(--pri);color:#fff;border:0;border-radius:20px}.cta-band h2{color:#fff}.cta-band p{color:rgba(255,255,255,.88)}
+.cta-band .btn-l.p{background:#fff;color:var(--pri-d)}.cta-band .btn-l:not(.p){background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+@media (max-width:860px){.trio,.how{grid-template-columns:1fr}}
+/* khóa học */
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.course{background:var(--card);border:1px solid var(--line);padding:20px;display:flex;flex-direction:column}.course h3{margin:12px 0 4px;font-size:22px}.course .vi{margin:0 0 12px;min-height:44px;font-size:14px;line-height:1.5}.course .ch{display:flex;justify-content:space-between;align-items:center;gap:8px}.course .lvl{font-size:12.5px;font-weight:700;color:var(--mut)}.course .meta{display:flex;gap:14px;color:var(--mut);font-size:13.5px;margin-bottom:12px}.course .btn-l{margin-top:auto}
+.resume{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;background:var(--pri2);border-radius:14px;padding:14px 16px;margin:12px 0}.resume small{color:var(--pri-d);font-weight:700}.resume b{display:block;font-size:17px}
+/* từ vựng học thẻ */
+.vsel{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.vsel label{font-size:13px;font-weight:600;color:var(--mut);display:grid;gap:4px}.vsel select{padding:0 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:inherit;font-size:15px}
+.vcardx{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-top:14px;text-align:center}.vtop{display:flex;justify-content:space-between;align-items:center}.vz{font-size:clamp(56px,16vw,92px);line-height:1.2;margin:10px 0 4px}.vp1{font-size:22px;color:var(--pri);font-weight:600;min-height:34px;cursor:pointer}.vm{font-size:20px;font-weight:600;margin:6px 0 14px;cursor:pointer}.hid{color:var(--mut)!important;font-size:15px!important;font-weight:500!important;background:var(--bg);border-radius:10px;padding:6px 12px;display:inline-block}
+.exs{margin-top:18px;padding:14px;background:var(--bg);border-radius:14px;text-align:left;display:grid;gap:4px;position:relative}.exs small{color:var(--mut);font-weight:700}.exs .b.spk{position:absolute;right:10px;top:10px}
+.vact{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.vact .b{min-height:52px;font-size:16px}
+.vnav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}.vtog{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-size:14px;color:var(--mut)}.vtog label{display:flex;align-items:center;gap:6px;min-height:44px}
+@media (max-width:480px){.vsel{grid-template-columns:1fr}.vnav{flex-wrap:wrap}.vtog{order:3;width:100%}}
+/* tổng quan */
+.dash{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.dash .card{margin:0}.dash .goal,.dash section:nth-child(n+5){grid-column:auto}
+.goalnum{display:flex;align-items:baseline;gap:8px;margin:8px 0}.goalnum b{font-size:36px;line-height:1}.goalnum span{color:var(--mut)}
+.reco{display:grid;gap:8px;margin-top:10px}.reco .cat{padding:12px 14px;flex-direction:column}
+.donel{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px}.donel button{width:100%;min-height:44px;display:flex;justify-content:space-between;gap:10px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:600 14px var(--ui);cursor:pointer;align-items:center}
+@media (max-width:760px){.dash{grid-template-columns:1fr}}
+.empty{text-align:center;padding:22px 16px;color:var(--mut);background:var(--bg);border:1px dashed var(--line);border-radius:14px;margin-top:10px}.empty .ei{font-size:30px}.empty b{display:block;color:var(--ink);margin:4px 0}.empty p{margin:0 0 12px;font-size:14px}
+.pg-head h1{font:700 clamp(24px,4.4vw,32px)/1.2 var(--ui);letter-spacing:-.02em}
+.prow{grid-template-columns:90px 1fr 84px}.prow .pb{margin:0}
+/* chân trang sáng */
+.sitefoot{background:var(--card);color:var(--mut);border-top:1px solid var(--line)}
+.sitefoot h5{color:var(--ink)}.sitefoot a{color:var(--mut)}.sitefoot a:hover{color:var(--pri)}.sitefoot a.hot{color:var(--gold)}.sitefoot a.blue{color:var(--pri-d)}
+.sitefoot .logo b{color:var(--pri);-webkit-text-fill-color:currentColor}
+.sf-badges span{background:var(--bg);border-color:var(--line);color:var(--mut)}.sf-bot{border-color:var(--line)}.sf-mail{color:var(--ink)}
+.sf-soc a{background:var(--bg);color:var(--ink)}.sf-soc .grp{background:var(--pri2);border-color:var(--pri);color:var(--pri-d)}
+@media (max-width:860px){.sitefoot{margin-bottom:0}}
+.stats{display:none!important}
+.vsel>label{min-width:0}.vsel select{width:100%;min-width:0;max-width:100%;text-overflow:ellipsis}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -522,6 +635,8 @@ main.page{max-width:1000px}
   </div>
   <div class="subnav" id="bbar"></div>
 </div></div>
+<div id="bstrip" class="bstrip"></div>
+<div id="lessonx" class="lessonx"></div>
 <header class="hero"><div class="hero-in">
   <div class="brand"><div class="seal">學</div>
     <div><h1 id="hT">當代中文課程 1</h1><p id="hS">Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch</p></div></div>
@@ -12192,85 +12307,10 @@ function homeCounts(){
   Object.values(BKW).forEach(a=>{if(a&&a.length)words+=a.length});
   return {words,lessons};
 }
-function homeView(){
-  const m=$("main");m.className="home";
-  const c=homeCounts(),fmt=n=>n.toLocaleString("vi-VN");
-  const v=VOCAB[Math.floor(Math.random()*VOCAB.length)],TS=TRANS.filter(x=>x[1].length<=18),t=TS.length?TS[Math.floor(Math.random()*TS.length)]:null;
-  const known=Object.keys(prog.known).length,last=BOOK_IDS.includes(prog.last)?prog.last:"1";
-  const lastName=last==="T"?"TOCFL":"Quyển "+last;
-  const F=[
-    ["📖","Giáo trình 當代中文 1–6","Học theo từng quyển, từng bài: từ vựng, hội thoại, bài đọc có phiên âm và dịch.",c.lessons+" bài","1"],
-    ["🎯","Từ vựng TOCFL A1–B2","Band A + Band B theo cấp độ, có nghĩa Việt, từ loại và nghe đọc.",fmt(TF.length)+" từ","T"],
-    ["🃏","Thẻ nhớ","Lật thẻ ghi nhớ từ vựng, đánh dấu từ đã thuộc để ôn lại từ còn yếu.","Mọi quyển","1","flash"],
-    ["✍️","Trắc nghiệm & Bài tập","Chọn nghĩa, nghe chọn chữ, sắp xếp câu — có chấm điểm ngay.","Mọi quyển","1","quiz"],
-    ["💬","Hội thoại & Bài đọc","Nghe từng câu, bật/tắt pinyin và bản dịch, nghe cả đoạn liền mạch.","Quyển 2–6","2",null,"dlg"],
-    ["📐","Ngữ pháp","Công thức, giải thích và ví dụ có phiên âm cho 15 bài Quyển 1.","15 bài","1","grammar"],
-    ["📚","Truyện ngắn","Đọc truyện phồn thể, chạm vào từ để xem pinyin và nghĩa.","Quyển 1","1","story"],
-    ["🎙","Vấn đáp luyện nói","Trả lời bằng giọng nói, hệ thống chấm phát âm từng câu.","Quyển 1","1","qa"],
-    ["🔤","Tập dịch","Dịch Việt → Trung, sắp xếp từ thành câu đúng.","Quyển 1","1","trans"],
-    ["✍️","Chép chính tả","Nghe câu bằng giọng Meijia rồi gõ lại chữ Hán, chấm từng chữ.","Quyển 1–6","page","dictation"],
-    ["🎬","Shadowing video","Xem video bản xứ rồi nhại theo, 2 danh sách phát từ HSK 1–2 đến HSK 3–4.","32 video","page","vid"],
-    ["🗣️","Shadowing","Nghe rồi nhại lại ngay, chấm độ giống từng từ để luyện nhịp và thanh điệu.","Quyển 1–6","page","shadow"],
-    ["💬","Mẫu câu giao tiếp","Câu thông dụng từ hội thoại Quyển 1–6, có pinyin trên chữ và nghe đọc.","Theo bài","page","sentences"],
-    ["📏","Lượng từ 量詞","Hơn 50 lượng từ nhóm theo cách dùng, kèm ví dụ và nghe đọc.","Mới","page","measure"],
-    ["🗂️","Từ vựng theo chủ đề","Từ vựng Quyển 1–6 và TOCFL gom theo 13 chủ đề đời sống.","13 chủ đề","page","topics"],
-    ["🖌️","Luyện thứ tự nét","Xem nét chạy và tự viết lại chữ phồn thể trên màn hình.","Hanzi Writer","page","strokes"],
-    ["📝","Đề thi thử TOCFL","Bài trắc nghiệm bấm giờ A1–B2, chấm điểm và xem lại câu sai.","A1–B2","page","exam"],
-    ["🧩","214 Bộ thủ","Tra và nghe 214 bộ thủ phồn thể, xếp theo số nét, kèm Hán Việt và nghĩa.","214 bộ","page","radicals"],
-    ["🔁","Ôn tập SRS ngắt quãng","Lịch nhắc từ tự động 10 phút → 30 ngày, giúp nhớ lâu hơn.","Pro","page","srs"],
-    ["🔎","Tra từ & phân tích câu","Dán câu tiếng Trung để xem pinyin và nghĩa từng từ, hoặc tra bằng pinyin/tiếng Việt.","Công cụ","page","lookup"],
-    ["🎼","Lộ trình Pinyin","Thanh mẫu, vận mẫu và 4 thanh điệu, chạm để nghe ví dụ.","Cho người mới","page","pinyin"],
-  ];
-  m.innerHTML=`
-  <section class="hm-hero">
-    <div>
-      <span class="pill">✨ Tự học tiếng Trung phồn thể · 當代中文課程 &amp; TOCFL</span>
-      <h1>Chinh phục<br><em>Tiếng Trung</em> dễ dàng</h1>
-      <p class="lead">Học từ vựng, hội thoại, bài đọc và luyện nghe theo giáo trình 當代中文課程 Quyển 1–6 cùng bộ từ TOCFL — chữ phồn thể, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
-      <div class="cta">
-        <button class="btn-l p" onclick="setBook('${last}')">🚀 Tiếp tục học · ${lastName}</button>
-        <button class="btn-l" onclick="document.getElementById('hm-feats').scrollIntoView({behavior:'smooth'})">📘 Khám phá mục học</button>
-      </div>
-    </div>
-    <div class="hm-side">
-      <div class="sample">
-        <span class="tag">Từ vựng mẫu · Quyển 1 · Bài ${v[3]}</span>
-        <div class="big-zh">${v[0]}</div>
-        <div class="sp-py">${v[1]}</div>
-        <div class="sp-vi">${v[2]}</div>
-        ${t?`<div class="ex-box"><div class="zh">${t[1]}</div><small>${t[0]}</small></div>`:""}
-        <div class="foot"><button class="b" onclick="speak('${v[0].replace(/'/g,"\\'")}',0,'m')">🔊 Nghe phát âm</button><button class="b" onclick="homeView()">🔄 Từ khác</button></div>
-      </div>
-      <div class="minis">
-        <div class="mini"><h6>Chọn quyển · chạm để vào</h6><div class="lvs">${BOOK_IDS.map(n=>`<button onclick="setBook('${n}')">${n==="T"?"TOCFL":"Q"+n}</button>`).join("")}</div></div>
-        <div class="mini"><h6>Tiến độ Quyển 1</h6><div class="bignum">${known}<small style="font:600 14px var(--ui);color:var(--mut)"> / ${VOCAB.length} từ</small></div><div class="bar"><i style="width:${known/VOCAB.length*100}%"></i></div></div>
-      </div>
-    </div>
-  </section>
-  <div class="sec-h" id="hm-feats"><span class="pill">Hệ sinh thái học tập</span><h2>Tất cả những gì bạn cần<br>để thành thạo tiếng Trung</h2><p>Các mục học được gom về một nơi — chọn mục bạn muốn và vào học ngay.</p></div>
-  <div class="feats">${F.map(f=>`<button class="feat" onclick="${f[4]==="page"?(f[5]==="vid"?`goVideo()`:f[5]==="shadow"?`goShadow()`:`goPage('${f[5]}')`):`goTo('${f[4]}',${f[5]?`'${f[5]}'`:"null"},${f[6]?`'${f[6]}'`:"null"})`}"><div class="ico">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><span class="cnt">${f[3]}</span></button>`).join("")}</div>
-  <div class="hstats">
-    <div class="hstat"><b>6</b><span>Quyển giáo trình</span><small>當代中文課程</small></div>
-    <div class="hstat"><b>${c.lessons}</b><span>Bài học</span><small>hội thoại &amp; bài đọc</small></div>
-    <div class="hstat"><b>${fmt(c.words)}</b><span>Từ vựng giáo trình</span><small>kèm pinyin &amp; nghĩa</small></div>
-    <div class="hstat"><b>${fmt(TF.length)}</b><span>Từ TOCFL</span><small>Band A + Band B</small></div>
-  </div>
-  <div class="sec-h" id="hm-plans"><span class="pill">Gói học</span><h2>Chọn gói phù hợp với bạn</h2><p>Học miễn phí không giới hạn; Pro dành cho ai muốn thêm tài liệu ôn tập và được hỗ trợ.</p></div>
-  <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Đề xuất</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('${last}')">Học ngay</button>`}</div>`).join("")}</div>
-  <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Free</th><th>Pro</th></tr></thead><tbody>
-   ${[["Học từ vựng cơ bản","✓","✓"],["Xem bài học","Một số bài","Toàn bộ"],["Nghe phát âm (giọng Meijia)","✓","✓"],["Flashcards","15 thẻ/ngày","Không giới hạn"],["Ôn tập ngắt quãng (SRS)","—","✓"],["Quiz kiểm tra","15 câu/ngày, dạng cơ bản","Không giới hạn, mọi dạng"],["Theo dõi tiến độ chi tiết","—","✓"],["Lưu lịch sử học tập","—","✓"],["Bài kiểm tra TOCFL (mọi cấp)","Cấp A1","✓"],["Tài liệu bổ sung (Anki, bản in)","—","Pro năm"],["Lộ trình học theo mục tiêu","—","Pro năm"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}
-  </tbody></table><p class="stat" style="margin:10px 4px 0">Gói Free vẫn cho bạn trải nghiệm đủ tốt trước khi quyết định nâng cấp.</p></div>
-  <details class="act" ${isPro()?"open":""}><summary>${isPro()?"✅ Gói Pro "+(isYear()?"năm":"tháng")+" đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPro()?"":premForm()}</details>
-  <section class="signup"><div><h3>📬 Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài, từ vựng và tính năng mới. Không spam, hủy bất cứ lúc nào.</p></div>
-    <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required value="${prog.email||""}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg"></div></form></section>
-  <div class="cta-band"><span class="pill">Miễn phí · không cần đăng ký</span><h2>Sẵn sàng chinh phục tiếng Trung phồn thể?</h2><p>Tiến độ học được lưu ngay trên trình duyệt của bạn.</p>
-    <div class="cta"><button class="btn-l p" onclick="setBook('1')">Bắt đầu Quyển 1</button><button class="btn-l" onclick="setBook('T')">Xem từ vựng TOCFL</button></div></div>`;
-}
-
 /* ============ CHÂN TRANG + CÁC TRANG THÔNG TIN ============ */
 let page="guide",wipeArm=false;
 function goPage(k){page=k;wipeArm=false;bk="P";track('page_view',{page:k});render();window.scrollTo({top:0})}
-function goPlans(){setBook("H");setTimeout(()=>{const e=document.getElementById("hm-plans");if(e)e.scrollIntoView({behavior:"smooth"})},60)}
+function goPlans(){goPage("plans")}
 function wipeData(){if(!wipeArm){wipeArm=true;pageView();return}try{localStorage.removeItem("tocfl1");localStorage.removeItem("signups")}catch(e){}location.reload()}
 async function sendFeedback(ev){
   ev.preventDefault();const f=ev.target,msg=f.querySelector(".su-msg"),btn=f.querySelector("button");
@@ -12345,7 +12385,8 @@ const PAGES={
    <button class="btn-l p">Gửi phản ánh</button><div class="su-msg"></div></form>`}
 };
 function pageView(){
-  const m=$("main");m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
+  const m=$("main");if(MAINP[page]){m.className="home page main";m.innerHTML=MAINP[page]();return}
+  m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
   const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","pinyin","measure","topics","sentences","dictation","strokes","exam","lookup","srs","progress","path","docs"];
   const tool=!!TOOLS[page],keys=tool?TL:["guide",...POL],src=k=>PAGES[k]||TOOLS[k];
   const body=typeof P.h==="function"?P.h():P.h;
@@ -12368,6 +12409,263 @@ function footerView(){
   </div>
   <div class="sf-bot"><span>© ${new Date().getFullYear()} Học Tiếng Trung · Trang học tập phi chính thức, không liên kết với nhà xuất bản giáo trình hay đơn vị tổ chức TOCFL.</span><span>加油！Mỗi ngày một chút 💪</span></div></div>`;
 }
+
+/* ============ GIAO DIỆN SẢN PHẨM: ĐIỀU HƯỚNG · TRANG CHỦ · TỔNG QUAN · KHÓA HỌC · TỪ VỰNG · LUYỆN TẬP · HỒ SƠ ============ */
+const NAV=[["dash","📊","Tổng quan"],["courses","📚","Khóa học"],["vocab","🔤","Từ vựng"],["practice","✍️","Luyện tập"],["tocfl","🎯","TOCFL"],["profile","👤","Hồ sơ"]];
+const NAV_OF={dictation:"practice",exam:"practice",srs:"practice",strokes:"practice",radicals:"vocab",topics:"vocab",measure:"vocab",sentences:"vocab",lookup:"vocab",pinyin:"vocab",progress:"profile",path:"profile",docs:"profile"};
+function navGo(k){if(k==="tocfl")setBook("T");else goPage(k)}
+function navActive(){
+  if(bk==="T")return "tocfl";if(BOOK_IDS.includes(bk))return "courses";
+  if(bk==="P")return MAINP[page]?(page==="plans"?"":page):(NAV_OF[page]||"");return "";
+}
+function buildNav(){
+  $("#bbar").innerHTML=NAV.map(([k,i,l])=>`<button class="nv" data-nav="${k}" aria-label="${l}"><span class="ic" aria-hidden="true">${i}</span><span>${l}</span></button>`).join("");
+  $("#bbar").onclick=e=>{const b=e.target.closest(".nv");if(b)navGo(b.dataset.nav)};
+  $("#bstrip").innerHTML=BOOK_IDS.filter(n=>n!=="T").map(n=>`<button class="lchip" data-b="${n}">Quyển ${n}</button>`).join("");
+  $("#bstrip").onclick=e=>{const b=e.target.closest(".lchip");if(b)setBook(b.dataset.b)};
+}
+function uiSync(){
+  const a=navActive();document.querySelectorAll("#bbar .nv").forEach(b=>{const on=b.dataset.nav===a;b.classList.toggle("on",on);if(on)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current")});
+  const isBook=BOOK_IDS.includes(bk)&&bk!=="T";$("#bstrip").style.display=isBook?"":"none";
+  document.querySelectorAll("#bstrip .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk));
+  lessonBar();
+}
+
+/* ---------- dữ liệu từ vựng dùng chung ---------- */
+let _AW=null;
+function allWords(){
+  if(_AW)return _AW;_AW=[];
+  VOCAB.forEach(v=>_AW.push({b:"1",h:v[0],p:v[1],m:v[2],l:"Bài "+v[3],n:+v[3],k:"1:"+v[0],s:v[0].replace(/[()（）]/g,"").split("/")[0].trim()}));
+  Object.keys(BKW).forEach(b=>BKW[b].forEach(w=>_AW.push({b,h:w.h,p:w.p,m:w.m,l:w.l,n:+String(w.l).replace(/\D/g,""),k:w.k,s:w.s})));
+  TF.forEach(w=>_AW.push({b:"T",h:w.h,p:w.p,m:w.m,l:w.l,n:0,k:"T:"+w.k,s:w.s,pos:w.pos,tk:w.k}));
+  return _AW;
+}
+const wKey=w=>w.k;
+function isKnown(w){return w.b==="1"?!!prog.known[w.h]:w.b==="T"?!!(prog.tk||{})[w.tk]:!!(prog.tk||{})[w.k]}
+function setKnown(w,v){
+  prog.tk=prog.tk||{};
+  if(w.b==="1"){if(v)prog.known[w.h]=1;else delete prog.known[w.h]}
+  else{const k=w.b==="T"?w.tk:w.k;if(v)prog.tk[k]=1;else delete prog.tk[k]}
+  prog.hard=prog.hard||{};if(v)delete prog.hard[wKey(w)];else prog.hard[wKey(w)]=1;
+  logHist("v",v);save();
+}
+const isBm=w=>!!(prog.bm||{})[wKey(w)];
+function toggleBm(w){prog.bm=prog.bm||{};if(prog.bm[wKey(w)])delete prog.bm[wKey(w)];else prog.bm[wKey(w)]=1;save();toast(isBm(w)?"⭐ Đã lưu từ vào danh sách cần ôn":"Đã bỏ lưu từ")}
+function bookStats(n){
+  if(n==="T"){const t=TF.length,k=Object.keys(prog.tk||{}).filter(x=>!/^\d:/.test(x)).length;return{k,t}}
+  const W=allWords().filter(w=>w.b===n);return{k:W.filter(isKnown).length,t:W.length}
+}
+function lessonsDone(){
+  const out=[];
+  LESSONS.forEach(L=>{const W=allWords().filter(w=>w.b==="1"&&w.n===L.n);if(W.length&&W.filter(isKnown).length/W.length>=.8)out.push({b:"1",n:L.n,zh:L.zh,vi:L.vi})});
+  Object.keys(BOOKS).forEach(b=>BOOKS[b].lessons.forEach(L=>{const W=allWords().filter(w=>w.b===b&&w.n===L.n);if(W.length&&W.filter(isKnown).length/W.length>=.8)out.push({b,n:L.n,zh:L.zh,vi:L.vi})}));
+  return out;
+}
+const dayNum=()=>Math.floor(Date.now()/864e5);
+const todayCount=()=>(prog.hist||[]).filter(h=>dkey(h.t)===dkey(Date.now())).length;
+const pctOf=(a,b)=>b?Math.round(a/b*100):0;
+const pbar=p=>`<div class="pb" role="progressbar" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100"><i style="width:${p}%"></i></div>`;
+const empty=(ic,t,d,btn)=>`<div class="empty"><div class="ei">${ic}</div><b>${t}</b><p>${d}</p>${btn||""}</div>`;
+
+/* ---------- thanh bài học (Chi tiết bài học) ---------- */
+function lessonCtx(){
+  if(bk==="1"){if(!/^(\d+)-\1$/.test(LESSON))return null;const n=+LESSON.split("-")[0],L=LESSONS[n-1];return L?{b:"1",n,zh:L.zh,vi:L.vi,max:LESSONS.length}:null}
+  if(BOOKS[bk]&&/^Bài \d+$/.test(tfLv)){const n=+tfLv.slice(4),L=BOOKS[bk].lessons.find(x=>x.n===n);return L?{b:bk,n,zh:L.zh,vi:L.vi,max:BOOKS[bk].lessons.length}:null}
+  return null;
+}
+function lessonGo(d){const c=lessonCtx();if(!c)return;const n=c.n+d;if(n<1||n>c.max)return;if(c.b==="1")setLesson(n+"-"+n);else{tfPickLv("Bài "+n)}window.scrollTo({top:0})}
+function lessonBm(){const c=lessonCtx();if(!c)return;prog.lbm=prog.lbm||{};const k=c.b+":"+c.n;if(prog.lbm[k])delete prog.lbm[k];else prog.lbm[k]=1;save();toast(prog.lbm[k]?"⭐ Đã lưu bài học":"Đã bỏ lưu bài học")}
+function lessonBar(){
+  const el=$("#lessonx");if(!el)return;const c=BOOK_IDS.includes(bk)&&bk!=="T"?lessonCtx():null;
+  if(!c){el.innerHTML="";el.style.display="none";return}
+  const W=allWords().filter(w=>w.b===c.b&&w.n===c.n),k=W.filter(isKnown).length,p=pctOf(k,W.length),bm=(prog.lbm||{})[c.b+":"+c.n];
+  el.style.display="block";
+  el.innerHTML=`<div class="lx-in"><div class="lx-t"><small>Quyển ${c.b} · Bài ${c.n}/${c.max}</small><h2 class="zh">${esc(c.zh)}</h2><div class="vi">${esc(c.vi)}</div></div>
+   <div class="lx-p"><div class="row" style="justify-content:space-between"><small>Tiến độ bài học</small><small><b>${k}/${W.length}</b> từ đã thuộc</small></div>${pbar(p)}</div>
+   <div class="lx-a"><button class="b" onclick="lessonGo(-1)" ${c.n<=1?"disabled":""} aria-label="Bài trước">← Bài trước</button><button class="b ${bm?"on":""}" onclick="lessonBm();lessonBar()" aria-pressed="${bm?"true":"false"}">${bm?"⭐ Đã lưu":"☆ Lưu bài"}</button><button class="b p" onclick="lessonGo(1)" ${c.n>=c.max?"disabled":""} aria-label="Bài sau">Bài sau →</button></div></div>`;
+}
+
+/* ---------- TRANG CHỦ ---------- */
+function continueTarget(){
+  const last=BOOK_IDS.includes(prog.last)?prog.last:"1";
+  let label=last==="T"?"TOCFL "+tfLv:"Quyển "+last;
+  if(last==="1"&&/^(\d+)-\1$/.test(LESSON))label+=" · Bài "+LESSON.split("-")[0];
+  return{b:last,label,started:Object.keys(prog.known).length+Object.keys(prog.tk||{}).length+((prog.hist||[]).length)>0};
+}
+function homeView(){
+  const m=$("main");m.className="home page main";
+  const W=allWords().filter(w=>w.b!=="T"),v=W[Math.floor(Math.random()*W.length)],c=continueTarget(),st=homeStats(),q1=bookStats("1");
+  const sample=exFor(v);
+  m.innerHTML=`
+  <section class="hm-hero"><div>
+    <span class="pill">Học tiếng Trung phồn thể cho người Việt</span>
+    <h1>Học tiếng Trung phồn thể,<br><em>đều đặn mỗi ngày</em></h1>
+    <p class="lead">Từ vựng, hội thoại, bài đọc và luyện nghe theo giáo trình 當代中文課程 Quyển 1–6 và TOCFL — có pinyin, giải thích tiếng Việt và giọng đọc Đài Loan.</p>
+    <div class="cta"><button class="btn-l p" onclick="${c.started?`setBook('${c.b}')`:"setBook('1')"}">${c.started?"Tiếp tục · "+c.label:"Bắt đầu học"}</button><button class="btn-l" onclick="goPage('courses')">Xem khóa học</button></div>
+    <ul class="ticks"><li>Chữ phồn thể &amp; zh-TW</li><li>Miễn phí học cơ bản</li><li>Tiến độ lưu trên thiết bị</li></ul>
+  </div>
+  <div class="sample"><span class="tag">Từ hôm nay · Quyển ${v.b} · ${v.l}</span><div class="big-zh">${v.h}</div><div class="sp-py">${v.p}</div><div class="sp-vi">${esc(v.m)}</div>
+   ${sample?`<div class="ex-box"><div class="zh">${esc(sample.zh)}</div><small>${esc(sample.vi)}</small></div>`:""}
+   <div class="foot"><button class="b" onclick="speak('${jsq(v.s)}')">🔊 Nghe phát âm</button><button class="b" onclick="homeView()">🔄 Từ khác</button></div></div></section>
+
+  <div class="sec-h"><h2>Vì sao học ở đây?</h2></div>
+  <div class="trio">
+   <div class="vp"><div class="ico">🀄</div><h4>Chữ phồn thể, giọng Đài Loan</h4><p>Toàn bộ nội dung viết bằng chữ phồn thể, âm thanh thu sẵn bằng giọng Meijia (zh-TW).</p></div>
+   <div class="vp"><div class="ico">🇻🇳</div><h4>Giải thích bằng tiếng Việt</h4><p>Mỗi từ, mỗi câu đều có pinyin và nghĩa tiếng Việt; có thể ẩn đi để tự kiểm tra.</p></div>
+   <div class="vp"><div class="ico">📈</div><h4>Nhìn thấy tiến bộ của mình</h4><p>Từ đã thuộc, chuỗi ngày học và kết quả luyện tập được lưu ngay trên thiết bị của bạn.</p></div>
+  </div>
+
+  <div class="sec-h"><h2>Khóa học nổi bật</h2><p>Bắt đầu từ Quyển 1 nếu bạn mới học, hoặc chọn quyển phù hợp với trình độ.</p></div>
+  <div class="feature-course"><div><span class="pill">Giáo trình chính</span><h3 class="zh">當代中文課程 · Quyển 1</h3><p>${LESSONS.length} bài nhập môn: chào hỏi, giới thiệu bản thân, gia đình, mua sắm, ăn uống và hỏi đường. Có từ vựng, ngữ pháp, hội thoại, truyện, vấn đáp và tập dịch.</p>
+   <div class="row" style="justify-content:space-between"><small>${q1.k}/${q1.t} từ đã thuộc</small><small>${pctOf(q1.k,q1.t)}%</small></div>${pbar(pctOf(q1.k,q1.t))}
+   <div class="cta" style="margin-top:14px"><button class="btn-l p" onclick="setBook('1')">${q1.k?"Tiếp tục học":"Bắt đầu Quyển 1"}</button><button class="btn-l" onclick="goPage('courses')">Tất cả khóa học</button></div></div></div>
+
+  <div class="sec-h"><h2>Bạn muốn luyện gì hôm nay?</h2></div>
+  <div class="cats">${[["🔤","Từ vựng","Học thẻ, đánh dấu từ khó, nghe phát âm","vocab"],["📐","Ngữ pháp","Công thức và ví dụ cho 15 bài Quyển 1","g:grammar"],["💬","Hội thoại & bài đọc","Nghe từng câu, bật/tắt pinyin và dịch","g:dlg"],["🎧","Luyện nghe","Chép chính tả và shadowing có chấm điểm","practice"],["🎯","TOCFL","Từ vựng A1–B2 và đề thi thử","tocfl"],["✍️","Bài tập","Trắc nghiệm, điền pinyin, sắp xếp câu","practice"]].map(x=>`<button class="cat" onclick="${x[3]==="g:grammar"?"goTo('1','grammar')":x[3]==="g:dlg"?"goTo('2',null,'dlg')":`navGo('${x[3]}')`}"><span class="ico">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></button>`).join("")}</div>
+
+  <div class="sec-h"><h2>Cách học</h2></div>
+  <ol class="how"><li><b>Chọn bài</b><p>Vào Khóa học, chọn quyển và bài phù hợp trình độ của bạn.</p></li><li><b>Học và nghe</b><p>Xem từ vựng, nghe phát âm, đọc hội thoại; lưu lại những từ khó.</p></li><li><b>Luyện tập và ôn lại</b><p>Làm bài tập, xem lỗi sai và ôn lại các từ cần nhớ.</p></li></ol>
+
+  <div class="sec-h"><h2>Nội dung nổi bật</h2></div>
+  <div class="trio">${[["✍️","Chép chính tả","Nghe câu rồi gõ lại chữ Hán, chấm từng chữ.","dictation"],["🎬","Shadowing video","Xem video bản xứ và nhại theo từng câu.","video"],["📝","Đề thi thử TOCFL","Bài trắc nghiệm bấm giờ cấp A1–B2.","exam"]].map(x=>`<button class="vp link" onclick="${x[3]==="video"?"goVideo()":`goPage('${x[3]}')`}"><div class="ico">${x[0]}</div><h4>${x[1]}</h4><p>${x[2]}</p></button>`).join("")}</div>
+
+  <div class="hstats"><div class="hstat"><b>${st.books}</b><span>Quyển giáo trình</span></div><div class="hstat"><b>${st.lessons}</b><span>Bài học</span></div><div class="hstat"><b>${st.words.toLocaleString("vi-VN")}</b><span>Từ vựng giáo trình</span></div><div class="hstat"><b>${TF.length.toLocaleString("vi-VN")}</b><span>Từ TOCFL</span></div></div>
+
+  <section class="signup"><div><h3>Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài và tính năng. Không spam, bạn có thể hủy bất cứ lúc nào.</p></div>
+   <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required aria-label="Email" value="${esc(prog.email||"")}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg" role="status"></div></form></section>
+
+  <div class="cta-band"><h2>Sẵn sàng bắt đầu?</h2><p>Mỗi ngày một chút, chữ phồn thể sẽ quen dần.</p><div class="cta"><button class="btn-l p" onclick="setBook('${c.started?c.b:"1"}')">${c.started?"Tiếp tục học":"Bắt đầu Quyển 1"}</button><button class="btn-l" onclick="goPage('courses')">Xem khóa học</button></div></div>`;
+}
+function homeStats(){let lessons=LESSONS.length,words=VOCAB.length;Object.keys(BOOKS).forEach(n=>{lessons+=BOOKS[n].lessons.length});Object.values(BKW).forEach(a=>{words+=a.length});return{books:6,lessons,words}}
+function exFor(w){
+  const c=(w.s||"").replace(/[()（）]/g,"");if(!c||c.length>6)return null;
+  let best=null;for(const s of allSents()){if(s.zh.length<=22&&s.zh.includes(c)&&(!best||s.zh.length<best.zh.length))best=s}
+  return best;
+}
+
+/* ---------- KHÓA HỌC ---------- */
+const COURSE_LV={"1":"Sơ cấp","2":"Sơ cấp","3":"Trung cấp","4":"Trung cấp","5":"Trung – Cao cấp","6":"Cao cấp"};
+function coursesView(){
+  const c=continueTarget(),card=n=>{
+    const T=n==="T",st=bookStats(n),p=pctOf(st.k,st.t),les=T?4:n==="1"?LESSONS.length:(BOOKS[n]?BOOKS[n].lessons.length:0),tot=T?4:n==="1"?LESSONS.length:(BOOK_TOTAL[n]||les);
+    const titles=T?"Band A (A1–A2) và Band B (B1–B2)":(n==="1"?LESSONS:(BOOKS[n]?BOOKS[n].lessons:[])).slice(0,3).map(L=>L.vi).join(" · ");
+    return `<article class="course"><div class="ch"><span class="pill">${T?"Từ vựng thi chứng chỉ":"Giáo trình"}</span><span class="lvl">${T?"A1 – B2":COURSE_LV[n]}</span></div>
+     <h3 class="zh">${T?"TOCFL 詞彙":"當代中文課程 "+n}</h3><p class="vi">${esc(titles)}${!T&&les<tot?" …":""}</p>
+     <div class="meta"><span>${T?"4 cấp độ":les+(tot>les?"/"+tot:"")+" bài"}</span><span>${st.t.toLocaleString("vi-VN")} từ</span></div>
+     <div class="row" style="justify-content:space-between"><small>Hoàn thành</small><small><b>${st.k}</b>/${st.t} · ${p}%</small></div>${pbar(p)}
+     <button class="btn-l ${st.k?"":"p"}" style="margin-top:14px;width:100%" onclick="setBook('${n}')">${st.k?"Tiếp tục":"Bắt đầu"}</button></article>`};
+  return `<div class="pg-head" style="padding-top:8px"><h1>Khóa học</h1><p class="stat">Chọn một khóa học để bắt đầu hoặc tiếp tục. Mức độ là ước lượng theo nội dung từng quyển.</p></div>
+  ${c.started?`<div class="resume"><div><small>Tiếp tục học</small><b>${c.label}</b></div><button class="btn-l p" onclick="setBook('${c.b}')">Tiếp tục →</button></div>`:""}
+  <div class="courses">${["1","2","3","4","5","6","T"].map(card).join("")}</div>`;
+}
+
+/* ---------- TỪ VỰNG (học thẻ) ---------- */
+let vS={src:"1",les:"all",flt:"all",i:0,hp:false,hv:false};
+function vList(){
+  let L=allWords().filter(w=>w.b===vS.src);
+  if(vS.les!=="all")L=L.filter(w=>vS.src==="T"?w.l===vS.les:w.n===+vS.les);
+  if(!isPro()&&vS.src!=="T"&&vS.src!=="1")L=L.filter(w=>w.n<=(FREE.lessons[vS.src]||0));
+  if(!isPro()&&vS.src==="1")L=L.filter(w=>w.n<=FREE.lessons["1"]);
+  if(!isPro()&&vS.src==="T")L=L.filter(w=>FREE.tfLv.includes(w.l));
+  if(vS.flt==="new")L=L.filter(w=>!isKnown(w));else if(vS.flt==="bm")L=L.filter(isBm);else if(vS.flt==="hard")L=L.filter(w=>(prog.hard||{})[wKey(w)]);
+  return L;
+}
+function vSet(k,v){vS[k]=v;if(k==="src")vS.les="all";if(k!=="i")vS.i=0;pageView()}
+function vGo(d){const L=vList();vS.i=Math.max(0,Math.min(L.length-1,vS.i+d));pageView();const w=L[vS.i];if(w)speak(w.s)}
+function vMark(v){const w=vList()[vS.i];if(!w)return;setKnown(w,v);toast(v?"✅ Đã thuộc":"Đã đánh dấu chưa thuộc — sẽ có trong danh sách cần ôn");if(vS.flt==="new"&&v){pageView();return}if(vS.i<vList().length-1)vS.i++;pageView()}
+function vBm(){const w=vList()[vS.i];if(w){toggleBm(w);pageView()}}
+function vocabLView(){
+  const L=vList(),w=L[vS.i]||null;
+  const lesOpts=vS.src==="T"?["A1","A2","B1","B2"].map(x=>[x,"Cấp "+x]):(vS.src==="1"?LESSONS:(BOOKS[vS.src]?BOOKS[vS.src].lessons:[])).map(l=>[String(l.n),"Bài "+l.n+" · "+l.vi]);
+  const srcOpts=["1","2","3","4","5","6","T"].map(n=>`<option value="${n}" ${vS.src===n?"selected":""}>${n==="T"?"TOCFL":"Quyển "+n}</option>`).join("");
+  const sel=`<div class="vsel"><label>Nguồn<select onchange="vSet('src',this.value)">${srcOpts}</select></label><label>Bài / cấp<select onchange="vSet('les',this.value)"><option value="all">Tất cả</option>${lesOpts.map(([k,l])=>`<option value="${k}" ${vS.les===k?"selected":""}>${esc(l)}</option>`).join("")}</select></label></div>
+   <div class="chips" role="tablist">${[["all","Tất cả"],["new","Chưa thuộc"],["bm","⭐ Đã lưu"],["hard","Từ khó"]].map(([k,l])=>`<button class="chip ${vS.flt===k?"on":""}" onclick="vSet('flt','${k}')">${l}</button>`).join("")}</div>`;
+  const tools=`<div class="sec-h" style="text-align:left;margin:28px 0 10px"><h2 style="font-size:20px">Công cụ từ vựng</h2></div><div class="chips">${[["radicals","🧩 214 bộ thủ"],["pinyin","🔤 Pinyin"],["measure","📏 Lượng từ"],["topics","🗂️ Theo chủ đề"],["sentences","💬 Mẫu câu"],["lookup","🔎 Tra từ"]].map(([k,l])=>`<button class="chip" onclick="goPage('${k}')">${l}</button>`).join("")}</div>`;
+  const head=`<div class="pg-head" style="padding-top:8px"><h1>Từ vựng</h1></div>${sel}`;
+  if(!w)return head+empty("🔍",vS.flt==="all"?"Chưa có từ nào ở đây":"Không có từ phù hợp",vS.flt==="bm"?"Bấm ☆ trên thẻ từ để lưu những từ cần ôn.":vS.flt==="hard"?"Những từ bạn đánh dấu “Chưa thuộc” sẽ xuất hiện ở đây.":"Thử đổi bài hoặc bộ lọc khác. Một số bài thuộc gói Pro.",`<button class="b" onclick="vSet('flt','all')">Xem tất cả từ</button>`)+tools;
+  const ex=exFor(w),known=isKnown(w),bm=isBm(w);
+  return head+`<div class="stat" style="margin:6px 0">Từ ${vS.i+1}/${L.length} · ${w.b==="T"?"TOCFL":"Quyển "+w.b} · ${w.l}</div>${pbar(Math.round((vS.i+1)/L.length*100))}
+  <article class="vcardx"><div class="vtop"><span class="pill">${known?"✓ Đã thuộc":"Chưa thuộc"}</span><button class="ibtn" onclick="vBm()" aria-pressed="${bm}" aria-label="${bm?"Bỏ lưu":"Lưu từ"}">${bm?"⭐":"☆"}</button></div>
+   <div class="vz zh">${w.h}</div>
+   <div class="vp1 ${vS.hp?"hid":""}" onclick="vS.hp=false;pageView()">${vS.hp?"Chạm để hiện pinyin":w.p}</div>
+   <div class="vm ${vS.hv?"hid":""}" onclick="vS.hv=false;pageView()">${vS.hv?"Chạm để hiện nghĩa":esc(w.m)}${w.pos&&!vS.hv?` <span class="pos">${w.pos}</span>`:""}</div>
+   <div class="row" style="justify-content:center;gap:10px"><button class="b p" onclick="speak('${jsq(w.s)}')" aria-label="Nghe phát âm">🔊 Nghe</button><button class="b" onclick="speak('${jsq(w.s)}',0.5)">🐢 Chậm</button></div>
+   ${ex?`<div class="exs"><small>Ví dụ</small><div class="zh" style="font-size:20px">${annotate(ex.zh).html}</div><div class="vi ${vS.hv?"hid":""}">${vS.hv?"…":esc(ex.vi)}</div><button class="b spk" onclick="speak('${jsq(ex.zh)}')" aria-label="Nghe câu ví dụ">🔊</button></div>`:`<div class="exs"><small>Chưa có câu ví dụ cho từ này.</small></div>`}
+  </article>
+  <div class="vact"><button class="b" onclick="vMark(false)">😕 Chưa thuộc</button><button class="b p" onclick="vMark(true)">✅ Đã thuộc</button></div>
+  <div class="vnav"><button class="b" onclick="vGo(-1)" ${vS.i<=0?"disabled":""}>← Trước</button><div class="vtog"><label><input type="checkbox" ${vS.hp?"checked":""} onchange="vS.hp=this.checked;pageView()"> Ẩn pinyin</label><label><input type="checkbox" ${vS.hv?"checked":""} onchange="vS.hv=this.checked;pageView()"> Ẩn nghĩa</label></div><button class="b p" onclick="vGo(1)" ${vS.i>=L.length-1?"disabled":""}>Sau →</button></div>`+tools;
+}
+
+/* ---------- LUYỆN TẬP ---------- */
+function practiceGo(k){
+  if(k==="flash"){goTo("1","flash");return}
+  if(k==="trans"){goTo("1","trans");return}
+  if(k==="tocfl"){tfMode="quiz";setBook("T");return}
+  tab="quiz";setBook("1");pickQ(k);
+}
+function practiceView(){
+  const A=[["✅","Trắc nghiệm","Chọn nghĩa đúng cho chữ Hán","zh2vi"],["🎧","Nghe và chọn","Nghe âm thanh rồi chọn từ đúng","listen"],["⌨️","Điền pinyin","Gõ pinyin của từ (không cần dấu)","fill"],["🧩","Sắp xếp câu","Ghép các từ thành câu đúng","order"],["🔤","Dịch câu","Dịch Việt → Trung và tự chấm","trans"],["🃏","Thẻ nhớ","Lật thẻ, đánh dấu thuộc / chưa thuộc","flash"]];
+  const B=[["🎯","Trắc nghiệm TOCFL","Từ vựng theo cấp A1–B2","tocfl"]];
+  const hard=Object.keys(prog.hard||{}).length,due=isPro()?Object.values(prog.srs||{}).filter(s=>s.d<=Date.now()).length:0;
+  return `<div class="pg-head" style="padding-top:8px"><h1>Luyện tập</h1><p class="stat">Mỗi câu trả lời đều có phản hồi ngay: đúng/sai, đáp án và gợi ý.</p></div>
+  ${hard||due?`<div class="resume"><div><small>Gợi ý hôm nay</small><b>${due?`Ôn ${due} từ đến hạn (SRS)`:`Ôn ${hard} từ bạn đánh dấu chưa thuộc`}</b></div><button class="btn-l p" onclick="${due?"goPage('srs')":"goPage('profile')"}">Mở →</button></div>`:""}
+  <div class="sec-h" style="text-align:left;margin:20px 0 10px"><h2 style="font-size:20px">Bài tập Quyển 1</h2></div>
+  <div class="cats">${A.concat(B).map(x=>`<button class="cat" onclick="practiceGo('${x[3]}')"><span class="ico">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></button>`).join("")}</div>
+  <div class="sec-h" style="text-align:left;margin:28px 0 10px"><h2 style="font-size:20px">Luyện nghe và nói</h2></div>
+  <div class="cats">${[["✍️","Chép chính tả","Nghe câu rồi gõ lại chữ Hán","goPage('dictation')"],["🗣️","Shadowing","Nghe và nhại theo, có chấm điểm","goShadow()"],["🎬","Shadowing video","Video bản xứ theo từng cấp","goVideo()"],["🎙","Vấn đáp","Trả lời bằng giọng nói (Quyển 1)","goTo('1','qa')"],["📝","Đề thi thử TOCFL","Bấm giờ, chấm điểm tự động","goPage('exam')"],["🔁","Ôn tập SRS","Nhắc từ theo lịch ngắt quãng (Pro)","goPage('srs')"],["🖌️","Luyện thứ tự nét","Xem nét và tự viết chữ","goPage('strokes')"]].map(x=>`<button class="cat" onclick="${x[3]}"><span class="ico">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></button>`).join("")}</div>`;
+}
+
+/* ---------- TỔNG QUAN ---------- */
+function dailyWords(){
+  const c=continueTarget(),pool=allWords().filter(w=>w.b===(c.b==="T"?"1":c.b)&&!isKnown(w)&&lesFree(w.b,w.n)),n=pool.length;
+  if(!n)return[];const s=(dayNum()*7)%n;return [0,1,2,3,4].map(i=>pool[(s+i)%n]).filter((w,i,a)=>a.indexOf(w)===i);
+}
+function dashView(){
+  const h=new Date().getHours(),greet=h<11?"Chào buổi sáng":h<18?"Chào buổi chiều":"Chào buổi tối",name=prog.name?", "+esc(prog.name):"";
+  const goal=prog.dgoal||10,today=todayCount(),gp=Math.min(100,pctOf(today,goal)),c=continueTarget(),known=Object.keys(prog.known).length+Object.keys(prog.tk||{}).length,sc=prog.score,acc=sc.total?pctOf(sc.right,sc.total):null;
+  const dw=dailyWords(),done=lessonsDone().slice(0,6),hard=Object.keys(prog.hard||{}).length;
+  const newUser=!c.started;
+  return `<div class="pg-head" style="padding-top:8px"><h1>${greet}${name} 👋</h1><p class="stat">${newUser?"Hãy chọn một bài để bắt đầu hành trình học tiếng Trung phồn thể.":"Cùng học tiếp nhé."}</p></div>
+  <div class="dash">
+   <section class="card goal"><div class="row" style="justify-content:space-between"><b>Mục tiêu hôm nay</b><select aria-label="Mục tiêu mỗi ngày" onchange="prog.dgoal=+this.value;save();pageView()">${[5,10,20,30].map(n=>`<option value="${n}" ${n===goal?"selected":""}>${n} lượt</option>`).join("")}</select></div>
+    <div class="goalnum"><b>${today}</b><span>/ ${goal} lượt luyện tập</span></div>${pbar(gp)}<small class="stat">${today>=goal?"🎉 Bạn đã hoàn thành mục tiêu hôm nay!":"Mỗi câu trắc nghiệm, thẻ nhớ hoặc từ đánh dấu đều được tính."}</small></section>
+   <section class="card"><b>Thống kê</b><div class="scoregrid" style="margin-top:10px"><div class="sc"><b>${known}</b>từ đã thuộc</div><div class="sc"><b>${streakDays()}</b>ngày liên tiếp</div><div class="sc"><b>${acc===null?"–":acc+"%"}</b>trả lời đúng</div><div class="sc"><b>${lessonsDone().length}</b>bài hoàn thành</div></div></section>
+   <section class="card"><b>Tiếp tục học</b>${newUser?empty("🚀","Chưa có bài nào","Bắt đầu với Quyển 1 · Bài 1 — chào hỏi và giới thiệu bản thân.",`<button class="btn-l p" onclick="setBook('1')">Bắt đầu Quyển 1</button>`)
+     :`<p style="margin:8px 0 12px"><b class="zh" style="font-size:20px">${c.label}</b></p><button class="btn-l p" onclick="setBook('${c.b}')">Tiếp tục →</button>`}</section>
+   <section class="card"><b>Từ vựng hôm nay</b>${dw.length?`<div class="dwl">${dw.map(w=>`<div class="vl"><button class="b spk" onclick="speak('${jsq(w.s)}')" aria-label="Nghe">🔊</button><div><span class="zh">${w.h}</span> <span class="py">${w.p}</span><div class="vi">${esc(w.m)}</div></div></div>`).join("")}</div><button class="b" style="margin-top:8px" onclick="vS.src='${dw[0].b}';vS.les='all';vS.flt='new';vS.i=0;goPage('vocab')">Học các từ này →</button>`:empty("📚","Chưa có từ để gợi ý","Bắt đầu một bài học để nhận gợi ý từ vựng mỗi ngày.")}</section>
+   <section class="card"><b>Gợi ý luyện tập</b><div class="reco">${hard?`<button class="cat" onclick="goPage('profile')"><span class="ico">🔁</span><b>Ôn ${hard} từ chưa thuộc</b><small>Xem danh sách cần ôn</small></button>`:""}<button class="cat" onclick="goPage('practice')"><span class="ico">✍️</span><b>Làm bài luyện tập</b><small>Trắc nghiệm, nghe, điền pinyin</small></button><button class="cat" onclick="goPage('dictation')"><span class="ico">🎧</span><b>Chép chính tả</b><small>Nghe và gõ lại chữ Hán</small></button></div></section>
+   <section class="card"><b>Bài đã hoàn thành gần đây</b>${done.length?`<ul class="donel">${done.map(l=>`<li><button onclick="${l.b==="1"?`setBook('1');setLesson('${l.n}-${l.n}')`:`setBook('${l.b}');tfPickLv('Bài ${l.n}')`}"><span>✅ Quyển ${l.b} · Bài ${l.n}</span><span class="zh">${esc(l.zh)}</span></button></li>`).join("")}</ul>`:empty("🏁","Chưa hoàn thành bài nào","Một bài được tính hoàn thành khi bạn đánh dấu thuộc từ 80% từ vựng.")}</section>
+  </div>`;
+}
+
+/* ---------- HỒ SƠ ---------- */
+function reviewRemove(k){delete (prog.hard||{})[k];delete (prog.bm||{})[k];save();pageView()}
+function profileView(){
+  const sc=prog.score,acc=sc.total?pctOf(sc.right,sc.total):null,done=lessonsDone(),pro=premInfo();
+  const rev=allWords().filter(w=>(prog.hard||{})[wKey(w)]||isBm(w)).slice(0,40);
+  const last7=[...Array(7)].map((_,i)=>{const d=dkey(Date.now()-(6-i)*864e5),H=(prog.hist||[]).filter(h=>dkey(h.t)===d&&(h.y==="q"));return{d:d.slice(5),n:H.length,a:H.length?pctOf(H.filter(x=>x.o).length,H.length):null}});
+  const bks=["1","2","3","4","5","6","T"].map(n=>{const s=bookStats(n);return `<div class="prow"><span>${n==="T"?"TOCFL":"Quyển "+n}</span>${pbar(pctOf(s.k,s.t))}<b>${s.k}/${s.t}</b></div>`}).join("");
+  return `<div class="pg-head" style="padding-top:8px"><h1>Hồ sơ</h1><p class="stat">Dữ liệu học được lưu trên trình duyệt của thiết bị này. Chưa có đăng nhập tài khoản.</p></div>
+  <section class="card"><div class="row" style="justify-content:space-between;gap:14px"><label style="flex:1;min-width:200px;font-weight:600;font-size:14px">Tên hiển thị<input type="text" value="${esc(prog.name||"")}" maxlength="24" placeholder="Bạn muốn được gọi là gì?" onchange="prog.name=this.value.trim();save();toast('Đã lưu tên')"></label><div><small class="stat">Gói hiện tại</small><div><span class="pill">${pro?(pro==="y"?"Pro năm":"Pro tháng"):"Free"}</span></div></div></div></section>
+  <div class="scoregrid" style="margin:14px 0"><div class="sc"><b>${Object.keys(prog.known).length+Object.keys(prog.tk||{}).length}</b>từ đã thuộc</div><div class="sc"><b>${done.length}</b>bài hoàn thành</div><div class="sc"><b>${streakDays()}</b>ngày liên tiếp</div><div class="sc"><b>${acc===null?"–":acc+"%"}</b>${sc.total?`đúng (${sc.right}/${sc.total})`:"chưa làm bài"}</div></div>
+  <section class="card"><b>Từ đã thuộc theo khóa học</b><div style="margin-top:8px">${bks}</div></section>
+  <section class="card"><b>Kết quả trắc nghiệm 7 ngày</b>${last7.some(x=>x.n)?`<div class="chart" style="margin-top:10px">${last7.map(x=>`<div title="${x.d}: ${x.n} câu, ${x.a===null?"–":x.a+"%"}"><i style="height:${x.a===null?3:Math.max(3,x.a*.9)}px"></i><small>${x.d.slice(3)}</small></div>`).join("")}</div><small class="stat">Chiều cao cột = tỉ lệ đúng trong ngày.</small>`:empty("📊","Chưa có kết quả","Làm vài câu trắc nghiệm để xem biểu đồ tại đây.",`<button class="b p" onclick="goPage('practice')">Đến Luyện tập</button>`)}</section>
+  <section class="card"><b>Bài đã hoàn thành (${done.length})</b>${done.length?`<div class="chips" style="margin-top:10px">${done.map(l=>`<span class="chip">Q${l.b} · Bài ${l.n}</span>`).join("")}</div>`:empty("🏁","Chưa có bài hoàn thành","Đánh dấu thuộc từ 80% từ vựng của một bài để tính hoàn thành.")}</section>
+  <section class="card"><b>Từ cần ôn lại (${rev.length})</b>${rev.length?rev.map(w=>`<div class="vl"><button class="b spk" onclick="speak('${jsq(w.s)}')" aria-label="Nghe">🔊</button><div><span class="zh">${w.h}</span> <span class="py">${w.p}</span><div class="vi">${esc(w.m)}</div></div><button class="b" onclick="reviewRemove('${jsq(wKey(w))}')" aria-label="Bỏ khỏi danh sách">✕</button></div>`).join(""):empty("✨","Danh sách trống","Từ bạn đánh dấu “Chưa thuộc” hoặc lưu ⭐ sẽ xuất hiện ở đây.")}</section>
+  <section class="card"><b>Công cụ học tập</b><div class="chips" style="margin-top:10px"><button class="chip" onclick="goPage('progress')">📈 Theo dõi chi tiết (Pro)</button><button class="chip" onclick="goPage('path')">🗺️ Lộ trình (Pro năm)</button><button class="chip" onclick="goPage('docs')">📚 Tài liệu (Pro năm)</button><button class="chip" onclick="goPage('plans')">Gói học</button></div>
+   <details class="act" style="margin-top:12px"><summary>${pro?"✅ Gói Pro đã kích hoạt":"Nhập mã kích hoạt"}</summary>${pro?"":premForm()}</details>
+   <p class="stat" style="margin-top:12px"><a href="#" onclick="goPage('data');return false">Xóa dữ liệu học trên thiết bị này</a></p></section>`;
+}
+
+/* ---------- GÓI HỌC (trang riêng, ở chân trang) ---------- */
+function plansView(){
+  return `<div class="pg-head" style="padding-top:8px"><h1>Gói học</h1><p class="stat">Học cơ bản luôn miễn phí. Gói Pro mở thêm bài học, luyện tập không giới hạn và công cụ theo dõi.</p></div>
+  <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Đề xuất</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('1')">Học ngay</button>`}</div>`).join("")}</div>
+  <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Free</th><th>Pro</th></tr></thead><tbody>
+   ${[["Từ vựng, phát âm, bài học cơ bản","✓","✓"],["Số bài học","Một số bài","Toàn bộ"],["Thẻ nhớ","15 thẻ/ngày","Không giới hạn"],["Trắc nghiệm","15 câu/ngày, dạng cơ bản","Không giới hạn, mọi dạng"],["Ôn tập ngắt quãng (SRS)","—","✓"],["Theo dõi tiến độ chi tiết và lịch sử","—","✓"],["Đề thi thử TOCFL","Cấp A1","A1–B2"],["Tài liệu bổ sung, lộ trình theo mục tiêu","—","Pro năm"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}</tbody></table></div>
+  <details class="act" ${isPro()?"open":""}><summary>${isPro()?"✅ Gói Pro đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPro()?"":premForm()}</details>`;
+}
+const MAINP={dash:dashView,courses:coursesView,vocab:vocabLView,practice:practiceView,profile:profileView,plans:plansView};
 
 /* ============ TẠO DỮ LIỆU TỪ CÁC BÀI ============ */
 const rows=s=>(s||"").split("\n").map(x=>x.trim()).filter(Boolean);
@@ -12623,6 +12921,7 @@ function syncBar(){
   const on=document.querySelector(".lchip.on");if(on)on.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
 }
 function updateHero(){
+  try{lessonBar()}catch(e){}
   const k=Object.keys(prog.known).length,s=prog.score;
   $("#stK").textContent=k;$("#stKbar").style.width=(k/VOCAB.length*100)+"%";
   $("#stS").textContent=s.total?Math.round(s.right/s.total*100)+"%":"–";$("#stSbar").style.width=(s.total?s.right/s.total*100:0)+"%";
@@ -12636,12 +12935,11 @@ $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button da
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
   const isH=bk==="H"||bk==="P";document.querySelector(".hero").style.display=isH?"none":"";$("main").className=isH?"home":"";
-  document.querySelectorAll("#bbar .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk||(bk==="P"&&b.dataset.p&&((b.dataset.p==="video"&&page==="dictation"&&dMode==="vid")||(b.dataset.p==="dictation"&&page==="dictation"&&dMode!=="vid")||(b.dataset.p==="exam"&&page==="exam")||(b.dataset.p==="radicals"&&page!=="dictation"&&page!=="exam")))));
+  uiSync();
   if(isH){stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;$("#lbar").style.display="none";$("#nav").style.display="none";if(bk==="P")pageView();else{track('home_view');homeView()}return}
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
   stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;
   const b1=bk==="1";$("#lbar").style.display=b1?"":"none";$("#nav").style.display=b1?"":"none";$("#les").closest(".sp").style.display=b1?"":"none";
-  document.querySelectorAll("#bbar .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk));
   document.querySelector(".stats").style.display=b1?"":"none";
   $("#hS").textContent=bk==="T"?"Từ vựng TOCFL Band A + B · 4.844 từ · thẻ nhớ, trắc nghiệm, nghe đọc":b1?"Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch":`Học tiếng Trung · ${BOOKS[bk]?BOOKS[bk].lessons.length+" bài":"đang cập nhật"} · từ vựng, hội thoại, thẻ nhớ, trắc nghiệm`;
   $("#hT").textContent=bk==="T"?"TOCFL 詞彙 A1–B2":"當代中文課程 "+bk;
@@ -13379,13 +13677,11 @@ setTimeout(()=>{   // sau khi danh sách giọng đã tải: báo nếu máy/khu
     w.style.cssText+=";max-width:868px;margin:12px auto 0;padding:12px 16px";document.body.insertBefore(w,$("main"));
   }
 },1500);
-$("#bbar").innerHTML=`<button class="lchip" data-b="H">🏠 Trang chủ</button>`+BOOK_IDS.map(n=>`<button class="lchip" data-b="${n}">${n==="T"?"🎯 TOCFL":"Quyển "+n}<small>${n==="T"?"A1–B2 · "+TF.length+" từ":n==="1"?"15 bài":BOOKS[n]?BOOKS[n].lessons.length+(BOOK_TOTAL[n]&&BOOK_TOTAL[n]>BOOKS[n].lessons.length?"/"+BOOK_TOTAL[n]:"")+" bài":"sắp có"}</small></button>`).join("");
-$("#bbar").insertAdjacentHTML("beforeend",[["video","🎬 Shadowing video"],["dictation","✍️ Chép chính tả"],["exam","📝 Thi thử"],["radicals","🧰 Công cụ"]].map(([k,l])=>`<button class="lchip" data-p="${k}">${l}</button>`).join(""));
-$("#bbar").onclick=e=>{const b=e.target.closest(".lchip");if(!b)return;if(b.dataset.p){const k=b.dataset.p;if(k==="video")goVideo();else{if(k==="dictation"){dMode="dict";dSel=null}goPage(k)}}else setBook(b.dataset.b)};
 $("#les").value=LESSON;syncBar();updateHero();
 $("#les").onchange=e=>setLesson(e.target.value);
 (function(){const r=document.documentElement;try{const t=localStorage.getItem("theme");if(t)r.dataset.theme=t}catch(e){}
 $("#thm").onclick=()=>{const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}}})();
+buildNav();
 footerView();
 render();
 </script>

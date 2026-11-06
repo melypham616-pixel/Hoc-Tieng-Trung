@@ -253,6 +253,7 @@ function syncBar(){
   const on=document.querySelector(".lchip.on");if(on)on.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
 }
 function updateHero(){
+  try{lessonBar()}catch(e){}
   const k=Object.keys(prog.known).length,s=prog.score;
   $("#stK").textContent=k;$("#stKbar").style.width=(k/VOCAB.length*100)+"%";
   $("#stS").textContent=s.total?Math.round(s.right/s.total*100)+"%":"–";$("#stSbar").style.width=(s.total?s.right/s.total*100:0)+"%";
@@ -266,12 +267,11 @@ $("#nav").innerHTML=TABS.map(([k,l])=>{const i=l.indexOf(" ");return `<button da
 $("#nav").onclick=e=>{const b=e.target.closest("button");if(b&&b.dataset.k){tab=b.dataset.k;render();window.scrollTo({top:0})}};
 function render(){
   const isH=bk==="H"||bk==="P";document.querySelector(".hero").style.display=isH?"none":"";$("main").className=isH?"home":"";
-  document.querySelectorAll("#bbar .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk||(bk==="P"&&b.dataset.p&&((b.dataset.p==="video"&&page==="dictation"&&dMode==="vid")||(b.dataset.p==="dictation"&&page==="dictation"&&dMode!=="vid")||(b.dataset.p==="exam"&&page==="exam")||(b.dataset.p==="radicals"&&page!=="dictation"&&page!=="exam")))));
+  uiSync();
   if(isH){stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;$("#lbar").style.display="none";$("#nav").style.display="none";if(bk==="P")pageView();else{track('home_view');homeView()}return}
   document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.k===tab));
   stopSpeak();stopRec();clearInterval(qaTimer);qaSess=null;
   const b1=bk==="1";$("#lbar").style.display=b1?"":"none";$("#nav").style.display=b1?"":"none";$("#les").closest(".sp").style.display=b1?"":"none";
-  document.querySelectorAll("#bbar .lchip").forEach(b=>b.classList.toggle("on",b.dataset.b===bk));
   document.querySelector(".stats").style.display=b1?"":"none";
   $("#hS").textContent=bk==="T"?"Từ vựng TOCFL Band A + B · 4.844 từ · thẻ nhớ, trắc nghiệm, nghe đọc":b1?"Học tiếng Trung · 15 bài · từ vựng, ngữ pháp, hội thoại, tập dịch":`Học tiếng Trung · ${BOOKS[bk]?BOOKS[bk].lessons.length+" bài":"đang cập nhật"} · từ vựng, hội thoại, thẻ nhớ, trắc nghiệm`;
   $("#hT").textContent=bk==="T"?"TOCFL 詞彙 A1–B2":"當代中文課程 "+bk;
@@ -1009,12 +1009,10 @@ setTimeout(()=>{   // sau khi danh sách giọng đã tải: báo nếu máy/khu
     w.style.cssText+=";max-width:868px;margin:12px auto 0;padding:12px 16px";document.body.insertBefore(w,$("main"));
   }
 },1500);
-$("#bbar").innerHTML=`<button class="lchip" data-b="H">🏠 Trang chủ</button>`+BOOK_IDS.map(n=>`<button class="lchip" data-b="${n}">${n==="T"?"🎯 TOCFL":"Quyển "+n}<small>${n==="T"?"A1–B2 · "+TF.length+" từ":n==="1"?"15 bài":BOOKS[n]?BOOKS[n].lessons.length+(BOOK_TOTAL[n]&&BOOK_TOTAL[n]>BOOKS[n].lessons.length?"/"+BOOK_TOTAL[n]:"")+" bài":"sắp có"}</small></button>`).join("");
-$("#bbar").insertAdjacentHTML("beforeend",[["video","🎬 Shadowing video"],["dictation","✍️ Chép chính tả"],["exam","📝 Thi thử"],["radicals","🧰 Công cụ"]].map(([k,l])=>`<button class="lchip" data-p="${k}">${l}</button>`).join(""));
-$("#bbar").onclick=e=>{const b=e.target.closest(".lchip");if(!b)return;if(b.dataset.p){const k=b.dataset.p;if(k==="video")goVideo();else{if(k==="dictation"){dMode="dict";dSel=null}goPage(k)}}else setBook(b.dataset.b)};
 $("#les").value=LESSON;syncBar();updateHero();
 $("#les").onchange=e=>setLesson(e.target.value);
 (function(){const r=document.documentElement;try{const t=localStorage.getItem("theme");if(t)r.dataset.theme=t}catch(e){}
 $("#thm").onclick=()=>{const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}}})();
+buildNav();
 footerView();
 render();
