@@ -86,3 +86,9 @@ end;
 $$;
 revoke all on function public.create_order(text) from public;
 grant execute on function public.create_order(text) to authenticated;
+
+-- Quyền truy cập rõ ràng (cần khi tắt "Automatically expose new tables" lúc tạo project; bật cũng không sao)
+grant usage on schema public to anon, authenticated;
+grant select on public.plans to anon, authenticated;
+grant select on public.orders to authenticated;
+grant select on public.subscriptions to authenticated;
