@@ -95,7 +95,7 @@ books.forEach(n=>{
 <p>Xem thêm: ${books.filter(x=>x!==n).map(x=>`<a href="/hoc/quyen-${x}/">Quyển ${x}</a>`).join(" · ")} · <a href="/hoc/tocfl/">Từ vựng TOCFL A1–B2</a></p>`;
   const ld={"@context":"https://schema.org","@type":"Course",name:`${name} — từ vựng, hội thoại, bài đọc`,description:info.d,provider:{"@type":"Organization",name:"Study Chinese",url:SITE},inLanguage:"vi",educationalLevel:info.lv,numberOfLessons:L.length,
     hasCourseInstance:{"@type":"CourseInstance",courseMode:"online",courseWorkload:"PT30M"},isAccessibleForFree:true};
-  write(`hoc/quyen-${n}/index.html`,page({url:`/hoc/quyen-${n}/`,title:`${name}: từ vựng, hội thoại & bài đọc phồn thể | Study Chinese`,desc:`Học 當代中文課程 Quyển ${n}: ${L.length} bài, ~${words} từ vựng chữ phồn thể có pinyin, nghĩa tiếng Việt, nghe phát âm. Miễn phí học cơ bản.`,h1:`${name}: ${L.length} bài học, ~${words} từ vựng`,body,ld,crumbs:[["Trang chủ","/"],["Khóa học","/hoc/"],[`Quyển ${n}`,`/hoc/quyen-${n}/`]]}));
+  write(`hoc/quyen-${n}/index.html`,page({url:`/hoc/quyen-${n}/`,title:`Đương đại Trung văn ${name}: từ vựng & bài học phồn thể | Study Chinese`,desc:`Đương đại Trung văn (當代中文課程) Quyển ${n}: ${L.length} bài, ~${words} từ vựng phồn thể có pinyin, nghĩa tiếng Việt, nghe giọng Đài Loan. Học miễn phí.`,h1:`Đương đại Trung văn ${name}: ${L.length} bài, ~${words} từ vựng`,body,ld,crumbs:[["Trang chủ","/"],["Khóa học","/hoc/"],[`Quyển ${n}`,`/hoc/quyen-${n}/`]]}));
   urls.push({u:`/hoc/quyen-${n}/`,p:"0.8",c:"monthly"});
 });
 
@@ -119,7 +119,7 @@ ${lv.map(l=>`<h2>Cấp ${l} — ${byL[l].length} từ</h2><table><tr><th>Hán t�
   const body=`<p class="lead">Study Chinese giúp người Việt học tiếng Trung phồn thể (chữ Đài Loan) theo giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL. Có pinyin, nghĩa tiếng Việt, giọng đọc zh-TW, thẻ nhớ, trắc nghiệm, chép chính tả và shadowing.</p>
 <a class="cta" href="/">Bắt đầu học</a><h2>Chọn khóa học</h2><div class="grid">${cards}</div>`;
   const ld={"@context":"https://schema.org","@type":"WebSite",name:"Study Chinese",url:SITE,inLanguage:["vi","en"],description:"Học tiếng Trung phồn thể cho người Việt: từ vựng, hội thoại, bài đọc, TOCFL."};
-  write("hoc/index.html",page({url:"/hoc/",title:"Khóa học tiếng Trung phồn thể: 當代中文課程 Quyển 1–6 & TOCFL | Study Chinese",desc:"Học tiếng Trung phồn thể online cho người Việt: giáo trình 當代中文課程 Quyển 1–6, từ vựng TOCFL A1–B2, nghe phát âm Đài Loan, trắc nghiệm, chép chính tả, shadowing.",h1:"Khóa học tiếng Trung phồn thể",body,ld,crumbs:[["Trang chủ","/"],["Khóa học","/hoc/"]]}));
+  write("hoc/index.html",page({url:"/hoc/",title:"Học tiếng Trung phồn thể: Đương đại Trung văn Quyển 1–6 & TOCFL | Study Chinese",desc:"Học tiếng Trung phồn thể online cho người Việt: giáo trình 當代中文課程 Quyển 1–6, từ vựng TOCFL A1–B2, nghe phát âm Đài Loan, trắc nghiệm, chép chính tả, shadowing.",h1:"Khóa học tiếng Trung phồn thể",body,ld,crumbs:[["Trang chủ","/"],["Khóa học","/hoc/"]]}));
   urls.push({u:"/hoc/",p:"0.9",c:"weekly"});
 }
 
