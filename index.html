@@ -12313,7 +12313,7 @@ async function signup(ev){
 }
 /* Thanh toán chuyển khoản VietQR — điền thông tin tài khoản nhận tiền:
    bank: mã ngân hàng theo vietqr.io (VCB, MB, TCB, ACB, BIDV, TPB, VPB, ICB...), acc: số tài khoản, name: tên chủ tài khoản */
-const PAY={bank:"",acc:"6600110928008",name:"PHAM THI MY DUYEN",email:"",
+const PAY={bank:"MB",bankName:"MB Bank (Ngân hàng Quân đội)",acc:"6600110928008",name:"PHAM THI MY DUYEN",email:"",
   // Thanh toán quốc tế: điền link của tài khoản bạn (PayPal.me, Stripe Payment Link, Wise...). Để trống thì ẩn.
   intl:{paypal:"",stripe:"",wise:""}};
 const USD={m:2,y:16};   // giá quy đổi tham khảo cho khách nước ngoài (USD) — đổi theo ý bạn
@@ -12329,7 +12329,7 @@ function buy(id){
   const qr=vn?`https://img.vietqr.io/image/${PAY.bank}-${PAY.acc}-compact2.png?amount=${pl.price}&addInfo=${encodeURIComponent(code)}&accountName=${encodeURIComponent(PAY.name)}`:"";
   const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};
   const vnHtml=vn?`<div class="qrw"><img src="${qr}" alt="Mã QR chuyển khoản VietQR" width="240"></div>
-   <ul class="bank"><li>Ngân hàng: <b>${PAY.bank}</b></li><li>Số tài khoản: <b>${PAY.acc}</b></li><li>Chủ tài khoản: <b>${PAY.name}</b></li><li>Số tiền: <b>${vnd(pl.price)}</b></li><li>Nội dung: <b>${code}</b></li></ul>
+   <ul class="bank"><li>Ngân hàng: <b>${PAY.bankName||PAY.bank}</b></li><li>Số tài khoản: <b>${PAY.acc}</b></li><li>Chủ tài khoản: <b>${PAY.name}</b></li><li>Số tiền: <b>${vnd(pl.price)}</b></li><li>Nội dung: <b>${code}</b></li></ul>
    <p class="stat">Sau khi chuyển khoản, gửi email đã đăng ký kèm nội dung chuyển khoản <b>${code}</b> để được kích hoạt${PAY.email?` — gửi tới <b>${PAY.email}</b>`:""} (thường trong 24 giờ).</p>`
    :`<p>Thanh toán trong nước đang được cập nhật. Bạn để lại email ở mục đăng ký, mình sẽ liên hệ khi mở bán.</p>`;
   const usd=USD[id],intlHtml=intl?`<p>Pay in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}) with:</p><div class="paybtns">${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div>
