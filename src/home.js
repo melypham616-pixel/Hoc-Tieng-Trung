@@ -60,6 +60,12 @@ function homeView(){
     ["📚","Truyện ngắn","Đọc truyện phồn thể, chạm vào từ để xem pinyin và nghĩa.","Quyển 1","1","story"],
     ["🎙","Vấn đáp luyện nói","Trả lời bằng giọng nói, hệ thống chấm phát âm từng câu.","Quyển 1","1","qa"],
     ["🔤","Tập dịch","Dịch Việt → Trung, sắp xếp từ thành câu đúng.","Quyển 1","1","trans"],
+    ["✍️","Chép chính tả","Nghe câu bằng giọng Meijia rồi gõ lại chữ Hán, chấm từng chữ.","Quyển 1–6","page","dictation"],
+    ["💬","Mẫu câu giao tiếp","Câu thông dụng từ hội thoại Quyển 1–6, có pinyin trên chữ và nghe đọc.","Theo bài","page","sentences"],
+    ["📏","Lượng từ 量詞","Hơn 50 lượng từ nhóm theo cách dùng, kèm ví dụ và nghe đọc.","Mới","page","measure"],
+    ["🗂️","Từ vựng theo chủ đề","Từ vựng Quyển 1–6 và TOCFL gom theo 13 chủ đề đời sống.","13 chủ đề","page","topics"],
+    ["🖌️","Luyện thứ tự nét","Xem nét chạy và tự viết lại chữ phồn thể trên màn hình.","Hanzi Writer","page","strokes"],
+    ["📝","Đề thi thử TOCFL","Bài trắc nghiệm bấm giờ A1–B2, chấm điểm và xem lại câu sai.","A1–B2","page","exam"],
     ["🧩","214 Bộ thủ","Tra và nghe 214 bộ thủ phồn thể, xếp theo số nét, kèm Hán Việt và nghĩa.","214 bộ","page","radicals"],
     ["🔁","Ôn tập SRS ngắt quãng","Lịch nhắc từ tự động 10 phút → 30 ngày, giúp nhớ lâu hơn.","Pro","page","srs"],
     ["🔎","Tra từ & phân tích câu","Dán câu tiếng Trung để xem pinyin và nghĩa từng từ, hoặc tra bằng pinyin/tiếng Việt.","Công cụ","page","lookup"],
@@ -190,7 +196,7 @@ const PAGES={
 };
 function pageView(){
   const m=$("main");m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
-  const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","pinyin","lookup","srs","progress","path","docs"];
+  const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","pinyin","measure","topics","sentences","dictation","strokes","exam","lookup","srs","progress","path","docs"];
   const tool=!!TOOLS[page],keys=tool?TL:["guide",...POL],src=k=>PAGES[k]||TOOLS[k];
   const body=typeof P.h==="function"?P.h():P.h;
   m.innerHTML=`<div class="pg-head"><a href="#" onclick="setBook('H');return false">← Trang chủ</a><h1>${P.ic} ${P.t}</h1></div>
@@ -205,8 +211,8 @@ function footerView(){
    <div class="sf-brand"><a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b></span></a>
     <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
     ${(SOCIAL.fb||SOCIAL.group||SOCIAL.yt)?`<div class="sf-soc">${SOCIAL.fb?`<a class="ci" href="${SOCIAL.fb}" target="_blank" rel="noopener" aria-label="Facebook">f</a>`:""}${SOCIAL.group?`<a class="grp" href="${SOCIAL.group}" target="_blank" rel="noopener">👥 Nhóm FB</a>`:""}${SOCIAL.yt?`<a class="ci" href="${SOCIAL.yt}" target="_blank" rel="noopener" aria-label="YouTube">▶</a>`:""}</div>`:`<div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div>`}</div>
-   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("setBook('T')","Từ vựng chuyên ngành & theo cấp độ")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goTo('T',null,'quiz')","Luyện thi")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
-   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
+   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goPage('exam')","Luyện thi / Đề thi thử")}${L("goPage('topics')","Từ vựng theo chủ đề")}${L("goPage('sentences')","Mẫu câu giao tiếp")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
+   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('dictation')","Chép chính tả")}${L("goPage('strokes')","Luyện thứ tự nét")}${L("goPage('measure')","Lượng từ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
    <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
    <div><h5>Liên hệ</h5>${SOCIAL.email?`<p class="sf-mail">✉ ${SOCIAL.email}</p>`:""}<ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
   </div>
