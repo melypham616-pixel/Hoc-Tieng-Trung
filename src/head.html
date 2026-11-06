@@ -675,6 +675,15 @@ body.hasl .hero .brand{display:none}
 
 .payst{margin:10px 0;padding:12px 14px;border-radius:12px;background:var(--bg);border:1px dashed var(--line);font-weight:600;font-size:14.5px}.payst.ok{background:var(--okbg);border:1px solid var(--ok);color:var(--ok)}.payst.bad{background:var(--badbg);border:1px solid var(--bad);color:var(--bad)}
 #hUser{background:var(--pri);color:#fff;border-color:var(--pri);font-weight:800}
+
+/* đầu trang gọn hơn trên máy tính, thẳng hàng với phần nội dung bên dưới (cùng bề rộng 1120px) */
+@media (min-width:1001px){
+  .site-in{max-width:1120px;padding:6px 16px;gap:14px}
+  .logo .lg{width:34px;height:34px;font-size:20px;border-radius:10px}.logo b{font-size:16.5px}.logo small{font-size:11px}
+  #bbar .nv{min-height:38px;padding:0 10px;font-size:14px;gap:6px}#bbar .nv .ic{font-size:16px}
+  .lgbtn,.hbtn.b,.ibtn{min-height:38px;font-size:14px}.ibtn{width:38px;height:38px;font-size:16px}.lgbtn{padding:0 10px}.hbtn{padding:0 14px}
+  .site-r{gap:6px}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
