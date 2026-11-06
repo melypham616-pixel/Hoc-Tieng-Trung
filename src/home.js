@@ -60,6 +60,10 @@ function homeView(){
     ["📚","Truyện ngắn","Đọc truyện phồn thể, chạm vào từ để xem pinyin và nghĩa.","Quyển 1","1","story"],
     ["🎙","Vấn đáp luyện nói","Trả lời bằng giọng nói, hệ thống chấm phát âm từng câu.","Quyển 1","1","qa"],
     ["🔤","Tập dịch","Dịch Việt → Trung, sắp xếp từ thành câu đúng.","Quyển 1","1","trans"],
+    ["🧩","214 Bộ thủ","Tra và nghe 214 bộ thủ phồn thể, xếp theo số nét, kèm Hán Việt và nghĩa.","214 bộ","page","radicals"],
+    ["🔁","Ôn tập SRS ngắt quãng","Lịch nhắc từ tự động 10 phút → 30 ngày, giúp nhớ lâu hơn.","Premium","page","srs"],
+    ["🔎","Tra từ & phân tích câu","Dán câu tiếng Trung để xem pinyin và nghĩa từng từ, hoặc tra bằng pinyin/tiếng Việt.","Công cụ","page","lookup"],
+    ["🎼","Lộ trình Pinyin","Thanh mẫu, vận mẫu và 4 thanh điệu, chạm để nghe ví dụ.","Cho người mới","page","pinyin"],
   ];
   m.innerHTML=`
   <section class="hm-hero">
@@ -88,7 +92,7 @@ function homeView(){
     </div>
   </section>
   <div class="sec-h" id="hm-feats"><span class="pill">Hệ sinh thái học tập</span><h2>Tất cả những gì bạn cần<br>để thành thạo tiếng Trung</h2><p>Các mục học được gom về một nơi — chọn mục bạn muốn và vào học ngay.</p></div>
-  <div class="feats">${F.map(f=>`<button class="feat" onclick="goTo('${f[4]}',${f[5]?`'${f[5]}'`:"null"},${f[6]?`'${f[6]}'`:"null"})"><div class="ico">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><span class="cnt">${f[3]}</span></button>`).join("")}</div>
+  <div class="feats">${F.map(f=>`<button class="feat" onclick="${f[4]==="page"?`goPage('${f[5]}')`:`goTo('${f[4]}',${f[5]?`'${f[5]}'`:"null"},${f[6]?`'${f[6]}'`:"null"})`}"><div class="ico">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><span class="cnt">${f[3]}</span></button>`).join("")}</div>
   <div class="hstats">
     <div class="hstat"><b>6</b><span>Quyển giáo trình</span><small>當代中文課程</small></div>
     <div class="hstat"><b>${c.lessons}</b><span>Bài học</span><small>hội thoại &amp; bài đọc</small></div>
@@ -97,6 +101,10 @@ function homeView(){
   </div>
   <div class="sec-h" id="hm-plans"><span class="pill">Gói học</span><h2>Chọn gói phù hợp với bạn</h2><p>Học miễn phí không giới hạn; Premium dành cho ai muốn thêm tài liệu ôn tập và được hỗ trợ.</p></div>
   <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Phổ biến</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('${last}')">Học ngay</button>`}</div>`).join("")}</div>
+  <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Miễn phí</th><th>Premium</th></tr></thead><tbody>
+   ${[["Từ vựng, bài học, hội thoại & bài đọc Quyển 1–6","✓","✓"],["Từ vựng TOCFL A1–B2","✓","✓"],["Nghe phát âm (giọng Meijia)","✓","✓"],["Thẻ nhớ & trắc nghiệm","✓","✓"],["Công cụ: 214 bộ thủ, Pinyin, tra từ","✓","✓"],["Ôn tập SRS ngắt quãng","—","✓"],["Bộ thẻ Anki + PDF từ vựng từng quyển","—","✓"],["Giải đáp thắc mắc qua email","—","✓"],["Theo dõi tiến độ chi tiết, lịch sử học, lộ trình cá nhân","—","Sắp có"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}
+  </tbody></table><p class="stat" style="margin:10px 4px 0">Nội dung học cơ bản luôn miễn phí để bạn trải nghiệm đủ trước khi quyết định nâng cấp.</p></div>
+  <details class="act" ${isPremium()?"open":""}><summary>${isPremium()?"✅ Premium đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPremium()?"":premForm()}</details>
   <section class="signup"><div><h3>📬 Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài, từ vựng và tính năng mới. Không spam, hủy bất cứ lúc nào.</p></div>
     <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required value="${prog.email||""}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg"></div></form></section>
   <div class="cta-band"><span class="pill">Miễn phí · không cần đăng ký</span><h2>Sẵn sàng chinh phục tiếng Trung phồn thể?</h2><p>Tiến độ học được lưu ngay trên trình duyệt của bạn.</p>
@@ -136,13 +144,31 @@ const PAGES={
   <h4>Thống kê truy cập</h4><p>Trang dùng Google Analytics 4 để biết các mục nào được xem nhiều (ví dụ quyển, tab, lượt bấm nút). Dữ liệu này ẩn danh, không gắn với tên hay email của bạn. Bạn có thể tắt bằng tiện ích chặn theo dõi của trình duyệt.</p>
   <h4>Giọng đọc và micro</h4><p>Âm thanh Meijia được thu sẵn và phát ngay từ trang. Mục <i>Vấn đáp luyện nói</i> dùng micro và nhận dạng giọng nói của trình duyệt sau khi bạn cho phép; âm thanh do trình duyệt xử lý, chúng tôi không ghi âm hay lưu trữ.</p>
   <h4>Xóa dữ liệu</h4><p>Bạn có thể xóa toàn bộ dữ liệu học trên thiết bị này tại trang <a href="#" onclick="goPage('data');return false">Xóa dữ liệu</a>. Để xóa email đã gửi cho chúng tôi, hãy <a href="#" onclick="goPage('contact');return false">liên hệ</a> kèm địa chỉ email đó.</p>`},
- terms:{t:"Điều khoản sử dụng",ic:"📄",h:`
+ rules:{t:"Quy chế hoạt động",ic:"📄",h:`
   <p class="stat">Cập nhật lần cuối: 06/11/2026</p>
   <h4>Mục đích</h4><p>Trang này là công cụ tự học tiếng Trung phồn thể, tổng hợp từ vựng, hội thoại và bài đọc để người học luyện tập. Đây là trang học tập phi chính thức, <b>không liên kết</b> với nhà xuất bản của giáo trình 當代中文課程 hay đơn vị tổ chức kỳ thi TOCFL; tên giáo trình và kỳ thi thuộc về chủ sở hữu tương ứng.</p>
   <h4>Về nội dung</h4><p>Nội dung được soạn lại từ giáo trình, phần dịch tiếng Việt do chúng tôi tự biên dịch và có thể còn sai sót. Hãy đối chiếu với sách gốc khi cần độ chính xác cao. Nếu bạn thấy lỗi, vui lòng gửi phản ánh để chúng tôi sửa.</p>
   <h4>Quy tắc sử dụng</h4><ul><li>Dùng cho việc học cá nhân; không sao chép hàng loạt nội dung hay âm thanh để bán lại.</li><li>Không dùng công cụ tự động để làm quá tải trang.</li><li>Chúng tôi có thể thay đổi hoặc tạm dừng một phần trang mà không cần báo trước.</li></ul>
   <h4>Trách nhiệm</h4><p>Trang được cung cấp "như hiện có", không cam kết đạt điểm hay kết quả thi cụ thể.</p>`},
- payment:{t:"Gói học & thanh toán",ic:"💳",h:`
+
+ owner:{t:"Thông tin chủ quản",ic:"🏷️",h:`
+  <p>Học Tiếng Trung là website tự học phi thương mại quy mô nhỏ, do một cá nhân yêu thích tiếng Trung xây dựng và vận hành để chia sẻ tài liệu luyện tập cho người Việt học chữ phồn thể.</p>
+  <ul><li><b>Hình thức:</b> website cá nhân, không phải pháp nhân.</li><li><b>Địa chỉ website:</b> studychinese.mely.io.vn</li><li><b>Liên hệ:</b> qua <a href="#" onclick="goPage('contact');return false">biểu mẫu liên hệ</a> của trang; chúng tôi không công khai email hay số điện thoại để tránh thư rác.</li><li><b>Nội dung giáo trình:</b> tham khảo từ 當代中文課程 và danh sách từ vựng TOCFL; bản quyền gốc thuộc chủ sở hữu tương ứng.</li></ul>`},
+ rights:{t:"Quyền và nghĩa vụ các bên",ic:"⚖️",h:`
+  <h4>Quyền của người học</h4><ul><li>Dùng miễn phí toàn bộ nội dung học công khai trên trang.</li><li>Được hỗ trợ khi mua gói: nhận đúng quyền lợi đã nêu, được hoàn tiền theo <a href="#" onclick="goPage('refund');return false">chính sách hoàn tiền</a>.</li><li>Được yêu cầu xóa email, dữ liệu đã gửi cho chúng tôi.</li><li>Được gửi phản ánh, khiếu nại và nhận phản hồi.</li></ul>
+  <h4>Nghĩa vụ của người học</h4><ul><li>Cung cấp email đúng khi mua gói để nhận tài liệu/mã kích hoạt.</li><li>Không chia sẻ mã kích hoạt, không sao chép hàng loạt nội dung để bán lại.</li><li>Không dùng công cụ tự động làm quá tải trang.</li></ul>
+  <h4>Quyền và nghĩa vụ của chúng tôi</h4><ul><li>Cung cấp nội dung và quyền lợi như mô tả, sửa lỗi khi nhận được phản ánh.</li><li>Bảo vệ thông tin người học theo <a href="#" onclick="goPage('privacy');return false">chính sách bảo mật</a>.</li><li>Có quyền thu hồi mã kích hoạt bị chia sẻ trái phép, cập nhật hoặc tạm dừng một phần trang khi cần.</li></ul>`},
+ complaint:{t:"Tiếp nhận & giải quyết khiếu nại",ic:"📮",h:`
+  <h4>Quy trình</h4><ol class="steps"><li><b>Gửi khiếu nại.</b> Dùng <a href="#" onclick="goPage('contact');return false">biểu mẫu liên hệ</a>, chọn loại phù hợp; nêu rõ vấn đề, email đã dùng, nội dung chuyển khoản (nếu liên quan thanh toán).</li><li><b>Xác nhận.</b> Chúng tôi phản hồi qua email trong 1–3 ngày làm việc để xác nhận đã nhận.</li><li><b>Xử lý.</b> Lỗi nội dung sẽ được sửa và cập nhật lên trang; vấn đề thanh toán được đối chiếu và xử lý (kích hoạt, gửi lại tài liệu hoặc hoàn tiền) trong tối đa 7 ngày.</li><li><b>Kết quả.</b> Chúng tôi báo kết quả qua email. Nếu chưa hài lòng, bạn có thể trả lời lại để được xem xét lần hai.</li></ol>`},
+ price:{t:"Chính sách về giá & điều kiện",ic:"🏷️",h:`
+  <ul><li>Giá niêm yết bằng đồng Việt Nam (VND), đã bao gồm mọi khoản phí chúng tôi thu; ngân hàng của bạn có thể tính phí chuyển khoản riêng.</li><li>Gói Premium tháng và năm không tự gia hạn.</li><li>Giá và quyền lợi có thể thay đổi cho người mua mới; gói đã mua giữ nguyên quyền lợi trong thời hạn đã trả.</li><li>Nội dung học cơ bản luôn miễn phí để bạn trải nghiệm trước khi quyết định.</li></ul>
+  <p><button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
+ delivery:{t:"Phương thức cung cấp dịch vụ",ic:"📦",h:()=>`
+  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Mã kích hoạt Premium:</b> gửi qua email sau khi xác nhận thanh toán; nhập mã ở mục kích hoạt để mở các tính năng Premium trên thiết bị của bạn.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
+  <h4>Đã có mã?</h4>${premForm()}`},
+ index:{t:"Danh mục chính sách",ic:"🗂️",h:()=>`
+  <ul class="idx">${["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data"].map(k=>`<li><a href="#" onclick="goPage('${k}');return false">${PAGES[k].ic} ${PAGES[k].t}</a></li>`).join("")}</ul>`},
+ payment:{t:"Chính sách thanh toán",ic:"💳",h:`
   <h4>Các gói</h4><ul><li><b>Miễn phí:</b> toàn bộ nội dung học trên web.</li><li><b>Premium tháng — 99.000đ:</b> tài liệu ôn tập kèm theo (thẻ Anki, PDF từ vựng), nhận bài mới sớm, giải đáp qua email.</li><li><b>Premium năm — 790.000đ:</b> như gói tháng, dùng trọn 12 tháng.</li></ul>
   <h4>Cách thanh toán</h4><ol class="steps"><li>Ở trang chủ, bấm <b>Nâng cấp</b> ở gói muốn mua.</li><li>Quét mã QR hoặc chuyển khoản theo thông tin hiển thị, giữ nguyên <b>nội dung chuyển khoản</b>.</li><li>Gửi email đã đăng ký kèm nội dung chuyển khoản qua <a href="#" onclick="goPage('contact');return false">mục liên hệ</a>.</li><li>Chúng tôi đối chiếu và gửi tài liệu/kích hoạt quyền lợi, thường trong vòng 24 giờ.</li></ol>
   <h4>Lưu ý</h4><p>Thanh toán bằng chuyển khoản ngân hàng. Chúng tôi không yêu cầu mật khẩu, mã OTP hay thông tin thẻ của bạn. <button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
@@ -163,22 +189,24 @@ const PAGES={
    <button class="btn-l p">Gửi phản ánh</button><div class="su-msg"></div></form>`}
 };
 function pageView(){
-  const m=$("main");m.className="home page";const P=PAGES[page]||PAGES.guide;
-  const tabs=["guide","privacy","terms","payment","refund","data","contact"];
+  const m=$("main");m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
+  const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","srs","lookup","pinyin"];
+  const tool=!!TOOLS[page],keys=tool?TL:["guide",...POL],src=k=>PAGES[k]||TOOLS[k];
+  const body=typeof P.h==="function"?P.h():P.h;
   m.innerHTML=`<div class="pg-head"><a href="#" onclick="setBook('H');return false">← Trang chủ</a><h1>${P.ic} ${P.t}</h1></div>
-  <div class="pg-wrap"><aside class="pg-nav">${tabs.map(k=>`<button class="${k===page?"on":""}" onclick="goPage('${k}')">${PAGES[k].ic} ${PAGES[k].t}</button>`).join("")}</aside><article class="card pg-body">${P.h}</article></div>`;
+  <div class="pg-wrap"><aside class="pg-nav">${keys.map(k=>`<button class="${k===page?"on":""}" onclick="goPage('${k}')">${src(k).ic} ${src(k).t}</button>`).join("")}</aside><article class="card pg-body">${body}</article></div>`;
 }
 function footerView(){
-  const L=(f,t)=>`<li><a href="#" onclick="${f};return false">${t}</a></li>`;
+  const L=(f,t,c)=>`<li><a href="#" ${c?`class="${c}" `:""}onclick="${f};return false">${t}</a></li>`;
   const ft=document.querySelector("footer");ft.className="sitefoot";
   ft.innerHTML=`<div class="sf-in"><div class="sf-grid">
    <div class="sf-brand"><a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b></span></a>
-    <p>Tự học tiếng Trung phồn thể theo giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL A1–B2, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
+    <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
     <div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div></div>
-   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 Quyển 1")}${L("setBook('2')","Quyển 2 – 6 (hội thoại, bài đọc)")}${L("setBook('T')","Từ vựng TOCFL A1–B2")}${L("goTo('2',null,'dlg')","Hội thoại & bài đọc")}${L("goPage('guide')","Cách học hiệu quả")}${L("goPlans()","Bảng giá gói Premium")}</ul></div>
-   <div><h5>Công cụ</h5><ul>${L("goTo('1','flash')","Thẻ nhớ")}${L("goTo('1','quiz')","Trắc nghiệm & bài tập")}${L("goTo('1','qa')","Vấn đáp luyện nói")}${L("goTo('1','trans')","Tập dịch")}${L("goTo('1','grammar')","Ngữ pháp")}${L("goTo('1','story')","Truyện ngắn")}</ul></div>
-   <div><h5>Chính sách</h5><ul>${L("goPage('privacy')","Chính sách bảo mật")}${L("goPage('terms')","Điều khoản sử dụng")}${L("goPage('payment')","Gói học & thanh toán")}${L("goPage('refund')","Hoàn tiền & hủy gói")}${L("goPage('data')","Xóa dữ liệu học")}</ul></div>
-   <div><h5>Liên hệ</h5><ul>${L("goPage('contact')","✉️ Gửi phản ánh / góp ý")}${L("goPage('contact')","Báo lỗi nội dung bài học")}${L("goPage('contact')","Hỗ trợ gói Premium")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
+   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("setBook('T')","Từ vựng chuyên ngành & theo cấp độ")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goTo('T',null,'quiz')","Luyện thi")}${L("goPlans()","Bảng giá gói học Premium")}</ul></div>
+   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
+   <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
+   <div><h5>Liên hệ</h5><ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
   </div>
   <div class="sf-bot"><span>© ${new Date().getFullYear()} Học Tiếng Trung · Trang học tập phi chính thức, không liên kết với nhà xuất bản giáo trình hay đơn vị tổ chức TOCFL.</span><span>加油！Mỗi ngày một chút 💪</span></div></div>`;
 }
