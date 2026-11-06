@@ -61,6 +61,7 @@ function homeView(){
     ["🎙","Vấn đáp luyện nói","Trả lời bằng giọng nói, hệ thống chấm phát âm từng câu.","Quyển 1","1","qa"],
     ["🔤","Tập dịch","Dịch Việt → Trung, sắp xếp từ thành câu đúng.","Quyển 1","1","trans"],
     ["✍️","Chép chính tả","Nghe câu bằng giọng Meijia rồi gõ lại chữ Hán, chấm từng chữ.","Quyển 1–6","page","dictation"],
+    ["🗣️","Shadowing","Nghe rồi nhại lại ngay, chấm độ giống từng từ để luyện nhịp và thanh điệu.","Quyển 1–6","page","shadow"],
     ["💬","Mẫu câu giao tiếp","Câu thông dụng từ hội thoại Quyển 1–6, có pinyin trên chữ và nghe đọc.","Theo bài","page","sentences"],
     ["📏","Lượng từ 量詞","Hơn 50 lượng từ nhóm theo cách dùng, kèm ví dụ và nghe đọc.","Mới","page","measure"],
     ["🗂️","Từ vựng theo chủ đề","Từ vựng Quyển 1–6 và TOCFL gom theo 13 chủ đề đời sống.","13 chủ đề","page","topics"],
@@ -98,7 +99,7 @@ function homeView(){
     </div>
   </section>
   <div class="sec-h" id="hm-feats"><span class="pill">Hệ sinh thái học tập</span><h2>Tất cả những gì bạn cần<br>để thành thạo tiếng Trung</h2><p>Các mục học được gom về một nơi — chọn mục bạn muốn và vào học ngay.</p></div>
-  <div class="feats">${F.map(f=>`<button class="feat" onclick="${f[4]==="page"?`goPage('${f[5]}')`:`goTo('${f[4]}',${f[5]?`'${f[5]}'`:"null"},${f[6]?`'${f[6]}'`:"null"})`}"><div class="ico">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><span class="cnt">${f[3]}</span></button>`).join("")}</div>
+  <div class="feats">${F.map(f=>`<button class="feat" onclick="${f[4]==="page"?(f[5]==="shadow"?`goShadow()`:`goPage('${f[5]}')`):`goTo('${f[4]}',${f[5]?`'${f[5]}'`:"null"},${f[6]?`'${f[6]}'`:"null"})`}"><div class="ico">${f[0]}</div><h4>${f[1]}</h4><p>${f[2]}</p><span class="cnt">${f[3]}</span></button>`).join("")}</div>
   <div class="hstats">
     <div class="hstat"><b>6</b><span>Quyển giáo trình</span><small>當代中文課程</small></div>
     <div class="hstat"><b>${c.lessons}</b><span>Bài học</span><small>hội thoại &amp; bài đọc</small></div>
@@ -212,7 +213,7 @@ function footerView(){
     <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
     ${(SOCIAL.fb||SOCIAL.group||SOCIAL.yt)?`<div class="sf-soc">${SOCIAL.fb?`<a class="ci" href="${SOCIAL.fb}" target="_blank" rel="noopener" aria-label="Facebook">f</a>`:""}${SOCIAL.group?`<a class="grp" href="${SOCIAL.group}" target="_blank" rel="noopener">👥 Nhóm FB</a>`:""}${SOCIAL.yt?`<a class="ci" href="${SOCIAL.yt}" target="_blank" rel="noopener" aria-label="YouTube">▶</a>`:""}</div>`:`<div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div>`}</div>
    <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goPage('exam')","Luyện thi / Đề thi thử")}${L("goPage('topics')","Từ vựng theo chủ đề")}${L("goPage('sentences')","Mẫu câu giao tiếp")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
-   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('dictation')","Chép chính tả")}${L("goPage('strokes')","Luyện thứ tự nét")}${L("goPage('measure')","Lượng từ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
+   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('dictation')","Chép chính tả")}${L("goShadow()","Shadowing (nhại theo)")}${L("goPage('strokes')","Luyện thứ tự nét")}${L("goPage('measure')","Lượng từ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
    <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
    <div><h5>Liên hệ</h5>${SOCIAL.email?`<p class="sf-mail">✉ ${SOCIAL.email}</p>`:""}<ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
   </div>

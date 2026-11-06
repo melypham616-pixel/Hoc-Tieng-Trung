@@ -7,38 +7,69 @@ let _SENTS=null;
 function allSents(){
   if(_SENTS)return _SENTS;
   _SENTS=[];
-  TRANS.forEach(t=>{if(t[1]&&t[1].length<=40)_SENTS.push({zh:t[1],py:t[2],vi:t[0],b:"1",n:+t[3],topic:"Quyển 1 · Bài "+t[3]})});
-  Object.keys(BOOKS).forEach(b=>BOOKS[b].lessons.forEach(L=>{if(!L.d||!L.d.l)return;rows(L.d.l).forEach(r=>{const p=r.split("|");if(p.length>=3&&p[1].length>=3&&p[1].length<=40)_SENTS.push({zh:p[1],vi:p[2],b,n:L.n,topic:`Quyển ${b} · Bài ${L.n} · ${L.vi}`})})}));
+  TRANS.forEach(t=>{if(t[1]&&t[1].length<=40){const Ls=LESSONS[+t[3]-1]||{};_SENTS.push({zh:t[1],py:t[2],vi:t[0],b:"1",n:+t[3],topic:"Quyển 1 · Bài "+t[3],lz:Ls.zh||"",lv:Ls.vi||""})}});
+  Object.keys(BOOKS).forEach(b=>BOOKS[b].lessons.forEach(L=>{if(!L.d||!L.d.l)return;rows(L.d.l).forEach(r=>{const p=r.split("|");if(p.length>=3&&p[1].length>=3&&p[1].length<=40)_SENTS.push({zh:p[1],vi:p[2],b,n:L.n,topic:`Quyển ${b} · Bài ${L.n} · ${L.vi}`,lz:L.zh,lv:L.vi})})}));
   return _SENTS;
 }
 const sentOk=s=>lesFree(s.b,s.n);
 
-/* ---- Chép chính tả ---- */
-let dB="1",dLen="all",dQ=[],dI=0,dRes=null,dStat={ok:0,n:0};
-function dictBuild(){
-  dQ=sh(allSents().filter(s=>s.b===dB&&sentOk(s)&&(dLen==="all"||(dLen==="s"?s.zh.length<=8:dLen==="m"?s.zh.length>8&&s.zh.length<=16:s.zh.length>16)))).slice(0,30);
-  dI=0;dRes=null;dStat={ok:0,n:0};
+/* ---- Dictation Arena: Chép chính tả + Shadowing ---- */
+let dMode="dict",dFilter="all",dSel=null,dQ=[],dI=0,dRes=null,dStat={ok:0,n:0},dBest={};
+const dKey=(m,b,n)=>m+b+":"+n;
+function goShadow(){dMode="shad";dSel=null;goPage("dictation")}
+function dLessons(){
+  const M={};allSents().forEach(x=>{const k=x.b+":"+x.n;(M[k]=M[k]||{b:x.b,n:x.n,lz:x.lz,lv:x.lv,S:[]}).S.push(x)});
+  return Object.values(M).filter(l=>l.S.length>=3).sort((a,b)=>a.b-b.b||a.n-b.n);
 }
-function dictPick(b,l){dB=b;dLen=l;dictBuild();pageView()}
-function dictPlay(r){if(dQ[dI])speak(dQ[dI].zh,r||0)}
+function dProg(l){const p=(prog.dict||{})[dKey(dMode,l.b,l.n)];return p||{d:0,o:0,t:l.S.length}}
+function dOpen(b,n){
+  if(!lesFree(b,+n)){showLock("lesson");return}
+  const l=dLessons().find(x=>x.b===b&&x.n===+n);if(!l)return;
+  dSel=l;dQ=sh(l.S).slice(0,15);dI=0;dRes=null;dStat={ok:0,n:0};dBest={};track('dict_open',{m:dMode,b,n});pageView();window.scrollTo({top:0});
+}
+function dSave(ok){
+  prog.dict=prog.dict||{};const k=dKey(dMode,dSel.b,dSel.n),p=prog.dict[k]||{d:0,o:0,t:Math.min(15,dSel.S.length)};
+  p.d=Math.min(p.t,p.d+1);if(ok)p.o++;prog.dict[k]=p;save();
+}
 function dictCheck(){
   const s=dQ[dI],v=($("#dans").value||"").trim();if(!v)return;
   const A=normZh(v),B=normZh(s.zh),d=diffHtml(A,B),ok=A===B;
-  dStat.n++;if(ok)dStat.ok++;dRes={ok,d};logHist("d",ok);save();track('dictation',{ok:ok?1:0});pageView();
+  dStat.n++;if(ok)dStat.ok++;dRes={ok,d};logHist("d",ok);dSave(ok);track('dictation',{ok:ok?1:0});pageView();
 }
-function dictNext(){dI++;dRes=null;pageView()}
+function dictPlay(r){if(dQ[dI])speak(dQ[dI].zh,r||0)}
+function dictNext(){stopRec();dI++;dRes=null;pageView();window.scrollTo({top:0})}
+function shadowRec(){
+  const s=dQ[dI];if(!s)return;
+  recordTarget("sh",s.zh,{quiet:2200,idle:8000,max:20000},text=>{
+    const r=compareRead(s.zh,text),pct=Math.round(r.score*100),box=$("#fb-sh");if(!box)return;
+    const first=!(dBest[dI]!==undefined);if(first){dStat.n++;if(pct>=70)dStat.ok++;dSave(pct>=70);logHist("h",pct>=70)}
+    dBest[dI]=Math.max(dBest[dI]||0,pct);track('shadowing',{score:pct});
+    box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Nhại rất giống!":pct>=70?"👍 Khá tốt, chú ý các từ đỏ.":"💪 Nghe lại rồi nhại chậm hơn nhé."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}<div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div>${diffBlock(text,s.zh)}</div>`;
+  });
+}
 function dictationView(){
-  if(!dQ.length&&!dRes)dictBuild();
-  const sel=`<div class="row tf-bar"><select onchange="dictPick(this.value,dLen)">${["1","2","3","4","5","6"].map(b=>`<option value="${b}" ${b===dB?"selected":""}>Quyển ${b}</option>`).join("")}</select><select onchange="dictPick(dB,this.value)"><option value="all">Mọi độ dài</option><option value="s" ${dLen==="s"?"selected":""}>Ngắn (≤ 8 chữ)</option><option value="m" ${dLen==="m"?"selected":""}>Vừa (9–16 chữ)</option><option value="l" ${dLen==="l"?"selected":""}>Dài (&gt; 16 chữ)</option></select></div>`;
-  const intro=`<p>Nghe câu đọc bằng giọng Meijia rồi <b>gõ lại bằng chữ Hán</b>. Bạn có thể nghe lại, nghe chậm hoặc xem gợi ý pinyin và nghĩa. Chữ giản thể được tự quy đổi sang phồn thể khi chấm.</p>`;
-  if(!dQ.length)return intro+sel+`<div class="card">Chưa có câu phù hợp trong phạm vi này${isPro()?"":" (gói Free chỉ mở các bài miễn phí)"}.</div>`;
-  if(dI>=dQ.length)return intro+sel+`<div class="card" style="text-align:center"><h3>🎉 Hoàn thành ${dQ.length} câu</h3><p>Đúng hoàn toàn: <b>${dStat.ok}/${dStat.n}</b></p><button class="b p" onclick="dictBuild();pageView()">Làm lượt mới</button></div>`;
-  const s=dQ[dI];
-  return intro+sel+`<div class="stat" style="margin:8px 0">Câu ${dI+1}/${dQ.length} · Đúng ${dStat.ok}/${dStat.n} · ${esc(s.topic)}</div>
-  <div class="card"><div class="row" style="justify-content:center;gap:10px"><button class="b p" onclick="dictPlay()">🔊 Nghe</button><button class="b" onclick="dictPlay(0.5)">🐢 Chậm</button><button class="b" onclick="document.getElementById('dhint').hidden=!document.getElementById('dhint').hidden">💡 Gợi ý</button></div>
-  <div id="dhint" hidden class="stat" style="text-align:center;margin-top:10px">${s.py?`<div class="py">${esc(s.py)}</div>`:""}${esc(s.vi)}</div>
-  ${dRes?`<div class="fb ${dRes.ok?"ok":"bad"}" style="margin-top:14px">${dRes.ok?"✅ Chính xác!":"❌ Chưa đúng hoàn toàn."}<div class="zh" style="font-size:24px;margin-top:6px">Bạn gõ: ${dRes.d.a}</div><div class="zh" style="font-size:24px">Đáp án: ${dRes.d.b}</div><div class="vi" style="margin-top:6px">${esc(s.vi)}</div></div><div class="row" style="margin-top:12px"><button class="b" onclick="speak('${jsq(s.zh)}')">🔊 Nghe đáp án</button><button class="b p" onclick="dictNext()">Câu tiếp →</button></div>`
-  :`<textarea id="dans" rows="2" placeholder="Gõ câu bạn nghe được bằng chữ Hán…" style="margin-top:14px" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();dictCheck()}"></textarea><div class="row" style="margin-top:10px"><button class="b p" onclick="dictCheck()">Kiểm tra</button><button class="b" onclick="dictNext()">Bỏ qua</button></div>`}</div>`;
+  const L=dLessons();
+  const modeTabs=`<div class="seg" style="max-width:420px"><button class="${dMode==="dict"?"on":""}" onclick="dMode='dict';dSel=null;pageView()">✍️ Chép chính tả</button><button class="${dMode==="shad"?"on":""}" onclick="dMode='shad';dSel=null;pageView()">🗣️ Shadowing</button></div>`;
+  if(dSel){
+    const s=dQ[dI],head=`<div class="row" style="margin-bottom:10px"><button class="b" onclick="stopRec();dSel=null;pageView()">← Danh sách bài</button><b>Quyển ${dSel.b} · Bài ${dSel.n} · <span class="zh">${dSel.lz}</span></b></div>`;
+    if(dI>=dQ.length)return head+`<div class="card" style="text-align:center"><h3>🎉 Hoàn thành ${dQ.length} câu</h3><p>${dMode==="dict"?"Đúng hoàn toàn":"Nhại đạt từ 70%"}: <b>${dStat.ok}/${dStat.n}</b></p><div class="row" style="justify-content:center"><button class="b p" onclick="dOpen('${dSel.b}',${dSel.n})">Làm lại</button><button class="b" onclick="dSel=null;pageView()">Chọn bài khác</button></div></div>`;
+    const prog_=`<div class="stat" style="margin:8px 0">Câu ${dI+1}/${dQ.length} · ${dMode==="dict"?"Đúng":"Đạt"} ${dStat.ok}/${dStat.n}</div><div class="bar" style="background:var(--line);margin-bottom:12px"><i style="width:${dI/dQ.length*100}%"></i></div>`;
+    if(dMode==="shad")return head+prog_+`<div class="card"><p class="stat" style="margin-top:0">Shadowing: nghe một câu, rồi <b>nhại lại ngay</b> thật giống về nhịp và ngữ điệu. Bấm 🎤, đọc to, rồi bấm lần nữa (hoặc chờ vài giây) để chấm.</p>
+     <div class="zh" style="font-size:28px;line-height:2.1;text-align:center" id="shtxt">${annotate(s.zh).html}</div><div class="vi" style="text-align:center">${esc(s.vi)}</div>
+     <div class="row" style="justify-content:center;margin-top:12px;gap:10px"><button class="b p" onclick="speak('${jsq(s.zh)}')">🔊 Nghe</button><button class="b" onclick="speak('${jsq(s.zh)}',0.5)">🐢 Chậm</button><button class="b mic" id="mic-sh" onclick="shadowRec()">🎤 Nhại lại</button></div>
+     <div id="fb-sh" style="margin-top:12px"></div><div class="row" style="justify-content:space-between;margin-top:12px"><label class="stat"><input type="checkbox" onchange="document.getElementById('shtxt').style.visibility=this.checked?'hidden':'visible'"> ẩn chữ (chỉ nghe)</label><button class="b p" onclick="dictNext()">Câu tiếp →</button></div></div>`;
+    return head+prog_+`<div class="card"><div class="row" style="justify-content:center;gap:10px"><button class="b p" onclick="dictPlay()">🔊 Nghe</button><button class="b" onclick="dictPlay(0.5)">🐢 Chậm</button><button class="b" onclick="document.getElementById('dhint').hidden=!document.getElementById('dhint').hidden">💡 Gợi ý</button></div>
+     <div id="dhint" hidden class="stat" style="text-align:center;margin-top:10px">${s.py?`<div class="py">${esc(s.py)}</div>`:""}${esc(s.vi)}</div>
+     ${dRes?`<div class="fb ${dRes.ok?"ok":"bad"}" style="margin-top:14px">${dRes.ok?"✅ Chính xác!":"❌ Chưa đúng hoàn toàn."}<div class="zh" style="font-size:24px;margin-top:6px">Bạn gõ: ${dRes.d.a}</div><div class="zh" style="font-size:24px">Đáp án: ${dRes.d.b}</div><div class="vi" style="margin-top:6px">${esc(s.vi)}</div></div><div class="row" style="margin-top:12px"><button class="b" onclick="speak('${jsq(s.zh)}')">🔊 Nghe đáp án</button><button class="b p" onclick="dictNext()">Câu tiếp →</button></div>`
+     :`<textarea id="dans" rows="2" placeholder="Gõ câu bạn nghe được bằng chữ Hán…" style="margin-top:14px" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();dictCheck()}"></textarea><div class="row" style="margin-top:10px"><button class="b p" onclick="dictCheck()">Kiểm tra</button><button class="b" onclick="dictNext()">Bỏ qua</button></div>`}</div>`;
+  }
+  const shown=L.filter(l=>dFilter==="all"||l.b===dFilter),st=shown.map(l=>{const p=dProg(l);return p.d>=p.t&&p.d>0?2:p.d>0?1:0});
+  const cnt=k=>st.filter(x=>x===k).length;
+  return `<div class="dhero"><small>${dMode==="dict"?"LUYỆN NGHE VÀ GÕ CHÍNH TẢ":"LUYỆN NGHE VÀ NHẠI THEO"}</small><h2>Dictation Arena</h2><p>${dMode==="dict"?"Nghe câu bằng giọng Meijia rồi gõ lại chữ Hán — rèn phản xạ nghe, nhận mặt chữ phồn thể và pinyin.":"Shadowing: nghe rồi nhại lại ngay để luyện nhịp, ngữ điệu và thanh điệu; hệ thống chấm độ giống từng từ."}</p></div>
+  ${modeTabs}
+  <div class="chips" style="margin-top:14px">${["all","1","2","3","4","5","6"].map(b=>`<span class="chip ${dFilter===b?"on":""}" onclick="dFilter='${b}';pageView()">${b==="all"?"Tất cả":"Quyển "+b}</span>`).join("")}</div>
+  <div class="scoregrid"><div class="sc"><b>${shown.length}</b>bài</div><div class="sc"><b>${cnt(2)}</b>đã làm</div><div class="sc"><b>${cnt(1)}</b>đang làm</div><div class="sc"><b>${cnt(0)}</b>chưa làm</div></div>
+  <div class="dgrid">${shown.map((l,i)=>{const free=lesFree(l.b,l.n),p=dProg(l),state=st[i];return `<button class="dcard ${free?"":"lockd"}" onclick="dOpen('${l.b}',${l.n})"><div class="row" style="justify-content:space-between"><span class="pill">Quyển ${l.b} · Bài ${l.n}</span><span class="tg ${free?"fr":"vip"}">${free?"Miễn phí":"🔒 Pro"}</span></div><h4 class="zh">${l.lz}</h4><div class="vi">${esc(l.lv)}</div><div class="row" style="justify-content:space-between;margin-top:10px"><small class="stat">${Math.min(15,l.S.length)} câu</small><small class="${state===2?"okc":"stat"}">${state===2?"✓ Hoàn thành "+p.o+"/"+p.t:state===1?"Đang làm "+p.d+"/"+p.t:"Chưa làm"}</small></div></button>`}).join("")}</div>`;
 }
 
 /* ---- Mẫu câu giao tiếp ---- */
@@ -228,7 +259,7 @@ function examView(){
 }
 
 Object.assign(TOOLS,{
-  dictation:{t:"Chép chính tả",ic:"✍️",g:"tool",h:dictationView},
+  dictation:{t:"Chép chính tả & Shadowing",ic:"✍️",g:"tool",h:dictationView},
   sentences:{t:"Mẫu câu giao tiếp",ic:"💬",g:"tool",h:sentView},
   measure:{t:"Lượng từ",ic:"📏",g:"tool",h:measureView},
   topics:{t:"Từ vựng theo chủ đề",ic:"🗂️",g:"tool",h:topicsView},
