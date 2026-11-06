@@ -90,7 +90,7 @@ const EN={
 "Danh sách phát":"Playlist","Nhận thông báo":"Notifications","Đang gửi…":"Sending…","Gửi chưa được, bạn thử lại sau nhé.":"Couldn't send. Please try again later.","Email chưa đúng định dạng.":"Invalid email format.","✅ Cảm ơn bạn! Mình sẽ gửi thông tin bài học mới qua email này.":"✅ Thank you! We'll send news about new lessons to this email.",
 "Pay by Visa / Mastercard or PayPal in USD":"Pay by Visa / Mastercard or PayPal in USD",
 "Nghe câu rồi gõ lại chữ Hán":"Listen to a sentence and type the characters","(chạm để lật)":"(tap to flip)","Nghe → chọn từ đúng":"Listen → choose the word","Việt → Trung":"Vietnamese → Chinese","Trung → Việt":"Chinese → Vietnamese","Câu ngắn":"Short","Câu dài":"Long","Đoạn văn":"Paragraph","⚡ Phản xạ":"⚡ Reflex","Phản xạ":"Reflex","Dịch câu sau:":"Translate this sentence:","Câu khác →":"Another →","Tra từ & phân tích câu":"Lookup & sentence analysis","Chép chính tả & Shadowing":"Dictation & Shadowing","trả lời đúng":"correct answers","MB Bank (Ngân hàng Quân đội)":"MB Bank (Military Commercial Joint Stock Bank)","Tất cả 15 bài":"All 15 lessons",
-"Tìm trong quyển này: Hán tự, pinyin hoặc tiếng Việt…":"Search this book: characters, pinyin or Vietnamese…","Chọn nghĩa đúng":"Choose the correct meaning","Câu tiếp →":"Next →",
+"Tìm trong quyển này: Hán tự, pinyin hoặc tiếng Việt…":"Search this book: characters, pinyin or Vietnamese…","Quốc tế:":"International:","Chọn nghĩa đúng":"Choose the correct meaning","Câu tiếp →":"Next →",
 "Đã lưu tên":"Name saved","⭐ Đã lưu từ vào danh sách cần ôn":"⭐ Word saved for review","Đã bỏ lưu từ":"Word unsaved","⭐ Đã lưu bài học":"⭐ Lesson saved","Đã bỏ lưu bài học":"Lesson unsaved","✅ Đã thuộc":"✅ Learned"
 };
 /* mẫu có số: áp dụng sau khi không khớp nguyên cụm */

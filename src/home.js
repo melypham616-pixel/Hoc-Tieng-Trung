@@ -20,7 +20,7 @@ async function signup(ev){
 const PAY={bank:"MB",bankName:"MB Bank (Ngân hàng Quân đội)",acc:"6600110928008",name:"PHAM THI MY DUYEN",email:"",
   // Thanh toán quốc tế: điền link của tài khoản bạn (PayPal.me, Stripe Payment Link, Wise...). Để trống thì ẩn.
   intl:{card:"",paypal:"",stripe:"",wise:""}};   // card = link thanh toán thẻ Visa/Mastercard (Lemon Squeezy, Paddle, Stripe, PayPal...)
-const USD={m:2,y:16};   // giá quy đổi tham khảo cho khách nước ngoài (USD) — đổi theo ý bạn
+const USD={m:4.99,y:39.99};   // giá quy đổi tham khảo cho khách nước ngoài (USD) — đổi theo ý bạn
 const PLANS=[
   {id:"free",name:"Free",price:0,per:"",desc:"Dành cho người mới bắt đầu",perks:["Một số bài học miễn phí","Từ vựng và phát âm","Quiz cơ bản"]},
   {id:"m",name:"Pro tháng",price:49000,per:"/tháng",desc:"Học đều mỗi ngày, mở khóa toàn bộ",perks:["Mở khóa toàn bộ bài học","Flashcards không giới hạn","Ôn tập thông minh (SRS)","Theo dõi tiến độ","Bài kiểm tra nâng cao"],hot:1},
