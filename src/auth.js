@@ -21,7 +21,7 @@ async function refreshSub(rerender){
   const before=isPro();SUB=null;
   if(SESS&&sbc){try{const {data}=await sbc.from("subscriptions").select("plan,expires_at").maybeSingle();SUB=data||null}catch(e){}}
   uiAuth();
-  if(rerender||before!==isPro()){try{render()}catch(e){}}
+  if(rerender||before!==isPro()){try{buildSelect();$("#les").value=LESSON;syncBar();render()}catch(e){}}
 }
 function uiAuth(){
   const pro=isPro(),on=sbOn(),inn=signedIn();

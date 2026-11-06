@@ -236,14 +236,15 @@ const NL=LESSONS.length;
 let LESSON=prog.lesson;if(!/^(all|\d+-\d+)$/.test(LESSON||""))LESSON="all";
 const inL=n=>{if(!lesFree("1",n))return false;if(LESSON==="all")return true;const [a,b]=LESSON.split("-").map(Number);return n>=a&&n<=b};
 const pool=()=>VOCAB.filter(v=>inL(v[3]));
-(function buildSelect(){
+function buildSelect(){
   const g=[["all",`Tất cả ${NL} bài`],["1-5","Bài 1–5"],["6-10","Bài 6–10"],["11-15","Bài 11–15"]];
   $("#les").innerHTML=g.map(([k,l])=>`<option value="${k}">${l}</option>`).join("")+
     LESSONS.map(L=>`<option value="${L.n}-${L.n}">Bài ${L.n} · ${L.zh.replace(/[？！]/g,"")}</option>`).join("");
   $("#lbar").innerHTML=`<button class="lchip" data-v="all">Tất cả<small>${NL} bài</small></button>`+
     LESSONS.map(L=>`<button class="lchip" data-v="${L.n}-${L.n}" title="${esc(L.vi)}">Bài ${L.n}${lockIc(lesFree("1",L.n))}<small>${L.zh.replace(/[？！]/g,"")}</small></button>`).join("");
   $("#lbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setLesson(b.dataset.v)};
-})();
+}
+buildSelect();
 function setLesson(v){
   if(!isPro()){const a=v==="all"?1:+v.split("-")[0];if(a>FREE.lessons["1"]){showLock("lesson");return}}
   LESSON=prog.lesson=v;qMode=null;tIdx=0;track('select_lesson',{lesson:v});$("#les").value=v;syncBar();save();render();
