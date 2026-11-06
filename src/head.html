@@ -632,6 +632,30 @@ body.hasl .hero .brand{display:none}
 .hero .ctrl .sp:has(#les){display:none!important}
 .hero-in{max-width:920px}
 @media (max-width:760px){.lessonx{margin-top:8px}.lx-in{padding:12px;gap:10px}.lx-a{display:grid;grid-template-columns:1fr 1fr 1fr}.lx-a .b{padding:0 6px;font-size:13px}.hero .ctrl .sp:nth-child(3) b{display:none}}
+
+/* ===== Trang chủ dạng dashboard cho người đã học ===== */
+.dh{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0 14px}
+.dh h1{margin:0;font:400 clamp(26px,5vw,40px)/1.15 var(--ui);letter-spacing:-.03em;color:var(--mut)}.dh h1 b{color:var(--ink);font-weight:800}
+.dwrap{display:grid;grid-template-columns:1fr 340px;gap:18px;align-items:start}
+.dmain,.dside{display:grid;gap:16px;min-width:0}.dwrap .card{margin:0}.dwrap h3{margin:0 0 12px;font-size:18px}
+.hero-card{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--pri);color:#fff;border-radius:18px;padding:22px}
+.hero-card small{font-weight:700;opacity:.85}.hero-card h2{margin:4px 0 6px;font-size:24px;line-height:1.25}.hero-card p{margin:0 0 12px;opacity:.9;font-size:14.5px}.hero-card>div{flex:1;min-width:0}
+.hero-card .pb{background:rgba(255,255,255,.28)}.hero-card .pb i{background:#fff}
+.hero-card .btn-l{background:#fff;color:var(--pri-d);border-color:#fff;white-space:nowrap}
+.tasks{display:grid;gap:8px}.task{display:flex;align-items:center;gap:12px;width:100%;text-align:left;min-height:56px;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);font-family:var(--ui);cursor:pointer}
+.task:hover{border-color:var(--pri)}.task .ti{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--line);font-size:18px;flex:none}
+.task .tx{flex:1;min-width:0}.task small{display:block;color:var(--mut);font-size:12px}.task b{font-size:15.5px}
+.task .tm{font-size:13px;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 10px;color:var(--mut)}
+.task.fin{opacity:.7}.task.fin .ti{background:var(--pri);color:#fff;border-color:var(--pri)}.task.fin .tm{background:var(--pri2);color:var(--pri-d);border-color:transparent}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px}.sk .pb{margin-top:6px}
+.tbl{display:grid;gap:4px}.th2,.tr2{display:grid;grid-template-columns:1.4fr 1fr 80px;gap:8px;align-items:center;padding:0 12px}.th2{background:var(--bg);border-radius:10px;min-height:36px;font-size:12.5px;color:var(--mut)}
+.tr2{min-height:48px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:500 14.5px var(--ui);text-align:left;cursor:pointer}.tr2:hover{background:var(--bg)}
+.bd{justify-self:end;font-weight:800;font-size:13px;border-radius:8px;padding:2px 8px}.bd.hi{background:var(--okbg);color:var(--ok)}.bd.mid{background:#FFF1DC;color:#9A5B00}.bd.lo{background:var(--badbg);color:var(--bad)}
+.streak{display:flex;align-items:baseline;gap:10px;margin:10px 0 14px}.streak b{font-size:48px;line-height:1;letter-spacing:-.03em}.streak span{color:var(--mut);font-size:14px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.week span{display:grid;place-items:center;height:44px;border-radius:12px;background:var(--bg);color:var(--mut);font-size:13px;font-weight:700}
+.week span.on{background:var(--pri);color:#fff}.week span.td{outline:2px solid var(--pri);outline-offset:1px}.week span.fu{opacity:.5}
+@media (max-width:980px){.dwrap{display:flex;flex-direction:column;gap:16px}.dmain,.dside{display:contents}.c-hero{order:1}.c-act{order:2}.c-tasks{order:3}.c-words{order:4}.c-skills{order:5}.c-courses{order:6}.c-done{order:7}.dwrap .card,.dwrap .hero-card{width:100%}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}.hero-card{flex-direction:column;align-items:stretch}.hero-card .btn-l{width:100%}.th2,.tr2{grid-template-columns:1.3fr 1fr 70px;padding:0 6px}.dh{padding-top:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>

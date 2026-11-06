@@ -632,6 +632,30 @@ body.hasl .hero .brand{display:none}
 .hero .ctrl .sp:has(#les){display:none!important}
 .hero-in{max-width:920px}
 @media (max-width:760px){.lessonx{margin-top:8px}.lx-in{padding:12px;gap:10px}.lx-a{display:grid;grid-template-columns:1fr 1fr 1fr}.lx-a .b{padding:0 6px;font-size:13px}.hero .ctrl .sp:nth-child(3) b{display:none}}
+
+/* ===== Trang chủ dạng dashboard cho người đã học ===== */
+.dh{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:22px 0 14px}
+.dh h1{margin:0;font:400 clamp(26px,5vw,40px)/1.15 var(--ui);letter-spacing:-.03em;color:var(--mut)}.dh h1 b{color:var(--ink);font-weight:800}
+.dwrap{display:grid;grid-template-columns:1fr 340px;gap:18px;align-items:start}
+.dmain,.dside{display:grid;gap:16px;min-width:0}.dwrap .card{margin:0}.dwrap h3{margin:0 0 12px;font-size:18px}
+.hero-card{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--pri);color:#fff;border-radius:18px;padding:22px}
+.hero-card small{font-weight:700;opacity:.85}.hero-card h2{margin:4px 0 6px;font-size:24px;line-height:1.25}.hero-card p{margin:0 0 12px;opacity:.9;font-size:14.5px}.hero-card>div{flex:1;min-width:0}
+.hero-card .pb{background:rgba(255,255,255,.28)}.hero-card .pb i{background:#fff}
+.hero-card .btn-l{background:#fff;color:var(--pri-d);border-color:#fff;white-space:nowrap}
+.tasks{display:grid;gap:8px}.task{display:flex;align-items:center;gap:12px;width:100%;text-align:left;min-height:56px;padding:8px 12px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);font-family:var(--ui);cursor:pointer}
+.task:hover{border-color:var(--pri)}.task .ti{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--line);font-size:18px;flex:none}
+.task .tx{flex:1;min-width:0}.task small{display:block;color:var(--mut);font-size:12px}.task b{font-size:15.5px}
+.task .tm{font-size:13px;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 10px;color:var(--mut)}
+.task.fin{opacity:.7}.task.fin .ti{background:var(--pri);color:#fff;border-color:var(--pri)}.task.fin .tm{background:var(--pri2);color:var(--pri-d);border-color:transparent}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 18px}.sk .pb{margin-top:6px}
+.tbl{display:grid;gap:4px}.th2,.tr2{display:grid;grid-template-columns:1.4fr 1fr 80px;gap:8px;align-items:center;padding:0 12px}.th2{background:var(--bg);border-radius:10px;min-height:36px;font-size:12.5px;color:var(--mut)}
+.tr2{min-height:48px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:500 14.5px var(--ui);text-align:left;cursor:pointer}.tr2:hover{background:var(--bg)}
+.bd{justify-self:end;font-weight:800;font-size:13px;border-radius:8px;padding:2px 8px}.bd.hi{background:var(--okbg);color:var(--ok)}.bd.mid{background:#FFF1DC;color:#9A5B00}.bd.lo{background:var(--badbg);color:var(--bad)}
+.streak{display:flex;align-items:baseline;gap:10px;margin:10px 0 14px}.streak b{font-size:48px;line-height:1;letter-spacing:-.03em}.streak span{color:var(--mut);font-size:14px}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.week span{display:grid;place-items:center;height:44px;border-radius:12px;background:var(--bg);color:var(--mut);font-size:13px;font-weight:700}
+.week span.on{background:var(--pri);color:#fff}.week span.td{outline:2px solid var(--pri);outline-offset:1px}.week span.fu{opacity:.5}
+@media (max-width:980px){.dwrap{display:flex;flex-direction:column;gap:16px}.dmain,.dside{display:contents}.c-hero{order:1}.c-act{order:2}.c-tasks{order:3}.c-words{order:4}.c-skills{order:5}.c-courses{order:6}.c-done{order:7}.dwrap .card,.dwrap .hero-card{width:100%}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}.hero-card{flex-direction:column;align-items:stretch}.hero-card .btn-l{width:100%}.th2,.tr2{grid-template-columns:1.3fr 1fr 70px;padding:0 6px}.dh{padding-top:14px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -12421,7 +12445,7 @@ function footerView(){
 /* ============ GIAO DIỆN SẢN PHẨM: ĐIỀU HƯỚNG · TRANG CHỦ · TỔNG QUAN · KHÓA HỌC · TỪ VỰNG · LUYỆN TẬP · HỒ SƠ ============ */
 const NAV=[["dash","📊","Tổng quan"],["courses","📚","Khóa học"],["vocab","🔤","Từ vựng"],["practice","✍️","Luyện tập"],["tocfl","🎯","TOCFL"],["profile","👤","Hồ sơ"]];
 const NAV_OF={dictation:"practice",exam:"practice",srs:"practice",strokes:"practice",radicals:"vocab",topics:"vocab",measure:"vocab",sentences:"vocab",lookup:"vocab",pinyin:"vocab",progress:"profile",path:"profile",docs:"profile"};
-function navGo(k){if(k==="tocfl")setBook("T");else goPage(k)}
+function navGo(k){homeIntro=false;if(k==="tocfl")setBook("T");else goPage(k)}
 function navActive(){
   if(bk==="T")return "tocfl";if(BOOK_IDS.includes(bk))return "courses";
   if(bk==="P")return MAINP[page]?(page==="plans"?"":page):(NAV_OF[page]||"");return "";
@@ -12500,8 +12524,11 @@ function continueTarget(){
   if(last==="1"&&/^(\d+)-\1$/.test(LESSON))label+=" · Bài "+LESSON.split("-")[0];
   return{b:last,label,started:Object.keys(prog.known).length+Object.keys(prog.tk||{}).length+((prog.hist||[]).length)>0};
 }
+let homeIntro=false;
 function homeView(){
   const m=$("main");m.className="home page main";
+  if(!homeIntro&&continueTarget().started){m.innerHTML=dashView(true);return}
+  if(!continueTarget().started)homeIntro=false;
   const W=allWords().filter(w=>w.b!=="T"),v=W[Math.floor(Math.random()*W.length)],c=continueTarget(),st=homeStats(),q1=bookStats("1");
   const sample=exFor(v);
   m.innerHTML=`
@@ -12628,22 +12655,42 @@ function dailyWords(){
   const c=continueTarget(),pool=allWords().filter(w=>w.b===(c.b==="T"?"1":c.b)&&!isKnown(w)&&lesFree(w.b,w.n)),n=pool.length;
   if(!n)return[];const s=(dayNum()*7)%n;return [0,1,2,3,4].map(i=>pool[(s+i)%n]).filter((w,i,a)=>a.indexOf(w)===i);
 }
-function dashView(){
-  const h=new Date().getHours(),greet=h<11?"Chào buổi sáng":h<18?"Chào buổi chiều":"Chào buổi tối",name=prog.name?", "+esc(prog.name):"";
-  const goal=prog.dgoal||10,today=todayCount(),gp=Math.min(100,pctOf(today,goal)),c=continueTarget(),known=Object.keys(prog.known).length+Object.keys(prog.tk||{}).length,sc=prog.score,acc=sc.total?pctOf(sc.right,sc.total):null;
-  const dw=dailyWords(),done=lessonsDone().slice(0,6),hard=Object.keys(prog.hard||{}).length;
-  const newUser=!c.started;
-  return `<div class="pg-head" style="padding-top:8px"><h1>${greet}${name} 👋</h1><p class="stat">${newUser?"Hãy chọn một bài để bắt đầu hành trình học tiếng Trung phồn thể.":"Cùng học tiếp nhé."}</p></div>
-  <div class="dash">
-   <section class="card goal"><div class="row" style="justify-content:space-between"><b>Mục tiêu hôm nay</b><select aria-label="Mục tiêu mỗi ngày" onchange="prog.dgoal=+this.value;save();pageView()">${[5,10,20,30].map(n=>`<option value="${n}" ${n===goal?"selected":""}>${n} lượt</option>`).join("")}</select></div>
-    <div class="goalnum"><b>${today}</b><span>/ ${goal} lượt luyện tập</span></div>${pbar(gp)}<small class="stat">${today>=goal?"🎉 Bạn đã hoàn thành mục tiêu hôm nay!":"Mỗi câu trắc nghiệm, thẻ nhớ hoặc từ đánh dấu đều được tính."}</small></section>
-   <section class="card"><b>Thống kê</b><div class="scoregrid" style="margin-top:10px"><div class="sc"><b>${known}</b>từ đã thuộc</div><div class="sc"><b>${streakDays()}</b>ngày liên tiếp</div><div class="sc"><b>${acc===null?"–":acc+"%"}</b>trả lời đúng</div><div class="sc"><b>${lessonsDone().length}</b>bài hoàn thành</div></div></section>
-   <section class="card"><b>Tiếp tục học</b>${newUser?empty("🚀","Chưa có bài nào","Bắt đầu với Quyển 1 · Bài 1 — chào hỏi và giới thiệu bản thân.",`<button class="btn-l p" onclick="setBook('1')">Bắt đầu Quyển 1</button>`)
-     :`<p style="margin:8px 0 12px"><b class="zh" style="font-size:20px">${c.label}</b></p><button class="btn-l p" onclick="setBook('${c.b}')">Tiếp tục →</button>`}</section>
-   <section class="card"><b>Từ vựng hôm nay</b>${dw.length?`<div class="dwl">${dw.map(w=>`<div class="vl"><button class="b spk" onclick="speak('${jsq(w.s)}')" aria-label="Nghe">🔊</button><div><span class="zh">${w.h}</span> <span class="py">${w.p}</span><div class="vi">${esc(w.m)}</div></div></div>`).join("")}</div><button class="b" style="margin-top:8px" onclick="vS.src='${dw[0].b}';vS.les='all';vS.flt='new';vS.i=0;goPage('vocab')">Học các từ này →</button>`:empty("📚","Chưa có từ để gợi ý","Bắt đầu một bài học để nhận gợi ý từ vựng mỗi ngày.")}</section>
-   <section class="card"><b>Gợi ý luyện tập</b><div class="reco">${hard?`<button class="cat" onclick="goPage('profile')"><span class="ico">🔁</span><b>Ôn ${hard} từ chưa thuộc</b><small>Xem danh sách cần ôn</small></button>`:""}<button class="cat" onclick="goPage('practice')"><span class="ico">✍️</span><b>Làm bài luyện tập</b><small>Trắc nghiệm, nghe, điền pinyin</small></button><button class="cat" onclick="goPage('dictation')"><span class="ico">🎧</span><b>Chép chính tả</b><small>Nghe và gõ lại chữ Hán</small></button></div></section>
-   <section class="card"><b>Bài đã hoàn thành gần đây</b>${done.length?`<ul class="donel">${done.map(l=>`<li><button onclick="${l.b==="1"?`setBook('1');setLesson('${l.n}-${l.n}')`:`setBook('${l.b}');tfPickLv('Bài ${l.n}')`}"><span>✅ Quyển ${l.b} · Bài ${l.n}</span><span class="zh">${esc(l.zh)}</span></button></li>`).join("")}</ul>`:empty("🏁","Chưa hoàn thành bài nào","Một bài được tính hoàn thành khi bạn đánh dấu thuộc từ 80% từ vựng.")}</section>
-  </div>`;
+const DOW=["T2","T3","T4","T5","T6","T7","CN"];
+const histToday=ty=>(prog.hist||[]).filter(h=>dkey(h.t)===dkey(Date.now())&&ty.includes(h.y)).length;
+function weekCells(){
+  const now=new Date(),dow=(now.getDay()+6)%7,days=new Set((prog.hist||[]).map(h=>dkey(h.t)));
+  return DOW.map((l,i)=>{const d=dkey(Date.now()+(i-dow)*864e5);return{l,on:days.has(d),today:i===dow,future:i>dow}});
+}
+function histRate(ty){const H=(prog.hist||[]).filter(h=>h.y===ty);return{n:H.length,ok:H.filter(h=>h.o).length}}
+function dashView(intro){
+  const h=new Date().getHours(),greet=h<11?"Chào buổi sáng":h<18?"Chào buổi chiều":"Chào buổi tối",name=prog.name?esc(prog.name):"bạn";
+  const goal=prog.dgoal||10,today=todayCount(),gp=Math.min(100,pctOf(today,goal)),c=continueTarget(),sc=prog.score,acc=sc.total?pctOf(sc.right,sc.total):null;
+  const lastB=c.b==="T"?"1":c.b,bs=bookStats(c.b),dw=dailyWords(),done=lessonsDone(),hardN=Object.keys(prog.hard||{}).length,newUser=!c.started;
+  const wk=weekCells();
+  const T=[["📖",`Học 5 từ mới`,histToday(["v"]),5,"8 phút",`vS.src='${lastB}';vS.les='all';vS.flt='new';vS.i=0;goPage('vocab')`],
+    ...(hardN?[["🔁",`Ôn ${hardN} từ chưa thuộc`,0,0,"5 phút",`vS.src='${lastB}';vS.les='all';vS.flt='hard';vS.i=0;goPage('vocab')`]]:[]),
+    ["✅",`Làm 10 câu trắc nghiệm`,histToday(["q"]),10,"6 phút",`goPage('practice')`],
+    ["🎧",`Chép chính tả 5 câu`,histToday(["d"]),5,"6 phút",`dMode='dict';dSel=null;goPage('dictation')`]];
+  const tasks=T.map(t=>{const fin=t[3]>0&&t[2]>=t[3];return `<button class="task ${fin?"fin":""}" onclick="${t[5]}"><span class="ti">${fin?"✓":t[0]}</span><span class="tx"><small>${t[3]?`${Math.min(t[2],t[3])}/${t[3]}`:"Gợi ý"}</small><b>${t[1]}</b></span><span class="tm">${fin?"Xong":t[4]}</span></button>`}).join("");
+  const dr=histRate("d"),hr=histRate("h"),best=(prog.exam||[]).reduce((m,x)=>Math.max(m,x.s),-1);
+  const skill=(ic,name,val,p)=>`<div class="sk"><div class="row" style="justify-content:space-between"><b>${ic} ${name}</b><small class="stat">${val}</small></div>${pbar(p)}</div>`;
+  const skills=skill("🔤","Từ vựng",`${bs.k}/${bs.t}`,pctOf(bs.k,bs.t))+skill("✅","Trắc nghiệm",acc===null?"Chưa làm":acc+"%",acc||0)+skill("✍️","Chép chính tả",dr.n?`${dr.ok}/${dr.n} câu đúng`:"Chưa làm",dr.n?pctOf(dr.ok,dr.n):0)+skill("🗣️","Shadowing",hr.n?`${hr.ok}/${hr.n} câu đạt`:"Chưa làm",hr.n?pctOf(hr.ok,hr.n):0)+skill("📝","Thi thử TOCFL",best<0?"Chưa thi":best+"/100",Math.max(0,best));
+  const started=["1","2","3","4","5","6","T"].map(n=>({n,s:bookStats(n)})).filter(x=>x.s.k>0);
+  const rows=started.length?`<div class="tbl"><div class="th2"><span>Khóa học</span><span>Từ đã thuộc</span><span>Hoàn thành</span></div>${started.map(x=>{const p=pctOf(x.s.k,x.s.t);return `<button class="tr2" onclick="setBook('${x.n}')"><span class="zh">${x.n==="T"?"TOCFL 詞彙":"當代中文課程 "+x.n}</span><span>${x.s.k}/${x.s.t}</span><span class="bd ${p>=60?"hi":p>=20?"mid":"lo"}">${p}%</span></button>`}).join("")}</div>`:empty("📚","Chưa có khóa học nào đang học","Học vài từ trong một quyển để theo dõi tiến độ tại đây.",`<button class="b p" onclick="goPage('courses')">Xem khóa học</button>`);
+  return `<div class="dh"><h1>${greet}, <b>${name}</b>!</h1>${intro?`<button class="b" onclick="homeIntro=true;homeView()">Xem giới thiệu</button>`:""}</div>
+  <div class="dwrap"><div class="dmain">
+   <section class="hero-card c-hero"><div><small>${newUser?"Bắt đầu":"Tiếp tục học"}</small><h2 class="zh">${newUser?"Quyển 1 · Bài 1":c.label}</h2><p>${newUser?"Chào hỏi và giới thiệu bản thân — bài đầu tiên của người mới.":`Đã thuộc ${bs.k}/${bs.t} từ trong khóa này.`}</p>${pbar(pctOf(bs.k,bs.t))}</div><button class="btn-l" onclick="setBook('${newUser?"1":c.b}')">${newUser?"Bắt đầu":"Tiếp tục"} →</button></section>
+   <section class="card c-tasks"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Việc hôm nay</h3><small class="stat">${today}/${goal} lượt</small></div><div class="tasks">${tasks}</div></section>
+   <section class="card c-skills"><h3>Tiến độ theo kỹ năng</h3><div class="skills">${skills}</div></section>
+   <section class="card c-courses"><h3>Khóa học đang học</h3>${rows}</section>
+  </div><aside class="dside">
+   <section class="card act2 c-act"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Hoạt động</h3><select aria-label="Mục tiêu mỗi ngày" onchange="prog.dgoal=+this.value;save();pageView()">${[5,10,20,30].map(n=>`<option value="${n}" ${n===goal?"selected":""}>Mục tiêu ${n}</option>`).join("")}</select></div>
+    <div class="streak"><b>${streakDays()}</b><span>ngày học liên tiếp</span></div>
+    <div class="week">${wk.map(d=>`<span class="${d.on?"on":""} ${d.today?"td":""} ${d.future?"fu":""}">${d.on?"✓":d.l}</span>`).join("")}</div>
+    <div style="margin-top:14px"><div class="row" style="justify-content:space-between"><small>Mục tiêu hôm nay</small><small><b>${Math.min(today,goal)}/${goal}</b></small></div>${pbar(gp)}</div><small class="stat">${today>=goal?"🎉 Bạn đã hoàn thành mục tiêu hôm nay!":"Mỗi câu hỏi, thẻ nhớ hay từ đánh dấu đều được tính."}</small></section>
+   <section class="card c-words"><h3>Từ vựng hôm nay</h3>${dw.length?`<div class="dwl">${dw.map(w=>`<div class="vl"><button class="b spk" onclick="speak('${jsq(w.s)}')" aria-label="Nghe">🔊</button><div><span class="zh">${w.h}</span> <span class="py">${w.p}</span><div class="vi">${esc(w.m)}</div></div></div>`).join("")}</div>`:empty("📚","Chưa có từ để gợi ý","Bắt đầu một bài học để nhận gợi ý mỗi ngày.")}</section>
+   <section class="card c-done"><h3>Bài hoàn thành</h3>${done.length?`<ul class="donel">${done.slice(0,5).map(l=>`<li><button onclick="${l.b==="1"?`setBook('1');setLesson('${l.n}-${l.n}')`:`setBook('${l.b}');tfPickLv('Bài ${l.n}')`}"><span>✅ Q${l.b} · Bài ${l.n}</span><span class="zh">${esc(l.zh)}</span></button></li>`).join("")}</ul>`:empty("🏁","Chưa có bài nào","Thuộc 80% từ vựng của một bài để tính hoàn thành.")}</section>
+  </aside></div>`;
 }
 
 /* ---------- HỒ SƠ ---------- */
