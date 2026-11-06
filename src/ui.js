@@ -65,7 +65,7 @@ function lessonCtx(){
 function lessonGo(d){const c=lessonCtx();if(!c)return;const n=c.n+d;if(n<1||n>c.max)return;if(c.b==="1")setLesson(n+"-"+n);else{tfPickLv("Bài "+n)}window.scrollTo({top:0})}
 function lessonBm(){const c=lessonCtx();if(!c)return;prog.lbm=prog.lbm||{};const k=c.b+":"+c.n;if(prog.lbm[k])delete prog.lbm[k];else prog.lbm[k]=1;save();toast(prog.lbm[k]?"⭐ Đã lưu bài học":"Đã bỏ lưu bài học")}
 function lessonBar(){
-  const el=$("#lessonx");if(!el)return;const c=BOOK_IDS.includes(bk)&&bk!=="T"?lessonCtx():null;
+  const el=$("#lessonx");if(!el)return;const c=BOOK_IDS.includes(bk)&&bk!=="T"?lessonCtx():null;document.body.classList.toggle("hasl",!!c);
   if(!c){el.innerHTML="";el.style.display="none";return}
   const W=allWords().filter(w=>w.b===c.b&&w.n===c.n),k=W.filter(isKnown).length,p=pctOf(k,W.length),bm=(prog.lbm||{})[c.b+":"+c.n];
   el.style.display="block";

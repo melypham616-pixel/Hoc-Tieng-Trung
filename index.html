@@ -624,6 +624,13 @@ main.main{max-width:1120px}
 @media (max-width:860px){.sitefoot{margin-bottom:0}}
 .stats{display:none!important}
 .vsel>label{min-width:0}.vsel select{width:100%;min-width:0;max-width:100%;text-overflow:ellipsis}
+/* trang quyển: gọn hơn (thanh bài học đã có tên bài, nên ẩn tiêu đề trùng lặp) */
+body.hasl .hero .brand{display:none}
+.hero{padding:10px 16px}
+.hero .ctrl{margin:0;gap:8px 14px}
+.hero .ctrl .sp:has(#les){display:none!important}
+.hero-in{max-width:920px}
+@media (max-width:760px){.lessonx{margin-top:8px}.lx-in{padding:12px;gap:10px}.lx-a{display:grid;grid-template-columns:1fr 1fr 1fr}.lx-a .b{padding:0 6px;font-size:13px}.hero .ctrl .sp:nth-child(3) b{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -12476,7 +12483,7 @@ function lessonCtx(){
 function lessonGo(d){const c=lessonCtx();if(!c)return;const n=c.n+d;if(n<1||n>c.max)return;if(c.b==="1")setLesson(n+"-"+n);else{tfPickLv("Bài "+n)}window.scrollTo({top:0})}
 function lessonBm(){const c=lessonCtx();if(!c)return;prog.lbm=prog.lbm||{};const k=c.b+":"+c.n;if(prog.lbm[k])delete prog.lbm[k];else prog.lbm[k]=1;save();toast(prog.lbm[k]?"⭐ Đã lưu bài học":"Đã bỏ lưu bài học")}
 function lessonBar(){
-  const el=$("#lessonx");if(!el)return;const c=BOOK_IDS.includes(bk)&&bk!=="T"?lessonCtx():null;
+  const el=$("#lessonx");if(!el)return;const c=BOOK_IDS.includes(bk)&&bk!=="T"?lessonCtx():null;document.body.classList.toggle("hasl",!!c);
   if(!c){el.innerHTML="";el.style.display="none";return}
   const W=allWords().filter(w=>w.b===c.b&&w.n===c.n),k=W.filter(isKnown).length,p=pctOf(k,W.length),bm=(prog.lbm||{})[c.b+":"+c.n];
   el.style.display="block";
