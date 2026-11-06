@@ -229,22 +229,23 @@ const normZh=s=>[...s.replace(/[\s，。？！、：；,.?!:;]/g,"")].map(c=>S2T
 let prog={};try{prog=JSON.parse(localStorage.getItem("tocfl1")||"{}")}catch(e){}
 prog.known=prog.known||{};prog.score=prog.score||{right:0,total:0};
 const save=()=>{try{localStorage.setItem("tocfl1",JSON.stringify(prog))}catch(e){}updateHero()};
-function mark(ok){prog.score.total++;if(ok)prog.score.right++;save()}
+function mark(ok){dayAdd("q");logHist("q",ok);prog.score.total++;if(ok)prog.score.right++;save()}
 
 /* ============ PHẠM VI BÀI ============ */
 const NL=LESSONS.length;
 let LESSON=prog.lesson;if(!/^(all|\d+-\d+)$/.test(LESSON||""))LESSON="all";
-const inL=n=>{if(LESSON==="all")return true;const [a,b]=LESSON.split("-").map(Number);return n>=a&&n<=b};
+const inL=n=>{if(!lesFree("1",n))return false;if(LESSON==="all")return true;const [a,b]=LESSON.split("-").map(Number);return n>=a&&n<=b};
 const pool=()=>VOCAB.filter(v=>inL(v[3]));
 (function buildSelect(){
   const g=[["all",`Tất cả ${NL} bài`],["1-5","Bài 1–5"],["6-10","Bài 6–10"],["11-15","Bài 11–15"]];
   $("#les").innerHTML=g.map(([k,l])=>`<option value="${k}">${l}</option>`).join("")+
     LESSONS.map(L=>`<option value="${L.n}-${L.n}">Bài ${L.n} · ${L.zh.replace(/[？！]/g,"")}</option>`).join("");
   $("#lbar").innerHTML=`<button class="lchip" data-v="all">Tất cả<small>${NL} bài</small></button>`+
-    LESSONS.map(L=>`<button class="lchip" data-v="${L.n}-${L.n}" title="${esc(L.vi)}">Bài ${L.n}<small>${L.zh.replace(/[？！]/g,"")}</small></button>`).join("");
+    LESSONS.map(L=>`<button class="lchip" data-v="${L.n}-${L.n}" title="${esc(L.vi)}">Bài ${L.n}${lockIc(lesFree("1",L.n))}<small>${L.zh.replace(/[？！]/g,"")}</small></button>`).join("");
   $("#lbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setLesson(b.dataset.v)};
 })();
 function setLesson(v){
+  if(!isPro()){const a=v==="all"?1:+v.split("-")[0];if(a>FREE.lessons["1"]){showLock("lesson");return}}
   LESSON=prog.lesson=v;qMode=null;tIdx=0;track('select_lesson',{lesson:v});$("#les").value=v;syncBar();save();render();
 }
 function syncBar(){
@@ -312,6 +313,7 @@ function toggleKnown(z,c){if(c)prog.known[z]=1;else delete prog.known[z];save()}
 let fDeck=[],fi=0,fBack=false,fOnlyNew=false;
 function flashView(){fDeck=sh(pool().filter(v=>!fOnlyNew||!prog.known[v[0]]));fi=0;fBack=false;flashDraw()}
 function flashDraw(){
+  if(capped("f")){$("#app").innerHTML=lockCard("flash");return}
   if(!fDeck.length){$("#app").innerHTML=`<div class="card">🎉 Bạn đã thuộc hết! <button class="b" onclick="fOnlyNew=false;flashView()">Ôn lại tất cả</button></div>`;return}
   const v=fDeck[fi];
   $("#app").innerHTML=`<div class="row" style="margin-bottom:10px;justify-content:space-between"><label><input type="checkbox" ${fOnlyNew?"checked":""} onchange="fOnlyNew=this.checked;flashView()"> Chỉ từ chưa thuộc</label><span class="stat">${fi+1}/${fDeck.length} · Bài ${v[3]}</span></div>
@@ -325,7 +327,7 @@ function flashDraw(){
    <button class="b p" onclick="fAns(true)">✅ Đã thuộc</button></div>`;
   if(!fBack)speak(v[0]);
 }
-function fAns(ok){const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.known[v[0]];save();fi=(fi+1)%fDeck.length;fBack=false;flashDraw()}
+function fAns(ok){dayAdd("f");logHist("f",ok);const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.known[v[0]];save();fi=(fi+1)%fDeck.length;fBack=false;flashDraw()}
 
 
 /* ============ TOCFL (Band A + Band B) ============ */
@@ -358,11 +360,12 @@ function tocflView(){
   if(tfMode==="dlg"&&isT)tfMode="list";
   $("#app").innerHTML=`
   <div class="card tf-intro">${intro}</div>
-  <div class="chips">${keys.map(l=>{const a=tfByL(l);return `<span class="chip ${l===tfLv?"on":""}" onclick="tfPickLv('${l}')">${l}<small class="tf-n"> ${tfKnownN(a)}/${a.length}</small></span>`}).join("")}</div>
+  <div class="chips">${keys.map(l=>{const a=tfByL(l);return `<span class="chip ${l===tfLv?"on":""}" onclick="tfPickLv('${l}')">${l}${lockIc(!tfLocked(l))}<small class="tf-n"> ${tfKnownN(a)}/${a.length}</small></span>`}).join("")}</div>
   ${tfMode==="dlg"?"":`<div class="row tf-bar">${ns?`<select id="tfSet" onchange="tfSet=+this.value;tfLim=100;tfDeck=[];tfQz=null;tocflView()">${setOpts}</select>`:""}
    <label class="stat"><input type="checkbox" ${tfNew?"checked":""} onchange="tfNew=this.checked;tfDeck=[];tfQz=null;tocflView()"> chỉ từ chưa thuộc</label></div>`}
   <div class="seg">${modes.map(([k,l])=>`<button class="${tfMode===k?"on":""}" onclick="tfMode='${k}';tfDeck=[];tfQz=null;tocflView()">${l}</button>`).join("")}</div>
   <div id="tfbody"></div>`;
+  if(tfLocked(tfLv)){$("#tfbody").innerHTML=lockCard("lesson");return}
   ({list:tfListView,flash:tfFlashView,quiz:tfQuizView,dlg:tfDlgView})[tfMode]();
 }
 function tfDlgView(){
@@ -392,6 +395,7 @@ function tfDraw(){
     (items.length>tfLim?`<div style="text-align:center;margin:12px"><button class="b" onclick="tfLim+=200;tfDraw()">Hiện thêm (${items.length-tfLim} từ nữa)</button></div>`:"");
 }
 function tfFlashView(){
+  if(capped("f")){$("#tfbody").innerHTML=lockCard("flash");return}
   if(!tfDeck.length){tfDeck=sh(tfScope());tfi=0;tfBack=false}
   if(!tfDeck.length){$("#tfbody").innerHTML=`<div class="card">🎉 Bạn đã thuộc hết phần này! Bỏ chọn “chỉ từ chưa thuộc” để ôn lại.</div>`;return}
   const x=tfDeck[tfi];
@@ -405,8 +409,9 @@ function tfFlashView(){
    <button class="b p" onclick="tfAns(true)">✅ Đã thuộc</button></div>`;
   if(!tfBack)speak(x.s);
 }
-function tfAns(ok){const x=tfDeck[tfi];if(ok)prog.tk[x.k]=1;else delete prog.tk[x.k];save();tfi=(tfi+1)%tfDeck.length;tfBack=false;tfFlashView()}
+function tfAns(ok){dayAdd("f");logHist("f",ok);const x=tfDeck[tfi];if(ok)prog.tk[x.k]=1;else delete prog.tk[x.k];save();tfi=(tfi+1)%tfDeck.length;tfBack=false;tfFlashView()}
 function tfQuizView(){
+  if(capped("q")){$("#tfbody").innerHTML=lockCard("quiz");return}
   const sc=tfScope();
   if(sc.length<4){$("#tfbody").innerHTML=`<div class="card">Cần ít nhất 4 từ để làm trắc nghiệm. Hãy chọn phạm vi rộng hơn.</div>`;return}
   const x=sc[Math.random()*sc.length|0],pool=tfByL(tfLv),wrong=[];
@@ -416,11 +421,12 @@ function tfQuizView(){
   const q=tfQm==="h2m"?`<div class="zh" style="font-size:54px;text-align:center">${x.h}</div><div class="py" style="text-align:center">${x.p}</div>`
     :tfQm==="a2m"?`<div style="text-align:center"><button class="b p" onclick="speak('${x.s}')">🔊 Nghe lại</button></div>`
     :`<div style="text-align:center;font-size:22px;margin:6px 0">${esc(x.m)}</div>`;
-  $("#tfbody").innerHTML=`<div class="chips">${modes.map(([k,l])=>`<span class="chip ${tfQm===k?"on":""}" onclick="tfQm='${k}';tfQz=null;tfQuizView()">${l}</span>`).join("")}</div>
+  $("#tfbody").innerHTML=`<div class="chips">${modes.map(([k,l])=>`<span class="chip ${tfQm===k?"on":""}" onclick="tfQmPick('${k}')">${l}${lockIc(isPro()||k==="h2m")}</span>`).join("")}</div>
   <div class="card">${q}<div id="tfopts" style="margin-top:12px">${tfQz.opts.map((o,i)=>`<button class="b opt" onclick="tfCheck(${i},this)">${tfQm==="m2h"?`<span class="zh" style="font-size:24px">${o.h}</span> <span class="py">${o.p}</span>`:esc(o.m)}</button>`).join("")}</div>
   <div id="tffb"></div><div class="stat" style="margin-top:8px">Chuỗi đúng liên tiếp: ${tfStreak}</div></div>`;
   if(tfQm==="a2m")speak(x.s);
 }
+function tfQmPick(k){if(!isPro()&&k!=="h2m"){showLock("mode");return}tfQm=k;tfQz=null;tfQuizView()}
 function tfCheck(i,btn){
   if(tfQz.done)return;tfQz.done=true;const x=tfQz.x,ok=tfQz.opts[i]===x;mark(ok);
   btn.classList.add(ok?"ok":"bad");
@@ -900,10 +906,12 @@ function quizView(){
   if(!qMode){
     $("#app").innerHTML=`<div class="stat" style="margin-bottom:10px">Điểm tích lũy: ${prog.score.right}/${prog.score.total}</div>
     <div class="card"><h3>Chọn dạng bài</h3>
-    ${[["zh2vi","Đọc Hán tự → chọn nghĩa tiếng Việt"],["vi2zh","Nghĩa tiếng Việt → chọn Hán tự"],["listen","🎧 Nghe → chọn từ đúng"],["fill","Điền pinyin (không cần dấu thanh)"],["order","Sắp xếp từ thành câu"]].map(([k,l])=>`<button class="b opt" onclick="qMode='${k}';qn=0;nextQ()">${l}</button>`).join("")}</div>`;
+    ${[["zh2vi","Đọc Hán tự → chọn nghĩa tiếng Việt"],["vi2zh","Nghĩa tiếng Việt → chọn Hán tự"],["listen","🎧 Nghe → chọn từ đúng"],["fill","Điền pinyin (không cần dấu thanh)"],["order","Sắp xếp từ thành câu"]].map(([k,l])=>`<button class="b opt" onclick="pickQ('${k}')">${l}${lockIc(isPro()||k==="zh2vi"||k==="vi2zh")}</button>`).join("")}</div>`;
   }else{qn--;nextQ()}   // đang trong một dạng bài: vẽ lại câu mới (tránh hiện nội dung cũ của tab khác)
 }
+function pickQ(k){if(!isPro()&&["listen","fill","order"].includes(k)){showLock("mode");return}qMode=k;qn=0;nextQ()}
 function nextQ(){
+  if(capped("q")){$("#app").innerHTML=lockCard("quiz");return}
   const m=qMode;qn++;
   if(m==="order"){let OP=ORDER.filter(o=>inL(o[2]));if(!OP.length)OP=ORDER;const [vi,toks]=OP[Math.random()*OP.length|0];Q={vi,toks,pick:[],pool:sh(toks.map((t,i)=>({t,i})))};if(Q.pool.every((x,i)=>x.i===i))Q.pool.reverse();return orderDraw()}
   const P=pool(),w=P[Math.random()*P.length|0];

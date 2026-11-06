@@ -93,19 +93,10 @@ function srsAns(ok){
   const w=srsQ[srsI],s=prog.srs[w.k]||{b:0};
   s.b=ok?Math.min(s.b+1,SRS_GAP.length-1):0;s.d=Date.now()+SRS_GAP[s.b]*864e5;prog.srs[w.k]=s;
   if(prog.known&&ok&&s.b>=3)prog.known[w.k]=1;
-  track('srs_answer',{ok});save();srsDone++;srsI++;srsShow=false;pageView();
+  track('srs_answer',{ok});logHist("s",ok);save();srsDone++;srsI++;srsShow=false;pageView();
 }
-const PREM_SECRET="htt-doi-secret-nay";   // ĐỔI chuỗi này (và dùng cùng chuỗi trong tools/premcode.js) trước khi bán
-const premCode=e=>cyrb53("p|"+PREM_SECRET+"|"+e.toLowerCase().trim()).toString(36).toUpperCase().slice(0,8);
-const isPremium=()=>!!(prog.prem&&prog.prem.email&&prog.prem.code===premCode(prog.prem.email));
-function premActivate(ev){
-  ev.preventDefault();const f=ev.target,em=f.email.value.trim(),cd=f.code.value.trim().toUpperCase(),msg=f.querySelector(".su-msg");
-  if(cd&&cd===premCode(em)){prog.prem={email:em,code:cd};save();track('premium_activate');msg.style.color="var(--ok)";msg.textContent="✅ Đã kích hoạt Premium trên thiết bị này!";setTimeout(()=>{bk==="P"?pageView():render()},700)}
-  else{msg.style.color="var(--bad)";msg.textContent="Email hoặc mã chưa đúng. Kiểm tra lại mã bạn nhận được nhé."}
-}
-const premForm=()=>`<form onsubmit="premActivate(event)" class="fb-form" style="max-width:420px"><label>Email đã dùng khi mua<input type="email" name="email" required value="${(prog.prem&&prog.prem.email)||""}"></label><label>Mã kích hoạt<input type="text" name="code" required placeholder="VD: 7K2M9XQA" style="text-transform:uppercase"></label><button class="btn-l p">Kích hoạt Premium</button><div class="su-msg"></div></form>`;
 function srsView(){
-  if(!isPremium())return `<div class="card lock"><div style="font-size:40px">🔒</div><h3>Ôn tập SRS dành cho Premium</h3><p>Lịch ôn ngắt quãng tự nhắc lại đúng từ bạn sắp quên. Nâng cấp để dùng, hoặc nhập mã nếu bạn đã mua.</p><p><button class="btn-l p" onclick="goPlans()">Xem gói Premium</button></p><details><summary>Tôi đã có mã kích hoạt</summary>${premForm()}</details></div>`;
+  if(!isPro())return lockCard("pro");
   if(!srsQ.length||srsI===0&&!srsDone&&!srsQ._built){srsBuild();srsQ._built=1}
   const all=Object.keys(prog.srs||{}).length,now=Date.now(),dueN=Object.values(prog.srs||{}).filter(s=>s.d<=now).length;
   const head=`<div class="row" style="gap:10px;margin-bottom:12px"><span class="pill">Đang ôn: ${all} từ</span><span class="pill">Đến hạn: ${dueN}</span></div>
@@ -115,9 +106,72 @@ function srsView(){
   return head+`<div class="flash" onclick="srsShow=true;pageView()"><div class="stat">${srsI+1} / ${srsQ.length}</div><div class="zh">${w.h}</div>${srsShow?`<div class="py" style="font-size:22px">${w.p}</div><div style="font-size:19px;font-weight:600">${w.m}</div>`:'<div class="stat">Chạm để xem đáp án</div>'}</div>
   <div class="row" style="justify-content:center;margin-top:14px;gap:10px"><button class="b spk" onclick="speak('${w.h.replace(/'/g,"\\'").replace(/[()（）]/g,"").split("/")[0]}')">🔊</button>${srsShow?`<button class="b bad" onclick="srsAns(false)">😕 Quên</button><button class="b ok" onclick="srsAns(true)">😀 Nhớ</button>`:`<button class="b p" onclick="srsShow=true;pageView()">Hiện đáp án</button>`}</div>`;
 }
+
+/* ---- Theo dõi tiến độ (Pro) ---- */
+const bookKnown=n=>n==="1"?Object.keys(prog.known).length:Object.keys(prog.tk||{}).filter(k=>k.startsWith(n+":")).length;
+const bookTotal=n=>n==="1"?VOCAB.length:(BKW[n]||[]).length;
+const dkey=t=>new Date(t).toISOString().slice(0,10);
+function streakDays(){const s=new Set((prog.hist||[]).map(h=>dkey(h.t)));let n=0,d=new Date();if(!s.has(dkey(d)))d=new Date(d-864e5);while(s.has(dkey(d))){n++;d=new Date(d-864e5)}return n}
+function progressView(){
+  if(!isPro())return lockCard("pro");
+  const H=prog.hist||[],sc=prog.score,acc=sc.total?Math.round(sc.right/sc.total*100):0;
+  const books=["1","2","3","4","5","6"].map(n=>{const k=bookKnown(n),T=bookTotal(n);return `<div class="prow"><span>Quyển ${n}</span><div class="bar"><i style="width:${T?k/T*100:0}%"></i></div><b>${k}/${T}</b></div>`}).join("")
+    +`<div class="prow"><span>TOCFL</span><div class="bar"><i style="width:${Object.keys(prog.tk||{}).filter(k=>!/^\d:/.test(k)).length/TF.length*100}%"></i></div><b>${Object.keys(prog.tk||{}).filter(k=>!/^\d:/.test(k)).length}/${TF.length}</b></div>`;
+  const days=[...Array(14)].map((_,i)=>{const d=dkey(Date.now()-(13-i)*864e5);return {d,n:H.filter(h=>dkey(h.t)===d).length}}),mx=Math.max(1,...days.map(x=>x.n));
+  const ty={q:"Trắc nghiệm",f:"Thẻ nhớ",s:"Ôn SRS"};
+  const recent=H.slice(-15).reverse().map(h=>`<li><span>${new Date(h.t).toLocaleString("vi-VN",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</span> ${ty[h.y]||h.y} · ${h.b==="T"?"TOCFL":"Quyển "+h.b} <b class="${h.o?"okc":"badc"}">${h.o?"✓":"✗"}</b></li>`).join("");
+  return `<div class="scoregrid"><div class="sc"><b>${streakDays()}</b>ngày liên tiếp</div><div class="sc"><b>${acc}%</b>đúng (${sc.right}/${sc.total})</div><div class="sc"><b>${Object.keys(prog.srs||{}).length}</b>từ trong SRS</div><div class="sc"><b>${H.length}</b>lượt đã ghi</div></div>
+  <h4>Từ đã thuộc theo quyển</h4>${books}
+  <h4>14 ngày gần nhất</h4><div class="chart">${days.map(x=>`<div title="${x.d}: ${x.n}"><i style="height:${Math.max(3,x.n/mx*90)}px"></i><small>${x.d.slice(8)}</small></div>`).join("")}</div>
+  <h4>Lịch sử học tập</h4>${recent?`<ul class="hist">${recent}</ul>`:'<p class="stat">Chưa có lịch sử. Làm vài câu trắc nghiệm hoặc thẻ nhớ rồi quay lại nhé.</p>'}
+  <p class="stat">Dữ liệu lưu trên trình duyệt này (tối đa 600 lượt gần nhất).</p>`;
+}
+
+/* ---- Lộ trình theo mục tiêu (Pro năm) ---- */
+const GOALS={comm:["Giao tiếp cơ bản (Quyển 1–2)",()=>[...Array(15)].map((_,i)=>["1",i+1]).concat([...Array(BOOKS[2]?BOOKS[2].lessons.length:0)].map((_,i)=>["2",i+1]))],
+ reada:["Đọc hiểu (Quyển 3–6)",()=>["3","4","5","6"].flatMap(b=>(BOOKS[b]?BOOKS[b].lessons:[]).map(L=>[b,L.n]))],
+ ta:["TOCFL Band A (A1–A2)",()=>["A1","A2"].flatMap(l=>{const n=Math.ceil(TF.filter(x=>x.l===l).length/TF_SET);return [...Array(n)].map((_,i)=>["T",l+" · bộ "+(i+1),l,i+1])})],
+ tb:["TOCFL Band B (B1–B2)",()=>["B1","B2"].flatMap(l=>{const n=Math.ceil(TF.filter(x=>x.l===l).length/TF_SET);return [...Array(n)].map((_,i)=>["T",l+" · bộ "+(i+1),l,i+1])})]};
+function stepDone(s){
+  if(s[0]==="1"){const w=VOCAB.filter(v=>v[3]===s[1]);return w.length&&w.filter(v=>prog.known[v[0]]).length/w.length>=.8}
+  if(s[0]==="T"){const a=TF.filter(x=>x.l===s[2]).slice((s[3]-1)*TF_SET,s[3]*TF_SET);return a.length&&a.filter(x=>prog.tk[x.k]).length/a.length>=.8}
+  const w=(BKW[s[0]]||[]).filter(x=>x.l==="Bài "+s[1]);return w.length&&w.filter(x=>prog.tk[x.k]).length/w.length>=.8;
+}
+function stepGo(i,g){const s=GOALS[g][1]()[i];if(s[0]==="T"){tfLv=s[2];tfSet=s[3];tfMode="list";setBook("T");prog.tfLv=s[2];tfSet=s[3];render()}else if(s[0]==="1"){setLesson(s[1]+"-"+s[1]);prog.last="1";tab="vocab";setBook("1");setLesson(s[1]+"-"+s[1])}else{setBook(s[0]);tfLv="Bài "+s[1];tfSet=0;prog.last=s[0];tocflView()}}
+function setGoal(g,p){prog.goal=g;prog.pace=p;save();pageView()}
+function pathView(){
+  if(!isYear())return lockCard("year");
+  const g=prog.goal||"comm",pace=prog.pace||3,steps=GOALS[g][1](),done=steps.map(stepDone),next=done.indexOf(false);
+  const lab=s=>s[0]==="T"?s[1]:`Quyển ${s[0]} · Bài ${s[1]}`;
+  const weeks=Math.ceil(steps.length/pace);
+  return `<p>Chọn mục tiêu và nhịp học, hệ thống chia thành từng tuần. Một bước hoàn thành khi bạn đánh dấu thuộc từ <b>80%</b> từ vựng của bài/bộ đó.</p>
+  <div class="row tf-bar"><select onchange="setGoal(this.value,${pace})">${Object.keys(GOALS).map(k=>`<option value="${k}" ${k===g?"selected":""}>${GOALS[k][0]}</option>`).join("")}</select><select onchange="setGoal('${g}',+this.value)">${[2,3,5].map(n=>`<option value="${n}" ${n===pace?"selected":""}>${n} bài/bộ mỗi tuần</option>`).join("")}</select></div>
+  <div class="pill" style="margin-bottom:12px">Đã xong ${done.filter(Boolean).length}/${steps.length} · khoảng ${weeks} tuần</div>
+  ${[...Array(weeks)].map((_,w)=>`<div class="wk"><h4>Tuần ${w+1}</h4>${steps.slice(w*pace,(w+1)*pace).map((s,j)=>{const i=w*pace+j;return `<button class="step ${done[i]?"done":""} ${i===next?"next":""}" onclick="stepGo(${i},'${g}')">${done[i]?"✅":i===next?"👉":"⬜"} ${lab(s)}</button>`}).join("")}</div>`).join("")}`;
+}
+
+/* ---- Tài liệu bổ sung (Pro năm): xuất Anki / bản in ---- */
+function docRows(k){
+  if(k==="T")return TF.map(x=>[x.h,x.p,x.m,"TOCFL "+x.l]);
+  if(k==="1")return VOCAB.map(v=>[v[0],v[1],v[2],"Bài "+v[3]]);
+  return (BKW[k]||[]).map(x=>[x.h,x.p,x.m,x.l]);
+}
+const docName=k=>k==="T"?"TOCFL":"Quyen"+k;
+function docAnki(k){const t=docRows(k).map(r=>r.join("\t")).join("\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+t],{type:"text/plain;charset=utf-8"}));a.download="tuvung-"+docName(k)+"-anki.txt";document.body.appendChild(a);a.click();a.remove();track('doc_anki',{k})}
+function docPrint(k){const R=docRows(k),w=window.open("","_blank");if(!w){toast("Trình duyệt chặn cửa sổ mới, hãy cho phép rồi thử lại.");return}
+  w.document.write(`<!doctype html><meta charset="utf-8"><title>Từ vựng ${docName(k)}</title><style>body{font:14px system-ui;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:5px 8px;text-align:left}td:first-child{font:600 18px serif}</style><h2>Từ vựng ${k==="T"?"TOCFL":"Quyển "+k} (${R.length} từ)</h2><table><tr><th>Hán tự</th><th>Pinyin</th><th>Nghĩa</th><th>Bài/Cấp</th></tr>${R.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table><script>onload=()=>print()<\/script>`);w.document.close();track('doc_print',{k})}
+function docsView(){
+  if(!isYear())return lockCard("year");
+  return `<p>Tài liệu học tập bổ sung của gói Pro năm: tải từ vựng từng quyển để nhập vào <b>Anki</b> hoặc in/lưu PDF để học offline.</p>
+  <div class="docs">${["1","2","3","4","5","6","T"].map(k=>`<div class="mini"><b>${k==="T"?"TOCFL A1–B2":"Quyển "+k}</b><div class="stat">${docRows(k).length} từ</div><div class="row" style="margin-top:8px"><button class="b" onclick="docAnki('${k}')">⬇ Anki (.txt)</button><button class="b" onclick="docPrint('${k}')">🖨 In / PDF</button></div></div>`).join("")}</div>
+  <h4>Nhập vào Anki</h4><ol class="steps"><li>Mở Anki → <b>File → Import</b> và chọn file .txt vừa tải.</li><li>Chọn <b>Field separator = Tab</b>; ghép cột 1 = Front (Hán), cột 2–3 = Back (pinyin, nghĩa).</li><li>Bấm Import, rồi học theo lịch lặp ngắt quãng của Anki.</li></ol>`;
+}
 const TOOLS={
   radicals:{t:"214 Bộ thủ",ic:"🧩",g:"tool",h:radicalsView},
   srs:{t:"Ôn tập SRS ngắt quãng",ic:"🔁",g:"tool",h:srsView},
   lookup:{t:"Tra từ & phân tích câu",ic:"🔎",g:"tool",h:lookupView},
   pinyin:{t:"Lộ trình Pinyin",ic:"🔤",g:"tool",h:pinyinView},
+  progress:{t:"Theo dõi tiến độ",ic:"📈",g:"tool",h:progressView},
+  path:{t:"Lộ trình theo mục tiêu",ic:"🗺️",g:"tool",h:pathView},
+  docs:{t:"Tài liệu bổ sung",ic:"📚",g:"tool",h:docsView},
 };

@@ -482,6 +482,11 @@ main.page{max-width:1000px}
 .cmp{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px 12px;overflow-x:auto}
 .cmp table{width:100%;border-collapse:collapse;min-width:420px}.cmp th,.cmp td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left}.cmp th{font-size:13px;color:var(--mut)}.cmp td.c,.cmp th:not(:first-child){text-align:center;width:110px}.cmp tr:last-child td{border-bottom:0}.cmp .pr{color:var(--pri);font-weight:800}
 .idx{list-style:none;padding:0!important;display:grid;gap:8px}.idx a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink)}.idx a:hover{border-color:#4299e1}
+.prow{display:grid;grid-template-columns:90px 1fr 80px;gap:10px;align-items:center;margin:8px 0}.prow .bar{margin:0;height:10px;background:var(--line)}.prow .bar i{background:var(--grad)}.prow b{text-align:right;font-size:13px}
+.chart{display:flex;gap:6px;align-items:flex-end;height:120px;padding:8px;background:var(--bg);border-radius:14px;border:1px solid var(--line)}.chart div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px}.chart i{display:block;width:100%;max-width:26px;background:var(--grad);border-radius:6px 6px 2px 2px}.chart small{font-size:10px;color:var(--mut)}
+.hist{list-style:none;padding:0!important;display:grid;gap:6px}.hist li{display:flex;gap:10px;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:12px}.hist li span{color:var(--mut);min-width:96px}
+.wk{margin:10px 0}.wk h4{margin:14px 0 6px!important}.step{display:block;width:100%;text-align:left;margin:6px 0;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);font:600 15px var(--ui);cursor:pointer}.step.done{opacity:.6}.step.next{border-color:#4299e1;background:var(--pri2)}
+.docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
 </style>
 </head>
 <body>
@@ -11617,6 +11622,34 @@ BOOKS[6]={lessons:[{n:1,zh:"職校教育",vi:"Giáo dục trường nghề",v:`�
 文章|盧希鵬認為「讀書智慧」靠的是讀書和記憶；「街頭智慧」要的是觀察與詮釋，兩者都很重要。朱永光也指出，兩者若能相輔相成，在關鍵時刻發揮互補的效果，將能讓個人在職場、創業過程或為人處世上更為圓融。|lú xī péng rèn wèi 「dú shū zhì huì」 kào de shì dú shū hé jì yì；「jiē tóu zhì huì」 yào de shì guān chá yǔ quán shì， liǎng zhě dōu hěn zhòng yào。 zhū yǒng guāng yě zhǐ chū， liǎng zhě ruò néng xiāng fǔ xiāng chéng， zài guān jiàn shí kè fā huī hù bǔ de xiào guǒ， jiāng néng ràng gè rén zài zhí chǎng、 chuàng yè guò chéng huò wèi rén chù shì shàng gèng wèi yuán róng。|Lư Hy Bằng cho rằng "trí tuệ sách vở" dựa vào đọc và ghi nhớ; "trí tuệ đường phố" cần quan sát và diễn giải, cả hai đều quan trọng. Chu Vĩnh Quang cũng chỉ ra, nếu hai bên bổ trợ nhau, phát huy hiệu quả bù đắp vào thời khắc then chốt, sẽ giúp cá nhân khéo léo hơn trong công sở, khởi nghiệp hay đối nhân xử thế.
 文章|盧希鵬幽默地說，「關於思考術，你認為是人（讀書智慧）強還是猴子（街頭智慧）強？我只能說，人類愛看書，猴子善觀察……如果你天生是猴子，就要多學學人；如果你本來就是人，不妨多學學猴子，或許有所突破。」|lú xī péng yōu mò dì shuō，「guān yú sī kǎo shù， nǐ rèn wèi shì rén （dú shū zhì huì） qiáng hái shì hóu zi （jiē tóu zhì huì） qiáng？ wǒ zhǐ néng shuō， rén lèi ài kàn shū， hóu zi shàn guān chá …… rú guǒ nǐ tiān shēng shì hóu zi， jiù yào duō xué xué rén； rú guǒ nǐ běn lái jiù shì rén， bù fáng duō xué xué hóu zi， huò xǔ yǒu suǒ tū pò。」|Lư Hy Bằng hóm hỉnh nói: "Về nghệ thuật tư duy, bạn nghĩ người (trí tuệ sách vở) mạnh hay khỉ (trí tuệ đường phố) mạnh? Tôi chỉ có thể nói: con người thích đọc sách, khỉ giỏi quan sát… Nếu bạn sinh ra là khỉ thì nên học người nhiều hơn; nếu vốn là người thì cứ học khỉ thêm, biết đâu đột phá."`}}]};
 
+/* ============ GÓI FREE / PRO (khóa mềm phía trình duyệt) ============ */
+const FREE={lessons:{"1":5,"2":2,"3":2,"4":2,"5":2,"6":2},tfLv:["A1"],quiz:15,flash:15};   // số bài miễn phí mỗi quyển; số câu quiz / thẻ nhớ mỗi ngày
+const PREM_SECRET="htt-doi-secret-nay";   // ĐỔI chuỗi này (dùng chung với tools/premcode.js) trước khi bán
+const premCode=(e,pl)=>pl.toUpperCase()+cyrb53("p|"+PREM_SECRET+"|"+pl+"|"+e.toLowerCase().trim()).toString(36).toUpperCase().slice(0,7);
+function premInfo(){const p=prog.prem;if(!p||!p.email||!p.code)return null;const pl=p.code[0].toLowerCase();return (pl==="m"||pl==="y")&&p.code===premCode(p.email,pl)?pl:null}
+const isPro=()=>!!premInfo(),isYear=()=>premInfo()==="y";
+function dayCnt(k){const d=new Date().toISOString().slice(0,10);if(!prog.day||prog.day.d!==d)prog.day={d,q:0,f:0};return prog.day[k]}
+function dayAdd(k){dayCnt(k);prog.day[k]++}
+const capped=k=>!isPro()&&dayCnt(k)>=FREE[k==="q"?"quiz":"flash"];
+const lesFree=(b,n)=>isPro()||n<=(FREE.lessons[b]||0);
+const lockIc=ok=>ok?"":" 🔒";
+function tfLocked(l){if(isPro())return false;if(bk==="T")return !FREE.tfLv.includes(l);return +String(l).replace(/\D/g,"")>(FREE.lessons[bk]||0)}
+function logHist(ty,ok){prog.hist=prog.hist||[];prog.hist.push({t:Date.now(),y:ty,b:bk,o:ok?1:0});if(prog.hist.length>600)prog.hist.splice(0,prog.hist.length-600)}
+const LOCKMSG={lesson:["Bài học này thuộc gói Pro",`Gói Free mở một số bài đầu mỗi quyển (Quyển 1: ${FREE.lessons["1"]} bài, Quyển 2–6: ${FREE.lessons["2"]} bài, TOCFL: cấp A1). Pro mở toàn bộ bài học.`],
+ quiz:["Bạn đã dùng hết lượt quiz miễn phí hôm nay",`Gói Free có ${FREE.quiz} câu quiz mỗi ngày. Pro làm không giới hạn và dùng được mọi dạng bài kiểm tra nâng cao.`],
+ flash:["Bạn đã dùng hết lượt thẻ nhớ miễn phí hôm nay",`Gói Free có ${FREE.flash} thẻ mỗi ngày. Pro dùng flashcards không giới hạn.`],
+ mode:["Dạng bài này thuộc gói Pro","Gói Free có dạng bài cơ bản (nhìn chữ chọn nghĩa). Pro mở thêm nghe, điền pinyin, sắp xếp câu và các dạng nâng cao."],
+ pro:["Tính năng này thuộc gói Pro","Nâng cấp Pro để dùng."],year:["Tính năng này thuộc gói Pro năm","Gói Pro năm có thêm tài liệu học tập bổ sung và lộ trình học theo mục tiêu."]};
+function lockCard(k){const m=LOCKMSG[k]||LOCKMSG.pro;return `<div class="card lock"><div style="font-size:40px">🔒</div><h3>${m[0]}</h3><p>${m[1]}</p><p><button class="btn-l p" onclick="goPlans()">Xem gói Pro</button></p><details><summary>Tôi đã có mã kích hoạt</summary>${premForm()}</details></div>`}
+function showLock(k){const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};d.innerHTML=`<div class="mbox" style="text-align:center"><button class="ibtn mx" onclick="this.closest('.modal').remove()">✕</button>${lockCard(k).replace('class="card lock"','')}</div>`;document.body.appendChild(d);track('lock_view',{k})}
+function premActivate(ev){
+  ev.preventDefault();const f=ev.target,em=f.email.value.trim(),cd=f.code.value.trim().toUpperCase(),msg=f.querySelector(".su-msg");
+  const pl=cd[0]&&cd[0].toLowerCase();
+  if((pl==="m"||pl==="y")&&cd===premCode(em,pl)){prog.prem={email:em,code:cd};save();track('premium_activate',{plan:pl});msg.style.color="var(--ok)";msg.textContent="✅ Đã kích hoạt gói Pro "+(pl==="y"?"năm":"tháng")+" trên thiết bị này!";setTimeout(()=>location.reload(),900)}
+  else{msg.style.color="var(--bad)";msg.textContent="Email hoặc mã chưa đúng. Kiểm tra lại mã bạn nhận được nhé."}
+}
+const premForm=()=>`<form onsubmit="premActivate(event)" class="fb-form" style="max-width:420px;text-align:left"><label>Email đã dùng khi mua<input type="email" name="email" required value="${(prog.prem&&prog.prem.email)||""}"></label><label>Mã kích hoạt<input type="text" name="code" required placeholder="VD: M7K2M9XQ" style="text-transform:uppercase"></label><button class="btn-l p">Kích hoạt</button><div class="su-msg"></div></form>`;
+
 /* ============ CÔNG CỤ HỌC: 214 BỘ THỦ · PINYIN · TRA TỪ · ÔN TẬP SRS ============ */
 const RAD_RAW=`1|一 yī nhất·số một|丨 gǔn cổn·nét sổ|丶 zhǔ chủ·chấm|丿 piě phiệt·nét phẩy|乙 yǐ ất·can thứ hai|亅 jué quyết·nét móc
 2|二 èr nhị·hai|亠 tóu đầu·nắp|人(亻) rén nhân·người|儿 ér nhi·chân người|入 rù nhập·vào|八 bā bát·tám|冂 jiōng quynh·vùng biên|冖 mì mịch·trùm khăn|冫 bīng băng·nước đá|几 jǐ kỷ·cái ghế|凵 kǎn khảm·há miệng|刀(刂) dāo đao·dao|力 lì lực·sức|勹 bāo bao·bao bọc|匕 bǐ chủy·cái thìa|匚 fāng phương·cái tủ|匸 xǐ hệ·che giấu|十 shí thập·mười|卜 bǔ bốc·bói|卩 jié tiết·đốt tre|厂 hàn hán·sườn núi|厶 sī tư·riêng tư|又 yòu hựu·lại nữa
@@ -11711,19 +11744,10 @@ function srsAns(ok){
   const w=srsQ[srsI],s=prog.srs[w.k]||{b:0};
   s.b=ok?Math.min(s.b+1,SRS_GAP.length-1):0;s.d=Date.now()+SRS_GAP[s.b]*864e5;prog.srs[w.k]=s;
   if(prog.known&&ok&&s.b>=3)prog.known[w.k]=1;
-  track('srs_answer',{ok});save();srsDone++;srsI++;srsShow=false;pageView();
+  track('srs_answer',{ok});logHist("s",ok);save();srsDone++;srsI++;srsShow=false;pageView();
 }
-const PREM_SECRET="htt-doi-secret-nay";   // ĐỔI chuỗi này (và dùng cùng chuỗi trong tools/premcode.js) trước khi bán
-const premCode=e=>cyrb53("p|"+PREM_SECRET+"|"+e.toLowerCase().trim()).toString(36).toUpperCase().slice(0,8);
-const isPremium=()=>!!(prog.prem&&prog.prem.email&&prog.prem.code===premCode(prog.prem.email));
-function premActivate(ev){
-  ev.preventDefault();const f=ev.target,em=f.email.value.trim(),cd=f.code.value.trim().toUpperCase(),msg=f.querySelector(".su-msg");
-  if(cd&&cd===premCode(em)){prog.prem={email:em,code:cd};save();track('premium_activate');msg.style.color="var(--ok)";msg.textContent="✅ Đã kích hoạt Premium trên thiết bị này!";setTimeout(()=>{bk==="P"?pageView():render()},700)}
-  else{msg.style.color="var(--bad)";msg.textContent="Email hoặc mã chưa đúng. Kiểm tra lại mã bạn nhận được nhé."}
-}
-const premForm=()=>`<form onsubmit="premActivate(event)" class="fb-form" style="max-width:420px"><label>Email đã dùng khi mua<input type="email" name="email" required value="${(prog.prem&&prog.prem.email)||""}"></label><label>Mã kích hoạt<input type="text" name="code" required placeholder="VD: 7K2M9XQA" style="text-transform:uppercase"></label><button class="btn-l p">Kích hoạt Premium</button><div class="su-msg"></div></form>`;
 function srsView(){
-  if(!isPremium())return `<div class="card lock"><div style="font-size:40px">🔒</div><h3>Ôn tập SRS dành cho Premium</h3><p>Lịch ôn ngắt quãng tự nhắc lại đúng từ bạn sắp quên. Nâng cấp để dùng, hoặc nhập mã nếu bạn đã mua.</p><p><button class="btn-l p" onclick="goPlans()">Xem gói Premium</button></p><details><summary>Tôi đã có mã kích hoạt</summary>${premForm()}</details></div>`;
+  if(!isPro())return lockCard("pro");
   if(!srsQ.length||srsI===0&&!srsDone&&!srsQ._built){srsBuild();srsQ._built=1}
   const all=Object.keys(prog.srs||{}).length,now=Date.now(),dueN=Object.values(prog.srs||{}).filter(s=>s.d<=now).length;
   const head=`<div class="row" style="gap:10px;margin-bottom:12px"><span class="pill">Đang ôn: ${all} từ</span><span class="pill">Đến hạn: ${dueN}</span></div>
@@ -11733,11 +11757,74 @@ function srsView(){
   return head+`<div class="flash" onclick="srsShow=true;pageView()"><div class="stat">${srsI+1} / ${srsQ.length}</div><div class="zh">${w.h}</div>${srsShow?`<div class="py" style="font-size:22px">${w.p}</div><div style="font-size:19px;font-weight:600">${w.m}</div>`:'<div class="stat">Chạm để xem đáp án</div>'}</div>
   <div class="row" style="justify-content:center;margin-top:14px;gap:10px"><button class="b spk" onclick="speak('${w.h.replace(/'/g,"\\'").replace(/[()（）]/g,"").split("/")[0]}')">🔊</button>${srsShow?`<button class="b bad" onclick="srsAns(false)">😕 Quên</button><button class="b ok" onclick="srsAns(true)">😀 Nhớ</button>`:`<button class="b p" onclick="srsShow=true;pageView()">Hiện đáp án</button>`}</div>`;
 }
+
+/* ---- Theo dõi tiến độ (Pro) ---- */
+const bookKnown=n=>n==="1"?Object.keys(prog.known).length:Object.keys(prog.tk||{}).filter(k=>k.startsWith(n+":")).length;
+const bookTotal=n=>n==="1"?VOCAB.length:(BKW[n]||[]).length;
+const dkey=t=>new Date(t).toISOString().slice(0,10);
+function streakDays(){const s=new Set((prog.hist||[]).map(h=>dkey(h.t)));let n=0,d=new Date();if(!s.has(dkey(d)))d=new Date(d-864e5);while(s.has(dkey(d))){n++;d=new Date(d-864e5)}return n}
+function progressView(){
+  if(!isPro())return lockCard("pro");
+  const H=prog.hist||[],sc=prog.score,acc=sc.total?Math.round(sc.right/sc.total*100):0;
+  const books=["1","2","3","4","5","6"].map(n=>{const k=bookKnown(n),T=bookTotal(n);return `<div class="prow"><span>Quyển ${n}</span><div class="bar"><i style="width:${T?k/T*100:0}%"></i></div><b>${k}/${T}</b></div>`}).join("")
+    +`<div class="prow"><span>TOCFL</span><div class="bar"><i style="width:${Object.keys(prog.tk||{}).filter(k=>!/^\d:/.test(k)).length/TF.length*100}%"></i></div><b>${Object.keys(prog.tk||{}).filter(k=>!/^\d:/.test(k)).length}/${TF.length}</b></div>`;
+  const days=[...Array(14)].map((_,i)=>{const d=dkey(Date.now()-(13-i)*864e5);return {d,n:H.filter(h=>dkey(h.t)===d).length}}),mx=Math.max(1,...days.map(x=>x.n));
+  const ty={q:"Trắc nghiệm",f:"Thẻ nhớ",s:"Ôn SRS"};
+  const recent=H.slice(-15).reverse().map(h=>`<li><span>${new Date(h.t).toLocaleString("vi-VN",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"})}</span> ${ty[h.y]||h.y} · ${h.b==="T"?"TOCFL":"Quyển "+h.b} <b class="${h.o?"okc":"badc"}">${h.o?"✓":"✗"}</b></li>`).join("");
+  return `<div class="scoregrid"><div class="sc"><b>${streakDays()}</b>ngày liên tiếp</div><div class="sc"><b>${acc}%</b>đúng (${sc.right}/${sc.total})</div><div class="sc"><b>${Object.keys(prog.srs||{}).length}</b>từ trong SRS</div><div class="sc"><b>${H.length}</b>lượt đã ghi</div></div>
+  <h4>Từ đã thuộc theo quyển</h4>${books}
+  <h4>14 ngày gần nhất</h4><div class="chart">${days.map(x=>`<div title="${x.d}: ${x.n}"><i style="height:${Math.max(3,x.n/mx*90)}px"></i><small>${x.d.slice(8)}</small></div>`).join("")}</div>
+  <h4>Lịch sử học tập</h4>${recent?`<ul class="hist">${recent}</ul>`:'<p class="stat">Chưa có lịch sử. Làm vài câu trắc nghiệm hoặc thẻ nhớ rồi quay lại nhé.</p>'}
+  <p class="stat">Dữ liệu lưu trên trình duyệt này (tối đa 600 lượt gần nhất).</p>`;
+}
+
+/* ---- Lộ trình theo mục tiêu (Pro năm) ---- */
+const GOALS={comm:["Giao tiếp cơ bản (Quyển 1–2)",()=>[...Array(15)].map((_,i)=>["1",i+1]).concat([...Array(BOOKS[2]?BOOKS[2].lessons.length:0)].map((_,i)=>["2",i+1]))],
+ reada:["Đọc hiểu (Quyển 3–6)",()=>["3","4","5","6"].flatMap(b=>(BOOKS[b]?BOOKS[b].lessons:[]).map(L=>[b,L.n]))],
+ ta:["TOCFL Band A (A1–A2)",()=>["A1","A2"].flatMap(l=>{const n=Math.ceil(TF.filter(x=>x.l===l).length/TF_SET);return [...Array(n)].map((_,i)=>["T",l+" · bộ "+(i+1),l,i+1])})],
+ tb:["TOCFL Band B (B1–B2)",()=>["B1","B2"].flatMap(l=>{const n=Math.ceil(TF.filter(x=>x.l===l).length/TF_SET);return [...Array(n)].map((_,i)=>["T",l+" · bộ "+(i+1),l,i+1])})]};
+function stepDone(s){
+  if(s[0]==="1"){const w=VOCAB.filter(v=>v[3]===s[1]);return w.length&&w.filter(v=>prog.known[v[0]]).length/w.length>=.8}
+  if(s[0]==="T"){const a=TF.filter(x=>x.l===s[2]).slice((s[3]-1)*TF_SET,s[3]*TF_SET);return a.length&&a.filter(x=>prog.tk[x.k]).length/a.length>=.8}
+  const w=(BKW[s[0]]||[]).filter(x=>x.l==="Bài "+s[1]);return w.length&&w.filter(x=>prog.tk[x.k]).length/w.length>=.8;
+}
+function stepGo(i,g){const s=GOALS[g][1]()[i];if(s[0]==="T"){tfLv=s[2];tfSet=s[3];tfMode="list";setBook("T");prog.tfLv=s[2];tfSet=s[3];render()}else if(s[0]==="1"){setLesson(s[1]+"-"+s[1]);prog.last="1";tab="vocab";setBook("1");setLesson(s[1]+"-"+s[1])}else{setBook(s[0]);tfLv="Bài "+s[1];tfSet=0;prog.last=s[0];tocflView()}}
+function setGoal(g,p){prog.goal=g;prog.pace=p;save();pageView()}
+function pathView(){
+  if(!isYear())return lockCard("year");
+  const g=prog.goal||"comm",pace=prog.pace||3,steps=GOALS[g][1](),done=steps.map(stepDone),next=done.indexOf(false);
+  const lab=s=>s[0]==="T"?s[1]:`Quyển ${s[0]} · Bài ${s[1]}`;
+  const weeks=Math.ceil(steps.length/pace);
+  return `<p>Chọn mục tiêu và nhịp học, hệ thống chia thành từng tuần. Một bước hoàn thành khi bạn đánh dấu thuộc từ <b>80%</b> từ vựng của bài/bộ đó.</p>
+  <div class="row tf-bar"><select onchange="setGoal(this.value,${pace})">${Object.keys(GOALS).map(k=>`<option value="${k}" ${k===g?"selected":""}>${GOALS[k][0]}</option>`).join("")}</select><select onchange="setGoal('${g}',+this.value)">${[2,3,5].map(n=>`<option value="${n}" ${n===pace?"selected":""}>${n} bài/bộ mỗi tuần</option>`).join("")}</select></div>
+  <div class="pill" style="margin-bottom:12px">Đã xong ${done.filter(Boolean).length}/${steps.length} · khoảng ${weeks} tuần</div>
+  ${[...Array(weeks)].map((_,w)=>`<div class="wk"><h4>Tuần ${w+1}</h4>${steps.slice(w*pace,(w+1)*pace).map((s,j)=>{const i=w*pace+j;return `<button class="step ${done[i]?"done":""} ${i===next?"next":""}" onclick="stepGo(${i},'${g}')">${done[i]?"✅":i===next?"👉":"⬜"} ${lab(s)}</button>`}).join("")}</div>`).join("")}`;
+}
+
+/* ---- Tài liệu bổ sung (Pro năm): xuất Anki / bản in ---- */
+function docRows(k){
+  if(k==="T")return TF.map(x=>[x.h,x.p,x.m,"TOCFL "+x.l]);
+  if(k==="1")return VOCAB.map(v=>[v[0],v[1],v[2],"Bài "+v[3]]);
+  return (BKW[k]||[]).map(x=>[x.h,x.p,x.m,x.l]);
+}
+const docName=k=>k==="T"?"TOCFL":"Quyen"+k;
+function docAnki(k){const t=docRows(k).map(r=>r.join("\t")).join("\n"),a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+t],{type:"text/plain;charset=utf-8"}));a.download="tuvung-"+docName(k)+"-anki.txt";document.body.appendChild(a);a.click();a.remove();track('doc_anki',{k})}
+function docPrint(k){const R=docRows(k),w=window.open("","_blank");if(!w){toast("Trình duyệt chặn cửa sổ mới, hãy cho phép rồi thử lại.");return}
+  w.document.write(`<!doctype html><meta charset="utf-8"><title>Từ vựng ${docName(k)}</title><style>body{font:14px system-ui;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:5px 8px;text-align:left}td:first-child{font:600 18px serif}</style><h2>Từ vựng ${k==="T"?"TOCFL":"Quyển "+k} (${R.length} từ)</h2><table><tr><th>Hán tự</th><th>Pinyin</th><th>Nghĩa</th><th>Bài/Cấp</th></tr>${R.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table><script>onload=()=>print()<\/script>`);w.document.close();track('doc_print',{k})}
+function docsView(){
+  if(!isYear())return lockCard("year");
+  return `<p>Tài liệu học tập bổ sung của gói Pro năm: tải từ vựng từng quyển để nhập vào <b>Anki</b> hoặc in/lưu PDF để học offline.</p>
+  <div class="docs">${["1","2","3","4","5","6","T"].map(k=>`<div class="mini"><b>${k==="T"?"TOCFL A1–B2":"Quyển "+k}</b><div class="stat">${docRows(k).length} từ</div><div class="row" style="margin-top:8px"><button class="b" onclick="docAnki('${k}')">⬇ Anki (.txt)</button><button class="b" onclick="docPrint('${k}')">🖨 In / PDF</button></div></div>`).join("")}</div>
+  <h4>Nhập vào Anki</h4><ol class="steps"><li>Mở Anki → <b>File → Import</b> và chọn file .txt vừa tải.</li><li>Chọn <b>Field separator = Tab</b>; ghép cột 1 = Front (Hán), cột 2–3 = Back (pinyin, nghĩa).</li><li>Bấm Import, rồi học theo lịch lặp ngắt quãng của Anki.</li></ol>`;
+}
 const TOOLS={
   radicals:{t:"214 Bộ thủ",ic:"🧩",g:"tool",h:radicalsView},
   srs:{t:"Ôn tập SRS ngắt quãng",ic:"🔁",g:"tool",h:srsView},
   lookup:{t:"Tra từ & phân tích câu",ic:"🔎",g:"tool",h:lookupView},
   pinyin:{t:"Lộ trình Pinyin",ic:"🔤",g:"tool",h:pinyinView},
+  progress:{t:"Theo dõi tiến độ",ic:"📈",g:"tool",h:progressView},
+  path:{t:"Lộ trình theo mục tiêu",ic:"🗺️",g:"tool",h:pathView},
+  docs:{t:"Tài liệu bổ sung",ic:"📚",g:"tool",h:docsView},
 };
 
 /* ============ TRANG CHỦ (kiểu hihsk) ============ */
@@ -11760,9 +11847,9 @@ async function signup(ev){
    bank: mã ngân hàng theo vietqr.io (VCB, MB, TCB, ACB, BIDV, TPB, VPB, ICB...), acc: số tài khoản, name: tên chủ tài khoản */
 const PAY={bank:"",acc:"",name:"",email:""};
 const PLANS=[
-  {id:"free",name:"Miễn phí",price:0,per:"",desc:"Học đầy đủ trên web, không cần đăng ký",perks:["Quyển 1–6: từ vựng, hội thoại, bài đọc","TOCFL A1–B2: 4.844 từ","Thẻ nhớ, trắc nghiệm, nghe đọc Meijia","Lưu tiến độ trên trình duyệt"]},
-  {id:"m",name:"Premium tháng",price:99000,per:"/tháng",desc:"Dành cho người học đều mỗi ngày",perks:["Mọi thứ trong gói Miễn phí","Bộ thẻ Anki + PDF từ vựng từng quyển","Nhận bài mới sớm nhất","Giải đáp thắc mắc qua email"],hot:1},
-  {id:"y",name:"Premium năm",price:790000,per:"/năm",desc:"Tiết kiệm ~34% so với trả theo tháng",perks:["Mọi thứ trong Premium tháng","Cập nhật trọn năm, không lo gia hạn","Ưu tiên yêu cầu bài/chủ đề mới"]},
+  {id:"free",name:"Free",price:0,per:"",desc:"Dành cho người mới bắt đầu",perks:["Một số bài học miễn phí","Từ vựng và phát âm","Quiz cơ bản"]},
+  {id:"m",name:"Pro tháng",price:49000,per:"/tháng",desc:"Học đều mỗi ngày, mở khóa toàn bộ",perks:["Mở khóa toàn bộ bài học","Flashcards không giới hạn","Ôn tập thông minh (SRS)","Theo dõi tiến độ","Bài kiểm tra nâng cao"],hot:1},
+  {id:"y",name:"Pro năm",price:399000,per:"/năm",desc:"Tiết kiệm so với trả theo tháng",perks:["Toàn bộ quyền lợi Pro","Tài liệu học tập bổ sung (Anki, bản in)","Lộ trình học theo mục tiêu"]},
 ];
 const vnd=n=>n.toLocaleString("vi-VN")+"đ";
 function buy(id){
@@ -11788,7 +11875,7 @@ function homeCounts(){
 function homeView(){
   const m=$("main");m.className="home";
   const c=homeCounts(),fmt=n=>n.toLocaleString("vi-VN");
-  const v=VOCAB[Math.floor(Math.random()*VOCAB.length)],t=TRANS.length?TRANS[Math.floor(Math.random()*TRANS.length)]:null;
+  const v=VOCAB[Math.floor(Math.random()*VOCAB.length)],TS=TRANS.filter(x=>x[1].length<=18),t=TS.length?TS[Math.floor(Math.random()*TS.length)]:null;
   const known=Object.keys(prog.known).length,last=BOOK_IDS.includes(prog.last)?prog.last:"1";
   const lastName=last==="T"?"TOCFL":"Quyển "+last;
   const F=[
@@ -11802,7 +11889,7 @@ function homeView(){
     ["🎙","Vấn đáp luyện nói","Trả lời bằng giọng nói, hệ thống chấm phát âm từng câu.","Quyển 1","1","qa"],
     ["🔤","Tập dịch","Dịch Việt → Trung, sắp xếp từ thành câu đúng.","Quyển 1","1","trans"],
     ["🧩","214 Bộ thủ","Tra và nghe 214 bộ thủ phồn thể, xếp theo số nét, kèm Hán Việt và nghĩa.","214 bộ","page","radicals"],
-    ["🔁","Ôn tập SRS ngắt quãng","Lịch nhắc từ tự động 10 phút → 30 ngày, giúp nhớ lâu hơn.","Premium","page","srs"],
+    ["🔁","Ôn tập SRS ngắt quãng","Lịch nhắc từ tự động 10 phút → 30 ngày, giúp nhớ lâu hơn.","Pro","page","srs"],
     ["🔎","Tra từ & phân tích câu","Dán câu tiếng Trung để xem pinyin và nghĩa từng từ, hoặc tra bằng pinyin/tiếng Việt.","Công cụ","page","lookup"],
     ["🎼","Lộ trình Pinyin","Thanh mẫu, vận mẫu và 4 thanh điệu, chạm để nghe ví dụ.","Cho người mới","page","pinyin"],
   ];
@@ -11840,12 +11927,12 @@ function homeView(){
     <div class="hstat"><b>${fmt(c.words)}</b><span>Từ vựng giáo trình</span><small>kèm pinyin &amp; nghĩa</small></div>
     <div class="hstat"><b>${fmt(TF.length)}</b><span>Từ TOCFL</span><small>Band A + Band B</small></div>
   </div>
-  <div class="sec-h" id="hm-plans"><span class="pill">Gói học</span><h2>Chọn gói phù hợp với bạn</h2><p>Học miễn phí không giới hạn; Premium dành cho ai muốn thêm tài liệu ôn tập và được hỗ trợ.</p></div>
-  <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Phổ biến</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('${last}')">Học ngay</button>`}</div>`).join("")}</div>
-  <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Miễn phí</th><th>Premium</th></tr></thead><tbody>
-   ${[["Từ vựng, bài học, hội thoại & bài đọc Quyển 1–6","✓","✓"],["Từ vựng TOCFL A1–B2","✓","✓"],["Nghe phát âm (giọng Meijia)","✓","✓"],["Thẻ nhớ & trắc nghiệm","✓","✓"],["Công cụ: 214 bộ thủ, Pinyin, tra từ","✓","✓"],["Ôn tập SRS ngắt quãng","—","✓"],["Bộ thẻ Anki + PDF từ vựng từng quyển","—","✓"],["Giải đáp thắc mắc qua email","—","✓"],["Theo dõi tiến độ chi tiết, lịch sử học, lộ trình cá nhân","—","Sắp có"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}
-  </tbody></table><p class="stat" style="margin:10px 4px 0">Nội dung học cơ bản luôn miễn phí để bạn trải nghiệm đủ trước khi quyết định nâng cấp.</p></div>
-  <details class="act" ${isPremium()?"open":""}><summary>${isPremium()?"✅ Premium đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPremium()?"":premForm()}</details>
+  <div class="sec-h" id="hm-plans"><span class="pill">Gói học</span><h2>Chọn gói phù hợp với bạn</h2><p>Học miễn phí không giới hạn; Pro dành cho ai muốn thêm tài liệu ôn tập và được hỗ trợ.</p></div>
+  <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Đề xuất</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('${last}')">Học ngay</button>`}</div>`).join("")}</div>
+  <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Free</th><th>Pro</th></tr></thead><tbody>
+   ${[["Học từ vựng cơ bản","✓","✓"],["Xem bài học","Một số bài","Toàn bộ"],["Nghe phát âm (giọng Meijia)","✓","✓"],["Flashcards","15 thẻ/ngày","Không giới hạn"],["Ôn tập ngắt quãng (SRS)","—","✓"],["Quiz kiểm tra","15 câu/ngày, dạng cơ bản","Không giới hạn, mọi dạng"],["Theo dõi tiến độ chi tiết","—","✓"],["Lưu lịch sử học tập","—","✓"],["Bài kiểm tra TOCFL (mọi cấp)","Cấp A1","✓"],["Tài liệu bổ sung (Anki, bản in)","—","Pro năm"],["Lộ trình học theo mục tiêu","—","Pro năm"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}
+  </tbody></table><p class="stat" style="margin:10px 4px 0">Gói Free vẫn cho bạn trải nghiệm đủ tốt trước khi quyết định nâng cấp.</p></div>
+  <details class="act" ${isPro()?"open":""}><summary>${isPro()?"✅ Gói Pro "+(isYear()?"năm":"tháng")+" đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPro()?"":premForm()}</details>
   <section class="signup"><div><h3>📬 Nhận thông báo bài học mới</h3><p>Để lại email để nhận tin khi có thêm bài, từ vựng và tính năng mới. Không spam, hủy bất cứ lúc nào.</p></div>
     <form onsubmit="signup(event)"><div class="su-row"><input type="email" name="email" placeholder="email@cua-ban.com" autocomplete="email" required value="${prog.email||""}"><button class="btn-l p">Đăng ký</button></div><div class="su-msg"></div></form></section>
   <div class="cta-band"><span class="pill">Miễn phí · không cần đăng ký</span><h2>Sẵn sàng chinh phục tiếng Trung phồn thể?</h2><p>Tiến độ học được lưu ngay trên trình duyệt của bạn.</p>
@@ -11902,15 +11989,15 @@ const PAGES={
  complaint:{t:"Tiếp nhận & giải quyết khiếu nại",ic:"📮",h:`
   <h4>Quy trình</h4><ol class="steps"><li><b>Gửi khiếu nại.</b> Dùng <a href="#" onclick="goPage('contact');return false">biểu mẫu liên hệ</a>, chọn loại phù hợp; nêu rõ vấn đề, email đã dùng, nội dung chuyển khoản (nếu liên quan thanh toán).</li><li><b>Xác nhận.</b> Chúng tôi phản hồi qua email trong 1–3 ngày làm việc để xác nhận đã nhận.</li><li><b>Xử lý.</b> Lỗi nội dung sẽ được sửa và cập nhật lên trang; vấn đề thanh toán được đối chiếu và xử lý (kích hoạt, gửi lại tài liệu hoặc hoàn tiền) trong tối đa 7 ngày.</li><li><b>Kết quả.</b> Chúng tôi báo kết quả qua email. Nếu chưa hài lòng, bạn có thể trả lời lại để được xem xét lần hai.</li></ol>`},
  price:{t:"Chính sách về giá & điều kiện",ic:"🏷️",h:`
-  <ul><li>Giá niêm yết bằng đồng Việt Nam (VND), đã bao gồm mọi khoản phí chúng tôi thu; ngân hàng của bạn có thể tính phí chuyển khoản riêng.</li><li>Gói Premium tháng và năm không tự gia hạn.</li><li>Giá và quyền lợi có thể thay đổi cho người mua mới; gói đã mua giữ nguyên quyền lợi trong thời hạn đã trả.</li><li>Nội dung học cơ bản luôn miễn phí để bạn trải nghiệm trước khi quyết định.</li></ul>
+  <ul><li>Giá niêm yết bằng đồng Việt Nam (VND), đã bao gồm mọi khoản phí chúng tôi thu; ngân hàng của bạn có thể tính phí chuyển khoản riêng.</li><li>Gói Pro tháng và năm không tự gia hạn.</li><li>Giá và quyền lợi có thể thay đổi cho người mua mới; gói đã mua giữ nguyên quyền lợi trong thời hạn đã trả.</li><li>Gói Free luôn có để bạn trải nghiệm trước khi quyết định.</li></ul>
   <p><button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
  delivery:{t:"Phương thức cung cấp dịch vụ",ic:"📦",h:()=>`
-  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Mã kích hoạt Premium:</b> gửi qua email sau khi xác nhận thanh toán; nhập mã ở mục kích hoạt để mở các tính năng Premium trên thiết bị của bạn.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
+  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Mã kích hoạt Pro:</b> gửi qua email sau khi xác nhận thanh toán; nhập mã ở mục kích hoạt để mở các tính năng Pro trên thiết bị của bạn.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
   <h4>Đã có mã?</h4>${premForm()}`},
  index:{t:"Danh mục chính sách",ic:"🗂️",h:()=>`
   <ul class="idx">${["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data"].map(k=>`<li><a href="#" onclick="goPage('${k}');return false">${PAGES[k].ic} ${PAGES[k].t}</a></li>`).join("")}</ul>`},
  payment:{t:"Chính sách thanh toán",ic:"💳",h:`
-  <h4>Các gói</h4><ul><li><b>Miễn phí:</b> toàn bộ nội dung học trên web.</li><li><b>Premium tháng — 99.000đ:</b> tài liệu ôn tập kèm theo (thẻ Anki, PDF từ vựng), nhận bài mới sớm, giải đáp qua email.</li><li><b>Premium năm — 790.000đ:</b> như gói tháng, dùng trọn 12 tháng.</li></ul>
+  <h4>Các gói</h4><ul><li><b>Free (0đ):</b> một số bài học miễn phí, từ vựng và phát âm, quiz cơ bản.</li><li><b>Pro tháng — 49.000đ/tháng:</b> mở khóa toàn bộ bài học, flashcards không giới hạn, ôn tập thông minh (SRS), theo dõi tiến độ, bài kiểm tra nâng cao.</li><li><b>Pro năm — 399.000đ/năm:</b> toàn bộ quyền lợi Pro cùng tài liệu học tập bổ sung (Anki, bản in) và lộ trình học theo mục tiêu.</li></ul>
   <h4>Cách thanh toán</h4><ol class="steps"><li>Ở trang chủ, bấm <b>Nâng cấp</b> ở gói muốn mua.</li><li>Quét mã QR hoặc chuyển khoản theo thông tin hiển thị, giữ nguyên <b>nội dung chuyển khoản</b>.</li><li>Gửi email đã đăng ký kèm nội dung chuyển khoản qua <a href="#" onclick="goPage('contact');return false">mục liên hệ</a>.</li><li>Chúng tôi đối chiếu và gửi tài liệu/kích hoạt quyền lợi, thường trong vòng 24 giờ.</li></ol>
   <h4>Lưu ý</h4><p>Thanh toán bằng chuyển khoản ngân hàng. Chúng tôi không yêu cầu mật khẩu, mã OTP hay thông tin thẻ của bạn. <button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
  refund:{t:"Hoàn tiền & hủy gói",ic:"↩️",h:`
@@ -11924,14 +12011,14 @@ const PAGES={
  contact:{t:"Liên hệ & phản ánh",ic:"✉️",h:`
   <p>Gặp lỗi nội dung, muốn đề xuất thêm bài, cần hỗ trợ gói học hay yêu cầu xóa email — hãy gửi cho chúng tôi, chúng tôi phản hồi qua email bạn để lại.</p>
   <form onsubmit="sendFeedback(event)" class="fb-form">
-   <label>Bạn muốn gửi gì?<select name="kind"><option>Báo lỗi nội dung</option><option>Góp ý / đề xuất</option><option>Hỗ trợ gói Premium</option><option>Yêu cầu xóa email</option><option>Khác</option></select></label>
+   <label>Bạn muốn gửi gì?<select name="kind"><option>Báo lỗi nội dung</option><option>Góp ý / đề xuất</option><option>Hỗ trợ gói Pro</option><option>Yêu cầu xóa email</option><option>Khác</option></select></label>
    <label>Email của bạn<input type="email" name="email" required placeholder="email@cua-ban.com"></label>
    <label>Nội dung<textarea name="message" rows="5" required placeholder="Ví dụ: Quyển 3, bài 5, câu 2 dịch chưa đúng…"></textarea></label>
    <button class="btn-l p">Gửi phản ánh</button><div class="su-msg"></div></form>`}
 };
 function pageView(){
   const m=$("main");m.className="home page";const P=PAGES[page]||TOOLS[page]||PAGES.guide;
-  const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","srs","lookup","pinyin"];
+  const POL=["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data","index","contact"],TL=["radicals","pinyin","lookup","srs","progress","path","docs"];
   const tool=!!TOOLS[page],keys=tool?TL:["guide",...POL],src=k=>PAGES[k]||TOOLS[k];
   const body=typeof P.h==="function"?P.h():P.h;
   m.innerHTML=`<div class="pg-head"><a href="#" onclick="setBook('H');return false">← Trang chủ</a><h1>${P.ic} ${P.t}</h1></div>
@@ -11944,8 +12031,8 @@ function footerView(){
    <div class="sf-brand"><a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b></span></a>
     <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
     <div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div></div>
-   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("setBook('T')","Từ vựng chuyên ngành & theo cấp độ")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goTo('T',null,'quiz')","Luyện thi")}${L("goPlans()","Bảng giá gói học Premium")}</ul></div>
-   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
+   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("setBook('T')","Từ vựng chuyên ngành & theo cấp độ")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goTo('T',null,'quiz')","Luyện thi")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
+   <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
    <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
    <div><h5>Liên hệ</h5><ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
   </div>
@@ -12182,22 +12269,23 @@ const normZh=s=>[...s.replace(/[\s，。？！、：；,.?!:;]/g,"")].map(c=>S2T
 let prog={};try{prog=JSON.parse(localStorage.getItem("tocfl1")||"{}")}catch(e){}
 prog.known=prog.known||{};prog.score=prog.score||{right:0,total:0};
 const save=()=>{try{localStorage.setItem("tocfl1",JSON.stringify(prog))}catch(e){}updateHero()};
-function mark(ok){prog.score.total++;if(ok)prog.score.right++;save()}
+function mark(ok){dayAdd("q");logHist("q",ok);prog.score.total++;if(ok)prog.score.right++;save()}
 
 /* ============ PHẠM VI BÀI ============ */
 const NL=LESSONS.length;
 let LESSON=prog.lesson;if(!/^(all|\d+-\d+)$/.test(LESSON||""))LESSON="all";
-const inL=n=>{if(LESSON==="all")return true;const [a,b]=LESSON.split("-").map(Number);return n>=a&&n<=b};
+const inL=n=>{if(!lesFree("1",n))return false;if(LESSON==="all")return true;const [a,b]=LESSON.split("-").map(Number);return n>=a&&n<=b};
 const pool=()=>VOCAB.filter(v=>inL(v[3]));
 (function buildSelect(){
   const g=[["all",`Tất cả ${NL} bài`],["1-5","Bài 1–5"],["6-10","Bài 6–10"],["11-15","Bài 11–15"]];
   $("#les").innerHTML=g.map(([k,l])=>`<option value="${k}">${l}</option>`).join("")+
     LESSONS.map(L=>`<option value="${L.n}-${L.n}">Bài ${L.n} · ${L.zh.replace(/[？！]/g,"")}</option>`).join("");
   $("#lbar").innerHTML=`<button class="lchip" data-v="all">Tất cả<small>${NL} bài</small></button>`+
-    LESSONS.map(L=>`<button class="lchip" data-v="${L.n}-${L.n}" title="${esc(L.vi)}">Bài ${L.n}<small>${L.zh.replace(/[？！]/g,"")}</small></button>`).join("");
+    LESSONS.map(L=>`<button class="lchip" data-v="${L.n}-${L.n}" title="${esc(L.vi)}">Bài ${L.n}${lockIc(lesFree("1",L.n))}<small>${L.zh.replace(/[？！]/g,"")}</small></button>`).join("");
   $("#lbar").onclick=e=>{const b=e.target.closest(".lchip");if(b)setLesson(b.dataset.v)};
 })();
 function setLesson(v){
+  if(!isPro()){const a=v==="all"?1:+v.split("-")[0];if(a>FREE.lessons["1"]){showLock("lesson");return}}
   LESSON=prog.lesson=v;qMode=null;tIdx=0;track('select_lesson',{lesson:v});$("#les").value=v;syncBar();save();render();
 }
 function syncBar(){
@@ -12265,6 +12353,7 @@ function toggleKnown(z,c){if(c)prog.known[z]=1;else delete prog.known[z];save()}
 let fDeck=[],fi=0,fBack=false,fOnlyNew=false;
 function flashView(){fDeck=sh(pool().filter(v=>!fOnlyNew||!prog.known[v[0]]));fi=0;fBack=false;flashDraw()}
 function flashDraw(){
+  if(capped("f")){$("#app").innerHTML=lockCard("flash");return}
   if(!fDeck.length){$("#app").innerHTML=`<div class="card">🎉 Bạn đã thuộc hết! <button class="b" onclick="fOnlyNew=false;flashView()">Ôn lại tất cả</button></div>`;return}
   const v=fDeck[fi];
   $("#app").innerHTML=`<div class="row" style="margin-bottom:10px;justify-content:space-between"><label><input type="checkbox" ${fOnlyNew?"checked":""} onchange="fOnlyNew=this.checked;flashView()"> Chỉ từ chưa thuộc</label><span class="stat">${fi+1}/${fDeck.length} · Bài ${v[3]}</span></div>
@@ -12278,7 +12367,7 @@ function flashDraw(){
    <button class="b p" onclick="fAns(true)">✅ Đã thuộc</button></div>`;
   if(!fBack)speak(v[0]);
 }
-function fAns(ok){const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.known[v[0]];save();fi=(fi+1)%fDeck.length;fBack=false;flashDraw()}
+function fAns(ok){dayAdd("f");logHist("f",ok);const v=fDeck[fi];if(ok)prog.known[v[0]]=1;else delete prog.known[v[0]];save();fi=(fi+1)%fDeck.length;fBack=false;flashDraw()}
 
 
 /* ============ TOCFL (Band A + Band B) ============ */
@@ -12311,11 +12400,12 @@ function tocflView(){
   if(tfMode==="dlg"&&isT)tfMode="list";
   $("#app").innerHTML=`
   <div class="card tf-intro">${intro}</div>
-  <div class="chips">${keys.map(l=>{const a=tfByL(l);return `<span class="chip ${l===tfLv?"on":""}" onclick="tfPickLv('${l}')">${l}<small class="tf-n"> ${tfKnownN(a)}/${a.length}</small></span>`}).join("")}</div>
+  <div class="chips">${keys.map(l=>{const a=tfByL(l);return `<span class="chip ${l===tfLv?"on":""}" onclick="tfPickLv('${l}')">${l}${lockIc(!tfLocked(l))}<small class="tf-n"> ${tfKnownN(a)}/${a.length}</small></span>`}).join("")}</div>
   ${tfMode==="dlg"?"":`<div class="row tf-bar">${ns?`<select id="tfSet" onchange="tfSet=+this.value;tfLim=100;tfDeck=[];tfQz=null;tocflView()">${setOpts}</select>`:""}
    <label class="stat"><input type="checkbox" ${tfNew?"checked":""} onchange="tfNew=this.checked;tfDeck=[];tfQz=null;tocflView()"> chỉ từ chưa thuộc</label></div>`}
   <div class="seg">${modes.map(([k,l])=>`<button class="${tfMode===k?"on":""}" onclick="tfMode='${k}';tfDeck=[];tfQz=null;tocflView()">${l}</button>`).join("")}</div>
   <div id="tfbody"></div>`;
+  if(tfLocked(tfLv)){$("#tfbody").innerHTML=lockCard("lesson");return}
   ({list:tfListView,flash:tfFlashView,quiz:tfQuizView,dlg:tfDlgView})[tfMode]();
 }
 function tfDlgView(){
@@ -12345,6 +12435,7 @@ function tfDraw(){
     (items.length>tfLim?`<div style="text-align:center;margin:12px"><button class="b" onclick="tfLim+=200;tfDraw()">Hiện thêm (${items.length-tfLim} từ nữa)</button></div>`:"");
 }
 function tfFlashView(){
+  if(capped("f")){$("#tfbody").innerHTML=lockCard("flash");return}
   if(!tfDeck.length){tfDeck=sh(tfScope());tfi=0;tfBack=false}
   if(!tfDeck.length){$("#tfbody").innerHTML=`<div class="card">🎉 Bạn đã thuộc hết phần này! Bỏ chọn “chỉ từ chưa thuộc” để ôn lại.</div>`;return}
   const x=tfDeck[tfi];
@@ -12358,8 +12449,9 @@ function tfFlashView(){
    <button class="b p" onclick="tfAns(true)">✅ Đã thuộc</button></div>`;
   if(!tfBack)speak(x.s);
 }
-function tfAns(ok){const x=tfDeck[tfi];if(ok)prog.tk[x.k]=1;else delete prog.tk[x.k];save();tfi=(tfi+1)%tfDeck.length;tfBack=false;tfFlashView()}
+function tfAns(ok){dayAdd("f");logHist("f",ok);const x=tfDeck[tfi];if(ok)prog.tk[x.k]=1;else delete prog.tk[x.k];save();tfi=(tfi+1)%tfDeck.length;tfBack=false;tfFlashView()}
 function tfQuizView(){
+  if(capped("q")){$("#tfbody").innerHTML=lockCard("quiz");return}
   const sc=tfScope();
   if(sc.length<4){$("#tfbody").innerHTML=`<div class="card">Cần ít nhất 4 từ để làm trắc nghiệm. Hãy chọn phạm vi rộng hơn.</div>`;return}
   const x=sc[Math.random()*sc.length|0],pool=tfByL(tfLv),wrong=[];
@@ -12369,11 +12461,12 @@ function tfQuizView(){
   const q=tfQm==="h2m"?`<div class="zh" style="font-size:54px;text-align:center">${x.h}</div><div class="py" style="text-align:center">${x.p}</div>`
     :tfQm==="a2m"?`<div style="text-align:center"><button class="b p" onclick="speak('${x.s}')">🔊 Nghe lại</button></div>`
     :`<div style="text-align:center;font-size:22px;margin:6px 0">${esc(x.m)}</div>`;
-  $("#tfbody").innerHTML=`<div class="chips">${modes.map(([k,l])=>`<span class="chip ${tfQm===k?"on":""}" onclick="tfQm='${k}';tfQz=null;tfQuizView()">${l}</span>`).join("")}</div>
+  $("#tfbody").innerHTML=`<div class="chips">${modes.map(([k,l])=>`<span class="chip ${tfQm===k?"on":""}" onclick="tfQmPick('${k}')">${l}${lockIc(isPro()||k==="h2m")}</span>`).join("")}</div>
   <div class="card">${q}<div id="tfopts" style="margin-top:12px">${tfQz.opts.map((o,i)=>`<button class="b opt" onclick="tfCheck(${i},this)">${tfQm==="m2h"?`<span class="zh" style="font-size:24px">${o.h}</span> <span class="py">${o.p}</span>`:esc(o.m)}</button>`).join("")}</div>
   <div id="tffb"></div><div class="stat" style="margin-top:8px">Chuỗi đúng liên tiếp: ${tfStreak}</div></div>`;
   if(tfQm==="a2m")speak(x.s);
 }
+function tfQmPick(k){if(!isPro()&&k!=="h2m"){showLock("mode");return}tfQm=k;tfQz=null;tfQuizView()}
 function tfCheck(i,btn){
   if(tfQz.done)return;tfQz.done=true;const x=tfQz.x,ok=tfQz.opts[i]===x;mark(ok);
   btn.classList.add(ok?"ok":"bad");
@@ -12853,10 +12946,12 @@ function quizView(){
   if(!qMode){
     $("#app").innerHTML=`<div class="stat" style="margin-bottom:10px">Điểm tích lũy: ${prog.score.right}/${prog.score.total}</div>
     <div class="card"><h3>Chọn dạng bài</h3>
-    ${[["zh2vi","Đọc Hán tự → chọn nghĩa tiếng Việt"],["vi2zh","Nghĩa tiếng Việt → chọn Hán tự"],["listen","🎧 Nghe → chọn từ đúng"],["fill","Điền pinyin (không cần dấu thanh)"],["order","Sắp xếp từ thành câu"]].map(([k,l])=>`<button class="b opt" onclick="qMode='${k}';qn=0;nextQ()">${l}</button>`).join("")}</div>`;
+    ${[["zh2vi","Đọc Hán tự → chọn nghĩa tiếng Việt"],["vi2zh","Nghĩa tiếng Việt → chọn Hán tự"],["listen","🎧 Nghe → chọn từ đúng"],["fill","Điền pinyin (không cần dấu thanh)"],["order","Sắp xếp từ thành câu"]].map(([k,l])=>`<button class="b opt" onclick="pickQ('${k}')">${l}${lockIc(isPro()||k==="zh2vi"||k==="vi2zh")}</button>`).join("")}</div>`;
   }else{qn--;nextQ()}   // đang trong một dạng bài: vẽ lại câu mới (tránh hiện nội dung cũ của tab khác)
 }
+function pickQ(k){if(!isPro()&&["listen","fill","order"].includes(k)){showLock("mode");return}qMode=k;qn=0;nextQ()}
 function nextQ(){
+  if(capped("q")){$("#app").innerHTML=lockCard("quiz");return}
   const m=qMode;qn++;
   if(m==="order"){let OP=ORDER.filter(o=>inL(o[2]));if(!OP.length)OP=ORDER;const [vi,toks]=OP[Math.random()*OP.length|0];Q={vi,toks,pick:[],pool:sh(toks.map((t,i)=>({t,i})))};if(Q.pool.every((x,i)=>x.i===i))Q.pool.reverse();return orderDraw()}
   const P=pool(),w=P[Math.random()*P.length|0];
