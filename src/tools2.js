@@ -16,6 +16,7 @@ const sentOk=s=>lesFree(s.b,s.n);
 /* ---- Dictation Arena: Chép chính tả + Shadowing ---- */
 let dMode="dict",dFilter="all",dSel=null,dQ=[],dI=0,dRes=null,dStat={ok:0,n:0},dBest={};
 const dKey=(m,b,n)=>m+b+":"+n;
+function goVideo(){dMode="vid";dSel=null;vCur=null;goPage("dictation")}
 function goShadow(){dMode="shad";dSel=null;goPage("dictation")}
 function dLessons(){
   const M={};allSents().forEach(x=>{const k=x.b+":"+x.n;(M[k]=M[k]||{b:x.b,n:x.n,lz:x.lz,lv:x.lv,S:[]}).S.push(x)});
@@ -47,9 +48,35 @@ function shadowRec(){
     box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Nhại rất giống!":pct>=70?"👍 Khá tốt, chú ý các từ đỏ.":"💪 Nghe lại rồi nhại chậm hơn nhé."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}<div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div>${diffBlock(text,s.zh)}</div>`;
   });
 }
+
+/* ---- Shadowing video (YouTube, trình phát nhúng chính thức) ---- */
+const VPL=[
+ {k:"a",t:"Shadowing HSK 1–2 · Sơ cấp",list:"PLN7MEvFrgspUfsYuGJord_LVV9gp-L1bZ",v:[
+  ["24Oj4bOACk0","Ông lão ấy là ai","5:31"],["QttmYEqS4ig","Basic Chinese Communication · 1000 câu Q&A (Phần 2)","11:00"],["o0lEj4gguYg","100 câu tiếng Trung ngắn cho người mới bắt đầu","23:47"],["Yvs1v7d--N0","Luyện nghe nói trọn bộ HSK1 3.0","34:41"],["_tvupSFn1JE","Tôi nhặt được một chiếc điện thoại","5:10"],["d67PGiWagqg","99% mọi người đều có một thói quen","4:58"],["NQjXWvmi4aE","《父母的爱》Tình yêu của ba mẹ","2:11"],["MSNFkNBW9eM","Thời gian và sinh hoạt hằng ngày · 1000 câu (Phần 3)","20:13"],["WKa4ZJHLuRw","100 mẫu câu thông dụng nhất (HSK 1)","19:19"],["9Dg8GDzqvrg","Thử thách siêu thị 100 tệ · Slow Chinese","8:18"],["K9cHYy803ek","Dành cho người muốn bỏ cuộc khi học tiếng Trung","4:48"]]},
+ {k:"b",t:"Shadowing HSK 3–4 · Trung cấp",list:"PLN7MEvFrgspWU-w2Id5HeiC0p6CietVy9",v:[
+  ["391pxYmxM5A","Ngày 18 · Bắc Kinh, cuộc sống mới","8:26"],["H19JgyACIl8","Ngày 12 · AI có thay thế chúng ta không?","3:08"],["Hz53Hk-V3M0","Ngày 17 · Điện thoại di động đã thay đổi cuộc sống thế nào?",""],["heONvlG-IBg","Ngày 16 · Cố gắng một lần vì cha mẹ","3:02"],["5hUjQts9yqY","Ngày 15 · Mua nhà hay thuê nhà?","2:40"],["HitqCaSwXVs","Ngày 14 · Công việc ổn định hay công việc yêu thích?","2:22"],["numid9wLIII","100 câu hỏi đáp thông dụng HSK 3–4","15:00"],["Lak92FJCyDg","Ngày 10 · Chữa lành và cân bằng cuộc sống","3:47"],["Qa-Dp8RicyM","Ngày 10 · 5 sự thật bất ngờ về Trung Quốc hiện đại","8:02"],["QhPcdEedDvg","Ngày 9 · 5 đoạn văn về đời sống ở Trung Quốc","10:24"],["VhfyAayxMy8","Ngày 8 · 50 câu giao tiếp hằng ngày","12:12"],["WavvIRe2y8w","别放弃学中文！Đừng bỏ cuộc khi học tiếng Trung","6:38"],["4BEjqj2zfWU","Ngày 6 · Khi rất mệt nhưng vẫn phải tiếp tục",""],["E4T8MFSgSPM","Học tiếng Trung khó, nhưng có bạn thật tốt (HSK 2–3)",""],["ByudNdJng60","Ngày 5","9:08"],["UJlkNPREdhQ","Ngày 4","7:18"],["nPkVhl3KNpM","Ngày 3 · Mặc cả, chọn màu và cỡ","7:46"],["u-OnFqTfc5c","Ngày 2 · Giới thiệu, sở thích và kế hoạch cuối tuần","9:00"],["LFmGScveiwA","Ngày 1 · Tự tin nói tiếng Trung","11:29"],["ueqi9FEDSSU","Cuộc sống đại học · Slow Chinese (HSK 2–3)","5:32"],["7dlhfqEizWU","5 phút luyện nghe: Tuần của tôi (HSK 2–3)","5:33"]]}];
+const VFREE=4;
+let vCur=null;
+function vOpen(k,i){
+  if(!isPro()&&i>=VFREE){showLock("lesson");return}
+  vCur={k,i};prog.vw=prog.vw||{};prog.vw[VPL.find(x=>x.k===k).v[i][0]]=1;save();track('video_open',{k,i});pageView();window.scrollTo({top:0});
+}
+function videoView(){
+  if(vCur){
+    const P=VPL.find(x=>x.k===vCur.k),v=P.v[vCur.i];
+    return `<div class="row" style="margin-bottom:10px"><button class="b" onclick="vCur=null;pageView()">← Danh sách video</button><b>${esc(P.t)}</b></div>
+    <div class="vwrap"><iframe src="https://www.youtube-nocookie.com/embed/${v[0]}?rel=0" title="${esc(v[1])}" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+    <h3 style="margin:14px 0 4px">${esc(v[1])}</h3><div class="row"><a class="b" href="https://www.youtube.com/watch?v=${v[0]}" target="_blank" rel="noopener">▶ Mở trên YouTube</a>${P.v[vCur.i+1]?`<button class="b p" onclick="vOpen('${P.k}',${vCur.i+1})">Video tiếp →</button>`:""}</div>
+    <div class="card tip" style="margin-top:14px"><b>Cách shadowing với video:</b><ol class="tips"><li>Lần 1: nghe và xem phụ đề, hiểu nghĩa.</li><li>Lần 2: nghe và đọc nhẩm <b>trễ hơn người nói khoảng 1 giây</b>, bắt chước nhịp và ngữ điệu.</li><li>Lần 3: tắt phụ đề, nhại theo thật to. Dùng ⚙ trong video để giảm tốc độ nếu nhanh.</li><li>Ghi âm lại bằng điện thoại và so với bản gốc.</li></ol></div>
+    <p class="stat">Video thuộc về các kênh YouTube tương ứng và được phát bằng trình phát nhúng chính thức của YouTube.</p>`;
+  }
+  return VPL.map(P=>`<div class="lh">${esc(P.t)}<span class="vi">${P.v.length} video</span></div><div class="vgrid">${P.v.map((v,i)=>{const free=isPro()||i<VFREE,seen=(prog.vw||{})[v[0]];return `<button class="vcard" onclick="vOpen('${P.k}',${i})"><div class="th"><img loading="lazy" src="https://i.ytimg.com/vi/${v[0]}/mqdefault.jpg" alt=""><span class="tg ${free?"fr":"vip"}">${free?"Miễn phí":"🔒 Pro"}</span>${v[2]?`<em>${v[2]}</em>`:""}</div><div class="tt">${esc(v[1])}</div><small class="${seen?"okc":"stat"}">${seen?"✓ Đã xem":"Chưa xem"}</small></button>`}).join("")}</div>`).join("")
+   +`<p class="stat" style="margin-top:14px">Video thuộc về các kênh YouTube tương ứng; trang chỉ nhúng bằng trình phát chính thức của YouTube.</p>`;
+}
 function dictationView(){
   const L=dLessons();
-  const modeTabs=`<div class="seg" style="max-width:420px"><button class="${dMode==="dict"?"on":""}" onclick="dMode='dict';dSel=null;pageView()">✍️ Chép chính tả</button><button class="${dMode==="shad"?"on":""}" onclick="dMode='shad';dSel=null;pageView()">🗣️ Shadowing</button></div>`;
+  const modeTabs=`<div class="seg" style="max-width:560px"><button class="${dMode==="dict"?"on":""}" onclick="dMode='dict';dSel=null;pageView()">✍️ Chép chính tả</button><button class="${dMode==="shad"?"on":""}" onclick="dMode='shad';dSel=null;pageView()">🗣️ Shadowing</button><button class="${dMode==="vid"?"on":""}" onclick="dMode='vid';dSel=null;vCur=null;pageView()">🎬 Video</button></div>`;
+  if(dMode==="vid")return `<div class="dhero"><small>LUYỆN NGHE VÀ NHẠI THEO VIDEO</small><h2>Shadowing Video</h2><p>Xem video có người bản xứ nói, rồi nhại theo từng câu. Hai danh sách phát từ sơ cấp (HSK 1–2) đến trung cấp (HSK 3–4).</p></div>${modeTabs}<div style="margin-top:14px">${videoView()}</div>`;
   if(dSel){
     const s=dQ[dI],head=`<div class="row" style="margin-bottom:10px"><button class="b" onclick="stopRec();dSel=null;pageView()">← Danh sách bài</button><b>Quyển ${dSel.b} · Bài ${dSel.n} · <span class="zh">${dSel.lz}</span></b></div>`;
     if(dI>=dQ.length)return head+`<div class="card" style="text-align:center"><h3>🎉 Hoàn thành ${dQ.length} câu</h3><p>${dMode==="dict"?"Đúng hoàn toàn":"Nhại đạt từ 70%"}: <b>${dStat.ok}/${dStat.n}</b></p><div class="row" style="justify-content:center"><button class="b p" onclick="dOpen('${dSel.b}',${dSel.n})">Làm lại</button><button class="b" onclick="dSel=null;pageView()">Chọn bài khác</button></div></div>`;
