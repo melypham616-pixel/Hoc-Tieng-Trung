@@ -672,6 +672,9 @@ body.hasl .hero .brand{display:none}
 .site-in button,.site-in .pill,.site-in a,.logo b,.logo small{white-space:nowrap}
 .site-in{flex-wrap:nowrap}
 @media (min-width:1001px) and (max-width:1380px){.logo small{display:none}#bbar .nv{padding:0 10px;font-size:14px;gap:0}#bbar .nv .ic{display:none}.site-in{gap:10px}.hbtn{padding:0 12px}}
+
+.payst{margin:10px 0;padding:12px 14px;border-radius:12px;background:var(--bg);border:1px dashed var(--line);font-weight:600;font-size:14.5px}.payst.ok{background:var(--okbg);border:1px solid var(--ok);color:var(--ok)}.payst.bad{background:var(--badbg);border:1px solid var(--bad);color:var(--bad)}
+#hUser{background:var(--pri);color:#fff;border-color:var(--pri);font-weight:800}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -683,7 +686,7 @@ body.hasl .hero .brand{display:none}
       <div class="langw"><button class="lgbtn" id="lgbtn" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ"><span id="lgflag" aria-hidden="true">🇻🇳</span><b id="lgcode">VI</b><span class="chev" aria-hidden="true">⌄</span></button>
         <div class="lgmenu" id="lgmenu" hidden><button data-l="vi">🇻🇳 Tiếng Việt</button><button data-l="en">🇬🇧 English</button></div></div>
       <button class="ibtn" id="thm" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện">🌓</button>
-      <button class="b hbtn" id="hAct">Kích hoạt</button><button class="b p hbtn" id="hUp">Nâng cấp</button><span class="pill hbtn" id="hPro" hidden>✓ Pro</span>
+      <button class="b hbtn" id="hAct" hidden>Đăng nhập</button><button class="ibtn" id="hUser" hidden aria-label="Tài khoản">?</button><button class="b p hbtn" id="hUp">Nâng cấp</button><span class="pill hbtn" id="hPro" hidden>✓ Pro</span>
     </div>
   </div>
   <div class="subnav" id="bbar"></div>

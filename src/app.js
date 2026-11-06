@@ -1015,5 +1015,6 @@ $("#les").onchange=e=>setLesson(e.target.value);
 $("#thm").onclick=()=>{const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}}})();
 buildNav();
 headerInit();
+sbInit();
 footerView();
 render();

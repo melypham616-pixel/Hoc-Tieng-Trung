@@ -3,7 +3,7 @@
 let LANG="vi";try{LANG=localStorage.getItem("lang")==="en"?"en":"vi"}catch(e){}
 const EN={
 /* điều hướng & đầu trang */
-"Tổng quan":"Dashboard","Khóa học":"Courses","Từ vựng":"Vocabulary","Luyện tập":"Practice","Hồ sơ":"Profile","Kích hoạt":"Activate","Nâng cấp":"Upgrade","Học Tiếng Trung":"Study Chinese",
+"Tổng quan":"Dashboard","Khóa học":"Courses","Từ vựng":"Vocabulary","Luyện tập":"Practice","Hồ sơ":"Profile","Đăng nhập":"Log in","Gửi link đăng nhập":"Send login link","Tài khoản":"Account","Đăng xuất":"Log out","Đăng nhập để dùng và mua gói Pro.":"Log in to use and buy Pro.","Nâng cấp":"Upgrade","Học Tiếng Trung":"Study Chinese",
 "Đổi giao diện sáng/tối":"Toggle light/dark theme","Đổi giao diện":"Toggle theme","Ngôn ngữ":"Language",
 "Tốc độ":"Speed","Giọng":"Voice","Nghe thử":"Test voice","🔊 Nghe thử":"🔊 Test voice","Phạm vi":"Scope",
 /* thanh bài học */
@@ -152,18 +152,14 @@ function setLang(l){
 }
 function langUI(){
   const f=$("#lgflag"),c=$("#lgcode");if(f)f.textContent=LANG==="en"?"🇬🇧":"🇻🇳";if(c)c.textContent=LANG==="en"?"EN":"VI";
-  const pro=typeof isPro==="function"&&isPro();const a=$("#hAct"),u=$("#hUp"),p=$("#hPro");if(a)a.hidden=pro;if(u)u.hidden=pro;if(p)p.hidden=!pro;
+  if(typeof uiAuth==="function")uiAuth();
 }
 function headerInit(){
   const btn=$("#lgbtn"),menu=$("#lgmenu");
   btn.onclick=e=>{e.stopPropagation();const o=menu.hidden;menu.hidden=!o;btn.setAttribute("aria-expanded",String(o))};
   menu.onclick=e=>{const b=e.target.closest("button");if(b){setLang(b.dataset.l);menu.hidden=true;btn.setAttribute("aria-expanded","false")}};
   document.addEventListener("click",()=>{menu.hidden=true;btn.setAttribute("aria-expanded","false")});
-  $("#hAct").onclick=showActivate;$("#hUp").onclick=()=>goPage("plans");
+  $("#hAct").onclick=()=>showLogin();$("#hUser").onclick=showAccount;$("#hUp").onclick=()=>goPage("plans");
   new MutationObserver(()=>{if(!_busy&&LANG==="en")trSchedule()}).observe(document.body,{childList:true,subtree:true,characterData:true});
   document.documentElement.lang=LANG;langUI();if(LANG==="en")trSchedule();
-}
-function showActivate(){
-  const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};
-  d.innerHTML=`<div class="mbox"><button class="ibtn mx" onclick="this.closest('.modal').remove()" aria-label="Đóng">✕</button><h3>Nhập mã kích hoạt</h3><p class="stat">Bạn nhận mã qua email sau khi thanh toán. Không cần tạo tài khoản.</p>${premForm()}</div>`;document.body.appendChild(d);
 }

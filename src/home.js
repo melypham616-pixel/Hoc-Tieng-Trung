@@ -27,25 +27,6 @@ const PLANS=[
   {id:"y",name:"Pro năm",price:399000,per:"/năm",desc:"Tiết kiệm so với trả theo tháng",perks:["Toàn bộ quyền lợi Pro","Tài liệu học tập bổ sung (Anki, bản in)","Lộ trình học theo mục tiêu"]},
 ];
 const vnd=n=>n.toLocaleString("vi-VN")+"đ";
-function buy(id){
-  const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
-  const vn=!!(PAY.bank&&PAY.acc),I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),code="HTT "+Math.random().toString(36).slice(2,7).toUpperCase();
-  const qr=vn?`https://img.vietqr.io/image/${PAY.bank}-${PAY.acc}-compact2.png?amount=${pl.price}&addInfo=${encodeURIComponent(code)}&accountName=${encodeURIComponent(PAY.name)}`:"";
-  const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};
-  const vnHtml=vn?`<div class="qrw"><img src="${qr}" alt="Mã QR chuyển khoản VietQR" width="240"></div>
-   <ul class="bank"><li>Ngân hàng: <b>${PAY.bankName||PAY.bank}</b></li><li>Số tài khoản: <b>${PAY.acc}</b></li><li>Chủ tài khoản: <b>${PAY.name}</b></li><li>Số tiền: <b>${vnd(pl.price)}</b></li><li>Nội dung: <b>${code}</b></li></ul>
-   <p class="stat">Sau khi chuyển khoản, gửi email đã đăng ký kèm nội dung chuyển khoản <b>${code}</b> để được kích hoạt${PAY.email?` — gửi tới <b>${PAY.email}</b>`:""} (thường trong 24 giờ).</p>`
-   :`<p>Thanh toán trong nước đang được cập nhật. Bạn để lại email ở mục đăng ký, mình sẽ liên hệ khi mở bán.</p>`;
-  const usd=USD[id],intlHtml=intl?`<p>Pay by Visa / Mastercard or PayPal in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}) with:</p><div class="paybtns">${I.card?`<a class="btn-l p" href="${I.card}" target="_blank" rel="noopener">💳 Visa / Mastercard</a>`:""}${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div>
-   <p class="stat">After paying, email us the address you used to sign up with your payment receipt and we will send your activation code (usually within 24 hours).</p>`
-   :`<p>Card (Visa / Mastercard) and international payments are coming soon. Leave your email in the sign-up form and we will let you know.</p>`;
-  d.innerHTML=`<div class="mbox"><button class="ibtn mx" onclick="this.closest('.modal').remove()" aria-label="Đóng">✕</button>
-  <h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3>
-  <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">💳 Thẻ Visa & Quốc tế</button></div>
-  <div class="ptab" data-p="vn">${vnHtml}</div><div class="ptab" data-p="in" hidden>${intlHtml}</div></div>`;
-  d.querySelector(".seg").onclick=e=>{const b=e.target.closest("button");if(!b)return;d.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b));d.querySelectorAll(".ptab").forEach(p=>p.hidden=p.dataset.p!==(b.dataset.t==="vn"?"vn":"in"))};
-  document.body.appendChild(d);
-}
 function goTo(b,t,m){if(t)tab=t;if(m)tfMode=m;track('home_go',{b,t:t||m||""});setBook(b)}
 function homeCounts(){
   let words=VOCAB.length,lessons=LESSONS.length;
@@ -81,7 +62,7 @@ const PAGES={
   <div class="two"><div class="mini"><b>Mới học</b><p class="stat">Bắt đầu với Quyển 1, học lần lượt từng bài.</p><button class="b p" onclick="setBook('1')">Vào Quyển 1</button></div><div class="mini"><b>Đã có nền tảng</b><p class="stat">Chọn quyển phù hợp hoặc ôn từ vựng TOCFL theo cấp độ.</p><button class="b" onclick="setBook('T')">Vào TOCFL</button></div></div>`},
  privacy:{t:"Chính sách bảo mật",ic:"🔒",h:`
   <p class="stat">Cập nhật lần cuối: 06/11/2026</p>
-  <h4>Dữ liệu được lưu ở đâu?</h4><p>Tiến độ học (từ đã thuộc, điểm trắc nghiệm, quyển đang học, lựa chọn giao diện) được lưu <b>ngay trên trình duyệt của bạn</b> (localStorage). Chúng tôi không có tài khoản người dùng và không giữ bản sao các dữ liệu này.</p>
+  <h4>Dữ liệu được lưu ở đâu?</h4><p>Tiến độ học (từ đã thuộc, điểm trắc nghiệm, quyển đang học, lựa chọn giao diện) được lưu <b>ngay trên trình duyệt của bạn</b> (localStorage). Nếu bạn đăng nhập (để mua hoặc dùng gói Pro), email của bạn và trạng thái gói được lưu trên dịch vụ Supabase; chúng tôi không lưu mật khẩu. Tiến độ học vẫn nằm trên trình duyệt của bạn.</p>
   <h4>Thông tin bạn chủ động gửi</h4><p>Khi bạn đăng ký nhận thông báo, gửi phản ánh hoặc liên hệ mua gói, địa chỉ email và nội dung bạn nhập được gửi qua dịch vụ biểu mẫu Formspree và chỉ dùng để liên lạc về việc học: thông báo bài mới, trả lời góp ý, kích hoạt gói. Chúng tôi không bán hay chia sẻ email của bạn cho bên thứ ba vì mục đích quảng cáo.</p>
   <h4>Thống kê truy cập</h4><p>Trang dùng Google Analytics 4 để biết các mục nào được xem nhiều (ví dụ quyển, tab, lượt bấm nút). Dữ liệu này ẩn danh, không gắn với tên hay email của bạn. Bạn có thể tắt bằng tiện ích chặn theo dõi của trình duyệt.</p>
   <h4>Giọng đọc và micro</h4><p>Âm thanh Meijia được thu sẵn và phát ngay từ trang. Mục <i>Vấn đáp luyện nói</i> dùng micro và nhận dạng giọng nói của trình duyệt sau khi bạn cho phép; âm thanh do trình duyệt xử lý, chúng tôi không ghi âm hay lưu trữ.</p>
@@ -106,13 +87,13 @@ const PAGES={
   <ul><li>Giá niêm yết bằng đồng Việt Nam (VND), đã bao gồm mọi khoản phí chúng tôi thu; ngân hàng của bạn có thể tính phí chuyển khoản riêng.</li><li>Gói Pro tháng và năm không tự gia hạn.</li><li>Giá và quyền lợi có thể thay đổi cho người mua mới; gói đã mua giữ nguyên quyền lợi trong thời hạn đã trả.</li><li>Gói Free luôn có để bạn trải nghiệm trước khi quyết định.</li></ul>
   <p><button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
  delivery:{t:"Phương thức cung cấp dịch vụ",ic:"📦",h:()=>`
-  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Mã kích hoạt Pro:</b> gửi qua email sau khi xác nhận thanh toán; nhập mã ở mục kích hoạt để mở các tính năng Pro trên thiết bị của bạn.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
-  <h4>Đã có mã?</h4>${premForm()}`},
+  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Gói Pro:</b> kích hoạt tự động trong vài giây sau khi hệ thống nhận đúng số tiền và đúng nội dung chuyển khoản; đăng nhập bằng email đã dùng khi mua để sử dụng.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
+  `},
  index:{t:"Danh mục chính sách",ic:"🗂️",h:()=>`
   <ul class="idx">${["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data"].map(k=>`<li><a href="#" onclick="goPage('${k}');return false">${PAGES[k].ic} ${PAGES[k].t}</a></li>`).join("")}</ul>`},
  payment:{t:"Chính sách thanh toán",ic:"💳",h:`
   <h4>Các gói</h4><ul><li><b>Free (0đ):</b> một số bài học miễn phí, từ vựng và phát âm, quiz cơ bản.</li><li><b>Pro tháng — 49.000đ/tháng:</b> mở khóa toàn bộ bài học, flashcards không giới hạn, ôn tập thông minh (SRS), theo dõi tiến độ, bài kiểm tra nâng cao.</li><li><b>Pro năm — 399.000đ/năm:</b> toàn bộ quyền lợi Pro cùng tài liệu học tập bổ sung (Anki, bản in) và lộ trình học theo mục tiêu.</li></ul>
-  <h4>Cách thanh toán</h4><ol class="steps"><li>Ở trang chủ, bấm <b>Nâng cấp</b> ở gói muốn mua.</li><li>Quét mã QR hoặc chuyển khoản theo thông tin hiển thị, giữ nguyên <b>nội dung chuyển khoản</b>.</li><li>Gửi email đã đăng ký kèm nội dung chuyển khoản qua <a href="#" onclick="goPage('contact');return false">mục liên hệ</a>.</li><li>Chúng tôi đối chiếu và gửi tài liệu/kích hoạt quyền lợi, thường trong vòng 24 giờ.</li></ol>
+  <h4>Cách thanh toán</h4><ol class="steps"><li>Ở trang chủ, bấm <b>Nâng cấp</b> ở gói muốn mua.</li><li>Quét mã QR hoặc chuyển khoản theo thông tin hiển thị, giữ nguyên <b>nội dung chuyển khoản</b>.</li><li>Hệ thống tự đối chiếu và kích hoạt gói cho tài khoản của bạn trong vài giây. Chỉ khi đúng số tiền và đúng nội dung mới kích hoạt; nếu chuyển sai, hãy liên hệ để được hỗ trợ.</li></ol>
   <h4>Lưu ý</h4><p>Thanh toán bằng chuyển khoản ngân hàng. Chúng tôi không yêu cầu mật khẩu, mã OTP hay thông tin thẻ của bạn. <button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
  refund:{t:"Hoàn tiền & hủy gói",ic:"↩️",h:`
   <h4>Hoàn tiền</h4><ul><li>Bạn có thể yêu cầu hoàn tiền trong <b>7 ngày</b> kể từ khi thanh toán nếu chưa nhận tài liệu hoặc quyền lợi không đúng mô tả.</li><li>Chuyển nhầm số tiền hoặc chuyển trùng sẽ được hoàn lại đầy đủ.</li><li>Đã nhận và tải tài liệu số thì không hoàn tiền, trừ khi tài liệu lỗi và chúng tôi không sửa được.</li></ul>

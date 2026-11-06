@@ -672,6 +672,9 @@ body.hasl .hero .brand{display:none}
 .site-in button,.site-in .pill,.site-in a,.logo b,.logo small{white-space:nowrap}
 .site-in{flex-wrap:nowrap}
 @media (min-width:1001px) and (max-width:1380px){.logo small{display:none}#bbar .nv{padding:0 10px;font-size:14px;gap:0}#bbar .nv .ic{display:none}.site-in{gap:10px}.hbtn{padding:0 12px}}
+
+.payst{margin:10px 0;padding:12px 14px;border-radius:12px;background:var(--bg);border:1px dashed var(--line);font-weight:600;font-size:14.5px}.payst.ok{background:var(--okbg);border:1px solid var(--ok);color:var(--ok)}.payst.bad{background:var(--badbg);border:1px solid var(--bad);color:var(--bad)}
+#hUser{background:var(--pri);color:#fff;border-color:var(--pri);font-weight:800}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -683,7 +686,7 @@ body.hasl .hero .brand{display:none}
       <div class="langw"><button class="lgbtn" id="lgbtn" aria-haspopup="true" aria-expanded="false" aria-label="Ngôn ngữ"><span id="lgflag" aria-hidden="true">🇻🇳</span><b id="lgcode">VI</b><span class="chev" aria-hidden="true">⌄</span></button>
         <div class="lgmenu" id="lgmenu" hidden><button data-l="vi">🇻🇳 Tiếng Việt</button><button data-l="en">🇬🇧 English</button></div></div>
       <button class="ibtn" id="thm" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện">🌓</button>
-      <button class="b hbtn" id="hAct">Kích hoạt</button><button class="b p hbtn" id="hUp">Nâng cấp</button><span class="pill hbtn" id="hPro" hidden>✓ Pro</span>
+      <button class="b hbtn" id="hAct" hidden>Đăng nhập</button><button class="ibtn" id="hUser" hidden aria-label="Tài khoản">?</button><button class="b p hbtn" id="hUp">Nâng cấp</button><span class="pill hbtn" id="hPro" hidden>✓ Pro</span>
     </div>
   </div>
   <div class="subnav" id="bbar"></div>
@@ -11817,9 +11820,8 @@ BOOKS[6]={lessons:[{n:1,zh:"職校教育",vi:"Giáo dục trường nghề",v:`�
 
 /* ============ GÓI FREE / PRO (khóa mềm phía trình duyệt) ============ */
 const FREE={lessons:{"1":5,"2":2,"3":2,"4":2,"5":2,"6":2},tfLv:["A1"],quiz:15,flash:15};   // số bài miễn phí mỗi quyển; số câu quiz / thẻ nhớ mỗi ngày
-const PREM_SECRET="htt-doi-secret-nay";   // ĐỔI chuỗi này (dùng chung với tools/premcode.js) trước khi bán
-const premCode=(e,pl)=>pl.toUpperCase()+cyrb53("p|"+PREM_SECRET+"|"+pl+"|"+e.toLowerCase().trim()).toString(36).toUpperCase().slice(0,7);
-function premInfo(){const p=prog.prem;if(!p||!p.email||!p.code)return null;const pl=p.code[0].toLowerCase();return (pl==="m"||pl==="y")&&p.code===premCode(p.email,pl)?pl:null}
+let SUB=null;   // gói đang dùng, đọc từ server (bảng subscriptions) sau khi đăng nhập
+function premInfo(){return SUB&&SUB.expires_at&&new Date(SUB.expires_at)>new Date()?SUB.plan:null}
 const isPro=()=>!!premInfo(),isYear=()=>premInfo()==="y";
 function dayCnt(k){const d=new Date().toISOString().slice(0,10);if(!prog.day||prog.day.d!==d)prog.day={d,q:0,f:0};return prog.day[k]}
 function dayAdd(k){dayCnt(k);prog.day[k]++}
@@ -11833,15 +11835,9 @@ const LOCKMSG={lesson:["Bài học này thuộc gói Pro",`Gói Free mở một 
  flash:["Bạn đã dùng hết lượt thẻ nhớ miễn phí hôm nay",`Gói Free có ${FREE.flash} thẻ mỗi ngày. Pro dùng flashcards không giới hạn.`],
  mode:["Dạng bài này thuộc gói Pro","Gói Free có dạng bài cơ bản (nhìn chữ chọn nghĩa). Pro mở thêm nghe, điền pinyin, sắp xếp câu và các dạng nâng cao."],
  pro:["Tính năng này thuộc gói Pro","Nâng cấp Pro để dùng."],year:["Tính năng này thuộc gói Pro năm","Gói Pro năm có thêm tài liệu học tập bổ sung và lộ trình học theo mục tiêu."]};
-function lockCard(k){const m=LOCKMSG[k]||LOCKMSG.pro;return `<div class="card lock"><div style="font-size:40px">🔒</div><h3>${m[0]}</h3><p>${m[1]}</p><p><button class="btn-l p" onclick="goPlans()">Xem gói Pro</button></p><details><summary>Tôi đã có mã kích hoạt</summary>${premForm()}</details></div>`}
+function lockCard(k){const m=LOCKMSG[k]||LOCKMSG.pro;return `<div class="card lock"><div style="font-size:40px">🔒</div><h3>${m[0]}</h3><p>${m[1]}</p><p><button class="btn-l p" onclick="goPlans()">Xem gói Pro</button></p>${premForm()}</div>`}
 function showLock(k){const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};d.innerHTML=`<div class="mbox" style="text-align:center"><button class="ibtn mx" onclick="this.closest('.modal').remove()">✕</button>${lockCard(k).replace('class="card lock"','')}</div>`;document.body.appendChild(d);track('lock_view',{k})}
-function premActivate(ev){
-  ev.preventDefault();const f=ev.target,em=f.email.value.trim(),cd=f.code.value.trim().toUpperCase(),msg=f.querySelector(".su-msg");
-  const pl=cd[0]&&cd[0].toLowerCase();
-  if((pl==="m"||pl==="y")&&cd===premCode(em,pl)){prog.prem={email:em,code:cd};save();track('premium_activate',{plan:pl});msg.style.color="var(--ok)";msg.textContent="✅ Đã kích hoạt gói Pro "+(pl==="y"?"năm":"tháng")+" trên thiết bị này!";setTimeout(()=>location.reload(),900)}
-  else{msg.style.color="var(--bad)";msg.textContent="Email hoặc mã chưa đúng. Kiểm tra lại mã bạn nhận được nhé."}
-}
-const premForm=()=>`<form onsubmit="premActivate(event)" class="fb-form" style="max-width:420px;text-align:left"><label>Email đã dùng khi mua<input type="email" name="email" required value="${(prog.prem&&prog.prem.email)||""}"></label><label>Mã kích hoạt<input type="text" name="code" required placeholder="VD: M7K2M9XQ" style="text-transform:uppercase"></label><button class="btn-l p">Kích hoạt</button><div class="su-msg"></div></form>`;
+const premForm=()=>typeof signedIn==="function"&&signedIn()?"":`<p style="margin:10px 0"><button class="btn-l p" onclick="showLogin()">Đăng nhập</button></p>`;
 
 /* ============ CÔNG CỤ HỌC: 214 BỘ THỦ · PINYIN · TRA TỪ · ÔN TẬP SRS ============ */
 const RAD_RAW=`1|一 yī nhất·số một|丨 gǔn cổn·nét sổ|丶 zhǔ chủ·chấm|丿 piě phiệt·nét phẩy|乙 yǐ ất·can thứ hai|亅 jué quyết·nét móc
@@ -12343,25 +12339,6 @@ const PLANS=[
   {id:"y",name:"Pro năm",price:399000,per:"/năm",desc:"Tiết kiệm so với trả theo tháng",perks:["Toàn bộ quyền lợi Pro","Tài liệu học tập bổ sung (Anki, bản in)","Lộ trình học theo mục tiêu"]},
 ];
 const vnd=n=>n.toLocaleString("vi-VN")+"đ";
-function buy(id){
-  const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
-  const vn=!!(PAY.bank&&PAY.acc),I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),code="HTT "+Math.random().toString(36).slice(2,7).toUpperCase();
-  const qr=vn?`https://img.vietqr.io/image/${PAY.bank}-${PAY.acc}-compact2.png?amount=${pl.price}&addInfo=${encodeURIComponent(code)}&accountName=${encodeURIComponent(PAY.name)}`:"";
-  const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};
-  const vnHtml=vn?`<div class="qrw"><img src="${qr}" alt="Mã QR chuyển khoản VietQR" width="240"></div>
-   <ul class="bank"><li>Ngân hàng: <b>${PAY.bankName||PAY.bank}</b></li><li>Số tài khoản: <b>${PAY.acc}</b></li><li>Chủ tài khoản: <b>${PAY.name}</b></li><li>Số tiền: <b>${vnd(pl.price)}</b></li><li>Nội dung: <b>${code}</b></li></ul>
-   <p class="stat">Sau khi chuyển khoản, gửi email đã đăng ký kèm nội dung chuyển khoản <b>${code}</b> để được kích hoạt${PAY.email?` — gửi tới <b>${PAY.email}</b>`:""} (thường trong 24 giờ).</p>`
-   :`<p>Thanh toán trong nước đang được cập nhật. Bạn để lại email ở mục đăng ký, mình sẽ liên hệ khi mở bán.</p>`;
-  const usd=USD[id],intlHtml=intl?`<p>Pay by Visa / Mastercard or PayPal in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}) with:</p><div class="paybtns">${I.card?`<a class="btn-l p" href="${I.card}" target="_blank" rel="noopener">💳 Visa / Mastercard</a>`:""}${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div>
-   <p class="stat">After paying, email us the address you used to sign up with your payment receipt and we will send your activation code (usually within 24 hours).</p>`
-   :`<p>Card (Visa / Mastercard) and international payments are coming soon. Leave your email in the sign-up form and we will let you know.</p>`;
-  d.innerHTML=`<div class="mbox"><button class="ibtn mx" onclick="this.closest('.modal').remove()" aria-label="Đóng">✕</button>
-  <h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3>
-  <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">💳 Thẻ Visa & Quốc tế</button></div>
-  <div class="ptab" data-p="vn">${vnHtml}</div><div class="ptab" data-p="in" hidden>${intlHtml}</div></div>`;
-  d.querySelector(".seg").onclick=e=>{const b=e.target.closest("button");if(!b)return;d.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b));d.querySelectorAll(".ptab").forEach(p=>p.hidden=p.dataset.p!==(b.dataset.t==="vn"?"vn":"in"))};
-  document.body.appendChild(d);
-}
 function goTo(b,t,m){if(t)tab=t;if(m)tfMode=m;track('home_go',{b,t:t||m||""});setBook(b)}
 function homeCounts(){
   let words=VOCAB.length,lessons=LESSONS.length;
@@ -12397,7 +12374,7 @@ const PAGES={
   <div class="two"><div class="mini"><b>Mới học</b><p class="stat">Bắt đầu với Quyển 1, học lần lượt từng bài.</p><button class="b p" onclick="setBook('1')">Vào Quyển 1</button></div><div class="mini"><b>Đã có nền tảng</b><p class="stat">Chọn quyển phù hợp hoặc ôn từ vựng TOCFL theo cấp độ.</p><button class="b" onclick="setBook('T')">Vào TOCFL</button></div></div>`},
  privacy:{t:"Chính sách bảo mật",ic:"🔒",h:`
   <p class="stat">Cập nhật lần cuối: 06/11/2026</p>
-  <h4>Dữ liệu được lưu ở đâu?</h4><p>Tiến độ học (từ đã thuộc, điểm trắc nghiệm, quyển đang học, lựa chọn giao diện) được lưu <b>ngay trên trình duyệt của bạn</b> (localStorage). Chúng tôi không có tài khoản người dùng và không giữ bản sao các dữ liệu này.</p>
+  <h4>Dữ liệu được lưu ở đâu?</h4><p>Tiến độ học (từ đã thuộc, điểm trắc nghiệm, quyển đang học, lựa chọn giao diện) được lưu <b>ngay trên trình duyệt của bạn</b> (localStorage). Nếu bạn đăng nhập (để mua hoặc dùng gói Pro), email của bạn và trạng thái gói được lưu trên dịch vụ Supabase; chúng tôi không lưu mật khẩu. Tiến độ học vẫn nằm trên trình duyệt của bạn.</p>
   <h4>Thông tin bạn chủ động gửi</h4><p>Khi bạn đăng ký nhận thông báo, gửi phản ánh hoặc liên hệ mua gói, địa chỉ email và nội dung bạn nhập được gửi qua dịch vụ biểu mẫu Formspree và chỉ dùng để liên lạc về việc học: thông báo bài mới, trả lời góp ý, kích hoạt gói. Chúng tôi không bán hay chia sẻ email của bạn cho bên thứ ba vì mục đích quảng cáo.</p>
   <h4>Thống kê truy cập</h4><p>Trang dùng Google Analytics 4 để biết các mục nào được xem nhiều (ví dụ quyển, tab, lượt bấm nút). Dữ liệu này ẩn danh, không gắn với tên hay email của bạn. Bạn có thể tắt bằng tiện ích chặn theo dõi của trình duyệt.</p>
   <h4>Giọng đọc và micro</h4><p>Âm thanh Meijia được thu sẵn và phát ngay từ trang. Mục <i>Vấn đáp luyện nói</i> dùng micro và nhận dạng giọng nói của trình duyệt sau khi bạn cho phép; âm thanh do trình duyệt xử lý, chúng tôi không ghi âm hay lưu trữ.</p>
@@ -12422,13 +12399,13 @@ const PAGES={
   <ul><li>Giá niêm yết bằng đồng Việt Nam (VND), đã bao gồm mọi khoản phí chúng tôi thu; ngân hàng của bạn có thể tính phí chuyển khoản riêng.</li><li>Gói Pro tháng và năm không tự gia hạn.</li><li>Giá và quyền lợi có thể thay đổi cho người mua mới; gói đã mua giữ nguyên quyền lợi trong thời hạn đã trả.</li><li>Gói Free luôn có để bạn trải nghiệm trước khi quyết định.</li></ul>
   <p><button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
  delivery:{t:"Phương thức cung cấp dịch vụ",ic:"📦",h:()=>`
-  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Mã kích hoạt Pro:</b> gửi qua email sau khi xác nhận thanh toán; nhập mã ở mục kích hoạt để mở các tính năng Pro trên thiết bị của bạn.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
-  <h4>Đã có mã?</h4>${premForm()}`},
+  <ul><li><b>Học trên web:</b> truy cập trực tiếp bằng trình duyệt, không cần cài đặt hay tài khoản.</li><li><b>Gói Pro:</b> kích hoạt tự động trong vài giây sau khi hệ thống nhận đúng số tiền và đúng nội dung chuyển khoản; đăng nhập bằng email đã dùng khi mua để sử dụng.</li><li><b>Tài liệu số (thẻ Anki, PDF):</b> gửi qua email dưới dạng liên kết tải về.</li><li><b>Thời gian:</b> thường trong 24 giờ sau khi nhận được thanh toán.</li></ul>
+  `},
  index:{t:"Danh mục chính sách",ic:"🗂️",h:()=>`
   <ul class="idx">${["rules","owner","privacy","rights","complaint","price","payment","delivery","refund","data"].map(k=>`<li><a href="#" onclick="goPage('${k}');return false">${PAGES[k].ic} ${PAGES[k].t}</a></li>`).join("")}</ul>`},
  payment:{t:"Chính sách thanh toán",ic:"💳",h:`
   <h4>Các gói</h4><ul><li><b>Free (0đ):</b> một số bài học miễn phí, từ vựng và phát âm, quiz cơ bản.</li><li><b>Pro tháng — 49.000đ/tháng:</b> mở khóa toàn bộ bài học, flashcards không giới hạn, ôn tập thông minh (SRS), theo dõi tiến độ, bài kiểm tra nâng cao.</li><li><b>Pro năm — 399.000đ/năm:</b> toàn bộ quyền lợi Pro cùng tài liệu học tập bổ sung (Anki, bản in) và lộ trình học theo mục tiêu.</li></ul>
-  <h4>Cách thanh toán</h4><ol class="steps"><li>Ở trang chủ, bấm <b>Nâng cấp</b> ở gói muốn mua.</li><li>Quét mã QR hoặc chuyển khoản theo thông tin hiển thị, giữ nguyên <b>nội dung chuyển khoản</b>.</li><li>Gửi email đã đăng ký kèm nội dung chuyển khoản qua <a href="#" onclick="goPage('contact');return false">mục liên hệ</a>.</li><li>Chúng tôi đối chiếu và gửi tài liệu/kích hoạt quyền lợi, thường trong vòng 24 giờ.</li></ol>
+  <h4>Cách thanh toán</h4><ol class="steps"><li>Ở trang chủ, bấm <b>Nâng cấp</b> ở gói muốn mua.</li><li>Quét mã QR hoặc chuyển khoản theo thông tin hiển thị, giữ nguyên <b>nội dung chuyển khoản</b>.</li><li>Hệ thống tự đối chiếu và kích hoạt gói cho tài khoản của bạn trong vài giây. Chỉ khi đúng số tiền và đúng nội dung mới kích hoạt; nếu chuyển sai, hãy liên hệ để được hỗ trợ.</li></ol>
   <h4>Lưu ý</h4><p>Thanh toán bằng chuyển khoản ngân hàng. Chúng tôi không yêu cầu mật khẩu, mã OTP hay thông tin thẻ của bạn. <button class="b p" onclick="goPlans()">Xem bảng giá</button></p>`},
  refund:{t:"Hoàn tiền & hủy gói",ic:"↩️",h:`
   <h4>Hoàn tiền</h4><ul><li>Bạn có thể yêu cầu hoàn tiền trong <b>7 ngày</b> kể từ khi thanh toán nếu chưa nhận tài liệu hoặc quyền lợi không đúng mô tả.</li><li>Chuyển nhầm số tiền hoặc chuyển trùng sẽ được hoàn lại đầy đủ.</li><li>Đã nhận và tải tài liệu số thì không hoàn tiền, trừ khi tài liệu lỗi và chúng tôi không sửa được.</li></ul>
@@ -12738,7 +12715,7 @@ function profileView(){
   <section class="card"><b>Bài đã hoàn thành (${done.length})</b>${done.length?`<div class="chips" style="margin-top:10px">${done.map(l=>`<span class="chip">Q${l.b} · Bài ${l.n}</span>`).join("")}</div>`:empty("🏁","Chưa có bài hoàn thành","Đánh dấu thuộc từ 80% từ vựng của một bài để tính hoàn thành.")}</section>
   <section class="card"><b>Từ cần ôn lại (${rev.length})</b>${rev.length?rev.map(w=>`<div class="vl"><button class="b spk" onclick="speak('${jsq(w.s)}')" aria-label="Nghe">🔊</button><div><span class="zh">${w.h}</span> <span class="py">${w.p}</span><div class="vi">${esc(w.m)}</div></div><button class="b" onclick="reviewRemove('${jsq(wKey(w))}')" aria-label="Bỏ khỏi danh sách">✕</button></div>`).join(""):empty("✨","Danh sách trống","Từ bạn đánh dấu “Chưa thuộc” hoặc lưu ⭐ sẽ xuất hiện ở đây.")}</section>
   <section class="card"><b>Công cụ học tập</b><div class="chips" style="margin-top:10px"><button class="chip" onclick="goPage('progress')">📈 Theo dõi chi tiết (Pro)</button><button class="chip" onclick="goPage('path')">🗺️ Lộ trình (Pro năm)</button><button class="chip" onclick="goPage('docs')">📚 Tài liệu (Pro năm)</button><button class="chip" onclick="goPage('plans')">Gói học</button></div>
-   <details class="act" style="margin-top:12px"><summary>${pro?"✅ Gói Pro đã kích hoạt":"Nhập mã kích hoạt"}</summary>${pro?"":premForm()}</details>
+   <p style="margin-top:12px" class="stat">${signedIn()?`Đăng nhập bằng <b>${esc(SESS.user.email||"")}</b> · <a href="#" onclick="showAccount();return false">Tài khoản</a>`:(sbOn()?`<button class="b" onclick="showLogin()">Đăng nhập để đồng bộ gói Pro</button>`:"")}</p>
    <p class="stat" style="margin-top:12px"><a href="#" onclick="goPage('data');return false">Xóa dữ liệu học trên thiết bị này</a></p></section>`;
 }
 
@@ -12748,7 +12725,7 @@ function plansView(){
   <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Đề xuất</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div><p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('1')">Học ngay</button>`}</div>`).join("")}</div>
   <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Free</th><th>Pro</th></tr></thead><tbody>
    ${[["Từ vựng, phát âm, bài học cơ bản","✓","✓"],["Số bài học","Một số bài","Toàn bộ"],["Thẻ nhớ","15 thẻ/ngày","Không giới hạn"],["Trắc nghiệm","15 câu/ngày, dạng cơ bản","Không giới hạn, mọi dạng"],["Ôn tập ngắt quãng (SRS)","—","✓"],["Theo dõi tiến độ chi tiết và lịch sử","—","✓"],["Đề thi thử TOCFL","Cấp A1","A1–B2"],["Tài liệu bổ sung, lộ trình theo mục tiêu","—","Pro năm"]].map(r=>`<tr><td>${r[0]}</td><td class="c">${r[1]}</td><td class="c pr">${r[2]}</td></tr>`).join("")}</tbody></table></div>
-  <details class="act" ${isPro()?"open":""}><summary>${isPro()?"✅ Gói Pro đã kích hoạt trên thiết bị này":"Đã mua? Nhập mã kích hoạt"}</summary>${isPro()?"":premForm()}</details>`;
+  ${isPro()?`<p class="act" style="padding:14px 18px">✅ Gói Pro đang hoạt động${SUB&&SUB.expires_at?" đến "+new Date(SUB.expires_at).toLocaleDateString("vi-VN"):""}.</p>`:(sbOn()&&!signedIn()?`<p class="stat">Đã mua? <a href="#" onclick="showLogin();return false">Đăng nhập</a> bằng email đã dùng khi mua.</p>`:"")}`;
 }
 const MAINP={dash:dashView,courses:coursesView,vocab:vocabLView,practice:practiceView,profile:profileView,plans:plansView};
 
@@ -12756,7 +12733,7 @@ const MAINP={dash:dashView,courses:coursesView,vocab:vocabLView,practice:practic
 let LANG="vi";try{LANG=localStorage.getItem("lang")==="en"?"en":"vi"}catch(e){}
 const EN={
 /* điều hướng & đầu trang */
-"Tổng quan":"Dashboard","Khóa học":"Courses","Từ vựng":"Vocabulary","Luyện tập":"Practice","Hồ sơ":"Profile","Kích hoạt":"Activate","Nâng cấp":"Upgrade","Học Tiếng Trung":"Study Chinese",
+"Tổng quan":"Dashboard","Khóa học":"Courses","Từ vựng":"Vocabulary","Luyện tập":"Practice","Hồ sơ":"Profile","Đăng nhập":"Log in","Gửi link đăng nhập":"Send login link","Tài khoản":"Account","Đăng xuất":"Log out","Đăng nhập để dùng và mua gói Pro.":"Log in to use and buy Pro.","Nâng cấp":"Upgrade","Học Tiếng Trung":"Study Chinese",
 "Đổi giao diện sáng/tối":"Toggle light/dark theme","Đổi giao diện":"Toggle theme","Ngôn ngữ":"Language",
 "Tốc độ":"Speed","Giọng":"Voice","Nghe thử":"Test voice","🔊 Nghe thử":"🔊 Test voice","Phạm vi":"Scope",
 /* thanh bài học */
@@ -12905,20 +12882,105 @@ function setLang(l){
 }
 function langUI(){
   const f=$("#lgflag"),c=$("#lgcode");if(f)f.textContent=LANG==="en"?"🇬🇧":"🇻🇳";if(c)c.textContent=LANG==="en"?"EN":"VI";
-  const pro=typeof isPro==="function"&&isPro();const a=$("#hAct"),u=$("#hUp"),p=$("#hPro");if(a)a.hidden=pro;if(u)u.hidden=pro;if(p)p.hidden=!pro;
+  if(typeof uiAuth==="function")uiAuth();
 }
 function headerInit(){
   const btn=$("#lgbtn"),menu=$("#lgmenu");
   btn.onclick=e=>{e.stopPropagation();const o=menu.hidden;menu.hidden=!o;btn.setAttribute("aria-expanded",String(o))};
   menu.onclick=e=>{const b=e.target.closest("button");if(b){setLang(b.dataset.l);menu.hidden=true;btn.setAttribute("aria-expanded","false")}};
   document.addEventListener("click",()=>{menu.hidden=true;btn.setAttribute("aria-expanded","false")});
-  $("#hAct").onclick=showActivate;$("#hUp").onclick=()=>goPage("plans");
+  $("#hAct").onclick=()=>showLogin();$("#hUser").onclick=showAccount;$("#hUp").onclick=()=>goPage("plans");
   new MutationObserver(()=>{if(!_busy&&LANG==="en")trSchedule()}).observe(document.body,{childList:true,subtree:true,characterData:true});
   document.documentElement.lang=LANG;langUI();if(LANG==="en")trSchedule();
 }
-function showActivate(){
+
+/* ============ ĐĂNG NHẬP (Supabase) + THANH TOÁN TỰ ĐỘNG ============
+   Điền SB.url và SB.key (khóa "anon public" của dự án Supabase — khóa này được phép công khai) để bật đăng nhập và thanh toán tự động.
+   Để trống thì site chạy như cũ: không có đăng nhập, gói Pro chưa mở bán. */
+const SB={url:"",key:"",google:false};
+let sbc=null,SESS=null;
+const sbOn=()=>!!(SB.url&&SB.key);
+const signedIn=()=>!!SESS;
+function loadScript(src){return new Promise((ok,no)=>{const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
+async function sbInit(){
+  uiAuth();if(!sbOn())return;
+  try{
+    await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js");
+    sbc=supabase.createClient(SB.url,SB.key,{auth:{persistSession:true,detectSessionInUrl:true,autoRefreshToken:true}});
+    const {data}=await sbc.auth.getSession();SESS=data.session;
+    sbc.auth.onAuthStateChange((ev,s)=>{const was=!!SESS;SESS=s;if(ev==="SIGNED_IN"&&!was||ev==="SIGNED_OUT")refreshSub(true)});
+    await refreshSub(false);
+  }catch(e){console.warn("Supabase không tải được",e)}
+}
+async function refreshSub(rerender){
+  const before=isPro();SUB=null;
+  if(SESS&&sbc){try{const {data}=await sbc.from("subscriptions").select("plan,expires_at").maybeSingle();SUB=data||null}catch(e){}}
+  uiAuth();
+  if(rerender||before!==isPro()){try{render()}catch(e){}}
+}
+function uiAuth(){
+  const pro=isPro(),on=sbOn(),inn=signedIn();
+  const a=$("#hAct"),u=$("#hUp"),p=$("#hPro"),c=$("#hUser");
+  if(a)a.hidden=!on||inn;if(u)u.hidden=pro;if(p)p.hidden=!pro;
+  if(c){c.hidden=!inn;c.textContent=inn?(SESS.user.email||"?")[0].toUpperCase():"?"}
+}
+function modalBox(html){
+  document.querySelectorAll(".modal").forEach(m=>m.remove());
   const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};
-  d.innerHTML=`<div class="mbox"><button class="ibtn mx" onclick="this.closest('.modal').remove()" aria-label="Đóng">✕</button><h3>Nhập mã kích hoạt</h3><p class="stat">Bạn nhận mã qua email sau khi thanh toán. Không cần tạo tài khoản.</p>${premForm()}</div>`;document.body.appendChild(d);
+  d.innerHTML=`<div class="mbox"><button class="ibtn mx" onclick="this.closest('.modal').remove()" aria-label="Đóng">✕</button>${html}</div>`;document.body.appendChild(d);return d;
+}
+function showLogin(note){
+  if(!sbOn()){modalBox(`<h3>Đăng nhập</h3><p>Tính năng đăng nhập đang được cấu hình, sẽ có sớm.</p>`);return}
+  const d=modalBox(`<h3>Đăng nhập</h3><p class="stat">${note||"Nhập email, chúng tôi gửi link đăng nhập. Không cần mật khẩu."}</p>
+  <form id="lgf" class="fb-form"><label>Email<input type="email" name="email" required autocomplete="email" placeholder="email@cua-ban.com"></label><button class="btn-l p">Gửi link đăng nhập</button><div class="su-msg" role="status"></div></form>
+  ${SB.google?`<p style="text-align:center;margin:12px 0 0"><button class="btn-l" id="lgg">Đăng nhập bằng Google</button></p>`:""}`);
+  d.querySelector("#lgf").onsubmit=async e=>{
+    e.preventDefault();const f=e.target,msg=f.querySelector(".su-msg"),em=f.email.value.trim();msg.style.color="var(--mut)";msg.textContent="Đang gửi…";
+    const {error}=await sbc.auth.signInWithOtp({email:em,options:{emailRedirectTo:location.origin+location.pathname}});
+    if(error){msg.style.color="var(--bad)";msg.textContent="Không gửi được link, bạn kiểm tra lại email nhé.";return}
+    track('login_link');msg.style.color="var(--ok)";msg.textContent="✅ Đã gửi link vào email của bạn. Mở email và bấm vào link để đăng nhập.";
+  };
+  const g=d.querySelector("#lgg");if(g)g.onclick=()=>sbc.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.origin+location.pathname}});
+}
+function showAccount(){
+  if(!signedIn())return showLogin();
+  const pl=premInfo(),exp=SUB&&SUB.expires_at?new Date(SUB.expires_at).toLocaleDateString("vi-VN"):"";
+  const d=modalBox(`<h3>Tài khoản</h3><p><b>${esc(SESS.user.email||"")}</b></p>
+   <p>Gói hiện tại: <span class="pill">${pl?(pl==="y"?"Pro năm":"Pro tháng"):"Free"}</span>${pl?` <small class="stat">đến ${exp}</small>`:""}</p>
+   <div class="row" style="gap:10px"><button class="b" onclick="this.closest('.modal').remove();goPage('plans')">Gói học</button><button class="b" id="lgo">Đăng xuất</button></div>`);
+  d.querySelector("#lgo").onclick=async()=>{await sbc.auth.signOut();d.remove();toast("Đã đăng xuất")};
+}
+
+/* ---------- Mua gói: tạo đơn trên server → hiện VietQR đúng số tiền → chờ hệ thống báo đã nhận ---------- */
+let _poll=0;
+async function buy(id){
+  const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
+  if(!sbOn()){modalBox(`<h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3><p>Thanh toán tự động đang được cấu hình. Bạn để lại email ở mục đăng ký, chúng tôi sẽ báo khi mở bán.</p>`);return}
+  if(!signedIn()){showLogin(`Đăng nhập để mua <b>${pl.name}</b>. Gói sẽ gắn với email này.`);return}
+  const I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),usd=USD[id];
+  const intlHtml=intl?`<p>Pay in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}):</p><div class="paybtns">${I.card?`<a class="btn-l p" href="${I.card}" target="_blank" rel="noopener">💳 Visa / Mastercard</a>`:""}${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div><p class="stat">After paying, email us the address you signed in with (${esc(SESS.user.email||"")}) and your receipt; we will activate your plan.</p>`
+    :`<p>Card (Visa / Mastercard) and international payments are coming soon.</p>`;
+  const d=modalBox(`<h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3>
+   <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">💳 Thẻ Visa & Quốc tế</button></div>
+   <div class="ptab" data-p="vn"><p class="stat">Đang tạo đơn hàng…</p></div><div class="ptab" data-p="in" hidden>${intlHtml}</div>`);
+  d.querySelector(".seg").onclick=e=>{const b=e.target.closest("button");if(!b)return;d.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b));d.querySelectorAll(".ptab").forEach(p=>p.hidden=p.dataset.p!==b.dataset.t)};
+  const box=d.querySelector('[data-p="vn"]');
+  const {data,error}=await sbc.rpc("create_order",{p_plan:id});
+  const o=Array.isArray(data)?data[0]:data;
+  if(error||!o){box.innerHTML=`<p style="color:var(--bad)">Không tạo được đơn hàng. Bạn thử lại sau nhé.</p>`;return}
+  const qr=`https://img.vietqr.io/image/${PAY.bank}-${PAY.acc}-compact2.png?amount=${o.amount}&addInfo=${encodeURIComponent(o.code)}&accountName=${encodeURIComponent(PAY.name)}`;
+  box.innerHTML=`<div class="qrw"><img src="${qr}" alt="Mã QR chuyển khoản VietQR" width="240"></div>
+   <ul class="bank"><li>Ngân hàng: <b>${PAY.bankName||PAY.bank}</b></li><li>Số tài khoản: <b>${PAY.acc}</b></li><li>Chủ tài khoản: <b>${PAY.name}</b></li><li>Số tiền: <b>${vnd(o.amount)}</b> (chuyển đúng số tiền này)</li><li>Nội dung: <b>${o.code}</b> (giữ nguyên)</li></ul>
+   <div class="payst" id="payst" role="status">⏳ Đang chờ thanh toán… Trang tự cập nhật ngay khi nhận được tiền.</div>
+   <p class="stat">Gói chỉ được kích hoạt khi <b>đúng số tiền</b> và <b>đúng nội dung</b> chuyển khoản. Nếu chuyển sai, hãy liên hệ chúng tôi qua mục Liên hệ.</p>`;
+  clearInterval(_poll);const t0=Date.now();
+  _poll=setInterval(async()=>{
+    if(!document.body.contains(d)||Date.now()-t0>30*60*1000){clearInterval(_poll);return}
+    const {data:od}=await sbc.from("orders").select("status,note").eq("id",o.order_id).maybeSingle();
+    const st=document.getElementById("payst");if(!od||!st)return;
+    if(od.status==="paid"){clearInterval(_poll);st.className="payst ok";st.textContent="✅ Đã nhận thanh toán! Gói Pro đã được kích hoạt.";track('purchase',{plan:id});await refreshSub(true);setTimeout(()=>d.remove(),2500)}
+    else if(od.status==="amount_mismatch"){clearInterval(_poll);st.className="payst bad";st.textContent="⚠️ Hệ thống nhận được số tiền không khớp với gói nên chưa kích hoạt. Vui lòng liên hệ chúng tôi để được hỗ trợ."}
+  },4000);
 }
 
 /* ============ TẠO DỮ LIỆU TỪ CÁC BÀI ============ */
@@ -13937,6 +13999,7 @@ $("#les").onchange=e=>setLesson(e.target.value);
 $("#thm").onclick=()=>{const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}}})();
 buildNav();
 headerInit();
+sbInit();
 footerView();
 render();
 </script>
