@@ -17,6 +17,26 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<!-- CHẾ ĐỘ BẢO TRÌ: đổi true -> false để mở lại web. Chủ web vẫn vào được bằng cách thêm ?dev=1 vào địa chỉ (ví dụ /?dev=1). -->
+<script>
+window.MAINTENANCE=true;
+(function(){
+  try{if(location.search.indexOf("dev=1")>-1)localStorage.setItem("dev","1");if(location.search.indexOf("dev=0")>-1)localStorage.removeItem("dev")}catch(e){}
+  var dev=false;try{dev=localStorage.getItem("dev")==="1"}catch(e){}
+  if(!window.MAINTENANCE||dev)return;
+  var en=false;try{en=localStorage.getItem("lang")==="en"}catch(e){}
+  var s=document.createElement("style");
+  s.textContent="#mt-lock{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:24px;background:#FAFAF7;color:#252A28;font:16px/1.6 Inter,system-ui,-apple-system,sans-serif;text-align:center}@media(prefers-color-scheme:dark){#mt-lock{background:#141816;color:#ECEFED}}#mt-lock .mtb{max-width:460px}#mt-lock .lg{width:64px;height:64px;border-radius:18px;background:#2E8B70;color:#fff;display:grid;place-items:center;font:700 36px/1 'Noto Sans TC',sans-serif;margin:0 auto 18px}#mt-lock h1{margin:0 0 8px;font-size:26px;letter-spacing:-.02em}#mt-lock p{margin:0 0 6px;color:#737B77}";
+  document.head.appendChild(s);
+  document.addEventListener("DOMContentLoaded",function(){
+    var d=document.createElement("div");d.id="mt-lock";d.setAttribute("role","alert");
+    d.innerHTML=en
+      ?'<div class="mtb"><div class="lg">學</div><h1>Under maintenance</h1><p>We are fixing a few issues to make Study Chinese better.</p><p>Please come back in a little while. Thank you for your patience!</p></div>'
+      :'<div class="mtb"><div class="lg">學</div><h1>Website đang bảo trì</h1><p>Chúng tôi đang sửa một vài lỗi để Học Tiếng Trung hoạt động tốt hơn.</p><p>Bạn vui lòng quay lại sau ít phút. Cảm ơn bạn đã thông cảm!</p></div>';
+    document.body.appendChild(d);document.body.style.overflow="hidden";
+  });
+})();
+</script>
 <title>Học tiếng Trung phồn thể online | Đương đại Trung văn & TOCFL</title>
 <meta name="description" content="Học tiếng Trung phồn thể cho người Việt: giáo trình Đương đại Trung văn 當代中文課程 Quyển 1–6, từ vựng TOCFL, pinyin, nghĩa tiếng Việt, giọng Đài Loan. Miễn phí.">
 <link rel="canonical" href="https://studychinese.mely.io.vn/">
