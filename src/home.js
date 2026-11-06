@@ -19,7 +19,7 @@ async function signup(ev){
    bank: mã ngân hàng theo vietqr.io (VCB, MB, TCB, ACB, BIDV, TPB, VPB, ICB...), acc: số tài khoản, name: tên chủ tài khoản */
 const PAY={bank:"MB",bankName:"MB Bank (Ngân hàng Quân đội)",acc:"6600110928008",name:"PHAM THI MY DUYEN",email:"",
   // Thanh toán quốc tế: điền link của tài khoản bạn (PayPal.me, Stripe Payment Link, Wise...). Để trống thì ẩn.
-  intl:{paypal:"",stripe:"",wise:""}};
+  intl:{card:"",paypal:"",stripe:"",wise:""}};   // card = link thanh toán thẻ Visa/Mastercard (Lemon Squeezy, Paddle, Stripe, PayPal...)
 const USD={m:2,y:16};   // giá quy đổi tham khảo cho khách nước ngoài (USD) — đổi theo ý bạn
 const PLANS=[
   {id:"free",name:"Free",price:0,per:"",desc:"Dành cho người mới bắt đầu",perks:["Một số bài học miễn phí","Từ vựng và phát âm","Quiz cơ bản"]},
@@ -29,19 +29,19 @@ const PLANS=[
 const vnd=n=>n.toLocaleString("vi-VN")+"đ";
 function buy(id){
   const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
-  const vn=!!(PAY.bank&&PAY.acc),I=PAY.intl||{},intl=!!(I.paypal||I.stripe||I.wise),code="HTT "+Math.random().toString(36).slice(2,7).toUpperCase();
+  const vn=!!(PAY.bank&&PAY.acc),I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),code="HTT "+Math.random().toString(36).slice(2,7).toUpperCase();
   const qr=vn?`https://img.vietqr.io/image/${PAY.bank}-${PAY.acc}-compact2.png?amount=${pl.price}&addInfo=${encodeURIComponent(code)}&accountName=${encodeURIComponent(PAY.name)}`:"";
   const d=document.createElement("div");d.className="modal";d.onclick=e=>{if(e.target===d)d.remove()};
   const vnHtml=vn?`<div class="qrw"><img src="${qr}" alt="Mã QR chuyển khoản VietQR" width="240"></div>
    <ul class="bank"><li>Ngân hàng: <b>${PAY.bankName||PAY.bank}</b></li><li>Số tài khoản: <b>${PAY.acc}</b></li><li>Chủ tài khoản: <b>${PAY.name}</b></li><li>Số tiền: <b>${vnd(pl.price)}</b></li><li>Nội dung: <b>${code}</b></li></ul>
    <p class="stat">Sau khi chuyển khoản, gửi email đã đăng ký kèm nội dung chuyển khoản <b>${code}</b> để được kích hoạt${PAY.email?` — gửi tới <b>${PAY.email}</b>`:""} (thường trong 24 giờ).</p>`
    :`<p>Thanh toán trong nước đang được cập nhật. Bạn để lại email ở mục đăng ký, mình sẽ liên hệ khi mở bán.</p>`;
-  const usd=USD[id],intlHtml=intl?`<p>Pay in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}) with:</p><div class="paybtns">${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div>
+  const usd=USD[id],intlHtml=intl?`<p>Pay by Visa / Mastercard or PayPal in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}) with:</p><div class="paybtns">${I.card?`<a class="btn-l p" href="${I.card}" target="_blank" rel="noopener">💳 Visa / Mastercard</a>`:""}${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div>
    <p class="stat">After paying, email us the address you used to sign up with your payment receipt and we will send your activation code (usually within 24 hours).</p>`
-   :`<p>International payments are coming soon. Leave your email in the sign-up form and we will let you know.</p>`;
+   :`<p>Card (Visa / Mastercard) and international payments are coming soon. Leave your email in the sign-up form and we will let you know.</p>`;
   d.innerHTML=`<div class="mbox"><button class="ibtn mx" onclick="this.closest('.modal').remove()" aria-label="Đóng">✕</button>
   <h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3>
-  <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">🌍 Quốc tế / International</button></div>
+  <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">💳 Thẻ Visa & Quốc tế</button></div>
   <div class="ptab" data-p="vn">${vnHtml}</div><div class="ptab" data-p="in" hidden>${intlHtml}</div></div>`;
   d.querySelector(".seg").onclick=e=>{const b=e.target.closest("button");if(!b)return;d.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b));d.querySelectorAll(".ptab").forEach(p=>p.hidden=p.dataset.p!==(b.dataset.t==="vn"?"vn":"in"))};
   document.body.appendChild(d);
