@@ -12968,11 +12968,20 @@ async function buy(id){
   if(!signedIn()){showLogin(`Đăng nhập để mua <b>${pl.name}</b>. Gói sẽ gắn với email này.`);return}
   const I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),usd=USD[id];
   const intlHtml=intl?`<p>Pay in USD (<b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}):</p><div class="paybtns">${I.card?`<a class="btn-l p" href="${I.card}" target="_blank" rel="noopener">💳 Visa / Mastercard</a>`:""}${I.paypal?`<a class="btn-l p" href="${I.paypal}" target="_blank" rel="noopener">PayPal</a>`:""}${I.stripe?`<a class="btn-l p" href="${I.stripe}" target="_blank" rel="noopener">Card (Stripe)</a>`:""}${I.wise?`<a class="btn-l" href="${I.wise}" target="_blank" rel="noopener">Wise</a>`:""}</div><p class="stat">After paying, email us the address you signed in with (${esc(SESS.user.email||"")}) and your receipt; we will activate your plan.</p>`
-    :`<p>Card (Visa / Mastercard) and international payments are coming soon.</p>`;
+    :`<p>Card payments (Visa / Mastercard) are being set up. Tap below and we will email you a secure payment link for <b>$${usd}</b>${pl.per==="/tháng"?"/month":"/year"}; your plan is activated on <b>${esc(SESS.user.email||"")}</b> right after payment.</p><p><button class="btn-l p" id="reqIntl" style="width:100%">Request payment link</button></p><div class="su-msg" id="reqMsg" role="status"></div>`;
   const d=modalBox(`<h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3>
    <div class="seg" style="margin:10px 0"><button class="on" data-t="vn">🇻🇳 Việt Nam</button><button data-t="in">💳 Thẻ Visa & Quốc tế</button></div>
    <div class="ptab" data-p="vn"><p class="stat">Đang tạo đơn hàng…</p></div><div class="ptab" data-p="in" hidden>${intlHtml}</div>`);
   d.querySelector(".seg").onclick=e=>{const b=e.target.closest("button");if(!b)return;d.querySelectorAll(".seg button").forEach(x=>x.classList.toggle("on",x===b));d.querySelectorAll(".ptab").forEach(p=>p.hidden=p.dataset.p!==b.dataset.t)};
+  const rq=d.querySelector("#reqIntl");
+  if(rq)rq.onclick=async()=>{
+    const msg=d.querySelector("#reqMsg");rq.disabled=true;msg.style.color="var(--mut)";msg.textContent="Sending…";
+    try{
+      if(!SIGNUP.url)throw 0;
+      const r=await fetch(SIGNUP.url,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({type:"Yêu cầu thanh toán quốc tế",plan:pl.name+" ($"+usd+")",email:SESS.user.email,message:"Khách quốc tế muốn mua "+pl.name+". Gửi link thanh toán và mở gói cho email này (bảng subscriptions)."})});
+      if(!r.ok)throw 0;track('intl_request',{plan:id});msg.style.color="var(--ok)";msg.textContent="✅ Request sent. We will email you a payment link shortly.";
+    }catch(e){rq.disabled=false;msg.style.color="var(--bad)";msg.textContent="Could not send. Please try again later."}
+  };
   const box=d.querySelector('[data-p="vn"]');
   const {data,error}=await sbc.rpc("create_order",{p_plan:id});
   const o=Array.isArray(data)?data[0]:data;
