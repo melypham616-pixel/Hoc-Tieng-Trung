@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
 <!-- CHẾ ĐỘ BẢO TRÌ: đổi true -> false để mở lại web. Chủ web vẫn vào được bằng cách thêm ?dev=1 vào địa chỉ (ví dụ /?dev=1). -->
 <script>
-window.MAINTENANCE=true;
+window.MAINTENANCE=false;
 (function(){
   try{if(location.search.indexOf("dev=1")>-1)localStorage.setItem("dev","1");if(location.search.indexOf("dev=0")>-1)localStorage.removeItem("dev")}catch(e){}
   var dev=false;try{dev=localStorage.getItem("dev")==="1"}catch(e){}
