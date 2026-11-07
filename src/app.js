@@ -939,10 +939,19 @@ function chkFill(){
   if(document.querySelector(".fb"))return;
   const ok=stripTone($("#fi").value)===stripTone(Q.w[1]);mark(ok);fb(ok,`Đáp án: ${Q.w[1]}`);
 }
+function tokPy(t){          // pinyin của một cụm từ trong bài sắp xếp câu (tra từ điển của trang, ưu tiên cụm dài nhất)
+  const D=allDict(),out=[];let i=0;
+  while(i<t.length){
+    let k=0;for(let L=Math.min(6,t.length-i);L>=1;L--){if(D[t.slice(i,i+L)]){k=L;break}}
+    if(k){out.push(D[t.slice(i,i+k)][0]);i+=k}else i++;
+  }
+  return out.join(" ");
+}
+const ordTok=(x,fn)=>`<span class="tok" onclick="${fn}(${x.i})">${prog.ordPy===false?"":`<small class="tp">${tokPy(x.t)||"&nbsp;"}</small>`}${x.t}</span>`;
 function orderDraw(){
-  $("#app").innerHTML=qFrame(`<div class="card"><div class="stat">Sắp xếp thành câu:</div><div style="font-size:20px;margin:6px 0 10px">${Q.vi}</div>
-  <div class="ans" id="ans">${Q.pick.map(x=>`<span class="tok" onclick="unpick(${x.i})">${x.t}</span>`).join("")}</div>
-  <div>${Q.pool.filter(x=>!Q.pick.includes(x)).map(x=>`<span class="tok" onclick="doPick(${x.i})">${x.t}</span>`).join("")}</div>
+  $("#app").innerHTML=qFrame(`<div class="card"><div class="row" style="justify-content:space-between;align-items:center"><div class="stat">Sắp xếp thành câu:</div><label class="stat"><input type="checkbox" ${prog.ordPy===false?"":"checked"} onchange="prog.ordPy=this.checked;save();orderDraw()"> Hiện pinyin</label></div><div style="font-size:20px;margin:6px 0 10px">${Q.vi}</div>
+  <div class="ans" id="ans">${Q.pick.map(x=>ordTok(x,"unpick")).join("")}</div>
+  <div>${Q.pool.filter(x=>!Q.pick.includes(x)).map(x=>ordTok(x,"doPick")).join("")}</div>
   <div class="row" style="margin-top:10px"><button class="b p" onclick="chkOrder()">Kiểm tra</button><button class="b" onclick="Q.pick=[];orderDraw()">Xóa</button></div><div id="fb"></div></div>`);
 }
 function doPick(i){Q.pick.push(Q.pool.find(x=>x.i===i));orderDraw()}
