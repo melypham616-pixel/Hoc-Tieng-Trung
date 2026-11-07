@@ -162,7 +162,7 @@ function docPrint(k){const R=docRows(k),w=window.open("","_blank");if(!w){toast(
   w.document.write(`<!doctype html><meta charset="utf-8"><title>Từ vựng ${docName(k)}</title><style>body{font:14px system-ui;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:5px 8px;text-align:left}td:first-child{font:600 18px serif}</style><h2>Từ vựng ${k==="T"?"TOCFL":"Quyển "+k} (${R.length} từ)</h2><table><tr><th>Hán tự</th><th>Pinyin</th><th>Nghĩa</th><th>Bài/Cấp</th></tr>${R.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table><script>onload=()=>print()<\/script>`);w.document.close();track('doc_print',{k})}
 function docsView(){
   if(!isYear())return lockCard("year");
-  return `<p>Tài liệu học tập bổ sung của gói Pro năm: tải từ vựng từng quyển để nhập vào <b>Anki</b> hoặc in/lưu PDF để học offline.</p>
+  return `<p>Tài liệu học tập bổ sung: tải từ vựng từng quyển để nhập vào <b>Anki</b> hoặc in/lưu PDF để học offline.</p>
   <div class="docs">${["1","2","3","4","5","6","T"].map(k=>`<div class="mini"><b>${k==="T"?"TOCFL A1–B2":"Quyển "+k}</b><div class="stat">${docRows(k).length} từ</div><div class="row" style="margin-top:8px"><button class="b" onclick="docAnki('${k}')">⬇ Anki (.txt)</button><button class="b" onclick="docPrint('${k}')">🖨 In / PDF</button></div></div>`).join("")}</div>
   <h4>Nhập vào Anki</h4><ol class="steps"><li>Mở Anki → <b>File → Import</b> và chọn file .txt vừa tải.</li><li>Chọn <b>Field separator = Tab</b>; ghép cột 1 = Front (Hán), cột 2–3 = Back (pinyin, nghĩa).</li><li>Bấm Import, rồi học theo lịch lặp ngắt quãng của Anki.</li></ol>`;
 }

@@ -3,7 +3,9 @@
 const FREE={lessons:{"1":5,"2":2,"3":2,"4":2,"5":2,"6":2},tfLv:["A1"],quiz:15,flash:15};   // số bài miễn phí mỗi quyển; số câu quiz / thẻ nhớ mỗi ngày
 let SUB=null;   // gói đang dùng, đọc từ server (bảng subscriptions) sau khi đăng nhập
 function premInfo(){return SUB&&SUB.expires_at&&new Date(SUB.expires_at)>new Date()?SUB.plan:null}
-const isPro=()=>!!premInfo(),isYear=()=>premInfo()==="y";
+/* CHẾ ĐỘ MIỄN PHÍ: true = mở khóa mọi tính năng cho mọi người và đóng việc mua gói Pro. Đổi thành false để bật lại gói Free/Pro. */
+const FREE_MODE=true;
+const isPro=()=>FREE_MODE||!!premInfo(),isYear=()=>FREE_MODE||premInfo()==="y";
 function dayCnt(k){const d=new Date().toISOString().slice(0,10);if(!prog.day||prog.day.d!==d)prog.day={d,q:0,f:0};return prog.day[k]}
 function dayAdd(k){dayCnt(k);prog.day[k]++}
 const capped=k=>!isPro()&&dayCnt(k)>=FREE[k==="q"?"quiz":"flash"];

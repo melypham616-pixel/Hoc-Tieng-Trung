@@ -28,7 +28,7 @@ async function refreshSub(rerender){
 function uiAuth(){
   const pro=isPro(),on=sbOn(),inn=signedIn();
   const a=$("#hAct"),u=$("#hUp"),p=$("#hPro"),c=$("#hUser");
-  if(a)a.hidden=!on||inn;if(u)u.hidden=pro;if(p)p.hidden=!pro;
+  if(a)a.hidden=FREE_MODE||!on||inn;if(u)u.hidden=FREE_MODE||pro;if(p)p.hidden=FREE_MODE||!pro;
   if(c){c.hidden=!inn;c.textContent=inn?(SESS.user.email||"?")[0].toUpperCase():"?"}
 }
 function modalBox(html){
@@ -77,6 +77,7 @@ async function pollPaid(){
 let _poll=0;
 async function buy(id){
   const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
+  if(FREE_MODE){modalBox(`<h3>Học hoàn toàn miễn phí</h3><p>Hiện tại mọi tính năng đều miễn phí, bạn không cần mua gói nào. Chúc bạn học vui!</p>`);return}
   if(!sbOn()){modalBox(`<h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3><p>Thanh toán tự động đang được cấu hình. Bạn để lại email ở mục đăng ký, chúng tôi sẽ báo khi mở bán.</p>`);return}
   if(!signedIn()){showLogin(`Đăng nhập để mua <b>${pl.name}</b>. Gói sẽ gắn với email này.`);return}
   const I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),usd=USD[id];

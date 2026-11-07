@@ -11865,7 +11865,9 @@ BOOKS[6]={lessons:[{n:1,zh:"職校教育",vi:"Giáo dục trường nghề",v:`�
 const FREE={lessons:{"1":5,"2":2,"3":2,"4":2,"5":2,"6":2},tfLv:["A1"],quiz:15,flash:15};   // số bài miễn phí mỗi quyển; số câu quiz / thẻ nhớ mỗi ngày
 let SUB=null;   // gói đang dùng, đọc từ server (bảng subscriptions) sau khi đăng nhập
 function premInfo(){return SUB&&SUB.expires_at&&new Date(SUB.expires_at)>new Date()?SUB.plan:null}
-const isPro=()=>!!premInfo(),isYear=()=>premInfo()==="y";
+/* CHẾ ĐỘ MIỄN PHÍ: true = mở khóa mọi tính năng cho mọi người và đóng việc mua gói Pro. Đổi thành false để bật lại gói Free/Pro. */
+const FREE_MODE=true;
+const isPro=()=>FREE_MODE||!!premInfo(),isYear=()=>FREE_MODE||premInfo()==="y";
 function dayCnt(k){const d=new Date().toISOString().slice(0,10);if(!prog.day||prog.day.d!==d)prog.day={d,q:0,f:0};return prog.day[k]}
 function dayAdd(k){dayCnt(k);prog.day[k]++}
 const capped=k=>!isPro()&&dayCnt(k)>=FREE[k==="q"?"quiz":"flash"];
@@ -12045,7 +12047,7 @@ function docPrint(k){const R=docRows(k),w=window.open("","_blank");if(!w){toast(
   w.document.write(`<!doctype html><meta charset="utf-8"><title>Từ vựng ${docName(k)}</title><style>body{font:14px system-ui;margin:24px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #bbb;padding:5px 8px;text-align:left}td:first-child{font:600 18px serif}</style><h2>Từ vựng ${k==="T"?"TOCFL":"Quyển "+k} (${R.length} từ)</h2><table><tr><th>Hán tự</th><th>Pinyin</th><th>Nghĩa</th><th>Bài/Cấp</th></tr>${R.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</table><script>onload=()=>print()<\/script>`);w.document.close();track('doc_print',{k})}
 function docsView(){
   if(!isYear())return lockCard("year");
-  return `<p>Tài liệu học tập bổ sung của gói Pro năm: tải từ vựng từng quyển để nhập vào <b>Anki</b> hoặc in/lưu PDF để học offline.</p>
+  return `<p>Tài liệu học tập bổ sung: tải từ vựng từng quyển để nhập vào <b>Anki</b> hoặc in/lưu PDF để học offline.</p>
   <div class="docs">${["1","2","3","4","5","6","T"].map(k=>`<div class="mini"><b>${k==="T"?"TOCFL A1–B2":"Quyển "+k}</b><div class="stat">${docRows(k).length} từ</div><div class="row" style="margin-top:8px"><button class="b" onclick="docAnki('${k}')">⬇ Anki (.txt)</button><button class="b" onclick="docPrint('${k}')">🖨 In / PDF</button></div></div>`).join("")}</div>
   <h4>Nhập vào Anki</h4><ol class="steps"><li>Mở Anki → <b>File → Import</b> và chọn file .txt vừa tải.</li><li>Chọn <b>Field separator = Tab</b>; ghép cột 1 = Front (Hán), cột 2–3 = Back (pinyin, nghĩa).</li><li>Bấm Import, rồi học theo lịch lặp ngắt quãng của Anki.</li></ol>`;
 }
@@ -12484,7 +12486,7 @@ function footerView(){
    <div class="sf-brand"><a class="logo" href="#" onclick="setBook('H');return false"><span class="lg">學</span><span><b>Học Tiếng Trung</b></span></a>
     <p>Nền tảng tự học tiếng Trung phồn thể: giáo trình 當代中文課程 Quyển 1–6 và từ vựng TOCFL, có pinyin, nghĩa tiếng Việt và giọng đọc Đài Loan.</p>
     ${(SOCIAL.fb||SOCIAL.group||SOCIAL.yt)?`<div class="sf-soc">${SOCIAL.fb?`<a class="ci" href="${SOCIAL.fb}" target="_blank" rel="noopener" aria-label="Facebook">f</a>`:""}${SOCIAL.group?`<a class="grp" href="${SOCIAL.group}" target="_blank" rel="noopener">👥 Nhóm FB</a>`:""}${SOCIAL.yt?`<a class="ci" href="${SOCIAL.yt}" target="_blank" rel="noopener" aria-label="YouTube">▶</a>`:""}</div>`:`<div class="sf-badges"><span>繁體字</span><span>Meijia zh-TW</span><span>Miễn phí</span></div>`}</div>
-   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goPage('exam')","Luyện thi / Đề thi thử")}${L("goPage('topics')","Từ vựng theo chủ đề")}${L("goPage('sentences')","Mẫu câu giao tiếp")}${L("goPlans()","Bảng giá gói học Pro")}</ul></div>
+   <div><h5>Lộ trình học</h5><ul>${L("setBook('1')","Giáo trình 當代中文 1–6")}${L("setBook('T')","Từ vựng TOCFL A1–B2 Mới","hot")}${L("goTo('2',null,'dlg')","Hội thoại")}${L("goPage('exam')","Luyện thi / Đề thi thử")}${L("goPage('topics')","Từ vựng theo chủ đề")}${L("goPage('sentences')","Mẫu câu giao tiếp")}${FREE_MODE?"":L("goPlans()","Bảng giá gói học Pro")}</ul></div>
    <div><h5>Công cụ</h5><ul>${L("goPage('radicals')","214 Bộ thủ")}${L("goPage('dictation')","Chép chính tả")}${L("goShadow()","Shadowing (nhại theo)")}${L("goVideo()","Shadowing video")}${L("goPage('strokes')","Luyện thứ tự nét")}${L("goPage('measure')","Lượng từ")}${L("goPage('srs')","Ôn tập SRS ngắt quãng")}${L("goPage('progress')","Theo dõi tiến độ")}${L("goPage('path')","Lộ trình theo mục tiêu")}${L("goPage('docs')","Tài liệu bổ sung")}${L("goPage('lookup')","Công cụ tra từ & dịch câu")}${L("goPage('pinyin')","Lộ trình Pinyin")}${L("goTo('1','qa')","Luyện phát âm")}${L("goTo('5',null,'dlg')","Đọc hiểu")}</ul></div>
    <div><h5>Chính sách</h5><ul>${L("goPage('rules')","Quy chế hoạt động nền tảng","blue")}${L("goPage('owner')","Thông tin chủ quản nền tảng")}${L("goPage('privacy')","Chính sách bảo mật dữ liệu")}${L("goPage('rights')","Quyền và nghĩa vụ các bên")}${L("goPage('complaint')","Tiếp nhận & Giải quyết khiếu nại")}${L("goPage('price')","Chính sách về giá & Điều kiện")}${L("goPage('payment')","Chính sách thanh toán")}${L("goPage('delivery')","Phương thức cung cấp dịch vụ")}${L("goPage('refund')","Đổi trả, chấm dứt & Hoàn tiền")}${L("goPage('index')","Danh mục chính sách nền tảng","ul")}</ul></div>
    <div><h5>Liên hệ</h5>${SOCIAL.email?`<p class="sf-mail">✉ ${SOCIAL.email}</p>`:""}<ul>${L("goPage('contact')","Gửi phản ánh / Khiếu nại trực tuyến →","blue")}${L("goPage('data')","Yêu cầu xóa dữ liệu học")}${L("goPage('guide')","Cách học hiệu quả")}</ul><p class="sf-note">Phản hồi qua email trong 1–3 ngày làm việc.</p></div>
@@ -12697,7 +12699,7 @@ function practiceView(){
   <div class="sec-h" style="text-align:left;margin:20px 0 10px"><h2 style="font-size:20px">Bài tập Quyển 1</h2></div>
   <div class="cats">${A.concat(B).map(x=>`<button class="cat" onclick="practiceGo('${x[3]}')"><span class="ico">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></button>`).join("")}</div>
   <div class="sec-h" style="text-align:left;margin:28px 0 10px"><h2 style="font-size:20px">Luyện nghe và nói</h2></div>
-  <div class="cats">${[["✍️","Chép chính tả","Nghe câu rồi gõ lại chữ Hán","goPage('dictation')"],["🗣️","Shadowing","Nghe và nhại theo, có chấm điểm","goShadow()"],["🎬","Shadowing video","Video bản xứ theo từng cấp","goVideo()"],["🎙","Vấn đáp","Trả lời bằng giọng nói (Quyển 1)","goTo('1','qa')"],["📝","Đề thi thử TOCFL","Bấm giờ, chấm điểm tự động","goPage('exam')"],["🔁","Ôn tập SRS","Nhắc từ theo lịch ngắt quãng (Pro)","goPage('srs')"],["🖌️","Luyện thứ tự nét","Xem nét và tự viết chữ","goPage('strokes')"]].map(x=>`<button class="cat" onclick="${x[3]}"><span class="ico">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></button>`).join("")}</div>`;
+  <div class="cats">${[["✍️","Chép chính tả","Nghe câu rồi gõ lại chữ Hán","goPage('dictation')"],["🗣️","Shadowing","Nghe và nhại theo, có chấm điểm","goShadow()"],["🎬","Shadowing video","Video bản xứ theo từng cấp","goVideo()"],["🎙","Vấn đáp","Trả lời bằng giọng nói (Quyển 1)","goTo('1','qa')"],["📝","Đề thi thử TOCFL","Bấm giờ, chấm điểm tự động","goPage('exam')"],["🔁","Ôn tập SRS","Nhắc từ theo lịch ngắt quãng","goPage('srs')"],["🖌️","Luyện thứ tự nét","Xem nét và tự viết chữ","goPage('strokes')"]].map(x=>`<button class="cat" onclick="${x[3]}"><span class="ico">${x[0]}</span><b>${x[1]}</b><small>${x[2]}</small></button>`).join("")}</div>`;
 }
 
 /* ---------- TỔNG QUAN ---------- */
@@ -12757,13 +12759,14 @@ function profileView(){
   <section class="card"><b>Kết quả trắc nghiệm 7 ngày</b>${last7.some(x=>x.n)?`<div class="chart" style="margin-top:10px">${last7.map(x=>`<div title="${x.d}: ${x.n} câu, ${x.a===null?"–":x.a+"%"}"><i style="height:${x.a===null?3:Math.max(3,x.a*.9)}px"></i><small>${x.d.slice(3)}</small></div>`).join("")}</div><small class="stat">Chiều cao cột = tỉ lệ đúng trong ngày.</small>`:empty("📊","Chưa có kết quả","Làm vài câu trắc nghiệm để xem biểu đồ tại đây.",`<button class="b p" onclick="goPage('practice')">Đến Luyện tập</button>`)}</section>
   <section class="card"><b>Bài đã hoàn thành (${done.length})</b>${done.length?`<div class="chips" style="margin-top:10px">${done.map(l=>`<span class="chip">Q${l.b} · Bài ${l.n}</span>`).join("")}</div>`:empty("🏁","Chưa có bài hoàn thành","Đánh dấu thuộc từ 80% từ vựng của một bài để tính hoàn thành.")}</section>
   <section class="card"><b>Từ cần ôn lại (${rev.length})</b>${rev.length?rev.map(w=>`<div class="vl"><button class="b spk" onclick="speak('${jsq(w.s)}')" aria-label="Nghe">🔊</button><div><span class="zh">${w.h}</span> <span class="py">${w.p}</span><div class="vi">${esc(w.m)}</div></div><button class="b" onclick="reviewRemove('${jsq(wKey(w))}')" aria-label="Bỏ khỏi danh sách">✕</button></div>`).join(""):empty("✨","Danh sách trống","Từ bạn đánh dấu “Chưa thuộc” hoặc lưu ⭐ sẽ xuất hiện ở đây.")}</section>
-  <section class="card"><b>Công cụ học tập</b><div class="chips" style="margin-top:10px"><button class="chip" onclick="goPage('progress')">📈 Theo dõi chi tiết (Pro)</button><button class="chip" onclick="goPage('path')">🗺️ Lộ trình (Pro năm)</button><button class="chip" onclick="goPage('docs')">📚 Tài liệu (Pro năm)</button><button class="chip" onclick="goPage('plans')">Gói học</button></div>
+  <section class="card"><b>Công cụ học tập</b><div class="chips" style="margin-top:10px"><button class="chip" onclick="goPage('progress')">📈 Theo dõi chi tiết</button><button class="chip" onclick="goPage('path')">🗺️ Lộ trình</button><button class="chip" onclick="goPage('docs')">📚 Tài liệu</button>${FREE_MODE?"":`<button class="chip" onclick="goPage('plans')">Gói học</button>`}</div>
    <p style="margin-top:12px" class="stat">${signedIn()?`Đăng nhập bằng <b>${esc(SESS.user.email||"")}</b> · <a href="#" onclick="showAccount();return false">Tài khoản</a>`:(sbOn()?`<button class="b" onclick="showLogin()">Đăng nhập để đồng bộ gói Pro</button>`:"")}</p>
    <p class="stat" style="margin-top:12px"><a href="#" onclick="goPage('data');return false">Xóa dữ liệu học trên thiết bị này</a></p></section>`;
 }
 
 /* ---------- GÓI HỌC (trang riêng, ở chân trang) ---------- */
 function plansView(){
+  if(FREE_MODE)return `<div class="pg-head" style="padding-top:8px"><h1>Học miễn phí</h1></div>${empty("🎁","Mọi tính năng đang miễn phí","Bài học, thẻ nhớ, luyện tập, chép chính tả, shadowing, đề thi thử và các công cụ đều mở cho tất cả mọi người. Hiện chưa có gói trả phí nào.",`<button class="btn-l p" onclick="setBook('1')">Bắt đầu học</button>`)}`;
   return `<div class="pg-head" style="padding-top:8px"><h1>Gói học</h1><p class="stat">Học cơ bản luôn miễn phí. Gói Pro mở thêm bài học, luyện tập không giới hạn và công cụ theo dõi.</p></div>
   <div class="plans">${PLANS.map(p=>`<div class="plan${p.hot?" hot":""}">${p.hot?'<span class="hotb">Đề xuất</span>':""}<h4>${p.name}</h4><div class="pr">${p.price?vnd(p.price):"0đ"}<small>${p.per}</small></div>${p.price?`<div class="stat" style="margin-top:-2px">Quốc tế: <b>$${USD[p.id].toFixed(2)}</b>${p.per}</div>`:""}<p class="stat">${p.desc}</p><ul>${p.perks.map(x=>`<li>${x}</li>`).join("")}</ul>${p.price?`<button class="btn-l p" onclick="buy('${p.id}')">Nâng cấp</button>`:`<button class="btn-l" onclick="setBook('1')">Học ngay</button>`}</div>`).join("")}</div>
   <div class="cmp"><table><thead><tr><th>Tính năng</th><th>Free</th><th>Pro</th></tr></thead><tbody>
@@ -12977,7 +12980,7 @@ async function refreshSub(rerender){
 function uiAuth(){
   const pro=isPro(),on=sbOn(),inn=signedIn();
   const a=$("#hAct"),u=$("#hUp"),p=$("#hPro"),c=$("#hUser");
-  if(a)a.hidden=!on||inn;if(u)u.hidden=pro;if(p)p.hidden=!pro;
+  if(a)a.hidden=FREE_MODE||!on||inn;if(u)u.hidden=FREE_MODE||pro;if(p)p.hidden=FREE_MODE||!pro;
   if(c){c.hidden=!inn;c.textContent=inn?(SESS.user.email||"?")[0].toUpperCase():"?"}
 }
 function modalBox(html){
@@ -13026,6 +13029,7 @@ async function pollPaid(){
 let _poll=0;
 async function buy(id){
   const pl=PLANS.find(x=>x.id===id);track('buy_click',{plan:id});
+  if(FREE_MODE){modalBox(`<h3>Học hoàn toàn miễn phí</h3><p>Hiện tại mọi tính năng đều miễn phí, bạn không cần mua gói nào. Chúc bạn học vui!</p>`);return}
   if(!sbOn()){modalBox(`<h3>${pl.name} · ${vnd(pl.price)}${pl.per}</h3><p>Thanh toán tự động đang được cấu hình. Bạn để lại email ở mục đăng ký, chúng tôi sẽ báo khi mở bán.</p>`);return}
   if(!signedIn()){showLogin(`Đăng nhập để mua <b>${pl.name}</b>. Gói sẽ gắn với email này.`);return}
   const I=PAY.intl||{},intl=!!(I.card||I.paypal||I.stripe||I.wise),usd=USD[id];
