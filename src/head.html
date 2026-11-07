@@ -714,6 +714,16 @@ body.hasl .hero .brand{display:none}
   .lgbtn,.hbtn.b,.ibtn{min-height:38px;font-size:14px}.ibtn{width:38px;height:38px;font-size:16px}.lgbtn{padding:0 10px}.hbtn{padding:0 14px}
   .site-r{gap:6px}
 }
+
+/* ô luyện gõ cạnh từ vựng */
+.vl.wr{grid-template-columns:auto minmax(120px,1fr) minmax(170px,260px) auto}
+.wbox{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;min-width:0}
+.wi{width:100%;min-width:0;min-height:44px;padding:0 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:500 17px/1.2 var(--hanzi)}
+.wi::placeholder{font:500 13.5px var(--ui);color:var(--mut)}
+.wi.ok{border-color:var(--ok);background:var(--okbg)}.wi.bad{border-color:var(--bad);background:var(--badbg)}
+.wst{width:44px;padding:0;font-size:18px}
+.wmsg{grid-column:1/-1;font-size:12.5px;min-height:0;line-height:1.3}.wmsg:empty{display:none}
+@media (max-width:640px){.vl.wr{grid-template-columns:auto 1fr auto}.vl.wr .wbox{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>

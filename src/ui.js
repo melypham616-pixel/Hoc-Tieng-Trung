@@ -290,3 +290,26 @@ function routeHash(){
   if(P[h])goPage(P[h]);
 }
 addEventListener("hashchange",()=>routeHash());
+
+/* ---------- Ô luyện gõ / luyện viết cạnh mỗi từ trong danh sách ---------- */
+const wrTargets=h=>String(h).split("/").map(x=>x.replace(/[()（）]/g,"").trim()).filter(Boolean);
+function wrBox(h,p){
+  return `<span class="wbox"><input class="wi" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="✍ Gõ lại từ này…" aria-label="Luyện gõ: ${esc(h)}" data-h="${esc(h)}" data-p="${esc(p||"")}" oninput="wrCheck(this,event)" oncompositionend="wrCheck(this)" onblur="wrCheck(this,null,true)"><button class="b wst" type="button" title="Xem và tập viết từng nét" aria-label="Luyện viết nét" onclick="wrStroke('${jsq(h)}')">🖌</button><span class="wmsg" aria-live="polite"></span></span>`;
+}
+function wrCheck(inp,ev,blur){
+  if(ev&&ev.isComposing)return;
+  const v=inp.value.trim(),box=inp.closest(".wbox"),msg=box.querySelector(".wmsg"),was=inp.classList.contains("ok");
+  if(!v){inp.classList.remove("ok","bad");msg.textContent="";return}
+  const T=wrTargets(inp.dataset.h),py=stripTone(inp.dataset.p||"");
+  const okHan=T.some(t=>normZh(v)===normZh(t)),okPy=!!py&&stripTone(v)===py;
+  if(okHan||okPy){
+    inp.classList.remove("bad");inp.classList.add("ok");msg.textContent=okHan?"✓ Đúng!":"✓ Đúng pinyin — thử gõ chữ Hán nhé";msg.className="wmsg okc";
+    if(!was){logHist("w",true);speak(T[0]);track('type_word',{ok:1})}
+    return;
+  }
+  inp.classList.remove("ok");
+  const long=normZh(v).length>=Math.max(...T.map(t=>normZh(t).length));
+  if(blur||long){inp.classList.add("bad");msg.className="wmsg badc";msg.textContent="✗ Chưa đúng · gợi ý: "+(inp.dataset.p||"")}
+  else{inp.classList.remove("bad");msg.textContent=""}
+}
+function wrStroke(h){const w=String(h).replace(/[^一-鿿]/g,"").slice(0,6);if(w)hzWord=w;goPage("strokes")}

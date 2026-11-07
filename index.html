@@ -714,6 +714,16 @@ body.hasl .hero .brand{display:none}
   .lgbtn,.hbtn.b,.ibtn{min-height:38px;font-size:14px}.ibtn{width:38px;height:38px;font-size:16px}.lgbtn{padding:0 10px}.hbtn{padding:0 14px}
   .site-r{gap:6px}
 }
+
+/* ô luyện gõ cạnh từ vựng */
+.vl.wr{grid-template-columns:auto minmax(120px,1fr) minmax(170px,260px) auto}
+.wbox{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;min-width:0}
+.wi{width:100%;min-width:0;min-height:44px;padding:0 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font:500 17px/1.2 var(--hanzi)}
+.wi::placeholder{font:500 13.5px var(--ui);color:var(--mut)}
+.wi.ok{border-color:var(--ok);background:var(--okbg)}.wi.bad{border-color:var(--bad);background:var(--badbg)}
+.wst{width:44px;padding:0;font-size:18px}
+.wmsg{grid-column:1/-1;font-size:12.5px;min-height:0;line-height:1.3}.wmsg:empty{display:none}
+@media (max-width:640px){.vl.wr{grid-template-columns:auto 1fr auto}.vl.wr .wbox{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -12786,6 +12796,29 @@ function routeHash(){
 }
 addEventListener("hashchange",()=>routeHash());
 
+/* ---------- Ô luyện gõ / luyện viết cạnh mỗi từ trong danh sách ---------- */
+const wrTargets=h=>String(h).split("/").map(x=>x.replace(/[()（）]/g,"").trim()).filter(Boolean);
+function wrBox(h,p){
+  return `<span class="wbox"><input class="wi" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="✍ Gõ lại từ này…" aria-label="Luyện gõ: ${esc(h)}" data-h="${esc(h)}" data-p="${esc(p||"")}" oninput="wrCheck(this,event)" oncompositionend="wrCheck(this)" onblur="wrCheck(this,null,true)"><button class="b wst" type="button" title="Xem và tập viết từng nét" aria-label="Luyện viết nét" onclick="wrStroke('${jsq(h)}')">🖌</button><span class="wmsg" aria-live="polite"></span></span>`;
+}
+function wrCheck(inp,ev,blur){
+  if(ev&&ev.isComposing)return;
+  const v=inp.value.trim(),box=inp.closest(".wbox"),msg=box.querySelector(".wmsg"),was=inp.classList.contains("ok");
+  if(!v){inp.classList.remove("ok","bad");msg.textContent="";return}
+  const T=wrTargets(inp.dataset.h),py=stripTone(inp.dataset.p||"");
+  const okHan=T.some(t=>normZh(v)===normZh(t)),okPy=!!py&&stripTone(v)===py;
+  if(okHan||okPy){
+    inp.classList.remove("bad");inp.classList.add("ok");msg.textContent=okHan?"✓ Đúng!":"✓ Đúng pinyin — thử gõ chữ Hán nhé";msg.className="wmsg okc";
+    if(!was){logHist("w",true);speak(T[0]);track('type_word',{ok:1})}
+    return;
+  }
+  inp.classList.remove("ok");
+  const long=normZh(v).length>=Math.max(...T.map(t=>normZh(t).length));
+  if(blur||long){inp.classList.add("bad");msg.className="wmsg badc";msg.textContent="✗ Chưa đúng · gợi ý: "+(inp.dataset.p||"")}
+  else{inp.classList.remove("bad");msg.textContent=""}
+}
+function wrStroke(h){const w=String(h).replace(/[^一-鿿]/g,"").slice(0,6);if(w)hzWord=w;goPage("strokes")}
+
 /* ============ ĐA NGÔN NGỮ (VI / EN) — dịch phần giao diện, nội dung học giữ nguyên ============ */
 let LANG="vi";try{LANG=localStorage.getItem("lang")==="en"?"en":"vi"}catch(e){}
 const EN={
@@ -13372,7 +13405,7 @@ function list(){
   let html="",last=0;
   items.forEach(v=>{
     if(v[3]!==last){last=v[3];html+=`<div class="lh">${lesHead(last)} <span class="vi">— ${LES[last].vi}</span></div>`}
-    html+=`<div class="vl"><div>${spkBtn(v[0])}</div><div><span class="zh tap" onclick="speak('${v[0]}')">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>
+    html+=`<div class="vl wr"><div>${spkBtn(v[0])}</div><div><span class="zh tap" onclick="speak('${v[0]}')">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>${wrBox(v[0],v[1])}
     <label class="stat"><input type="checkbox" ${prog.known[v[0]]?"checked":""} onchange="toggleKnown('${v[0]}',this.checked)"> thuộc</label></div>`;
   });
   $("#vlist").innerHTML=html?`<div class="card">${html}</div>`:"<div class='vi'>Không tìm thấy.</div>";
@@ -13448,7 +13481,7 @@ function tfDlgView(){
 }
 function tfPlayDlg(){const L=BOOKS[bk].lessons.find(x=>"Bài "+x.n===tfLv);toast("🔊 Đang đọc…");speakSeq(rows(L.d.l).map(r=>({t:r.split("|")[1],tag:"m",pitch:1})))}
 function tfPickLv(l){tfLv=l;if(bk==='T')prog.tfLv=l;tfSet=0;tfLim=100;tfDeck=[];tfQz=null;save();track('tocfl_level',{book:bk,level:l});tocflView()}
-const tfRow=(x,showLv)=>`<div class="vl"><div>${spkBtn(x.s)}</div><div><span class="zh tap" onclick="speak('${x.s}')">${x.h}</span> <span class="py">${x.p}</span> <span class="pos">${x.pos}</span>${showLv?` <span class="lv lv-${x.l}">${x.l}</span>`:""}<div class="vi">${esc(x.m)}</div></div>
+const tfRow=(x,showLv)=>`<div class="vl wr"><div>${spkBtn(x.s)}</div><div><span class="zh tap" onclick="speak('${x.s}')">${x.h}</span> <span class="py">${x.p}</span> <span class="pos">${x.pos}</span>${showLv?` <span class="lv lv-${x.l}">${x.l}</span>`:""}<div class="vi">${esc(x.m)}</div></div>${wrBox(x.s,x.p)}
   <label class="stat"><input type="checkbox" ${prog.tk[x.k]?"checked":""} onchange="tfKnown('${x.k.replace(/'/g,"\\'")}',this.checked)"> thuộc</label></div>`;
 function tfKnown(k,c){if(c)prog.tk[k]=1;else delete prog.tk[k];save()}
 function tfListView(){

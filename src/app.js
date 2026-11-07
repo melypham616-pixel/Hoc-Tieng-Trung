@@ -303,7 +303,7 @@ function list(){
   let html="",last=0;
   items.forEach(v=>{
     if(v[3]!==last){last=v[3];html+=`<div class="lh">${lesHead(last)} <span class="vi">— ${LES[last].vi}</span></div>`}
-    html+=`<div class="vl"><div>${spkBtn(v[0])}</div><div><span class="zh tap" onclick="speak('${v[0]}')">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>
+    html+=`<div class="vl wr"><div>${spkBtn(v[0])}</div><div><span class="zh tap" onclick="speak('${v[0]}')">${v[0]}</span> <span class="py">${v[1]}</span><div class="vi">${v[2]}</div></div>${wrBox(v[0],v[1])}
     <label class="stat"><input type="checkbox" ${prog.known[v[0]]?"checked":""} onchange="toggleKnown('${v[0]}',this.checked)"> thuộc</label></div>`;
   });
   $("#vlist").innerHTML=html?`<div class="card">${html}</div>`:"<div class='vi'>Không tìm thấy.</div>";
@@ -379,7 +379,7 @@ function tfDlgView(){
 }
 function tfPlayDlg(){const L=BOOKS[bk].lessons.find(x=>"Bài "+x.n===tfLv);toast("🔊 Đang đọc…");speakSeq(rows(L.d.l).map(r=>({t:r.split("|")[1],tag:"m",pitch:1})))}
 function tfPickLv(l){tfLv=l;if(bk==='T')prog.tfLv=l;tfSet=0;tfLim=100;tfDeck=[];tfQz=null;save();track('tocfl_level',{book:bk,level:l});tocflView()}
-const tfRow=(x,showLv)=>`<div class="vl"><div>${spkBtn(x.s)}</div><div><span class="zh tap" onclick="speak('${x.s}')">${x.h}</span> <span class="py">${x.p}</span> <span class="pos">${x.pos}</span>${showLv?` <span class="lv lv-${x.l}">${x.l}</span>`:""}<div class="vi">${esc(x.m)}</div></div>
+const tfRow=(x,showLv)=>`<div class="vl wr"><div>${spkBtn(x.s)}</div><div><span class="zh tap" onclick="speak('${x.s}')">${x.h}</span> <span class="py">${x.p}</span> <span class="pos">${x.pos}</span>${showLv?` <span class="lv lv-${x.l}">${x.l}</span>`:""}<div class="vi">${esc(x.m)}</div></div>${wrBox(x.s,x.p)}
   <label class="stat"><input type="checkbox" ${prog.tk[x.k]?"checked":""} onchange="tfKnown('${x.k.replace(/'/g,"\\'")}',this.checked)"> thuộc</label></div>`;
 function tfKnown(k,c){if(c)prog.tk[k]=1;else delete prog.tk[k];save()}
 function tfListView(){
