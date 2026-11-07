@@ -14094,10 +14094,26 @@ function transView(){
   ${tDir==="zh2vi"?`<div class="row" style="margin-bottom:8px">${spkBtn(t[1])}<button class="b" onclick="speak('${t[1]}',0.4)">🐢 Chậm</button></div>`:""}
   <div class="stat" style="margin-bottom:6px">${L==="para"?"Đoạn văn":L==="long"?"Câu dài":"Câu ngắn"} · ${lesTag(t[3])} · ${cnt} câu trong bộ lọc</div>
   <textarea id="ti" rows="${L==="para"?5:L==="long"?2:1}" style="width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink);font:inherit;font-size:18px;resize:vertical" placeholder="${tDir==="vi2zh"?"Gõ Hán tự (giản hoặc phồn) hoặc pinyin không dấu…":"Gõ nghĩa tiếng Việt…"}" autocomplete="off" spellcheck="false"></textarea>
-  <div class="row" style="margin-top:8px"><button class="b p" onclick="chkTrans()">${tDir==="vi2zh"?"Kiểm tra":"Xem đáp án"}</button><button class="b" onclick="tIdx++;transView()">Câu khác →</button></div>
-  <div id="fb"></div></div>`;
+  <div class="row" style="margin-top:8px"><button class="b p" onclick="chkTrans()">${tDir==="vi2zh"?"Kiểm tra":"Xem đáp án"}</button><button class="b mic" id="mic-tr" onclick="trRec()" title="${tDir==="vi2zh"?"Nói đáp án bằng tiếng Trung":"Đọc to câu tiếng Trung"}">${tDir==="vi2zh"?"🎤 Nói đáp án":"🎤 Đọc to câu này"}</button><button class="b" onclick="tIdx++;transView()">Câu khác →</button></div>
+  <div id="fb-tr" style="margin-top:8px"></div><div id="fb"></div></div>`;
   $("#ti").onkeydown=e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing&&L!=="para"){e.preventDefault();if(tDone&&tDir==="vi2zh"){tIdx++;transView()}else chkTrans()}};
   $("#ti").focus();
+}
+/* Ghi âm trong phần Tập dịch:
+   Việt → Trung: nói câu tiếng Trung, chữ nhận được tự điền vào ô trả lời rồi chấm như khi gõ.
+   Trung → Việt: đọc to câu tiếng Trung, chấm độ giống từng từ (như luyện đọc). */
+function trRec(){
+  const t=curT();
+  recordTarget("tr",t[1],{quiet:2200,idle:9000,max:40000},text=>{
+    const box=$("#fb-tr");if(!box)return;
+    if(tDir==="vi2zh"){
+      $("#ti").value=text;box.innerHTML=`<div class="stat">Máy nghe được: <span class="zh">${esc(text)}</span></div>`;chkTrans();
+    }else{
+      const r=compareRead(t[1],text),pct=Math.round(r.score*100);
+      track('translate_read',{score:pct});logHist("h",pct>=70);
+      box.innerHTML=`<div class="rr ${pct>=70?"good":"low"}"><div><b>${pct}%</b> ${pct>=90?"🎉 Đọc rất chuẩn!":pct>=70?"👍 Khá tốt, chú ý các từ đỏ.":"💪 Nghe mẫu rồi đọc chậm hơn nhé."}</div>${chipsHtml(r.marks)}${needHtml(r.marks)}<div class="stat">Máy nghe được: <span class="zh">${r.heard||"(không rõ)"}</span></div></div>`;
+    }
+  });
 }
 function chkTrans(){
   const t=curT();const v=$("#ti").value;
