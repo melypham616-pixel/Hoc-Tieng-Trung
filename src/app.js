@@ -1045,4 +1045,5 @@ sbInit();
 footerView();
 render();
 try{routeHash()}catch(e){}
+try{chatInit()}catch(e){}
 

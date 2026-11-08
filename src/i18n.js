@@ -2,6 +2,8 @@
 /* ============ ĐA NGÔN NGỮ (VI / EN) — dịch phần giao diện, nội dung học giữ nguyên ============ */
 let LANG="vi";try{LANG=localStorage.getItem("lang")==="en"?"en":"vi"}catch(e){}
 const EN={
+/* chatbot */
+"Trợ lý tra cứu":"Lookup assistant","Tra cứu":"Lookup","Từ · câu · ngữ pháp · bộ thủ":"Words · sentences · grammar · radicals","Xóa hội thoại":"Clear chat","Đóng":"Close","Gửi":"Send","Gõ chữ Hán, pinyin hoặc tiếng Việt…":"Type Chinese, pinyin or Vietnamese…","Câu hỏi tra cứu":"Lookup question",
 /* điều hướng & đầu trang */
 "Tổng quan":"Dashboard","Khóa học":"Courses","Từ vựng":"Vocabulary","Luyện tập":"Practice","Hồ sơ":"Profile","Đăng nhập":"Log in","Gửi link đăng nhập":"Send login link","Tài khoản":"Account","Đăng xuất":"Log out","Đăng nhập để dùng và mua gói Pro.":"Log in to use and buy Pro.","Nâng cấp":"Upgrade","Học Tiếng Trung":"Study Chinese",
 "Đổi giao diện sáng/tối":"Toggle light/dark theme","Đổi giao diện":"Toggle theme","Ngôn ngữ":"Language",

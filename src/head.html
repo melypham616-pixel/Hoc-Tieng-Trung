@@ -728,6 +728,42 @@ body.hasl .hero .brand{display:none}
 /* chip sắp xếp câu có pinyin */
 .tok{display:inline-flex;flex-direction:column;align-items:center;line-height:1.25;vertical-align:top}
 .tok .tp{font:500 12px var(--ui);color:var(--pri);margin-bottom:2px;white-space:nowrap}
+
+/* chatbot tra cứu */
+.chfab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:90;display:flex;align-items:center;gap:8px;min-height:52px;padding:0 18px 0 14px;border:0;border-radius:99px;background:var(--pri);color:#fff;font:600 15px var(--ui);box-shadow:0 8px 24px rgba(0,0,0,.22);cursor:pointer}
+.chfab:hover{background:var(--pri-d)}.chfab .ci{font-size:20px;line-height:1}.chfab.on{display:none}
+.chbox{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:91;display:flex;flex-direction:column;width:min(410px,calc(100vw - 32px));height:min(640px,calc(100vh - 32px));background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.28);overflow:hidden}
+.chbox[hidden]{display:none!important}
+.chh{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--pri);color:#fff}
+.chh b{display:block;font-size:16px}.chh small{display:block;opacity:.85;font-size:12px}
+.chx{display:flex;gap:6px}.chx .ibtn{background:rgba(255,255,255,.18);color:#fff;border-color:transparent;min-width:36px;min-height:36px}
+.chlog{flex:1;min-height:0;overflow-y:auto;padding:14px 12px 4px;background:var(--bg);overscroll-behavior:contain}
+.cm{max-width:94%;width:fit-content;padding:10px 12px;margin:0 0 10px;border-radius:14px;font-size:14.5px;line-height:1.5;overflow-wrap:anywhere;border:1px solid var(--line)}
+.cm.cu{margin-left:auto;background:var(--pri);color:#fff;border-color:transparent;border-bottom-right-radius:4px}
+.cm.cbt{margin-right:auto;background:var(--card);border-bottom-left-radius:4px}
+.cm .zh{font-family:var(--hanzi)}.cm .tap{cursor:pointer}
+.cm .cw{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:8px 0;border-bottom:1px dashed var(--line)}
+.cm .cw:last-of-type{border-bottom:0}
+.cm .cw .zh{font-size:22px}.cm .cw .pos{font-size:11px;color:var(--mut);white-space:nowrap}
+.cb-sp{width:34px!important;height:34px;min-height:34px!important;padding:0!important;font-size:14px}
+.cb-big .zh{font-size:40px;line-height:1.2}.cb-big{display:flex;align-items:center;gap:10px}
+.cb-ruby{font-size:24px;line-height:2.3}
+.cb-m{padding:4px 0}.cb-gl{display:grid;gap:4px;margin-top:6px}.cb-gl .zh{font-size:18px}
+.cb-sec{margin:12px 0 4px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+.cb-ul{margin:6px 0 0;padding-left:18px}.cb-ul li{margin:3px 0}
+.cb-g{padding:8px 0;border-bottom:1px dashed var(--line)}.cb-g .formula{margin:4px 0}
+.cm .ex{padding:6px 10px;margin:6px 0;border-bottom:0}.cm .ex .zh{font-size:18px;font-weight:600;line-height:1.45}.cm .ex .py{font-size:12.5px}
+.cb-chips{display:flex;flex-wrap:wrap;gap:6px}.cb-chips .chip small{color:var(--mut)}
+.cb-go{min-height:40px}
+.chsug{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:var(--bg);border-top:1px solid var(--line);scrollbar-width:none}
+.chsug::-webkit-scrollbar{display:none}.chsug .chip{flex:none;white-space:nowrap;margin:0}
+.chf{display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line)}
+.chf input{flex:1;min-width:0;min-height:44px;padding:0 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:500 16px var(--ui)}
+.chf input:focus{outline:2px solid var(--pri);outline-offset:1px}
+@media (max-width:760px){
+  .chfab{bottom:calc(78px + env(safe-area-inset-bottom,0px));width:54px;padding:0;justify-content:center}.chfab .ct{display:none}
+  .chbox{left:0;right:0;bottom:0;width:auto;height:86vh;height:86dvh;border-radius:20px 20px 0 0}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
