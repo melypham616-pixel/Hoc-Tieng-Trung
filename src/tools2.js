@@ -8,7 +8,7 @@ function allSents(){
   if(_SENTS)return _SENTS;
   _SENTS=[];
   TRANS.forEach(t=>{if(t[1]&&t[1].length<=40){const Ls=LESSONS[+t[3]-1]||{};_SENTS.push({zh:t[1],py:t[2],vi:t[0],b:"1",n:+t[3],topic:"Quyển 1 · Bài "+t[3],lz:Ls.zh||"",lv:Ls.vi||""})}});
-  Object.keys(BOOKS).forEach(b=>BOOKS[b].lessons.forEach(L=>{if(!L.d||!L.d.l)return;rows(L.d.l).forEach(r=>{const p=r.split("|");if(p.length>=3&&p[1].length>=3&&p[1].length<=40)_SENTS.push({zh:p[1],vi:p[2],b,n:L.n,topic:`Quyển ${b} · Bài ${L.n} · ${L.vi}`,lz:L.zh,lv:L.vi})})}));
+  Object.keys(BOOKS).forEach(b=>BOOKS[b].lessons.forEach(L=>{if(!L.d||!L.d.l)return;rows(L.d.l).forEach(r=>{const p=r.split("|");if(p.length>=4&&p[1].length>=3&&p[1].length<=40)_SENTS.push({zh:p[1],py:p[2],vi:p[3],b,n:L.n,topic:`Quyển ${b} · Bài ${L.n} · ${L.vi}`,lz:L.zh,lv:L.vi})})}));
   return _SENTS;
 }
 const sentOk=s=>lesFree(s.b,s.n);
